@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Example Blog Post"
 date:   2023-04-02 17:35
 ---

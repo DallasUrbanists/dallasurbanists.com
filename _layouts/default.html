@@ -12,14 +12,16 @@
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
 
-    <link href="./styles.css" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
 </head>
 
 <body>
     {% include nav.html %}
-    
+
     <main>
-        {{ content }}
+        <div class="container p-5">
+            {{ content }}
+        </div>
     </main>
 </body>
 

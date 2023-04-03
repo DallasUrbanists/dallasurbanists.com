@@ -6,6 +6,9 @@ layout: default
     <h1>{{ page.title }}</h1>
     <p class="text-secondary">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{%
       if page.meta %} • {{ page.meta }}{% endif %}</p>
+    {% if page.cover_image %}
+    <img class="img-fluid" src="{{ "/assets/cover_images/" | append: page.cover_image | relative_url }}">
+    {% endif %}
   </header>
 
   <article>

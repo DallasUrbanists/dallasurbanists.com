@@ -8,7 +8,7 @@
     <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">Continue reading</a>
   </div>
   <div class="col col-12 col-lg-6 d-lg-block">
-    <img class="img-fluid" src="{{ "/assets/cover_images/" | append: post.cover_image | relative_url }}">
+    <img class="img-fluid" src="{{ post.cover_image | relative_url }}">
   </div>
 </div>
 {% endfor %}

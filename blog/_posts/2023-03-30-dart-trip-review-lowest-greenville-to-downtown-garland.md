@@ -3,7 +3,7 @@ layout:   post
 title:    "DART Trip Review: Lowest Greenville to Downtown Garland"
 subtitle: "Win! Taking transit between Lower Greenville and Downtown Garland is either as fast or faster than by car."
 date:     2023-03-30 08:00
-cover_image: "dart-trip-review-lower-greenville-downtown-garland.webp"
+cover_image: "/assets/cover_images/dart-trip-review-lower-greenville-downtown-garland.webp"
 author:     "Hexel Colorado"
 ---
 

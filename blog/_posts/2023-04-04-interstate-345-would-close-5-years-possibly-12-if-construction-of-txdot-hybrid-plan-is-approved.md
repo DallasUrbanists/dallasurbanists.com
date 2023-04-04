@@ -15,11 +15,15 @@ The study reported on five alternatives, but the “Hybrid” alternative was se
 
 ![Interstate 345 is highlighted red.](https://miro.medium.com/v2/resize:fit:720/format:webp/1*nQ-Sw8KCTjTBo-vsS2F3fQ.png "Interstate 345 is highlighted red.")
 
+*Rendering from 2016 CityMAP report showing what Dallas could look like if I-345 were removed.*
+
 # Before recent study, the idea of *permanent* removal had serious support.
 
 Since 2013, advocacy groups [Coalition for a New Dallas](https://www.coalitionforanewdallas.org/i-345) and [Congress for New Urbanism](https://www.dmagazine.com/frontburner/2021/06/i-345-back-on-cnus-freeways-without-futures-list/) have called for removing the 1.4-mile highway and opening 245 acres of land for development. A separate [TxDOT study in 2016 reported](https://www.dmagazine.com/urbanism-transportation/2016/06/new-txdot-report-says-we-should-tear-down-i-345/) that a removal plan would bring 12,000 people and 40,000 jobs to the city, earn Dallas $80 million in additional revenue, and improve transit, bike and pedestrian access. For these reasons, [12 city councilmembers said last year they supported](https://www.coalitionforanewdallas.org/featured-posts/coalition-for-a-new-dallas-5) “removing I-345 and replacing it with a mixed-use, mixed-income neighborhood that restores the community grid and reconnects East and South Dallas.”
 
-![Rendering from 2016 CityMAP report showing what Dallas could look like if I-345 were removed.](https://miro.medium.com/v2/resize:fit:720/format:webp/1*XQM6jMy4_k6AQcbwq_SNPQ.png)
+![Rendering from 2016 CityMAP report showing what Dallas could look like if I-345 were removed.](https://miro.medium.com/v2/resize:fit:720/format:webp/1*XQM6jMy4_k6AQcbwq_SNPQ.png "Rendering from 2016 CityMAP report showing what Dallas could look like if I-345 were removed.")
+
+*Rendering from 2016 CityMAP report showing what Dallas could look like if I-345 were removed.*
 
 # Frightening traffic numbers in feasibility study changed city leaders’ minds about removing I-345.
 
@@ -29,7 +33,7 @@ TxDOT tapped into those fears with their traffic analysis of a new “Removal al
 
 > “When you start to tell residents they’re going to get an average of forty percent more time added to their commute, everybody is gonna sit there and go, ‘Ahhh! I don’t want that!’” — Councilman Omar Narvaez
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*VZL8mu3TfD4jSVuNDwSNmQ.png)
+![One of ten graphs predicting significant impact on traffic by the Removal alternative prepared by TxDOT for their latest feasibility study.](https://miro.medium.com/v2/resize:fit:1400/1*VZL8mu3TfD4jSVuNDwSNmQ.png "One of ten graphs predicting significant impact on traffic by the Removal alternative prepared by TxDOT for their latest feasibility study.")
 
 *One of ten graphs predicting significant impact on traffic by the Removal alternative prepared by TxDOT for their latest feasibility study.*
 
@@ -45,7 +49,7 @@ However, the Hybrid plan doesn’t elevate or widen the freeway; the plan is to�
 
 So, here’s the grand irony of all this: all those fears of Traffic Armageddon if we remove the highway? They apply to the Hybrid plan too.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*BRSz5TDncpXyyQqv)
+![Construction on Woodall Rodgers Freeway to build Klyde Warren Park. Photo from dfwfreeways.com.](https://miro.medium.com/v2/resize:fit:1400/0*BRSz5TDncpXyyQqv "Construction on Woodall Rodgers Freeway to build Klyde Warren Park. Photo from dfwfreeways.com.")
 
 *Construction on Woodall Rodgers Freeway to build Klyde Warren Park. Photo from [dfwfreeways.com](http://dfwfreeways.com/spur366/construction-park).*
 
@@ -57,7 +61,7 @@ As if that wasn’t enough, TxDOT sells the idea of putting a lid on the newly b
 
 Put all our empirical estimates together (9 + 3) and we get 12 years of construction. That’s over a decade that working families in South Dallas can’t drive to jobs in the north.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*SeGjhe-80Rp5M6PgnrnnYw.jpeg)
+![Oh boy, commuters are going to love sharing the road with these big boys for 5 to 12 years!](https://miro.medium.com/v2/resize:fit:1400/1*SeGjhe-80Rp5M6PgnrnnYw.jpeg "Oh boy, commuters are going to love sharing the road with these big boys for 5 to 12 years!")
 
 *Oh boy, commuters are going to love sharing the road with these big boys for 5 to 12 years!*
 
@@ -71,7 +75,7 @@ On the flip side, the true impact on travel times isn’t as bad as TxDOT sugges
 
 If Removal’s traffic impact is acceptable, then there is no advantage to going Hybrid; the responsible thing to do (fiscally, politically, and socially) is choose Removal to prevent years of blight and save money and time. Upon completion, Removal compensates the city in ways Hybrid can’t: new jobs, residences, and revenue.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*C1PfFQt8QtZgJed-)
+![Land freed by removal can transformed into a neighborhood center. Toole Design Group.](https://miro.medium.com/v2/resize:fit:1400/0*C1PfFQt8QtZgJed- "Land freed by removal can transformed into a neighborhood center. Toole Design Group.")
 
 *Land freed by removal can transformed into a neighborhood center. Toole Design Group.*
 

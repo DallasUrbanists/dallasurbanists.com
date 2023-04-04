@@ -43,9 +43,9 @@ body {
 .jumbo-cover {
     background-color: black;
     z-index: -1;
-    margin-top: -93px;
+    margin-top: -102px;
     position: relative;
-    padding-top: 93px;
+    padding-top: 102px;
     background-blend-mode: color;
 }
 
@@ -78,4 +78,35 @@ body {
     margin-bottom: 14px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.blog-article img {
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+
+@media (max-width: 992px) {
+    .navbar-collapse.collapse.show, .navbar-collapse.collapsing {
+        margin-top: -94px;
+    }
+
+    .navbar-toggler {
+        z-index: 1;
+    }
+
+    .navbar-collapse.collapse.show, .navbar-collapse.collapsing {
+        background-color: var(--bs-primary);
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .navbar-collapse.collapse.show .nav-item a, .navbar-collapse.collapsing .nav-item a {
+        padding: 1em;
+    }
+
+    .navbar-collapse.collapse.show .nav-item a:hover, .navbar-collapse.collapsing .nav-item a:hover {
+        background-color: var(--bs-primary-bg-subtle);
+    }
 }

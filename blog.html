@@ -2,12 +2,9 @@
 layout: default
 ---
 
-<div>
-
-  <h1 class="mb-5">Blog Posts</h1>
-
-  {% include posts.html %}
-
-  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
-
+<div class="container-lg px-lg-5 py-5">
+  <div class="mx-auto" style="max-width: 1024px;">
+      <h1 class="text-center display-5 lined-heading mb-5"><span>Blog Articles</span></h1>
+      {% include posts.html %}
+  </div>
 </div>

@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post
 title: Interstate 345 Would Close 5 Years (Possibly 12) If Construction of TxDOT
   Hybrid Plan is Approved
 subtitle: TxDOT hides estimated construction time in feasibility study and never

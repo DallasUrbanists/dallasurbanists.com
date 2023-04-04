@@ -17,6 +17,11 @@ body {
     background: rgba(0,0,0, 0.75);
 }
 
+.bg-fade {
+    background: rgb(11,43,140);
+    background: linear-gradient(180deg, rgba(11,43,140,1) 90%, rgba(11,43,140,0) 100%);
+}
+
 .lined-heading {
     position: relative;
 }
@@ -110,7 +115,11 @@ body {
 
 @media (max-width: 383px) {
     .navbar {
-        margin-top: 13px !important;
+        position: absolute;
+        top: 1em;
+    }
+    body {
+        padding-top: 100px;
     }
 }
 

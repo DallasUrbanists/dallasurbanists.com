@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg
-    {% if page.cover_image or page.body_bg_image or page.nav_bg == 'transparent' %}{% else %}bg-primary{% endif %}
-    {% if page.nav_bg == 'semitransparent' %}bg-semitransparent{% endif %}"
+    {% if page.cover_image or page.body_bg_image or page.nav_bg %}{% else %}bg-primary{% endif %}
+    {% if page.nav_bg == 'semitransparent' %}bg-semitransparent{% endif %}
+    {% if page.nav_bg == 'fade' %}bg-fade{% endif %}"
     data-bs-theme="{{ page.nav_theme | default: 'dark' }}">
     <div class="container-lg">
         <a class="navbar-brand" href="{{ "/" | relative_url }}" style="max-width: 50%;">

@@ -1,31 +1,43 @@
 ---
 layout: default
 identity_snippet: true
+nav_bg: "fade"
 ---
-<div class="container-fluid bg-primary text-white shadow-lg mb-5">
-    <div class="container-lg px-lg-5">
-        <div class="row flex-lg-row align-items-center g-5 pt-4 pb-5">
-            <div class="col-lg-6">
-                <span class="badge text-bg-primary mb-1">Featured Story</span>
-                <h1 class="display-5 mb-0 text-white">DART Trip Review: Lowest Greenville to Downtown Garland</h1>
-                <p class="text-light mb-4"><em>April 3rd, 2023 • Hexel Colorado</em></p>
-            </div>
-            <div class="col-10 col-sm-8 col-lg-6">
-                <img src="assets/cover_images/dart-trip-review-smu-shuttle.png" class="d-block mx-lg-auto shadow-lg img-fluid rounded" loading="lazy">
-            </div>
-        </div>
+<div class="container-fluid bg-primary text-white shadow-lg pb-4" style="background-image: url({{ 'assets/this-dallas-life-featured-jumbo.png' | relative_url }}); background-repeat: no-repeat; background-size: cover;">
+  <div class="container-lg px-lg-5">
+    <div class="row flex-lg-row align-items-center g-5 pt-4 pb-5">
+      <div class="col-lg-6">
+        <span class="badge text-bg-primary mb-1">Featured Story</span>
+        <h1 class="display-5 mb-0 text-white">DART Trip Review: Lowest Greenville to Downtown Garland</h1>
+        <p class="text-light mb-4">
+          <em>April 3rd, 2023 • Hexel Colorado</em>
+        </p>
+      </div>
+      <div class="col-12 col-lg-6 mt-0 mt-lg-5">
+        <img
+          src="assets/cover_images/dart-trip-review-smu-shuttle.png"
+          class="d-block mx-lg-auto shadow-lg img-fluid rounded"
+          loading="lazy">
+      </div>
     </div>
+  </div>
 </div>
 
-<div class="container-lg pb-5">
+<div class="container-fluid bg-light">
+  <div class="container-lg p-4 pt-5 bg-light">
     <div class="row">
-        <div class="col-8">
-            <h1 class="display-6 lined-heading mb-5"><span>Recently Published</span></h1>
-            {% include posts.html %}
-        </div>
-        <div class="col-4">
-            <h1 class="display-6 lined-heading mb-5"><span>Pinned</span></h1>
-            {% include posts-pinned.html %}
-        </div>
+      <div class="col-12 col-md-8 mb-5">
+        <h1 class="display-6 lined-heading mb-5">
+          <span>Recently Published</span>
+        </h1>
+        {% include posts.html %}
+      </div>
+      <div class="col-12 col-md-4 mb-5">
+        <h1 class="display-6 lined-heading mb-5">
+          <span>Pinned</span>
+        </h1>
+        {% include posts-pinned.html %}
+      </div>
     </div>
+  </div>
 </div>

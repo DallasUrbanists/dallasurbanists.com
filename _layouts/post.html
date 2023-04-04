@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="container-fluid bg-primary text-white jumbo-cover" style="background-image: url({{ "/assets/cover_images/" | append: page.cover_image | relative_url }});">
+<div class="container-fluid bg-primary text-white jumbo-cover" style="background-image: url({{ page.cover_image | relative_url }});">
   <div class="container-lg px-lg-5">
       <div class="row flex-lg-row align-items-center g-5 pt-4 pb-5">
           <div class="col-lg-6">
@@ -10,7 +10,7 @@ layout: default
                 if page.meta %} • {{ page.meta }}{% endif %}</em></p>
           </div>
           <div class="col-10 col-sm-8 col-lg-6">
-              <img src="{{ "/assets/cover_images/" | append: page.cover_image | relative_url }}" class="d-block mx-lg-auto img-fluid shadow-lg rounded" loading="lazy">
+              <img src="{{ page.cover_image | relative_url }}" class="d-block mx-lg-auto img-fluid shadow-lg rounded" loading="lazy">
           </div>
       </div>
   </div>

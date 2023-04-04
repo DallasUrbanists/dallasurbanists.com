@@ -1,7 +1,10 @@
-<nav class="navbar navbar-expand-lg {% if page.cover_image %}{% else %}bg-primary{% endif %}" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg
+    {% if page.cover_image or page.body_bg_image or page.nav_bg == 'transparent' %}{% else %}bg-primary{% endif %}
+    {% if page.nav_bg == 'semitransparent' %}bg-semitransparent{% endif %}"
+    data-bs-theme="{{ page.nav_theme | default: 'dark' }}">
     <div class="container-lg">
         <a class="navbar-brand" href="{{ "/" | relative_url }}">
-            <img class="m-3" src="{{ "/assets/inline-logo-and-wordmark-white.svg" | relative_url }}" alt="This Dallas Life" width="250">
+            <img class="m-3" src="{{ page.nav_logo | default: '/assets/inline-logo-and-wordmark-white.svg' | relative_url }}" alt="This Dallas Life" width="250">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +19,7 @@
                     <a class="nav-link" href="#">Podcast</a>
                 </li>
                 <li class="nav-item px-lg-2">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="{{ "/about" | relative_url }}">About</a>
                 </li>
                 <li class="nav-item px-lg-2">
                     <a class="nav-link" href="{{ "/contact" | relative_url }}">Contact</a>

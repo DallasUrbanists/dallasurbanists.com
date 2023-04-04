@@ -8,6 +8,13 @@
 
 body {
     font-family: 'Noto Serif', Georgia, Cambria, "Times New Roman", Times, serif;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.bg-semitransparent {
+    background: rgba(0,0,0, 0.75);
 }
 
 .lined-heading {
@@ -46,7 +53,7 @@ body {
     margin-top: -102px;
     position: relative;
     padding-top: 102px;
-    background-blend-mode: color;
+    background-size: cover;
 }
 
 .blog-article {
@@ -60,6 +67,10 @@ body {
     margin-top: 2em;
 }
 
+.blog-article :is(h1, h2):first-child {
+    margin-top: 0px !important;
+}
+
 .blog-article h1 {
     color: black;
     font-size: 22px;
@@ -68,7 +79,14 @@ body {
     margin-top: 53px;
 }
 
-.blog-article h1 + p {
+.blog-article h2 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.15;
+    margin-top: 53px;
+}
+
+.blog-article :is(h1, h2) + p {
     margin-top: 8px;
 }
 
@@ -84,6 +102,10 @@ body {
     max-width: 100%;
     box-sizing: border-box;
     display: block;
+}
+
+.text-glow {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f8f9fa, 0 0 40px #f8f9fa, 0 0 50px #f8f9fa, 0 0 60px #f8f9fa, 0 0 70px #f8f9fa;
 }
 
 

@@ -15,14 +15,22 @@
     <link href="{{ "/styles.css" | relative_url }}" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
     {% include nav.html %}
 
-    <main>
-        <div class="container p-5">
-            {{ content }}
-        </div>
+    <main class="">
+        {{ content }}
     </main>
+
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-body-secondary">
+                Copyright &copy; 2023
+                {% if page.author %}{{ page.author }}, {% endif %}
+                This Dallas Life
+            </span>
+        </div>
+    </footer>
 </body>
 
 </html>

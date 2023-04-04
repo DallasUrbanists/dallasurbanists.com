@@ -108,6 +108,11 @@ body {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f8f9fa, 0 0 40px #f8f9fa, 0 0 50px #f8f9fa, 0 0 60px #f8f9fa, 0 0 70px #f8f9fa;
 }
 
+@media (max-width: 383px) {
+    .navbar {
+        margin-top: 13px !important;
+    }
+}
 
 @media (max-width: 992px) {
     .navbar-collapse.collapse.show, .navbar-collapse.collapsing {

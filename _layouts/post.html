@@ -18,6 +18,7 @@ layout: default
 
 <div class="container-fluid bg-light pt-4">
   <article class="blog-article mx-auto" style="max-width: 740px;">
+    {% include tag-links.html %}
     <p class="lead"><em>{{ page.subtitle }}</em></p>
     {{ content }}
   </article>

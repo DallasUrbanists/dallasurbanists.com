@@ -12,7 +12,13 @@ layout: default
             {%- endcomment -%}
             <span>{{ layout.heading }}{{ page.tag_feed }}{{ page.heading }}</span>
         </h1>
-        {% include posts.html tag=page.tag_feed%}
+        {% if page.tag_feed %}
+            {% include posts.html tag=page.tag_feed%}
+        {% elsif page.category_feed %}
+            {% include posts.html category=page.category_feed %}
+        {% else %}
+            {% include posts.html %}
+        {% endif %}
     </div>
   </div>
   

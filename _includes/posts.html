@@ -1,6 +1,8 @@
-{% if include.tag %}
+{% if include.tag or include.category %}
   {% for post in site.posts %}
-    {% if post.tags contains include.tag %}
+    {% if include.tag and post.tags contains include.tag %}
+      {% include post.html %}
+    {% elsif include.category and post.categories contains include.category %}
       {% include post.html %}
     {% endif %}
   {% endfor %}

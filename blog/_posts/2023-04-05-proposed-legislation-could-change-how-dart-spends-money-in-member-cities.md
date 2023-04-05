@@ -19,3 +19,10 @@ As a concerned citizen, you might want to form an opinion about the proposed leg
 This blog post isn't about giving an opinion but about encouraging you to share your thoughts on the issue. So, don't hesitate to take the time to watch the meeting and voice your opinion on this critical matter. After all, it's your community, and your voice matters.
 
 ![Table of summary findings from Value of Transit Services (2019)](/assets/cover_images/screenshot-2023-04-05-112318.png "Table of summary findings from Value of Transit Services (2019)")
+
+<video id="player_html5_api" class="vjs-tech" autoplay="" preload="auto" data-setup="{&quot;persistTextTrackSettings&quot;: true }" tabindex="-1" poster="https://stills.swagit.com/stills/2023/04/05/04052023-518.480x360.jpg?r=2" src="blob:https://dart.swagit.com/78ebc728-39c4-4387-ba66-fb98e43346d5">
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank" class="vjs-hidden" hidden="hidden">supports HTML5 video</a>
+    </p>
+  </video>

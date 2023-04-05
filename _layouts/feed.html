@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<div class="container-fluid px-lg-5 py-5 bg-light">
+    <div class="mx-auto" style="max-width: 1024px;">
+        <h1 class="text-center display-5 lined-heading mb-5">
+            <span>{{ page.heading }}</span>
+        </h1>
+        {% include posts.html tag=page.tag_feed%}
+    </div>
+  </div>

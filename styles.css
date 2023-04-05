@@ -13,6 +13,10 @@ body {
     background-position: top center;
 }
 
+.btn .bi:first-child {
+    margin-right: 0.25em;
+}
+
 .glamorous-heading {
     text-shadow: -4px 3px 0 #0a0e27;
 }
@@ -46,7 +50,7 @@ body {
     border-top: 1px solid var(--bs-dark-border-subtle);
 }
 
-.blog-listing img.muted {
+img.muted {
     filter: grayscale(100%);
     transition: filter 0.25s;
     transition-timing-function: ease-out;
@@ -73,8 +77,12 @@ body {
 
 .blog-article p {
     color: var(--bs-dark);
+}
+
+.blog-article p:not(:first-child) {
     margin-top: 2em;
 }
+
 
 .blog-article :is(h1, h2):first-child {
     margin-top: 0px !important;

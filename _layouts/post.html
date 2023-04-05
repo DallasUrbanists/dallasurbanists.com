@@ -25,12 +25,63 @@ layout: default
   </div>
 </div>
 
-<div class="container-fluid bg-light pt-4">
-  <article class="blog-article mx-auto" style="max-width: 740px;">
-    <p>{% include tag-links.html tags=page.tags %}</p>
-    <p class="lead">
-      <em>{{ page.subtitle }}</em>
-    </p>
-    {{ content }}
-  </article>
+<div class="container-fluid bg-light p-0">
+  <div class="bg-dark sticky-top">
+    <div class="container-lg py-3 px-3 px-lg-5">
+      {% if page.jump_link %}
+        <a href="#{{ page.jump_link }}" type="button" class="btn btn-success">
+          {% if page.jump_icon %}
+            <i class="bi {{ page.jump_icon }}"></i>
+          {% endif %}
+          {% if page.jump_label %}
+            {{ page.jump_label }}
+          {% else %}
+            Jump
+          {% endif %}
+        </a>
+      {% endif  %}
+      {% if page.recommended_actions %}
+        {% for rec_action in page.recommended_actions %}
+          <a href="{{ rec_action[0] }}" target="_blank" type="button" class="btn btn-secondary">
+            <i class="bi {{ rec_action[2] | default: 'bi-box-arrow-up-right'  }}"></i>
+            {{ rec_action[1]  }}
+          </a>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  <div class="container-lg row flex-lg-row mx-auto align-items-start g-5 pt-4 pb-5">
+    <div class="col-lg-7 p-lg-4 pt-lg-3">
+      <article class="blog-article" style="max-width: 740px;">
+        <!-- include tag-links.html tags=page.tags -->
+        <p class="lead">
+          <em>{{ page.subtitle }}</em>
+        </p>
+        {{ content }}
+      </article>
+    </div>
+    <div class="col-lg-5">
+      <div class="row border rounded overflow-hidden">
+        <div class="col-8 p-4 text-secondary">
+          <h2 class="fs-5 text-secondary">Connor Hulla</h2>
+          <p class="fs-7"><em>This Dallas Life</em> contributor and moderator of the <a href="https://www.reddit.com/r/dart/" class="link-secondary link-offset-2">r/DART subreddit</a>.</p>
+          <p class="fs-7">
+            <i class="bi bi-envelope-fill fs-5"></i> <a href="mailto:connor@thisdallaslife.com" class="link-secondary link-offset-2">connor@thisdallaslife.com</a><br>
+            <i class="bi bi-twitter fs-5"></i> <a href="https://twitter.com/AlternateConnor" class="link-secondary link-offset-2">@AlternateConnor</a><br>
+            <i class="bi bi-reddit fs-5"></i> <a href="https://www.reddit.com/user/cuberandgamer/" class="link-secondary link-offset-2">u/cuberandgamer</a>
+          </p>
+        </div>  
+        <div class="col-4 p-0" style="background-image: url({{ "/assets/connor-photo.jpeg" | relative_url }}); background-repeat: none; background-size: cover; background-position: center center; filter: grayscale(100%);">
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if page.embed_bottom %}
+  
+  <iframe id="embed-bottom" src="{{ page.embed_bottom }}" class="mt-4" frameborder="0" allowfullscreen style="
+    width: 100%;
+    height: {{ page.embed_bottom_height | default: "100vh;" }}
+    "></iframe>
+  </a>
+  {% endif %}
 </div>

@@ -5,7 +5,7 @@
   </div>
   <div class="p-4">
     <h3 class="mb-2 fs-5">{{ post.title }}</h3>
-    <p><strong class="mb-auto text-primary">Category</strong> • <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">Read story</a></p>
+    <p><strong class="mb-auto text-primary">{{ post.categories.first | capitalize }}</strong> • <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">{% include card-link-text.html %}</a></p>
   </div>
 </div>
 {% endfor %}

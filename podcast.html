@@ -1,0 +1,111 @@
+---
+layout: default
+nav_theme: dark
+nav_bg: "transparent"
+---
+
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center bg-dark jumbo-cover pb-5" style="background-image: url({{ "/assets/podcast-page-cover.jpg" | relative_url }}); background-size: cover; min-height: 90vh; background-position: center;">
+  <h1 class="row display-1 mb-4 text-light text-center glamorous-heading">
+    By Way of Dallas
+  </h1>
+  <div class="row g-4  position-relative  blog-listing" style="max-width: 1024px;">
+    <div class="col col-12 col-lg-7 d-lg-block p-4">
+      <span class="badge text-bg-primary mb-1">Latest Podcast Episode</span>
+      <h2 class="mb-4 fs-4 text-white">
+        Living Car Free in Dallas: Three Stories of People Who Chose To Drive Less</h2>
+      <p class="card-text mb-4 fs-6 text-light">
+        <em>Episode 2</em>
+        •
+        <em>February 14th, 2023</em>
+        &mdash;
+        What's it like living in Dallas without a car? For whom is a car-free or car-light lifestyle possible? If we must have a car in Dallas, are there ways we can drive less in our daily lives? This episode features stories of three people living in Dallas without a car.
+        <a href="#" class="stretched-link link-light link-offset-3">Listen &amp; read episode notes</a>
+      </p>
+    </div>
+    <div class="col col-12 col-lg-5 d-flex flex-column position-static pt-lg-5 pb-4">
+      <img
+        src="assets/cover_images/podcast-ep2-cover.png"
+        class="d-block mx-lg-auto img-fluid shadow-lg rounded"
+        loading="lazy">
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-light pt-0 px-5">
+  <div class="row mx-auto bg-light position-relative overflow-hidden rounded-top pt-4" style="max-width: 1024px; top: -40px">
+    <div class="col-12 bg-light">
+      <article class="p-4 mx-auto">
+        <h1 class="text-center display-5 lined-heading mb-5">
+          <span>About the Podcast
+          </span>
+        </h1>
+
+        <div class="row mx-4">
+          <div class="col-12 col-lg-8">
+            <p>
+              <em>By Way of Dallas</em>
+              is a podcast about transportation and mobility in the Dallas area, and how we move affects how we live. This podcast primarily targets transportation planners and advocates for public transit, bicycle, and walkability.</p>
+
+            <p>
+              <strong>For planners,</strong>
+              this podcast sheds light on how people are helped and hurt by Dallas' infrastructure policy decisions. From personal stories shared by Dallasites to interviews with local experts and advocates, this podcast aims to shatter the myth that car dependence and sprawl are Dallas' inescapable fate. This podcast is specially targeted at 
+              Dallas Area Rapid Transit (DART), Dallas Transportation & Infrastructure Committee, NCTCOG, and TxDOT.</p>
+
+            <p>
+              <strong>For advocates,</strong>
+              this podcast presents ways toward a more walkable and sustainable Dallas. Topics will include the removal of Interstate 345, investment in sidewalk gaps and cycling infrastructure, eliminating parking minimums, and more.</p>
+
+            <p>You can listen to
+              <em>By Way of Dallas</em>
+              on every major podcast platorm:
+              <a href="https://open.spotify.com/show/4y48myrkLxKOIYt56n3fdq">Spotify</a>,
+              <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy9kYThjMDJhMC9wb2RjYXN0L3Jzcw">Google Podcasts</a>,
+              <a href="https://podcasts.apple.com/us/podcast/by-way-of-dallas/id1672072523">Apple Podcasts</a>,
+              <a href="https://music.amazon.com/podcasts/514160de-7132-427b-ae61-78168318ab6e/by-way-of-dallas">Amazon Music</a>,
+              <a href="https://www.iheart.com/podcast/269-by-way-of-dallas-109009754/">iHeartRadio</a>,
+              <a href="https://castbox.fm/channel/id5312281?country=us">Castbox</a>,
+              <a href="https://pca.st/x7v3qb0r">Pocket Casts</a>,
+              <a href="https://radiopublic.com/by-way-of-dallas-GKZOEQ">RadioPublic</a>, and
+              <a href="https://www.stitcher.com/show/1057897">Stitcher</a>.
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 pd-4">
+            <img
+              src="{{ "assets/bwod-podcast-logo.png" | relative_url }}"
+              class="d-block shadow-lg rounded m-lg-4 mx-auto"
+              loading="lazy"
+              style="max-width: 100%;">
+          </div>
+        </div>
+
+      </article>
+    </div>
+    <div class="col-12 p-4">
+      <h1 class="text-center display-5 lined-heading mb-5">
+        <span>All Episodes</span>
+      </h1>
+      {% for post in site.posts %}
+        <div class="row g-4  position-relative  blog-listing pb-4" style="max-width: 1024px;">
+          <div class="col col-12 col-lg-6 d-lg-block p-4">
+            <h2 class="mb-1 fs-4 text-black">
+              {{ post.title }}</h2>
+            <p class="card-text mb-1 fs-6 text-dark">
+              <em>Episode 2</em>
+              •
+              <em>February 14th, 2023</em>
+            </p>
+            <p>
+              <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link link-dark link-offset-3">Listen &amp; read episode notes</a>
+            </p>
+          </div>
+          <div class="col col-12 col-lg-6 p-4 d-flex flex-column position-static mt-0 pt-0">
+            <img
+              src="assets/cover_images/podcast-ep1-cover.png"
+              class="d-block mx-lg-auto img-fluid shadow-lg muted rounded"
+              loading="lazy">
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

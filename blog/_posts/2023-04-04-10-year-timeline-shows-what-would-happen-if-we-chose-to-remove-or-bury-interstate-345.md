@@ -5,6 +5,7 @@ title: 10-Year Timeline Shows What Would Happen if We Chose To Remove or Bury
 subtitle: People forget how much life can change in a decade.
 date: 2022-07-14T05:44:01.973Z
 cover_image: /assets/cover_images/1_dqqp5bkaqgiwcetkydao5g.webp
+header_blend_mode: multiply
 ---
 # People forget how much life can change in a decade.
 

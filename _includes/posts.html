@@ -1,12 +1,12 @@
-{% for post in site.posts %}
-<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-white blog-listing">
-  <div class="col col-12 col-lg-6 p-4 d-flex flex-column position-static">
-    <h3 class="mb-2 fs-5">{{ post.title }}</h3>
-    <p class="card-text mb-2 text-body-secondary fs-6"><em>{{ post.date | date: "%B %-d, %Y" }}</em> &mdash; {% if post.subtitle %} {{ post.subtitle }}{% endif %}</p>
-    <p><strong class="mb-auto text-primary">Category</strong> • <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">Read more</a></p>
-  </div>
-  <div class="col col-12 col-lg-6 d-lg-block bg-secondary">
-    <img class="img-fluid muted" src="{{ post.cover_image | relative_url }}">
-  </div>
-</div>
-{% endfor %}
+{% if include.tag %}
+  {% for post in site.posts %}
+    {% if post.tags contains include.tag %}
+      {% include post.html %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% for post in site.posts %}
+    {% include post.html %}
+  {% endfor %}
+{% endif %}
+

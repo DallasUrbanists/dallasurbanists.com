@@ -1,0 +1,7 @@
+{% if include.tags != empty %}
+<p>Tagged as:
+{% for tag in include.tags %}
+<a class="badge text-bg-secondary" href="{{ "/tagged/" | append: tag | relative_url }}">{{ tag }}</a>
+{% endfor %}
+</p>
+{% endif %}

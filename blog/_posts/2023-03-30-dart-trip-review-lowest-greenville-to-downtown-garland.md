@@ -5,6 +5,7 @@ subtitle: "Win! Taking transit between Lower Greenville and Downtown Garland is 
 date:     2023-03-30 08:00
 cover_image: "/assets/cover_images/dart-trip-review-lower-greenville-downtown-garland.webp"
 author:     "Hexel Colorado"
+tags: [DART]
 ---
 
 This is my fifth in a series of trip plans across Dallas. I write these articles for transportation planners (who can read these articles as real-world data) and transit riders (who can learn useful tips).

@@ -20,3 +20,14 @@ collections:
       - {label: "Cover Image", name: "cover_image", widget: "image"}
       - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "tag"
+    label: "Tag"
+    folder: "tagged/"
+    create: true
+    delete: false # Don't allow deleting from within CMS
+    slug: "{{tag_feed}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "tag-feed"}
+      - {label: "Tag Name (no spaces)", name: "tag_feed", widget: "string"}
+
+

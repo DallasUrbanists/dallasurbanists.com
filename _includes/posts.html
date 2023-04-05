@@ -1,12 +1,14 @@
-{% if include.tag %}
+{% if include.tag or include.category %}
   {% for post in site.posts %}
-    {% if post.tags contains include.tag %}
-      {% include post.html %}
+    {% if include.tag and post.tags contains include.tag %}
+      {% include post-card.html %}
+    {% elsif include.category and post.categories contains include.category %}
+      {% include post-card.html %}
     {% endif %}
   {% endfor %}
 {% else %}
   {% for post in site.posts %}
-    {% include post.html %}
+    {% include post-card.html %}
   {% endfor %}
 {% endif %}
 

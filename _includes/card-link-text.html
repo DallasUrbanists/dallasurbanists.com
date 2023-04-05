@@ -1,0 +1,7 @@
+{% case post.categories.first %}
+    {% when "blog" %}
+Read more
+    {% when "podcast" %}
+Listen &amp; read episode notes
+    {% else %}
+{% endcase %}

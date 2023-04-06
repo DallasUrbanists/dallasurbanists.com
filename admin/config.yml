@@ -20,6 +20,15 @@ collections:
       - {label: "Cover Image", name: "cover_image", widget: "image"}
       - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: 'Author',
+          name: 'author',
+          widget: 'relation',
+          collection: 'authors',
+          display_fields: [display_name],
+          search_fields: [display_name],
+          value_field: 'name',
+        }
   - name: "tag"
     label: "Tag"
     folder: "tagged/"
@@ -29,5 +38,18 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "tag-feed"}
       - {label: "Tag Name (no spaces)", name: "tag_feed", widget: "string"}
-
-
+  - name: "authors"
+    label: "Authors"
+    folder: "authors"
+    output: false
+    create: true
+    editor:
+      preview: false
+    fields:
+    - { label: 'Short Name', name: 'name', widget: 'string' }
+    - { label: 'Display Name', name: 'display_name', widget: 'string' }
+    - { label: 'Email', name: 'email', widget: 'string' }
+    - { label: 'Twitter Handle', name: 'twitter', widget: 'string' }
+    - { label: 'Instagram Handle', name: 'instagram', widget: 'string' }
+    - { label: 'Reddit Handle', name: 'reddit', widget: 'string' }
+    - { label: 'Body', name: 'body', widget: 'markdown' }

@@ -12,6 +12,7 @@ recommended_actions:
   - [https://www.reddit.com/r/dart/comments/12c1gun/dart_meeting_about_state_legislation_regarding/, "Comment on Reddit", bi-reddit] 
 tags:
   - DART
+author: connor
 ---
 If you care about how much money is spent on public transit in your city, then you might want to tune in to the latest (April 4th) board meeting of Dallas Area Rapid Transit (DART). It might not be the most entertaining thing to do on a Tuesday night, but it's an excellent opportunity to learn about an issue that might impact you.
 

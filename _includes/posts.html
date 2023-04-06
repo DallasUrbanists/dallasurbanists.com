@@ -8,7 +8,9 @@
   {% endfor %}
 {% else %}
   {% for post in site.posts %}
-    {% include post-card.html %}
+    {% unless include.exclude == post %}
+      {% include post-card.html %}
+    {% endunless %}
   {% endfor %}
 {% endif %}
 

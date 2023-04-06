@@ -42,7 +42,7 @@ collections:
     label: "Authors"
     folder: "_authors/"
     slug: "{{name}}"
-    output: true
+    output: false
     create: true
     editor:
       preview: false

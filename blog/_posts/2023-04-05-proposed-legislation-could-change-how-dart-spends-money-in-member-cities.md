@@ -1,18 +1,21 @@
 ---
-layout: post
-title: Proposed Legislation Could Change How DART Spends Money in Member Cities
-subtitle: "Join the conversation. Watch the DART board meeting and share your
-  opinion on how proposed DART legislation could affect your community."
-date: 2023-04-05T16:31:47.296Z
-cover_image: /assets/cover_images/tdl-blog-cover.png
-jump_link: first-video
 jump_label: Jump to video
 jump_icon: bi-camera-video-fill
-recommended_actions:
-  - [https://www.reddit.com/r/dart/comments/12c1gun/dart_meeting_about_state_legislation_regarding/, "Comment on Reddit", bi-reddit] 
+layout: post
+jump_link: first-video
+title: Proposed Legislation Could Change How DART Spends Money in Member Cities
+author: connor
+subtitle: Join the conversation. Watch the DART board meeting and share your
+  opinion on how proposed DART legislation could affect your community.
+date: 2023-04-05T16:31:47.296Z
+cover_image: /assets/cover_images/tdl-blog-cover.png
 tags:
   - DART
 author: connor
+recommended_actions:
+  - - https://www.reddit.com/r/dart/comments/12c1gun/dart_meeting_about_state_legislation_regarding/
+    - Comment on Reddit
+    - bi-reddit
 ---
 If you care about how much money is spent on public transit in your city, then you might want to tune in to the latest (April 4th) board meeting of Dallas Area Rapid Transit (DART). It might not be the most entertaining thing to do on a Tuesday night, but it's an excellent opportunity to learn about an issue that might impact you.
 

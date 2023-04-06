@@ -1,9 +1,36 @@
 ---
 layout: default
+nav_theme: light
+nav_bg: "transparent"
+nav_logo: "/assets/inline-logo-and-wordmark-color.svg"
+body_bg_image: "/assets/tdl-media-bg.jpg"
 ---
 
-<h1 class="mb-5">Media</h1>
+<div class="container-fluid text-white  pb-5" style="min-height: 100vh; background-position: bottom;">
+  <div class="container-lg px-lg-5 text-center">
+    <h1 class="display-5 mb-4">
+      @ThisDallasLife Media
+    </h1>
 
-[By Way of Dallas](https://podcasters.spotify.com/pod/show/bywayofdallas) -- Available on [Spotify](https://open.spotify.com/show/4y48myrkLxKOIYt56n3fdq), [Google Podcasts](https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy9kYThjMDJhMC9wb2RjYXN0L3Jzcw?sa=X&ved=2ahUKEwinxqOnt4T-AhWpj2oFHUdeAkAQ9sEGegQIARAC), [Apple Podcasts](https://podcasts.apple.com/us/podcast/by-way-of-dallas/id1672072523), and most other podcast platforms.
-
-@thisdallaslife on [TikTok](https://www.tiktok.com/@thisdallaslife), [YouTube](https://www.youtube.com/@thisdallaslife), [Instagram](https://www.youtube.com/@thisdallaslife), and [Twitter](https://twitter.com/thisdallaslife).
+    <p>
+      <a href="https://www.tiktok.com/@thisdallaslife" class="btn btn-primary btn-lg">
+        <i class="bi bi-tiktok"></i>
+        TikTok</a>
+    </p>
+    <p>
+      <a href="https://www.instagram.com/thisdallaslife" class="btn btn-primary btn-lg">
+        <i class="bi bi-instagram"></i>
+        Instagram</a>
+    </p>
+    <p>
+      <a href="https://www.youtube.com/@thisdallaslife" class="btn btn-primary btn-lg">
+        <i class="bi bi-youtube"></i>
+        YouTube</a>
+    </p>
+    <p>
+      <a href="https://www.twitter.com/@thisdallaslife" class="btn btn-primary btn-lg">
+        <i class="bi bi-twitter"></i>
+        Twitter</a>
+    </p>
+  </div>
+</div>

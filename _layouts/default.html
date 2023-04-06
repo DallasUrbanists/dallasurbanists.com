@@ -63,7 +63,7 @@
     <link href="{{ "/styles.css" | relative_url }}" rel="stylesheet">
   </head>
 
-  <body class="bg-primary" style="{% if page.body_bg_image %}background-image: url({{ page.body_bg_image | relative_url }});{% endif %} %}">
+  <body class="bg-primary" style="{% if page.body_bg_image %}background-image: url({{ page.body_bg_image | relative_url }}); background-size: cover;{% endif %} %}">
     {% include nav.html %}
 
     <main class="">

@@ -5,7 +5,9 @@ nav_bg: "fade"
 ---
 {% for post in site.posts %}
   {% if post.tags contains "Featured" %}
-    {% assign featured_post = post %}
+    {% unless featured_post %}
+      {% assign featured_post = post %}
+    {% endunless %}
   {% endif %}
 {% endfor %}
 <div class="container-fluid bg-primary text-white shadow-lg pb-4" style="background-repeat: no-repeat; background-blend-mode: soft-light; background-size: cover;">

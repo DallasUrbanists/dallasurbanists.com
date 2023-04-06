@@ -132,6 +132,10 @@ img.muted {
     display: block;
 }
 
+.blog-article iframe {
+    width: 100%;
+}
+
 .text-glow {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f8f9fa, 0 0 40px #f8f9fa, 0 0 50px #f8f9fa, 0 0 60px #f8f9fa, 0 0 70px #f8f9fa;
 }

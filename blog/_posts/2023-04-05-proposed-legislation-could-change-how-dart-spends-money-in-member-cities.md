@@ -11,6 +11,7 @@ date: 2023-04-05T16:31:47.296Z
 cover_image: /assets/cover_images/9.png
 tags:
   - DART
+author: connor
 recommended_actions:
   - - https://www.reddit.com/r/dart/comments/12c1gun/dart_meeting_about_state_legislation_regarding/
     - Comment on Reddit
@@ -24,12 +25,12 @@ Paul Wageman, the board member representing the City of Plano, appears to be the
 
 [**Part of 1 of 2**](https://dart.swagit.com/play/04042023-772/9/)
 
-<iframe title="Swagit Video Player" width="640" height="360" src="https://dart.swagit.com/e/04042023-772/9/" frameborder="0" allowfullscreen id="first-video"></iframe>
+<iframe title="Swagit Video Player" height="360" src="https://dart.swagit.com/e/04042023-772/9/" frameborder="0" allowfullscreen id="first-video"></iframe>
 
 [**Part of 2 of 2**](https://dart.swagit.com/play/04042023-772/19/)
 
-<iframe title="Swagit Video Player" width="640" height="360" src="https://dart.swagit.com/e/04042023-772/19/" frameborder="0" allowfullscreen></iframe>
+<iframe title="Swagit Video Player" height="360" src="https://dart.swagit.com/e/04042023-772/19/" frameborder="0" allowfullscreen></iframe>
 
 For context, here is a report from 2019 illustrating the disparity between how much DART spent on public transit service in each city and how much each city contributed to DART.
 
-![Table of summary findings from Value of Transit Services (2019)](/assets/cover_images/screenshot-2023-04-05-112318.png "Table of summary findings from Value of Transit Services (2019)")
+![Table of summary findings from Value of Transit Services (2019)]({{ "assets/cover_images/screenshot-2023-04-05-112318.png" | relative_url }} "Table of summary findings from Value of Transit Services (2019)")

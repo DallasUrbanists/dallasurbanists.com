@@ -38,6 +38,9 @@ body {
     color: var(--bs-dark);
     display: inline-block;
     position: relative;
+    padding-right: 0.5em;
+}
+.lined-heading.text-center span {
     padding: 0 0.5em;
 }
 .lined-heading::before {
@@ -56,7 +59,15 @@ img.muted {
     transition-timing-function: ease-out;
 }
 
-.blog-listing:hover img.muted {
+.bg-muted-fill {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    filter: grayscale(100%);
+}
+
+.blog-listing:hover img.muted,
+.blog-listing:hover .bg-muted-fill {
     filter: grayscale(0%);
 }
 

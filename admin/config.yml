@@ -15,11 +15,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Cover Image", name: "cover_image", widget: "image"}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
       - {
           label: 'Author',
           name: 'author',
@@ -29,6 +24,11 @@ collections:
           search_fields: [display_name],
           value_field: 'name',
         }
+      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "tag"
     label: "Tag"
     folder: "tagged/"
@@ -40,8 +40,9 @@ collections:
       - {label: "Tag Name (no spaces)", name: "tag_feed", widget: "string"}
   - name: "authors"
     label: "Authors"
-    folder: "authors"
-    output: false
+    folder: "_authors/"
+    slug: "{{name}}"
+    output: true
     create: true
     editor:
       preview: false
@@ -49,7 +50,8 @@ collections:
     - { label: 'Short Name', name: 'name', widget: 'string' }
     - { label: 'Display Name', name: 'display_name', widget: 'string' }
     - { label: 'Email', name: 'email', widget: 'string' }
-    - { label: 'Twitter Handle', name: 'twitter', widget: 'string' }
-    - { label: 'Instagram Handle', name: 'instagram', widget: 'string' }
-    - { label: 'Reddit Handle', name: 'reddit', widget: 'string' }
+    - { label: 'Twitter Handle', name: 'twitter', widget: 'string', required: false  }
+    - { label: 'Instagram Handle', name: 'instagram', widget: 'string', required: false  }
+    - { label: 'Reddit Handle', name: 'reddit', widget: 'string', required: false  }
     - { label: 'Body', name: 'body', widget: 'markdown' }
+    - { label: "Photo", name: "photo", widget: "image", required: false }

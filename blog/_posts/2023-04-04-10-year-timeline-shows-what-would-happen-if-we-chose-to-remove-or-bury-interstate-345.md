@@ -6,6 +6,9 @@ subtitle: People forget how much life can change in a decade.
 date: 2022-07-14T05:44:01.973Z
 cover_image: /assets/cover_images/12.png
 header_blend_mode: multiply
+tags:
+  - I-345
+  - Pinned
 ---
 # People forget how much life can change in a decade.
 

@@ -5,19 +5,18 @@ layout: default
 
 <div class="container-fluid bg-primary text-white jumbo-cover" style="background-image: url({{ page.cover_image | relative_url }}); background-blend-mode: {{ page.header_blend_mode | default: "color" }};">
   <div class="container-lg px-lg-5">
-    <div class="row flex-lg-row align-items-center g-5 pt-4 pb-5">
+    <div class="row flex-lg-row align-items-center g-lg-5 pt-4 pb-5">
       <div class="col-lg-6">
         <h1 class="display-5 mb-0 text-white">{{ page.title }}</h1>
         <p class="text-light mb-4">
           <em>{{ page.date | date: "%B %-d, %Y" }}{% if page.author %}
-              • {{ page.author }}{% endif %}
-            {% 
- if page.meta %}
+              • {{ author.display_name }}{% endif %}
+            {% if page.meta %}
               • {{ page.meta }}{% endif %}
           </em>
         </p>
       </div>
-      <div class="col-10 col-sm-8 col-lg-6">
+      <div class="col-lg-6">
         <img
           src="{{ page.cover_image | relative_url }}"
           class="d-block mx-lg-auto img-fluid shadow-lg rounded"
@@ -64,22 +63,28 @@ layout: default
     </div>
     <div class="col-lg-5">
       <div class="row border rounded overflow-hidden">
-        <div class="col-8 p-4 text-secondary">
+        <div class="col-12 col-md-8 p-4 text-secondary">
           <h2 class="fs-5 text-secondary">{{ author.display_name }}</h2>
-          <p class="fs-7">{{ author.body | markdownify }}</p>
+          <p class="fs-7">{{ author.content | markdownify }}</p>
           <p class="fs-7">
-            <i class="bi bi-envelope-fill fs-5"></i> <a href="mailto:connor@thisdallaslife.com" class="link-secondary link-offset-2">connor@thisdallaslife.com</a><br>
-            <i class="bi bi-twitter fs-5"></i> <a href="https://twitter.com/AlternateConnor" class="link-secondary link-offset-2">@AlternateConnor</a><br>
-            <i class="bi bi-reddit fs-5"></i> <a href="https://www.reddit.com/user/cuberandgamer/" class="link-secondary link-offset-2">u/cuberandgamer</a>
-          </p>
+            <i class="bi bi-envelope-fill fs-5"></i> <a href="mailto:{{ author.email }}" class="link-secondary link-offset-2">{{ author.email }}</a><br>
+            {% if author.twitter %}
+              <i class="bi bi-twitter fs-5"></i> <a href="https://twitter.com/{{ author.twitter }}" class="link-secondary link-offset-2">{{ author.twitter }}</a><br>
+            {% endif %}
+            {% if author.instagram %}
+              <i class="bi bi-instagram fs-5"></i> <a href="https://www.instagram.com/{{ author.instagram | replace: '@', '' }}" class="link-secondary link-offset-2">{{ author.instagram }}</a><br>
+            {% endif %}
+            {% if author.reddit %}
+              <i class="bi bi-reddit fs-5"></i> <a href="https://www.reddit.com/{{ author.reddit }}" class="link-secondary link-offset-2">{{ author.reddit }}</a>
+            {% endif %}
+            </p>
         </div>  
-        <div class="col-4 p-0" style="background-image: url({{ author.photo | relative_url }}); background-repeat: none; background-size: cover; background-position: center center; filter: grayscale(100%);">
+        <div class="col-12 col-md-4 p-0" style="background-image: url({{ author.photo | relative_url }}); background-repeat: none; background-size: cover; background-position: center center; filter: grayscale(100%); min-height: 250px;">
         </div>
       </div>
     </div>
   </div>
   {% if page.embed_bottom %}
-  
   <iframe id="embed-bottom" src="{{ page.embed_bottom }}" class="mt-4" frameborder="0" allowfullscreen style="
     width: 100%;
     height: {{ page.embed_bottom_height | default: "100vh;" }}

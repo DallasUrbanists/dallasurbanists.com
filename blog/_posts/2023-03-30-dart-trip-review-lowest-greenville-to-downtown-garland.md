@@ -1,11 +1,13 @@
 ---
-layout:   post
-title:    "DART Trip Review: Lowest Greenville to Downtown Garland"
-subtitle: "Win! Taking transit between Lower Greenville and Downtown Garland is either as fast or faster than by car."
-date:     2023-03-30 08:00
-cover_image: "/assets/cover_images/dart-trip-review-lower-greenville-downtown-garland.webp"
-author:     "Hexel Colorado"
-tags: [DART]
+layout: post
+title: "DART Trip Review: Lowest Greenville to Downtown Garland"
+author: hexel
+subtitle: Win! Taking transit between Lower Greenville and Downtown Garland is
+  either as fast or faster than by car.
+date: 2023-03-30 08:00
+cover_image: /assets/cover_images/dart-trip-review-lower-greenville-downtown-garland.webp
+tags:
+  - DART
 ---
 
 This is my fifth in a series of trip plans across Dallas. I write these articles for transportation planners (who can read these articles as real-world data) and transit riders (who can learn useful tips).

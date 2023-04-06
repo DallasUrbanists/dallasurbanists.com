@@ -1,4 +1,4 @@
 ---
 layout: tag-feed
-tag_feed: housing
+tag_feed: Housing
 ---

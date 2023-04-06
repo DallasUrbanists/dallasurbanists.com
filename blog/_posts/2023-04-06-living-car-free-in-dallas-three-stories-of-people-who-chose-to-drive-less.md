@@ -6,6 +6,7 @@ subtitle: Episode 2 features stories of three people living car-free or
   car-light in Dallas.
 date: 2023-02-14T19:46:12.410Z
 cover_image: /assets/cover_images/podcast-ep2-cover.png
+embed_top: https://open.spotify.com/embed/episode/2y7V1eV6HabCPa7IqtyeQq?utm_source=generator&theme=0&t=0
 tags:
   - Podcast
   - Car-Dependency

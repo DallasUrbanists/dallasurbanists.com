@@ -74,8 +74,8 @@
       <div class="container text-center">
         <span class="text-body-secondary">
           Copyright &copy; 2023
-          {% if page.author %}
-            {{ page.author }},
+          {% if page.post.author %}
+            {{ page.post.author.display_name }},
           {% endif %}
           This Dallas Life
         </span>

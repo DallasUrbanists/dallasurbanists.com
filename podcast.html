@@ -3,6 +3,12 @@ layout: default
 nav_theme: dark
 nav_bg: "transparent"
 ---
+{% assign posts = site.posts | sort: "date" %}
+{% for post in posts %}
+  {% if post.tags contains "Podcast" %}
+    {% assign latest = post %}
+  {% endif %}
+{% endfor %}
 
 <div class="container-fluid d-flex flex-column justify-content-center align-items-center bg-dark jumbo-cover pb-5" style="background-image: url({{ "/assets/podcast-page-cover.jpg" | relative_url }}); background-size: cover; min-height: 90vh; background-position: center;">
   <h1 class="row display-1 mb-4 text-light text-center glamorous-heading">
@@ -12,15 +18,13 @@ nav_bg: "transparent"
     <div class="col col-12 col-lg-7 d-lg-block p-4">
       <span class="badge text-bg-primary mb-1">Latest Podcast Episode</span>
       <h2 class="mb-4 fs-4 text-white">
-        {% assign latest = site.categories.podcast.first %}
         {{ latest.title }}</h2>
       <p class="card-text mb-4 fs-6 text-light">
-        <em>Episode {{ latest.episode_number }}</em>
-        •
         <em>{{ latest.date | date: "%B %-d, %Y" }}</em>
-        &mdash;
-        {{ latest.description }}
-        <a href="{{ latest.url | prepend: site.baseurl }}" class="stretched-link link-light link-offset-3">Listen &amp; read episode notes</a>
+        &mdash; {{ latest.subtitle }}
+      </p>
+      <p card-text mb-4 fs-6 text-light>
+        <a href="{{ "/blog/2023/02/14/living-car-free-in-dallas-three-stories-of-people-who-chose-to-drive-less.html" | relative_url }}" class="stretched-link link-light link-offset-3">Listen &amp; read episode notes</a>
       </p>
     </div>
     <div class="col col-12 col-lg-5 d-flex flex-column position-static pt-lg-5 pb-4">
@@ -85,28 +89,29 @@ nav_bg: "transparent"
       <h1 class="text-center display-5 lined-heading mb-5">
         <span>All Episodes</span>
       </h1>
-      {% for post in site.categories.podcast %}
-        <div class="row g-4  position-relative  blog-listing pb-4" style="max-width: 1024px;">
-          <div class="col col-12 col-lg-6 d-lg-block p-4">
-            <h2 class="mb-1 fs-4 text-black">
-              {{ post.title }}</h2>
-            <p class="card-text mb-1 fs-6 text-dark">
-              <em>Episode {{ post.episode_number }}</em>
-              •
-              <em>{{ post.date | date: "%B %-d, %Y" }}</em>
-            </p>
-            {% include tag-links.html tags=post.tags %}
-            <p>
-              <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link link-dark link-offset-3">Listen &amp; read episode notes</a>
-            </p>
+      {% for post in site.posts %}
+        {% if post.tags contains "Podcast" %}
+          <div class="row g-4  position-relative  blog-listing pb-4" style="max-width: 1024px;">
+            <div class="col col-12 col-lg-6 d-lg-block p-4">
+              <h2 class="mb-1 fs-4 text-black">
+                {{ post.title }}</h2>
+              <p class="card-text mb-1 fs-6 text-dark">
+                <em>Episode {{ post.episode_number }}</em>
+                •
+                <em>{{ post.date | date: "%B %-d, %Y" }}</em>
+              </p>
+              <p>
+                <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link link-dark link-offset-3">Listen &amp; read episode notes</a>
+              </p>
+            </div>
+            <div class="col col-12 col-lg-6 p-4 d-flex flex-column position-static mt-0 pt-0">
+              <img
+                src="{{ post.cover_image }}"
+                class="d-block mx-lg-auto img-fluid shadow-lg muted rounded"
+                loading="lazy">
+            </div>
           </div>
-          <div class="col col-12 col-lg-6 p-4 d-flex flex-column position-static mt-0 pt-0">
-            <img
-              src="{{ post.cover_image }}"
-              class="d-block mx-lg-auto img-fluid shadow-lg muted rounded"
-              loading="lazy">
-          </div>
-        </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>

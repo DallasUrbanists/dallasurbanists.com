@@ -1,9 +1,8 @@
 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-white blog-listing">
   <div class="col col-12 col-lg-7 p-4 d-flex flex-column position-static">
     <h3 class="mb-2 fs-5">{{ post.title }}</h3>
-    <p class="card-text mb-2 text-body-secondary fs-6"><em>{{ post.date | date: "%B %-d, %Y" }}</em> {% if post.subtitle %} &mdash; {{ post.subtitle }}{% endif %}</p>
-    <p><strong class="mb-auto text-primary">{{ post.categories.first | capitalize }}</strong> • <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">{% include card-link-text.html %}
-    </a></p>
+    <p class="card-text mb-2 text-body-secondary fs-6"><em>{{ post.date | date: "%B %-d, %Y" }}</em> {% if post.subtitle %} &mdash; {{ post.subtitle }}{% endif %} <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">{% include card-link-text.html %}</a></p>
+    <p>{% include tag-links.html tags=post.tags  %}</p>
   </div>
   <div class="col col-12 col-lg-5 d-lg-block bg-secondary bg-muted-fill" style="background-image: url(
     {{ post.cover_image | relative_url }}

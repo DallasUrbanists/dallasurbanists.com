@@ -3,19 +3,24 @@ layout: default
 identity_snippet: true
 nav_bg: "fade"
 ---
-<div class="container-fluid bg-primary text-white shadow-lg pb-4" style="background-image: url({{ 'assets/this-dallas-life-featured-jumbo.png' | relative_url }}); background-repeat: no-repeat; background-size: cover;">
+{% for post in site.posts %}
+  {% if post.tags contains "Featured" %}
+    {% assign featured_post = post %}
+  {% endif %}
+{% endfor %}
+<div class="container-fluid bg-primary text-white shadow-lg pb-4" style="background-repeat: no-repeat; background-blend-mode: soft-light; background-size: cover;">
   <div class="container-lg px-lg-5">
-    <div class="row flex-lg-row align-items-center g-5 pt-4 pb-5">
+    <div class="row flex-lg-row align-items-center g-5 pt-4 pb-5 position-relative">
       <div class="col-lg-6">
         <span class="badge text-bg-primary mb-1">Featured Article</span>
-        <h1 class="display-5 mb-0 text-white glamorous-heading">DART Trip Review: Lowest Greenville to Downtown Garland</h1>
+        <h1 class="display-5 mb-0 text-white glamorous-heading">{{ featured_post.title }}</h1>
         <p class="text-light mb-4">
-          <em>April 3rd, 2023 • Hexel Colorado</em>
+          <em>{{ featured_post.date | date: "%B %-d, %Y" }}</em> • <a href="{{ featured_post.url | prepend: site.baseurl }}" class="stretched-link link-light link-offset-3">{% include card-link-text.html %}</a>
         </p>
       </div>
       <div class="col-12 col-lg-6 mt-0 mt-lg-5">
         <img
-          src="assets/cover_images/dart-trip-review-smu-shuttle.png"
+          src="{{ featured_post.cover_image | relative_url }}"
           class="d-block mx-lg-auto shadow-lg img-fluid rounded"
           loading="lazy">
       </div>

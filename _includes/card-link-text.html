@@ -1,7 +1,5 @@
-{% case post.categories.first %}
-    {% when "blog" %}
-Read more
-    {% when "podcast" %}
-Listen &amp; read episode notes
-    {% else %}
-{% endcase %}
+{% if post.tags contains "Podcast" %}
+    Listen to episode
+{% else %}
+    Read article
+{% endif %}

@@ -8,6 +8,7 @@ date: 2023-03-30 08:00
 cover_image: /assets/cover_images/6.png
 tags:
   - DART
+  - Featured
 ---
 This is my fifth in a series of trip plans across Dallas. I write these articles for transportation planners (who can read these articles as real-world data) and transit riders (who can learn useful tips).
 

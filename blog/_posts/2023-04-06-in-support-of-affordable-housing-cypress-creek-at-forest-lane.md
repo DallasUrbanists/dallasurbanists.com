@@ -10,6 +10,7 @@ tags:
   - Housing
   - Affordable-Housing
   - Public-Facility-Corporation
+  - Pinned
 ---
 My name is Hexel Colorado. I was born in Dallas, and I’ve lived in DFW all my life. I am a resident of the City of Dallas.
 

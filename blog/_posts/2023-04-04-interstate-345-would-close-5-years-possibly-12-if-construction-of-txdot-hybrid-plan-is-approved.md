@@ -6,7 +6,7 @@ author: hexel
 subtitle: TxDOT hides estimated construction time in feasibility study and never
   mentions its 5-year impact on traffic.
 date: 2022-07-07T05:00:00.000Z
-cover_image: /assets/cover_images/interstate-345-close.webp
+cover_image: /assets/cover_images/11.png
 ---
 # What’s the situation?
 

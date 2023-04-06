@@ -4,7 +4,7 @@ title: What I’m up to in March 2023
 author: hexel
 subtitle: If we met recently and you want to know what I’m up to, this article
   is for you.
-date: 2023-04-06T18:05:16.418Z
+date: 2023-02-27T19:05:16.418Z
 cover_image: /assets/cover_images/hexel-march-2023-update.png
 tags:
   - Personal

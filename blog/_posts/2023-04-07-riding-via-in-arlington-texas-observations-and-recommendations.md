@@ -4,7 +4,7 @@ title: "Riding Via in Arlington, Texas: Observations and Recommendations"
 author: hexel
 subtitle: Observations and recommendations for addressing issues with
   Arlington's mobility on-demand service.
-date: 2023-04-07T08:12:27.842Z
+date: 2023-04-10T17:33:26.242Z
 cover_image: /assets/cover_images/tdl-blog-cover-2-.png
 tags:
   - Via

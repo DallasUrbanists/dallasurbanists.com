@@ -6,6 +6,7 @@ subtitle: Observations and recommendations for addressing issues with
   Arlington's mobility on-demand service.
 date: 2023-04-10T17:33:26.242Z
 cover_image: /assets/cover_images/tdl-blog-cover-2-.png
+header_blend_mode: soft-light
 tags:
   - Via
   - Arlington
@@ -71,7 +72,7 @@ Currently, if a rider at CentrePort books a ride to UTA through Via, a van is di
 
 However, imagine if Via were to split the trip into two legs. The express bus could make only one other stop in front of Globe Life Field, resulting in 10- to 15-minute headways. This wait time is typical for pickups by Via, Uber, and Lyft at the station. The wait time could even be reduced by syncing the bus schedule with the arrival of TRE trains. Because the multi-modal trip is booked through the app, Via can dispatch the van to arrive at Globe Life Field just in time to receive the passenger for the 3-mile last leg to UTA. This approach would help reduce traffic congestion and make the trip more predictable for riders.
 
-![]()
+![](/assets/arlington-brt-png)
 
 By combining the multi-modal approach with my previous two recommendations, several benefits can be achieved:
 

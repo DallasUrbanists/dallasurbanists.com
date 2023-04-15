@@ -6,6 +6,12 @@ subtitle: Health professionals living in East Dallas need a direct connection to
   the Medical District that doesn't involve an hour-long downtown detour.
 date: 2023-04-15T23:22:07.581Z
 cover_image: /assets/cover_images/screenshot-2023-04-15-154122.png
+tags:
+  - DART
+  - Public-Transit
+  - Trip-Review
+  - East-Dallas
+  - Dallas-Medical-District
 ---
 # The Challenge
 

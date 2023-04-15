@@ -19,7 +19,7 @@ Many health professionals live in East Dallas and work or study at Medical Distr
 
 According to Google Maps, the 5-mile journey takes 26 minutes by car during rush hour. However, according to DART’s Trip Planner, the journey would take at least 50 minutes and require either 2 or 3 connections. Adding a buffer for traffic delays, performing this commute by transit could be over an hour each way every day.
 
-![](https://lh3.googleusercontent.com/keep-bbsk/AO8PoW11vxKAU7wkW5xL83dX8giT7h4geOZRfOyNab2kVIJ5Vs46Cq11xvACz2FL6nKS1FtL_64KaEPYhYczDq4nUt5DZV--nty6ftG7LVg-rk1YRFcN=s1600)
+![](/assets/cover_images/1.png)
 
 Fifty minutes is a ridiculous amount of time to travel just 5 miles. Bicycling would be the ultimate mode to travel such a distance; such a ride could be as fast as driving or faster due to rush hour traffic. Unfortunately, the only protected cycling facility between East Dallas and the Medical District is the Katy Trail, which runs north-south. Performing this journey by bicycle would mean cycling unprotected on-street for most of the trip.
 
@@ -27,11 +27,11 @@ Fifty minutes is a ridiculous amount of time to travel just 5 miles. Bicycling w
 
 Multiple issues cause the ridiculous transit time, the first being a lack of east-west connections. While several bus routes are running north-south connecting East Dallas and Downtown (shown in blue on the map below), only one Route is running east-west, connecting East Dallas, Uptown, and the Medical District (shown in pink on the map below). Although East Dallas residents can easily take a bus downtown without transfers, going to work in the Medical District requires one transfer minimum.
 
-![](https://lh3.googleusercontent.com/keep-bbsk/AO8PoW0P0OUesvd42lqA7IKj0gXSpdsiJJhIB0yDv3gxWKpGtRU0S69-oOeMJBllvCjBNW0SlXmC-P0KR6RE2msYqFEiuxGaPIDO3dpS3XQG0Q5HXBmQ=s1600)
+![](/assets/cover_images/dart-request-connect-east-west-2.png)
 
 The second issue is the distance between stations and final destinations (i.e., hospitals and university buildings). After health professionals transfer from their first bus in East Dallas to either a train (shown in black on the map below) or a second bus (shown in pink), they deboard at a rail station a mile or more away from their final destination. Transit commuters must either walk 20+ minutes or wait for and transfer to a third bus (shown in blue).
 
-![](https://lh3.googleusercontent.com/keep-bbsk/AO8PoW0y0Lb-KDf3WrvAmPlmLcuUpyugl7xc7A08Iwy2zgfZTnYW_HP8GGHeApJD04Ow-KJZAjv6DmebKUkO4W9k-SdIBx_8ey5hSgGC-KWUCsBgZumz=s1600)
+![](/assets/cover_images/dart-request-connect-east-west-3.png)
 
 # Suggested Solution
 

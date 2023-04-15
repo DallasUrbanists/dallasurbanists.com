@@ -29,7 +29,7 @@ Multiple issues cause the ridiculous transit time, the first being a lack of eas
 
 ![](https://lh3.googleusercontent.com/keep-bbsk/AO8PoW0P0OUesvd42lqA7IKj0gXSpdsiJJhIB0yDv3gxWKpGtRU0S69-oOeMJBllvCjBNW0SlXmC-P0KR6RE2msYqFEiuxGaPIDO3dpS3XQG0Q5HXBmQ=s1600)
 
-The second issue is the distance between stations and final destinations (i.e., hospitals and university buildings). After health professionals transfer from their first bus in East Dallas to either a train (shown in black on the map below) or a second bus (shown in pink), they deboard at a rail station a mile or more away from their final destination. Transit commuters must either walk 20+ minutes or wait for and transfer to yet another bus (shown in blue).
+The second issue is the distance between stations and final destinations (i.e., hospitals and university buildings). After health professionals transfer from their first bus in East Dallas to either a train (shown in black on the map below) or a second bus (shown in pink), they deboard at a rail station a mile or more away from their final destination. Transit commuters must either walk 20+ minutes or wait for and transfer to a third bus (shown in blue).
 
 ![](https://lh3.googleusercontent.com/keep-bbsk/AO8PoW0y0Lb-KDf3WrvAmPlmLcuUpyugl7xc7A08Iwy2zgfZTnYW_HP8GGHeApJD04Ow-KJZAjv6DmebKUkO4W9k-SdIBx_8ey5hSgGC-KWUCsBgZumz=s1600)
 

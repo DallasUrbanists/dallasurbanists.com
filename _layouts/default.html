@@ -65,6 +65,10 @@
 
     <!-- CUSTOM PRINT STYLESHEET -->
     <link href="{{ "/print.css" | relative_url }}" rel="stylesheet" media="print">
+
+    <!-- SOCIAL MEDIA META TAGS -->
+    {% include meta-tags.html %}
+
   </head>
 
   <body class="bg-primary" style="{% if page.body_bg_image %}background-image: url({{ page.body_bg_image | relative_url }}); background-size: cover;{% endif %} %}">

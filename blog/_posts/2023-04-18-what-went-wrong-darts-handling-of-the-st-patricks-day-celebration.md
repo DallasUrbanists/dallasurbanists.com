@@ -2,7 +2,7 @@
 layout: post
 title: "What Went Wrong: DART's Handling of the St. Patrick's Day Celebration"
 author: hexel
-subtitle: Ridership would have skyrocketed by now if it weren't the mountain of
+subtitle: Ridership would have skyrocketed by now if it weren't for the mountain of
   planning mistakes uncovered while volunteering for DART on one of the biggest
   transit days of the year.
 date: 2023-04-18T18:44:37.055Z
@@ -12,8 +12,6 @@ tags:
   - Public-Transit
 ---
 As someone who regularly uses public transportation and advocates for it, I enjoy volunteering to assist fellow riders and support the community. During the annual St. Patrick's Day Celebration in East Dallas, I volunteered to be a station greeter at Mockingbird Station. However, the experience did not go as smoothly as I had hoped. While I expected a few small issues with such a large event, I was surprised by the significant mistakes made by DART's professional planners, considering the event has taken place in the same location for decades. In this two-part series, I will detail the issues I observed during the event in Part One and provide solutions to these issues in Part Two.
-
-![]()
 
 # Why This Matters
 

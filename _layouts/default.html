@@ -80,6 +80,17 @@
 
     <footer class="footer pb-3 pt-5 bg-light">
       <div class="container text-center">
+        <form action="https://tinyletter.com/thisdallaslife" class="mb-5" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thisdallaslife', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+          <h1 class="display-6 lined-heading mb-2">
+            <span>Subscribe to our Weekly Digest</span>
+          </h1>
+          <p class="px-2">Receive just one email per week of urbanist news and content specifically catered to Dallas.</p>
+          <input type="hidden" value="1" name="embed"/>
+          <div class="input-group input-group mb-3 px-1" style="max-width: 720px;margin: 0 auto;">
+            <input type="email" name="email" id="tlemail" class="form-control" placeholder="Enter your email" aria-label="Email" aria-describedby="email-input-label">
+            <input type="submit" class="btn btn-primary rounded-end" type="button" id="subscribe-btn" value="Subscribe">
+          </div>
+        </form>
         <span class="text-body-secondary">
           Copyright &copy; 2023
           {% if page.post.author %}

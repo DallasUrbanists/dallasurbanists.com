@@ -30,25 +30,10 @@ nav_bg: "fade"
   </div>
 </div>
 
-<!--
-<div class="container-fluid bg-light">
-  <div class="container p-4 pt-5 bg-light text-center" style="max-width: 1024px;">
-    
-  </div>
-</div>
--->
-
 <div class="container-fluid bg-light">
   <div class="container-lg p-4 pt-5 bg-light">
     <div class="row">
       <div class="col-12 col-md-8 mb-5">
-        <h1 class="display-6 lined-heading mb-4">
-          <span>Recently Published</span>
-        </h1>
-        {% include posts.html exclude=featured_post %}
-      </div>
-      <div class="col-12 col-md-4 mb-5">
-
         <form action="https://tinyletter.com/thisdallaslife" class="mb-5" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thisdallaslife', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
           <h1 class="display-6 lined-heading mb-2">
             <span>Weekly Digest</span>
@@ -60,6 +45,14 @@ nav_bg: "fade"
             <input type="submit" class="btn btn-primary rounded-end" type="button" id="subscribe-btn" value="Subscribe">
           </div>
         </form>
+
+        <h1 class="display-6 lined-heading mb-4">
+          <span>Recently Published</span>
+        </h1>
+        {% include posts.html exclude=featured_post %}
+      </div>
+      <div class="col-12 col-md-4 mb-5">
+
 
         <h1 class="display-6 lined-heading mb-4">
           <span>Pinned</span>

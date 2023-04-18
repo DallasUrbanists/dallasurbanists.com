@@ -60,7 +60,7 @@ layout: default
       </div>
     </div>
   {% endif %}
-  <div class="container-lg row flex-lg-row mx-auto align-items-start g-5 pt-4 pb-5">
+  <div class="container-lg row flex-lg-row mx-auto align-items-start g-5 pt-4 pb-5 blog-article-parent-container">
     <div class="col-lg-7 p-lg-4 pt-lg-3">
       <article class="blog-article" style="max-width: 740px;">
         <!-- include tag-links.html tags=page.tags -->
@@ -71,7 +71,7 @@ layout: default
       </article>
     </div>
     <div class="col-lg-5">
-      <div class="row border rounded overflow-hidden">
+      <div class="row border rounded overflow-hidden author-card">
         <div class="col-12 col-md-8 p-4 text-secondary">
           <h2 class="fs-5 text-secondary">{{ author.display_name }}</h2>
           <p class="fs-7">{{ author.content | markdownify }}</p>
@@ -91,7 +91,7 @@ layout: default
         <div class="col-12 col-md-4 p-0" style="background-image: url({{ author.photo | relative_url }}); background-repeat: none; background-size: cover; background-position: center center; filter: grayscale(100%); min-height: 250px;">
         </div>
       </div>
-      <p class="my-4 fs-7">{% include tag-links.html tags=page.tags  %}</p>
+      <p class="my-4 fs-7 article-tags">{% include tag-links.html tags=page.tags  %}</p>
     </div>
   </div>
   {% if page.embed_bottom %}

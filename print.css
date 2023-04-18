@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@page {
+    margin-top: 0.75in;
+    margin-bottom: 0.75in;
+    margin-left: 0.75in;
+    margin-right: 0.75in;    
+}
+
+body {
+    font-family: 'Noto Serif', Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 10pt;
+    line-height: 1.3em;
+}
+
+.d-print-none {
+    display: none;
+}
+
+
+.jumbo-cover {
+    background-image: none !important;
+}
+
+.jumbo-cover .col-lg-6 {
+    width: 50%;
+    float: left;
+}
+
+.jumbo-cover h1 {
+    font-size: 2em;
+    line-height: 1.3em;
+    margin: 0;
+}
+
+.jumbo-cover h1 + p {
+    margin: 0;
+}
+
+.jumbo-cover img {
+    float: right;
+    margin: 0em 0 1em 1em;
+    width: 100%;
+}
+
+.blog-article {
+    clear: both;
+    margin: 0 auto;
+}
+
+.blog-article .lead {
+}
+
+.blog-article img {
+    display: block;
+    max-width: 75%;
+    margin: 1em auto;
+}
+
+.blog-article h1 {
+    clear: both;
+    margin: 0 auto 0.5em auto;
+    font-size: 1.25em;
+}
+
+.blog-article p {
+    margin-top: 0;
+}
+
+footer {
+    display: none;
+}
+
+.author-card {
+    overflow: hidden;
+    border-top: solid 1px #555;
+    margin-top: 3em;
+}
+
+.author-card a {
+    color: #000;
+    text-decoration: none;
+}
+.author-card .col-md-8 {
+    width: 75%;
+    float: left;    
+}
+
+.author-card .col-md-4 {
+    display: block;
+    width: 25%;
+    float: right;
+    overflow: hidden;
+    height: 100%;
+}
+
+.article-tags {
+    display: none;
+}

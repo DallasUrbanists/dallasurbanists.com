@@ -1,6 +1,18 @@
-<meta property="og:title" content="{{ page.title | default: 'This Dallas Life' }}">
+{% if page.title %}
+  {% assign meta_title = page.title | append: " | This Dallas Life" %}
+{% else %}
+  {% assign meta_title = "This Dallas Life" %}
+{% endif %}
+
+{% if page.subtitle %}
+  {% assign meta_description = page.subtitle %}
+{% else %}
+  {% assign meta_description = "A publication focused on urbanist topics such as walkability, housing, public transit, mobility, and sustainable city planning in the City of Dallas and the Greater Dallas area." %}
+{% endif %}
+
+<meta property="og:title" content="{{ meta_title }}">
 <meta property="og:type" content="article" />
-<meta property="og:description" content="{{ page.title| default: 'This Dallas Life' }}">
+<meta property="og:description" content="{{ meta_description }}">
 <meta property="og:image" content="{{ page.cover_image | absolute_url }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta name="twitter:card" content="summary_large_image">

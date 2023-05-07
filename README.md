@@ -19,7 +19,7 @@ and then open it in VS Code.
 
 Now that you have all the pieces, you'll bring it all together by opening the project in a Docker container.
 
- - Open the command palette (<kbd>Ctrl+Shift+P</kbd>) and start typing `Open Folder in Container...`. 
+ - Open the command palette (<kbd>Ctrl+Shift+P</kbd>) and start typing `Reopen in Container...`. 
  - Choose the command that matches that text (it may be prefixed with `Dev Containers` or `Remote-Containers`). 
     - VS Code will reopen and start creating a Docker container based on the configuration specified in [`.devcontainer/devcontainer.json`](https://github.com/ThisDallasLife/thisdallaslife.com/blob/main/.devcontainer/devcontainer.json). It may take a while, but once it finishes, you'll have everything needed to start developing!
 

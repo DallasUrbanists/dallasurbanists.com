@@ -6,12 +6,11 @@ subtitle: Don’t drive to Addison Circle (or at least not the whole way). Read
   this handy guide on buses, park-and-rides, and GoLink service to Addison
   Transit Center.
 date: 2023-07-03T04:02:51.936Z
-cover_image: /assets/cover_images/addison-transit-overview.png
+cover_image: /assets/cover_images/addison-bus-routes.png
 tags:
   - DART
+header_blend_mode: multiply
 ---
-![](https://lh3.googleusercontent.com/_PLq8CaNKdUCDonCOpziSGh1K_6nerX1FAi5AR4SP7a7W-kkcoH_B0YojrtZMHbMyswsFZbenmR1VRpRIs0rI1zQHvDkASeLtUMAhbdJvlnn3sHSNv7k2a2h2QdQ94plmdS8jMz_XNo-Otv_j90iAV0)
-
 Going to [Addison Kaboomtown on July 3rd](https://addisonkaboomtown.com/)? Don’t drive there! Parking is expensive and frustrating, and traffic gets so bad that it often takes over an hour to get out of the parking garage afterward.
 
 In this article, I’ll show you all the ways to skip traffic based on where you’re coming from. We’ll go over trains, buses, and park-and-rides. With several bus lines and multiple GoLink Zones, you might be surprised to learn you have a direct link to [Addison Transit Center](https://www.dart.org/guide/transit-and-use/rail/rail-station-detail/addison-transit-center) just outside your door. I’ll also explain how to use DART’s GoLink service to get an Uber for only $3 dollars!
@@ -21,6 +20,20 @@ In this article, I’ll show you all the ways to skip traffic based on where you
 I wrote this article because there are some details that DART’s website doesn’t explain well to new riders. For example, most people don’t know how [GoLink](https://www.google.com/search?q=dart+golink&oq=dart+golink&aqs=edge.0.0i20i263i512l2j0i512j69i59j0i273i650j0i512l3j69i60.1023j0j1&sourceid=chrome&ie=UTF-8) works. The official [Trip Planner](https://www.dart.org/trip/trip-planner/trip-planner-map) also doesn’t give great recommendations for Park & Ride. This article is meant to help you come up with a general strategy before using the DART Planner to fill in the details.
 
 For example, if you decide on parking at [Arapaho Center Station](https://goo.gl/maps/4oy9EGcdo2QRyJTUA) before taking the next available bus to Addison, you can use the [DART Trip Planner](https://www.dart.org/trip/trip-planner/trip-planner-map) for directions specifically between Arapaho Center and Addison Transit Center. You would then find driving directions from your home to Arapaho Center separately. This method often produces smarter results than if you just searched for directions from home to destination directly.
+
+* [From Addison](#from-addison)
+* [From Richardson](#from-richardson)
+* [From Carrollton](#from-carrollton)
+* [From Plano](#from-plano)
+* [From Farmers Branch](#from-farmers-branch)
+* [From Garland / Rowlett](#from-garland--rowlett)
+* [From Irving](#from-irving)
+* [From Northern Dallas](#from-northern-dallas)
+* [From Southern Dallas](#from-southern-dallas)
+* [GoLink Guide](#golink-guide)
+* [Bus Guide](#bus-guide)
+
+---
 
 # From Addison
 
@@ -74,7 +87,7 @@ If you use Uber or Lyft instead of driving your own car, it’s much cheaper and
 
 # From Plano
 
-![](https://lh4.googleusercontent.com/1TGdeUuVGD_Gq4Lj059iapanWVZSAv_CZaBuSOjTBl8c9ffkeadzVvv_g61HV4N95hNncth8Jt9Xw4osOzpcpNS_DmBS3NuJ6Z5CJMqSgtTuEPLzcWjN3-1jkSykehWMTMV1R_cclzwtRtxkPEykPKc)
+![](/assets/cover_images/plano-addison.png)
 
 **BUS:** if you live in [Plano Legacy West](https://goo.gl/maps/2T7166wfAa8XoGQdA), your best option is to ride [Bus 239](https://www.dart.org/guide/transit-and-use/bus-routes/bus-route-detail/bus-route-239-dallas-addison-nw-plano) to Addison from the [Northwest Plano Park & Ride](https://goo.gl/maps/Jn1xJU7B1cDbg1qz5).
 
@@ -185,6 +198,8 @@ Keep in mind that Google Maps does not provide all the same transit options as D
 * RED Line: [Westmoreland Station](https://goo.gl/maps/oP3yx5epHv1hzUns7), Hampton Station, and [8th & Corinth Station](https://goo.gl/maps/v7kgpEyhSvzm4TeE7)
 * GREEN Line: Buckner Station, Lake June Station, Lawnview Station, MLK Jr Station
 
+---
+
 # GoLink Guide
 
 [GoLink](https://www.dart.org/guide/transit-and-use/golink) works basically like Uber, with the following differences:
@@ -195,17 +210,17 @@ Keep in mind that Google Maps does not provide all the same transit options as D
 * On the app, you don’t have the option to schedule GoLink pickup in advance.
 * You can schedule GoLink pickup up to one hour in advance on the phone.
 
-**When should I place my GoLink order?**
+## When should I place my GoLink order?
 
 Pay attention to those last two points when planning to use the GoLink service. If you’re planning on using the GoLink service for a second leg of your trip (for example, if you want GoLink to pick you up from the station after your train arrives), then you’ll want to place the order about 10 minutes before you expect to arrive at the pickup location.
 
 Alternatively, you can call the GoLink number (214-515-7272) to order a pickup up to one hour in advance. Note that this method requires a one-time phone account setup, where you’ll be asked for payment information over the phone. I suggest calling the GoLink number to set up your phone account early to save time and frustration when you need to place an order later.
 
-**What hours does GoLink operate?**
+## What hours does GoLink operate?
 
 With few exceptions, GoLink is available 7 days a week from 5:00 am to midnight. Most fireworks shows, including Kaboomtown, end at 10:00 pm, giving you plenty of time to use GoLink for your return trip home.
 
-**What does GoLink pick up and drop off?**
+## Where does GoLink pick up and drop off?
 
 *IMPORTANT NOTE: THE ANSWER IS DIFFERENT FOR TRANSIT CENTERS & NON-TRANSIT CENTERS.*
 
@@ -213,7 +228,7 @@ When you are at a train station or transit center, there is a specific location 
 
 Outside of train stations and transit centers, you are picked up and dropped off at the curb in front of your location (or as close as the vehicle can get). For example, if you are being picked up from your apartment complex, you should expect the driver to arrive and wait on the street in front of your apartments. Note that drivers will not go inside gates or access controls.
 
-**What will the GoLink vehicle look like?**
+## What will the GoLink vehicle look like?
 
 This can be tricky. Sometimes, you’ll be picked up by a white GoLink-branded van, which is easy to spot. Sometimes, you’re picked up by a cab company contracted by DART. Although they don’t look like DART’s white vans, they’ll be recognizable as taxi vans.
 
@@ -228,18 +243,20 @@ Because of these challenges, it’s important to do the following:
 * Always double check you have the correct driver before entering the vehicle.
 * Be patient with the drivers; some technical issues with the GoLink service make it a challenge for them to be as punctual as they might be with normal customers.
 
+---
+
 # Bus Guide
 
-**How do I pay for the bus fare?**
+## How do I pay for the bus fare?
 
 See the [DART website](https://www.dart.org/fare/general-fares-and-overview/fares) for full details about fares. The short answer is that you can buy passes using the GoPass app or at station ticket vending machines.
 
 I recommend downloading and setting up the GoPass app on your phone in advance. The ticket machines at stations are notoriously clunky and slow. You can purchase multiple passes on the app for when you’re traveling as a family.
 
-**Where’s my bus?**
+## Where’s my bus?
 
 Use the GoPass app to find your bus's status and real-time location. Especially with traffic-disrupting events, it’s typical for buses to be 5 to 15 minutes late.
 
-**What hours do buses run?**
+## What hours do buses run?
 
 Buses run until midnight. Limited train service operates until ~1:30 am. The fireworks show ends at 10:00 pm, giving you plenty of time to use transit to return home or to your vehicle parked at a station.

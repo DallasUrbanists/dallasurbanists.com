@@ -26,24 +26,24 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/assets/favicons/apple-touch-icon.png">
+      href="/assets/favicons/apple-touch-icon.png" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/assets/favicons/favicon-32x32.png">
+      href="/assets/favicons/favicon-32x32.png" />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+      href="/assets/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
     <link
       rel="mask-icon"
       href="/assets/favicons/safari-pinned-tab.svg"
-      color="#0b2a8b">
-    <meta name="msapplication-TileColor" content="#f8f9fa">
-    <meta name="theme-color" content="#f8f9fa">
+      color="#0b2a8b" />
+    <meta name="msapplication-TileColor" content="#f8f9fa" />
+    <meta name="theme-color" content="#f8f9fa" />
 
     <!-- BOOTSTRAP -->
     <link
@@ -51,20 +51,20 @@
       rel="stylesheet"
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
       crossorigin="anonymous"
-      media="screen">
+      media="screen" />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
       crossorigin="anonymous"></script>
 
     <!-- BOOTSTRAP ICONS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous" />
 
     <!-- CUSTOM STYLES -->
-    <link href="{{ "/styles.css" | relative_url }}" rel="stylesheet" media="screen">
+    <link href="{{ "/styles.css" | relative_url }}" rel="stylesheet" media="screen" />
 
     <!-- CUSTOM PRINT STYLESHEET -->
-    <link href="{{ "/print.css" | relative_url }}" rel="stylesheet" media="print">
+    <link href="{{ "/print.css" | relative_url }}" rel="stylesheet" media="print" />
 
     <!-- SOCIAL MEDIA META TAGS -->
     {% include meta-tags.html %}
@@ -87,8 +87,8 @@
           <p class="px-2">Receive just one email per week of urbanist news and content specifically catered to Dallas.</p>
           <input type="hidden" value="1" name="embed"/>
           <div class="input-group input-group mb-3 px-1" style="max-width: 720px;margin: 0 auto;">
-            <input type="email" name="email" id="tlemail" class="form-control" placeholder="Enter your email" aria-label="Email" aria-describedby="email-input-label">
-            <input type="submit" class="btn btn-primary rounded-end" type="button" id="subscribe-btn" value="Subscribe">
+            <input type="email" name="email" id="tlemail" class="form-control" placeholder="Enter your email" aria-label="Email" aria-describedby="email-input-label" />
+            <input type="submit" class="btn btn-primary rounded-end" id="subscribe-btn" value="Subscribe" />
           </div>
         </form>
         <span class="text-body-secondary">
@@ -100,6 +100,16 @@
         </span>
       </div>
     </footer>
+
+    <script>
+      const el = document.querySelector(".sticky-top")
+      const observer = new IntersectionObserver( 
+        ([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
+        { threshold: [1] }
+      );
+
+      observer.observe(el);
+    </script>
   </body>
 
 </html>

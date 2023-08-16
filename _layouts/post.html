@@ -92,19 +92,18 @@ meta_type: "article"
       <div class="col-md-8  p-4">
         <strong>Written by {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</strong>
         {{ author.content | markdownify }}
-        <p><nobr>
-          <i class="bi bi-envelope-fill fs-5"></i> <a href="mailto:{{ author.email }}" class="link-secondary link-offset-2">{{ author.email }}</a> &nbsp;<wbr />
+        <p>
+          <nobr><i class="bi bi-envelope-fill fs-5"></i> <a href="mailto:{{ author.email }}" class="link-secondary link-offset-2">{{ author.email }}</a></nobr>&nbsp;
           {% if author.twitter %}
-            <i class="bi bi-twitter fs-5"></i> <a href="https://twitter.com/{{ author.twitter }}" class="link-secondary link-offset-2">{{ author.twitter }}</a> &nbsp;<wbr />
+          <nobr><i class="bi bi-twitter fs-5"></i> <a href="https://twitter.com/{{ author.twitter }}" class="link-secondary link-offset-2">{{ author.twitter }}</a></nobr>&nbsp;
           {% endif %}
           {% if author.instagram %}
-            <i class="bi bi-instagram fs-5"></i> <a href="https://www.instagram.com/{{ author.instagram | replace: '@', '' }}" class="link-secondary link-offset-2">{{ author.instagram }}</a> &nbsp;<wbr />
+          <nobr><i class="bi bi-instagram fs-5"></i> <a href="https://www.instagram.com/{{ author.instagram | replace: '@', '' }}" class="link-secondary link-offset-2">{{ author.instagram }}</a></nobr>&nbsp;
           {% endif %}
           {% if author.reddit %}
-            <i class="bi bi-reddit fs-5"></i> <a href="https://www.reddit.com/{{ author.reddit }}" class="link-secondary link-offset-2">{{ author.reddit }}</a> &nbsp;<wbr />
+          <nobr><i class="bi bi-reddit fs-5"></i> <a href="https://www.reddit.com/{{ author.reddit }}" class="link-secondary link-offset-2">{{ author.reddit }}</a></nobr>&nbsp;
           {% endif %}
           </p>
-        </nobr>
       </div>
     </div>
 

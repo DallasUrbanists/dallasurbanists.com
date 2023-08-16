@@ -1,7 +1,6 @@
 ---
 layout: default
 identity_snippet: true
-nav_bg: "fade"
 ---
 {% for post in site.posts %}
   {% if post.tags contains "Featured" %}
@@ -10,55 +9,58 @@ nav_bg: "fade"
     {% endunless %}
   {% endif %}
 {% endfor %}
-<div class="container-fluid bg-primary text-white shadow-lg pb-4" style="background-repeat: no-repeat; background-blend-mode: soft-light; background-size: cover;">
-  <div class="container-lg px-lg-5">
-    <div class="row flex-lg-row align-items-center g-5 pt-4 pb-5 position-relative">
-      <div class="col-lg-6">
-        <span class="badge text-bg-primary mb-1">Featured Article</span>
-        <h1 class="display-5 mb-0 text-white glamorous-heading">{{ featured_post.title }}</h1>
-        <p class="text-light mb-4">
-          <em>{{ featured_post.date | date: "%B %-d, %Y" }}</em> • <a href="{{ featured_post.url | prepend: site.baseurl }}" class="stretched-link link-light link-offset-3">{% include card-link-text.html %}</a>
-        </p>
-      </div>
-      <div class="col-12 col-lg-6 mt-0 mt-lg-5">
-        <img
-          src="{{ featured_post.cover_image | relative_url }}"
-          class="d-block mx-lg-auto shadow-lg img-fluid rounded"
-          loading="lazy">
-      </div>
+<div class="container-lg p-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-top position-relative">
+    <div class="col-lg-8">
+      <h1 class="display-6">
+        <a href="{{ featured_post.url | prepend: site.baseurl }}" class="stretched-link link-dark link-underline-opacity-0">{{ featured_post.title }}</a>
+      </h1>
+      <p class="mb-4">
+        <em>{{ featured_post.date | date: "%B %-d, %Y" }}</em>
+        &mdash; {{ featured_post.subtitle }}
+      </p>
+    </div>
+    <div class="col-12 col-lg-4">
+      <img
+        src="{{ featured_post.cover_image | relative_url }}"
+        class="d-block mx-lg-auto img-fluid rounded"
+        loading="lazy">
     </div>
   </div>
 </div>
 
-<div class="container-fluid bg-light">
-  <div class="container-lg p-4 pt-5 bg-light">
-    <div class="row">
-      <div class="col-12 col-md-8 mb-5">
-        <form action="https://tinyletter.com/thisdallaslife" class="mb-5" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thisdallaslife', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
-          <h1 class="display-6 lined-heading mb-2">
-            <span>Weekly Digest</span>
-          </h1>
-          <p class="px-2">Receive just one email per week of urbanist news and content specifically catered to Dallas.</p>
-          <input type="hidden" value="1" name="embed"/>
-          <div class="input-group input-group mb-3 px-1">
-            <input type="email" name="email" id="tlemail" class="form-control" placeholder="Enter your email" aria-label="Email" aria-describedby="email-input-label">
-            <input type="submit" class="btn btn-primary rounded-end" type="button" id="subscribe-btn" value="Subscribe">
-          </div>
-        </form>
+<div class="container-lg p-4">
+  <div class="row">
+    <div class="col-12 col-md-8 mb-5">
+      {% include lined-heading.html text = "Recent" %}
+      {% include post-cards.html exclude=featured_post limit=3 %}
+      {% include more-button.html path = "/blog" label = "See more recent content" %}
+    </div>
+    <div class="col-12 col-md-4 mb-5">
 
-        <h1 class="display-6 lined-heading mb-4">
-          <span>Recently Published</span>
-        </h1>
-        {% include posts.html exclude=featured_post %}
-      </div>
-      <div class="col-12 col-md-4 mb-5">
+      <form {% include newsletter-form-attributes.html %}>
+        {% include lined-heading.html text = "Newsletter" %}
+        {% include newsletter-input.html %}
+      </form>
 
-
-        <h1 class="display-6 lined-heading mb-4">
-          <span>Pinned</span>
-        </h1>
-        {% include posts-pinned.html %}
-      </div>
+      {% include lined-heading.html text = "Popular" %}
+      {% include post-list.html exclude=featured_post tag = "Pinned" %}
+    </div>
+  </div>
+  <div class="row my-4">
+    {% include impact-image.html path = "assets/tdl-about-jumbo-bg.jpg" %}
+    <div class="container-md p-4 text-center" style="max-width: 40em;">
+      <h1 class="display-6">
+        <span>About</span>
+      </h1>
+      <p>
+        <em>This Dallas Life</em>
+        is a publication focused on urbanist topics (walkability, housing, public transit, mobility, and sustainable city planning) in the City of Dallas and the Greater Dallas area. Our purpose is to promote thoughtful and informed discussions about urban issues in the region. This publication includes written articles, short-form videos on TikTok, and the
+        <em>By Way of Dallas</em>
+        podcast.</p>
+      <p>
+        <a href="{{ "/about" | relative_url }}" class="link-dark link-offset-3">Learn more</a>
+      </p>
     </div>
   </div>
 </div>

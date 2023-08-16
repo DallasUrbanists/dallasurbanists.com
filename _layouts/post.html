@@ -4,30 +4,17 @@ meta_type: "article"
 ---
 {% assign author = site.authors | where: 'name', page.author | first %}
 
-<div class="container-fluid bg-primary text-white jumbo-cover" style="background-image: url({{ page.cover_image | relative_url }}); background-blend-mode: {{ page.header_blend_mode | default: "color" }};">
-  <div class="container-lg px-lg-5">
-    <div class="row flex-lg-row align-items-center g-lg-5 pt-4 pb-5">
-      <div class="col-lg-6">
-        <h1 class="display-5 mb-0 text-white">{{ page.title }}</h1>
-        <p class="text-light mb-4">
-          <em>{{ page.date | date: "%B %-d, %Y" }}{% if page.author %}
-              • {{ author.display_name }}{% endif %}
-            {% if page.meta %}
-              • {{ page.meta }}{% endif %}
-          </em>
-        </p>
-      </div>
-      <div class="col-lg-6">
-        <img
-          src="{{ page.cover_image | relative_url }}"
-          class="d-block mx-lg-auto img-fluid shadow-lg rounded"
-          loading="lazy">
-      </div>
-    </div>
+<div class="container-lg p-4 pt-2">
+  {% include impact-image.html path = page.cover_image %}
+  <div class="container text-center" style="max-width: 40em;">
+    <h1 class="display-6 mt-4">{{ page.title }}</h1>
+    <p class="mb-4">
+      <em>By {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</em>
+    </p>
   </div>
 </div>
 
-<div class="container-fluid bg-light p-0">
+<div class="container-fluid">
   {% if page.embed_top %}
     <div class="embed-top">
       <div class="container-lg py-0 px-3 px-lg-5">
@@ -61,40 +48,26 @@ meta_type: "article"
       </div>
     </div>
   {% endif %}
-  <div class="container-lg row flex-lg-row mx-auto align-items-start g-5 pt-4 pb-5 blog-article-parent-container">
-    <div class="col-lg-7 p-lg-4 pt-lg-3">
-      <article class="blog-article" style="max-width: 740px;">
-        <!-- include tag-links.html tags=page.tags -->
-        <p class="lead">
-          <em>{{ page.subtitle }}</em>
-        </p>
+
+  <div class="container-fluid row justify-content-center blog-article-parent-container mb-4">
+    <div class="col-md-6">
+      <article class="blog-article mb-5">
         {{ content }}
       </article>
     </div>
-    <div class="col-lg-5">
-      <div class="row border rounded overflow-hidden author-card">
-        <div class="col-12 col-md-8 p-4 text-secondary">
-          <h2 class="fs-5 text-secondary">{{ author.display_name }}</h2>
-          {{ author.content | markdownify }}
-          <p class="fs-7">
-            <i class="bi bi-envelope-fill fs-5"></i> <a href="mailto:{{ author.email }}" class="link-secondary link-offset-2">{{ author.email }}</a><br>
-            {% if author.twitter %}
-              <i class="bi bi-twitter fs-5"></i> <a href="https://twitter.com/{{ author.twitter }}" class="link-secondary link-offset-2">{{ author.twitter }}</a><br>
-            {% endif %}
-            {% if author.instagram %}
-              <i class="bi bi-instagram fs-5"></i> <a href="https://www.instagram.com/{{ author.instagram | replace: '@', '' }}" class="link-secondary link-offset-2">{{ author.instagram }}</a><br>
-            {% endif %}
-            {% if author.reddit %}
-              <i class="bi bi-reddit fs-5"></i> <a href="https://www.reddit.com/{{ author.reddit }}" class="link-secondary link-offset-2">{{ author.reddit }}</a>
-            {% endif %}
-            </p>
-        </div>  
-        <div class="col-12 col-md-4 p-0" style="background-image: url({{ author.photo | relative_url }}); background-repeat: none; background-size: cover; background-position: center center; filter: grayscale(100%); min-height: 250px;">
-        </div>
-      </div>
-      <p class="my-4 fs-7 article-tags">{% include tag-links.html tags=page.tags  %}</p>
+  </div>
+
+  <!--
+    <div class="col-12 col-md-8 p-4 text-secondary">
+      
+    </div>  
+    <div class="col-12 col-md-4 p-0" style="background-image: url({{ author.photo | relative_url }}); background-repeat: none; background-size: cover; background-position: center center; filter: grayscale(100%); min-height: 250px;">
     </div>
   </div>
+    <div class="col-lg-5">
+      <p class="my-4 fs-7 article-tags">{% include tag-links.html tags=page.tags  %}</p>
+    </div>
+
   {% if page.embed_bottom %}
   <iframe id="embed-bottom" src="{{ page.embed_bottom | url_encode }}" class="mt-4" frameborder="0" allowfullscreen style="
     width: 100%;
@@ -103,3 +76,53 @@ meta_type: "article"
   </a>
   {% endif %}
 </div>
+-->
+
+  <!-- Author Footer -->
+  
+  <div class="container-fluid my-4 mb-5">
+    <div class="row border rounded">
+    <!-- Author Details -->
+    <div class="col-md-6 row">
+      <!-- Author Photo-->
+      <div class="col-md-4 p-4">
+        <img class="img-fluid rounded" src="{{ author.photo | relative_url }}">
+      </div>
+      <!-- Author Bio-->
+      <div class="col-md-8  p-4">
+        <strong>Written by {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</strong>
+        {{ author.content | markdownify }}
+        <p><nobr>
+          <i class="bi bi-envelope-fill fs-5"></i> <a href="mailto:{{ author.email }}" class="link-secondary link-offset-2">{{ author.email }}</a> &nbsp;<wbr />
+          {% if author.twitter %}
+            <i class="bi bi-twitter fs-5"></i> <a href="https://twitter.com/{{ author.twitter }}" class="link-secondary link-offset-2">{{ author.twitter }}</a> &nbsp;<wbr />
+          {% endif %}
+          {% if author.instagram %}
+            <i class="bi bi-instagram fs-5"></i> <a href="https://www.instagram.com/{{ author.instagram | replace: '@', '' }}" class="link-secondary link-offset-2">{{ author.instagram }}</a> &nbsp;<wbr />
+          {% endif %}
+          {% if author.reddit %}
+            <i class="bi bi-reddit fs-5"></i> <a href="https://www.reddit.com/{{ author.reddit }}" class="link-secondary link-offset-2">{{ author.reddit }}</a> &nbsp;<wbr />
+          {% endif %}
+          </p>
+        </nobr>
+      </div>
+    </div>
+
+    <!-- Author Articles -->
+    <div class="col-md-6  p-4">
+      {% assign author_posts_limit = 5 %}
+      {% assign author_posts_shown = 0 %}
+      {% assign author_posts = site.posts | where: "author", author.name %}
+
+      {% for post in author_posts %}
+        {% if author_posts_shown > author_posts_limit %}
+          {% break %}
+        {% endif %}
+        {% unless page.title == post.title %}
+          {% include post-listing.html post=post %}
+          {% assign author_posts_shown = author_posts_shown | plus:1 %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+  </div>

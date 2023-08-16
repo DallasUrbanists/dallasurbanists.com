@@ -1,11 +1,7 @@
-<nav class="navbar d-print-none navbar-expand-lg
-    {% if page.cover_image or page.body_bg_image or page.nav_bg %}{% else %}bg-primary{% endif %}
-    {% if page.nav_bg == 'semitransparent' %}bg-semitransparent{% endif %}
-    {% if page.nav_bg == 'fade' %}bg-fade{% endif %}"
-    data-bs-theme="{{ page.nav_theme | default: 'dark' }}">
+<nav class="navbar d-print-none navbar-expand-lg" data-bs-theme="{{ page.nav_theme | default: 'light' }}">
     <div class="container-lg">
         <a class="navbar-brand" href="{{ "/" | relative_url }}" style="max-width: 50%;">
-            <img class="m-3" src="{{ page.nav_logo | default: '/assets/inline-logo-and-wordmark-white.svg' | relative_url }}" alt="This Dallas Life" width="250" style="max-width: 100%;">
+            <img class="m-3" src="{{ page.nav_logo | default: '/assets/inline-logo-and-wordmark-color.svg' | relative_url }}" alt="This Dallas Life" width="250" style="max-width: 100%;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

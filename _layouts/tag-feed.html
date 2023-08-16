@@ -1,4 +1,14 @@
 ---
-layout: feed
-heading: "Tagged: "
+layout: default
+num_of_cards: 3
 ---
+
+<div class="container-fluid px-lg-5 py-5">
+    <div class="mx-auto" style="max-width: 1024px;">
+        <h1 class="text-center display-5 lined-heading mb-4">
+            <span>Topic: {{ page.tag_feed }}</span>
+        </h1>
+        {% include post-cards.html tag=page.tag_feed limit=layout.num_of_cards %}
+        {% include post-list.html tag=page.tag_feed offset=layout.num_of_cards %}
+    </div>
+</div>

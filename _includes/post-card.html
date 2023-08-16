@@ -1,12 +1,15 @@
-<div class="row g-0 border rounded overflow-hidden flex-column-reverse flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-white blog-listing">
-  <div class="col col-12 col-lg-7 p-4 d-flex flex-column position-static">
-    <h3 class="mb-2 fs-5">{{ post.title }}</h3>
-    <p class="card-text mb-2 text-body-secondary fs-6"><em>{{ post.date | date: "%B %-d, %Y" }}</em> {% if post.subtitle %} &mdash; {{ post.subtitle }}{% endif %} <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">{% include card-link-text.html %}</a></p>
-    <p>{% include tag-links.html tags=post.tags  %}</p>
+<div class="row overflow-hidden flex-column flex-md-row-reverse mb-2 h-md-250 position-relative blog-listing py-4 py-md-2">
+  <div class="col col-12 col-lg-8">
+    <h3 class="mb-2 fs-5">
+      <a href="{{ post.url | prepend: site.baseurl }}" class="link-dark link-underline-opacity-0 stretched-link">{{ post.title }}</a>
+    </h3>
+    <p class="card-text mb-2 text-body-secondary fs-6 ">
+      <em>{{ post.date | date: "%B %-d, %Y" }}</em>
+      {% if post.subtitle %}
+        &mdash; {{ post.subtitle }}{% endif %}
+    </p>
   </div>
-  <div class="col col-12 col-lg-5 d-lg-block bg-secondary bg-muted-fill" style="background-image: url(
-    {{ post.cover_image | relative_url }}
-  )">
-    <img class="img-fluid muted d-lg-none" src="{{ post.cover_image | relative_url }}">
+  <div class="col col-12 col-lg-4">
+    <img class="img-fluid muted rounded" src="{{ post.cover_image | relative_url }}">
   </div>
 </div>

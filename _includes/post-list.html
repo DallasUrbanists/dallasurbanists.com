@@ -1,0 +1,36 @@
+{% assign shown_posts = 0 %}
+
+{% for post in site.posts %}
+  
+  {% if include.limit %}
+    {% if shown_posts == include.limit %}
+      {% break %}
+    {% endif %}
+  {% endif %}
+
+  {% if include.tag %}
+    {% if post.tags contains include.tag %}
+        {% assign show_post = true %}
+    {% else %}
+        {% assign show_post = false %}
+    {% endif %}
+{% else %}
+    {% assign show_post = true %}
+  {% endif %}
+
+  {% if include.exclude == post %}
+    {% assign show_post = false %}
+  {% endif %}
+
+  {% if show_post %}
+    {% if include.offset %}
+      {% if shown_posts > include.offset %}
+        {% include post-listing.html post=post %}
+      {% endif %}
+    {% else %}
+      {% include post-listing.html post=post %}
+    {% endif %}
+    {% assign shown_posts = shown_posts | plus: 1 %}
+  {% endif %}
+
+{% endfor %}

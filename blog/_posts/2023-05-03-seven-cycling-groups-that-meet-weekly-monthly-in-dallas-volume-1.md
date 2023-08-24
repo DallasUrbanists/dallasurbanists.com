@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: episode
 title: Seven Cycling Groups That Meet Weekly/Monthly in Dallas (Volume 1)
 author: bywayofdallas
 subtitle: First volume of bicycle groups that meet regularly in Dallas. Whether
@@ -7,7 +7,8 @@ subtitle: First volume of bicycle groups that meet regularly in Dallas. Whether
   making friends, then there's a cycling group for you.
 date: 2023-05-03T06:04:22.944Z
 cover_image: /assets/cover_images/podcast-cover-photos.png
-embed_top: https://open.spotify.com/embed/episode/6j7hBUNzNqZrrUiDztI4UG?utm_source=generator&theme=0
+spotify_code: 6j7hBUNzNqZrrUiDztI4UG
+episode_number: 3
 tags:
   - Cycling
   - Podcast
@@ -16,18 +17,20 @@ tags:
 ---
 Whether you're looking for free and fun activities, want outdoor exercise, or like making friends, then there's a cycling group for you. In this episode, we look at the seven cycling groups that meet every week or every month in Dallas. We'll go over where they meet, what they’re like, and how to join. The full schedule is in the show notes and on our website, [ThisDallasLife.com](https://thisdallaslife.com/about). This episode – released at the beginning of National Bike Month – is the first volume of active cycling groups in Dallas. Volume 2 will be released later in May.
 
-* **CRITICAL MASS** is a popular social ride that gathers every last Friday of the month, 7pm at [Dallas Farmers Market](https://goo.gl/maps/TBeZHJK25pq2iojU7?coh=178572&entry=tt).
-* **TITS TUESDAYS** is a women-led social ride that gathers every Tuesday 7:30 pm at [Lakewood Whole Foods Market, 2118 Abrams Road](https://goo.gl/maps/zFCsWYfwZj4BHrMA9?coh=178572&entry=tt).
-* **FEMME PEDALE** is a women-only social ride that gathers every Thursday 7pm near Baylor. Visit the [Facebook Group for Femme Pedale](https://www.facebook.com/groups/1446319438975034).
-* **SHIFTY FREEWHEELERS** is a weekly social ride that gathers every Monday 7pm at [Cold Beer Company, 3600 Main Street](https://goo.gl/maps/WzpYSShSgE1nfbFZ9?coh=178572&entry=tt).
-* **MONDAY MASH** is a fast-pace training ride that gathers every Monday 7pm at [Exposition Plaza, 269 Exposition Ave](https://goo.gl/maps/PQDgW3Mf2qqHvEFL7?coh=178572&entry=tt).
-* **DALLAS BICYCLE TOURS, THAI TEMPLE RIDE** is a social ride that gathers every 3rd Sunday 10:45 am starting at [Cold Beer Company, 3600 Main Street](https://goo.gl/maps/WzpYSShSgE1nfbFZ9?coh=178572&entry=tt) and destined for [Buddhist Temple of Dallas, 8484 Stults Rd](https://goo.gl/maps/3VLQ1KJvz9TQgriHA?coh=178572&entry=tt). Visit [DallasBicycleTours.com](https://www.dallasbicycletours.com/).
-* **DALLAS BICYCLE TOURS, WHITE ROCK LAKE RIDE** is a social ride that gathers every 4th Sunday 10:45 am starting at the parking lot of [Dallas Bike Works, 4875 W Lawther Dr](https://goo.gl/maps/5i4CxXUiP78e7bs86?coh=178572&entry=tt). Visit [DallasBicycleTours.com](https://www.dallasbicycletours.com/).
-* **BIKE FRIENDLY SOUTH DALLAS** is a non-profit that hosts a social ride every Saturday 10am at [We-Cycle Resource Center, 1616 Al Lipscomb Way](https://goo.gl/maps/bzecsXE939FD9KKp7?coh=178572&entry=tt). Visit [BikeFriendlySouthDallas.org](https://bikefriendlysouthdallas.org/). 
+* **Critical Mass** is a popular social ride that gathers every last Friday of the month, 7pm at [Dallas Farmers Market](https://goo.gl/maps/TBeZHJK25pq2iojU7?coh=178572&entry=tt).
+* **TITS Tuesdays** is a women-led social ride that gathers every Tuesday 7:30 pm at [Lakewood Whole Foods Market, 2118 Abrams Road](https://goo.gl/maps/zFCsWYfwZj4BHrMA9?coh=178572&entry=tt).
+* **Femme Pedale** is a women-only social ride that gathers every Thursday 7pm near Baylor. Visit the [Facebook Group for Femme Pedale](https://www.facebook.com/groups/1446319438975034).
+* **Shifty Freewheelers** is a weekly social ride that gathers every Monday 7pm at [Cold Beer Company, 3600 Main Street](https://goo.gl/maps/WzpYSShSgE1nfbFZ9?coh=178572&entry=tt).
+* **Monday Mash** is a fast-pace training ride that gathers every Monday 7pm at [Exposition Plaza, 269 Exposition Ave](https://goo.gl/maps/PQDgW3Mf2qqHvEFL7?coh=178572&entry=tt).
+* **Dallas Bicycle Tours, Thai Temple Ride** is a social ride that gathers every 3rd Sunday 10:45 am starting at [Cold Beer Company, 3600 Main Street](https://goo.gl/maps/WzpYSShSgE1nfbFZ9?coh=178572&entry=tt) and destined for [Buddhist Temple of Dallas, 8484 Stults Rd](https://goo.gl/maps/3VLQ1KJvz9TQgriHA?coh=178572&entry=tt). Visit [DallasBicycleTours.com](https://www.dallasbicycletours.com/).
+* **Dallas Bicycle Tours, White Rock Lake Ride** is a social ride that gathers every 4th Sunday 10:45 am starting at the parking lot of [Dallas Bike Works, 4875 W Lawther Dr](https://goo.gl/maps/5i4CxXUiP78e7bs86?coh=178572&entry=tt). Visit [DallasBicycleTours.com](https://www.dallasbicycletours.com/).
+* **Bike Friendly South Dallas** is a non-profit that hosts a social ride every Saturday 10am at [We-Cycle Resource Center, 1616 Al Lipscomb Way](https://goo.gl/maps/bzecsXE939FD9KKp7?coh=178572&entry=tt). Visit [BikeFriendlySouthDallas.org](https://bikefriendlysouthdallas.org/). 
 
-# 1. CRITICAL MASS
+---
 
-> CRITICAL MASS is a popular social ride that gathers every last Friday of the month, 7pm at [Dallas Farmers Market](https://goo.gl/maps/TBeZHJK25pq2iojU7?coh=178572&entry=tt).
+# Critical Mass
+
+> Critical Mass is a popular social ride that gathers every last Friday of the month, 7pm at [Dallas Farmers Market](https://goo.gl/maps/TBeZHJK25pq2iojU7?coh=178572&entry=tt).
 
 People start gathering at 7pm; ride begins at 8pm. No registration or signup is required; people just show up! One of the most passionate cyclists you’ll see at every Critical Mass ride is Jose Benitez.
 
@@ -65,9 +68,11 @@ An unexpected side-effect of the group ride was a change in Allysa’s perspecti
 
 **Allysa Kruger:** *“Doesn't seem to be like one type of person. I see a lot of different varieties of people who seem to be coming from like lots of diversity within the group, within their styles, within just like the people they are, and I haven't talked to all of them, but you can just tell that it's a huge diverse group. I would think that a lot of groups within Dallas, or just any city, if I go there, I'm probably gonna see that type of people. But the cool thing about this group is you can tell… the diversity within them. And so I've got to mingle and meet some of the community here. And they're all great, super friendly, super welcoming.*
 
-# 2. TITS TUESDAYS
+---
 
-> TITS TUESDAYS is a women-led social ride that gathers every Tuesday 7:30 pm at [Lakewood Whole Foods Market, 2118 Abrams Road](https://goo.gl/maps/zFCsWYfwZj4BHrMA9?coh=178572&entry=tt).
+# TITS Tuesdays
+
+> TITS Tuesdays is a women-led social ride that gathers every Tuesday 7:30 pm at [Lakewood Whole Foods Market, 2118 Abrams Road](https://goo.gl/maps/zFCsWYfwZj4BHrMA9?coh=178572&entry=tt).
 
 **Bekah Kornblum:** *“This bike ride is called TITS Tuesday. It is an acronym for Time-In-The-Saddle. It is historically a women-only ride and then they wanted to open it up. So it is a women led ride. But encouraging women to get on bikes is still very much a part of this ride. It meets at the Lakewood Whole Foods every Tuesday, rain or shine unless it's down pouring. It's definitely, I would say beginner; maybe not, like, true beginner, but it’s an introductory social ride for sure.”*
 
@@ -83,9 +88,11 @@ Bekah describes the impact of TITS on her social life.
 
 **Bekah Kornblum:** *“I really wanted to lead a social ride. That was a goal of mine last year, 2022. I really wanted to lead TITS and I think I posted it on the Facebook group, like, ‘Hey, I'm interested in leading. How do I sign up?’ And they were like, ‘Oh my gosh, here's the calendar. Pick a date.’ Super supportive. They helped me. They're like, ‘You should create an event so you can promote it and you should message the whole group so that people know.’ Because I mentioned it was my first time leading – Hexel, you were there – a lot of people came out and supported me in that and kind of gave me tips on projecting my voice and being confident and keeping the group together and setting a good route. It’s a very supportive group of people and  I am a more confident rider because of the other cyclists around me. I've made amazing friends and had a lot of good times on the TITS ride.”*
 
-# 3. FEMME PEDALE
+---
 
-> FEMME PEDALE is a women-only social ride that gathers every Thursday 7pm near Baylor. Visit the [Facebook Group for Femme Pedale](https://www.facebook.com/groups/1446319438975034).
+# Femme Pedale
+
+> Femme Pedale is a women-only social ride that gathers every Thursday 7pm near Baylor. Visit the [Facebook Group for Femme Pedale](https://www.facebook.com/groups/1446319438975034).
 
 Femme Pedale meets weekly on Thursdays at 7:00 pm. While its counterpart, TITS Tuesdays, is a women-led ride open to all genders, Femme Pedale is a private club providing a safe space for women-identifying cyclists.
 
@@ -97,7 +104,7 @@ Visit the Facebook group for Femme Pedale to join their Thursday ride.
 
 As mentioned earlier in the episode, different cycling groups in Dallas take turns leading the Critical Mass on the last Friday of the month. When I spoke with Gretchen for this podcast, Femme Pedale was getting ready to lead Critical Mass.
 
-**Gretchen Allen:** *“This is our second year to lead critical mass. Kind of nervous, but I think it'll be fun. We usually choose February because it's cold and we want a smaller crowd.”*
+**Gretchen Allen:** *“This is our second year to lead Critical Mass. Kind of nervous, but I think it'll be fun. We usually choose February because it's cold and we want a smaller crowd.”*
 
 I asked Gretchen what women may need for their first meetup, and what they can expect during the ride. I also asked how she learned about the group. Like many people featured in this podcast, Gretchen learned about Femme Pedale by word-of-month at another cycling event.
 
@@ -107,9 +114,11 @@ Debunking the assumption that you need to be a hardcore cyclist before joining a
 
 **Gretchen Allen:** *“Oh yeah, totally. I was new. I think my first social ride was with TITS and that's a women led group. And I showed up, didn't know a soul, and I met people and I was new and I wasn't a very good cyclist, but I saw other people that were doing it and I thought, you know what? If they can do it, I can do it. So that instilled this fire and I wanted to meet more people and I just started cycling all the time that I could. Every time I could, I was out. Wow, there are so many fun memories, but I think one of my very favorite ones was just a beautiful small group, and then we ended up on a patio and we all were just chatting and going around the circle and getting to know one another, and that is just such a lost art. I think with women, we try to one up each other and there was none of that. It was all encouraging and it's still that way to this day. We all just wanna get to know you and encourage one. It's a safe place you can gripe and moan about your boyfriend, your girlfriend, and you know we love you anyway. The bike community in Dallas, especially among women, is like none other.”*
 
-# 4. SHIFTY FREEWHEELERS
+---
 
-> SHIFTY FREEWHEELERS is a weekly social ride that gathers every Monday 7pm at [Cold Beer Company, 3600 Main Street](https://goo.gl/maps/WzpYSShSgE1nfbFZ9?coh=178572&entry=tt).
+# Shifty Freewheelers
+
+> Shifty Freewheelers is a weekly social ride that gathers every Monday 7pm at [Cold Beer Company, 3600 Main Street](https://goo.gl/maps/WzpYSShSgE1nfbFZ9?coh=178572&entry=tt).
 
 **Miso Ryu:** *“Shifty Freewheelers’ regular ride is on Monday nights and currently we're meeting here at Cold Beer Company, which happens to be kind of the favorite watering hole for a bunch of us cyclists because they're very friendly toward cyclists. We can bring our bikes onto the patio; they're very welcoming of us. So we meet here on Monday nights for our regular weekly rides, and we people start meeting here around seven o'clock and we try to roll out by 7:30. But usually we end up rolling out around 7:45 PM. The speed is slightly faster than your run of the mill social ride. We will go usually between 11 to 13 miles per hour. So we've been trying to push it a little bit so that it would be just a hair faster than the typical social rides, but a little more leisurely than the training rides.”*
 
@@ -121,9 +130,11 @@ It was through the pandemic that she became the frequent organizer that we know 
 
 **Miso Ryu:** *“I went to my first Shifty Freewheelers ride in October of 2020, and I started riding with them pretty regularly. And at some point, Martin, who was one of the founders of the ride, always led the Shifty Freewheelers ride on Mondays. His dad had a stroke and so he ended up moving in with his parents and taking care of his dad and just started riding less and less. And so we were not having regular Monday night rides anymore. So I kinda started taking it upon myself to make sure that we were riding on Monday nights. And then he reached out and thanked me for continuing it and, you know, asked me to continue it as long as I would want to. And he appreciated my effort. So I really liked it. I kind of continued the tradition. But the group had a very regular route that was pretty much written every Monday, and I've kind of changed that a little bit. I don't always lead, but I will coordinate with other people to come up with different routes. But it's a pretty casual group. We tend to be a little bit on the smaller side than some of the other group rides, but we like it that way because we can kind of do what we want and then we always socialize afterward, either here or Bryan Street Tavern for their half price pizzas. It's always a good time and we are also very welcoming and a good mix of people.”* 
 
-# 5. MONDAY MASH
+---
 
-> MONDAY MASH is a fast-pace training ride that gathers every Monday 7pm at [Exposition Plaza, 269 Exposition Ave](https://goo.gl/maps/PQDgW3Mf2qqHvEFL7?coh=178572&entry=tt).
+# Monday Mash
+
+> Monday Mash is a fast-pace training ride that gathers every Monday 7pm at [Exposition Plaza, 269 Exposition Ave](https://goo.gl/maps/PQDgW3Mf2qqHvEFL7?coh=178572&entry=tt).
 
 **Jose Benitez:** *“I lead Monday Mash, which is a very fast ride. It's basically a training ride. Just know we want you to push yourself. That is the whole focus of this Monday Mash training. You wanna push yourself to the max. Monday Mash meets every Monday at seven o'clock at Exposition Plaza, right here in Dallas."*
 
@@ -135,23 +146,25 @@ Jose explains how the Monday Mash ride works.
 
 **Jose Benitez:** *“Our average speeds are from 17 to 19 miles an. We ride for 20 miles with checkpoints. So when I say checkpoints, the checkpoints are basically spots that we meet. So we will go for about two or three miles, you give it your all, and that's where we all meet at the end of a checkpoint. You'll catch your breath for about 30 seconds, and then we wait for you to push yourself again for another two to three miles. So the whole thing is you could get left behind, but we never make a turn without you, so you'll never actually get left behind. This is the ride where if you want to race and you wanna get better, we're there to show you how. And the only way you get better is riding with people who are better than you.”*
 
-**Jose Benitez:** *“I'm not the fastest myself on this ride that I created. I have team members that run faster than me, but that's what makes me play every day is the challenge of beating my own friends. What's life without a little bit of losing, you know? A little bit of a challenge. So Monday MASH is that for yourself. If you want to push yourself to the limit and see what you can do on a bicycle – road bike, track bike, mountain bike, I don't care what you're on, bring what you got – but understand, we want you to push yourself. If you're not there to push yourself, it's one of the rides that you should stay away from because it will intimidate you. But if you do wanna be a part of it, then this is how you get faster.”* 
+**Jose Benitez:** *“I'm not the fastest myself on this ride that I created. I have team members that run faster than me, but that's what makes me play every day is the challenge of beating my own friends. What's life without a little bit of losing, you know? A little bit of a challenge. So Monday Mash is that for yourself. If you want to push yourself to the limit and see what you can do on a bicycle – road bike, track bike, mountain bike, I don't care what you're on, bring what you got – but understand, we want you to push yourself. If you're not there to push yourself, it's one of the rides that you should stay away from because it will intimidate you. But if you do wanna be a part of it, then this is how you get faster.”* 
 
-# 6. DALLAS BICYCLE TOURS
+---
 
-> **THAI TEMPLE RIDE** is a social ride that gathers every 3rd Sunday 10:45 am starting at [Cold Beer Company, 3600 Main Street](https://goo.gl/maps/WzpYSShSgE1nfbFZ9?coh=178572&entry=tt) and destined for [Buddhist Temple of Dallas, 8484 Stults Rd](https://goo.gl/maps/3VLQ1KJvz9TQgriHA?coh=178572&entry=tt). Visit [DallasBicycleTours.com](https://www.dallasbicycletours.com/).
+# Dallas Bicycle Tours
+
+> **Thai Temple Ride** is a social ride that gathers every 3rd Sunday 10:45 am starting at [Cold Beer Company, 3600 Main Street](https://goo.gl/maps/WzpYSShSgE1nfbFZ9?coh=178572&entry=tt) and destined for [Buddhist Temple of Dallas, 8484 Stults Rd](https://goo.gl/maps/3VLQ1KJvz9TQgriHA?coh=178572&entry=tt). Visit [DallasBicycleTours.com](https://www.dallasbicycletours.com/).
 >
-> **WHITE ROCK LAKE RIDE** is a social ride that gathers every 4th Sunday 10:45 am starting at the parking lot of [Dallas Bike Works, 4875 W Lawther Dr](https://goo.gl/maps/5i4CxXUiP78e7bs86?coh=178572&entry=tt). Visit [DallasBicycleTours.com](https://www.dallasbicycletours.com/).
+> **White Rock Lake Ride** is a social ride that gathers every 4th Sunday 10:45 am starting at the parking lot of [Dallas Bike Works, 4875 W Lawther Dr](https://goo.gl/maps/5i4CxXUiP78e7bs86?coh=178572&entry=tt). Visit [DallasBicycleTours.com](https://www.dallasbicycletours.com/).
 
 **Heather Cohen:** *“I started a company for local riders. It's kind of a love project, a passion project to introduce cycling to people that are traveling to Dallas. So we kind of give them a little city tour, take 'em around and combine that with some history and some local art of some of our favorite sites and places. I'm a Dallas-native, born and raised here, so it's important to me to showcase our city in the best way possible to those visiting and then also to any friends that would like to ride.*"
 
-Dallas Bicycle Tours hosts two free monthly bicycle rides: the Thai Temple ride every third Sunday and the White Rock Lake Ride every fourth Sunday. Both rides gather at 10:45 in the morning and roll out at 11:00 am. Like many groups in this episode, the Thai Temple Ride gathers at Cold Beer Company in Deep Ellum every third Sunday. It’s a 12-mile journey to the temple. The group rides on the Santa Fe Trail, White Rock Lake Trail, and White Rock Creek Trail. Every Sunday, the Buddhist temple has an outdoor food market.
+Dallas Bicycle Tours hosts two free monthly bicycle rides: the Thai Temple Ride every third Sunday and the White Rock Lake Ride every fourth Sunday. Both rides gather at 10:45 in the morning and roll out at 11:00 am. Like many groups in this episode, the Thai Temple Ride gathers at Cold Beer Company in Deep Ellum every third Sunday. It’s a 12-mile journey to the temple. The group rides on the Santa Fe Trail, White Rock Lake Trail, and White Rock Creek Trail. Every Sunday, the Buddhist temple has an outdoor food market.
 
 **Heather Cohen:** *“All the proceeds go to the vendors there and you can get anything from sticky rice to bone noodles to a fish. You can get amazing food there. It's cash only and all the proceeds are benefiting them and what they do, and everything's locally made and it's a great cause.”*
 
 After a delicious lunch, the group returns to their starting point on the reverse journey. (Side note: if you want to avoid biking 12 miles back to Cold Beer Company, you can bring your bicycle on the train at the DART Forest Lane Station, practically next door to the Buddhist Temple).
 
-The other Dallas Bicycle Tour that Heather organizes is the White Rock Lake Ride every fourth Saturday. The White Rock Lake ride gathers at the Bike Works parking lot on Lawther Road at 10:45 am and rolls out at 11:00 am. The trail ride around the lake is approximately 10 miles.
+The other Dallas Bicycle Tour that Heather organizes is the White Rock Lake Ride every fourth Saturday. The White Rock Lake Ride gathers at the Bike Works parking lot on Lawther Road at 10:45 am and rolls out at 11:00 am. The trail ride around the lake is approximately 10 miles.
 
 I asked Heather about how she started cycling. Like many, the pandemic was a big reason Heather started spending more time in the saddle.
 
@@ -159,9 +172,11 @@ I asked Heather about how she started cycling. Like many, the pandemic was a big
 
 In addition to hosting free social rides for free, Dallas Bicycle Tours also offer twenty-dollar bike rentals. You can visit their website, DallasBicycleTours.com, to read about and purchase tickets for special tours, such as their Deep Ellum, Downtown, and Fair Park tour. Dallas Bicycle Tours also offers twenty-dollar bicycle rentals for Critical Mass.
 
-# 7. BIKE FRIENDLY SOUTH DALLAS
+---
 
-> BIKE FRIENDLY SOUTH DALLAS is a non-profit that hosts a social ride every Saturday 10am at [We-Cycle Resource Center, 1616 Al Lipscomb Way](https://goo.gl/maps/bzecsXE939FD9KKp7?coh=178572&entry=tt). Visit [BikeFriendlySouthDallas.org](https://bikefriendlysouthdallas.org/). 
+# Bike Friendly South Dallas
+
+> Bike Friendly South Dallas is a non-profit that hosts a social ride every Saturday 10am at [We-Cycle Resource Center, 1616 Al Lipscomb Way](https://goo.gl/maps/bzecsXE939FD9KKp7?coh=178572&entry=tt). Visit [BikeFriendlySouthDallas.org](https://bikefriendlysouthdallas.org/). 
 
 I spoke with Taisha “TK” Hobbs (president) and Ashley Fletcher (founder and executive director) of Bike Friendly South Dallas. I asked them to first describe what Bike Friendly South Dallas is.
 

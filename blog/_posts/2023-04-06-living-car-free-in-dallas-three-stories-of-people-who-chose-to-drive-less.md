@@ -1,12 +1,12 @@
 ---
-layout: post
+layout: episode
 title: "Living Car Free in Dallas: Three Stories of People Who Chose To Drive Less"
 author: bywayofdallas
 subtitle: Episode 2 features stories of three people living car-free or
   car-light in Dallas.
 date: 2023-02-14T19:46:12.410Z
 cover_image: /assets/cover_images/podcast-ep2-cover.png
-embed_top: https://open.spotify.com/embed/episode/2y7V1eV6HabCPa7IqtyeQq?utm_source=generator&theme=0&t=0
+spotify_code: 2y7V1eV6HabCPa7IqtyeQq
 tags:
   - Podcast
   - Car-Dependency
@@ -14,6 +14,7 @@ tags:
   - Car-Light
   - Public-Transit
   - DART
+episode_number: 2
 ---
 What's it like living in Dallas without a car? For whom is a car-free or car-light lifestyle possible? If we must have a car in Dallas, are there ways we can drive less in our daily lives? This episode features stories of three people living in Dallas without a car.
 

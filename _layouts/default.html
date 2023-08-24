@@ -4,7 +4,29 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title | default: "This Dallas Life" }}</title>
+    <title>
+      {% if page.title and page.title != '' %}
+        {% assign meta_title = page.title | append: " | This Dallas Life" %}
+      {% elsif page.tag_feed and page.tag_feed != '' %}
+        {% capture meta_title %}
+          Blog posts about {{ page.tag_feed }} | This Dallas Life
+        {% endcapture %}
+      {% else %}
+        {% assign meta_title = "This Dallas Life" %}
+      {% endif %}
+      {{ meta_title }}
+    </title>
+
+    {% if page.description and page.description != '' %}
+      {% assign meta_description = page.description %}
+    {% elsif page.subtitle and page.subtitle != '' %}
+      {% assign meta_description = page.subtitle %}
+    {% else %}
+      {% capture meta_description %}
+        A blog about urbanism walkability, housing, public transportation, and sustainable city planning in the City of Dallas and the Greater Dallas area. Our purpose is to promote thoughtful and informed discussions about urban issues in the DFW Metroplex.
+      {% endcapture %}
+    {% endif %}
+    <meta name="description" content="{{ meta_description }}">
 
     <!-- LIGHTBOX PLUGIN -->
     <link href="{{ "/assets/plugins/lightbox/css/lightbox.css" | relative_path }}" rel="stylesheet" />
@@ -80,7 +102,12 @@
       media="print" />
 
     <!-- SOCIAL MEDIA META TAGS -->
-    {% include meta-tags.html %}
+    <meta property="og:title" content="{{ meta_title }}">
+    <meta property="og:type" content="{{ page.meta_type | default: "website"}}" />
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta property="og:image" content="https://thisdallaslife.com{{ page.cover_image | default: "/assets/tdl-social-share-1600x900.png" }}">
+    <meta property="og:url" content="https://thisdallaslife.com{{ page.url }}">
+    <meta name="twitter:card" content="summary_large_image">
 
   </head>
 

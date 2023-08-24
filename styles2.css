@@ -136,6 +136,18 @@ img.muted {
     display: block;
 }
 
+article.blog-article > ul {
+    padding: 0em 1em;
+}
+article.blog-article > ul li {
+    padding-left: 1em;
+    margin-bottom: 1em;
+    list-style-position: outside;
+    list-style-type: disclosure-closed;
+    margin-left: 0;
+}
+
+
 .blog-article iframe {
     width: 100%;
 }
@@ -177,7 +189,9 @@ img.muted {
     }
 
     .navbar-collapse.collapse.show, .navbar-collapse.collapsing {
-        background-color: var(--bs-primary);
+        text-align: center;
+        padding: 1em;
+        background-color: #ffffff;
         margin-left: -12px;
         margin-right: -12px;
     }

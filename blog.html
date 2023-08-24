@@ -1,5 +1,15 @@
 ---
-layout: feed
-heading: All Articles
-category_feed: blog
+layout: default
+num_of_cards: 3
+title: Blog
 ---
+
+<div class="container-fluid px-lg-5 py-5">
+    <div class="mx-auto" style="max-width: 1024px;">
+        <h1 class="text-center display-5 lined-heading mb-4">
+            <span>Blog</span>
+        </h1>
+        {% include post-cards.html limit=page.num_of_cards %}
+        {% include post-list.html offset=page.num_of_cards %}
+    </div>
+</div>

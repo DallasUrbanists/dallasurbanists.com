@@ -1,10 +1,53 @@
 ---
-layout: post
+layout: default
+meta_type: "article"
 ---
+{% assign author = site.authors | where: 'name', page.author | first %}
 
-{%- comment -%}
-This template is here in case we want to do something different for podcast episode pages.
-Right now, it looks the exact same as a page that has the `post` layout. Maybe we rename that layout to `blog-post`?
-{%- endcomment -%}
+<div class="container-lg p-4 pt-2">
+  <div id="embed-iframe" style="display: block; margin: 0 auto; border-radius: 1em; padding: 0; max-height: 60vh; width: auto; max-width: 100%;"></div>
+</div>
 
-{{ content }}
+<div class="container-fluid row justify-content-center blog-article-parent-container mb-4">
+  <div class="col-md-6">
+    <article class="blog-article mb-5">
+      {{ content }}
+    </article>
+  </div>
+</div>
+
+<div class="container-lg my-4 mb-5">
+  <div class="row border rounded justify-content-center">
+    <!-- Author Photo-->
+    <div class="col-md-4 p-4">
+      <img class="img-fluid rounded" src="{{ author.photo | relative_url }}">
+    </div>
+
+    <!-- Author Articles -->
+    <div class="col-md-8 p-4">
+      {% assign author_posts = site.posts | where: "author", author.name %}
+
+      {% for post in author_posts %}
+        {% if page.title == post.title %}
+          <p><b>Episode {{ post.episode_number }}: {{ post.title }}</b>
+          &mdash; {{ post.date | date: "%B %-d, %Y" }}</p>
+        {% else %}
+          <p><a class="link-dark link-offset-3" href="{{ post.url | prepend: site.baseurl }}">Episode {{ post.episode_number }}: {{ post.title }}</a>
+          &mdash; {{ post.date | date: "%B %-d, %Y" }}</p>
+        {% endif % %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script src="https://open.spotify.com/embed-podcast/iframe-api/v1" async></script>
+<script>
+  window.onSpotifyIframeApiReady = (IFrameAPI) => {
+    const element = document.getElementById('embed-iframe');
+    const options = {
+      uri: 'spotify:episode:{{ page.spotify_code }}'
+    };
+    const callback = (EmbedController) => {};
+    IFrameAPI.createController(element, options, callback);
+  };
+</script>

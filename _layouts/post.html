@@ -104,3 +104,22 @@ meta_type: "article"
     </div>
   </div>
   </div>
+
+  <!-- LIGHTBOX PLUGIN -->
+  <script>
+    let postImages = document.querySelectorAll("article.blog-article img");
+
+    postImages.forEach((img) => {
+      let linkWrapper = document.createElement("a");
+      linkWrapper.setAttribute("data-lightbox", "post-image");
+      linkWrapper.setAttribute("href", img.getAttribute("src"));
+      img.parentNode.insertBefore(linkWrapper, img);
+      linkWrapper.appendChild(img);
+    });
+  </script>
+  <script src="{{ "/assets/plugins/lightbox/js/lightbox-plus-jquery.min.js" | relative_path }}"></script>
+  <script>
+    lightbox.option({
+      'resizeDuration': 200
+    });
+  </script>

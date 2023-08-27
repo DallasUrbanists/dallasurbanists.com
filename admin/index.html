@@ -1,14 +1,102 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
-  <title>Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-<body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Content Manager</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link href="/assets/editor-styles.css" rel="stylesheet" />
+    <style>
+      div[data-slate-editor] {
+        -webkit-user-modify: read-write !important;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Include the script that builds the page and powers Decap CMS -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+    <!-- Set placeholders for title and subtitle fields -->
+    <script>
+      const observer = new MutationObserver(function(mutations_list) {
+        mutations_list.forEach(function(mutation) {
+          mutation.addedNodes.forEach(function(added_node) {
+            let titleInput = document.querySelector("[id*=title-field]");
+            let subtitleInput = document.querySelector("[id*=subtitle-field]");
+
+            if (titleInput) {
+              console.log("looks like we made it!");
+
+              titleInput.placeholder = "Title";
+
+              subtitleInput.placeholder = "Subtitle";
+
+              observer.disconnect();
+            }
+          });
+        });
+      });
+
+      observer.observe(document.querySelector("body"), {
+        subtree: true,
+        childList: true
+      });
+    </script>
+
+
+
+    <!-- Upload API from Uploadcare -->
+    <!--
+    <lr-config
+    pubkey="d50f0c9e161743596858"
+    ctx-name="my-uploader"
+    ></lr-config>
+
+    <lr-upload-ctx-provider
+    id="uploaderctx"
+    ctx-name="my-uploader"
+    ></lr-upload-ctx-provider>
+
+    <lr-file-uploader-minimal
+    css-src="https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.25.4/web/lr-file-uploader-inline.min.css"
+    ctx-name="my-uploader"
+    style="--ctx-name:'my-uploader';width: 200px;display: none;"
+    ></lr-file-uploader-minimal>
+
+    <lr-data-output
+    ctx-name="my-uploader"
+    use-console
+    use-input
+    use-group
+    use-event
+    ></lr-data-output>
+    -->
+    <script type="module">
+      /*
+      import * as LR from "https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.25.4/web/blocks.min.js";
+                                                                                                LR.registerBlocks(LR);
+                                                                                          
+                                                                                          
+                                                                                                const uploaderCtx = document.querySelector('#uploaderctx');
+                                                                                          
+                                                                                                // is it working actually?
+                                                                                                //uploaderCtx.addFileFromUrl("https://user-images.githubusercontent.com/24529106/263475460-17c18772-0ebc-4d8e-b58d-323c560be954.png");
+                                                                                                window.addEventListener('LR_UPLOAD_FINISH', (e) => {
+                                                                                                  console.log("results are in!");
+                                                                                                  console.log(e.detail);
+                                                                                                  let image_cdn_url = e.detail.data[0].cdnUrl;
+                                                                                                  console.log("our image can be found at");
+                                                                                                  console.log(image_cdn_url);
+                                                                                                });
+                                                                                          
+                                                                                                const editorWidget = document.querySelector(".cms-editor-visual");
+                                                                                          
+                                                                                                window.addEventListener('paste', (e) => {
+                                                                                                  console.log("Paste!");
+                                                                                                });
+                                                                                                */
+    </script>
+  </body>
 </html>

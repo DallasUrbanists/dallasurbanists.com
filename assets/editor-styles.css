@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body,
+input {
+    font-family: 'Noto Serif', Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body,
+[class*=EditorContainer],
+[class*=NoPreviewContainer-card-splitPane] {
+    background-repeat: repeat;
+    background-image: url(/assets/handmadepaper.png);
+    background-color: transparent !important;
+}
+
+[class*="TopBarContainer"] {
+    display: none;
+}
+
+[class*="ControlContainer-Shortcode"] {
+}
+
+[class*="ControlContainer-Shortcode"] > div {
+    padding: 0px !important;
+    border: none;
+    background-color: transparent !important;
+}
+
+[class*="ControlContainer-Shortcode"] > label {
+    display: none;
+}
+
+[class*="ControlContainer-Shortcode"] [class*="TopBarContainer"] {
+    display: none;
+}
+
+[class*="ControlContainer-Shortcode"] [class*="ImageWrapper-checkerboard"] {
+}
+
+[class*="ControlContainer-Shortcode"] [class*="ImageWrapper-checkerboard"] + div {
+    display: none;
+}
+
+[class*="ControlContainer-Shortcode"]:hover [class*="ImageWrapper-checkerboard"] + div {
+    display: block;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    margin: 0px;
+}
+
+[class*="ControlContainer-Shortcode"] > div > div:last-child [class*="ControlContainer"] + [class*="ControlContainer"] {
+    display: none;
+}
+
+[class*="ControlContainer-Shortcode"] > div > div:last-child {
+    display: flex;
+}
+
+[class*="ControlContainer-Shortcode"]:hover > div:last-child > div [class*="ControlContainer"] + [class*="ControlContainer"] {
+    display: block;
+    flex-grow: 1;
+}
+
+[class*="ControlContainer-Shortcode"] > div [class*="ControlContainer"] {
+    margin-top: 0px !important;
+    border: none !important;
+    clear: both;
+    position: relative;
+}
+
+[class*="ControlContainer-Shortcode"] > div [class*="ControlContainer"] label {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+[class*="ControlContainer-Shortcode"] > div [class*="ControlContainer"] > label + div {
+    margin-top: 0px !important;
+    padding: 0px !important;    
+    border: none !important;
+}
+
+[class*="ControlContainer-Shortcode"] label[for*="image-field"]{
+    display: none;
+}
+
+[class*="ControlContainer-Shortcode"] > div [class*="ControlContainer"] img[role="presentation"] {
+}
+
+[class*="ControlContainer"] label[for*="title-field"],
+[class*="ControlContainer"] label[for*="body-field"] {
+    display: none;
+}
+
+[class*="ControlContainer"] input,
+[class*="ControlContainer"] > div {
+    background-color: transparent !important;
+    border:  none;
+    border-bottom: solid 1px #CCC;
+    border-radius: 0px;
+    padding: 0.5em 0em;
+}
+
+[class*="ControlContainer"] input {
+    border-bottom: none;    
+}
+
+[class*="ControlContainer"] input:placeholder-shown {
+    border-bottom: solid 1px #CCC;
+}
+
+[class*="ControlContainer"] > div > div {
+    background-color: transparent;
+    border:  none;
+    border-radius: 0px;
+    padding: 0.5em 0em;
+}
+
+[class*="ControlContainer"] [class*="DateTimeControl"] {
+    border-bottom: none;
+}
+
+[class*="ControlContainer"] > div > div > div {
+    padding: 0;
+}
+
+[class*="ControlContainer"] > label {
+    background-color: transparent;
+    color: #999;
+    padding: 0;
+}
+
+.cms-editor-visual [class*="ControlContainer"] input,
+[class*="ControlContainer"] > div {
+    border-bottom: none;
+}
+
+[class*="ControlContainer"] > div > [class*=Editor] [class*="EditorControlBar"] div {
+    padding: 0;
+    min-height: 0px;
+    border-radius: 0.5em;
+}
+
+[class*="ControlContainer"] > div > [class*=Editor] [class*="EditorControlBar"] > div {
+    background-color: rgba(223, 223, 227, 0.4);
+}
+
+[class*="ControlContainer"] > div > [class*=Editor] div:nth-child(2) {
+    padding-top: 1em;
+    background-color: transparent !important;
+}
+
+[class*="ControlContainer"] > div > [class*=Editor] div[class*=ToolbarToggle] {
+    padding-top: 0em;
+} 
+
+[class*="ControlContainer"] > div > [class*=Editor] div {
+    border: none;
+    padding: 0;
+}
+
+[class*="ControlContainer"] .cms-editor-visual p {
+    font-family: 'Noto Serif', Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+
+input[id^="title-field"] {
+    font-size: calc(1.375rem + 1.5vw);
+    font-weight: 300;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+input[id*="subtitle-field"] {
+    font-weight: 300;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+[class*=ViewControls] {
+    display: none;
+}
+
+div[class*=ToolbarContainer] {
+    box-shadow: none;
+}
+
+[class*=BackCollection] {
+    display: none;
+} 
+
+div[class*=BackStatus-BackStatusChanged-badge-textBadge-textBadgeDanger] {
+    font-weight: 500;
+}
+
+a[class*=ToolbarSectionBackLink-toolbarSection] {
+    border: none;
+}
+
+div[class*=ToolbarSectionMeta-toolbarSection] {
+    border: none;
+}
+
+div[class*=ToolbarSectionMeta-toolbarSection] > a {
+    display: none;
+}
+
+[class*=author-field] + div[class*=container] > div {
+    background-color: transparent;
+}
+
+h2[class*=SidebarHeading] {
+    display: none;
+}
+
+ul[class*=SidebarNavList] {
+    margin-top: 0;
+}
+
+main[class*=CollectionMain] > div[class*=CollectionTopContainer-card-cardTop] {
+    margin-bottom: 0.5em;
+    width: auto;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+li[class*="ListCard-card"] {
+    border-radius: 0px;
+    box-shadow: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+li[class*="ListCard-card"] a {
+    display:  inline-block;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 0.25em;
+    text-decoration: none;
+    border-bottom: solid 1px #999;
+    margin-bottom: 1em;
+}
+
+li[class*="ListCard-card"] a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-bottom: solid 1px #000;    
+}
+
+aside[class*=SidebarContainer-card] {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    width: 100px;
+}
+
+[class*=SidebarNavLink-sidebarNavLinkActive-SidebarNavLink],
+[class*=SidebarNavLink-sidebarNavLinkActive-SidebarNavLink],
+[class*=SidebarNavLink-sidebarNavLinkActive-SidebarNavLink] {
+    border-left-color: transparent;
+}
+
+h1[class*=CollectionTopHeading-cardTopHeading] {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+ul[class*=CardsGrid] {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+ul[class*=SidebarNavList] a[class*=SidebarNavLink] > span:first-child {
+    display:  none;
+}
+
+header[class*=AppHeader] {
+    box-shadow: none;
+}
+
+a[class*=AppHeaderSiteLink] {
+    display: none;
+}
+
+ul[class*=SidebarNavList] a[class*=SidebarNavLink] > span:first-child {
+    display:  none;
+}
+
+div[class*=WorkflowTop-card-cardTop] {
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+div[class*=WorkflowCardContainer-card] div[class*=CardCollection] {
+    display: none;
+}
+
+a[class*=WorkflowLink] {
+    max-height: 200px;
+    height: auto;
+    padding:  1em;
+}
+
+h2[class*=CardTitle] {
+    margin-top: 0;
+}
+
+p[class*=CardBody-text] {
+    margin-top: 0.5em;
+}
+
+div[class*=CardDateContainer] {
+    font-style: italic;
+}
+
+h2[class*=ColumnHeader-ColumnHeader] {
+    margin-bottom: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+p[class*=ColumnCount] {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+p[class*=WorkflowTopDescription-cardTopDescription] {
+    margin-top: 0;
+}
+
+div[class*=column-WorkflowList] {
+    border: none;
+}
+
+div[class*=column-WorkflowList]::before,
+div[class*=column-WorkflowList]::after {
+    border: none;
+    background-color: transparent;
+    width: 1px;
+    border-right: dotted 1px rgba(0, 0, 0, 0.25);
+}
+
+div[class*=ViewControlsSection] {
+    display: none;
+}
+
+main[class*="-CollectionMain"] {
+    padding-left: 150px;
+}
+
+div[class*=CollectionControlsContainer] {
+    margin-top: 0;
+    width: 100%;
+}
+
+div[class*=CollectionTopRow] {
+    width: 100%;
+}
+
+span[class*=AppHeaderQuickNewButton] {
+    display: none;
+}
+
+label[class*=FieldLabel-fieldLabel]::after {
+    background-color: transparent;
+}
+
+[class*="ControlContainer"] [class*="menu"] {
+    background-color: white;
+}
+
+span[class*=AppHeaderQuickNewButton] {
+    display: none;
+}

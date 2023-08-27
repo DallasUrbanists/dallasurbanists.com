@@ -1,2 +1,7 @@
 collections:
   - authors
+
+media_library:
+  name: uploadcare
+  config:
+    publicKey: d50f0c9e161743596858

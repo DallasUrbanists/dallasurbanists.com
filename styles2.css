@@ -144,7 +144,8 @@ img.muted {
 
 article.blog-article > ul {
     margin-bottom: 1.5em;
-    padding: 0em 2em;
+    padding: 0;
+    padding-left: 2em;
 }
 article.blog-article > ul li {
     padding-left: 1em;
@@ -156,7 +157,8 @@ article.blog-article > ul li {
 
 article.blog-article > ol {
     margin-bottom: 1.5em;
-    padding: 0em 2em;
+    padding: 0;
+    padding-left: 2em;
 }
 article.blog-article > ol li {
     padding-left: 1em;

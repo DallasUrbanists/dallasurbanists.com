@@ -217,7 +217,7 @@ article.blog-article > ul li {
     line-height: 1.25em;
     text-decoration: none;
     font-style: italic;
-    padding: 1em;
+    padding-top: 1em;
 }
 
 #featuredTitle, #featuredSubtitle {

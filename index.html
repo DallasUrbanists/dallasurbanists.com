@@ -76,53 +76,53 @@ identity_snippet: true
 </div>
 
 <script>
-  let featuredContainer = document.querySelector("#featuredContainer");
-  let featuredTitle = document.querySelector("#featuredTitle");
-  let featuredSubtitle = document.querySelector("#featuredSubtitle");
-  let originalTitleSize = featuredTitle.style.fontSize;
-  let originalSubtitleSize = featuredSubtitle.style.fontSize;
+  document.addEventListener("DOMContentLoaded", function(event) {
+    let featuredContainer = document.querySelector("#featuredContainer");
+    let featuredTitle = document.querySelector("#featuredTitle");
+    let featuredSubtitle = document.querySelector("#featuredSubtitle");
+    let originalTitleSize = featuredTitle.style.fontSize;
+    let originalSubtitleSize = featuredSubtitle.style.fontSize;
 
-  function fitTitleWidth() {
-    let fontSize = window.getComputedStyle(featuredTitle).fontSize;
-    let containerPadding = parseFloat(window.getComputedStyle(featuredContainer).paddingLeft) + parseFloat(window.getComputedStyle(featuredContainer).paddingRight);
-    let targetWidth = featuredContainer.clientWidth - (containerPadding * 4);
-      
-    console.log(featuredTitle.clientWidth + " versus " + targetWidth);
+    function fitTitleWidth() {
+      let fontSize = window.getComputedStyle(featuredTitle).fontSize;
+      let containerPadding = parseFloat(window.getComputedStyle(featuredContainer).paddingLeft) + parseFloat(window.getComputedStyle(featuredContainer).paddingRight);
+      let targetWidth = featuredContainer.clientWidth - (containerPadding * 4);
 
-    if(featuredTitle.clientWidth < targetWidth){
-      featuredTitle.style.fontSize = (parseFloat(fontSize) + 1) + 'px';
-      fitTitleWidth();
+      if(featuredTitle.clientWidth < targetWidth){
+        featuredTitle.style.fontSize = (parseFloat(fontSize) + 1) + 'px';
+        fitTitleWidth();
+      }
     }
-  }
 
-  function fitSubtitleHeight(containerMaxHeight) {
-    let fontSize = parseFloat(window.getComputedStyle(featuredSubtitle).fontSize);
-    let fontSizeMax = parseFloat(window.getComputedStyle(featuredTitle).fontSize) * 0.5;
-    let contentMargins = parseFloat(window.getComputedStyle(featuredTitle).marginBottom) + parseFloat(window.getComputedStyle(featuredSubtitle).marginBottom);
-    let targetHeight = Math.min(featuredContainer.clientHeight, containerMaxHeight);
-    let testHeight = featuredTitle.clientHeight + featuredSubtitle.clientHeight + (contentMargins * 2);
-    
-    console.log([featuredTitle.clientHeight, featuredSubtitle.clientHeight, contentMargins, fontSize, fontSizeMax]);
-    console.log(testHeight + " versus " + targetHeight);
+    function fitSubtitleHeight(containerMaxHeight) {
+      let fontSize = parseFloat(window.getComputedStyle(featuredSubtitle).fontSize);
+      let fontSizeMax = parseFloat(window.getComputedStyle(featuredTitle).fontSize) * 0.5;
+      let contentMargins = parseFloat(window.getComputedStyle(featuredTitle).marginBottom) + parseFloat(window.getComputedStyle(featuredSubtitle).marginBottom);
+      let targetHeight = Math.min(featuredContainer.clientHeight, containerMaxHeight);
+      let testHeight = featuredTitle.clientHeight + featuredSubtitle.clientHeight + (contentMargins * 2);
+      
+      if(testHeight < targetHeight && fontSize <= fontSizeMax) {
+        featuredSubtitle.style.fontSize = (parseFloat(fontSize) + 1) + 'px';
+        fitSubtitleHeight(featuredContainer.clientHeight);
+      }
+    }
 
-    if(testHeight < targetHeight && fontSize <= fontSizeMax) {
-      featuredSubtitle.style.fontSize = (parseFloat(fontSize) + 1) + 'px';
+    function fitTitles() {
+      featuredTitle.style.fontSize = originalTitleSize;
+      featuredSubtitle.style.fontSize = originalSubtitleSize;
+
+      fitTitleWidth();
       fitSubtitleHeight(featuredContainer.clientHeight);
     }
-  }
 
-  function fitTitles() {
-    featuredTitle.style.fontSize = originalTitleSize;
-    featuredSubtitle.style.fontSize = originalSubtitleSize;
-
-    fitTitleWidth();
-    fitSubtitleHeight(featuredContainer.clientHeight);
-  }
-
-  fitTitles();
-
-  window.addEventListener('resize', function(event) {
     fitTitles();
-  }, true);
-    
+
+    window.addEventListener('resize', function(event) {
+      fitTitles();
+    }, true);
+
+    // The subtitle usually resizes on page load successfully, but for some reason it randomly
+    // doesn't work. So this interval is me cheating by calling the resize function every couple seconds.
+    setInterval(function () { fitSubtitleHeight(featuredContainer.clientHeight); }, 2000);
+  });
 </script>

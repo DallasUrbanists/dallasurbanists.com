@@ -45,7 +45,7 @@ With a cautious preamble, Udrea answered gentrification.
 
 She described how it's her department's duty to listen to communities as they plan for the future of neighborhoods. She is often asked questions like "How do we prevent gentrification?" When any change is proposed for a community - whether it be new parks, bike lanes, upgraded streetscape, or zoning for new housing - there is loud pushback over the possibility of it causing gentrification.
 
-After decades of people being pushed out of their homes by changes that benefitted those who took their place, it requires tremendous trust to assure them that a new change will be different this time.
+After decades of people being pushed out of their homes by changes that benefitted those who took their place, it requires tremendous trust to assure them that a new change will be different this time around.
 
 Udrea concluded her answer by saying she doesn't know how, but if we are to fix the mistakes of the past and improve neighborhood health and stability for everyone, then we must figure out a way to bridge the gap in trust.
 

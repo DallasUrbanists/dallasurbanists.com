@@ -105,14 +105,14 @@ As we tackle these questions, the solutions we discover will have the following 
 
 ![Trinity River filled with water up to the levees on August 22, 2022. The sky briefly had a purple hue as the rain let up and evening grew darker. Photo taken by Hexel Colorado.](https://ucarecdn.com/3e016662-3930-4123-a5b8-8c1773307ccb/ "Trinity River filled with water up to the levees on August 22, 2022. The sky briefly had a purple hue as the rain let up and evening grew darker. Photo taken by Hexel Colorado.")
 
-This purple-colored sky made me question my sanity.
+We had two definitions of gentrification.
 
-Over-editing colors can be dishonest. My rule of thumb is that edits should enhance and magnify things that were really there, but never add something that was never there at all. I'll edit out trash to enhance from the water, or remove power lines for a clearer view of the sky. I might combine two photos taken minutes apart to simultaneously show two things that were really there.
+The second definition displaces people of color. We don't want that, so let's scrap it.
 
-But if the sky wasn't purple in real life, then it shouldn't be purple in the photo. [I had to do some research](https://www.instagram.com/p/ChqPUx8MkOl/?img_index=3) to prove to myself that the color was real.
+That leaves us with one definition of gentrification: higher income people (who tend to be white, [but often includes Asians too](https://home.treasury.gov/news/featured-stories/racial-inequality-in-the-united-states#:~:text=In%20addition%2C%20Black%20and%20Hispanic,as%20shown%20in%20Figure%204.)) moving into low-income neighborhoods (which tend to be be predominantly black and brown households). **This gentrification is rain**.
 
-It wasn't that I didn't believe a purple color was possible; I just never noticed one here before.
-
-- - -
-
-![](https://ucarecdn.com/ae5341dc-34c0-4bc5-9efe-6d7e84930823/)
+* A neighborhood is flooded when it receives too much at once.
+* Houses are changed or even destroyed, with new buildings taking their place.
+* Society behaves different before, during, and after a downpour.
+* When we don't prepare in advance, people and property are pushed out.
+* Neighborhoods are often made unrecognizable in its wake.

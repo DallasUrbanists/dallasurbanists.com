@@ -109,7 +109,7 @@ We had two definitions of gentrification.
 
 Let's scrap the second one because we don't want anybody to be displaced. 
 
-That leaves us with one definition of gentrification: higher income people (who tend to be white, [but often includes Asians too](https://home.treasury.gov/news/featured-stories/racial-inequality-in-the-united-states#:~:text=In%20addition%2C%20Black%20and%20Hispanic,as%20shown%20in%20Figure%204.)) moving into low-income neighborhoods (which tend to be be predominantly black and brown households). **This gentrification is rain**.
+That leaves us with one definition of gentrification: higher income people (who tend to be white, [but often include Asians too](https://home.treasury.gov/news/featured-stories/racial-inequality-in-the-united-states#:~:text=In%20addition%2C%20Black%20and%20Hispanic,as%20shown%20in%20Figure%204.)) moving into low-income neighborhoods (which tend to be be predominantly black and brown households). **This gentrification is rain**.
 
 * A neighborhood is flooded when it receives too much all at once.
 * Houses are changed or even destroyed, with new buildings taking their place.

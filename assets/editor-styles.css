@@ -143,7 +143,10 @@ body,
 }
 
 [class*="ControlContainer"] > div > [class*=Editor] [class*="EditorControlBar"] > div {
-    background-color: rgba(223, 223, 227, 0.4);
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+    background-color: rgba(223, 223, 227, 1);
 }
 
 [class*="ControlContainer"] > div > [class*=Editor] div:nth-child(2) {
@@ -380,4 +383,32 @@ label[class*=FieldLabel-fieldLabel]::after {
 
 span[class*=AppHeaderQuickNewButton] {
     display: none;
+}
+
+hr {
+    width: 75%;
+    margin-top: 43px;
+    margin-bottom: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    color: inherit;
+    border: 0;
+    border-top: 1px var(--bs-border-width) solid;
+    opacity: .25;
+}
+
+span.Resizer.vertical {
+    display: none;
+}
+
+div.Pane.vertical.Pane1 {
+    width: 100% !important;
+}
+
+div.Pane.vertical.Pane2 {
+    display: none;
+}  
+
+[class*=StyledSplitPane-card-splitPane] {
+    background-color: transparent;
 }

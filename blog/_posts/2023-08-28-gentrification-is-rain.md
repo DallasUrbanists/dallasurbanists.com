@@ -47,7 +47,7 @@ She described how it's her department's duty to listen to communities as they pl
 
 After decades of people being pushed out of their homes by changes that benefitted the people who took their place, it requires a tremendous degree of trust to assure them that a new change will be different this time.
 
-Udrea concluded her answer by saying she doesn't know how, but if we are to fix the mistakes of the past and improve neighborhood health and stability for everyone, then somehow we must bridge the gap in trust.
+Udrea concluded her answer by saying she doesn't know how, but if we are to fix the mistakes of the past and improve neighborhood health and stability for everyone, then must figure out a way to bridge the gap in trust.
 
 - - -
 

@@ -5,7 +5,7 @@ subtitle: Rather than distract over whether it's good or bad, understand
   gentrification as a force of nature.
 author: hexel
 date: 2023-08-27T21:48:02.723Z
-cover_image: https://ucarecdn.com/c8fcde7d-41c2-49f1-ad1a-a7e2643b8649/
+cover_image: https://ucarecdn.com/2aaf2bcb-1964-47d2-ae8c-435ffdc57280/
 tags:
   - Housing
   - Featured
@@ -82,7 +82,7 @@ It's worth noting the racial implications of gentrification because while the pr
 1. When white people move into a black and brown neighborhood.
 2. When white people move into a black and brown neighborhood ***AND*** black and brown people are pushed out.
 
-![View from a balcony in Uptown Dallas, a neighborhood gentrified after the black people who formed Freedmen Town were displaced by racial violence, redlining, and the construction of US Highway 75. Photo by Hexel Colorado.](https://ucarecdn.com/639dc58d-361a-4edc-9fde-7b67b4b346b2/ "View from a balcony in Uptown Dallas, a neighborhood gentrified after the black people who formed Freedmen Town were displaced by racial violence, redlining, and the construction of US Highway 75.")
+![View from a balcony in Uptown Dallas, a neighborhood gentrified after the black people who formed Freedman Town were displaced by racial violence, redlining, and the construction of US Highway 75. Photo by Hexel Colorado.](https://ucarecdn.com/639dc58d-361a-4edc-9fde-7b67b4b346b2/ "View from a balcony in Uptown Dallas, a neighborhood gentrified after the black people who formed Freedman Town were displaced by racial violence, redlining, and the construction of US Highway 75.")
 
 People don't fear white people moving in.
 
@@ -104,7 +104,7 @@ As we tackle these questions, the solutions we discover will have the following 
 
 - - -
 
-![Trinity River filled with water up to the levees on August 22, 2022. The sky briefly had a purple hue as the rain let up and evening grew darker. Photo taken by Hexel Colorado.](https://ucarecdn.com/3e016662-3930-4123-a5b8-8c1773307ccb/ "Trinity River filled with water up to the levees on August 22, 2022. The sky briefly had a purple hue as the rain let up and evening grew darker.")
+![Portion of a map of Freedman Town and North Dallas Communities, 1919 - 1947, on display at the African American Museum of Dallas in Fair Park.](https://ucarecdn.com/eb9d6f3b-7d5f-423f-a944-a83a01397b45/ "Portion of a map of Freedman Town and North Dallas Communities, 1919 - 1947, on display at the African American Museum of Dallas in Fair Park.")
 
 We had two definitions of gentrification.
 

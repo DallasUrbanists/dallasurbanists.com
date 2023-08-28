@@ -143,13 +143,24 @@ img.muted {
 }
 
 article.blog-article > ul {
-    padding: 0em 1em;
+    margin-bottom: 1.5em;
+    padding: 0em 2em;
 }
 article.blog-article > ul li {
     padding-left: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     list-style-position: outside;
     list-style-type: disclosure-closed;
+    margin-left: 0;
+}
+
+article.blog-article > ol {
+    margin-bottom: 1.5em;
+    padding: 0em 2em;
+}
+article.blog-article > ol li {
+    padding-left: 1em;
+    margin-bottom: 0.5em;
     margin-left: 0;
 }
 

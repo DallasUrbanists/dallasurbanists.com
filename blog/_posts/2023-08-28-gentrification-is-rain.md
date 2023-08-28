@@ -53,9 +53,9 @@ Udrea concluded her answer by saying she doesn't know how, but if we are to fix 
 
 ![Trinity River filled with water up to the levees on August 22, 2022. A couple strolls by and looks out across water.](https://ucarecdn.com/c93b20fd-2bae-419a-aed5-23c31bcb67ed/ "Trinity River filled with water up to the levees on August 22, 2022. A couple strolls by and looks out across water.")
 
-Last summer was the [second longest in DFW history,](https://www.dallasnews.com/news/weather/2022/08/10/dallas-fort-worth-officially-ends-67-day-streak-without-rainfall/) lasting 67 days without rain.
+Last summer was the [second longest dryspell in DFW history,](https://www.dallasnews.com/news/weather/2022/08/10/dallas-fort-worth-officially-ends-67-day-streak-without-rainfall/) lasting 67 days without rain.
 
-The drought ended with [the rainiest August in Dallas history](https://www.star-telegram.com/news/local/fort-worth/article264814169.html), climaxing with the most rainfall within a 24-hour period in 90 years. As soon as there was a safe break in the weather I biked down to the Trinity River to capture the river photos featured in this post.
+The drought ended with [the rainiest August in Dallas history](https://www.star-telegram.com/news/local/fort-worth/article264814169.html), climaxing with the most rainfall within a 24-hour period in 90 years. As soon as there was a safe break in the weather I biked down to the Trinity River to capture the river photos featured in this post. On my way to the river, I pass [collapsed buildings](https://www.nbcdfw.com/news/local/dallas-showers-lead-to-partial-construction-collapse/3064377/) and uprooted trees.
 
 In the span of one month, we witnessed the simultaneous beauty and devastation of rain. A state of emergency was declared, up to 15 inches of water flooded streets, destroyed homes, uprooted trees, cut internet and electricity, and [killed at least one person](https://www.dallasnews.com/news/weather/2022/08/25/dallas-fort-worth-flood-caused-as-much-as-6-billion-in-damages/) after they were swept away by floodwater.
 
@@ -63,7 +63,7 @@ In the span of one month, we witnessed the simultaneous beauty and devastation o
 
 Yet we need rain.
 
-Not every day, but a steady supply is important for the well-being of everybody and everything. I won't patronize readers by belaboring the necessity of rain in spite of the destruction it brings. Even those who hate rain already understand and accept this:
+A steady supply is important for the well-being of everybody and everything. I won't patronize readers by belaboring the necessity of rain. Even those who hate rain already understand and accept this:
 
 *We need rain because we need water.*
 
@@ -76,7 +76,7 @@ The word *gentrification* has two common definitions:
 1. When people with higher-income move into a neighborhood predominantly occupied by low-income households.
 2. When people with higher-income move into a neighborhood predominantly occupied by low-income households ***AND*** when low-income households are forced out of a neighborhood by economic pressure.
 
-People who use the term under either definition generally understand two other things: higher-income people moving into a gentrifying neighborhood tend to be white, and low-income households in those neighborhoods tend to be black and brown people.
+People who use the term under either definition generally understand two other things: higher-income people moving into a gentrifying neighborhood tend to be white, and low-income households in those neighborhoods tend to be African-American and Hispanic.
 
 It's worth noting the racial implications of gentrification because while the pressures that push people out of a neighborhood are economic, the status of whether or not gentrification has occurred in a neighborhood is (for better or worse) typically measured by race due to the strong [correlation between race and income](https://home.treasury.gov/news/featured-stories/racial-inequality-in-the-united-states#:~:text=In%20addition%2C%20Black%20and%20Hispanic,as%20shown%20in%20Figure%204.). Thus, gentrification can reasonably be translated into one of two pseudo-definitions:
 
@@ -89,17 +89,17 @@ People don't fear white people moving in.
 
 We just don't want black and brown people pushed out.
 
-It's not the presence of white people and white culture that makes neighborhoods unrecognizable; it's the absence of black and brown people and culture that makes neighborhoods unrecognizable. New buildings with additional height, higher densities, or modern architecture are not what depress people; it's the reminder that our uncles, aunts, and cousins used to live there and now they don't.
+It's not the presence of white people that makes neighborhoods unrecognizable; it's the absence of black and brown people and culture that makes neighborhoods unrecognizable. New, tall, and modern buildings are not what depress people; it's the reminder that our uncles, aunts, and cousins used to live there and now they don't.
 
 [](https://www.texasobserver.org/dallas-hidden-history-of-terror/)Displacement of black and brown people is almost always precipitated by white people wanting what colored people have, and Dallas has a history of pushing black people out through [seemingly innocuous accommodations.](https://www.texasobserver.org/dallas-hidden-history-of-terror/) The question for urban planners and community activists isn't "how do we prevent white people from moving in?" but rather...
 
 1. "As new people move in, how do we avoid pushing people out?"
-2. "As new people move in, how do we keep black and brown culture present and visible so that our built environment reminds us of a proud legacy rather than of painful trauma?" 
+2. "As new people move in, how do we keep black and brown culture present and visible so that our built environment reminds us of a proud legacy rather than painful trauma?" 
 
 As we tackle these questions, the solutions we discover will have the following traits:
 
 1. We don't prevent people from moving in (because new people was never the issue).
-2. We empower people with the ability to stay in the neighborhood if they choose (because this has always been the issue).
+2. We empower people with the ability to stay in their neighborhood if they choose (because this has always been the issue).
 3. We increase the quantity of physical reminders of people's legacy (because otherwise the existing artifacts of people's legacy would be overshadowed by the increased quantity of outsider artifacts).
 4. The neighborhood gains a greater diversity of colors, culture, and heritage (because diversity always was and is a virtue).
 
@@ -109,19 +109,19 @@ As we tackle these questions, the solutions we discover will have the following 
 
 We had two definitions of gentrification.
 
-The second definition displaces people of color. We don't want that, so let's scrap it.
+Let's scrap the second one because we don't want anybody to be displaced. 
 
 That leaves us with one definition of gentrification: higher income people (who tend to be white, [but often includes Asians too](https://home.treasury.gov/news/featured-stories/racial-inequality-in-the-united-states#:~:text=In%20addition%2C%20Black%20and%20Hispanic,as%20shown%20in%20Figure%204.)) moving into low-income neighborhoods (which tend to be be predominantly black and brown households). **This gentrification is rain**.
 
-* A neighborhood is flooded when it receives too much at once.
+* A neighborhood is flooded when it receives too much all at once.
 * Houses are changed or even destroyed, with new buildings taking their place.
 * Society behaves different before, during, and after a downpour.
 * When we don't prepare in advance, people and property are pushed out.
 * Neighborhoods are often made unrecognizable in its wake.
 
-For all the damage wrought by rain, no one is campaigning to stop rain. No one works on a a housing project with the expectation that it will prevent rain from happening. Instead, all developments are built with the expectation that it will *withstand* rain. The savviest of projects go a step further to benefit from rain by capturing it (think rain barrels and water retention systems).
+For all the damage wrought by rain, no one is campaigning to stop rain. No one works on a housing project with the precondition that rain will be prevented. Instead, all developments are built with the expectation that it will *withstand* rain. The savviest of projects go a step further to benefit from rain by capturing it (think rain barrels and water retention systems).
 
-Like rain, we need to adopt strategies to withstand, capture, and grow with gentrification. Rather than new white residents driving up property taxes and pushing out Hispanic long-time homeowners, new residents can move into an ADU's owned by those legacy homeowners, thereby contributing to black generational wealth and allowing both to coexist. Rather than see black and brown culture replaced by yoga studios and boba shops, those new studios and shops can be the lessees of a community land trust formed by the legacy black and brown neighbors prior to the gentrifier's arrival.
+Like rain, we need to adopt strategies to withstand, capture, and grow with gentrification. Rather than new white residents driving up property taxes and pushing out Hispanic long-time homeowners, new residents can move into an ADU's owned by those legacy homeowners, thereby contributing to their generational wealth. Rather than see black culture replaced by yoga studios and boba shops, those new studios and shops can be the lessees of a community land trust formed by the legacy neighbors prior to the gentrifier's arrival.
 
 We need rain because we need water.
 

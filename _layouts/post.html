@@ -110,11 +110,22 @@ meta_type: "article"
     let postImages = document.querySelectorAll("article.blog-article img");
 
     postImages.forEach((img) => {
+      // TURN EVERY IMAGE INTO A LIGHTBOX LINK
+
       let linkWrapper = document.createElement("a");
       linkWrapper.setAttribute("data-lightbox", "post-image");
       linkWrapper.setAttribute("href", img.getAttribute("src"));
       img.parentNode.insertBefore(linkWrapper, img);
       linkWrapper.appendChild(img);
+
+      // INSERT A CAPTION FOR EVERY IMAGE WITH A TITLE
+
+      if (img.title) {
+        let imgCaption = document.createElement("div");
+        imgCaption.setAttribute("class", "post-image-caption");
+        imgCaption.innerHTML = img.title;
+        linkWrapper.after(imgCaption);
+      }
     });
   </script>
   <script src="{{ "/assets/plugins/lightbox/js/lightbox-plus-jquery.min.js" | relative_path }}"></script>

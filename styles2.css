@@ -206,3 +206,12 @@ article.blog-article > ul li {
         background-color: var(--bs-primary-bg-subtle);
     }
 }
+
+.post-image-caption {
+    text-align: center;
+    font-size: 0.75em;
+    line-height: 1.25em;
+    text-decoration: none;
+    font-style: italic;
+    padding: 1em 4em;
+}

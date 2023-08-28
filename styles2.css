@@ -90,7 +90,8 @@ img.muted {
     line-height: 1.5em;
 }
 
-.blog-article p {
+.blog-article p,
+.blog-article a {
     color: var(--bs-dark);
 }
 
@@ -131,6 +132,7 @@ img.muted {
 }
 
 .blog-article img {
+    border-radius: 0.5em;
     max-width: 100%;
     box-sizing: border-box;
     display: block;

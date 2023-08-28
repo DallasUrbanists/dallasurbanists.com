@@ -6,17 +6,27 @@ identity_snippet: true
   {% if post.tags contains "Featured" %}
     {% unless featured_post %}
       {% assign featured_post = post %}
+      {% assign featured_author = site.authors | where: 'name', featured_post.author | first %}
+      {% assign d = featured_post.date | date: "%-d" %}
+      {% capture ordinal %}
+        {% case d %}
+          {% when "1" or "21" or "31" %}st
+          {% when "2" or "22" %}nd
+          {% when "3" or "23" %}rd
+          {% else %}th
+        {% endcase %}
+      {% endcapture %}
     {% endunless %}
   {% endif %}
 {% endfor %}
-<div class="container-lg p-4 py-5">
+<div class="container-lg p-4 py-2 py-md-5">
   <div class="row flex-lg-row-reverse align-items-top position-relative">
-    <div class="col-lg-8">
+    <div class="col-lg-8" id="featuredContainer">
       <h1 class="display-6">
-        <a href="{{ featured_post.url | prepend: site.baseurl }}" class="stretched-link link-dark link-underline-opacity-0">{{ featured_post.title }}</a>
+        <a href="{{ featured_post.url | prepend: site.baseurl }}" class="stretched-link link-dark link-underline-opacity-0 d-inline-block" id="featuredTitle">{{ featured_post.title }}</a>
       </h1>
-      <p class="mb-4">
-        <em>{{ featured_post.date | date: "%B %-d, %Y" }}</em>
+      <p class="mb-4" id="featuredSubtitle">
+        <em>{{ featured_author.display_name }}, {{ featured_post.date | date: "%B %-d" }}<sup>{{ ordinal }}</sup></em>
         &mdash; {{ featured_post.subtitle }}
       </p>
     </div>
@@ -64,3 +74,55 @@ identity_snippet: true
     </div>
   </div>
 </div>
+
+<script>
+  let featuredContainer = document.querySelector("#featuredContainer");
+  let featuredTitle = document.querySelector("#featuredTitle");
+  let featuredSubtitle = document.querySelector("#featuredSubtitle");
+  let originalTitleSize = featuredTitle.style.fontSize;
+  let originalSubtitleSize = featuredSubtitle.style.fontSize;
+
+  function fitTitleWidth() {
+    let fontSize = window.getComputedStyle(featuredTitle).fontSize;
+    let containerPadding = parseFloat(window.getComputedStyle(featuredContainer).paddingLeft) + parseFloat(window.getComputedStyle(featuredContainer).paddingRight);
+    let targetWidth = featuredContainer.clientWidth - (containerPadding * 4);
+      
+    console.log(featuredTitle.clientWidth + " versus " + targetWidth);
+
+    if(featuredTitle.clientWidth < targetWidth){
+      featuredTitle.style.fontSize = (parseFloat(fontSize) + 1) + 'px';
+      fitTitleWidth();
+    }
+  }
+
+  function fitSubtitleHeight(containerMaxHeight) {
+    let fontSize = parseFloat(window.getComputedStyle(featuredSubtitle).fontSize);
+    let fontSizeMax = parseFloat(window.getComputedStyle(featuredTitle).fontSize) * 0.5;
+    let contentMargins = parseFloat(window.getComputedStyle(featuredTitle).marginBottom) + parseFloat(window.getComputedStyle(featuredSubtitle).marginBottom);
+    let targetHeight = Math.min(featuredContainer.clientHeight, containerMaxHeight);
+    let testHeight = featuredTitle.clientHeight + featuredSubtitle.clientHeight + (contentMargins * 2);
+    
+    console.log([featuredTitle.clientHeight, featuredSubtitle.clientHeight, contentMargins, fontSize, fontSizeMax]);
+    console.log(testHeight + " versus " + targetHeight);
+
+    if(testHeight < targetHeight && fontSize <= fontSizeMax) {
+      featuredSubtitle.style.fontSize = (parseFloat(fontSize) + 1) + 'px';
+      fitSubtitleHeight(featuredContainer.clientHeight);
+    }
+  }
+
+  function fitTitles() {
+    featuredTitle.style.fontSize = originalTitleSize;
+    featuredSubtitle.style.fontSize = originalSubtitleSize;
+
+    fitTitleWidth();
+    fitSubtitleHeight(featuredContainer.clientHeight);
+  }
+
+  fitTitles();
+
+  window.addEventListener('resize', function(event) {
+    fitTitles();
+  }, true);
+    
+</script>

@@ -111,11 +111,9 @@ Let's scrap the second one because we don't want anybody to be displaced.
 
 That leaves us with one definition of gentrification: higher-income people (who tend to be white [but often include Asians too](https://home.treasury.gov/news/featured-stories/racial-inequality-in-the-united-states#:~:text=In%20addition%2C%20Black%20and%20Hispanic,as%20shown%20in%20Figure%204.)) moving into low-income neighborhoods (which tend to be predominantly black and brown households). **This gentrification is rain**.
 
-* A neighborhood is flooded when it receives too much all at once.
-* Houses are changed or even destroyed, with new buildings taking their place.
-* Society behaves differently before, during, and after a downpour.
-* People and property are pushed out when we don't prepare in advance.
-* Neighborhoods are often made unrecognizable in its wake.
+* Like rain, gentrification is a natural occurrence; the condition of our climate forms it.
+* Like water, people and wealth join a neighborhood through gentrification.
+* Like floods, neighborhoods are destroyed not by the downpour itself but by our lack of preparation and infrastructure.
 
 For all the damage wrought by rain, no one is campaigning to stop rain. No one works on a housing project with the precondition that rain will be prevented. Instead, all developments are built with the expectation that they will *withstand* rain. The savviest of projects go a step further to benefit from rain by capturing it (think rain barrels and water retention systems).
 

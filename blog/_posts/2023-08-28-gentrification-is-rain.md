@@ -8,6 +8,7 @@ date: 2023-08-27T21:48:02.723Z
 cover_image: https://ucarecdn.com/c8fcde7d-41c2-49f1-ad1a-a7e2643b8649/
 tags:
   - Housing
+  - Featured
 ---
 [Rain causes depression](https://www.webmd.com/balance/features/can-rainy-days-really-get-you-down) in many people.
 

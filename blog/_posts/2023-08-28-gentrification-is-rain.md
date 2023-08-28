@@ -6,6 +6,8 @@ subtitle: Rather than distract over whether it's good or bad, understand
 author: hexel
 date: 2023-08-27T21:48:02.723Z
 cover_image: https://ucarecdn.com/c8fcde7d-41c2-49f1-ad1a-a7e2643b8649/
+tags:
+  - Housing
 ---
 [Rain causes depression](https://www.webmd.com/balance/features/can-rainy-days-really-get-you-down) in many people.
 
@@ -116,3 +118,11 @@ That leaves us with one definition of gentrification: higher income people (who 
 * Society behaves different before, during, and after a downpour.
 * When we don't prepare in advance, people and property are pushed out.
 * Neighborhoods are often made unrecognizable in its wake.
+
+For all the damage wrought by rain, no one is campaigning to stop rain. No one works on a a housing project with the expectation that it will prevent rain from happening. Instead, all developments are built with the expectation that it will *withstand* rain. The savviest of projects go a step further to benefit from rain by capturing it (think rain barrels and water retention systems).
+
+Like rain, we need to adopt strategies to withstand, capture, and grow with gentrification. Rather than new white residents driving up property taxes and pushing out Hispanic long-time homeowners, new residents can move into an ADU's owned by those legacy homeowners, thereby contributing to black generational wealth and allowing both to coexist. Rather than see black and brown culture replaced by yoga studios and boba shops, those new studios and shops can be the lessees of a community land trust formed by the legacy black and brown neighbors prior to the gentrifier's arrival.
+
+We need rain because we need water.
+
+We need gentrification because we need people; we need each other.

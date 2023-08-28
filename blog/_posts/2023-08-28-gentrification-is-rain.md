@@ -15,7 +15,7 @@ tags:
 
 Rainy day funds are how we save for emergencies; "sunny day funds" aren't a thing.
 
-Increases in annual rainfall increases your [insurance premiums](https://www.valuepenguin.com/flood-insurance/flood-zones-affect-insurance-premiums#:~:text=Your%20flood%20insurance%20rate%20is,your%20home%27s%20risk%20of%20flooding.) while lowering your home's property value.
+Increases in annual rainfall raises your [insurance premiums](https://www.valuepenguin.com/flood-insurance/flood-zones-affect-insurance-premiums#:~:text=Your%20flood%20insurance%20rate%20is,your%20home%27s%20risk%20of%20flooding.) while lowering your home's property value.
 
 Flash flooding often leaves neighborhoods completely unrecognizable. Families may be picking up trash, fallen trees, and destroyed houses for weeks or months (sometimes years) after one day of intense rain; life typically returns to normal after one day of intense heat.
 

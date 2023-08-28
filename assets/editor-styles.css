@@ -410,5 +410,5 @@ div.Pane.vertical.Pane2 {
 }  
 
 [class*=StyledSplitPane-card-splitPane] {
-    background-color: transparent;
+    background-color: transparent !important;
 }

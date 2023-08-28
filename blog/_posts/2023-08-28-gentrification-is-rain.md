@@ -114,3 +114,5 @@ But if the sky wasn't purple in real life, then it shouldn't be purple in the ph
 It wasn't that I didn't believe a purple color was possible; I just never noticed one here before.
 
 - - -
+
+![](https://ucarecdn.com/ae5341dc-34c0-4bc5-9efe-6d7e84930823/)

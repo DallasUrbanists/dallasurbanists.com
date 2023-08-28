@@ -15,7 +15,7 @@ tags:
 
 Rainy day funds are how we save for emergencies; "sunny day funds" aren't a thing.
 
-Increases in annual rainfall raises your [insurance premiums](https://www.valuepenguin.com/flood-insurance/flood-zones-affect-insurance-premiums#:~:text=Your%20flood%20insurance%20rate%20is,your%20home%27s%20risk%20of%20flooding.) while lowering your home's property value.
+Increases in annual rainfall raise your [insurance premiums](https://www.valuepenguin.com/flood-insurance/flood-zones-affect-insurance-premiums#:~:text=Your%20flood%20insurance%20rate%20is,your%20home%27s%20risk%20of%20flooding.) while lowering your home's property value.
 
 Flash flooding often leaves neighborhoods completely unrecognizable. Families may be picking up trash, fallen trees, and destroyed houses for weeks or months after one day of intense rain.
 
@@ -57,7 +57,7 @@ Last summer was the [second-longest dry spell in DFW history,](https://www.dalla
 
 The drought ended with [the rainiest August in Dallas history](https://www.star-telegram.com/news/local/fort-worth/article264814169.html), climaxing with the most rainfall within 24 hours in 90 years. As soon as there was a safe break in the weather, I biked down to the Trinity River to capture the river photos featured in this post. On my way to the river, I passed [collapsed buildings](https://www.nbcdfw.com/news/local/dallas-showers-lead-to-partial-construction-collapse/3064377/) and uprooted trees.
 
-In one month, we witnessed the beauty and devastation of rain. A state of emergency was declared. Up to 15 inches of water flooded streets, destroyed homes, uprooted trees, cut internet and electricity, and [killed at least one person](https://www.dallasnews.com/news/weather/2022/08/25/dallas-fort-worth-flood-caused-as-much-as-6-billion-in-damages/) after they were swept away by floodwater.
+In one week, we witnessed the beauty and devastation of rain. A state of emergency was declared. Up to 15 inches of water flooded streets, destroyed homes, uprooted trees, cut internet and electricity, and [killed at least one person](https://www.dallasnews.com/news/weather/2022/08/25/dallas-fort-worth-flood-caused-as-much-as-6-billion-in-damages/) after they were swept away by floodwater.
 
 ![Photo taken by Juan Figueroa, staff photographer for Dallas Morning News. Juan Garcia cleans out the items from his home damaged by the Monday morning floods on Tuesday, Aug. 23, 2022, on Alcalde Street in Old East Dallas in Dallas, TX.](https://dmn-dallas-news-prod.cdn.arcpublishing.com/resizer/fuY_QEuoetrxjD88UoER7gZzLLo=/1660x934/smart/filters:no_upscale()/cloudfront-us-east-1.images.arcpublishing.com/dmn/7GCZBVOTTBAGRLMZJ53AAFNRT4.jpg "Photo taken by Juan Figueroa, staff photographer for Dallas Morning News. Juan Garcia cleans out the items from his home damaged by the Monday morning floods on Tuesday, Aug. 23, 2022, on Alcalde Street in Old East Dallas in Dallas, TX.")
 

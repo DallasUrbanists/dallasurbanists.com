@@ -119,7 +119,7 @@ That leaves us with one definition of gentrification: higher income people (who 
 
 For all the damage wrought by rain, no one is campaigning to stop rain. No one works on a housing project with the precondition that rain will be prevented. Instead, all developments are built with the expectation that it will *withstand* rain. The savviest of projects go a step further to benefit from rain by capturing it (think rain barrels and water retention systems).
 
-Like rain, we need to adopt strategies to withstand, capture, and grow with gentrification. Rather than new white residents driving up property taxes and pushing out Hispanic long-time homeowners, new residents can move into an ADU's owned by those legacy homeowners, thereby contributing to their generational wealth. Rather than see black culture replaced by yoga studios and boba shops, those new studios and shops can be the lessees of a community land trust formed by the legacy neighbors prior to the gentrifier's arrival.
+Like rain, we need to adopt strategies to withstand, capture, and grow with gentrification. Rather than new white residents driving up property taxes and pushing out Hispanic long-time homeowners, new residents can move into an ADU owned by a legacy homeowner, thereby contributing to their generational wealth. Rather than see black culture replaced by yoga studios and boba shops, those new studios and shops can be the lessees of a community land trust formed by the legacy neighbors prior to the gentrifier's arrival.
 
 We need rain because we need water.
 

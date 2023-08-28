@@ -4,11 +4,11 @@ meta_type: "article"
 ---
 {% assign author = site.authors | where: 'name', page.author | first %}
 
-<div class="container-lg p-4 pt-2">
+<div class="container-lg pt-2">
   {% include impact-image.html path = page.cover_image %}
   <div class="container text-center" style="max-width: 40em;">
     <h1 class="display-6 mt-4">{{ page.title }}</h1>
-    <p class="mb-4">
+    <p>
       <em>By {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</em>
     </p>
   </div>

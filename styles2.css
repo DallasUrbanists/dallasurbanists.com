@@ -90,13 +90,17 @@ img.muted {
     line-height: 1.5em;
 }
 
+.blog-article p {
+    margin-bottom: 1.5em;
+}
+
 .blog-article p,
 .blog-article a {
     color: var(--bs-dark);
 }
 
 .blog-article p:not(:first-child) {
-    margin-top: 2em;
+    /* margin-top: 2em; */
 }
 
 
@@ -125,8 +129,8 @@ img.muted {
 
 .blog-article hr {
     width: 75%;
-    margin-top: 43px;
-    margin-bottom: 14px;
+    margin-top: 2em;
+    margin-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
 }

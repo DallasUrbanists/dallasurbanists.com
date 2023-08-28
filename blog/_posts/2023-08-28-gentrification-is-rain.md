@@ -29,7 +29,7 @@ Right?
 
 - - -
 
-![Dallas Neighbors for Housing meeting at Four Corners Brewery with special guests Tony Hidid, Andreea Udrea, and Paul Carden. August 24th, 2023.](https://ucarecdn.com/c3f2c264-9882-4e11-ac50-54c2381f70dc/ "Dallas Neighbors for Housing meeting at Four Corners Brewery with special guests Tony Hidid, Andreea Udrea, and Paul Carden. August 24th, 2023.")
+![Dallas Neighbors for Housing meeting at Four Corners Brewery with special guests Tony Hidid, Andreea Udrea, and Paul Carden. August 24th, 2023. Photo by Hexel Colorado.](https://ucarecdn.com/c3f2c264-9882-4e11-ac50-54c2381f70dc/ "Dallas Neighbors for Housing meeting at Four Corners Brewery with special guests Tony Hidid, Andreea Udrea, and Paul Carden. August 24th, 2023.")
 
 The topic was "The Future of Housing."
 
@@ -41,7 +41,7 @@ Dede: "What is a widespread misconception about housing you want to address?"
 
 With a cautious preamble, Udrea answered gentrification.
 
-![Tony Shidid (left), Andreea Udrea (center), and Paul Carden (right)](https://ucarecdn.com/eba6f087-8565-4298-b7be-56ce87a3b058/ "Tony Shidid (left), Andreea Udrea (center), and Paul Carden (right)")
+![Tony Shidid (left), Andreea Udrea (center), and Paul Carden (right). Photo by Hexel Colorado.](https://ucarecdn.com/eba6f087-8565-4298-b7be-56ce87a3b058/ "Tony Shidid (left), Andreea Udrea (center), and Paul Carden (right)")
 
 She described how it's her department's duty to listen to communities as they plan for the future of neighborhoods. She is often asked questions like "How do we prevent gentrification?" When any change is proposed for a community - whether it be new parks, bike lanes, upgraded streetscape, or zoning for new housing - there is loud pushback over the possibility of it causing gentrification.
 
@@ -51,7 +51,7 @@ Udrea concluded her answer by saying she doesn't know how, but if we are to fix 
 
 - - -
 
-![Trinity River filled with water up to the levees on August 22, 2022. A couple strolls by and looks out across water.](https://ucarecdn.com/c93b20fd-2bae-419a-aed5-23c31bcb67ed/ "Trinity River filled with water up to the levees on August 22, 2022. A couple strolls by and looks out across water.")
+![Trinity River filled with water up to the levees on August 22, 2022. A couple strolls by and looks out across water. Photo by Hexel Colorado.](https://ucarecdn.com/c93b20fd-2bae-419a-aed5-23c31bcb67ed/ "Trinity River filled with water up to the levees on August 22, 2022. A couple strolls by and looks out across water.")
 
 Last summer was the [second-longest dry spell in DFW history,](https://www.dallasnews.com/news/weather/2022/08/10/dallas-fort-worth-officially-ends-67-day-streak-without-rainfall/) lasting 67 days without rain.
 
@@ -81,7 +81,7 @@ It's worth noting the racial implications of gentrification because while the pr
 1. When white people move into a black and brown neighborhood.
 2. When white people move into a black and brown neighborhood ***AND*** black and brown people are pushed out.
 
-![View from a balcony in Uptown Dallas, a prime example of both gentrification and displacement. Photo by Hexel Colorado.](https://ucarecdn.com/639dc58d-361a-4edc-9fde-7b67b4b346b2/ "View from a balcony in Uptown Dallas, a prime example of both gentrification and displacement.")
+![View from a balcony in Uptown Dallas, a neighborhood gentrified after the black people who formed Freedmen Town were displaced by racial violence, redlining, and the construction of US Highway 75. Photo by Hexel Colorado.](https://ucarecdn.com/639dc58d-361a-4edc-9fde-7b67b4b346b2/ "View from a balcony in Uptown Dallas, a neighborhood gentrified after the black people who formed Freedmen Town were displaced by racial violence, redlining, and the construction of US Highway 75.")
 
 People don't fear white people moving in.
 
@@ -103,7 +103,7 @@ As we tackle these questions, the solutions we discover will have the following 
 
 - - -
 
-![Trinity River filled with water up to the levees on August 22, 2022. The sky briefly had a purple hue as the rain let up and evening grew darker. Photo taken by Hexel Colorado.](https://ucarecdn.com/3e016662-3930-4123-a5b8-8c1773307ccb/ "Trinity River filled with water up to the levees on August 22, 2022. The sky briefly had a purple hue as the rain let up and evening grew darker. Photo taken by Hexel Colorado.")
+![Trinity River filled with water up to the levees on August 22, 2022. The sky briefly had a purple hue as the rain let up and evening grew darker. Photo taken by Hexel Colorado.](https://ucarecdn.com/3e016662-3930-4123-a5b8-8c1773307ccb/ "Trinity River filled with water up to the levees on August 22, 2022. The sky briefly had a purple hue as the rain let up and evening grew darker.")
 
 We had two definitions of gentrification.
 

@@ -17,9 +17,9 @@ Rainy day funds are how we save for emergencies; "sunny day funds" aren't a thin
 
 Increases in annual rainfall raises your [insurance premiums](https://www.valuepenguin.com/flood-insurance/flood-zones-affect-insurance-premiums#:~:text=Your%20flood%20insurance%20rate%20is,your%20home%27s%20risk%20of%20flooding.) while lowering your home's property value.
 
-Flash flooding often leaves neighborhoods completely unrecognizable. Families may be picking up trash, fallen trees, and destroyed houses for weeks or months (sometimes years) after one day of intense rain; life typically returns to normal after one day of intense heat.
+Flash flooding often leaves neighborhoods completely unrecognizable. Families may be picking up trash, fallen trees, and destroyed houses for weeks or months (sometimes years) after one day of intense rain.
 
-The fear and disdain some people feel towards rain is rational. Even when people can't articulate why ("I just don't feel good when it rains"), their misgivings are grounded in lived experience and supported by academic truths. In 2020, [approximately 34.2 million people worldwide](https://www.statista.com/statistics/1293353/global-number-of-people-affected-by-floods/#:~:text=In%202020%2C%20approximately%2034.2%20million,year%20peak%20registered%20in%201998.) were impacted by flooding, including being injured or losing their homes.
+The fear and disdain some people feel towards rain is rational. Even when people can't articulate why ("I just don't feel good when it rains"), their misgivings are grounded in lived experience and supported by academic truths.
 
 Imagine if someone said "I hate rain!" and you responded, "Why? That's unreasonable." *You* would be the ignorant one in that conversation, regardless of your academic knowledge and theories about rain.
 
@@ -57,7 +57,7 @@ Last summer was the [second longest dryspell in DFW history,](https://www.dallas
 
 The drought ended with [the rainiest August in Dallas history](https://www.star-telegram.com/news/local/fort-worth/article264814169.html), climaxing with the most rainfall within a 24-hour period in 90 years. As soon as there was a safe break in the weather I biked down to the Trinity River to capture the river photos featured in this post. On my way to the river, I pass [collapsed buildings](https://www.nbcdfw.com/news/local/dallas-showers-lead-to-partial-construction-collapse/3064377/) and uprooted trees.
 
-In the span of one month, we witnessed the simultaneous beauty and devastation of rain. A state of emergency was declared, up to 15 inches of water flooded streets, destroyed homes, uprooted trees, cut internet and electricity, and [killed at least one person](https://www.dallasnews.com/news/weather/2022/08/25/dallas-fort-worth-flood-caused-as-much-as-6-billion-in-damages/) after they were swept away by floodwater.
+In the span of one month, we witnessed the beauty and devastation of rain. A state of emergency was declared, up to 15 inches of water flooded streets, destroyed homes, uprooted trees, cut internet and electricity, and [killed at least one person](https://www.dallasnews.com/news/weather/2022/08/25/dallas-fort-worth-flood-caused-as-much-as-6-billion-in-damages/) after they were swept away by floodwater.
 
 ![Photo taken by Juan Figueroa, staff photographer for Dallas Morning News. Juan Garcia cleans out the items from his home damaged by the Monday morning floods on Tuesday, Aug. 23, 2022, on Alcalde Street in Old East Dallas in Dallas, TX.](https://dmn-dallas-news-prod.cdn.arcpublishing.com/resizer/fuY_QEuoetrxjD88UoER7gZzLLo=/1660x934/smart/filters:no_upscale()/cloudfront-us-east-1.images.arcpublishing.com/dmn/7GCZBVOTTBAGRLMZJ53AAFNRT4.jpg "Photo taken by Juan Figueroa, staff photographer for Dallas Morning News. Juan Garcia cleans out the items from his home damaged by the Monday morning floods on Tuesday, Aug. 23, 2022, on Alcalde Street in Old East Dallas in Dallas, TX.")
 
@@ -68,8 +68,6 @@ A steady supply is important for the well-being of everybody and everything. I w
 *We need rain because we need water.*
 
 - - -
-
-![View from a balcony in Uptown Dallas, a prime example of both gentrification and displacement. Photo by Hexel Colorado.](https://ucarecdn.com/639dc58d-361a-4edc-9fde-7b67b4b346b2/ "View from a balcony in Uptown Dallas, a prime example of both gentrification and displacement.")
 
 The word *gentrification* has two common definitions:
 
@@ -83,7 +81,7 @@ It's worth noting the racial implications of gentrification because while the pr
 1. When white people move into a black and brown neighborhood.
 2. When white people move into a black and brown neighborhod ***AND*** black and brown people are pushed out.
 
-![](https://ucarecdn.com/c5c89ef8-1e9c-4861-8ec2-394eb07a7087/)
+![View from a balcony in Uptown Dallas, a prime example of both gentrification and displacement. Photo by Hexel Colorado.](https://ucarecdn.com/639dc58d-361a-4edc-9fde-7b67b4b346b2/ "View from a balcony in Uptown Dallas, a prime example of both gentrification and displacement.")
 
 People don't fear white people moving in.
 

@@ -55,7 +55,7 @@ Udrea concluded her answer by saying she doesn't know how, but if we are to fix 
 
 Last summer was the [second longest dryspell in DFW history,](https://www.dallasnews.com/news/weather/2022/08/10/dallas-fort-worth-officially-ends-67-day-streak-without-rainfall/) lasting 67 days without rain.
 
-The drought ended with [the rainiest August in Dallas history](https://www.star-telegram.com/news/local/fort-worth/article264814169.html), climaxing with the most rainfall within a 24-hour period in 90 years. As soon as there was a safe break in the weather I biked down to the Trinity River to capture the river photos featured in this post. On my way to the river, I pass [collapsed buildings](https://www.nbcdfw.com/news/local/dallas-showers-lead-to-partial-construction-collapse/3064377/) and uprooted trees.
+The drought ended with [the rainiest August in Dallas history](https://www.star-telegram.com/news/local/fort-worth/article264814169.html), climaxing with the most rainfall within a 24-hour period in 90 years. As soon as there was a safe break in the weather I biked down to the Trinity River to capture the river photos featured in this post. On my way to the river, I passed [collapsed buildings](https://www.nbcdfw.com/news/local/dallas-showers-lead-to-partial-construction-collapse/3064377/) and uprooted trees.
 
 In the span of one month, we witnessed the beauty and devastation of rain. A state of emergency was declared, up to 15 inches of water flooded streets, destroyed homes, uprooted trees, cut internet and electricity, and [killed at least one person](https://www.dallasnews.com/news/weather/2022/08/25/dallas-fort-worth-flood-caused-as-much-as-6-billion-in-damages/) after they were swept away by floodwater.
 

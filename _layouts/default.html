@@ -111,12 +111,20 @@
       rel="stylesheet"
       media="print" />
 
+    {% if page.cover_image contains "http" %}
+      {% assign og_image = page.cover_image %}
+    {% elsif page.cover_image %}
+      {% assign og_image = "https://thisdallaslife.com" | append: page.cover_image %}
+    {% else %}
+      {% assign og_image = "/assets/tdl-social-share-1600x900.png" %}
+    {% endif %}
+
     <!-- SOCIAL MEDIA META TAGS -->
     <meta property="og:title" content="{{ meta_title }}">
     <meta property="og:type" content="{{ page.meta_type | default: "website"}}" />
     <meta property="og:description" content="{{ meta_description }}">
-    <meta property="og:image" content="https://thisdallaslife.com{{ page.cover_image | default: "/assets/tdl-social-share-1600x900.png" }}">
-    <meta property="og:url" content="https://thisdallaslife.com{{ page.url }}">
+    <meta property="og:image" content="{{ page.cover_image }}">
+    <meta property="og:url" content="{{ page.url }}">
     <meta name="twitter:card" content="summary_large_image">
 
   </head>

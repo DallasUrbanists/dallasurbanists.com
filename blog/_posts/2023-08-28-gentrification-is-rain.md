@@ -87,7 +87,7 @@ People don't fear white people moving in.
 
 We don't want black and brown people pushed out.
 
-It's not the presence of white people that makes neighborhoods unrecognizable; it's the absence of black and brown people and culture that makes neighborhoods unrecognizable. New, tall, and modern buildings do not depress people; it's the reminder that our uncles, aunts, and cousins used to live there, and now they don't.
+It's not the presence of white people that makes neighborhoods unrecognizable; it's the absence of black and brown people and their culture that makes neighborhoods unrecognizable. New, tall, and modern buildings do not depress people; it's the reminder that our uncles, aunts, and cousins used to live there, and now they don't.
 
 The displacement of black and brown people is almost always precipitated by white people wanting what colored people have. Dallas has a history of pushing black people out through [seemingly innocuous accommodations.](https://www.texasobserver.org/dallas-hidden-history-of-terror/) The question for urban planners and community activists isn't "How do we prevent white people from moving in?" but rather...
 

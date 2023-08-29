@@ -22,10 +22,11 @@ Beakley is working to open a wine bar and bottle shop. There are 8 off-street pa
 Ironically, [according to real estate developer Nathan Barrett](https://twitter.com/ncoxbarrett/status/1696175066713600028), there's a thousand parking spaces surrounding the old Hartgraves Cafe in the form of parking lots, parking garages, and curb-side parking. No matter how empty the other spaces may be, the city only counts dedicated off-street parking towards the minimum.
 
 * Location: [3302 Swiss Circle](https://www.google.com/maps/place/3302+Swiss+Cir,+Dallas,+TX+75204/@32.7907039,-96.7851969,764m/data=!3m2!1e3!4b1!4m6!3m5!1s0x864e98db3d29a769:0x6d74f5032339f1ad!8m2!3d32.7907039!4d-96.782622!16s%2Fg%2F11c5f9mypy?entry=ttu)
-* Expected land use: wine bar and bottle shop 
+* Current land use: vacant
+* Desired land use: wine bar and bottle shop 
 * Estimated required parking: 46
 * Parking counted toward code: 8
-* Actual available parking: ~1,000
+* Available actual parking: ~1,000
 
 - - -
 
@@ -40,3 +41,16 @@ Val’s Cheesecakes has been serving cheesecake and wine bottles to-go since ope
 He's asked the neighboring businesses if any of them would lease out a couple spaces but they all said no. Not even the Blue Goose across the street would spare space; [the goose has since closed its doors and flown away](https://www.dallasnews.com/food/restaurant-news/2023/02/28/dallas-original-blue-goose-restaurant-is-closing-on-greenville-avenue/), so nobody is allowed to park there at all now.
 
 The total lack of neighborly support on parking isn't caused by greed (after all, a monthly parking lease payment would be a consistent income stream for the lessor) but rather by yet another unnecessary hurdle from the city. In order for two businesses to enter into a private agreement to share parking, [parking code requires all parties sign onto a new deed restriction](https://twitter.com/ncoxbarrett/status/1688766359058976769). Deed restrictions are pieces of city legislation; it's prohibitively expensive to lawyer up and get passed and even more difficult to undo in the future.
+
+* Location: Val's Cheesecake, [2820 Greenville Ave](https://goo.gl/maps/MAygHSZUfMSC3fna8)
+* Current land use: cheesecake and wine to-go
+* Desired land use: cheesecake and wine dine-in 
+* Required additional parking: 2
+* Available eligible parking: 0
+* Available actual parking: hundreds
+
+
+
+Half-a-mile south on Greenville Ave, 
+
+![Interior of Val's Cheesecake; photo from their Facebook page.]( "Interior of Val's Cheesecake; photo from their Facebook page.")

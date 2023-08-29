@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parking madness stifles business in Dallas
+title: Parking madness bad for business in Dallas
 subtitle: Minimum parking requirements prevent growth in Old East Dallas, Lower
   Greenville, and Oak Cliff.
 author: hexel
@@ -33,4 +33,10 @@ Ironically, [according to real estate developer Nathan Barrett](https://twitter.
 
 Stories on [Val's Cheesecake](https://lakewood.advocatemag.com/vals-cheesecakes-parking/#gsc.tab=0) and [denied late-night hours](https://lakewood.advocatemag.com/plan-commission-denies-late-hours/#gsc.tab=0) reported by Renee Umstead for Advocate Magazine.
 
-Val’s Cheesecakes has been serving cheesecake and wine bottles to-go since opening his tiny corner shop on Greenville Ave in 2017. He currently has 6 parking spaces, but in order to legally allow customers to eat and drink inside his store, city code requires 2 more. But there is no space for more parking in his tight street corner.
+Val’s Cheesecakes has been serving cheesecake and wine bottles to-go since opening his tiny corner shop on Greenville Ave in 2017. He currently has 6 parking spaces, but in order to legally allow customers to eat and drink inside his store, city code requires 2 more. But there is no space for more parking in his tight street corner, so customers must eat their cheesecake on the sidewalk and drink their bottled wine at home.
+
+![Satellite view of Val's Cheesecake (in green square) on Greenville Ave. Parking lots in red squares.](https://ucarecdn.com/9410d919-cef7-4b4d-b857-ea6fc45a9147/ "Satellite view of Val's Cheesecake (in green square) on Greenville Ave. Parking lots in red squares.")
+
+He's asked the neighboring businesses if any of them would lease out a couple spaces but they all said no. Not even the Blue Goose across the street would spare space; [the goose has since closed its doors and flown away](https://www.dallasnews.com/food/restaurant-news/2023/02/28/dallas-original-blue-goose-restaurant-is-closing-on-greenville-avenue/), so nobody is allowed to park there at all now.
+
+The total lack of neighborly support on parking isn't caused by greed (after all, a monthly parking lease payment would be a consistent income stream for the lessor) but rather by yet another unnecessary hurdle from the city. In order for two businesses to enter into a private agreement to share parking, [parking code requires all parties sign onto a new deed restriction](https://twitter.com/ncoxbarrett/status/1688766359058976769). Deed restrictions are pieces of city legislation; it's prohibitively expensive to lawyer up and get passed and even more difficult to undo in the future.

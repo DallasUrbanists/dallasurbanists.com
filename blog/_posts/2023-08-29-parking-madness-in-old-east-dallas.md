@@ -40,7 +40,7 @@ Val’s Cheesecakes has been serving cheesecake and wine bottles to-go since ope
 
 He's asked the neighboring businesses if any of them would lease out a couple spaces but they all said no. Not even the Blue Goose across the street would spare space; [the goose has since closed its doors and flown away](https://www.dallasnews.com/food/restaurant-news/2023/02/28/dallas-original-blue-goose-restaurant-is-closing-on-greenville-avenue/), so nobody is allowed to park there at all now.
 
-The total lack of neighborly support on parking isn't caused by greed (after all, a monthly parking lease payment would be a consistent income stream for the lessor) but rather by yet another unnecessary hurdle from the city. In order for two businesses to enter into a private agreement to share parking, [parking code requires all parties sign onto a new deed restriction](https://twitter.com/ncoxbarrett/status/1688766359058976769). Deed restrictions are pieces of city legislation; it's prohibitively expensive to lawyer up and get passed and even more difficult to undo in the future.
+The total lack of neighborly support on parking isn't caused by pure greed (after all, a monthly parking lease payment would be a consistent income stream for the lessor). There's yet another unnecessary hurdle from the city: in order for two businesses to enter into a private agreement to share parking, [parking code requires all parties sign onto a new deed restriction](https://twitter.com/ncoxbarrett/status/1688766359058976769). Deed restrictions are city legislation; it's prohibitively expensive to lawyer up and get passed and even more difficult to undo in the future. That's too much trouble for any business to go through just to help out with 2 parking spaces.
 
 * Location: Val's Cheesecake, [2820 Greenville Ave](https://goo.gl/maps/MAygHSZUfMSC3fna8)
 * Current land use: cheesecake and wine to-go
@@ -49,8 +49,31 @@ The total lack of neighborly support on parking isn't caused by greed (after all
 * Available eligible parking: 0
 * Available actual parking: hundreds
 
+![Sign posted on front window of Feng Cha Teahouse in Lowest Greenville.](https://ucarecdn.com/2702dabd-98fd-40ee-88e8-c171d71b7cf4/ "Sign posted on front window of Feng Cha Teahouse in Lowest Greenville.")
 
+> "New hours are due to outdated, ludicous, nonsensical parking requirements being enforced by the City of Dallas."
 
-Half-a-mile south on Greenville Ave, 
+Three businesses - Feng Cha (boba tea), Balanced Being Yoga & Wellness, and Sugaring NYC (hair removal studio) - had their requests to stay open until 10:00 pm denied by the City Plan Commission. Currently, the businesses must close by 7:00 pm. In order to stay open late night, the city requires more parking than these three businesses currently have.
 
-![Interior of Val's Cheesecake; photo from their Facebook page.]( "Interior of Val's Cheesecake; photo from their Facebook page.")
+There are two ways they could've gotten more parking: leased space and delta points.
+
+As described earlier for Val's Cheesecake, it's not easy to come up with a new parking lease agreement. Public parking lots are the only source of attainable leased space, but those are in limited supply and are gobbled up by bigger players on the block, like Trader Joe's. 
+
+![Several big box stores like Sprouts, Fiesta, Sams Club, and CVS Pharmacy have exclusive rights to hundreds of empty parking spaces.](https://ucarecdn.com/038320c9-a310-4dfb-aa8d-5ea9a8fb3908/-/crop/4000x2474/0,285/-/preview/ "Several big box stores like Sprouts, Fiesta, Sams Club, and CVS Pharmacy have exclusive rights to hundreds of empty parking spaces.")
+
+The other way to acquire more parking is through "imaginary parking spaces" called delta points. [Nathan Barrett wrote a piece in 2017](https://medium.com/@ncoxbarrett/parking-and-delta-credits-or-why-old-decrepit-buildings-in-dallas-stay-that-way-8a9d9813a752) explaining how the point system works. The simple explanation is that historic buildings are given "free passes" in the form of delta points. Let's say you live in an old building with ten delta points and the parking code requires you have fifteen; 15 minus 10 is 5 parking spaces you need to provide.
+
+So how many delta points does Feng Cha have for being in a historic building?
+
+Zero.
+
+You can lose delta points for arbitrary reasons. The building was empty for a couple years.
+
+Meanwhile, [over 1,400 parking spaces](https://twitter.com/hexel_co/status/1688763229990797312) at Sprouts, Fiesta, Sams Club, Mockingbird Station, and the abandoned corner CVS are unleasable. 
+
+* Location: Multiple, [1917 Greenville Ave](https://goo.gl/maps/MAygHSZUfMSC3fna8)
+* Current land use: boba, yoga, hair until 7:00 pm
+* Desired land use: boba, yoga, hair until 10:00 pm
+* Required additional parking: Unknown
+* Available eligible parking: ~0
+* Available actual parking: 1,400+

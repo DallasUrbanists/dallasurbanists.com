@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parking mandate madness bad for business
+title: Parking mandate madness is bad for business
 subtitle: Minimum parking requirements prevent growth in Old East Dallas, Lower
   Greenville, and Oak Cliff.
 author: hexel

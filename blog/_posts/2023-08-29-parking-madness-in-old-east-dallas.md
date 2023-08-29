@@ -5,7 +5,7 @@ subtitle: Minimum parking requirements prevent growth in Old East Dallas, Lower
   Greenville, and Oak Cliff.
 author: hexel
 date: 2023-08-29T16:32:45.413Z
-cover_image: ""
+cover_image: https://ucarecdn.com/30380cbf-8242-4a5c-8af6-c0f31e3080e4/
 ---
 # Old East Dallas - Wine Bar & Bottle Shop
 

@@ -21,7 +21,7 @@ Chase Beakley leased space in a long-vacant 102-year-old building on Swiss Avenu
 
 ![Facade rendering for 3302 Swiss Circle](https://ucarecdn.com/2319e9be-ea1a-4ce7-bae4-23fc8442ef19/ "Facade rendering for 3302 Swiss Circle")
 
-There are 8 off-street parking spaces attached to the historic building. Reviving the Hartgraves Cafe would require 46 off-street parking spaces. It's prohibitively expensive to build a parking lot twice the area of the cafe itself, so Beakley paid a consultant $50,000 to reconfigure the space and game the parking code so he can open shop without adding parking.
+There are 8 off-street parking spaces attached to the historic building. Reviving as a cafe would require 46 off-street parking spaces. It's prohibitively expensive to build a parking lot twice the area of the building itself, so Beakley paid a consultant $50,000 to reconfigure the space and game the parking code so he can open shop without adding parking.
 
 > “Ultimately, we decided to sign our lease without being sure we could meet the parking minimum requirements," says Beakley.
 >

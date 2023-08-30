@@ -19,6 +19,8 @@ This list focuses on how minimum parking requirements stifles growth in the city
 
 Chase Beakley leased space in a long-vacant 102-year-old building on Swiss Avenue, near Baylor Medical to open a wine bar and bottle shop. The historic structure was originally the Hartgraves Cafe, the workplace of Bonnie Parker before her crime spree with Clyde Barrow — giving it historic and cultural significance for Dallas, especially for true crime buffs.
 
+![Facade rendering for 3302 Swiss Circle](https://ucarecdn.com/2319e9be-ea1a-4ce7-bae4-23fc8442ef19/ "Facade rendering for 3302 Swiss Circle")
+
 There are 8 off-street parking spaces attached to the historic building. Reviving the Hartgraves Cafe would require 46 off-street parking spaces. It's prohibitively expensive to build a parking lot twice the area of the cafe itself, so Beakley paid a consultant $50,000 to reconfigure the space and game the parking code so he can open shop without adding parking.
 
 > “Ultimately, we decided to sign our lease without being sure we could meet the parking minimum requirements," says Beakley.

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap');
 
 body,
 input {
@@ -34,8 +34,7 @@ body,
     display: none;
 }
 
-[class*="ControlContainer-Shortcode"] [class*="ImageWrapper-checkerboard"] {
-}
+[class*="ControlContainer-Shortcode"] [class*="ImageWrapper-checkerboard"] {margin-bottom: 0;aspect-ratio: 16/9;width: 100%;height: auto;}
 
 [class*="ControlContainer-Shortcode"] [class*="ImageWrapper-checkerboard"] + div {
     display: none;
@@ -50,11 +49,12 @@ body,
 }
 
 [class*="ControlContainer-Shortcode"] > div > div:last-child [class*="ControlContainer"] + [class*="ControlContainer"] {
-    display: none;
+    text-align: center;
+    /* display: none; */
 }
 
 [class*="ControlContainer-Shortcode"] > div > div:last-child {
-    display: flex;
+    /* display: flex; */
 }
 
 [class*="ControlContainer-Shortcode"]:hover > div:last-child > div [class*="ControlContainer"] + [class*="ControlContainer"] {
@@ -70,7 +70,7 @@ body,
 }
 
 [class*="ControlContainer-Shortcode"] > div [class*="ControlContainer"] label {
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     z-index: 1;
 }
@@ -90,7 +90,7 @@ body,
 
 [class*="ControlContainer"] label[for*="title-field"],
 [class*="ControlContainer"] label[for*="body-field"] {
-    display: none;
+    /* display: none; */
 }
 
 [class*="ControlContainer"] input,
@@ -126,9 +126,12 @@ body,
 }
 
 [class*="ControlContainer"] > label {
+    display: block;
+    text-align: center;
     background-color: transparent;
     color: #999;
     padding: 0;
+    margin: 0 auto;
 }
 
 .cms-editor-visual [class*="ControlContainer"] input,
@@ -172,7 +175,7 @@ body,
 }
 
 
-input[id^="title-field"] {
+input[id^="title-field"][placeholder=Title] {
     font-size: calc(1.375rem + 1.5vw);
     font-weight: 300;
     line-height: 1.2em;
@@ -412,4 +415,68 @@ div.Pane.vertical.Pane2 {
 
 [class*=StyledSplitPane-card-splitPane] {
     background-color: transparent !important;
+}
+
+
+blockquote[class*=StyledBlockQuote] p:last-of-type {
+}
+
+hr[class*=StyledHr] {
+    margin-top: 0;
+}
+blockquote[class*=StyledBlockQuote] {
+    padding: 2em;
+    border-left: solid 1px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+    /* border-left: solid 0.25em #ccc; */
+    /* border-right: solid 0.25em #ccc; */
+    /* padding-top: 1em; */
+    /* padding-bottom: 1em; */
+    /* padding-right: 1em; */
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    /* border-top-right-radius: 1em; */
+    /* border-bottom-left-radius: 1em; */
+}
+
+blockquote[class*=StyledBlockQuote] p span {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    color: #666;
+    font-weight: 200;
+}
+
+blockquote[class*=StyledBlockQuote] p:last-of-type {margin-bottom: 0;}
+
+hr[class*=StyledHr] {
+    margin-top: 0;
+}
+
+[class*="ControlContainer"] > div > [class*=Editor] div[id*=undefined-field] {
+    width: 100%;
+}
+
+[class*="ControlContainer"] > div > [class*=Editor] div[id*=undefined-field] > div {
+    width: 100%;
+}
+
+[class*="ControlContainer-Shortcode"] > div [class*="ControlContainer"]:first-child {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+input[id^="title-field"][placeholder=Title] {}
+
+input[id*="alt-field"],
+input[id*="title-field"] {
+    text-align: center;
+    font-style: italic;
+}
+
+    
+
+
+[class*="ControlContainer-Shortcode"]:first-of-type label[for*=undefined-field] {
+    display: none;
 }

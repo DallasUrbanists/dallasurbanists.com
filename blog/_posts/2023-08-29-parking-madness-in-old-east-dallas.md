@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Parking mandate madness is bad for business
-subtitle: Minimum parking requirements prevent growth in Old East Dallas, Lower
+title: Parking mandates are anti-growth
+subtitle: Minimum off-street parking requirements prevent growth in Old East Dallas, Lower
   Greenville, and Oak Cliff.
 author: hexel
 date: 2023-08-29T16:32:45.413Z

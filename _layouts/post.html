@@ -5,54 +5,24 @@ meta_type: "article"
 {% assign author = site.authors | where: 'name', page.author | first %}
 
 <div class="container-lg pt-2">
-  {% include impact-image.html path = page.cover_image %}
-  <div class="container text-center" style="max-width: 40em;">
-    <h1 class="display-6 mt-4">{{ page.title }}</h1>
+  <div class="container text-center">
+    <h1 class="display-6 mt-4 text-center">{{ page.title }}</h1>
     <p>
       <em>By {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</em>
     </p>
   </div>
+  {% include impact-image.html path = page.cover_image %}
 </div>
 
 <div class="container-fluid">
-  {% if page.embed_top %}
-    <div class="embed-top">
-      <div class="container-lg py-0 px-3 px-lg-5">
-        <iframe src="{{ page.embed_top }}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-    </div>
-  {% endif %}
-  {% if page.jump_link or page.recommended_actions %}
-    <div class="bg-dark sticky-top">
-      <div class="container-lg py-3 px-3 px-lg-5">
-        {% if page.jump_link %}
-          <a href="#{{ page.jump_link }}" type="button" class="btn btn-success">
-            {% if page.jump_icon %}
-              <i class="bi {{ page.jump_icon }}"></i>
-            {% endif %}
-            {% if page.jump_label %}
-              {{ page.jump_label }}
-            {% else %}
-              Jump
-            {% endif %}
-          </a>
-        {% endif  %}
-        {% if page.recommended_actions %}
-          {% for rec_action in page.recommended_actions %}
-            <a href="{{ rec_action[0] }}" target="_blank" type="button" class="btn btn-secondary">
-              <i class="bi {{ rec_action[2] | default: 'bi-box-arrow-up-right'  }}"></i>
-              {{ rec_action[1]  }}
-            </a>
-          {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-  {% endif %}
 
   <div class="container-fluid row justify-content-center blog-article-parent-container mb-4">
     <div class="" style="width: 768px; margin: 0 auto;">
       <article class="blog-article mb-5">
-        {{ content }}
+        <blockquote class="opener">
+          <p>{{ page.subtitle }}</p>
+        </blockquote>
+         {{ content }}
       </article>
     </div>
   </div>

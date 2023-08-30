@@ -269,6 +269,20 @@ article.blog-article > ol li {
     font-style: italic;
 }
 
+.blog-article blockquote.opener {
+    margin-bottom: 1em;
+    padding: 0.5em 0;
+    background-color: transparent;
+    border-left: none;
+    margin-top: 0;
+    margin-left: -1em;
+    text-align: right;
+    font-style: normal;
+    font-size: 1.25em;
+    text-align: center;
+    margin-left: 0;
+}
+
 .blog-article blockquote p {
     font-size: 1.1em;
     line-height: 1.5em;

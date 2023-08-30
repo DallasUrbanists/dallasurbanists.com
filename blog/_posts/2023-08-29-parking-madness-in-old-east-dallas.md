@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Parking mandates are anti-growth
-subtitle: Minimum off-street parking requirements prevent growth in Old East Dallas, Lower
-  Greenville, and Oak Cliff.
+subtitle: Minimum off-street parking requirements prevent growth in Old East
+  Dallas, Lower Greenville, and Oak Cliff.
 author: hexel
 date: 2023-08-29T16:32:45.413Z
 cover_image: https://ucarecdn.com/30380cbf-8242-4a5c-8af6-c0f31e3080e4/
@@ -10,6 +10,13 @@ cover_image: https://ucarecdn.com/30380cbf-8242-4a5c-8af6-c0f31e3080e4/
 In this post, I summarize three stories of small-scale businesses negatively impacted by outdated parking mandates.
 
 This list focuses on how minimum parking requirements stifles growth in the city. I encourage you to read the full stories from their original authors.
+
+> **Key Takeaways**
+>
+> * Only dedicated off-street parking counts toward a business's mandated minimum, even when they're surrounded by thousands of other available spaces. 
+> * "Delta points" are imaginary parking spaces given and taken from historic buildings using an arbitrary points system.
+> * Shared parking is disincentivized because parking code requires leased spaces to be encumbered by a deed restriction which many landlords are loath to grant.
+> * Small business owners pay thousands of dollars out-of-pocket for plans and studies that are not guaranteed to satisfy CPC and the Board of Adjustments over parking.
 
 - - -
 

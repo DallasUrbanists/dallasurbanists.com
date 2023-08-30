@@ -21,7 +21,9 @@ Chase Beakley leased space in a long-vacant 102-year-old building on Swiss Avenu
 
 There are 8 off-street parking spaces attached to the historic building. Reviving the Hartgraves Cafe would require 46 off-street parking spaces. It's prohibitively expensive to build a parking lot twice the area of the cafe itself, so Beakley paid a consultant $50,000 to reconfigure the space and game the parking code so he can open shop without adding parking.
 
-> “Ultimately, we decided to sign our lease without being sure we could meet the parking minimum requirements," says Beakley. "This was a huge risk that many entrepreneurs wouldn’t have been able to take.”
+> “Ultimately, we decided to sign our lease without being sure we could meet the parking minimum requirements," says Beakley.
+>
+> "This was a huge risk that many entrepreneurs wouldn’t have been able to take.”
 
 Ironically, [according to real estate developer Nathan Barrett](https://twitter.com/ncoxbarrett/status/1696175066713600028), a thousand spaces surround the old Hartgraves Cafe in parking lots, parking garages, and curb-side parking. The city only counts dedicated off-street parking towards the minimum.
 
@@ -44,7 +46,7 @@ Valery Jean-Bart opened Val’s Cheesecakes in 2017, selling cheesecake and wine
 
 ![Satellite view of Val's Cheesecake (in green square) on Greenville Ave. Parking lots in red squares.](https://ucarecdn.com/9410d919-cef7-4b4d-b857-ea6fc45a9147/ "Satellite view of Val's Cheesecake (in green square) on Greenville Ave. Parking lots in red squares.")
 
-He's asked neighboring businesses if they would lease a couple spaces but all said no. Not even the Blue Goose across the street would share; [the goose has since closed its doors and flown away](https://www.dallasnews.com/food/restaurant-news/2023/02/28/dallas-original-blue-goose-restaurant-is-closing-on-greenville-avenue/), so nobody may park there at all now.
+Jean-Bart asked neighboring businesses if anyone would lease parking spaces but all said no. Not even the Blue Goose across the street would share; [the goose has since closed its doors and flown away](https://www.dallasnews.com/food/restaurant-news/2023/02/28/dallas-original-blue-goose-restaurant-is-closing-on-greenville-avenue/), so nobody may park there at all now.
 
 The lack of neighborly support isn't caused by pure greed. "Current parking code requires leased parking spaces to be encumbered by a deed restriction which many landlords are understandably loath to grant." [explains Nathan Barrett on Twitter](https://twitter.com/ncoxbarrett/status/1688766359058976769). "This makes off-site parking very challenging." Deed restrictions are a form of city legislation, making them prohibitively difficult to form and undo.
 
@@ -63,7 +65,7 @@ The lack of neighborly support isn't caused by pure greed. "Current parking code
 
 Three businesses - Feng Cha (boba tea), Balanced Being Yoga & Wellness, and Sugaring NYC (hair removal studio) - had their requests to stay open until 10:00 pm denied by the City Plan Commission. Currently, the businesses must close by 7:00 pm.
 
-To stay open late night, the city requires more parking. There are two ways to satisfy city code without building new spaces: leasing and delta points.
+For them to stay open late night, the city requires more parking. There are two ways to satisfy city code without building new spaces: leasing and delta points.
 
 As described earlier for Val's Cheesecake, neighboring businesses are disincentivized from sharing parking. Leasable parking can only be found on shared lots, but supply is limited and gobbled up by big players on the block like Trader Joe's.
 

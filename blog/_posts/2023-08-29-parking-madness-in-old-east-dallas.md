@@ -20,7 +20,7 @@ This list focuses on how minimum parking requirements stifles growth in the city
 > * "Delta points" are imaginary parking spaces given and taken from historic buildings using an arbitrary points system.
 > * Shared parking is disincentivized because parking code requires leased spaces to be encumbered by a deed restriction, which many landlords are loath to grant.
 > * Small business owners pay thousands of dollars out-of-pocket for plans and studies that have guarantee of satisfying the CPC and the Board of Adjustments over parking.
->   {: #takeaways}
+{: #takeaways}
 
 - - -
 

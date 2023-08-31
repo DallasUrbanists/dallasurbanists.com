@@ -291,3 +291,34 @@ article.blog-article > ol li {
 }
 
 .blog-article blockquote p:last-of-type {margin-bottom: 0;}
+
+.blog-article blockquote#takeaways {
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 1em 2em;
+}
+
+.blog-article blockquote#takeaways p,
+.blog-article blockquote#takeaways ul {
+    font-style: normal;
+}
+
+.blog-article blockquote#takeaways p {
+    font-weight: bold;
+}
+
+.blog-article blockquote#takeaways ul {
+    margin-top: 1em;
+    margin-left: 0;
+    padding-left: 0em;
+    list-style: disclosure-closed;
+}
+
+.blog-article blockquote#takeaways ul li {
+    margin-bottom: 1em;
+    padding-left: 1em;
+    font-size: 1rem;
+}
+
+.blog-article blockquote#takeaways ul li:last-child {
+    margin-bottom: 0;
+}

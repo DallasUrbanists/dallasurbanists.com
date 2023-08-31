@@ -271,14 +271,14 @@ article.blog-article > ol li {
 
 .blog-article blockquote.opener {
     margin-bottom: 1em;
-    padding: 0.5em 0;
+    padding: 0.5em;
     background-color: transparent;
     border-left: none;
     margin-top: 0;
     margin-left: -1em;
     text-align: right;
-    font-style: normal;
-    font-size: 1.25em;
+    font-style: italic;
+    /* font-size: 1.1em; */
     text-align: center;
     margin-left: 0;
 }

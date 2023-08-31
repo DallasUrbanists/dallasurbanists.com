@@ -121,6 +121,8 @@ The long struggle over parking for Graph Coffee still isn't over.
 * **July 2022 -** Dallas-based engineering company DeShazo Group conducted another traffic study and concluded that because there was enough parking along the streets near Graph, the city could make a parking exception.
 * **August 2022 -** Sierra returned to the Board of Adjustments with approval from the city’s traffic engineer. He was denied again.
 
+![Graph Coffee is located at the northern tip of downtown Elmwood and one mile from DART Hampton Station.](https://ucarecdn.com/f6037091-a362-47bf-991d-055519a5a640/ "Graph Coffee is located at the northern tip of downtown Elmwood and one mile from DART Hampton Station.")
+
 Instead of going back to the Board of Adjustments, Sierra has chosen to file parts of the building under zoning codes allowing office space and general merchandise or food store. The total parking spaces would come out to four—which fits on the land he has—though it means more construction, more permits, more approvals, and more waiting.  
 
 > “I always heard people saying the city is a pain to deal with when it comes to permits and reviews, but I never realized it was going to be this difficult,” Sierra says.

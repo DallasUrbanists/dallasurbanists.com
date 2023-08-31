@@ -17,6 +17,7 @@ This list focuses on how minimum parking requirements stifles growth in the city
 > * "Delta points" are imaginary parking spaces given and taken from historic buildings using an arbitrary points system.
 > * Shared parking is disincentivized because parking code requires leased spaces to be encumbered by a deed restriction which many landlords are loath to grant.
 > * Small business owners pay thousands of dollars out-of-pocket for plans and studies that are not guaranteed to satisfy CPC and the Board of Adjustments over parking.
+{: #takeaways}
 
 - - -
 
@@ -133,6 +134,6 @@ Instead of going back to the Board of Adjustments, Sierra has chosen to file par
 * Current land use: single-family house
 * Desired land use: coffeeshop
 * Required additional parking: 18
-* Possible additional parking: 3
-* Walkable households and businesses: ~1,500
+* Possible additional parking: 4
+* Walkable people and businesses: ~1,500
 * Wasted money out-of-pocket: at least $3,000

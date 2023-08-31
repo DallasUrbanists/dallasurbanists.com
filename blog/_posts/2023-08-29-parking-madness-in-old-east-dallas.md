@@ -7,7 +7,7 @@ author: hexel
 date: 2023-08-29T16:32:45.413Z
 cover_image: https://ucarecdn.com/30380cbf-8242-4a5c-8af6-c0f31e3080e4/
 ---
-In this post, I summarize three stories of small-scale businesses negatively impacted by outdated parking mandates.
+In this post, I summarize four stories of small-scale businesses negatively impacted by outdated parking mandates.
 
 This list focuses on how minimum parking requirements stifles growth in the city. I encourage you to read the full stories from their original authors.
 

@@ -17,11 +17,11 @@ This list focuses on how minimum parking requirements stifles growth in the city
 > * "Delta points" are imaginary parking spaces given and taken from historic buildings using an arbitrary points system.
 > * Shared parking is disincentivized because parking code requires leased spaces to be encumbered by a deed restriction, which many landlords are loath to grant.
 > * Small business owners pay thousands of dollars out-of-pocket for plans and studies that have guarantee of satisfying the CPC and the Board of Adjustments over parking.
-{: #takeaways}
+>   {: #takeaways}
 
 - - -
 
-# Old East Dallas - Wine Bar & Bottle Shop
+# Old East Dallas: Wine Bar & Bottle Shop
 
 [April Towery wrote on this story](https://candysdirt.com/2023/08/28/redevelopment-plan-for-an-old-east-dallas-cafe-with-bonnie-and-clyde-ties-hits-a-roadblock-with-parking-requirements/) for CandysDirt.com.
 
@@ -48,9 +48,9 @@ Ironically, [according to real estate developer Nathan Barrett](https://twitter.
 
 - - -
 
-# Lower Greenville - Cheesecake, Boba, Hair, & Yoga
+# Lower Greenville: Val's Cheesecake
 
-Renee Umstead wrote on [Val's Cheesecake](https://lakewood.advocatemag.com/vals-cheesecakes-parking/#gsc.tab=0) and [denied late-night hours](https://lakewood.advocatemag.com/plan-commission-denies-late-hours/#gsc.tab=0) for Advocate Magazine.
+[Renee Umstead wrote on this story](https://lakewood.advocatemag.com/vals-cheesecakes-parking/#gsc.tab=0) for Advocate Magazine.
 
 Valery Jean-Bart opened Val’s Cheesecakes in 2017, selling cheesecake and wine bottles to-go from his small shop on Greenville Ave. He has 6 parking spaces. City code requires 2 additional spaces before he can legally allow customers to eat and drink in-store. There is no space for more parking in his tight street corner, so customers eat their cheesecake on the sidewalk and drink their bottled wine at home.
 
@@ -71,7 +71,13 @@ The lack of neighborly support isn't caused by pure greed. "Current parking code
 * Available eligible parking: 0
 * Available actual parking: hundreds
 
+
+
 ![Sign posted on front window of Feng Cha Teahouse in Lowest Greenville.](https://ucarecdn.com/2702dabd-98fd-40ee-88e8-c171d71b7cf4/ "Sign posted on front window of Feng Cha Teahouse in Lowest Greenville.")
+
+# Lowest Greenville: Late Night Boba, Yoga, and Hair
+
+[Renee Umstead wrote on this story](https://lakewood.advocatemag.com/plan-commission-denies-late-hours/#gsc.tab=0) for Advocate Magazine.
 
 Three businesses - Feng Cha (boba tea), Balanced Being Yoga & Wellness, and Sugaring NYC (hair removal studio) - had their requests to stay open until 10:00 pm denied by the City Plan Commission. Currently, the businesses must close by 7:00 pm.
 
@@ -100,7 +106,7 @@ Delta points can be lost for arbitrary reasons. In this case, the building was e
 
 ![Graph Coffee in downtown Elmwood.](https://ucarecdn.com/7d8f567e-90b4-4413-9401-891411682101/ "Graph Coffee in downtown Elmwood.")
 
-# Downtown Elmwood - Coffee Shop
+# Downtown Elmwood: Graph Coffee
 
 [Nataly Keomoungkhoun wrote on this story](https://www.dmagazine.com/frontburner/2023/02/this-dallas-coffee-shop-wants-to-build-community-the-city-wanted-it-to-build-parking-spaces/) for D Magazine.
 

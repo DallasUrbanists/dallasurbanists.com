@@ -5,7 +5,7 @@ subtitle: "The answer you're looking for is based on two things: the life you
   choose to live and the city's compatibility with your lifestyle."
 author: hexel
 date: 2023-09-01T09:12:23.140Z
-cover_image: https://ucarecdn.com/4a3f45ec-46ee-4780-becf-98258dca47e4/
+cover_image: https://ucarecdn.com/1d024ef5-29a8-448e-a870-d30dca3287c9/
 ---
 > Can I live in Dallas without a car?
 >

@@ -67,7 +67,7 @@ Of course, just because owning a car is difficult doesn't mean not having a car 
 
 What are the practical factors to consider?
 
-That's coming up...
+We're getting there...
 
 - - -
 
@@ -78,3 +78,5 @@ That's coming up...
 > Will I be happy in Dallas without a car?
 >
 > Depends.
+
+This is where rubber really starts to meet the road.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Yes, you can live in Dallas without a car. The real question is...
+title: Yes, you can live in Dallas without a car. Here's the thing...
 subtitle: "The answer you're looking for is based on two things: the life you
   choose to live and the city's compatibility with your lifestyle."
 author: hexel

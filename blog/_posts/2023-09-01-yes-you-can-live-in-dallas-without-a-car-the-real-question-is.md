@@ -35,8 +35,6 @@ Car ownership alone costs between 50% and 100% of most people's rent in this cit
 
 [Auto theft in Dallas is at a record high and climbing](https://www.cbsnews.com/texas/news/auto-theft-reports-hitting-new-highs-in-north-texas/), with 13,412 cars and trucks stolen just last year in Dallas alone. Last week, I went out to dinner with three friends and all of them had their car towed, totaled, or both within the last year; only one of the three managed to get their car back and that's who drove the other two that night.
 
-Last January, even without owning a car I too had a car towed when, to my embarrasment, I made a mistake advising where my should park her car on her first day visiting me from Paris. She had borrowed her parents car for the visit, and we had to take a Lyft to the tow yard in South Dallas.
-
 There are challenges I used to have everyday that I don't even think about since letting go of my car two years ago:
 
 * Am I allowed to park here?
@@ -107,8 +105,31 @@ If you can't, then you need a car.
 >
 > \- Everybody
 
-Of course, it's not simply a matter of having a positive mental attitude. If it were, [the number of Dallas households with a car](https://www.dmagazine.com/publications/d-ceo/2018/september/rethinking-dallas-attraction-to-the-automobile/#:~:text=According%20to%20American%20Community%20Survey,metropolitan%20statistical%20areas%20(MSAs).) would be more like 50% instead of 95%.
+Of course, it's not simply a matter of having a positive mental attitude. Otherwise, [the rate of Dallas households with a car](https://www.dmagazine.com/publications/d-ceo/2018/september/rethinking-dallas-attraction-to-the-automobile/#:~:text=According%20to%20American%20Community%20Survey,metropolitan%20statistical%20areas%20(MSAs).) would be more like 50%, not 95%.
 
-Ultimately, whether or not you individually need a car depends on what you choose to value and, tacitly, what you choose to tradeoff. For example, by driving to work you gain time plus comfort; in exchange, you give up money [and health](https://www.nytimes.com/2019/01/21/upshot/stuck-and-stressed-the-health-costs-of-traffic.html). Public transit, bicycling, and walking are all options that come with their own benefits and tradeoffs.
+Your likelihood of needing a car is a function of three variables.
 
-The intensity of those benefits and tradeoffs is where the quality of the city enters the equation.
+* **Lifestyle:** the choices you make
+* **Infrastructure:** the options provided by the city
+* **Sprawl:** the choices society made
+
+- - -
+
+![DART light rail map](https://ucarecdn.com/b4dc0ca4-2223-4c38-99c8-0b7a55c54edf/ "DART light rail map")
+
+Despite it's shortcomings, Dallas is actually a high infrastructure city.
+
+When it comes to public transit, no other city in Texas comes close to Dallas' coverage and variety of modes. The central city is composed of pockets of highly walkable neighborhoods, including Bishop Arts, Lowest Greenville, and Uptown. Mockingbird Station is a poster child for Transit-Oriented Development in North Texas. I'm very hopeful for the Master Bike Plan that the city is currently drafting.
+
+I'm personally moving from Old East Dallas (a good walkable area) to Downtown (peak transit and walkability in the city) in a month. The best advice I can give to anyone looking to live without a car is to use your savings from not having a car to live in a neighborhood that allows you to walk, cycle, or take transit for all the things you want and need to do.
+
+- - -
+
+If Dallas already has high infrastructure, then why do most people still need cars? There are several factors, but two fundamental reasons:
+
+* Most people don't live or work near the infrastructure.
+* The infrastructure is spread thin across large, low-density areas.
+
+This is sprawl.
+
+An average of 112 thousand people rode DART each day in 2022. That's a lot of people, but unless you're one of them, then you only have a 1.5% chance of meeting any of them in our metroplex of 7.6 million people.

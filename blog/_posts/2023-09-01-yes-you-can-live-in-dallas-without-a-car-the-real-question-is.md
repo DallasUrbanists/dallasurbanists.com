@@ -121,7 +121,7 @@ Despite it's shortcomings, Dallas is actually a high infrastructure city.
 
 When it comes to public transit, no other city in Texas comes close to Dallas' coverage and variety of modes. The central city is composed of pockets of highly walkable neighborhoods, including Bishop Arts, Lowest Greenville, and Uptown. Mockingbird Station is a poster child for Transit-Oriented Development in North Texas. I'm very hopeful for the Master Bike Plan that the city is currently drafting.
 
-I'm personally moving from Old East Dallas (a good walkable area) to Downtown (peak transit and walkability in the city) in a month. It may sound rash, but the best advice but the best advice I can give for anyone moving to Dallas is to find one of these highly walkable and transit-connected neighborhoods and use your savings from not having a car to live there. 
+I'm personally moving from Old East Dallas (a good walkable area) to Downtown (peak transit and walkability in the city) in a month. It may sound rash, but the best advice I can give for anyone moving to Dallas is to find one of these highly walkable and transit-connected neighborhoods and use your savings from not having a car to live there. 
 
 - - -
 
@@ -146,10 +146,10 @@ This is unfortunate if you leave the geography of your life entirely up to fate:
 
 Ninety-eight percent is practically a gaurantee. So that settles it, right? You definitely need a car in Dallas? Well, this calculus depends on a binary criteria:
 
-***Do you leave the geography of your life entirely up to fate?***
+***Do you leave the geography of your life entirely up to chance?***
 
 Herein lies both the challenge and opportunity of living in Dallas.
 
-*The bad news:* unlike cities that are less car-oriented and more walkable, you're going to need a car if you let fate choose your work, home, and social life for you.
+*The bad news:* unlike cities that are less car-oriented and more walkable, you're going to need a car if you leave your work, home, and social life up to chance.
 
-*The good news:* Dallas has the necessary ingredients to live a car-free life for those willing and able to choose it.
+*The good news:* this city has the ingredients to live car-free or car-light for those who are willing to choose this Dallas life.

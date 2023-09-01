@@ -36,3 +36,7 @@ Car ownership alone costs between 50% and 100% of most people's rent in this cit
 [Auto theft in Dallas is at a record high and climbing](https://www.cbsnews.com/texas/news/auto-theft-reports-hitting-new-highs-in-north-texas/), with 13,412 cars and trucks stolen just last year in Dallas alone. Last week, I went out to dinner with three friends and all of them had their car towed, totaled, or both within the last year; only one of the three managed to get their car back and that's who drove the other two that night.
 
 Last January, even without owning a car I too had a car towed when, to my embarrasment, I made a mistake advising where my should park her car on her first day visiting me from Paris. She had borrowed her parents car for the visit, and we had to take a Lyft to the tow yard in South Dallas.
+
+Of course, just because owning a car is difficult doesn't mean not having a car is easy.
+
+What are the practical factors? That's coming up...

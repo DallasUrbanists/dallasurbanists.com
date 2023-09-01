@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Yes, you can live in Dallas without a car. That's not the right question.
+title: Yes, you can live in Dallas without a car. Here's what you should be asking...
 subtitle: Needing a car is the default in this city, but Dallas has the
   ingredients for living car-light or car-free.
 author: hexel
@@ -104,48 +104,12 @@ If you can't, then you need a car.
 
 Of course, it's not simply a matter of having a positive mental attitude. Otherwise, [the rate of Dallas households with a car](https://www.dmagazine.com/publications/d-ceo/2018/september/rethinking-dallas-attraction-to-the-automobile/#:~:text=According%20to%20American%20Community%20Survey,metropolitan%20statistical%20areas%20(MSAs).) would be more like 50%, not 95%.
 
-Your likelihood of needing a car is a function of three variables.
+The more a city invests in alternatives to driving, the more lifestyle choices are compatible with non-car ownership. In this regard, I'd say Dallas is a medium-infrastructure city: it already has a lot, but it needs more for its size.
 
-* **Infrastructure:** the options provided by the city.
-* **Sprawl:** the choices society made from the options available to them.
-* **Lifestyle:** the choices you make
+[According to their website,](https://www.dart.org/about/about-dart/about-dart/dart-facts#:~:text=An%20Introduction%20to%20DART%27s%20Services&text=Our%20extensive%20network%20of%20DART,%2Dsquare%2Dmile%20service%20area.) DART serves 220 thousand passengers every day. That's a lot of people, but unless that includes you, your chance of meeting any of them is 3% in our 7.6 million metroplex.
 
-![DART light rail map](https://ucarecdn.com/b4dc0ca4-2223-4c38-99c8-0b7a55c54edf/ "DART light rail map")
+Ninety-seven percent chance of needing a car for work, friends, and social life? Well, that settles it: you need a car after all. Right?
 
-# Infrastructure
+Not so fast.
 
-> The more a city invests in alternatives to driving, the more lifestyle choices are compatible with non-car ownership.
->
-> Despite its shortcomings, Dallas is a high-infrastructure city.
-
-Regarding public transit, no city in Texas comes close to Dallas' coverage and variety of modes. The central city comprises pockets of highly walkable neighborhoods, including Bishop Arts, Lowest Greenville, and Uptown. Mockingbird Station is a poster child for Transit-Oriented Development in North Texas. [The Loop](https://theloopdallas.org/) is an ambitious ongoing project to construct a 50-mile cycling trail around the center of Dallas. I'm very hopeful for the Master Bike Plan that the city is currently drafting. [Affordable housing is a big part of the conversation around next year's bond election.](https://www.dallashousingcoalition.com/#:~:text=Dallas%20is%20becoming%20unaffordable.%20The%20median%20income%20in%20Dallas%20is%20%2458%2C200%2C%20and%20the%20average%20home%20price%20is%20%24405%2C000.)
-
-I'm moving from Old East Dallas (a nice walkable area) to Downtown (peak transit and walkability in the city) in October. It may sound rash, but the best advice I can give for anyone moving to Dallas is to find one of these highly walkable and transit-connected neighborhoods and use your savings from not having a car to live there.
-
-# Sprawl
-
-If Dallas already has high infrastructure, why do most people still need cars? There are several factors, but two fundamental reasons:
-
-* Most people don't live or work near the infrastructure.
-* The infrastructure is spread thin across large, low-density areas.
-
-> According to their website, DART serves 220,000 passengers every day.
->
-> That's a lot of people, but unless that includes you, your chance of meeting any of them is 3% in our 7.6 million metroplex.
-
-This is unfortunate if you leave the geography of your life entirely up to chance:
-
-* You'll need a car to visit 97% of your friends.
-* Your job has a 97% chance of requiring a car to commute.
-* Your home has a 97% chance of requiring a car to go anywhere.
-* There's a 97% chance you'll need to drive to your favorite coffee shop/hangout.
-
-Ninety-seven percent is a practical guarantee. That settles it, right? You definitely need a car in Dallas? Well, this calculus depends on a binary criteria:
-
-***Do you leave the geography of your life entirely up to chance?***
-
-Herein lies both the challenge and opportunity of living in Dallas.
-
-*The bad news:* in a walkable city that isn't oriented around cars, your chance of needing a car to sustain your lifestyle is closer to fifty percent. But in Dallas, you're practically guaranteed to need a car for home, work, and play if you leave those factors to chance.
-
-*The good news:* if you're in a position where you can craft the geography of your life in Dallas (which is especially the case if you're moving in and getting a fresh start here), this city has the ingredients for choosing to live car-light or car-free happily.
+You have one more question to ask:

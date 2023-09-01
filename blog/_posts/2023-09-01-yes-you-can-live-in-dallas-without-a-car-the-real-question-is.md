@@ -4,7 +4,7 @@ title: Yes, you can live in Dallas without a car. The real question is...
 subtitle: "The answer you're looking for is based on two things: the life you
   choose to live and the city's compatibility with your lifestyle."
 author: hexel
-date: 2023-09-01T05:29:50.795Z
+date: 2023-09-01T09:12:23.140Z
 cover_image: https://ucarecdn.com/4a3f45ec-46ee-4780-becf-98258dca47e4/
 ---
 > Can I live in Dallas without a car?
@@ -121,7 +121,7 @@ Despite it's shortcomings, Dallas is actually a high infrastructure city.
 
 When it comes to public transit, no other city in Texas comes close to Dallas' coverage and variety of modes. The central city is composed of pockets of highly walkable neighborhoods, including Bishop Arts, Lowest Greenville, and Uptown. Mockingbird Station is a poster child for Transit-Oriented Development in North Texas. I'm very hopeful for the Master Bike Plan that the city is currently drafting.
 
-I'm personally moving from Old East Dallas (a good walkable area) to Downtown (peak transit and walkability in the city) in a month. The best advice I can give to anyone looking to live without a car is to use your savings from not having a car to live in a neighborhood that allows you to walk, cycle, or take transit for all the things you want and need to do.
+I'm personally moving from Old East Dallas (a good walkable area) to Downtown (peak transit and walkability in the city) in a month. It may sound rash, but the best advice but the best advice I can give for anyone moving to Dallas is to find one of these highly walkable and transit-connected neighborhoods and use your savings from not having a car to live there. 
 
 - - -
 
@@ -132,4 +132,13 @@ If Dallas already has high infrastructure, then why do most people still need ca
 
 This is sprawl.
 
-An average of 112 thousand people rode DART each day in 2022. That's a lot of people, but unless you're one of them, then you only have a 1.5% chance of meeting any of them in our metroplex of 7.6 million people.
+> An average of 112 thousand people rode DART each day in 2022.
+>
+> That's a lot of people, but unless you're one of them, then you only have a 1.5% chance of meeting any of them in our metroplex of 7.6 million people.
+
+This is bad news if you leave the geography of your life entirely up to fate:
+
+* You'll need a car for 98.5% of your friends.
+* Your job has a 98.5% chance of requiring a car to commute.
+* Your home has a 98.5% chance of requiring a car to go anywhere.
+*

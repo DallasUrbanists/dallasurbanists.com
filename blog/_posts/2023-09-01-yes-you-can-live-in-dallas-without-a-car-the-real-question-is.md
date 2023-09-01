@@ -79,8 +79,32 @@ We're getting there...
 >
 > Depends.
 
-This is where rubber really starts to meet the road.
+This is where rubber meets the road.
 
 Do cars make some people happy? Sure. [There's plenty of evidence of that across DFW.](https://www.instagram.com/carsandcoffee_dallas/?hl=en)
 
-Do you need a car to be happy? Objectively, no. There is no mention of cars in either [Maslow's hierarchy of needs](https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs) nor in [Max-Neef's taxonomy of fundamental human needs](https://en.wikipedia.org/wiki/Manfred_Max-Neef%27s_Fundamental_human_needs).
+Do you need a car to be happy? Objectively, no. There is no mention of cars in either [Maslow's hierarchy of needs](https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs) nor in [Max-Neef's taxonomy of fundamental human needs](https://en.wikipedia.org/wiki/Manfred_Max-Neef%27s_Fundamental_human_needs). 
+
+Are there people in Dallas happy without a car? Yes. For starters, I'm not exaggerating when I say the last two years without a car have been the happiest, healthiest, and most satisfying years of my life. I wouldn't say letting go of my car was the sole reason, but I can honestly say it's a big reason.
+
+Secondly, if we said cars are a necessity for happiness, what does that say about everyone who can't own or operate a vehicle? Do we dare suggest that people with motor impairments have zero means of pursuing happiness in a city like Dallas?
+
+It doesn't take a genius to realize it's not the car that makes us happy, but what the car allows us to do that makes us happy.
+
+Therein lies the rub...
+
+> What makes \*you\* happy?
+>
+> And do you need a car for that?
+
+You don't need a car if you can find a way to get what you want out of life in Dallas without one.
+
+If you can't, then you need a car.
+
+- - -
+
+> "If it were easy, everybody would do it."
+>
+> \- Everybody
+
+Of course, it's not simply a matter of having a positive mental attitude. If it were, [the number of Dallas households with a car](https://www.dmagazine.com/publications/d-ceo/2018/september/rethinking-dallas-attraction-to-the-automobile/#:~:text=According%20to%20American%20Community%20Survey,metropolitan%20statistical%20areas%20(MSAs).) would be more like 50% instead of 95%.

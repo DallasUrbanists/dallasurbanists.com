@@ -7,7 +7,7 @@ author: hexel
 date: 2023-09-01T09:12:23.140Z
 cover_image: https://ucarecdn.com/1d024ef5-29a8-448e-a870-d30dca3287c9/
 ---
-> Can I live in Dallas without a car?
+> Can you live in Dallas without a car?
 >
 > Yes.
 
@@ -69,11 +69,11 @@ We're getting there...
 
 - - -
 
-> **Can** I be happy in Dallas without a car?
+> **Can** you be happy in Dallas without a car?
 >
 > Yes.
 >
-> Will I be happy in Dallas without a car?
+> Will you be happy in Dallas without a car?
 >
 > Depends.
 

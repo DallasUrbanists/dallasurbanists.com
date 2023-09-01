@@ -80,3 +80,7 @@ We're getting there...
 > Depends.
 
 This is where rubber really starts to meet the road.
+
+Do cars make some people happy? Sure. [There's plenty of evidence of that across DFW.](https://www.instagram.com/carsandcoffee_dallas/?hl=en)
+
+Do you need a car to be happy? Objectively, no. There is no mention of cars in either [Maslow's hierarchy of needs](https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs) nor in [Max-Neef's taxonomy of fundamental human needs](https://en.wikipedia.org/wiki/Manfred_Max-Neef%27s_Fundamental_human_needs).

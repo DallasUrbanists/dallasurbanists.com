@@ -7,7 +7,7 @@ author: hexel
 date: 2023-09-01T05:29:50.795Z
 cover_image: https://ucarecdn.com/4a3f45ec-46ee-4780-becf-98258dca47e4/
 ---
-> Can you live in Dallas without a car?
+> Can I live in Dallas without a car?
 >
 > Yes.
 
@@ -21,9 +21,9 @@ If it weren't for cars, there would be more people actually living in Dallas to 
 
 > Is it easy to live in Dallas without a car?
 >
-> Practically, it depends.
+> Technically, yes.
 >
-> Technically, it's a lot easier.
+> Practically, it depends.
 
 For starters, owning a car is incredibly expensive. Especially in Dallas, [where average insurance premiums are the second highest among Texas cities](https://www.compare.com/auto-insurance/by-state/texas/dallas-car-insurance#:~:text=The%20average%20cost%20of%20car,(and%20the%20national%20average).). Whenever I mention how the [cost of car ownership for most people is at least $500 per month](https://www.nerdwallet.com/article/loans/auto-loans/total-cost-owning-car), everybody I talk to in Dallas quickly points out that it's closer to $700 or $800 for them.
 
@@ -37,6 +37,44 @@ Car ownership alone costs between 50% and 100% of most people's rent in this cit
 
 Last January, even without owning a car I too had a car towed when, to my embarrasment, I made a mistake advising where my should park her car on her first day visiting me from Paris. She had borrowed her parents car for the visit, and we had to take a Lyft to the tow yard in South Dallas.
 
+There are challenges I used to have everyday that I don't even think about since letting go of my car two years ago:
+
+* Am I allowed to park here?
+* Will there be parking when I get there?
+* How do validate my parking?
+* Is it safe to park here?
+* How early should I leave to get a good parking spot?
+* Am I too close to the curb?
+* Am I too far from the curb?
+* Will anyone judge my parallel parking if I go for it?
+* Do I need to top up the meter?
+* Did I leave anything important in the car?
+* Should I fill up on gas in advanced?
+* Is my car too messy? Should I get it cleaned?
+* Will that buff out? Will anyone notice?
+* Should I try to fix this mechanical issue myself to save money?
+* Will anyone care if I pretend to not notice the Check Engine light?
+* Which body shop should I take this too?
+* Is this repair quote fair or am I being ripped off?
+* Do I really need the premium oil?
+* If there's a speed trap ahead, should I still go with the speed of traffic or slow to the limit?
+* What am I supposed to say again if a cop pulls me over?
+* Will this person judge me by my car? Should I care?
+* Am I safe to drive after one drink?
+* If I take an Uber home, what happens to my car?
+
 Of course, just because owning a car is difficult doesn't mean not having a car is easy.
 
-What are the practical factors? That's coming up...
+What are the practical factors to consider?
+
+That's coming up...
+
+- - -
+
+> **Can** I be happy in Dallas without a car?
+>
+> Yes.
+>
+> Will I be happy in Dallas without a car?
+>
+> Depends.

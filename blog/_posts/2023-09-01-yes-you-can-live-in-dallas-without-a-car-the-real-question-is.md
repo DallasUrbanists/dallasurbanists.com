@@ -117,7 +117,7 @@ Your likelihood of needing a car is a function of three variables.
 
 ![DART light rail map](https://ucarecdn.com/b4dc0ca4-2223-4c38-99c8-0b7a55c54edf/ "DART light rail map")
 
-Despite it's shortcomings, Dallas is actually a high infrastructure city.
+Despite its shortcomings, Dallas is actually a high infrastructure city.
 
 When it comes to public transit, no other city in Texas comes close to Dallas' coverage and variety of modes. The central city is composed of pockets of highly walkable neighborhoods, including Bishop Arts, Lowest Greenville, and Uptown. Mockingbird Station is a poster child for Transit-Oriented Development in North Texas. I'm very hopeful for the Master Bike Plan that the city is currently drafting.
 

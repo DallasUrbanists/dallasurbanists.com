@@ -108,3 +108,5 @@ If you can't, then you need a car.
 > \- Everybody
 
 Of course, it's not simply a matter of having a positive mental attitude. If it were, [the number of Dallas households with a car](https://www.dmagazine.com/publications/d-ceo/2018/september/rethinking-dallas-attraction-to-the-automobile/#:~:text=According%20to%20American%20Community%20Survey,metropolitan%20statistical%20areas%20(MSAs).) would be more like 50% instead of 95%.
+
+Ultimately, whether or not you individually need a car depends on what you choose to value and, tacitly, what you choose to tradeoff. For example, by driving to work you gain time plus comfort; in exchange, you give up money [and health](https://www.nytimes.com/2019/01/21/upshot/stuck-and-stressed-the-health-costs-of-traffic.html). Public transit, bicycling, and walking are all options that come with their own benefits and tradeoffs.

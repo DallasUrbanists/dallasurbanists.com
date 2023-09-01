@@ -136,9 +136,20 @@ This is sprawl.
 >
 > That's a lot of people, but unless you're one of them, then you only have a 1.5% chance of meeting any of them in our metroplex of 7.6 million people.
 
-This is bad news if you leave the geography of your life entirely up to fate:
+This is unfortunate if you leave the geography of your life entirely up to fate:
 
-* You'll need a car for 98.5% of your friends.
+* You'll need a car to visit 98.5% of your friends.
 * Your job has a 98.5% chance of requiring a car to commute.
 * Your home has a 98.5% chance of requiring a car to go anywhere.
-*
+* There's a 98.5% chance you can only drive to your favorite coffeeshop / hangout. 
+* 98.5% of your life is dependent on a car.
+
+Ninety-eight percent is practically a gaurantee. So that settles it, right? You definitely need a car in Dallas? Well, this calculus depends on a binary criteria:
+
+***Do you leave the geography of your life entirely up to fate?***
+
+Herein lies both the challenge and opportunity of living in Dallas.
+
+*The bad news:* unlike cities that are less car-oriented and more walkable, you're going to need a car if you let fate choose your work, home, and social life for you.
+
+*The good news:* Dallas has the necessary ingredients to live a car-free life for those willing and able to choose it.

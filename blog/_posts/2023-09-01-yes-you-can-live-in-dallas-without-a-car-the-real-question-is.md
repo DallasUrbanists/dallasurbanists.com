@@ -5,7 +5,7 @@ subtitle: "Infrastructure and sprawl are two-thirds of the equation. The
   deciding factor is choice: what does your lifestyle require?"
 author: hexel
 date: 2023-09-01T09:12:23.140Z
-cover_image: https://ucarecdn.com/3ad284da-52ae-4d36-a4a0-645e41ead7bf/
+cover_image: https://ucarecdn.com/b515cf9b-9e25-4695-9da7-9a17146f68f5/
 ---
 > Can you live in Dallas without a car?
 >

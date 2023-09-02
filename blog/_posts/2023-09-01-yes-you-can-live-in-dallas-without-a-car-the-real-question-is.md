@@ -120,7 +120,7 @@ Imagine throwing three darts - one for home, one for employment, and one for you
 
 **For the first round, throw the darts with your eyes closed.**
 
-Throwing blind, each dart only has a 3% chance of landing somewhere connected to public transit. The chances of two darts landing on a transit line are 0.09 percent, representing how likely you are to live car-light. The chances of all three darts landing on a transit line are 0.0027%: this is how likely you are to live car-free.
+Throwing blind, each dart only has a 3% chance of landing somewhere connected to public transit. The chances of two darts landing on a transit line are 0.09 percent, representing how likely you are to live car-light. The chances of all three darts landing on a transit line are 0.0027%: this is how likely you are to live car-free *by default*.
 
 It sounds silly on paper, but many people have their lives configured this way: they live wherever they can afford, work wherever they can find employment, and play wherever their car can take them (or wherever the internet says is a "must-visit").
 

@@ -13,7 +13,7 @@ cover_image: https://ucarecdn.com/3ad284da-52ae-4d36-a4a0-645e41ead7bf/
 
 Not everybody does. Not everybody has to. Nonetheless, anybody can, and many people do, myself included.
 
-Nobody's obituary reads, "died for lack of car." In contrast, [hundreds are killed by cars every year in Dallas alone](https://www.dmagazine.com/frontburner/2021/11/dallas-has-the-second-worst-traffic-fatality-rate-in-the-country/). Cars kill, on average, four people in Dallas every week.
+Nobody's obituary reads, "died for lack of car." By contrast, [hundreds are killed by cars every year in Dallas alone](https://www.dmagazine.com/frontburner/2021/11/dallas-has-the-second-worst-traffic-fatality-rate-in-the-country/). Cars kill, on average, four people in Dallas every week.
 
 - - -
 
@@ -110,6 +110,12 @@ Not so fast.
 
 Here's how I like to think about it:
 
-Imagine closing your eyes and throwing three darts at a floor-to-ceiling map of North Texas to do decide where you will live, work, and socialize. What would happen?
+![Map of all public transit lines in North Texas projected onto a blank wall in an empty room.](https://ucarecdn.com/4f72020c-47c2-47e5-8323-cbfc46bda277/ "Imagine a map of all public transit in North Texas projected onto a blank wall.")
 
-Each dart has a 97% of landing somewhere
+Imagine throwing three darts - one for home, one for employment, and one for your ["third place"](https://www.theatlantic.com/family/archive/2022/04/third-places-meet-new-people-pandemic/629468/) - at a floor-to-ceiling map of North Texas. Where each dart lands determines where you will live, work, and socialize. You can re-throw a dart if it doesn't stick or if it lands somewhere not allowed (e.g., the dart for your home lands in a lake or a landfill).
+
+**For the first round, throw the darts with your eyes closed.**
+
+Throwing blind, each dart only has a 3% chance of landing somewhere connected to public transit. The chances of two darts landing on a transit line are 0.09 percent: this represents how likely you are to live car-light. The chances of all three darts landing on a transit line are 0.0027%: this is how likely you are to live car-free.
+
+It sounds silly on paper, but many have their lives configured this way: they live wherever they can afford, work wherever they can find employment, and play wherever their car can take them (or wherever the internet says is a "must-visit").

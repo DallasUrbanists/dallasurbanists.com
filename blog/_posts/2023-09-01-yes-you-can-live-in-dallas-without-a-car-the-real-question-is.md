@@ -130,12 +130,12 @@ If you aim for walkability, your odds of landing a walkable life are much higher
 
 **For the final round, aim for walkability with high accuracy.**
 
-Give yourself unlimited rethrows if you need to. If you land your darts as close to each other as possible and in walkable, bike-friendly, and transit-oriented neighborhoods, then congratulations: your lifestyle is compatible with not having a car!
+Give yourself unlimited rethrows if you need to. If you cluster your darts in walkable, bike-friendly, and transit-oriented neighborhoods, then congratulations: your lifestyle is compatible with not having a car!
 
 If you're not in a position to change where you live, work, or socialize, then you probably already know whether or not you need a car; the question of whether or not your lifestyle requires a vehicle is moot.
 
 This is the bad news about living in Dallas: by default, you will need a car.
 
-But suppose you find yourself in a position where you can change one or several elements of the geography of your life (for example, maybe you're moving to Dallas for the first time, or you're thinking of changing jobs, or deciding what to do when your lease expires). In that case, crafting a lifestyle that either doesn't require as much driving or doesn't require owning a car at all is possible.
+But are you moving? Or changing jobs? Or letting your lease expire? Or looking for new friends? Or searching for new hobbies?
 
-This is the good news: living happily and comfortably without a car in Dallas is entirely possible. The catch is that attaining such a lifestyle requires knowledge, skill, will, and means.
+When you find yourself in a position where you can change one or several elements of the geography of your life, the good news is that Dallas has the ingredients for crafting a lifestyle that either doesn't require as much driving as before or doesn't require owning a car at all.

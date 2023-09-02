@@ -124,7 +124,7 @@ It sounds silly on paper, but many people have their lives configured this way: 
 
 If you're not already skilled with darts, throw like you usually would. If you are skilled, pretend not to be (maybe spin until you're dizzy).
 
-With your eyes open, your odds of landing a walkable arrangement are no better than before if you don't aim for it. There are good schools and high paying employers in walkable and non-walkable neighborhoods alike.
+With your eyes open, your odds of landing a walkable arrangement are no better than before if you don't aim for walkability. There are good schools and high paying employers in walkable and non-walkable neighborhoods alike.
 
 If you aim for walkability, your odds of landing a walkable life are much higher than before. But a lack of knowledge (do you know all the transit modes DFW has to offer?), skill (are you able to ride a bicycle?), will (are you willing to trade the comfort of your car with waking up for a morning train?), and means (can you afford to live in a walkable neighborhood?) prevent your odds of a walkable life from being as high as it could be.
 

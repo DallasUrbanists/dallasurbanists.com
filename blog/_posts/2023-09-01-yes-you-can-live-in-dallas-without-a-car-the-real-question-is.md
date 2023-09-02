@@ -112,10 +112,30 @@ Here's how I like to think about it:
 
 ![Map of all public transit lines in North Texas projected onto a blank wall in an empty room.](https://ucarecdn.com/4f72020c-47c2-47e5-8323-cbfc46bda277/ "Imagine a map of all public transit in North Texas projected onto a blank wall.")
 
-Imagine throwing three darts - one for home, one for employment, and one for your ["third place"](https://www.theatlantic.com/family/archive/2022/04/third-places-meet-new-people-pandemic/629468/) - at a floor-to-ceiling map of North Texas. Where each dart lands determines where you will live, work, and socialize. You can re-throw a dart if it doesn't stick or if it lands somewhere not allowed (e.g., the dart for your home lands in a lake or a landfill).
+Imagine throwing three darts - one for home, one for employment, and one for your ["third place"](https://www.theatlantic.com/family/archive/2022/04/third-places-meet-new-people-pandemic/629468/) - at a floor-to-ceiling map of North Texas. Where each dart lands determines where you will live, work, and socialize. You can rethrow a dart if it doesn't stick or lands somewhere not allowed (e.g., the dart for home lands in a lake or a landfill).
 
 **For the first round, throw the darts with your eyes closed.**
 
-Throwing blind, each dart only has a 3% chance of landing somewhere connected to public transit. The chances of two darts landing on a transit line are 0.09 percent: this represents how likely you are to live car-light. The chances of all three darts landing on a transit line are 0.0027%: this is how likely you are to live car-free.
+Throwing blind, each dart only has a 3% chance of landing somewhere connected to public transit. The chances of two darts landing on a transit line are 0.09 percent, representing how likely you are to live car-light. The chances of all three darts landing on a transit line are 0.0027%: this is how likely you are to live car-free.
 
-It sounds silly on paper, but many have their lives configured this way: they live wherever they can afford, work wherever they can find employment, and play wherever their car can take them (or wherever the internet says is a "must-visit").
+It sounds silly on paper, but many people have their lives configured this way: they live wherever they can afford, work wherever they can find employment, and play wherever their car can take them (or wherever the internet says is a "must-visit").
+
+**For the second round, open your eyes and throw the darts with low accuracy.**
+
+If you're not already skilled with darts, throw like you usually would. If you are skilled, pretend not to be (maybe spin until you're dizzy).
+
+With your eyes open, your odds of landing a walkable arrangement are no better than before if you don't aim for it. There are good schools and high paying employers in walkable and non-walkable neighborhoods alike.
+
+If you aim for walkability, your odds of landing a walkable life are much higher than before. But a lack of knowledge (do you know all the transit modes DFW has to offer?), skill (are you able to ride a bicycle?), will (are you willing to trade the comfort of your car with waking up for a morning train?), and means (can you afford to live in a walkable neighborhood?) prevent your odds of a walkable life from being as high as it could be.
+
+**For the final round, aim for walkability with high accuracy.**
+
+Give yourself unlimited rethrows if you need to. If you land your darts as close to each other as possible and in walkable, bike-friendly, and transit-oriented neighborhoods, then congratulations: your lifestyle is compatible with not having a car!
+
+If you're not in a position to change where you live, work, or socialize, then you probably already know whether or not you need a car; the question of whether or not your lifestyle requires a vehicle is moot.
+
+This is the bad news about living in Dallas: by default, you will need a car.
+
+But suppose you find yourself in a position where you can change one or several elements of the geography of your life (for example, maybe you're moving to Dallas for the first time, or you're thinking of changing jobs, or deciding what to do when your lease expires). In that case, crafting a lifestyle that either doesn't require as much driving or doesn't require owning a car at all is possible.
+
+This is the good news: living happily and comfortably without a car in Dallas is entirely possible. The catch is that attaining such a lifestyle requires knowledge, skill, will, and means.

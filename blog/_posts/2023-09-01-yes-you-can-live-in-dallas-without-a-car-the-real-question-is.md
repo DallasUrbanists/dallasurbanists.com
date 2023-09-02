@@ -6,6 +6,10 @@ subtitle: "Infrastructure and sprawl are two-thirds of the equation. The
 author: hexel
 date: 2023-09-01T09:12:23.140Z
 cover_image: https://ucarecdn.com/6ee829c9-cc16-4ca8-89ed-6a380f776f7f/
+tags:
+  - DART
+  - Mobility
+  - Featured
 ---
 > Can you live in Dallas without a car?
 >

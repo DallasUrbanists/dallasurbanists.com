@@ -92,7 +92,7 @@ The question isn't whether you can live in Dallas without a car.
 
 The question is whether your lifestyle requires a car.
 
-If you can't, then you need a car.
+If your lifestyle requires a car, then you need a car.
 
 - - -
 

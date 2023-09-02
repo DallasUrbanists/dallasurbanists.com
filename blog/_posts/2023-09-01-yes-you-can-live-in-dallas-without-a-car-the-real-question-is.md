@@ -5,7 +5,7 @@ subtitle: "Infrastructure and sprawl are two-thirds of the equation. The
   deciding factor is choice: what does your lifestyle require?"
 author: hexel
 date: 2023-09-01T09:12:23.140Z
-cover_image: https://ucarecdn.com/b515cf9b-9e25-4695-9da7-9a17146f68f5/
+cover_image: https://ucarecdn.com/6ee829c9-cc16-4ca8-89ed-6a380f776f7f/
 ---
 > Can you live in Dallas without a car?
 >
@@ -126,7 +126,7 @@ If you're not already skilled with darts, throw like you usually would. If you a
 
 With your eyes open, your odds of landing a walkable arrangement are no better than before if you don't aim for walkability. There are good schools and high paying employers in walkable and non-walkable neighborhoods alike.
 
-If you aim for walkability, your odds of landing a walkable life are much higher than before. But a lack of knowledge (do you know all the transit modes DFW has to offer?), skill (are you able to ride a bicycle?), will (are you willing to let go of the comfort of your car in exchange for waking up to catch a morning train?), and means (can you afford to live in a walkable neighborhood?) prevent your odds of a walkable life from being as high as it could be.
+If you aim for walkability, your odds of landing a walkable life are much higher than before. But a lack of knowledge (do you know all the transit modes DFW has to offer?), skill (are you able to ride a bicycle?), will (are you willing to let go of the comfort of your car in exchange for waking up early to [catch a morning train](https://www.youtube.com/watch?v=S_3vZYOYNYU)?), and means (can you afford to live in a walkable neighborhood?) prevent your odds of a walkable life from being as high as it could be.
 
 **For the final round, aim for walkability with high accuracy.**
 

@@ -136,7 +136,7 @@ If you aim for walkability, your odds of landing a walkable life are much higher
 
 Give yourself unlimited rethrows if you need to. If you cluster your darts in walkable, bike-friendly, and transit-oriented neighborhoods, then congratulations: your lifestyle is compatible with not having a car!
 
-If you're not in a position to change where you live, work, or socialize, then you probably already know whether or not you need a car; the question of whether or not your lifestyle requires a vehicle is moot.
+If you're not in a position to change where you live, work, or socialize, then you probably already know whether or not you need a car.
 
 This is the bad news about living in Dallas: by default, you will need a car.
 

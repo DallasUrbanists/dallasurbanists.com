@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Yes, you can live in Dallas without a car. Here's what you should be asking...
-subtitle: Needing a car is the default in this city, but Dallas has the
-  ingredients for living car-light or car-free.
+title: Yes, you can live in Dallas without a car.
+subtitle: "Infrastructure and sprawl are two-thirds of the equation. The
+  deciding factor is choice: what does your lifestyle require?"
 author: hexel
 date: 2023-09-01T09:12:23.140Z
 cover_image: https://ucarecdn.com/3ad284da-52ae-4d36-a4a0-645e41ead7bf/
@@ -31,7 +31,7 @@ Imagine what you could do if you weren't paying double rent because of your car.
 
 > All these costs assume you've managed to keep your car.
 >
-> We tend to forget cars are difficult to keep and easy to lose.
+> Don't forget: cars are difficult to keep and easy to lose.
 
 [Auto theft in Dallas is at a record high and climbing](https://www.cbsnews.com/texas/news/auto-theft-reports-hitting-new-highs-in-north-texas/), with 13,412 cars and trucks stolen in 2022 in Dallas alone. Last week, I went out to dinner with three friends, and all of them had their car towed, totaled, or both within the last year; only one of the three managed to get their car back, and that's who drove the other two that night.
 
@@ -82,9 +82,7 @@ Are there people in Dallas happy without a car? Yes. First of all, I'm not exagg
 
 Secondly, if we say cars are necessary for happiness, what does that say about everyone who can't own or operate a vehicle? Do we dare suggest people with motor impairments have zero means of pursuing happiness in a city like Dallas?
 
-It doesn't take a genius to realize it's not the car that makes us happy but what the car allows us to do that makes us happy.
-
-But therein lies the rub...
+It's not the car that makes us happy but what the car allows us to do that makes us happy. But therein lies the rub...
 
 > What makes \*you\* happy?
 >
@@ -104,12 +102,14 @@ If you can't, then you need a car.
 
 Of course, it's not simply a matter of having a positive mental attitude. Otherwise, [the rate of Dallas households with a car](https://www.dmagazine.com/publications/d-ceo/2018/september/rethinking-dallas-attraction-to-the-automobile/#:~:text=According%20to%20American%20Community%20Survey,metropolitan%20statistical%20areas%20(MSAs).) would be more like 50%, not 95%.
 
-The more a city invests in alternatives to driving, the more lifestyle choices are compatible with non-car ownership. In this regard, I'd say Dallas is a medium-infrastructure city: it already has a lot, but it needs more for its size.
+[According to their website,](https://www.dart.org/about/about-dart/about-dart/dart-facts#:~:text=An%20Introduction%20to%20DART%27s%20Services&text=Our%20extensive%20network%20of%20DART,%2Dsquare%2Dmile%20service%20area.) DART serves 220 thousand passengers every day. That's a lot of people: greater than the population of [Frisco, one of the fastest growing cities in the United States.](https://www.keranews.org/texas-news/2020-05-26/frisco-is-a-boomtown-its-the-fastest-growing-big-city-in-the-country) Yet in a region of 7.6 million people, transit riders only make up 3% of the metroplex.
 
-[According to their website,](https://www.dart.org/about/about-dart/about-dart/dart-facts#:~:text=An%20Introduction%20to%20DART%27s%20Services&text=Our%20extensive%20network%20of%20DART,%2Dsquare%2Dmile%20service%20area.) DART serves 220 thousand passengers every day. That's a lot of people, but unless that includes you, your chance of meeting any of them is 3% in our 7.6 million metroplex.
-
-Ninety-seven percent chance of needing a car for work, friends, and social life? Well, that settles it: you need a car after all. Right?
+With a 97% chance of not riding transit, that pretty much gaurantees you'll need a car. Right? 
 
 Not so fast.
 
-You have one more question to ask:
+Here's how I like to think about it:
+
+Imagine closing your eyes and throwing three darts at a floor-to-ceiling map of North Texas to do decide where you will live, work, and socialize. What would happen?
+
+Each dart has a 97% of landing somewhere

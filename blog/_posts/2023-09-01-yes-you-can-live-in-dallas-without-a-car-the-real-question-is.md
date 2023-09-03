@@ -143,7 +143,7 @@ It sounds silly on paper, but many people have their lives configured this way: 
 
 If you're not already skilled with darts, throw like you usually would. If you are skilled, pretend not to be (maybe spin until you're dizzy).
 
-With your eyes open, your odds of landing a walkable arrangement are no better than before if you don't aim for walkability. There are good schools and high paying employers in walkable and non-walkable neighborhoods alike.
+With your eyes open, your odds of landing a walkable arrangement are no better than before when your eyes were closed. There are good schools and high paying employers in walkable and non-walkable neighborhoods alike.
 
 If you aim for walkability, your odds of landing a walkable lifestyle are much higher than before. Fortunately for those hoping to avoid driving as much as possible, Dallas has some very walkable neighborhoods. Unfortunately, you're unlikely to move into these pockets of walkability by accident as you would in a more walkable city. Locating walkable places and learning how to navigate them without a car requires homework (hint hint, topics for upcoming blog posts).
 

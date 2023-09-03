@@ -14,7 +14,7 @@ tags:
 ---
 This is the first in a series of posts themed around [National Week Without Driving](https://americawalks.org/campaigns/national-week-without-driving/), a campaign by non-profit [America Walks](https://americawalks.org/) and organized locally by [Better Block](https://www.betterblock.org/) and [Dallas Bicycle Coalition](https://dallasbicyclecoalition.org/dallas-bike-coalition) from October 2-8, 2023. In this series, I'll dive into the why's and how's of living without a car in Dallas. As someone who's owned and driven a car for most of my adult life until getting rid of it almost two years ago, there are many popular assumptions that need correcting.
 
-Despite all the challenges of living in a car-oriented city, the worst attitude to have is that living happily without a car is not feasible at all in Dallas. It's especially problematic when city leaders have this attitude; people who say "we don't have public transit in Dallas" tend to act towards making themselves less incorrect.
+Despite all the challenges of living in a car-oriented city, the worst attitude to have is that living happily in Dallas without a car is not feasible at all.
 
 So, without further ado, let's answer the basic questions...
 
@@ -41,6 +41,8 @@ First, owning a car is incredibly expensive, especially in Dallas, [where avera
 Car ownership alone can cost between 50% and 100% of most people's rent in Dallas.
 
 Imagine what you could do if you weren't paying double rent because of your car. You could move to a slightly more expensive but genuinely walkable neighborhood (which I did). Or you could put those savings towards things you enjoy more than being stuck in traffic, like food, concerts, shows, and recreational activities with friends.
+
+![Bicycles parked in front of Cold Beer Company in Deep Ellum.](https://ucarecdn.com/c40c5ccd-639d-4543-bda5-0fa63b912944/ "In Deep Ellum, Cold Beer Company is a hotspot for cyclists in Dallas. You can drink more beer when you don't drive a car. Need I say more?")
 
 > All these costs assume you've managed to keep your car.
 >
@@ -72,6 +74,8 @@ There are challenges I used to have every day that I don't even think about sinc
 * Will this person judge me by my car? Should I care?
 * Am I safe to drive after one drink?
 * If I take an Uber home, what happens to my car?
+
+![Electric bicycle locked to bike rack in front of The Henry building in Downtown Dallas.](https://ucarecdn.com/b5bb0afd-852b-42ef-9bdc-ecdf84b90a32/ "I used to budget for gas, oil changes, and toll tags. Now I can park anywhere I want for free.")
 
 Of course, just because owning a car is difficult doesn't mean not having a car is easy. What are the practical factors to consider? We're getting there...
 
@@ -106,6 +110,8 @@ The question isn't whether you can live in Dallas without a car.
 The question is whether your lifestyle requires a car.
 
 If your lifestyle requires a car, then you need a car.
+
+![Electric bicycle mounted on the front-rack of a public bus.](https://ucarecdn.com/ffdd49c0-94e8-4665-9579-8ae372cc6ccf/ "For most trips I make on a regular basis, I can walk or e-bike. For a few trips, I'll take public transit. Occasionally, I'll combine modes.")
 
 - - -
 

@@ -10,7 +10,16 @@ tags:
   - DART
   - Mobility
   - Featured
+  - WeekWithoutDriving
 ---
+This is the first in a series of posts themed around [National Week Without Driving](https://americawalks.org/campaigns/national-week-without-driving/), a campaign by non-profit [America Walks](https://americawalks.org/) and organized locally by [Better Block](https://www.betterblock.org/) and [Dallas Bicycle Coalition](https://dallasbicyclecoalition.org/dallas-bike-coalition) from October 2-8, 2023. In this series, I'll dive into the why's and how's of living without a car in Dallas. As someone who's owned and driven a car for most of my adult life until getting rid of it almost two years ago, there are many popular assumptions that need correcting.
+
+Despite all the challenges of living in a car-oriented city, the worst attitude to have is that living happily without a car is not feasible at all in Dallas. It's especially problematic when city leaders have this attitude; people who say "we don't have public transit in Dallas" tend to act towards making themselves less incorrect.
+
+So, without further ado, let's answer the basic questions...
+
+- - -
+
 > Can you live in Dallas without a car?
 >
 > Yes.
@@ -138,8 +147,14 @@ Give yourself unlimited rethrows if you need to. If you cluster your darts in wa
 
 If you're not in a position to change where you live, work, or socialize, then you probably already know whether or not you need a car.
 
-This is the bad news about living in Dallas: by default, you will need a car.
+> Here's the bad news: in Dallas, most lifestyles require owning a car by default.
 
-But are you moving? Or changing jobs? Or letting your lease expire? Or looking for new friends? Or searching for new hobbies?
+But are you moving?
 
-When you find yourself in a position where you can change one or several elements of the geography of your life, the good news is that Dallas has the ingredients for crafting a lifestyle that either doesn't require as much driving as before or doesn't require owning a car at all.
+Changing jobs?
+
+Searching for a new home?
+
+Looking for new friends or hobbies?
+
+> Here's the good news: when you find yourself in a position where you can change one or several elements of the geography of your life, Dallas has the ingredients for crafting a happy lifestyle without owning a car.

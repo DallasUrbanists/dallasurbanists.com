@@ -16,7 +16,7 @@ This is the first in a series of posts themed around [National Week Without Driv
 
 Despite all the challenges of living in a car-oriented city, the worst attitude to have is that living happily without a car is not feasible at all in Dallas. It's especially problematic when city leaders have this attitude; people who say "we don't have public transit in Dallas" tend to act towards making themselves less incorrect.
 
-So, without further ado, let's ask the basic questions...
+So, without further ado, let's answer the basic questions...
 
 - - -
 

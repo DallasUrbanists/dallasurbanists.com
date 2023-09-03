@@ -145,7 +145,7 @@ If you're not already skilled with darts, throw like you usually would. If you a
 
 With your eyes open, your odds of landing a walkable arrangement are no better than before if you don't aim for walkability. There are good schools and high paying employers in walkable and non-walkable neighborhoods alike.
 
-If you aim for walkability, your odds of landing a walkable life are much higher than before. But a lack of knowledge (do you know all the transit modes DFW has to offer?), skill (are you able to ride a bicycle?), will (are you willing to let go of the comfort of your car in exchange for waking up early to [catch a morning train](https://www.youtube.com/watch?v=S_3vZYOYNYU)?), and means (can you afford to live in a walkable neighborhood?) prevent your odds of a walkable life from being as high as it could be.
+If you aim for walkability, your odds of landing a walkable lifestyle are much higher than before. Fortunately for those hoping to avoid driving as much as possible, Dallas has some very walkable neighborhoods. Unfortunately, you're unlikely to move into these pockets of walkability by accident as you would in a more walkable city. Locating walkable places and learning how to navigate them without a car requires homework (hint hint, topics for upcoming blog posts).
 
 **For the final round, aim for walkability with high accuracy.**
 

@@ -6,6 +6,10 @@ subtitle: Dallas Bicycle Coalition hosted an event with guest speakers Jonathan
 author: hexel
 date: 2023-09-07T02:10:47.599Z
 cover_image: https://ucarecdn.com/16b2ca4a-1e87-4c87-9203-f59fba0f771f/
+tags:
+  - Cycling
+  - Mobility
+  - DallasBicycleCoalition
 ---
 Last night, Dallas Bicycle Coalition hosted an event at Four Corners Brewery in the Cedars neighborhood as part of a speaker series organized by Bekah Kornblum. There were approximately 40 cycling advocates in attendance.
 

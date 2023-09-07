@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bikes & Brews: Scooters, Northhaven Trail, Bike Master Plan Update"
-subtitle: Dallas Bicycle Coalition hosted an event guest speakers Jonathan
+subtitle: Dallas Bicycle Coalition hosted an event with guest speakers Jonathan
   Braddick, Jeff Kitner, and Kathryn Rush.
 author: hexel
 date: 2023-09-07T02:10:47.599Z

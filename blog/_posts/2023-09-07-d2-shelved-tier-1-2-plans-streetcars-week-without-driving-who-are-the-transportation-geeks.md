@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: episode
 title: D2 Shelved / Tier 1 & 2 Plans / Streetcars / Week Without Driving / Who
   are the transportation geeks?
 subtitle: This week on the podcast, we talk about D2 subway being postponed,
@@ -8,10 +8,12 @@ subtitle: This week on the podcast, we talk about D2 subway being postponed,
   the Reddit geeks that broke the news on D2?
 author: bywayofdallas
 date: 2023-09-06T17:58:50.694Z
+spotify_code: 2XsvmGareR5Q98RtxNgNIg
 cover_image: https://ucarecdn.com/baa2113a-d464-405c-9399-95a84f3b6ab4/
 tags:
   - Podcast
   - DART
+episode_number: 4
 ---
 This week, Connor and Hexel talked about:
 
@@ -68,4 +70,4 @@ The campaign is organized locally by [Dallas Bike Coalition](https://www.instagr
 
 The music featured in this episode comes from *Blue Dot Sessions.* Tracks used in order of appearance: [Bossa Boa](https://app.sessions.blue/browse/track/91c4adab-f9e6-4aa1-9ba7-41886b3a05dd), [Grumpalo](https://app.sessions.blue/browse/track/91c4adab-f9e6-4aa1-9ba7-41886b3a05dd), [Carolina Carboy](https://app.sessions.blue/browse/track/76811cab-1ff5-4498-8ce1-c1f69b270ad3), [Caverna](https://app.sessions.blue/browse/track/91c4adab-f9e6-4aa1-9ba7-41886b3a05dd), [Caveman](https://app.sessions.blue/browse/track/91c4adab-f9e6-4aa1-9ba7-41886b3a05dd), [Sloppy Jo](https://app.sessions.blue/browse/track/91c4adab-f9e6-4aa1-9ba7-41886b3a05dd).
 
-This episode was co-hosted Hexel Colorado ([@hexel_co](https://twitter.com/hexel_co) on X/Twitter, [@hexel.co](https://www.instagram.com/hexel.co/) on Threads) and Connor Hulla ([@AltConnor](https://twitter.com/AlternateConnor) on X/Twitter, [u/cuberandgamer](https://reddit.com/u/cuberandgamer) on Reddit).
+This episode was co-hosted by Hexel Colorado ([@hexel_co](https://twitter.com/hexel_co) on X/Twitter, [@hexel.co](https://www.instagram.com/hexel.co/) on Threads) and Connor Hulla ([@AltConnor](https://twitter.com/AlternateConnor) on X/Twitter, [u/cuberandgamer](https://reddit.com/u/cuberandgamer) on Reddit).

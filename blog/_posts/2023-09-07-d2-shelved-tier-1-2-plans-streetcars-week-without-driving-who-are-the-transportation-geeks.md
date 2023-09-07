@@ -7,7 +7,8 @@ subtitle: This week on the podcast, we talk about D2 subway being postponed,
   streetcar pros and cons, and the Week Without Driving campaign. Also, who are
   the Reddit geeks that broke the news on D2?
 author: bywayofdallas
-date: 2023-09-07T16:48:56.177Z
+date: 2023-09-06T17:58:50.694Z
+cover_image: https://ucarecdn.com/baa2113a-d464-405c-9399-95a84f3b6ab4/
 tags:
   - Podcast
   - DART

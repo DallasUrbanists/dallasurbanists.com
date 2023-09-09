@@ -11,7 +11,6 @@ date: 2023-04-05T16:31:47.296Z
 cover_image: /assets/cover_images/9.png
 tags:
   - DART
-author: connor
 recommended_actions:
   - - https://www.reddit.com/r/dart/comments/12c1gun/dart_meeting_about_state_legislation_regarding/
     - Comment on Reddit

@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-site_url: https://thisdallaslife.github.io/thisdallaslife.com # eventually this will be https://thisdallaslife.com
+site_url: https://thisdallaslife.com
 logo_url: https://thisdallaslife.github.io/thisdallaslife.com/assets/compact-logo-and-wordmark-color.svg
 publish_mode: editorial_workflow
 media_folder: "assets/cover_images"

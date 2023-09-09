@@ -11,7 +11,7 @@ tags:
   - Mobility
   - DallasBicycleCoalition
 ---
-Last night, Dallas Bicycle Coalition hosted an event at Four Corners Brewery in the Cedars neighborhood as part of a speaker series organized by Bekah Kornblum. There were approximately 40 cycling advocates in attendance.
+Last night, Dallas Bicycle Coalition hosted an event at Four Corners Brewery in the Cedars neighborhood as part of their speaker series. There were approximately 40 cycling advocates in attendance.
 
 The first of three guest speakers was Jonathan Braddick, member of the Bicycle Advisory Committee for the City of Dallas. Jonathan talked about the dockless shared scooter program that was previously shut down in 2019 and revived earlier this year. This time around, the city is looking at additional ways to hold the scooter providers (like Lime, Bird, and Superpedestrian) accountable. An interesting detail Jonathan shared is that according to the providers, they need an average of 4 trips per scooter per day in a city in order for them to feasibly consider increasing the supply of scooters; however, none of the vendors are meeting that number in Dallas. Vendors are reporting between 1 and 3 average daily rides per scooter.
 
@@ -23,7 +23,9 @@ The third speaker was Kathryn Rush, Chief Planner for Dallas Department of Trans
 
 ![Crowd shot of people attending Bikes and Brews at Four Corners Brewery. In this photo, Kathryn Rush is speaking at the front of the room.](https://ucarecdn.com/578018d6-35eb-4d6f-a01e-d9f424f31636/ "Approximately 40 people attended the speaker event by Dallas Bicycle Coalition on September 5th at Four Corners Brewery.")
 
-Cycling advocate Bekah Kornblum (and [guest on the *By Way of Dallas* podcast](https://thisdallaslife.com/blog/2023/05/03/seven-cycling-groups-that-meet-weekly-monthly-in-dallas-volume-1)) organized the event. She encouraged everyone to consider donating to [Bike Friendly South Dallas](https://bikefriendlysouthdallas.org/) and [Friends of the Santa Fe Trail](https://www.friendsofsantafetrail.org/) for the upcoming [North Texas Giving Day on September 21st](https://www.cftexas.org/community-impact/integrations/north-texas-giving-day#:~:text=Save%20the%20date%20for%20September,CFT%27s%20North%20Texas%20Giving%20Day.). The next event she is organizing is a walk audit on October 5th, near Hampton Station in Oak Cliff as part of the [National Week Without Driving](https://americawalks.org/campaigns/national-week-without-driving/) campaign; more details to be announced.
+Bekah Kornblum, local cycling advocate and organizer with Dallas Bicycle Coalition (and [guest on the *By Way of Dallas* podcast](https://thisdallaslife.com/blog/2023/05/03/seven-cycling-groups-that-meet-weekly-monthly-in-dallas-volume-1)), encouraged everyone to consider donating to [Bike Friendly South Dallas](https://bikefriendlysouthdallas.org/) and [Friends of the Santa Fe Trail](https://www.friendsofsantafetrail.org/) for the upcoming [North Texas Giving Day on September 21st](https://www.cftexas.org/community-impact/integrations/north-texas-giving-day#:~:text=Save%20the%20date%20for%20September,CFT%27s%20North%20Texas%20Giving%20Day.).
+
+Dallas Bicycle Coalition's next event is a walk audit on October 5th, near Hampton Station in Oak Cliff as part of the [National Week Without Driving](https://americawalks.org/campaigns/national-week-without-driving/) campaign; more details to be announced.
 
 ---
 

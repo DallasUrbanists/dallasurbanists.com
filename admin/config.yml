@@ -1,3 +1,6 @@
+---
+# this frontmatter section tells Jekyll to process this file, allowing us to use variables like site.tags
+---
 backend:
   name: git-gateway
   branch: main
@@ -28,7 +31,14 @@ collections:
         }
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {
+          label: "Tags", 
+          name: "tags", 
+          widget: "select", 
+          required: false, 
+          multiple: true, 
+          options: [{% for tag in site.tags %}"{{tag[0]}}", {% endfor %}]
+        }
   - name: "tag"
     label: "Tag"
     folder: "tagged/"

@@ -42,11 +42,29 @@ collections:
             {%- for tag in site.tags -%}
               "{{tag[0]}}",
             {%- endfor -%}
+                        
+            {%- for tag in site.data.new_tags.items -%}
+              "{{tag.name}}",
+            {%- endfor -%}
           {%- endcapture -%}
-          {% assign sorted_options = options | split: "," | sort | join: ", " %}
+          {% assign sorted_options = options | split: "," | uniq | sort | join: ", " %}
           
           options: [{{ sorted_options }}] 
         }
+  - name: 'config'
+    label: 'Config'
+    editor:
+      preview: false
+    files:
+      - label: 'New Tag'
+        name: 'new_tag'
+        file: '_data/new_tags.yml'
+        fields:
+          - label: 'New Tags'
+            name: 'items'
+            widget: 'list'
+            fields:
+              - { label: Name, name: name, widget: string }
   - name: "tag"
     label: "Tag"
     folder: "tagged/"

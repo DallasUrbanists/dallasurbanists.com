@@ -10,7 +10,6 @@ cover_image: /assets/cover_images/tdl-blog-cover-2-.png
 tags:
   - Via
   - Arlington
-  - ""
 ---
 In February, I took a Via ride to the NCTCOG headquarters to observe the monthly meeting of the Regional Transportation Council but arrived late to the public comment portion due to Via delays. Here are my observations and recommendations for addressing the issues.
 

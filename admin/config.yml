@@ -37,7 +37,15 @@ collections:
           widget: "select", 
           required: false, 
           multiple: true, 
-          options: [{% for tag in site.tags %}"{{tag[0]}}", {% endfor %}]
+
+          {%- capture options -%}
+            {%- for tag in site.tags -%}
+              "{{tag[0]}}",
+            {%- endfor -%}
+          {%- endcapture -%}
+          {% assign sorted_options = options | split: "," | sort | join: ", " %}
+          
+          options: [{{ sorted_options }}] 
         }
   - name: "tag"
     label: "Tag"

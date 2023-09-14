@@ -1,7 +1,18 @@
 items:
+  - name: Cycling
+    description: News and opinion about bicycle infrastructure, micromobility (e-bikes, scooters, and skates), and social cycling groups.
+    num_of_cards: 3
   - name: DART
     title: "Blog posts about Dallas Area Rapid Transit (DART)"
     description: "News and opinion about Dallas Area Rapid Transit (DART), the regional transit agency responsible for public transit in the City of Dallas and twelve of its suburbs."
     num_of_cards: 3
-  - name: Cycling
-    description: News and opinion about bicycle infrastructure, micromobility (e-bikes, scooters, and skates), and social cycling groups.
+  - name: Featured
+  - name: Housing
+    description: News and opinion about affordable housing, zoning, and urban planning in the City of Dallas.
+    num_of_cards: 3
+  - name: I-345
+    title: Blog posts about I-345/45
+    description: Articles about Interstates 345 & 45 and why Dallas needs to remove the urban freeway separating Deep Ellum from Downtown.
+    num_of_cards: 3
+  - name: Public-Transit
+  - name: Trip-Review

@@ -65,15 +65,6 @@ collections:
             widget: 'list'
             fields:
               - { label: Name, name: name, widget: string }
-  - name: "tag"
-    label: "Tag"
-    folder: "tagged/"
-    create: true
-    delete: false # Don't allow deleting from within CMS
-    slug: "{{tag_feed}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "tag-feed"}
-      - {label: "Tag Name (no spaces)", name: "tag_feed", widget: "string"}
   - name: "authors"
     label: "Authors"
     folder: "_authors/"

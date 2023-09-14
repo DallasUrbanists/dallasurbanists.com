@@ -20,7 +20,7 @@ module TagPageGeneratorPlugin
         @ext      = '.html'      # the extension.
         @name     = '#(tag).html' # basically @basename + @ext.
 
-        item = (site.data["new_tags"]["items"].find_all {|t| t["name"] == tag})&.last()
+        item = (site.data["tags"]["items"].find_all {|t| t["name"] == tag})&.last()
         
         @data = {
             "layout" => "tag-feed",

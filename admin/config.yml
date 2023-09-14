@@ -43,7 +43,7 @@ collections:
               "{{tag[0]}}",
             {%- endfor -%}
                         
-            {%- for tag in site.data.new_tags.items -%}
+            {%- for tag in site.data.tags.items -%}
               "{{tag.name}}",
             {%- endfor -%}
           {%- endcapture -%}
@@ -56,11 +56,11 @@ collections:
     editor:
       preview: false
     files:
-      - label: 'New Tag'
-        name: 'new_tag'
-        file: '_data/new_tags.yml'
+      - label: 'Tag'
+        name: 'tag'
+        file: '_data/tags.yml'
         fields:
-          - label: 'New Tags'
+          - label: 'Tags'
             name: 'items'
             widget: 'list'
             fields:

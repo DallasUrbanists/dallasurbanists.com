@@ -29,8 +29,11 @@ module TagPageGeneratorPlugin
         }
         
         if item != nil
-            data.store("description", item["description"])
-            data.store("num_of_cards", item["num_of_cards"])
+          item.each do |key, value|
+            if key != "name"
+              data.store(key, value)
+            end
+          end
         end
       end
     end

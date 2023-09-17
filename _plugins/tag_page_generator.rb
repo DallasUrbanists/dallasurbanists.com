@@ -30,6 +30,7 @@ module TagPageGeneratorPlugin
         
         if item != nil
             data.store("description", item["description"])
+            data.store("num_of_cards", item["num_of_cards"])
         end
       end
     end

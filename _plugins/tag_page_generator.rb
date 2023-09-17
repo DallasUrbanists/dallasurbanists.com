@@ -24,8 +24,7 @@ module TagPageGeneratorPlugin
         
         @data = {
             "layout" => "tag-feed",
-            "tag_feed" => tag,
-            "title" => tag
+            "tag_feed" => tag
         }
         
         if item != nil

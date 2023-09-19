@@ -81,3 +81,16 @@ In addition to buses and trains, you can see the live location of Bird and Super
 
 ![Screenshot of the GoPass app from DART, showing the live location of trains, buses, Bird scooters, and Superpedestrian scooters.](https://ucarecdn.com/33db5c15-6aeb-4b82-99e6-5795ecf7218c/ "The GoPass app from DART shows the live location trains, buses, and scooters from Bird and Superpedestrian.")
 
+# DART Ridership Update
+
+## [Transity Security Officers](https://www.dart.org/about/news-and-events/newsreleases/newsrelease-detail/dart-enhances-security-focus-with-contract-security-officers#:~:text=DART%20News%20Release&text=With%20its%20continued%20focus%20on,and%20security%20for%20DART%20commuters.)
+
+[](https://www.dart.org/about/news-and-events/newsreleases/newsrelease-detail/dart-enhances-security-focus-with-contract-security-officers#:~:text=DART%20News%20Release&text=With%20its%20continued%20focus%20on,and%20security%20for%20DART%20commuters.)In July, Dallas Area Rapid Transit (DART) announced the addition of more than 100 contract Transit Security Officers (TSO) to improve public safety and security for DART commuters.
+
+TSOs will provide enhanced service on DART’s light rail vehicles and platforms, as well as the Trinity Railway Express (TRE), with a focus on DART Code of Conduct violations and any potential unlawful activities on DART property. The TSOs join the agency’s 252 budgeted DART Police Officers and Fare Enforcement Officers (FEO) in ensuring DART riders have a safe and secure experience.
+
+The TSO program is scheduled to be fully staffed by mid-August, but security officers can already be seen patrolling DART vehicles.
+
+## DART Weekend Ridership
+
+\[insert chart here]

@@ -33,7 +33,7 @@ In this episode, we talk about:
 
 *(All vendor pricing and offers detailed in these show notes are only current in Dallas as of September 19th.* *Pricing may vary for other cities and may change by the time you read this. Please refer to the vendor websites for up-to-date detail. Anytime the price on the vendor app or website was listed with 99 cents, I round to the dollar in the list below. For example, instead of $6.99 my list reads $7.)*
 
-**Lime**
+## Lime
 
 * $1 unlock, $0.41 per minute
 * Operable in Dallas, Plano, Highland Park, University Park, and Cockrell Hill.
@@ -41,7 +41,7 @@ In this episode, we talk about:
 * [LimePrime](https://www.li.me/blog/lime-introduces-lime-prime-just-in-time-for-summer) is an optional $15/month subscription that waives the $1 unlock fee and applies a 25% discount to all rides.
 * [Download Lime app](https://www.li.me/the-app)
 
-**Bird**
+## Bird
 
 * $1 unlock, $0.39 per minute
 * Operable in Dallas, Plano, and Cockrell Hill.
@@ -49,7 +49,7 @@ In this episode, we talk about:
 * No passes or subscriptions offered in Dallas at this time. However, discount offers are intermittently available in the Bird app.
 * [Download Bird app](https://go.bird.co/)
 
-**Superpedestrian**
+## Superpedestrian
 
 * $1 unlock, $0.39 per minute
 * Operable in Central Dallas
@@ -62,7 +62,7 @@ In this episode, we talk about:
 
 You can read the [rules and history of the Dockless Vehicle Program](https://dallascityhall.com/departments/transportation/Pages/dockless-vehicle-program.aspx) on the City of Dallas website. There you can also find [FAQ from the media](https://dallascityhall.com/departments/transportation/DCH%20Documents/Dockless%20Vehicles/Dockless-Relaunch-FAQ_05242023.pdf) answered by the city.
 
-**Riding Restrictions**
+## Riding Restrictions
 
 From the official City of Dallas website:
 
@@ -73,10 +73,11 @@ From the official City of Dallas website:
 
 [Interactive map](https://dallasgis.maps.arcgis.com/apps/webappviewer/index.html?id=19ba664de1f741c4876dec2fd56b3477) of Slow-Ride Zones, No Ride Zones, No Parking zones, and scooter/bicycle parking corrals.
 
-**Scooter Tips**
+## Scooter Tips
 
 Before riding an electric scooter for the first time, it's a good idea to read an online [beginner's guide to riding an electric scooter](https://riderguide.com/safety/how-to-ride-an-electric-scooter/).
 
-You can see the live location of Bird and Superpedestrian scooters using the [GoPass app](https://riderguide.com/safety/how-to-ride-an-electric-scooter/) from DART. At time of recording, Lime scooters are not shown on the GoPass app.
+In addition to buses and trains, you can see the live location of Bird and Superpedestrian scooters using the [GoPass app](https://riderguide.com/safety/how-to-ride-an-electric-scooter/) from DART. At time of recording, Lime scooters are not shown on the GoPass app.
 
 ![Screenshot of the GoPass app from DART, showing the live location of trains, buses, Bird scooters, and Superpedestrian scooters.](https://ucarecdn.com/33db5c15-6aeb-4b82-99e6-5795ecf7218c/ "The GoPass app from DART shows the live location trains, buses, and scooters from Bird and Superpedestrian.")
+

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Scooters are back / DART hires 100 security officers / Weekend transit
-  more popular post-pandemic
+title: "Scooters are back: when, where, and how to ride / DART hires 100
+  security officers / Weekend transit more popular post-pandemic"
 subtitle: Jonathan Braddick talks about dockless shared scooters, DART begins
   hiring security to ride every train, and riding buses and trains on weekends
   are more popular now than before the pandemic.
@@ -13,40 +13,62 @@ tags:
   - DART
   - Micromobility
 ---
-**When were scooters removed from Dallas?**
+In this episode, we talk about:
 
-In 2020: [Rental electric scooters make their return to Dallas (fox4news.com)](https://www.fox4news.com/news/dallas-electric-scooters)
+1. Shared scooters (Lime, Bird, Superpedestrian) in Dallas, with Jonathan Braddick.
 
-**What year did scooters original start in Dallas?**
+   * Where, when, and how to ride scooters in Dallas
+   * Why original scooter program ended
+   * What's different this time around
+   * Improvements we want to see
+2. DART ridership update, with Connor Hulla
 
-In 2018.
+   * DART begins hiring 100 Transity Security Officers (TSOs)
+   * 70 officers hired as of August 
+   * Riding light rail on Saturdays and Sundays is more popular now than before pandemic. 
 
-**What are the exact scooter service hours?**
+- - -
 
-5:00 am to 9:00 pm
+# Shared scooters: Lime, Bird, Superpedestrian[](https://dallascityhall.com/departments/transportation/Pages/dockless-vehicle-program.aspx)
 
-SUPERPEDESTRIAN: 5:00 AM TO 8:40 PM
+*(All vendor pricing and offers detailed in these show notes are only current in Dallas as of September 19th.* *Pricing may vary for other cities and may change by the time you read this. Please refer to the vendor websites for up-to-date detail. Anytime the price on the vendor app or website was listed with 99 cents, I round to the dollar in the list below. For example, instead of $6.99 my list reads $7.)*
 
-**How fast can you go on scooters?**
+**Lime**
 
-"The max speed will be 20 miles per hour, but in slow ride zones, like Deep Ellum and Bishop Arts, the speed limit will be reduced to 10."
+* $1 unlock, $0.41 per minute
+* Operable in Dallas, Plano, Highland Park, University Park, and Cockrell Hill.
+* [Ride Passes](https://help.li.me/hc/en-us/articles/1260806465069-What-is-a-Ride-Pass-) basically allow you to save money by purchasing minutes in bulk. For example, riding for 60 minutes would normally cost $24.60; buying a 60-minute ride pass costs $8. Other pass options include 
+* [LimePrime](https://www.li.me/blog/lime-introduces-lime-prime-just-in-time-for-summer) is an optional $15/month subscription that waives the $1 unlock fee and applies a 25% discount to all rides.
+* [Download Lime app](https://www.li.me/the-app)
 
-**Pricing Model**
+**Bird**
 
-LIME: fixed price to unlock ($1), $0.43 per minute. Ride passes:
+* $1 unlock, $0.39 per minute
+* Operable in Dallas, Plano, and Cockrell Hill.
+* *Not* operable in Park Cities (Highland Park and University Park).
+* No passes or subscriptions offered in Dallas at this time. However, discount offers are intermittently available in the Bird app.
+* [Download Bird app](https://go.bird.co/)
 
-$8 for 60 minutes pass (breaks even after 17 minutes / max savings $18.80)
+**Superpedestrian**
 
-$14 for 100 minutes (1 hour 40 minutes)
+* $1 unlock, $0.39 per minute
+* Operable in Central Dallas
+* *Not* operable in other cities and outside Central Dallas (see map below). 
+* [Ride Passes](https://superpedestrian.com/passes) basically allow you to save money by purchasing minutes in bulk. Pass options in Dallas include 1 Day Pass ($9), 30-MIN Trip Pass ($7), 4 Days Pass ($16), and 30 Days Pass ($30).
+* [LINK-Up Dallas](https://superpedestrian.com/dallas#:~:text=Dallas%E2%80%99s%20website.-,LINK%2DUp%20Dallas,-LINK%2DUp%20Dallas) is Superpedestrian’s 70% discount fare program for the City of Dallas. Anyone who qualifies for a Dallas local, Texas State, or federal assistance program is eligible for LINK-Up Dallas. [Apply using their online enrollment form.](https://airtable.com/appjBU0Yn6D3cQfgM/shr95qDUIbNla2Fco)
+* [Download Superpedestrian app](https://superpedestrian.com/how-to-ride)
 
-$32 for 240 minutes (4 hours)
+![Screenshot of Superpedestrian boundaries map.](https://ucarecdn.com/e09a3c54-3975-48be-8713-feaa69611f7f/-/crop/1080x909/0,526/-/preview/ "Superpedestrian is only available and operable in Central Dallas.")
 
-[How much does it cost to ride a Lime vehicle? – Help Center](https://help.li.me/hc/en-us/articles/115004914208-How-much-does-it-cost-to-ride-a-Lime-vehicle-)
+You can read the [rules and history of the Dockless Vehicle Program](https://dallascityhall.com/departments/transportation/Pages/dockless-vehicle-program.aspx) on the City of Dallas website. There you can also find [FAQ from the media](https://dallascityhall.com/departments/transportation/DCH%20Documents/Dockless%20Vehicles/Dockless-Relaunch-FAQ_05242023.pdf) answered by the city.
 
-LimePrime: $15/month for free unlocks and 25% discount.
+**Riding Restrictions**
 
-[What is LimePrime? – Help Center](https://help.li.me/hc/en-us/articles/1260806465129-What-is-LimePrime-)
+From the official City of Dallas website:
 
-Defer to other websites for more details on pricing comparisons: [Lime Scooter Price: How Much Do Lime Scooters Cost? | Ridester.com](https://www.ridester.com/lime-scooter-price/#Lime_Scooter_Price_vs_Competition)
+* Operating hours for rented scooters are limited to 5am - 9pm.
+* There is a city-wide speed limit of 20 MPH for scooters and e-bikes.
+* In Slow-Ride Zones, riders must slow to 10 MPH.
+* Scooters (rented and privately owned) may not be ridden on or in: sidewalks, trails, parks, plazas, on roads with a speed limit of 35 MPH or higher, and in other designated No-Ride Zones. Riders must dismount and walk their device through these areas. 
 
-SUPERPEDESTRIAN: https://superpedestrian.com/dallas
+[Interactive map](https://dallasgis.maps.arcgis.com/apps/webappviewer/index.html?id=19ba664de1f741c4876dec2fd56b3477) of Slow-Ride Zones, No Ride Zones, No Parking zones, and scooter/bicycle parking corrals.

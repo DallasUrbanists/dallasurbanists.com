@@ -72,3 +72,7 @@ From the official City of Dallas website:
 * Scooters (rented and privately owned) may not be ridden on or in: sidewalks, trails, parks, plazas, on roads with a speed limit of 35 MPH or higher, and in other designated No-Ride Zones. Riders must dismount and walk their device through these areas. 
 
 [Interactive map](https://dallasgis.maps.arcgis.com/apps/webappviewer/index.html?id=19ba664de1f741c4876dec2fd56b3477) of Slow-Ride Zones, No Ride Zones, No Parking zones, and scooter/bicycle parking corrals.
+
+**Scooter Tips**
+
+Before riding an electric scooter for the first time, it's a good idea to read an online [beginner's guide to riding an electric scooter](https://riderguide.com/safety/how-to-ride-an-electric-scooter/).

@@ -15,23 +15,23 @@ tags:
 ---
 In this episode, we talk about:
 
-1. Shared scooters (Lime, Bird, Superpedestrian) in Dallas, with Jonathan Braddick.
+1. Shared scooters (Lime, Bird, Superpedestrian) in Dallas with Jonathan Braddick.
 
    * Where, when, and how to ride scooters in Dallas
    * Why original scooter program ended
    * What's different this time around
    * Improvements we want to see
-2. DART ridership update, with Connor Hulla
+2. DART ridership update with Connor Hulla
 
-   * DART begins hiring 100 Transity Security Officers (TSOs)
-   * 70 officers hired as of August 
-   * Riding light rail on Saturdays and Sundays is more popular now than before pandemic. 
+   * DART begins hiring 100 Transit Security Officers (TSOs)
+   * 70 officers have been hired as of August 
+   * Riding light rail on Saturdays and Sundays is more popular now than before the pandemic. 
 
 - - -
 
 # Shared scooters: Lime, Bird, Superpedestrian[](https://dallascityhall.com/departments/transportation/Pages/dockless-vehicle-program.aspx)
 
-*(All vendor pricing and offers detailed in these show notes are only current in Dallas as of September 19th.* *Pricing may vary for other cities and may change by the time you read this. Please refer to the vendor websites for up-to-date detail. Anytime the price on the vendor app or website was listed with 99 cents, I round to the dollar in the list below. For example, instead of $6.99 my list reads $7.)*
+*(All vendor pricing and offers detailed in these show notes are only current in Dallas as of September 19th.* *Pricing may vary for other cities and may change by the time you read this. Please refer to the vendor websites for up-to-date details. Anytime the price on the vendor app or website was listed with 99 cents, I round to the dollar in the list below. For example, instead of $6.99, my list reads $7.)*
 
 ## Lime
 
@@ -46,7 +46,7 @@ In this episode, we talk about:
 * $1 unlock, $0.39 per minute
 * Operable in Dallas, Plano, and Cockrell Hill.
 * *Not* operable in Park Cities (Highland Park and University Park).
-* No passes or subscriptions offered in Dallas at this time. However, discount offers are intermittently available in the Bird app.
+* No passes or subscriptions are offered in Dallas at this time. However, discount offers are intermittently available in the Bird app.
 * [Download Bird app](https://go.bird.co/)
 
 ## Superpedestrian
@@ -60,7 +60,7 @@ In this episode, we talk about:
 
 ![Screenshot of Superpedestrian boundaries map.](https://ucarecdn.com/e09a3c54-3975-48be-8713-feaa69611f7f/-/crop/1080x909/0,526/-/preview/ "Superpedestrian is only available and operable in Central Dallas.")
 
-You can read the [rules and history of the Dockless Vehicle Program](https://dallascityhall.com/departments/transportation/Pages/dockless-vehicle-program.aspx) on the City of Dallas website. There you can also find [FAQ from the media](https://dallascityhall.com/departments/transportation/DCH%20Documents/Dockless%20Vehicles/Dockless-Relaunch-FAQ_05242023.pdf) answered by the city.
+You can read the [rules and history of the Dockless Vehicle Program](https://dallascityhall.com/departments/transportation/Pages/dockless-vehicle-program.aspx) on the City of Dallas website. You can also find [FAQs from the media](https://dallascityhall.com/departments/transportation/DCH%20Documents/Dockless%20Vehicles/Dockless-Relaunch-FAQ_05242023.pdf) answered by the city.
 
 ## Riding Restrictions
 
@@ -77,7 +77,7 @@ From the official City of Dallas website:
 
 Before riding an electric scooter for the first time, it's a good idea to read an online [beginner's guide to riding an electric scooter](https://riderguide.com/safety/how-to-ride-an-electric-scooter/).
 
-In addition to buses and trains, you can see the live location of Bird and Superpedestrian scooters using the [GoPass app](https://riderguide.com/safety/how-to-ride-an-electric-scooter/) from DART. At time of recording, Lime scooters are not shown on the GoPass app.
+In addition to buses and trains, you can see the live location of Bird and Superpedestrian scooters using the [GoPass app](https://riderguide.com/safety/how-to-ride-an-electric-scooter/) from DART. At the time of recording, Lime scooters are not shown on the GoPass app.
 
 ![Screenshot of the GoPass app from DART, showing the live location of trains, buses, Bird scooters, and Superpedestrian scooters.](https://ucarecdn.com/33db5c15-6aeb-4b82-99e6-5795ecf7218c/ "The GoPass app from DART shows the live location trains, buses, and scooters from Bird and Superpedestrian.")
 

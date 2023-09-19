@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: episode
 title: "Scooters are back: when, where, and how to ride / DART hires 100
   security officers / Weekend transit more popular post-pandemic"
 subtitle: Jonathan Braddick talks about dockless shared scooters, DART begins
@@ -12,6 +12,8 @@ tags:
   - Podcast
   - DART
   - Micromobility
+episode_number: 5
+spotify_code: 5CC5fUEtGmRCSt9U3UBuvH
 ---
 In this episode, we talk about:
 
@@ -21,6 +23,7 @@ In this episode, we talk about:
    * Why original scooter program ended
    * What's different this time around
    * Improvements we want to see
+
 2. DART ridership update with Connor Hulla
 
    * DART begins hiring 100 Transit Security Officers (TSOs)

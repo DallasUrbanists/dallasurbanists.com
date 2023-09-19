@@ -6,7 +6,7 @@ subtitle: Jonathan Braddick talks about dockless shared scooters, DART begins
   hiring security to ride every train, and riding buses and trains on weekends
   are more popular now than before the pandemic.
 author: bywayofdallas
-date: 2023-09-18T06:49:10.821Z
+date: 2023-09-19T17:17:56.941Z
 cover_image: https://ucarecdn.com/2ecac41b-ab2a-4966-9560-7e362bcf2849/
 tags:
   - Podcast
@@ -76,3 +76,7 @@ From the official City of Dallas website:
 **Scooter Tips**
 
 Before riding an electric scooter for the first time, it's a good idea to read an online [beginner's guide to riding an electric scooter](https://riderguide.com/safety/how-to-ride-an-electric-scooter/).
+
+You can see the live location of Bird and Superpedestrian scooters using the [GoPass app](https://riderguide.com/safety/how-to-ride-an-electric-scooter/) from DART. At time of recording, Lime scooters are not shown on the GoPass app.
+
+![Screenshot of the GoPass app from DART, showing the live location of trains, buses, Bird scooters, and Superpedestrian scooters.](https://ucarecdn.com/33db5c15-6aeb-4b82-99e6-5795ecf7218c/ "The GoPass app from DART shows the live location trains, buses, and scooters from Bird and Superpedestrian.")

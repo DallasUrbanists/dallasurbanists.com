@@ -1,0 +1,53 @@
+/**
+ * These are custom styles for the Masonry JS library.
+ * @see https://masonry.desandro.com/layout
+ */
+
+/* .photo-gallery wraps around entire article */ 
+
+.photo-gallery {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0px;
+}
+.photo-gallery p {
+    max-width: 50em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* #masonry-grid wraps around the image grid */
+
+.photo-gallery #masonry-grid { 
+    margin: 0 auto;
+    width: 1000px;
+    max-width: 100%;
+}
+.photo-gallery #masonry-grid .grid-item,
+.photo-gallery #masonry-grid .grid-sizer {
+    float: left;
+    box-sizing: border-box;
+    border: 0;
+    padding: 0.25em;
+}
+
+/* responsive design: smaller screens have fewer columns */
+
+/* desktop / default */
+.photo-gallery #masonry-grid .grid-item,
+.photo-gallery #masonry-grid .grid-sizer { width: 25%; }
+.photo-gallery #masonry-grid .grid-item--width2 { width: 50%; }
+
+/* tablet */
+@media (max-width: 920px) {
+    .photo-gallery #masonry-grid .grid-item,
+    .photo-gallery #masonry-grid .grid-sizer { width: 50%; }
+    .photo-gallery #masonry-grid .grid-item--width2 { width: 100%; }
+}
+
+/* phone */
+@media (max-width: 500px) {
+    .photo-gallery #masonry-grid .grid-item,
+    .photo-gallery #masonry-grid .grid-sizer,
+    .photo-gallery #masonry-grid .grid-item--width2 { width: 100%; }
+}

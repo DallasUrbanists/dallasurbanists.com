@@ -1,0 +1,104 @@
+---
+layout: default
+meta_type: "article"
+---
+{% assign author = site.authors | where: 'name', page.author | first %}
+
+<div class="container-lg pt-2">
+  <div class="container text-center">
+    <h1 class="display-6 mt-4 text-center">{{ page.title }}</h1>
+    <p>
+      <em>By {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</em>
+    </p>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+  <div class="container-fluid row justify-content-center blog-article-parent-container mb-4">
+    <article class="blog-article photo-gallery mb-5">
+        {{ content }}
+    </article>
+  </div>
+
+  <!-- Author Footer -->
+  
+  <div class="container-lg my-4 mb-5">
+    <div class="row border rounded justify-content-center">
+    <!-- Author Details -->
+    <div class="col-md-6 row">
+      <!-- Author Photo-->
+      <div class="col-md-4 p-4">
+        <img class="img-fluid rounded" src="{{ author.photo | relative_url }}">
+      </div>
+      <!-- Author Bio-->
+      <div class="col-md-8  p-4">
+        <strong>Written by {{ author.display_name }} <nobr>on {{ page.date | date: "%B %-d, %Y" }}</nobr></strong>
+        {{ author.content | markdownify }}
+        <p>
+          <nobr><i class="bi bi-envelope-fill fs-5"></i> <a href="mailto:{{ author.email }}" class="link-secondary link-offset-2">{{ author.email }}</a></nobr>&nbsp;
+          {% if author.twitter %}
+          <nobr><i class="bi bi-twitter fs-5"></i> <a href="https://twitter.com/{{ author.twitter }}" class="link-secondary link-offset-2">{{ author.twitter }}</a></nobr>&nbsp;
+          {% endif %}
+          {% if author.instagram %}
+          <nobr><i class="bi bi-instagram fs-5"></i> <a href="https://www.instagram.com/{{ author.instagram | replace: '@', '' }}" class="link-secondary link-offset-2">{{ author.instagram }}</a></nobr>&nbsp;
+          {% endif %}
+          {% if author.reddit %}
+          <nobr><i class="bi bi-reddit fs-5"></i> <a href="https://www.reddit.com/{{ author.reddit }}" class="link-secondary link-offset-2">{{ author.reddit }}</a></nobr>&nbsp;
+          {% endif %}
+          </p>
+      </div>
+    </div>
+
+    <!-- Author Articles -->
+    <div class="col-md-6  p-4">
+      {% assign author_posts_limit = 5 %}
+      {% assign author_posts_shown = 0 %}
+      {% assign author_posts = site.posts | where: "author", author.name %}
+
+      {% for post in author_posts %}
+        {% if author_posts_shown > author_posts_limit %}
+          {% break %}
+        {% endif %}
+        {% unless page.title == post.title %}
+          {% include post-listing.html post=post %}
+          {% assign author_posts_shown = author_posts_shown | plus:1 %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- MASONRY PLUGIN -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="{{ "/plugins/masonry/masonry-wrapper.js" | relative_path }}"></script>
+<link href="{{ "/plugins/masonry/masonry-custom.css" | relative_path }}" rel="stylesheet" />
+
+<!-- LIGHTBOX PLUGIN -->
+<script src="{{ "/plugins/lightbox/js/lightbox-plus-jquery.min.js" | relative_path }}"></script>
+<link href="{{ "/plugins/lightbox/css/lightbox.min.css" | relative_path }}" rel="stylesheet" />
+<script src="{{ "/plugins/lightbox/lightbox-decorator.js" | relative_path }}"></script>
+
+<!-- INITIALIZE PLUGINS -->
+<script>
+  // Attach lightbox to every image in the post content
+  LightboxDecorator.decorate({
+    // how to find <img> elements that should have lightbox attached 
+    // note that each individual <img> element will be wrapped with <a href> 
+    imageSelector: 'article.blog-article img',
+
+    // duration of resize animation in milliseconds
+    resizeDuration: 200
+  });
+
+  // Move all photos in post content into a masonry grid
+  const gallery = MasonryWrapper.wrap({
+    // where to append the masonry wrapper after it's generated
+    galleryParent: 'article.blog-article',
+    
+    // how to find images that should be moved into the masonry wrapper
+    // note that all matching images will move and not be in their original DOM location
+    galleryImageSelector: 'article.blog-article .post-image-link'
+  });
+</script>

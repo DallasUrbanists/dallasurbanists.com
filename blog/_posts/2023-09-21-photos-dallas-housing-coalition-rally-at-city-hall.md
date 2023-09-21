@@ -5,6 +5,10 @@ subtitle: Advocates held a rally at City Hall for $200 million in bonds to
   tackle Dallas’ housing crisis.
 author: hexel
 date: 2023-09-21T12:12:02.832Z
+cover_image: https://ucarecdn.com/ca028378-fd8c-4123-8c0b-8211970b5445/
+tags:
+  - Housing
+  - Photos
 ---
 Dozens of Dallasites gathered in front of City Hall on Wednesday for a rally organized by [Dallas Housing Coalition](https://www.dallashousingcoalition.com/) to push for $200 million of affordable housing funding to be included in next year’s bond election. Without the funding, they say Dallas will face a growing housing crisis that squeezes the people who live here, drives up homelessness, and limits the city’s appeal to new residents and businesses.
 

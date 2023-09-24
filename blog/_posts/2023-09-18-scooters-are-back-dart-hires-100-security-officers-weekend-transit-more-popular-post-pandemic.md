@@ -94,6 +94,8 @@ TSOs will provide enhanced service on DART’s light rail vehicles and platforms
 
 The TSO program is scheduled to be fully staffed by mid-August, but security officers can already be seen patrolling DART vehicles.
 
+![Transit Security Officer standing aboard a DART light rail train.](https://ucarecdn.com/e01643fd-e4d0-4de5-bd72-4453eb36929f/ "Adrian, DART Transit Security Officer, riding the Red Line headed south from Parker Road to Westmoreland Station at 9:30 pm Saturday night.")
+
 ## DART Weekend Ridership
 
 \[insert chart here]

@@ -1,3 +1,6 @@
+---
+# this frontmatter section tells Jekyll to process this file, allowing us to use variables like site.tags
+---
 backend:
   name: git-gateway
   branch: main
@@ -28,16 +31,40 @@ collections:
         }
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
-  - name: "tag"
-    label: "Tag"
-    folder: "tagged/"
-    create: true
-    delete: false # Don't allow deleting from within CMS
-    slug: "{{tag_feed}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "tag-feed"}
-      - {label: "Tag Name (no spaces)", name: "tag_feed", widget: "string"}
+      - {
+          label: "Tags", 
+          name: "tags", 
+          widget: "select", 
+          required: false, 
+          multiple: true, 
+
+          {%- capture options -%}
+            {%- for tag in site.tags -%}
+              "{{tag[0]}}",
+            {%- endfor -%}
+                        
+            {%- for tag in site.data.tags.items -%}
+              "{{tag.name}}",
+            {%- endfor -%}
+          {%- endcapture -%}
+          {% assign sorted_options = options | split: "," | uniq | sort | join: ", " %}
+          
+          options: [{{ sorted_options }}] 
+        }
+  - name: 'config'
+    label: 'Config'
+    editor:
+      preview: false
+    files:
+      - label: 'Tag'
+        name: 'tag'
+        file: '_data/tags.yml'
+        fields:
+          - label: 'Tags'
+            name: 'items'
+            widget: 'list'
+            fields:
+              - { label: Name, name: name, widget: string }
   - name: "authors"
     label: "Authors"
     folder: "_authors/"

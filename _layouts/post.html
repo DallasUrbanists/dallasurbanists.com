@@ -75,32 +75,26 @@ meta_type: "article"
   </div>
   </div>
 
-  <!-- LIGHTBOX PLUGIN -->
-  <script>
-    let postImages = document.querySelectorAll("article.blog-article img");
+<!-- LIGHTBOX PLUGIN -->
+<script src="{{ "/plugins/lightbox/js/lightbox-plus-jquery.min.js" | relative_path }}"></script>
+<link href="{{ "/plugins/lightbox/css/lightbox.min.css" | relative_path }}" rel="stylesheet" />
+<script src="{{ "/plugins/lightbox/lightbox-decorator.js" | relative_path }}"></script>
 
-    postImages.forEach((img) => {
-      // TURN EVERY IMAGE INTO A LIGHTBOX LINK
+<!-- GOOGLE ANALYTICS: READ COMPLETE EVENT -->
+<script src="{{ "/plugins/google-analytics/readcomplete-event.js" | relative_path }}"></script>
 
-      let linkWrapper = document.createElement("a");
-      linkWrapper.setAttribute("data-lightbox", "post-image");
-      linkWrapper.setAttribute("href", img.getAttribute("src"));
-      img.parentNode.insertBefore(linkWrapper, img);
-      linkWrapper.appendChild(img);
+<!-- INITIALIZE PLUGINS -->
+<script>
+  // Attach lightbox to every image in the post content
+  LightboxDecorator.decorate({
+    // how to find <img> elements that should have lightbox attached 
+    // note that each individual <img> element will be wrapped with <a href> 
+    imageSelector: 'article.blog-article img',
 
-      // INSERT A CAPTION FOR EVERY IMAGE WITH A TITLE
+    // duration of resize animation in milliseconds
+    resizeDuration: 200
+  });
 
-      if (img.title) {
-        let imgCaption = document.createElement("div");
-        imgCaption.setAttribute("class", "post-image-caption");
-        imgCaption.innerHTML = img.title;
-        linkWrapper.after(imgCaption);
-      }
-    });
-  </script>
-  <script src="{{ "/assets/plugins/lightbox/js/lightbox-plus-jquery.min.js" | relative_path }}"></script>
-  <script>
-    lightbox.option({
-      'resizeDuration': 200
-    });
-  </script>
+  // Detect when reader finishes reading the entire article
+  detectReadComplete('article.blog-article', "{{ page.title | escape }}");
+</script>

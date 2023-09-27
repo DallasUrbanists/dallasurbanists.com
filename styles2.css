@@ -6,6 +6,10 @@
     --bs-heading-color: rgba(61, 63, 63, 1);
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: 'Noto Serif', Georgia, Cambria, "Times New Roman", Times, serif;
     background-size: auto;
@@ -84,6 +88,12 @@ img.muted {
     background-size: cover;
 }
 
+.blog-article-parent-container {
+    padding: 0 1em;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
 .blog-article {
     font-size: 18px;
     font-weight: 400;
@@ -135,6 +145,10 @@ img.muted {
     margin-right: auto;
 }
 
+.blog-article hr + h1:not(.lined-heading) {
+    margin-top: 1em;
+}
+
 .blog-article img {
     border-radius: 0.5em;
     max-width: 100%;
@@ -170,31 +184,6 @@ article.blog-article > ol li {
 .blog-article iframe {
     width: 100%;
 }
-
-.blog-article blockquote {
-    padding: 2em;
-    border-left: solid 1px rgba(0, 0, 0, 0.5);
-    background-color: rgba(255, 255, 255, 0.5);
-    /* border-left: solid 0.25em #ccc; */
-    /* border-right: solid 0.25em #ccc; */
-    /* padding-top: 1em; */
-    /* padding-bottom: 1em; */
-    /* padding-right: 1em; */
-    margin-left: -2em;
-    font-style: italic;
-    /* border-top-right-radius: 1em; */
-    /* border-bottom-left-radius: 1em; */
-}
-
-.blog-article blockquote p {
-    font-size: 1.1em;
-    line-height: 1.5em;
-    color: #666;
-    font-weight: 200;
-}
-
-.blog-article blockquote p:last-of-type {margin-bottom: 0;}
-
 
 .text-glow {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f8f9fa, 0 0 40px #f8f9fa, 0 0 50px #f8f9fa, 0 0 60px #f8f9fa, 0 0 70px #f8f9fa;
@@ -262,15 +251,15 @@ article.blog-article > ol li {
 }
 
 .blog-article blockquote {
-    padding: 2em;
-    border-left: solid 1px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    padding: 2em 2em 2em 2em;
+    border-left: solid 1em rgba(0, 0, 0, 0.25);
     background-color: rgba(255, 255, 255, 0.5);
     margin-left: -2em;
-    font-style: italic;
 }
 
 .blog-article blockquote.opener {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     padding: 0.5em;
     background-color: transparent;
     border-left: none;
@@ -278,13 +267,13 @@ article.blog-article > ol li {
     margin-left: -1em;
     text-align: right;
     font-style: italic;
-    /* font-size: 1.1em; */
+    font-size: 1em;
     text-align: center;
     margin-left: 0;
 }
 
 .blog-article blockquote p {
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 1.5em;
     color: #666;
     font-weight: 200;
@@ -323,4 +312,23 @@ article.blog-article > ol li {
 
 .blog-article blockquote#takeaways ul li:last-child {
     margin-bottom: 0;
+}
+
+#post-title {
+	font-size: calc(1.375rem + 1vw);
+}
+
+.blog-article iframe[title="YouTube video player"] {
+    margin-bottom: 1.5em;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+.blog-article b, .blog-article strong {
+    font-weight: bold;
+}
+
+.blog-article em, .blog-article i {
+    font-weight: italic;
 }

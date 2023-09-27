@@ -6,7 +6,7 @@ meta_type: "article"
 
 <div class="container-lg pt-2">
   <div class="container text-center">
-    <h1 class="display-6 mt-4 text-center">{{ page.title }}</h1>
+    <h1 class="display-6 mt-lg-4 text-center" id="post-title">{{ page.title }}</h1>
     <p>
       <em>By {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</em>
     </p>
@@ -14,23 +14,21 @@ meta_type: "article"
   {% include impact-image.html path = page.cover_image %}
 </div>
 
-<div class="container-fluid">
-
-  <div class="container-fluid row justify-content-center blog-article-parent-container mb-4">
-    <div class="" style="width: 768px; margin: 0 auto;">
-      <article class="blog-article mb-5">
-        <blockquote class="opener">
-          <p>{{ page.subtitle }}</p>
-        </blockquote>
-         {{ content }}
-      </article>
-    </div>
+<div class="blog-article-parent-container">
+  <div style="width: 100%; max-width: 768px; margin: 0 auto;">
+    <article class="blog-article mb-5">
+      <blockquote class="opener">
+        <p>{{ page.subtitle }}</p>
+      </blockquote>
+      {{ content }}
+    </article>
   </div>
+</div>
 
-  <!-- Author Footer -->
-  
-  <div class="container-lg my-4 mb-5">
-    <div class="row border rounded justify-content-center">
+<!-- Author Footer -->
+
+<div class="container-lg my-4 mb-5">
+  <div class="row border rounded justify-content-center">
     <!-- Author Details -->
     <div class="col-md-6 row">
       <!-- Author Photo-->
@@ -52,55 +50,55 @@ meta_type: "article"
           {% if author.reddit %}
           <nobr><i class="bi bi-reddit fs-5"></i> <a href="https://www.reddit.com/{{ author.reddit }}" class="link-secondary link-offset-2">{{ author.reddit }}</a></nobr>&nbsp;
           {% endif %}
-          </p>
+        </p>
       </div>
     </div>
-
+    
     <!-- Author Articles -->
     <div class="col-md-6  p-4">
       {% assign author_posts_limit = 5 %}
       {% assign author_posts_shown = 0 %}
       {% assign author_posts = site.posts | where: "author", author.name %}
-
+      
       {% for post in author_posts %}
-        {% if author_posts_shown > author_posts_limit %}
-          {% break %}
-        {% endif %}
-        {% unless page.title == post.title %}
-          {% include post-listing.html post=post %}
-          {% assign author_posts_shown = author_posts_shown | plus:1 %}
-        {% endunless %}
+      {% if author_posts_shown > author_posts_limit %}
+      {% break %}
+      {% endif %}
+      {% unless page.title == post.title %}
+      {% include post-listing.html post=post %}
+      {% assign author_posts_shown = author_posts_shown | plus:1 %}
+      {% endunless %}
       {% endfor %}
     </div>
   </div>
-  </div>
+</div>
 
-  <!-- LIGHTBOX PLUGIN -->
-  <script>
-    let postImages = document.querySelectorAll("article.blog-article img");
-
-    postImages.forEach((img) => {
-      // TURN EVERY IMAGE INTO A LIGHTBOX LINK
-
-      let linkWrapper = document.createElement("a");
-      linkWrapper.setAttribute("data-lightbox", "post-image");
-      linkWrapper.setAttribute("href", img.getAttribute("src"));
-      img.parentNode.insertBefore(linkWrapper, img);
-      linkWrapper.appendChild(img);
-
-      // INSERT A CAPTION FOR EVERY IMAGE WITH A TITLE
-
-      if (img.title) {
-        let imgCaption = document.createElement("div");
-        imgCaption.setAttribute("class", "post-image-caption");
-        imgCaption.innerHTML = img.title;
-        linkWrapper.after(imgCaption);
-      }
-    });
-  </script>
-  <script src="{{ "/assets/plugins/lightbox/js/lightbox-plus-jquery.min.js" | relative_path }}"></script>
-  <script>
-    lightbox.option({
-      'resizeDuration': 200
-    });
-  </script>
+<!-- LIGHTBOX PLUGIN -->
+<script>
+  let postImages = document.querySelectorAll("article.blog-article img");
+  
+  postImages.forEach((img) => {
+    // TURN EVERY IMAGE INTO A LIGHTBOX LINK
+    
+    let linkWrapper = document.createElement("a");
+    linkWrapper.setAttribute("data-lightbox", "post-image");
+    linkWrapper.setAttribute("href", img.getAttribute("src"));
+    img.parentNode.insertBefore(linkWrapper, img);
+    linkWrapper.appendChild(img);
+    
+    // INSERT A CAPTION FOR EVERY IMAGE WITH A TITLE
+    
+    if (img.title) {
+      let imgCaption = document.createElement("div");
+      imgCaption.setAttribute("class", "post-image-caption");
+      imgCaption.innerHTML = img.title;
+      linkWrapper.after(imgCaption);
+    }
+  });
+</script>
+<script src="{{ "/assets/plugins/lightbox/js/lightbox-plus-jquery.min.js" | relative_path }}"></script>
+<script>
+  lightbox.option({
+    'resizeDuration': 200
+  });
+</script>

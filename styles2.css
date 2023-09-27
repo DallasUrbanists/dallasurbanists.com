@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
     --bs-primary: #0b2b8c;
@@ -7,13 +7,24 @@
     --bs-body-font-weight: 300;
 }
 
+/* ---- FONT FAMILY CHOICES --- */
+
+.blog-article, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif', serif;
+}
+
+body, .blog-article blockquote {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* ---- FONT STYLE CHOICES ---- */
+
 html {
     font-size: 16px;
     font-weight: 300;
 }
 
 body {
-    font-family: 'Noto Serif', Georgia, Cambria, "Times New Roman", Times, serif;
     background-size: auto;
     background-repeat: repeat;
 }
@@ -29,6 +40,8 @@ strong, b {
 em, i {
     font-style: italic;
 }
+
+/* ---- ---- */
 
 .btn .bi:first-child {
     margin-right: 0.25em;
@@ -262,6 +275,7 @@ article.blog-article > ol li {
 }
 
 .blog-article blockquote {
+    font-family: 'Noto Sans', sans-serif;
     text-align: left;
     padding: 2em 2em 2em 2em;
     border-left: solid 1em rgba(0, 0, 0, 0.25);

@@ -103,9 +103,7 @@ Avoiding driving saves money in two areas: *vehicles expenses* and *spending hab
 
 Drowsy Driving: Asleep at the Wheel (cdc.gov)
 
-https://www.cdc.gov/sleep/features/drowsy-driving.html
-
-Drowsy Driving: Dangers and How To Avoid It https://www.sleepfoundation.org/drowsy-driving
+Drowsy Driving: Dangers and How To Avoid It
 
 Drowsy driving and drunk driving are equally dangerous
 

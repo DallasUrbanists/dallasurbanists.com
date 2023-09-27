@@ -17,7 +17,7 @@ There are many things we never truly know until we try. You don't need to get ri
 
 # REASON #1: Rediscover your city by seeing it in new ways
 
-![Two childrens' drawings of their trip to school. The first drawing is by a child driven to school. The second drawing is by a child who walks to school.](https://ucarecdn.com/8ed65b7e-4deb-4d7a-ad7d-722749dbf206/ "Two childrens' drawings of their trip to school: one was driven to school, the other walked.")
+![Two childrens' drawings of their trip to school. The first drawing is by a child driven to school. The second drawing is by a child who walks to school.](https://ucarecdn.com/b3ce4a6e-3d4a-4ff6-95f1-fef339d5a7d9/ "Two childrens' drawings of their trip to school: one was driven to school, the other walked.")
 
 The two drawings above come from [research in Germany](https://www.experi-forschung.de/en/kinder-sollen-kinder-sein-duerfen-auch-auf-dem-schulweg/) wherein young students were asked to draw their trip to school. Children who walk to school drew a more vibrant picture than those driven in a car. A [study in the United States](https://www.bloomberg.com/news/articles/2012-05-07/kids-who-get-driven-everywhere-don-t-know-where-they-re-going) by urbanist researcher Donald Appleyard found very similar results:
 
@@ -53,7 +53,7 @@ In Beijing, the right to buy a car is determined by a lottery. This resulted in 
 
 *(*BTW, please don't take this message the wrong way. If you do go to an actual gym regularly, keep it up!)*
 
----
+- - -
 
 # REASON #3: Avoid injury, save lives
 

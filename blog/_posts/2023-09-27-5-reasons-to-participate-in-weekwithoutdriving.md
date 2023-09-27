@@ -17,9 +17,11 @@ There are many things we never truly know until we try. You don't need to get ri
 
 # REASON #1: Rediscover your city by seeing it in new ways
 
+The two drawings below come from [research in Germany](https://www.experi-forschung.de/en/kinder-sollen-kinder-sein-duerfen-auch-auf-dem-schulweg/) wherein young students were asked to draw their trip to school. Children who walk to school drew a more vibrant picture than those driven in a car.
+
 ![Two childrens' drawings of their trip to school. The first drawing is by a child driven to school. The second drawing is by a child who walks to school.](https://ucarecdn.com/b3ce4a6e-3d4a-4ff6-95f1-fef339d5a7d9/ "Two childrens' drawings of their trip to school: one was driven to school, the other walked.")
 
-The two drawings above come from [research in Germany](https://www.experi-forschung.de/en/kinder-sollen-kinder-sein-duerfen-auch-auf-dem-schulweg/) wherein young students were asked to draw their trip to school. Children who walk to school drew a more vibrant picture than those driven in a car. A [study in the United States](https://www.bloomberg.com/news/articles/2012-05-07/kids-who-get-driven-everywhere-don-t-know-where-they-re-going) by urbanist researcher Donald Appleyard found very similar results:
+A [study in the United States](https://www.bloomberg.com/news/articles/2012-05-07/kids-who-get-driven-everywhere-don-t-know-where-they-re-going) by urbanist researcher Donald Appleyard found very similar results:
 
 > Children who had a “windshield perspective” from being driven everywhere weren’t able to accurately draw how the streets in their community connected, whereas children who walked or biked to get around produced detailed and highly accurate maps of their neighborhood street network.
 

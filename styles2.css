@@ -264,11 +264,10 @@ article.blog-article > ol li {
 
 .post-image-caption {
     text-align: center;
-    font-size: 0.75em;
-    line-height: 1.25em;
+    font-size: 1em;
     text-decoration: none;
     font-style: italic;
-    padding-top: 1em;
+    padding: 0.5em 1em;
 }
 
 #featuredTitle, #featuredSubtitle {

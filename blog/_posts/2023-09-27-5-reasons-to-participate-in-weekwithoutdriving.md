@@ -53,7 +53,7 @@ In Beijing, the right to buy a car is determined by a lottery. This resulted in 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KPUlgSRn6e0?si=t-uEg4C2miPwrMTT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-*(*BTW, please don't take this message the wrong way. If you do go to an actual gym regularly, keep it up!)*
+*(\*BTW, please don't take this message the wrong way. If you do go to an actual gym regularly, keep it up!)*
 
 - - -
 

@@ -15,25 +15,45 @@ There are many things we never truly know until we try. You don't need to get ri
 
 - - -
 
-# REASON #1: See your city in new ways, rediscover your surroundings
+# REASON #1: Rediscover your city by seeing it in new ways
 
-![Two childrens' drawings of their trip to school. The first drawing is by a child driven to school. The second drawing is by a child who walks to school.](https://ucarecdn.com/db115268-6435-498b-95c0-e4d3560c3a59/ "Two childrens' drawings of their trip to school. When asked to draw their trip to school, children who walk to school drew a more vibrant picture than those driven in a car.")
+![Two childrens' drawings of their trip to school. The first drawing is by a child driven to school. The second drawing is by a child who walks to school.](https://ucarecdn.com/8ed65b7e-4deb-4d7a-ad7d-722749dbf206/ "Two childrens' drawings of their trip to school: one was driven to school, the other walked.")
 
-https://www.experi-forschung.de/en/kinder-sollen-kinder-sein-duerfen-auch-auf-dem-schulweg/
+The two drawings above come from [research in Germany](https://www.experi-forschung.de/en/kinder-sollen-kinder-sein-duerfen-auch-auf-dem-schulweg/) wherein young students were asked to draw their trip to school. Children who walk to school drew a more vibrant picture than those driven in a car. A [study in the United States](https://www.bloomberg.com/news/articles/2012-05-07/kids-who-get-driven-everywhere-don-t-know-where-they-re-going) by urbanist researcher Donald Appleyard found very similar results:
 
-When asked to draw their trip to school, children who walk to school drew a more vibrant picture than those driven in a car. Every student should have the option to walk or bike to school in a safe manner, full stop. (via Margrit Stamm)
+> Children who had a “windshield perspective” from being driven everywhere weren’t able to accurately draw how the streets in their community connected, whereas children who walked or biked to get around produced detailed and highly accurate maps of their neighborhood street network.
 
-*\[draft stuff]*
+Appleyard followed up with children in a heavy-traffic neighborhood after improvements were made to pedestrian and bike infrastructure. Not only were they able to draw more detailed maps, they were happier with their environment.
 
-I didn't realize that by not driving every day and everywhere, I'd gain new insights and perspectives about the world around me.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SxvDvGe-2fY?si=e_BKDMvlRI-D2hce&amp;clip=UgkxHO9blkhJKiIWftMq2BVVq2ZHK9g_E5yo&amp;clipt=EMUaGJrjAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+"Windshield perspective" is not limited to children; adults are just as susceptible to losing sight of where they are, especially with the ubiquity of Google Maps. In the show Parks & Recreation, city employee [Tom Haverford is banned by court order from using any screens for a week](https://youtube.com/clip/UgkxHO9blkhJKiIWftMq2BVVq2ZHK9g_E5yo?si=wt9IkV8x-W-X925b) after he crashes his car while tweeting and driving; the next day he arrives to work an hour-and-a-half late because he "drove around in circles until he saw something familiar." He lived only 3 miles away.
+
+I used to be one of those people who couldn't drive home when my phone dies. Even if I lived only a mile away, I would have been as lost as a stranger in a foreign land. By walking, cycling, and riding public transit everywhere, I feel an intimiate connection with my neighborhood and the people and businesses that inhabit it.
 
 > Many people today have low sense of place. Driving focuses all attention on traveling from point A to point B, but your city exists in the space between.
 
+- - -
+
 # REASON #2: Walk more, live healthier
 
-[Walkable City 10 Years Later: Cars Make Us Sicker Than We Thought — Streetsblog USA](https://usa.streetsblog.org/2022/11/15/walkable-city-10-years-later-cars-make-us-sicker-than-we-thought)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s-kdRdzxdZQ?si=EHT8t93G3SBf8Txn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-> "People who walk 8.6 minutes a day are 33 percent more likely to report better mental health. . .  researchers found that if someone shifts from a long commute to a walk, their happiness increases as much as if they’d fallen in love."
+In the book *Walkable City*, author Jeff Speck goes into great detail about the importance of active transportation and "useful walks" in daily life. I highly recommend reading the [excerpt from the book over on Streetsblog USA](https://usa.streetsblog.org/2022/11/15/walkable-city-10-years-later-cars-make-us-sicker-than-we-thought); below are highlights that stood out to me.
+
+* Being subjected to traffic noise “results in altered blood chemistry and meddles with blood vessel function,” resulting in greater risk of diabetes, heart attacks, and strokes.
+* People who walk 8.6 minutes a day are 33% more likely to report better mental health.
+* If someone shifts from a long commute to a walk, their happiness increases as much as if they’d fallen in love.
+* A 2021 study found that people who get around more on foot or by bicycle were demonstrably more likely to engage in policy change efforts through writing letters, making phone calls, and/or attending community meetings.
+* A 1981 study found that people who live on streets with light car-traffic counted an average of three friends, while people on car-heavy streets averaged 0.9 friends.
+
+In Beijing, the right to buy a car is determined by a lottery. This resulted in a ["naturally randomized experiment":](https://www.theglobeandmail.com/life/health-and-fitness/article-does-owning-a-car-hurt-your-health/?utm_medium=Referrer:+Social+Network+/+Media&utm_campaign=Shared+Web+Article+Links) researchers found that after 5 years, the car lottery "winners" gained 22 pounds on average if they were over the age of 50. Though I'm a little over half that age, I've observed a similar accidental experiment in my own life. In my last year before giving up driving, I lost 20 pounds of body fat by working out at the gym 3 times a week. After selling my car, I switched to [the gym of life](https://www.youtube.com/watch?v=KPUlgSRn6e0); despite not setting foot in a workout gym since*, I haven't gained back a pound.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KPUlgSRn6e0?si=t-uEg4C2miPwrMTT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*(*BTW, please don't take this message the wrong way. If you do go to an actual gym regularly, keep it up!)*
+
+---
 
 # REASON #3: Avoid injury, save lives
 

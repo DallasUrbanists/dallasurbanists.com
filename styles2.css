@@ -101,7 +101,9 @@ img.muted {
 }
 
 .blog-article p {
+    overflow: hidden;
     margin-bottom: 1.5em;
+    text-wrap: pretty;
 }
 
 .blog-article p,

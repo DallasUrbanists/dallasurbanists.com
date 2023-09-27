@@ -17,15 +17,17 @@ There are many things we never truly know until we try. You don't need to get ri
 
 # REASON #1: See your city in new ways, rediscover your surroundings
 
-![Two childrens' drawings of their trip to school. The first drawing is by a child driven to school. The second drawing is by a child who walks to school.](https://ucarecdn.com/db115268-6435-498b-95c0-e4d3560c3a59/ "When asked to draw their trip to school, children who walk to school drew a more vibrant picture than those driven in a car. Every student should have the option to walk or bike to school in a safe manner, full stop. (via Margrit Stamm)")
+![Two childrens' drawings of their trip to school. The first drawing is by a child driven to school. The second drawing is by a child who walks to school.](https://ucarecdn.com/db115268-6435-498b-95c0-e4d3560c3a59/ "Two childrens' drawings of their trip to school. When asked to draw their trip to school, children who walk to school drew a more vibrant picture than those driven in a car.")
 
 https://www.experi-forschung.de/en/kinder-sollen-kinder-sein-duerfen-auch-auf-dem-schulweg/
+
+When asked to draw their trip to school, children who walk to school drew a more vibrant picture than those driven in a car. Every student should have the option to walk or bike to school in a safe manner, full stop. (via Margrit Stamm)
 
 *\[draft stuff]*
 
 I didn't realize that by not driving every day and everywhere, I'd gain new insights and perspectives about the world around me.
 
-> Many people today have low sense of place. Driving focuses all attention on traveling from point A to point B, but the city exists in the space between.
+> Many people today have low sense of place. Driving focuses all attention on traveling from point A to point B, but your city exists in the space between.
 
 # REASON #2: Walk more, live healthier
 
@@ -45,7 +47,7 @@ Avoiding driving saves money in two areas: *vehicles expenses* and *spending hab
 
 \[list obvious stuff: gas, insurance, payments, repairs, etc.]
 
-## Saving from auto-oriented spending habits  
+## Saving from auto-oriented spending habits
 
 \[transportation choices impact spending habits]
 
@@ -54,8 +56,6 @@ Avoiding driving saves money in two areas: *vehicles expenses* and *spending hab
 \[unbundled parking]
 
 [Does Shopping at Costco Save Money? (usnews.com)](https://money.usnews.com/money/blogs/alpha-consumer/2011/08/30/does-shopping-at-costco-save-money)
-
-
 
 # REASON #5: Build resilience
 

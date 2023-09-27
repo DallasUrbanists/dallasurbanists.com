@@ -6,10 +6,8 @@ meta_type: "article"
 
 <div class="container-lg pt-2">
   <div class="container text-center">
-    <h1 class="display-6 mt-lg-4 text-center" id="post-title">{{ page.title }}</h1>
-    <p>
-      <em>By {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</em>
-    </p>
+    <h1 class="mt-lg-4 text-center" id="post-title">{{ page.title }}</h1>
+    <p style="font-weight: 400;">By {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</p>
   </div>
   {% include impact-image.html path = page.cover_image %}
 </div>

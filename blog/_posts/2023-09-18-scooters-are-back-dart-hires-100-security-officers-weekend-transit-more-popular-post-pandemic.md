@@ -1,19 +1,19 @@
 ---
 layout: episode
-title: "Scooters are back: when, where, and how to ride / DART hires 100
-  security officers / Weekend transit more popular post-pandemic"
 subtitle: Jonathan Braddick talks about dockless shared scooters, DART begins
   hiring security to ride every train, and riding buses and trains on weekends
   are more popular now than before the pandemic.
 author: bywayofdallas
+episode_number: 5
 date: 2023-09-19T17:17:56.941Z
+spotify_code: 5CC5fUEtGmRCSt9U3UBuvH
+title: "Scooters are back: when, where, and how to ride / DART hires 100
+  security officers / Weekend transit more popular post-pandemic"
 cover_image: https://ucarecdn.com/2ecac41b-ab2a-4966-9560-7e362bcf2849/
 tags:
   - Podcast
   - DART
   - Micromobility
-episode_number: 5
-spotify_code: 5CC5fUEtGmRCSt9U3UBuvH
 ---
 In this episode, we talk about:
 
@@ -23,7 +23,6 @@ In this episode, we talk about:
    * Why original scooter program ended
    * What's different this time around
    * Improvements we want to see
-
 2. DART ridership update with Connor Hulla
 
    * DART begins hiring 100 Transit Security Officers (TSOs)
@@ -98,4 +97,4 @@ The TSO program is scheduled to be fully staffed by mid-August, but security off
 
 ## DART Weekend Ridership
 
-\[insert chart here]
+![](https://ucarecdn.com/3a1e92fb-6264-4612-b365-b55ea4789374/)

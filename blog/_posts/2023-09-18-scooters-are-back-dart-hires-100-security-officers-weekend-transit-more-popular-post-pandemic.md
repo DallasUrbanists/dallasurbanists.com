@@ -98,5 +98,3 @@ The TSO program is scheduled to be fully staffed by mid-August, but security off
 ## DART Weekend Ridership
 
 ![](https://ucarecdn.com/3a1e92fb-6264-4612-b365-b55ea4789374/)
-
-![]()

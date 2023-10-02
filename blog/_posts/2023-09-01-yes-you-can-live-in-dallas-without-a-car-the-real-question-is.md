@@ -7,10 +7,9 @@ author: hexel
 date: 2023-09-01T09:12:23.140Z
 cover_image: https://ucarecdn.com/6ee829c9-cc16-4ca8-89ed-6a380f776f7f/
 tags:
+  - WeekWithoutDriving
   - DART
   - Mobility
-  - Featured
-  - WeekWithoutDriving
 ---
 This is the first in a series of posts themed around [National Week Without Driving](https://americawalks.org/campaigns/national-week-without-driving/), a campaign by non-profit [America Walks](https://americawalks.org/) and organized locally by [Better Block](https://www.betterblock.org/) and [Dallas Bicycle Coalition](https://dallasbicyclecoalition.org/dallas-bike-coalition) from October 2-8, 2023. In this series, I'll dive into the why's and how's of living without a car in Dallas. As someone who's owned and driven a car for most of my adult life until getting rid of it almost two years ago, there are many popular assumptions that need correcting.
 

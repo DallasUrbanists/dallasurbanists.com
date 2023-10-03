@@ -1,0 +1,113 @@
+---
+layout: default
+identity_snippet: true
+---
+{% for post in site.posts %}
+{% if post.tags contains "Featured" %}
+{% unless featured_post %}
+{% assign featured_post = post %}
+{% assign featured_author = site.authors | where: 'name', featured_post.author | first %}
+{% assign d = featured_post.date | date: "%-d" %}
+{%- capture ordinal -%}
+{% case d %}
+{% when "1" or "21" or "31" %}st
+{% when "2" or "22" %}nd
+{% when "3" or "23" %}rd
+{% else %}th
+{% endcase %}
+{%- endcapture -%}
+{% endunless %}
+{% endif %}
+{% endfor %}
+<div id="masthead">
+  <div class="container-lg flex-lg-row-reverse py-2 px-0 row align-items-center position-relative mx-auto">
+    <div class="col-lg-8" id="featuredContainer">
+      <h1 class="display-6">
+        <a href="{{ featured_post.url | prepend: site.baseurl }}" class="stretched-link link-dark link-underline-opacity-0 d-inline-block" id="featuredTitle">{{ featured_post.title }}</a>
+      </h1>
+      <p class="mb-4" id="featuredSubtitle">
+        {{ featured_post.subtitle }}
+        &mdash;
+        {{ featured_author.display_name }}, {{ featured_post.date | date: "%B %-d" }}<sup>{{ ordinal }}</sup>
+      </p>
+    </div>
+    <div class="col-12 col-lg-4">
+      <img
+        src="{{ featured_post.cover_image | relative_url }}"
+        class="d-block mx-lg-auto img-fluid rounded"
+        loading="lazy">
+    </div>
+  </div>
+</div>
+
+<div id="website-explanation">
+  <div class="container-lg">
+    <i>This Dallas Life</i> is an urbanist blog focused on transportation and housing in the City of Dallas and the Greater Dallas area. Our purpose is to promote thoughtful discussions about walkability, housing, public transit, mobility, and sustainable city planning.
+
+    <table class="post-table">
+      <tbody>
+        {% for post in site.posts %}
+          {% assign author = site.authors | where: 'name', post.author | first %}
+          <tr class="position-relative">
+            <td>
+              <a class="link-dark stretched-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><br>
+              {{ post.subtitle }} &mdash; {{ author.display_name }}, {{ post.date | date: "%B %-d" }}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    let featuredContainer = document.querySelector("#featuredContainer");
+    let featuredTitle = document.querySelector("#featuredTitle");
+    let featuredSubtitle = document.querySelector("#featuredSubtitle");
+    let originalTitleSize = featuredTitle.style.fontSize;
+    let originalSubtitleSize = featuredSubtitle.style.fontSize;
+    
+    function fitTitleWidth() {
+      let fontSize = window.getComputedStyle(featuredTitle).fontSize;
+      let containerPadding = parseFloat(window.getComputedStyle(featuredContainer).paddingLeft) + parseFloat(window.getComputedStyle(featuredContainer).paddingRight);
+      let targetWidth = featuredContainer.clientWidth - (containerPadding * 2);
+      
+      if(featuredTitle.clientWidth < targetWidth){
+        featuredTitle.style.fontSize = (parseFloat(fontSize) + 1) + 'px';
+        fitTitleWidth();
+      }
+    }
+    
+    function fitSubtitleHeight(containerMaxHeight) {
+      let fontSize = parseFloat(window.getComputedStyle(featuredSubtitle).fontSize);
+      let fontSizeMax = parseFloat(window.getComputedStyle(featuredTitle).fontSize) * 0.5;
+      let contentMargins = parseFloat(window.getComputedStyle(featuredTitle).marginBottom) + parseFloat(window.getComputedStyle(featuredSubtitle).marginBottom);
+      let targetHeight = Math.min(featuredContainer.clientHeight, containerMaxHeight);
+      let testHeight = featuredTitle.clientHeight + featuredSubtitle.clientHeight + contentMargins;
+      
+      if(testHeight < targetHeight && fontSize <= fontSizeMax) {
+        featuredSubtitle.style.fontSize = (parseFloat(fontSize) + 1) + 'px';
+        fitSubtitleHeight(featuredContainer.clientHeight);
+      }
+    }
+    
+    function fitTitles() {
+      featuredTitle.style.fontSize = originalTitleSize;
+      featuredSubtitle.style.fontSize = originalSubtitleSize;
+      
+      fitTitleWidth();
+      fitSubtitleHeight(featuredContainer.clientHeight);
+    }
+    
+    fitTitles();
+    
+    window.addEventListener('resize', function(event) {
+      fitTitles();
+    }, true);
+    
+    // The subtitle usually resizes on page load successfully, but for some reason it randomly
+    // doesn't work. So this interval is me cheating by calling the resize function every couple seconds.
+    setInterval(function () { fitSubtitleHeight(featuredContainer.clientHeight); }, 1000);
+  });
+</script>

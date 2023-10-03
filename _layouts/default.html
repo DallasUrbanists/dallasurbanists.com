@@ -130,12 +130,14 @@
   </head>
 
   <body style="background-image: url({{ "assets/handmadepaper.png" | relative_url }});">
-    {% include nav.html %}
+    {% include nav2.html %}
 
     <main class="">
       {{ content }}
     </main>
 
+    
+    <!--
     <div class="container text-center">
       <form
         action="https://tinyletter.com/thisdallaslife"
@@ -169,21 +171,20 @@
       <p>One email per week (at most) of urbanist news and content.</p>
     </div>
 
+
     <footer class="container-lg p-4 mt-4">
       <p class="float-start">
-        <a class="link-dark link-offset-3" href="{{ "/" | relative_url }}">Homepage</a>
+        <a class="link-dark link-offset-3" href="{{ "/" | relative_url }}">Browse</a>
         |
-        <a class="link-dark link-offset-3" href="{{ "/blog" | relative_url }}">Blog</a>
-        |
-        <a class="link-dark link-offset-3" href="{{ "/podcast" | relative_url }}">Podcast</a>
+        <a class="link-dark link-offset-3" href="{{ "/blog" | relative_url }}">Topics</a>
         |
         <a class="link-dark link-offset-3" href="{{ "/about" | relative_url }}">About</a>
         |
-        <a class="link-dark link-offset-3" href="{{ "/tagged/DART" | relative_url }}">DART</a>
+        <a class="link-dark link-offset-3" href="{{ "/podcast" | relative_url }}">Podcast</a>
         |
-        <a class="link-dark link-offset-3" href="{{ "/tagged/I-345" | relative_url }}">I-345</a>
+        <a class="link-dark link-offset-3" href="{{ "/podcast" | relative_url }}">TikTok</a>
         |
-        <a class="link-dark link-offset-3" href="{{ "/tagged/Cycling" | relative_url }}">Cycling</a>
+        <a class="link-dark link-offset-3" href="{{ "/podcast" | relative_url }}">Instagram</a>
       </p>
       <p class="text-body-secondary text-end">
         Copyright &copy; 2023
@@ -202,7 +203,7 @@
         observer.observe(el);
       }
     </script>
-
+  -->
   </body>
 
 </html>

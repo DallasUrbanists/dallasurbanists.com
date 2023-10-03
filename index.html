@@ -18,16 +18,27 @@ identity_snippet: true
       {% endcapture %}
     {% endunless %}
   {% endif %}
+  {% unless transportation_post %}
+    {% if post.tags contains "DART" and post != featured_post %}
+      {% assign transportation_post = post %}
+    {% endif %}
+  {% endunless %}
+  {% unless housing_post %}
+    {% if post.tags contains "Housing" and post != featured_post %}
+      {% assign housing_post = post %}
+    {% endif %}
+  {% endunless %}
 {% endfor %}
-<div class="container-lg p-4 py-2 py-md-5">
-  <div class="row flex-lg-row-reverse align-items-top position-relative">
-    <div class="col-lg-8" id="featuredContainer">
+<div class="container-lg p-4 py-2">
+  <div class="row flex-lg-row-reverse align-items-center position-relative">
+    <div class="col-lg-8 text-center id="featuredContainer">
       <h1 class="display-6">
         <a href="{{ featured_post.url | prepend: site.baseurl }}" class="stretched-link link-dark link-underline-opacity-0 d-inline-block" id="featuredTitle">{{ featured_post.title }}</a>
       </h1>
       <p class="mb-4" id="featuredSubtitle">
+        {{ featured_post.subtitle }}
+        &mdash;
         <em>{{ featured_author.display_name }}, {{ featured_post.date | date: "%B %-d" }}<sup>{{ ordinal }}</sup></em>
-        &mdash; {{ featured_post.subtitle }}
       </p>
     </div>
     <div class="col-12 col-lg-4">
@@ -40,37 +51,71 @@ identity_snippet: true
 </div>
 
 <div class="container-lg p-4">
-  <div class="row">
-    <div class="col-12 col-md-8 mb-5">
-      {% include lined-heading.html text = "Recent" %}
-      {% include post-cards.html exclude=featured_post limit=3 %}
-      {% include more-button.html path = "/blog" label = "See more recent content" %}
+  <div class="row g-5">
+    <div class="col-12 col-md-8 mb-md-5">
+      {% include lined-heading.html text = "Most Recent" %}
+      {% include post-list.html exclude=featured_post limit=5 %}
+      {% include more-button.html path = "/blog" label = "See more recent posts" %}
     </div>
-    <div class="col-12 col-md-4 mb-5">
+    <div class="col-12 col-md-4 mb-md-5">
+      {% include lined-heading.html text = "About" %}
+      <p class="mb-4"><i>This Dallas Life</i> is an urbanist blog focused on transportation and housing in the City of Dallas and the Greater Dallas area. Our purpose is to promote thoughtful discussions about walkability, housing, public transit, mobility, and sustainable city planning.</p>
 
       <form {% include newsletter-form-attributes.html %}>
-        {% include lined-heading.html text = "Newsletter" %}
         {% include newsletter-input.html %}
       </form>
 
-      {% include lined-heading.html text = "Popular" %}
-      {% include post-list.html exclude=featured_post tag = "Pinned" %}
+      <div class="mb-4">
+        {% for tag in site.tags %}
+          <a href="#" class="tag-link">Topic</a>
+        {% endfor %}
+      </div>
     </div>
   </div>
-  <div class="row my-4">
-    {% include impact-image.html path = "assets/tdl-about-jumbo-bg.jpg" %}
-    <div class="container-md p-4 text-center" style="max-width: 40em;">
-      <h1 class="display-6">
-        <span>About</span>
-      </h1>
-      <p>
-        <em>This Dallas Life</em>
-        is a publication focused on urbanist topics (walkability, housing, public transit, mobility, and sustainable city planning) in the City of Dallas and the Greater Dallas area. Our purpose is to promote thoughtful and informed discussions about urban issues in the region. This publication includes written articles, short-form videos on TikTok, and the
-        <em>By Way of Dallas</em>
-        podcast.</p>
-      <p>
-        <a href="{{ "/about" | relative_url }}" class="link-dark link-offset-3">Learn more</a>
-      </p>
+
+  {% include lined-heading.html text = "Transportation" %}
+  <div class="row flex-lg-row-reverse g-5">
+    <div class="col-12 col-md-4 mb-0">
+      {% assign author = site.authors | where: 'name', transportation_post.author | first %}
+      <div class="position-relative blog-listing" style="text-wrap: balance;">
+        <div class="mb-2">
+          <img class="img-fluid muted rounded" src="{{ transportation_post.cover_image | relative_url }}">
+        </div>
+        <div class="">
+          <b><a href="{{ transportation_post.url | prepend: site.baseurl }}" class="link-dark link-underline-opacity-0 stretched-link listing-link">{{ transportation_post.title }}</a></b>
+          <br>
+          {{ transportation_post.subtitle }}
+          &mdash;
+          <em>{{ author.display_name }}, {{ transportation_post.date | date: "%B %-d, %Y" }}</em>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-8 mb-md-5 mt-4 mt-lg-5">
+      {% include post-list.html tag="DART" limit=5 %}
+      {% include more-button.html path = "/blog" label = "See more posts about transportation" %}
+    </div>
+  </div>
+
+  {% include lined-heading.html text = "Housing" %}
+  <div class="row flex-lg-row-reverse g-5">
+    <div class="col-12 col-md-4 mb-0">
+      {% assign author = site.authors | where: 'name', housing_post.author | first %}
+      <div class="position-relative blog-listing" style="text-wrap: balance;">
+        <div class="mb-2">
+          <img class="img-fluid muted rounded" src="{{ housing_post.cover_image | relative_url }}">
+        </div>
+        <div class="">
+          <b><a href="{{ housing_post.url | prepend: site.baseurl }}" class="link-dark link-underline-opacity-0 stretched-link listing-link">{{ housing_post.title }}</a></b>
+          <br>
+          {{ housing_post.subtitle }}
+          &mdash;
+          <em>{{ author.display_name }}, {{ housing_post.date | date: "%B %-d, %Y" }}</em>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-8 mb-md-5 mt-4 mt-lg-5">
+      {% include post-list.html tag="Housing" limit=5 %}
+      {% include more-button.html path = "/blog" label = "See more posts about housing" %}
     </div>
   </div>
 </div>

@@ -1,0 +1,34 @@
+<nav class="navbar d-print-none navbar-expand-lg" data-bs-theme="{{ page.nav_theme | default: 'light' }}">
+    <div class="container-lg">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}" style="max-width: 50%;">
+            <img class="" src="{{ page.nav_logo | default: '/assets/inline-logo-and-wordmark-color.svg' | relative_url }}" alt="This Dallas Life" width="250" style="max-width: 100%;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">Menu</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item px-lg-2">
+                    <a class="nav-link" href="{{ "/blog" | relative_url }}"><nobr>Browse</nobr></a>
+                </li>
+                <li class="nav-item px-lg-2">
+                    <a class="nav-link" href="{{ "/about" | relative_url }}"><nobr>About</nobr></a>
+                </li>
+                <li class="nav-item px-lg-2">
+                    <a class="nav-link" href="{{ "/podcast" | relative_url }}"><nobr>Podcast</nobr></a>
+                </li>
+                <li class="nav-item px-lg-2">
+                    <a class="nav-link" href="{{ "/media" | relative_url }}"><nobr>Video</nobr></a>
+                </li>
+                <li class="nav-item px-lg-2">
+                    <a class="nav-link" href="{{ "/media" | relative_url }}"><nobr>Social</nobr></a>
+                </li>
+            </ul>
+            <!-- <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+        </div>
+    </div>
+</nav>

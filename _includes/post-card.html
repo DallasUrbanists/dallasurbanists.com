@@ -1,13 +1,11 @@
-<div class="row overflow-hidden flex-column-reverse flex-md-row-reverse mb-2 h-md-250 position-relative blog-listing py-4 py-md-2">
+{% assign author = site.authors | where: 'name', post.author | first %}
+<div class="row overflow-hidden flex-column-reverse flex-md-row-reverse mb-4 h-md-250 position-relative blog-listing py-4 py-md-2" style="text-wrap: balance;">
   <div class="col col-12 col-lg-8">
-    <h3 class="mb-2 fs-5">
-      <a href="{{ post.url | prepend: site.baseurl }}" class="link-dark link-underline-opacity-0 stretched-link">{{ post.title }}</a>
-    </h3>
-    <p class="card-text mb-2 text-body-secondary fs-6 ">
-      <em>{{ post.date | date: "%B %-d, %Y" }}</em>
-      {% if post.subtitle %}
-        &mdash; {{ post.subtitle }}{% endif %}
-    </p>
+    <b><a href="{{ post.url | prepend: site.baseurl }}" class="link-dark link-underline-opacity-0 stretched-link listing-link">{{ post.title }}</a></b>
+    &mdash;
+    {{ post.subtitle }}
+    &mdash;
+    <em>{{ author.display_name }}, {{ post.date | date: "%B %-d, %Y" }}</em>
   </div>
   <div class="col col-12 col-lg-4 mb-2 mb-md-0">
     <img class="img-fluid muted rounded" src="{{ post.cover_image | relative_url }}">

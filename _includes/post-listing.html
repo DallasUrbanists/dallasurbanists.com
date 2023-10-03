@@ -1,2 +1,3 @@
-<p><a class="link-dark link-offset-3" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-<nobr>&mdash; {{ post.date | date: "%B %-d, %Y" }}</nobr></p>
+{% assign author = site.authors | where: 'name', post.author | first %}
+<p><B><a class="text-dark listing-link" href="{{ post.url | prepend: site.baseurl }}"><U>CATEGORY:</U> {{ post.title }}</a></B>
+&mdash; {{ post.subtitle }} &mdash; <nobr>{{ post.date | date: "%B %-d, %Y" }}</nobr></p>

@@ -5,6 +5,17 @@ subtitle: "This Week: Parking Reform, Affordable Housing, and DART Community Mee
 author: hexel
 date: 2023-12-04T17:00:00.000Z
 cover_image: https://ucarecdn.com/62ab15a0-30bd-4988-b276-9bfa2db21070/
+tags:
+  - Affordable-Housing
+  - DART
+  - Featured
+  - Mobility
+  - Parking Reform
+  - Cycling
+  - Housing
+  - Pinned
+  - Walkability
+  - Public-Transit
 ---
 # City of Dallas to Consider Removing Minimum Parking Requirements
 

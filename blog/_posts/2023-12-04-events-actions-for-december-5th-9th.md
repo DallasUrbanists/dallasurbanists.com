@@ -61,7 +61,7 @@ Early bond proposals allocated $200M toward housing. However, the latest proposa
 
 ## What you can do
 
-* Register to speak by [signing up online](tinyurl.com/dn4hspeaker) or calling 214-670-3738. You can speak virtually, but we recommend speaking in-person at Dallas City Hall if possible. The deadline to register is Tuesday 5:00 PM.
+* Register to speak by [signing up online](https://dallascityhall.com/government/citysecretary/pages/ccrules.aspx) or calling 214-670-3738. You can speak virtually, but we recommend speaking in-person at Dallas City Hall if possible. The deadline to register is Tuesday 5:00 PM.
 * [Use this online form to send a letter to Dallas City Council](https://actionnetwork.org/letters/dallas-city-council-prioritize-affordable-housing/).
 
 - - -

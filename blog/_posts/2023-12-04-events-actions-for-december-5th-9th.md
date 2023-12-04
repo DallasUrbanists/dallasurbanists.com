@@ -57,7 +57,7 @@ At this week’s city council meeting, the council will hear recommendations for
 
 Early bond proposals allocated $200M toward housing. However, the latest proposal cut that down to $25M. For comparison, [San Antonio](https://communityimpact.com/san-antonio/north-san-antonio/development/2023/03/02/san-antonio-uses-150m-bond-to-increase-affordable-housing-options/) and [Austin](https://www.kxan.com/investigations/austin-voted-for-a-record-housing-bond-heres-where-the-first-20-million-are-going/#:~:text=AUSTIN%20(KXAN)%20%E2%80%94%20Of%20the,are%20on%20council%20agendas%20already.) put $150M and $300M toward housing in their respective bond programs.
 
-[Advocates rally at City Hall for $200 million in bonds to tackle Dallas’ housing ‘crisis’ | KERA News](https://www.keranews.org/texas-news/2023-09-20/at-city-hall-advocates-rally-for-200-million-in-bonds-to-tackle-dallas-housing-crisis)
+[Advocates rally at City Hall for $200 million in bonds to tackle Dallas’ housing ‘crisis’ \| KERA News](https://www.keranews.org/texas-news/2023-09-20/at-city-hall-advocates-rally-for-200-million-in-bonds-to-tackle-dallas-housing-crisis)
 
 ## What you can do
 

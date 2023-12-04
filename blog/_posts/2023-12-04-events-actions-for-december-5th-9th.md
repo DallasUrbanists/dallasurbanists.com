@@ -28,12 +28,9 @@ Removing parking mandates can dramatically improve housing affordability, econom
 
 ## What you can do
 
-You have two options:
-
 * Speak in support of removing parking minimums by appearing in-person to the ZOAC meeting at Dallas City Hall ([1500 Marilla St](https://maps.app.goo.gl/vTsyhN61vEE6Q8Xx8)), L1FN Auditorium at 11:00 am. You do not need to register in advance online to speak in-person.
 * [Submit a written comment online](https://forms.office.com/g/2bMpQ1dJ9u) in support of removing parking minimums.
-
-You can watch the meeting online via [Webex.](https://bit.ly/zoac120523)
+* You can watch the meeting online via [Webex.](https://bit.ly/zoac120523)
 
 - - -
 
@@ -68,7 +65,7 @@ Early bond proposals allocated $200M toward housing. However, the latest proposa
 
 DART is hosting three community meetings at different locations this week to give the public a chance to provide input on several proposed changes in 2024, including three new bus routes, eight modified routes, 15 modified GoLink zones, and increased weekend frequency on all rail lines. You can find plenty of details in the PDF linked below.
 
-[2024 Service Changes and Route 883 Schedule Adjustments | PDF slide presentation](https://dartorgcmsblob.dart.org/prod/docs/default-source/servicechange/pre-public-hearing-community-meetingsnov162023version.pdf?sfvrsn=f34b3bf4_1)
+[2024 Service Changes and Route 883 Schedule Adjustments \| PDF slide presentation](https://dartorgcmsblob.dart.org/prod/docs/default-source/servicechange/pre-public-hearing-community-meetingsnov162023version.pdf?sfvrsn=f34b3bf4_1)
 
 ## [](https://dartorgcmsblob.dart.org/prod/docs/default-source/servicechange/pre-public-hearing-community-meetingsnov162023version.pdf?sfvrsn=f34b3bf4_1)Why this matters
 
@@ -90,7 +87,7 @@ Community meetings like these are your best opportunity to talk directly to DART
 
 TxDOT’s Bicycle & Pedestrian Advisory Committee is developing a statewide plan for improving conditions for bicycling, walking, and other modes that are typically human-powered (such as electric bicycles).
 
-[Statewide Active Transportation Plan | Social Pinpoint (mysocialpinpoint.com)](https://burnsmcd.mysocialpinpoint.com/txdot-statewide-active-transportation-plan/home/)
+[Statewide Active Transportation Plan \| Social Pinpoint (mysocialpinpoint.com)](https://burnsmcd.mysocialpinpoint.com/txdot-statewide-active-transportation-plan/home/)
 
 ## Why this matters
 

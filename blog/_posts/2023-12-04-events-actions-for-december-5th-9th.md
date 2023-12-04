@@ -6,7 +6,6 @@ author: hexel
 date: 2023-12-04T16:27:09.715Z
 ---
 # City of Dallas to Consider Removing Minimum Parking Requirements
-
 * Zoning Ordinance Advisory Commission (ZOAC) Regular Meeting
 * Tuesday, December 5th, 11:00 AM
 * In-person at [Dallas City Hall](https://maps.app.goo.gl/vTsyhN61vEE6Q8Xx8), L1FN Auditorium

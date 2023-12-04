@@ -3,7 +3,7 @@ layout: post
 title: Events & Actions for December 5th - 9th
 subtitle: "This Week: Parking Reform, Affordable Housing, and DART Community Meetings"
 author: hexel
-date: 2023-12-04T16:27:09.715Z
+date: 2023-12-04T17:00:00.000Z
 cover_image: https://ucarecdn.com/62ab15a0-30bd-4988-b276-9bfa2db21070/
 ---
 # City of Dallas to Consider Removing Minimum Parking Requirements

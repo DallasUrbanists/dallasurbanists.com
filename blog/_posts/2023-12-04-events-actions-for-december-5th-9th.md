@@ -32,7 +32,7 @@ This Tuesday, city staff will present their recommendation to “remove minimum 
 
 Removing parking mandates can dramatically improve housing affordability, economic development potential, environmental resiliency, safety, and walkability in Dallas.
 
-* [Austin becomes largest U.S. city to drop minimum parking requirements | The Texas Tribune](https://www.texastribune.org/2023/11/02/austin-minimum-parking-requirements-housing-shortage/#:~:text=The%20Austin%20City%20Council%20voted,buildings%2C%20offices%20and%20shopping%20malls.)
+* [Austin becomes largest U.S. city to drop minimum parking requirements \| The Texas Tribune](https://www.texastribune.org/2023/11/02/austin-minimum-parking-requirements-housing-shortage/#:~:text=The%20Austin%20City%20Council%20voted,buildings%2C%20offices%20and%20shopping%20malls.)
 * [Parking Mandates Map - Parking Reform Network](https://parkingreform.org/resources/mandates-map/)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Akm7ik-H_7U?si=MobQurNuhZ4Wp_pW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

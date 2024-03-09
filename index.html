@@ -2,127 +2,77 @@
 layout: default
 identity_snippet: true
 ---
-{% for post in site.posts %}
-  {% if post.tags contains "Featured" %}
-    {% unless featured_post %}
-      {% assign featured_post = post %}
-      {% assign featured_author = site.authors | where: 'name', featured_post.author | first %}
-      {% assign d = featured_post.date | date: "%-d" %}
-      {% capture ordinal %}
-        {% case d %}
-          {% when "1" or "21" or "31" %}st
-          {% when "2" or "22" %}nd
-          {% when "3" or "23" %}rd
-          {% else %}th
-        {% endcase %}
-      {% endcapture %}
-    {% endunless %}
-  {% endif %}
-{% endfor %}
-<div class="container-lg p-4 py-2 py-md-5">
-  <div class="row flex-lg-row-reverse align-items-top position-relative">
-    <div class="col-lg-8" id="featuredContainer">
-      <h1 class="display-6">
-        <a href="{{ featured_post.url | prepend: site.baseurl }}" class="stretched-link link-dark link-underline-opacity-0 d-inline-block" id="featuredTitle">{{ featured_post.title }}</a>
-      </h1>
-      <p class="mb-4" id="featuredSubtitle">
-        <em>{{ featured_author.display_name }}, {{ featured_post.date | date: "%B %-d" }}<sup>{{ ordinal }}</sup></em>
-        &mdash; {{ featured_post.subtitle }}
-      </p>
-    </div>
-    <div class="col-12 col-lg-4">
-      <img
-        src="{{ featured_post.cover_image | relative_url }}"
-        class="d-block mx-lg-auto img-fluid rounded"
-        loading="lazy">
-    </div>
-  </div>
+<div class="container p-4" style="max-width: 768px;">
+  <table class="post-table activities-table">
+    <tr class="events-and-actions-row">
+      <td colspan="2" class="events-and-actions-cell">
+        <h2>Upcoming Events &amp; Actions</h2>
+      </td>
+    </tr>
+    <tr class="activity-top-row">
+      <td class="icon-cell" rowspan="2"><img src="/assets/icons/petition_icon.svg" /></td>
+      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Petition:</i> Pedestrianize Akard Street in Downtown Dallas (Elm-Main-Commerce)</a></td>
+    </tr>
+    <tr class="activity-bottom-row">
+      <td><a href="#" title="View petition on change.org">View</a> | <a href="#">Share</a> | Started by Hexel | 825 signatures since Feb 28th, 2024</td>
+    </tr>
+    <tr class="activity-top-row">
+      <td class="icon-cell" rowspan="2"><img src="/assets/icons/bicycle_icon.svg" /></td>
+      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Group Ride:</i> Dallas Critical Mass, March</a></td>
+    </tr>
+    <tr class="activity-bottom-row">
+      <td>March 29, Friday | Dallas Farmers Market | Roll out 8:00 PM | <a href="#">Add to Cal</a></td>
+    </tr>
+    <tr class="activity-top-row">
+      <td class="icon-cell" rowspan="2"><img src="/assets/icons/bicycle_icon.svg" /></td>
+      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Bike Bus:</i> Dallas Critical Mass, March</a></td>
+    </tr>
+    <tr class="activity-bottom-row">
+      <td>March 29, Friday | <a href="#">View 3 routes</a>  | Roll out 7:00 PM</td>
+    </tr>
+    <tr class="activity-top-row">
+      <td class="icon-cell" rowspan="2"><img src="/assets/icons/event_icon.svg" /></td>
+      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Event:</i> Dallas Urbanists + Dallas Neighbors for Housing Happy Hour Social</a></td>
+    </tr>
+    <tr class="activity-bottom-row">
+      <td>March 29, Friday 5:30 PM | <a href="#" title="RSVP on ActionNetwork.org">RSVP</a> | <a href="#">Add to Cal</a> | <a href="https://maps.app.goo.gl/67yjFn5abx6NmeH58">The Exchange Hall</a> (upstairs)</td>
+    </tr>
+    <tr class="activity-top-row">
+      <td class="icon-cell" rowspan="2"><img src="/assets/icons/speech_icon.svg" /></td>
+      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Public Comment:</i> Support Parking Reform at Dallas City Hall</a></td>
+    </tr>
+    <tr class="activity-bottom-row">
+      <td><a href="#">Register before March 27, 12 PM</a> | <a href="#">Add to Cal</a> | In-person or online</td>
+    </tr>
+    <tr class="activity-top-row">
+      <td class="icon-cell" rowspan="2"><img src="/assets/icons/written_comment_icon.svg" /></td>
+      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Written Comment:</i> Support Parking Reform at Dallas City Hall</a></td>
+    </tr>
+    <tr class="activity-bottom-row">
+      <td><a href="#">Submit before March 29 5:00 PM</a></td>
+    </tr>
+  </table>
+  <table class="post-table">
+    {% assign months = '' | split: ',' %}
+    {% for post in site.posts %}
+      {% assign month = post.date | date: "%B %Y" %}
+      {% unless months contains month %}
+        {% assign months = months | push: month %}
+        <tr class="month-row">
+          <td colspan="2" class="month-cell">
+            <h2>Content from {{ month }}</h2>
+          </td>
+        </tr>
+      {% endunless %}
+      {% assign author = site.authors | where: 'name', post.author | first %}
+      <tr class="post-table-top-row">
+        <td class="icon-cell"><img src="/assets/icons/article_icon.svg" /></td>
+        <td class="title-cell"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle }}">{{ post.title }}</a></td>
+      </tr>
+      <tr class="post-table-bottom-row">
+        <td></td>
+        <td>Article about {% include tag-inline-list.html tags=post.tags %} by {{ author.display_name }}</td>
+      </tr>
+    {% endfor %}
+  </table>
 </div>
-
-<div class="container-lg p-4">
-  <div class="row">
-    <div class="col-12 col-md-8 mb-5">
-      {% include lined-heading.html text = "Recent" %}
-      {% include post-cards.html exclude=featured_post limit=3 %}
-      {% include more-button.html path = "/blog" label = "See more recent content" %}
-    </div>
-    <div class="col-12 col-md-4 mb-5">
-
-      <form {% include newsletter-form-attributes.html %}>
-        {% include lined-heading.html text = "Newsletter" %}
-        {% include newsletter-input.html %}
-      </form>
-
-      {% include lined-heading.html text = "Popular" %}
-      {% include post-list.html exclude=featured_post tag = "Pinned" %}
-    </div>
-  </div>
-  <div class="row my-4">
-    {% include impact-image.html path = "assets/tdl-about-jumbo-bg.jpg" %}
-    <div class="container-md p-4 text-center" style="max-width: 40em;">
-      <h1 class="display-6">
-        <span>About</span>
-      </h1>
-      <p>
-        <em>This Dallas Life</em>
-        is a publication focused on urbanist topics (walkability, housing, public transit, mobility, and sustainable city planning) in the City of Dallas and the Greater Dallas area. Our purpose is to promote thoughtful and informed discussions about urban issues in the region. This publication includes written articles, short-form videos on TikTok, and the
-        <em>By Way of Dallas</em>
-        podcast.</p>
-      <p>
-        <a href="{{ "/about" | relative_url }}" class="link-dark link-offset-3">Learn more</a>
-      </p>
-    </div>
-  </div>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    let featuredContainer = document.querySelector("#featuredContainer");
-    let featuredTitle = document.querySelector("#featuredTitle");
-    let featuredSubtitle = document.querySelector("#featuredSubtitle");
-    let originalTitleSize = featuredTitle.style.fontSize;
-    let originalSubtitleSize = featuredSubtitle.style.fontSize;
-
-    function fitTitleWidth() {
-      let fontSize = window.getComputedStyle(featuredTitle).fontSize;
-      let containerPadding = parseFloat(window.getComputedStyle(featuredContainer).paddingLeft) + parseFloat(window.getComputedStyle(featuredContainer).paddingRight);
-      let targetWidth = featuredContainer.clientWidth - (containerPadding * 4);
-
-      if(featuredTitle.clientWidth < targetWidth){
-        featuredTitle.style.fontSize = (parseFloat(fontSize) + 1) + 'px';
-        fitTitleWidth();
-      }
-    }
-
-    function fitSubtitleHeight(containerMaxHeight) {
-      let fontSize = parseFloat(window.getComputedStyle(featuredSubtitle).fontSize);
-      let fontSizeMax = parseFloat(window.getComputedStyle(featuredTitle).fontSize) * 0.5;
-      let contentMargins = parseFloat(window.getComputedStyle(featuredTitle).marginBottom) + parseFloat(window.getComputedStyle(featuredSubtitle).marginBottom);
-      let targetHeight = Math.min(featuredContainer.clientHeight, containerMaxHeight);
-      let testHeight = featuredTitle.clientHeight + featuredSubtitle.clientHeight + (contentMargins * 2);
-      
-      if(testHeight < targetHeight && fontSize <= fontSizeMax) {
-        featuredSubtitle.style.fontSize = (parseFloat(fontSize) + 1) + 'px';
-        fitSubtitleHeight(featuredContainer.clientHeight);
-      }
-    }
-
-    function fitTitles() {
-      featuredTitle.style.fontSize = originalTitleSize;
-      featuredSubtitle.style.fontSize = originalSubtitleSize;
-
-      fitTitleWidth();
-      fitSubtitleHeight(featuredContainer.clientHeight);
-    }
-
-    fitTitles();
-
-    window.addEventListener('resize', function(event) {
-      fitTitles();
-    }, true);
-
-    // The subtitle usually resizes on page load successfully, but for some reason it randomly
-    // doesn't work. So this interval is me cheating by calling the resize function every couple seconds.
-    setInterval(function () { fitSubtitleHeight(featuredContainer.clientHeight); }, 1000);
-  });
-</script>

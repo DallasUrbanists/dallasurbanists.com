@@ -1,0 +1,168 @@
+a {
+    text-decoration-skip-ink: auto;
+}
+
+.post-table {
+    .icon-cell {
+        padding-right: 1ch;
+        vertical-align: top;
+    }
+    .title-cell
+    a {
+        text-wrap: balance;
+        color: black;
+        text-decoration: none;
+        font-weight: 600;
+    }aa {
+        text-decoration-skip-ink: auto;
+    }
+    
+    .post-table {
+        .icon-cell {
+            padding-right: 1ch;
+            vertical-align: top;
+        }
+        .title-cell
+        a {
+            text-wrap: balance;
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .title-cell
+        a:link {
+            color: green;
+        }
+        .title-cell
+        a:visited {
+            color: black;
+        }
+        .title-cell
+        a:hover {
+            text-decoration: underline;
+        }
+    
+        .month-cell
+        h2 {
+            border-bottom: dotted #999;
+            font-size: 1rem;
+            margin: 2rem 0 0.5rem 0;
+            padding-bottom: 0.5rem;
+        }
+        .post-table-top-row .icon-cell img {
+            width: 1.5ch;
+        }
+        .post-table-bottom-row td {
+            padding-bottom: 0.5em;
+        }
+    
+        .post-table-bottom-row
+        a {
+            color: black;
+        font-weight: lighter;
+        text-underline-offset: 2px;
+        text-decoration: underline #000 dotted;
+        }
+        .post-table-bottom-row
+        a:hover {
+            text-decoration: underline #000 solid;
+        }
+    ;
+        text-wrap: pretty;
+    }
+    
+    .activities-table {
+        .events-and-actions-cell h2 {
+            border-bottom: dotted #999;
+            font-size: 1rem;
+            margin: 0 0 0.5rem 0;
+            padding-bottom: 0.5rem;
+        }
+        
+        .activity-top-row .icon-cell img {
+            width: 3ch;
+        }
+    
+        .activity-bottom-row td {
+            padding-bottom: 0.5em;
+        }
+    
+        .activity-bottom-row a {
+            color: black;
+            font-weight: lighter;
+            text-underline-offset: 2px;
+            text-decoration: underline #000 dotted;
+        }
+        .activity-bottom-row a:hover {
+            text-decoration: underline #000 solid;
+        }
+    }
+    
+    .title-cell
+    a:link {
+        color: green;
+    }
+    .title-cell
+    a:visited {
+        color: #333;
+    }
+    .title-cell
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .month-cell
+    h2 {
+        border-bottom: dotted #999;
+        font-size: 1rem;
+        margin: 2rem 0 0.5rem 0;
+        padding-bottom: 0.5rem;
+    }
+    .post-table-top-row .icon-cell img {
+        width: 1.5ch;
+    }
+    .post-table-bottom-row td {
+        padding-bottom: 0.5em;
+    }
+
+    .post-table-bottom-row
+    a {
+        color: black;
+    font-weight: lighter;
+    text-underline-offset: 2px;
+    text-decoration: underline #000 dotted;
+    }
+    .post-table-bottom-row
+    a:hover {
+        text-decoration: underline #000 solid;
+    }
+;
+    text-wrap: pretty;
+}
+
+.activities-table {
+    .events-and-actions-cell h2 {
+        border-bottom: dotted #999;
+        font-size: 1rem;
+        margin: 0rem 0 0.5rem 0;
+        padding-bottom: 0.5rem;
+    }
+    
+    .activity-top-row .icon-cell img {
+        width: 3ch;
+    }
+
+    .activity-bottom-row td {
+        padding-bottom: 0.5em;
+    }
+
+    .activity-bottom-row a {
+        color: black;
+        font-weight: lighter;
+        text-underline-offset: 2px;
+        text-decoration: underline #000 dotted;
+    }
+    .activity-bottom-row a:hover {
+        text-decoration: underline #000 solid;
+    }
+}

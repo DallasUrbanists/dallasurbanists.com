@@ -1,15 +1,7 @@
 <div class="row overflow-hidden flex-column-reverse flex-md-row-reverse mb-2 h-md-250 position-relative blog-listing py-4 py-md-2">
-  <div class="col col-12 col-lg-8">
-    <h3 class="mb-2 fs-5">
-      <a href="{{ post.url | prepend: site.baseurl }}" class="link-dark link-underline-opacity-0 stretched-link">{{ post.title }}</a>
-    </h3>
-    <p class="card-text mb-2 text-body-secondary fs-6 ">
-      <em>{{ post.date | date: "%B %-d, %Y" }}</em>
-      {% if post.subtitle %}
-        &mdash; {{ post.subtitle }}{% endif %}
-    </p>
-  </div>
-  <div class="col col-12 col-lg-4 mb-2 mb-md-0">
-    <img class="img-fluid muted rounded" src="{{ post.cover_image | relative_url }}">
+  <div class="col">
+    <a href="{{ post.url | prepend: site.baseurl }}"
+      class="link-dark link-underline-opacity-0"
+      title="{{ post.subtitle }}">{{ post.title }}</a>
   </div>
 </div>

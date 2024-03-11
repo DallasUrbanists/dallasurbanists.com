@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+a {
+    text-decoration-skip-ink: auto;
+}
+
+.post-table {
+    .icon-cell {
+        vertical-align: top;
+        width: 2.5em;
+    }
+    .title-cell a {
+        text-wrap: balance;
+        color: black;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .title-cell a .fancy-font {
+        font-weight: 900;
+    }
+    
+    .title-cell
+    a:link {
+        color: green;
+    }
+    .title-cell
+    a:visited {
+        color: #333;
+    }
+    .title-cell
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .month-cell
+    h2 {
+        border-bottom: dotted #999;
+        font-size: 1rem;
+        margin: 2rem 0 0.5rem 0;
+        padding-bottom: 0.5rem;
+        font-weight: 900;
+    }
+    .post-table-top-row .icon-cell img {
+        height: 3ch;
+    }
+    .post-table-bottom-row td {
+        padding-bottom: 0.5em;
+        font-size: 0.75em;
+        font-weight: normal;
+    }
+
+    .post-table-bottom-row
+    a {
+        color: black;
+        text-underline-offset: 2px;
+        text-decoration: underline #000 dotted;
+    }
+    .post-table-bottom-row
+    a:hover {
+        text-decoration: underline #000 solid;
+    }
+
+    text-wrap: pretty;
+}
+
+.activities-table {
+    .events-and-actions-cell h2 {
+        border-bottom: dotted #999;
+        font-size: 1rem;
+        margin: 0rem 0 0.5rem 0;
+        padding-bottom: 0.5rem;
+        font-weight: 900;
+    }
+
+    .activity-top-row sup {
+        font-weight: normal;
+    }
+
+    .activity-top-row .icon-cell img {
+        width: 3ch;
+    }
+
+    .activity-bottom-row td {
+        padding-bottom: 0.5em;
+        font-size: 0.75em;
+        font-weight: normal;
+    }
+
+    .activity-bottom-row a {
+        color: black;
+        text-underline-offset: 2px;
+        text-decoration: underline #000 dotted;
+    }
+    .activity-bottom-row a:hover {
+        text-decoration: underline #000 solid;
+    }
+}
+
+.top-nav {
+    flex-wrap: wrap;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    /*position: sticky;*/
+    top: 0;
+    background-color: #333;
+    color: white;
+    padding: 0;
+    flex-direction: row;
+}
+
+.top-nav img.logo {
+    margin: 1ch;
+    filter: invert(93%) sepia(0%) saturate(1148%) hue-rotate(349deg) brightness(114%) contrast(100%);
+    height: 2ch;
+}
+
+.top-nav ul {
+    text-align: center;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    display: block;
+}
+.top-nav ul.top-nav-list li {
+    line-height: 3.6ch;
+    display: inline-block;
+    margin: 0;
+    height: 4ch;
+    padding: 0 1ch;
+}
+.top-nav ul li.current {
+    background-color: #eee;
+    background-image: url("/assets/handmadepaper.png");
+    color: black;
+}
+
+.top-nav ul.top-nav-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    margin: 0 0.5em;
+    line-height: 2ch;
+}
+
+.top-nav ul li.current a {
+    color: black;
+    cursor: default;
+}
+
+.top-nav ul a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.top-nav ul li.current a:hover {
+    text-decoration: none;
+}
+
+.top-nav .top-nav-socials .social-icon {
+    margin: 0.5ch;
+    height: 3ch;
+}
+
+.top-nav .top-nav-logo-link {
+    flex-grow: 1;
+}
+
+.top-nav .top-nav-socials {
+    padding-right: 1ch;
+    text-align: right;
+}
+
+.white-filter {
+    filter: invert(93%) sepia(0%) saturate(1148%) hue-rotate(349deg) brightness(114%) contrast(100%);
+}
+
+.fancy-font {
+    font-family: "Playfair Display", serif;
+}
+
+.site-introduction {
+    border: solid 1px #799A4A;
+    position: relative;
+    background-color: rgba(121, 154, 74, 0.1);
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.site-introduction p {
+    text-wrap: balance;
+}
+
+.site-introduction p a {
+    color: #333;
+    text-underline-offset: 2px;
+    text-decoration-style: dotted;
+    font-weight: normal;
+}
+
+.site-introduction p a:hover {
+    text-decoration-style: solid;
+}
+.site-introduction p.small {
+    margin-bottom: 0;
+    font-style: italic;
+    font-size: .75em;
+    font-weight: normal;
+    line-height: 1.2em;
+    text-wrap: pretty;
+    color: #555;
+}
+
+#hide-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    text-decoration: none;
+    background-color: #799A4A;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: normal;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        padding-top: 0;
+    }
+    .top-nav-list {
+        order: 3;
+    }
+    .top-nav-list {
+        order: 3;
+    }
+    ul.top-nav-list {
+        text-align: center;
+        padding-left: 0.5em;
+        font-size: 0.75em;
+        padding-top: 0.8em;
+    }
+    .top-nav .top-nav-logo-link {
+        text-align: center;
+    }
+}
+
+.mc-field-group {
+    flex-wrap: nowrap;
+    margin-bottom: 0.5ch;
+    display: flex;
+    flex-direction: row;
+}
+
+input#mce-EMAIL {
+    flex-grow: 1;
+}
+
+.mc-field-group label {
+    padding-right: 6px;
+}

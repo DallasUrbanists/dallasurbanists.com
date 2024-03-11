@@ -1,0 +1,6 @@
+{% if include.tags != empty %}
+    {%- for tag in include.tags -%}
+        <a href="{{ "/tagged/" | append: tag | relative_url }}">{{ tag }}</a>
+        {%- if forloop.length > 1 -%}{% if forloop.rindex0 > 1 %}, {% elsif forloop.rindex0 == 1 %}, and {% endif %}{%- endif -%}
+    {%- endfor -%}
+{% endif %}

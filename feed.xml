@@ -4,14 +4,13 @@ layout:
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0">
   <channel>
-    <title>This Dallas Life</title>
+    <title>Dallas Urbanists</title>
     <description>A blog about urbanism walkability, housing, public transportation, and sustainable city planning in the City of Dallas and the Greater Dallas area. Our purpose is to promote thoughtful and informed discussions about urban issues in the DFW Metroplex.</description>
     <link>{{ site.url }}</link>
     <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
     <webfeeds:cover image="{{ "/assets/tdl-social-share-1600x900.png“" | prepend: site.baseurl | prepend: site.url }}" />
     <webfeeds:icon>{{ "/assets/favicons/icon.svg" | prepend: site.baseurl | prepend: site.url }}</webfeeds:icon>
     <webfeeds:logo>{{ "/assets/favicons/icon.svg" | prepend: site.baseurl | prepend: site.url }}</webfeeds:logo>
-    <webfeeds:analytics id="G-VCKLLSMFQX" engine="GoogleAnalytics"/>
     <webfeeds:accentColor>0b2b8c</webfeeds:accentColor>
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>

@@ -1,43 +1,29 @@
-<nav class="navbar d-print-none navbar-expand-lg" data-bs-theme="{{ page.nav_theme | default: 'light' }}">
-    <div class="container-lg">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}" style="max-width: 50%;">
-            <img class="m-3" src="{{ page.nav_logo | default: '/assets/inline-logo-and-wordmark-color.svg' | relative_url }}" alt="This Dallas Life" width="250" style="max-width: 100%;">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">Menu</span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item px-lg-2">
-                    <a class="nav-link" href="{{ "/tagged/DART" | relative_url }}"><nobr>DART</nobr></a>
-                </li>
-                <li class="nav-item px-lg-2">
-                    <a class="nav-link" href="{{ "/tagged/Housing" | relative_url }}"><nobr>Housing</nobr></a>
-                </li>
-                <li class="nav-item px-lg-2">
-                    <a class="nav-link" href="{{ "/tagged/I-345" | relative_url }}"><nobr>I-345</nobr></a>
-                </li>
-                <li class="nav-item px-lg-2">
-                    <a class="nav-link" href="{{ "/tagged/Cycling" | relative_url }}"><nobr>Cycling</nobr></a>
-                </li>
-                <li class="nav-item px-lg-2">
-                    <a class="nav-link" href="{{ "/blog" | relative_url }}"><nobr>Blog</nobr></a>
-                </li>
-                <li class="nav-item px-lg-2">
-                    <a class="nav-link" href="{{ "/podcast" | relative_url }}"><nobr>Podcast</nobr></a>
-                </li>
-                <li class="nav-item px-lg-2">
-                    <a class="nav-link" href="{{ "/about" | relative_url }}"><nobr>About</nobr></a>
-                </li>
-                <li class="nav-item px-lg-2">
-                    <a class="nav-link" href="{{ "/media" | relative_url }}"><nobr>Media</nobr></a>
-                </li>
-            </ul>
-            <!-- <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
-        </div>
-    </div>
+<nav class="top-nav">
+  <a href="{{ "/" | relative_url }}" class="top-nav-logo-link">
+    <img class="logo" src="{{ page.nav_logo | default: '/assets/dallas-urbanists-wordmark.svg' | relative_url }}" alt="Dallas Urbanists">
+  </a>
+
+  <ul class="top-nav-list">
+    <li {% if page.name == "index.html" %}class="current"{% endif %}>
+      <a href="{{ "/" | relative_url }}">Browse</a>
+    </li>
+    <li {% if page.name == "submit.html" %}class="current"{% endif %}>
+      <a href="{{ "/submit" | relative_url }}">Submit</a>
+    </li>
+    <li {% if page.name == "subscribe.html" %}class="current"{% endif %}>
+      <a href="{{ "/subscribe" | relative_url }}">Subscribe</a>
+    </li>
+    <li {% if page.name == "about.html" %}class="current"{% endif %}>
+      <a href="{{ "/about" | relative_url }}">About</a>
+    </li>
+  </ul>
+
+  <!--<ul class="top-nav-socials">
+    <li>
+      <a href="https://instagram.com/dallasurbanists"><img class="social-icon" src="/assets/icons/instagram_icon.svg" alt="Instagram" title="@DallasUrbanists on Instagram" /></a>
+      <a href="https://www.tiktok.com/@dallasurbanists"><img class="social-icon" src="/assets/icons/tiktok_icon.svg" alt="TikTok" title="@DallasUrbanists on TikTok" /></a>
+      <a href="https://www.youtube.com/channel/UCdGGeaIMqyVgr2cssV-uMTg"><img class="social-icon" src="/assets/icons/youtube_icon.svg" alt="YouTube" title="Dallas Urbanists on YouTube" /></a>
+    </li>
+  </ul>
+  -->
 </nav>

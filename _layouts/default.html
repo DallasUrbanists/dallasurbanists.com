@@ -2,31 +2,20 @@
 <html lang="en">
 
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCKLLSMFQX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-VCKLLSMFQX');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       {% if page.title and page.title != '' %}
-        {% assign meta_title = page.title | append: " | This Dallas Life" %}
+        {% assign meta_title = page.title | append: " | Dallas Urbanists" %}
       {% elsif page.tag_feed and page.tag_feed != '' %}
         {% capture meta_title %}
-          Blog posts about {{ page.tag_feed }} | This Dallas Life
+          Blog posts about {{ page.tag_feed }} | Dallas Urbanists
         {% endcapture %}
       {% else %}
-        {% assign meta_title = "This Dallas Life" %}
+        {% assign meta_title = "Dallas Urbanists" %}
       {% endif %}
       {{ meta_title }}
     </title>
-
     {% if page.description and page.description != '' %}
       {% assign meta_description = page.description %}
     {% elsif page.subtitle and page.subtitle != '' %}
@@ -58,27 +47,10 @@
     {% endif %}
 
     <!-- FAVICON -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/favicons/apple-touch-icon.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicons/favicon-32x32.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="/assets/favicons/safari-pinned-tab.svg"
-      color="#0b2a8b" />
-    <meta name="msapplication-TileColor" content="#f8f9fa" />
-    <meta name="theme-color" content="#f8f9fa" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicons/site.webmanifest">
 
     <!-- BOOTSTRAP -->
     <link
@@ -104,7 +76,11 @@
     href="{{ "/styles2.css" | relative_url }}"
       rel="stylesheet"
       media="screen" />
-
+    <link
+    href="{{ "/styles3.css" | relative_url }}"
+      rel="stylesheet"
+      media="screen" />
+  
     <!-- CUSTOM PRINT STYLESHEET -->
     <link
     href="{{ "/print.css" | relative_url }}"
@@ -114,7 +90,7 @@
     {% if page.cover_image contains "http" %}
       {% assign og_image = page.cover_image %}
     {% elsif page.cover_image %}
-      {% assign og_image = "https://thisdallaslife.com" | append: page.cover_image %}
+      {% assign og_image = "https://dallasurbanists.com" | append: page.cover_image %}
     {% else %}
       {% assign og_image = "/assets/tdl-social-share-1600x900.png" %}
     {% endif %}
@@ -136,6 +112,7 @@
       {{ content }}
     </main>
 
+    <!--
     <div class="container text-center">
       <form
         action="https://tinyletter.com/thisdallaslife"
@@ -168,40 +145,7 @@
       </form>
       <p>One email per week (at most) of urbanist news and content.</p>
     </div>
-
-    <footer class="container-lg p-4 mt-4">
-      <p class="float-start">
-        <a class="link-dark link-offset-3" href="{{ "/" | relative_url }}">Homepage</a>
-        |
-        <a class="link-dark link-offset-3" href="{{ "/blog" | relative_url }}">Blog</a>
-        |
-        <a class="link-dark link-offset-3" href="{{ "/podcast" | relative_url }}">Podcast</a>
-        |
-        <a class="link-dark link-offset-3" href="{{ "/about" | relative_url }}">About</a>
-        |
-        <a class="link-dark link-offset-3" href="{{ "/tagged/DART" | relative_url }}">DART</a>
-        |
-        <a class="link-dark link-offset-3" href="{{ "/tagged/I-345" | relative_url }}">I-345</a>
-        |
-        <a class="link-dark link-offset-3" href="{{ "/tagged/Cycling" | relative_url }}">Cycling</a>
-      </p>
-      <p class="text-body-secondary text-end">
-        Copyright &copy; 2023
-        {% if page.post.author %}
-          {{ page.post.author.display_name }},
-        {% endif %}
-        This Dallas Life
-      </p>
-    </footer>
-
-    <script>
-      const el = document.querySelector(".sticky-top")
-      const observer = new IntersectionObserver(([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1), {threshold: [1]});
-
-      if (el) {
-        observer.observe(el);
-      }
-    </script>
+    -->
 
   </body>
 

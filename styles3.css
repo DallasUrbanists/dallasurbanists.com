@@ -186,7 +186,7 @@ a {
     border: solid 1px #799A4A;
     position: relative;
     background-color: rgba(121, 154, 74, 0.1);
-    padding: 2em;
+    padding: 1em;
     margin-bottom: 1em;
 }
 
@@ -227,11 +227,22 @@ a {
 }
 
 @media screen and (max-width: 800px) {
+    body {
+        padding-top: 0;
+    }
+    .top-nav-list {
+        order: 3;
+    }
     .top-nav-list {
         order: 3;
     }
     ul.top-nav-list {
-        text-align: left;
-        padding-left: 0.5em
+        text-align: center;
+        padding-left: 0.5em;
+        font-size: 0.75em;
+        padding-top: 0.8em;
+    }
+    .top-nav .top-nav-logo-link {
+        text-align: center;
     }
 }

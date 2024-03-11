@@ -246,3 +246,18 @@ a {
         text-align: center;
     }
 }
+
+.mc-field-group {
+    flex-wrap: nowrap;
+    margin-bottom: 0.5ch;
+    display: flex;
+    flex-direction: row;
+}
+
+input#mce-EMAIL {
+    flex-grow: 1;
+}
+
+.mc-field-group label {
+    padding-right: 6px;
+}

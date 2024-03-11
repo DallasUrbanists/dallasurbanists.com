@@ -76,9 +76,6 @@ meta_type: "article"
 <link href="{{ "/plugins/lightbox/css/lightbox.min.css" | relative_path }}" rel="stylesheet" />
 <script src="{{ "/plugins/lightbox/lightbox-decorator.js" | relative_path }}"></script>
 
-<!-- GOOGLE ANALYTICS: READ COMPLETE EVENT -->
-<script src="{{ "/plugins/google-analytics/readcomplete-event.js" | relative_path }}"></script>
-
 <!-- INITIALIZE PLUGINS -->
 <script>
   // Attach lightbox to every image in the post content
@@ -93,7 +90,4 @@ meta_type: "article"
     // add captions beneath images
     captionEnabled: true
   });
-
-  // Detect when reader finishes reading the entire article
-  detectReadComplete('article.blog-article', "{{ page.title | escape }}");
 </script>

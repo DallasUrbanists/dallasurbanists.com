@@ -1,6 +1,6 @@
-# This Dallas Life website
+# DallasUrbanists.com website
 
-This is the source code for the This Dallas Life website.
+This is the source code for the Dallas Urbanists website (previously known as This Dallas Life).
 
 ## Local development setup
 

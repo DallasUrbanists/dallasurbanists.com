@@ -19,8 +19,7 @@ identity_snippet: true
             <form action="https://gmail.us18.list-manage.com/subscribe/post?u=e3bf323ec9d6022065a4e6278&amp;id=2ae66d736b&amp;f_id=004b1ae7f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
                 <div id="mc_embed_signup_scroll">
                     <div class="mc-field-group">
-                      <label for="mce-EMAIL">Email Address: </label>
-                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" placeholder="Email address"><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
                       <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
                     </div>
                 <div id="mce-responses" class="clear foot">
@@ -133,10 +132,19 @@ identity_snippet: true
 </div>
 
 <script>
-  const hideIntroLink = document.querySelector('.site-introduction #hide-link');
-  const siteIntro = document.querySelector('.site-introduction');
+  (function() {
+    const hideIntroLink = document.querySelector('.site-introduction #hide-link');
+    const siteIntro = document.querySelector('.site-introduction');
 
-  hideIntroLink.addEventListener('click', function(e) {
-    siteIntro.hidden = true;
-  });
+    if (localStorage.getItem("hide-intro") === "true") {
+      siteIntro.hidden = true;
+    } else {
+      siteIntro.hidden = false;
+    }
+
+    hideIntroLink.addEventListener('click', function(e) {
+      siteIntro.hidden = true;
+      localStorage.setItem("hide-intro", "true");
+    });
+  })();
 </script>

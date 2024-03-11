@@ -116,7 +116,7 @@ a {
 }
 
 .top-nav ul {
-    text-align: center;
+    text-align: right;
     flex-grow: 1;
     margin: 0;
     padding: 0;
@@ -238,12 +238,21 @@ a {
     }
     ul.top-nav-list {
         text-align: center;
-        padding-left: 0.5em;
+        /* padding-left: 0.5em; */
         font-size: 0.75em;
         padding-top: 0.8em;
     }
     .top-nav .top-nav-logo-link {
         text-align: center;
+    }
+    .article-masthead h1#post-title {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .below-mast {
+        padding-left: 1em;
+        padding-right: 1em;
     }
 }
 
@@ -260,4 +269,79 @@ input#mce-EMAIL {
 
 .mc-field-group label {
     padding-right: 6px;
+}
+
+.article-masthead {
+    height: 75svh;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    background-color: #EEE;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    padding: 1rem;
+    /* margin-bottom: 1em; */
+}
+
+.article-masthead #post-title {
+    font-size: 3rem;
+    margin-bottom: 0;
+    text-wrap: balance;
+    color: white;
+}
+
+.article-masthead + .below-mast {
+    padding-top: 1em;
+}
+
+.width-1024 {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: block;
+}
+
+.blog-article .article-masthead p.subtitle {
+    text-wrap: balance;
+    color: white;
+}
+
+ul.source-list {
+    margin-left: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+ul.source-list li {
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 0.5em;
+}
+ul.source-list li p,
+ul.source-list li a {
+    font-size: 0.85em;
+    line-height: 1.0em;
+    font-weight: normal;
+}
+
+ul.source-list li p:last-child {
+    margin-bottom: 0;
+}
+
+.article-plainhead {
+    padding: 0 1em;
+    margin-top: 1em;
+}
+.article-plainhead h1#post-title {
+    margin-bottom: 0;
+    font-size: clamp(2rem, 1vw, 3rem);
+    text-wrap: balance;
+}
+.article-plainhead p.subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-wrap: balance;
+    font-style: italic;
 }

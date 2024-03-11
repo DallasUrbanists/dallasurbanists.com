@@ -4,71 +4,33 @@ meta_type: "article"
 ---
 {% assign author = site.authors | where: 'name', page.author | first %}
 
-<div class="container-lg pt-2">
-  <div class="container text-center">
-    <h1 class="mt-lg-4 text-center" id="post-title">{{ page.title }}</h1>
-    <p style="font-weight: 400;">By {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</p>
-  </div>
-  {% include impact-image.html path = page.cover_image %}
-</div>
-
 <div class="blog-article-parent-container">
-  <div style="width: 100%; max-width: 768px; margin: 0 auto;">
     <article class="blog-article mb-5">
-      <blockquote class="opener">
-        <p>{{ page.subtitle }}</p>
-      </blockquote>
-      {{ content }}
+      <div {% if page.cover_image %}
+          class="article-masthead"
+          style="background-image:linear-gradient(
+            to bottom, 
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, .75) 1.5rem,
+            rgba(0, 0, 0, .5),
+            rgba(0, 0, 0, .9),
+            rgba(0, 0, 0, 1)
+            ),
+            url('{{ page.cover_image | relative_url }}');
+          "
+        {% else %}
+          class="article-plainhead"
+        {% endif %}>
+        <div class="width-1024">
+          <h1 id="post-title">{{ page.title }}</h1>
+          <p class="subtitle">{{ page.subtitle }}</p>
+        </div>
+      </div>
+      <div class="width-1024 below-mast">
+        <p>By {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</p>  
+        {{ content }}
+      </div>
     </article>
-  </div>
-</div>
-
-<!-- Author Footer -->
-
-<div class="container-lg my-4 mb-5">
-  <div class="row border rounded justify-content-center">
-    <!-- Author Details -->
-    <div class="col-md-6 row">
-      <!-- Author Photo-->
-      <div class="col-md-4 p-4">
-        <img class="img-fluid rounded" src="{{ author.photo | relative_url }}">
-      </div>
-      <!-- Author Bio-->
-      <div class="col-md-8  p-4">
-        <strong>Written by {{ author.display_name }} <nobr>on {{ page.date | date: "%B %-d, %Y" }}</nobr></strong>
-        {{ author.content | markdownify }}
-        <p>
-          <nobr><i class="bi bi-envelope-fill fs-5"></i> <a href="mailto:{{ author.email }}" class="link-secondary link-offset-2">{{ author.email }}</a></nobr>&nbsp;
-          {% if author.twitter %}
-          <nobr><i class="bi bi-twitter fs-5"></i> <a href="https://twitter.com/{{ author.twitter }}" class="link-secondary link-offset-2">{{ author.twitter }}</a></nobr>&nbsp;
-          {% endif %}
-          {% if author.instagram %}
-          <nobr><i class="bi bi-instagram fs-5"></i> <a href="https://www.instagram.com/{{ author.instagram | replace: '@', '' }}" class="link-secondary link-offset-2">{{ author.instagram }}</a></nobr>&nbsp;
-          {% endif %}
-          {% if author.reddit %}
-          <nobr><i class="bi bi-reddit fs-5"></i> <a href="https://www.reddit.com/{{ author.reddit }}" class="link-secondary link-offset-2">{{ author.reddit }}</a></nobr>&nbsp;
-          {% endif %}
-        </p>
-      </div>
-    </div>
-    
-    <!-- Author Articles -->
-    <div class="col-md-6  p-4">
-      {% assign author_posts_limit = 5 %}
-      {% assign author_posts_shown = 0 %}
-      {% assign author_posts = site.posts | where: "author", author.name %}
-      
-      {% for post in author_posts %}
-      {% if author_posts_shown > author_posts_limit %}
-      {% break %}
-      {% endif %}
-      {% unless page.title == post.title %}
-      {% include post-listing.html post=post %}
-      {% assign author_posts_shown = author_posts_shown | plus:1 %}
-      {% endunless %}
-      {% endfor %}
-    </div>
-  </div>
 </div>
 
 <!-- LIGHTBOX PLUGIN -->

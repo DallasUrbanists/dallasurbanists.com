@@ -116,7 +116,7 @@ img.muted {
 }
 
 .blog-article-parent-container {
-    padding: 0 1em;
+    /* padding: 0 1em; */
     margin: 0 auto;
     margin-bottom: 2em;
 }
@@ -134,7 +134,10 @@ img.muted {
 
 .blog-article p,
 .blog-article a {
+    text-underline-offset: 3px;
+    text-decoration-style: dotted;
     color: black;
+    text-decoration-color: #777;
 }
 
 .blog-article p:not(:first-child) {
@@ -159,7 +162,7 @@ img.muted {
 }
 
 .blog-article :is(h1, h2):not(.lined-heading) + p {
-    margin-top: 8px;
+    /* margin-top: 8px; */
 }
 
 .blog-article hr {
@@ -175,8 +178,8 @@ img.muted {
 }
 
 .blog-article img {
-    border-radius: 0.5em;
-    max-width: 100%;
+    width: 100%;
+    max-width: 480px;
     box-sizing: border-box;
     display: block;
 }
@@ -264,17 +267,16 @@ article.blog-article > ol li {
 }
 
 .post-image-caption {
-    text-align: center;
     font-size: 1em;
     text-decoration: none;
     font-style: italic;
-    padding: 0.5em 1em;
 }
 
 #featuredTitle, #featuredSubtitle {
 }
 
 .blog-article blockquote {
+    text-wrap: balance;
     box-shadow: 0px 4px 8px -6px rgba(0,0,0,0.75);
     font-family: 'Noto Sans', sans-serif;
     text-align: left;
@@ -300,6 +302,7 @@ article.blog-article > ol li {
 }
 
 .blog-article blockquote p {
+    text-wrap: balance;
     font-size: 1em;
     /* line-height: 1.5em; */
     color: #000;
@@ -341,12 +344,8 @@ article.blog-article > ol li {
     margin-bottom: 0;
 }
 
-#post-title {
-	font-size: calc(1.375rem + 1vw);
-}
-
 .blog-article iframe[title="YouTube video player"] {
-    border-radius: 1em;
+    max-width: 480px;
     margin-bottom: 1em;
     width: 100%;
     aspect-ratio: 16 / 9;

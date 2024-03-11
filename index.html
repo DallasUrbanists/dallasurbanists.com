@@ -2,9 +2,11 @@
 layout: default
 identity_snippet: true
 ---
-{% assign activities = site.data.activities | sort: "start_date" %}
-{% assign listed_series = "" | split: "," %}
-{% assign nowSeconds = "now" | date: "%s" | minus: 0 %}
+{% if site.data.activities %}
+  {% assign activities = site.data.activities | sort: "start_date" %}
+  {% assign listed_series = "" | split: "," %}
+  {% assign nowSeconds = "now" | date: "%s" | minus: 0 %}
+{% endif %}
 
 <div class="container pt-3" style="max-width: 1024px;">
   <div class="site-introduction">
@@ -38,72 +40,74 @@ identity_snippet: true
     <a href="#" id="hide-link">Hide intro</a>
   </div>
   <table class="post-table activities-table" style="width: 100%;">
-    <tr class="events-and-actions-row">
-      <td colspan="2" class="events-and-actions-cell">
-        <h2 class="fancy-font">Events &amp; Actions</h2>
-      </td>
-    </tr>
-    {% for activity in activities %}
-      {% assign dateSeconds = activity.end_date | date: "%s" | plus: 86400 %}
-      {% if nowSeconds < dateSeconds %}
-        {% unless activity.series and listed_series contains activity.series %}
-          {% assign listed_series = listed_series | push: activity.series %}
-          <tr class="activity-top-row">
-            <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ activity.icon }}_icon.svg" /></td>
-            <td class="title-cell">
-              <b><i class="fancy-font">{{ activity.type }}:</i> {{ activity.title }}</b>
-              {% if activity.frequency %}
-                <sup>{{ activity.frequency }}</sup>
-              {% endif %}
-            </td>
-          </tr>
-          <tr class="activity-bottom-row">
-            <td>
-              {% case activity.type %}
+    {% if activities %}
+      <tr class="events-and-actions-row">
+        <td colspan="2" class="events-and-actions-cell">
+          <h2 class="fancy-font">Events &amp; Actions</h2>
+        </td>
+      </tr>
+      {% for activity in activities %}
+        {% assign dateSeconds = activity.end_date | date: "%s" | plus: 86400 %}
+        {% if nowSeconds < dateSeconds %}
+          {% unless activity.series and listed_series contains activity.series %}
+            {% assign listed_series = listed_series | push: activity.series %}
+            <tr class="activity-top-row">
+              <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ activity.icon }}_icon.svg" /></td>
+              <td class="title-cell">
+                <b><i class="fancy-font">{{ activity.type }}:</i> {{ activity.title }}</b>
+                {% if activity.frequency %}
+                  <sup>{{ activity.frequency }}</sup>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="activity-bottom-row">
+              <td>
+                {% case activity.type %}
 
-                {% when "Event" %}
-                  {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} | 
-                  {% if activity.rsvp_url %}
-                    <a href="{{ activity.rsvp_url }}" title="RSVP on {{ activity.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}">RSVP</a> |
-                  {% endif %}
-                  {% if activity.location_url %}
-                    <a href="{{ activity.location_url }}">{{ activity.location }}</a>
+                  {% when "Event" %}
+                    {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} | 
+                    {% if activity.rsvp_url %}
+                      <a href="{{ activity.rsvp_url }}" title="RSVP on {{ activity.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}">RSVP</a> |
+                    {% endif %}
+                    {% if activity.location_url %}
+                      <a href="{{ activity.location_url }}">{{ activity.location }}</a>
+                    {% else %}
+                      {{ activity.location }}
+                    {% endif %}
+
+                  {% when "Bicycle Ride" %}
+                    {{ activity.start_date | date: '%A, %B %e' }} {{ activity.schedule }} | {{ activity.start_location }}
+
+                  {% when "Petition" %}
+                    <a href="{{ activity.petition_url }}" title="View petition on {{ activity.petition_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View</a> | 
+                    Started on {{ activity.start_date | date: "%B %e" }} by {{ activity.author }}
+
+                  {% when "Public Comment" %}
+                    {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} | 
+                    {% if activity.registration_url %}
+                      <a href="{{ activity.registration_url }}">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a> |
+                    {% else %}
+                      Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }} |
+                    {% endif %}
+
+                  {% when "Written Comment" %}
+                    {% if activity.submission_url %}
+                      <a href="{{ activity.submission_url }}">Submit before {{ activity.start_date | date: "%B %e %l:%M %p" }}</a> |
+                    {% else %}
+                      Submit before {{ activity.start_date | date: "%A, %B %e, %l:%M %p" }}
+                    {% endif %}
+
                   {% else %}
-                    {{ activity.location }}
-                  {% endif %}
-
-                {% when "Bicycle Ride" %}
-                  {{ activity.start_date | date: '%A, %B %e' }} {{ activity.schedule }} | {{ activity.start_location }}
-
-                {% when "Petition" %}
-                  <a href="{{ activity.petition_url }}" title="View petition on {{ activity.petition_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View</a> | 
-                  Started on {{ activity.start_date | date: "%B %e" }} by {{ activity.author }}
-
-                {% when "Public Comment" %}
-                  {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} | 
-                  {% if activity.registration_url %}
-                    <a href="{{ activity.registration_url }}">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a> |
-                  {% else %}
-                    Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }} |
-                  {% endif %}
-
-                {% when "Written Comment" %}
-                  {% if activity.submission_url %}
-                    <a href="{{ activity.submission_url }}">Submit before {{ activity.start_date | date: "%B %e %l:%M %p" }}</a> |
-                  {% else %}
-                    Submit before {{ activity.start_date | date: "%A, %B %e, %l:%M %p" }}
-                  {% endif %}
-
-                {% else %}
-                  {{ activity.start_date | date: "%A, %B %e" }}
-                  
-              {% endcase %}
-            </td>
-          </tr>    
-        {% endunless %}
-      {% endif %}
-    {% endfor %}
-  </table>
+                    {{ activity.start_date | date: "%A, %B %e" }}
+                    
+                {% endcase %}
+              </td>
+            </tr>    
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </table>
+  {% endif %}
   <table class="post-table"  style="width: 100%;">
     {% assign months = '' | split: ',' %}
     {% for post in site.posts %}

@@ -123,6 +123,7 @@
       {{ content }}
     </main>
 
+    <!--
     <div class="container text-center">
       <form
         action="https://tinyletter.com/thisdallaslife"
@@ -155,23 +156,7 @@
       </form>
       <p>One email per week (at most) of urbanist news and content.</p>
     </div>
-
-    <footer class="container-lg p-4 mt-4">
-      <p class="float-start">
-        <a class="link-dark link-offset-3" href="{{ "/" | relative_url }}">Homepage</a>
-        |
-        <a class="link-dark link-offset-3" href="{{ "/about" | relative_url }}">About</a>
-      </p>
-    </footer>
-
-    <script>
-      const el = document.querySelector(".sticky-top")
-      const observer = new IntersectionObserver(([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1), {threshold: [1]});
-
-      if (el) {
-        observer.observe(el);
-      }
-    </script>
+    -->
 
   </body>
 

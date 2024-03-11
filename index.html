@@ -2,57 +2,113 @@
 layout: default
 identity_snippet: true
 ---
-<div class="container p-4" style="max-width: 768px;">
-  <table class="post-table activities-table">
+{% assign activities = site.data.activities | sort: "start_date" %}
+{% assign listed_series = "" | split: "," %}
+{% assign nowSeconds = "now" | date: "%s" | minus: 0 %}
+
+<div class="container p-4" style="max-width: 1024px;">
+  <div class="site-introduction">
+    <h1>What is Dallas Urbanists?</h1>
+    <p><i>Dallas Urbanists</i> is a website (<a href="https://dallasurbanists.com">dallasurbanists.com</a>) and a social media channel (<a href="https://www.instagram.com/dallasurbanists">@dallasurbanists on Instagram</a>) featuring advocacy and educational content about walkability, transportation, housing, and urban planning. Created by Hexel Colorado in December 2022, it aims to amplify ideas and voices for a more walkable, bike-friendly, transit-oriented, affordable, sustainable, safe, accessible, equitable, and vibrant Dallas. <a href="/about">Learn more about the who, what, when, where, and why of <i>Dallas Urbanists</i></a>.</p>
+    <div style="margin-top: 2ch; max-width: 40em;">
+      <form
+        action="https://tinyletter.com/thisdallaslife"
+        class="mb-2"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://tinyletter.com/thisdallaslife', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+        <input
+          type="hidden"
+          value="1"
+          name="embed" />
+        <div class="input-group input-group">
+          <input
+            type="email"
+            name="email"
+            id="tlemail"
+            class="form-control"
+            placeholder="Enter email to receive updates."
+            aria-label="Email"
+            aria-describedby="email-input-label" />
+          <input
+            type="submit"
+            class="btn btn-secondary rounded-end"
+            id="subscribe-btn"
+            value="Subscribe" />
+        </div>
+      </form>
+      <p class="small">This website's <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> is to never spam, sell, share, or disclose your email to any third-parties - not even to friends! This website does not use any cookies, web beacons, or tracking software.</p>
+    </div>
+    <a href="#" id="hide-link">Hide intro</a>
+  </div>
+  <table class="post-table activities-table" style="width: 100%;">
     <tr class="events-and-actions-row">
       <td colspan="2" class="events-and-actions-cell">
-        <h2>Upcoming Events &amp; Actions</h2>
+        <h2 class="fancy-font">Events &amp; Actions</h2>
       </td>
     </tr>
-    <tr class="activity-top-row">
-      <td class="icon-cell" rowspan="2"><img src="/assets/icons/petition_icon.svg" /></td>
-      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Petition:</i> Pedestrianize Akard Street in Downtown Dallas (Elm-Main-Commerce)</a></td>
-    </tr>
-    <tr class="activity-bottom-row">
-      <td><a href="#" title="View petition on change.org">View</a> | <a href="#">Share</a> | Started by Hexel | 825 signatures since Feb 28th, 2024</td>
-    </tr>
-    <tr class="activity-top-row">
-      <td class="icon-cell" rowspan="2"><img src="/assets/icons/bicycle_icon.svg" /></td>
-      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Group Ride:</i> Dallas Critical Mass, March</a></td>
-    </tr>
-    <tr class="activity-bottom-row">
-      <td>March 29, Friday | Dallas Farmers Market | Roll out 8:00 PM | <a href="#">Add to Cal</a></td>
-    </tr>
-    <tr class="activity-top-row">
-      <td class="icon-cell" rowspan="2"><img src="/assets/icons/bicycle_icon.svg" /></td>
-      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Bike Bus:</i> Dallas Critical Mass, March</a></td>
-    </tr>
-    <tr class="activity-bottom-row">
-      <td>March 29, Friday | <a href="#">View 3 routes</a>  | Roll out 7:00 PM</td>
-    </tr>
-    <tr class="activity-top-row">
-      <td class="icon-cell" rowspan="2"><img src="/assets/icons/event_icon.svg" /></td>
-      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Event:</i> Dallas Urbanists + Dallas Neighbors for Housing Happy Hour Social</a></td>
-    </tr>
-    <tr class="activity-bottom-row">
-      <td>March 29, Friday 5:30 PM | <a href="#" title="RSVP on ActionNetwork.org">RSVP</a> | <a href="#">Add to Cal</a> | <a href="https://maps.app.goo.gl/67yjFn5abx6NmeH58">The Exchange Hall</a> (upstairs)</td>
-    </tr>
-    <tr class="activity-top-row">
-      <td class="icon-cell" rowspan="2"><img src="/assets/icons/speech_icon.svg" /></td>
-      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Public Comment:</i> Support Parking Reform at Dallas City Hall</a></td>
-    </tr>
-    <tr class="activity-bottom-row">
-      <td><a href="#">Register before March 27, 12 PM</a> | <a href="#">Add to Cal</a> | In-person or online</td>
-    </tr>
-    <tr class="activity-top-row">
-      <td class="icon-cell" rowspan="2"><img src="/assets/icons/written_comment_icon.svg" /></td>
-      <td class="title-cell"><a href="http://127.0.0.1:4000/"><i>Written Comment:</i> Support Parking Reform at Dallas City Hall</a></td>
-    </tr>
-    <tr class="activity-bottom-row">
-      <td><a href="#">Submit before March 29 5:00 PM</a></td>
-    </tr>
+    {% for activity in activities %}
+      {% assign dateSeconds = activity.end_date | date: "%s" | plus: 86400 %}
+      {% if nowSeconds < dateSeconds %}
+        {% unless activity.series and listed_series contains activity.series %}
+          {% assign listed_series = listed_series | push: activity.series %}
+          <tr class="activity-top-row">
+            <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ activity.icon }}_icon.svg" /></td>
+            <td class="title-cell">
+              <b><i class="fancy-font">{{ activity.type }}:</i> {{ activity.title }}</b>
+              {% if activity.frequency %}
+                <sup>{{ activity.frequency }}</sup>
+              {% endif %}
+            </td>
+          </tr>
+          <tr class="activity-bottom-row">
+            <td>
+              {% case activity.type %}
+
+                {% when "Event" %}
+                  {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} | 
+                  {% if activity.rsvp_url %}
+                    <a href="{{ activity.rsvp_url }}" title="RSVP on {{ activity.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}">RSVP</a> |
+                  {% endif %}
+                  {% if activity.location_url %}
+                    <a href="{{ activity.location_url }}">{{ activity.location }}</a>
+                  {% else %}
+                    {{ activity.location }}
+                  {% endif %}
+
+                {% when "Bicycle Ride" %}
+                  {{ activity.start_date | date: '%A, %B %e' }} {{ activity.schedule }} | {{ activity.start_location }}
+
+                {% when "Petition" %}
+                  <a href="{{ activity.petition_url }}" title="View petition on {{ activity.petition_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View</a> | 
+                  Started on {{ activity.start_date | date: "%B %e" }} by {{ activity.author }}
+
+                {% when "Public Comment" %}
+                  {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} | 
+                  {% if activity.registration_url %}
+                    <a href="{{ activity.registration_url }}">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a> |
+                  {% else %}
+                    Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }} |
+                  {% endif %}
+
+                {% when "Written Comment" %}
+                  {% if activity.submission_url %}
+                    <a href="{{ activity.submission_url }}">Submit before {{ activity.start_date | date: "%B %e %l:%M %p" }}</a> |
+                  {% else %}
+                    Submit before {{ activity.start_date | date: "%A, %B %e, %l:%M %p" }}
+                  {% endif %}
+
+                {% else %}
+                  {{ activity.start_date | date: "%A, %B %e" }}
+                  
+              {% endcase %}
+            </td>
+          </tr>    
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
   </table>
-  <table class="post-table">
+  <table class="post-table"  style="width: 100%;">
     {% assign months = '' | split: ',' %}
     {% for post in site.posts %}
       {% assign month = post.date | date: "%B %Y" %}
@@ -60,19 +116,27 @@ identity_snippet: true
         {% assign months = months | push: month %}
         <tr class="month-row">
           <td colspan="2" class="month-cell">
-            <h2>Content from {{ month }}</h2>
+            <h2 class="fancy-font">Content from {{ month }}</h2>
           </td>
         </tr>
       {% endunless %}
       {% assign author = site.authors | where: 'name', post.author | first %}
       <tr class="post-table-top-row">
-        <td class="icon-cell"><img src="/assets/icons/article_icon.svg" /></td>
+        <td class="icon-cell" rowspan="2"><img src="/assets/icons/article_icon.svg" /></td>
         <td class="title-cell"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle }}">{{ post.title }}</a></td>
       </tr>
       <tr class="post-table-bottom-row">
-        <td></td>
         <td>Article about {% include tag-inline-list.html tags=post.tags %} by {{ author.display_name }}</td>
       </tr>
     {% endfor %}
   </table>
 </div>
+
+<script>
+  const hideIntroLink = document.querySelector('.site-introduction #hide-link');
+  const siteIntro = document.querySelector('.site-introduction');
+
+  hideIntroLink.addEventListener('click', function(e) {
+    siteIntro.hidden = true;
+  });
+</script>

@@ -53,6 +53,31 @@ collections:
           
           options: [{{ sorted_options }}] 
         }
+
+  - name: 'bicyclerides'
+    label: 'Bicycle Rides'
+    folder: '_bicyclerides'
+    create: true
+    {% raw %}
+      slug: "{{year}}-{{month}}-{{day}}-bicycleride-{{slug}}" # Filename template, e.g., YYYY-MM-DD-bicycleride-title.md
+    {% endraw %}
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Start Location", name: "start_location", widget: "string"}
+      - {label: "Schedule", name: "schedule", widget: "string"}
+      - {
+          label: 'Series',
+          name: 'series',
+          widget: 'relation',
+          collection: 'series',
+          display_fields: [title],
+          search_fields: [title],
+          value_field: 'id',
+          required: false
+        }
+
   - name: 'config'
     label: 'Config'
     editor:
@@ -67,6 +92,7 @@ collections:
             widget: 'list'
             fields:
               - { label: Name, name: name, widget: string }
+
   - name: "authors"
     label: "Authors"
     folder: "_authors/"
@@ -86,6 +112,7 @@ collections:
     - { label: 'Reddit Handle', name: 'reddit', widget: 'string', required: false  }
     - { label: 'Body', name: 'body', widget: 'markdown' }
     - { label: "Photo", name: "photo", widget: "image", required: false }
+
 media_library:
   name: uploadcare
   config:

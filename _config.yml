@@ -1,5 +1,22 @@
 collections:
-  - authors
+  authors:
+  events:
+    icon: event
+    output: true
+  bicyclerides:
+    output: true
+    icon: bicycle
+  petitions:
+    output: true
+    icon: petition
+  publiccomments:
+    output: true
+    icon: speech
+  writtencomments:
+    output: true
+    icon: written_comment
+  series:
+    output: true
 
 media_library:
   name: uploadcare

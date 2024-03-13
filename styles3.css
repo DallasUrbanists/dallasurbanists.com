@@ -6,6 +6,7 @@ a {
 
 .post-table {
     .icon-cell {
+        padding-top: 0.5em;
         vertical-align: top;
         width: 2.5em;
     }
@@ -344,4 +345,8 @@ ul.source-list li p:last-child {
     margin-bottom: 0;
     text-wrap: balance;
     font-style: italic;
+}
+
+iframe.instagram-media {
+    margin: 1em auto !important;
 }

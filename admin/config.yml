@@ -78,6 +78,30 @@ collections:
           required: false
         }
 
+  - name: 'instagramreels'
+    label: 'Instagram Reels'
+    folder: '_instagramreels'
+    create: true
+    {% raw %}
+      slug: "{{year}}-{{month}}-{{day}}-instagramreel-{{slug}}" # Filename template, e.g., YYYY-MM-DD-instagramreel-title.md
+    {% endraw %}
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+      - {label: "URL", name: "external_url", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: 'Author',
+          name: 'author',
+          widget: 'relation',
+          collection: 'authors',
+          display_fields: [display_name],
+          search_fields: [display_name],
+          value_field: 'name',
+        }
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+
   - name: 'config'
     label: 'Config'
     editor:

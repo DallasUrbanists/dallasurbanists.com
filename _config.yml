@@ -17,6 +17,14 @@ collections:
     icon: written_comment
   series:
     output: true
+  photogalleries:
+    output: true
+  podcastepisodes:
+    output: true
+  instagramcarousels:
+    output: true
+  instagramreels:
+    output: true
 
 media_library:
   name: uploadcare

@@ -8,6 +8,8 @@ identity_snippet: true
   {% assign nowSeconds = "now" | date: "%s" | minus: 0 %}
 {% endif %}
 
+{% assign posts = site.data.feed | sort: "date" | reverse %}
+
 <div class="container pt-3" style="max-width: 1024px;">
   <div class="site-introduction">
     <h1>What is Dallas Urbanists?</h1>
@@ -54,9 +56,6 @@ identity_snippet: true
               <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ activity.icon }}_icon.svg" /></td>
               <td class="title-cell">
                 <b><i class="fancy-font">{{ activity.type }}:</i> {{ activity.title }}</b>
-                {% if activity.frequency %}
-                  <sup>{{ activity.frequency }}</sup>
-                {% endif %}
               </td>
             </tr>
             <tr class="activity-bottom-row">
@@ -64,7 +63,11 @@ identity_snippet: true
                 {% case activity.type %}
 
                   {% when "Event" %}
-                    {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} | 
+                    {% if activity.frequency %}
+                      {{ activity.frequency }}, next is {{ activity.start_date | date: "%B %e %l:%M %p" }} |
+                    {% else %}
+                      {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} |
+                    {% endif %} 
                     {% if activity.rsvp_url %}
                       <a href="{{ activity.rsvp_url }}" title="RSVP on {{ activity.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}">RSVP</a> |
                     {% endif %}
@@ -75,23 +78,28 @@ identity_snippet: true
                     {% endif %}
 
                   {% when "Bicycle Ride" %}
-                    {{ activity.start_date | date: '%A, %B %e' }} {{ activity.schedule }} | {{ activity.start_location }}
+                    {% if activity.frequency %}
+                      {{ activity.frequency }}, next is {{ activity.start_date | date: "%B %e" }}.
+                    {% else %}
+                      {{ activity.start_date | date: "%A, %B %e" }}.
+                    {% endif %}
+                    {{ activity.schedule }} at {{ activity.start_location }}
 
                   {% when "Petition" %}
-                    <a href="{{ activity.petition_url }}" title="View petition on {{ activity.petition_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View</a> | 
-                    Started on {{ activity.start_date | date: "%B %e" }} by {{ activity.author }}
+                    <a href="{{ activity.petition_url }}" title="View petition on {{ activity.petition_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View petition</a> 
+                    started on {{ activity.start_date | date: "%B %e" }} by {{ activity.author }}
 
                   {% when "Public Comment" %}
                     {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} | 
                     {% if activity.registration_url %}
-                      <a href="{{ activity.registration_url }}">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a> |
+                      <a href="{{ activity.registration_url }}">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a>
                     {% else %}
-                      Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }} |
+                      Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}
                     {% endif %}
 
                   {% when "Written Comment" %}
                     {% if activity.submission_url %}
-                      <a href="{{ activity.submission_url }}">Submit before {{ activity.start_date | date: "%B %e %l:%M %p" }}</a> |
+                      <a href="{{ activity.submission_url }}">Submit before {{ activity.start_date | date: "%B %e %l:%M %p" }}</a>
                     {% else %}
                       Submit before {{ activity.start_date | date: "%A, %B %e, %l:%M %p" }}
                     {% endif %}
@@ -109,6 +117,38 @@ identity_snippet: true
   {% endif %}
   <table class="post-table"  style="width: 100%;">
     {% assign months = '' | split: ',' %}
+    {% for post in posts %}
+      {% assign month = post.date | date: "%B %Y" %}
+      {% unless months contains month %}
+        {% assign months = months | push: month %}
+        <tr class="month-row">
+          <td colspan="2" class="month-cell">
+            <h2 class="fancy-font">Content from {{ month }}</h2>
+          </td>
+        </tr>
+      {% endunless %}
+      <tr class="post-table-top-row">
+        <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ post.icon }}_icon.svg" /></td>
+        <td class="title-cell"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle | default: post.title }}">{{ post.title }}</a></td>
+      </tr>
+      <tr class="post-table-bottom-row">
+        <td>
+          {% case post.type %}
+            {% when 'Instagram Reel' %}
+              {{ post.type }} posted by <a href="https://instagram.com/dallasurbanists">@dallasurbanists</a> on {{ post.date | date: "%B %e" }}
+
+            {% when 'Instagram Carousel' %}
+              {{ post.type }} posted by <a href="https://instagram.com/dallasurbanists">@dallasurbanists</a> on {{ post.date | date: "%B %e" }}
+
+            {% when 'Article' %}
+              {% assign author = site.authors | where: 'name', post.author | first %}
+              Article about {% include tag-inline-list.html tags=post.tags %} by {{ author.display_name }}
+  
+          {% endcase %}
+        </td>
+      </tr>
+    {% endfor %}
+    <!--
     {% for post in site.posts %}
       {% assign month = post.date | date: "%B %Y" %}
       {% unless months contains month %}
@@ -125,9 +165,10 @@ identity_snippet: true
         <td class="title-cell"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle }}">{{ post.title }}</a></td>
       </tr>
       <tr class="post-table-bottom-row">
-        <td>Article about {% include tag-inline-list.html tags=post.tags %} by {{ author.display_name }}</td>
+        <td></td>
       </tr>
     {% endfor %}
+    -->
   </table>
 </div>
 

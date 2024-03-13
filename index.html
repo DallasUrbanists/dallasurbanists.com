@@ -8,7 +8,9 @@ identity_snippet: true
   {% assign nowSeconds = "now" | date: "%s" | minus: 0 %}
 {% endif %}
 
-{% assign posts = site.data.feed | sort: "date" | reverse %}
+{% if site.data.feed %}
+  {% assign posts = site.data.feed | sort: "date" | reverse %}
+{% endif %}
 
 <div class="container pt-3" style="max-width: 1024px;">
   <div class="site-introduction">
@@ -115,61 +117,42 @@ identity_snippet: true
       {% endfor %}
     </table>
   {% endif %}
-  <table class="post-table"  style="width: 100%;">
-    {% assign months = '' | split: ',' %}
-    {% for post in posts %}
-      {% assign month = post.date | date: "%B %Y" %}
-      {% unless months contains month %}
-        {% assign months = months | push: month %}
-        <tr class="month-row">
-          <td colspan="2" class="month-cell">
-            <h2 class="fancy-font">Content from {{ month }}</h2>
+  {% if posts %}
+    <table class="post-table"  style="width: 100%;">
+      {% assign months = '' | split: ',' %}
+      {% for post in posts %}
+        {% assign month = post.date | date: "%B %Y" %}
+        {% unless months contains month %}
+          {% assign months = months | push: month %}
+          <tr class="month-row">
+            <td colspan="2" class="month-cell">
+              <h2 class="fancy-font">Content from {{ month }}</h2>
+            </td>
+          </tr>
+        {% endunless %}
+        <tr class="post-table-top-row">
+          <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ post.icon }}_icon.svg" /></td>
+          <td class="title-cell"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle | default: post.title }}">{{ post.title }}</a></td>
+        </tr>
+        <tr class="post-table-bottom-row">
+          <td>
+            {% case post.type %}
+              {% when 'Instagram Reel' %}
+                {{ post.type }} posted by <a href="https://instagram.com/dallasurbanists">@dallasurbanists</a> on {{ post.date | date: "%B %e" }}
+
+              {% when 'Instagram Carousel' %}
+                {{ post.type }} posted by <a href="https://instagram.com/dallasurbanists">@dallasurbanists</a> on {{ post.date | date: "%B %e" }}
+
+              {% when 'Article' %}
+                {% assign author = site.authors | where: 'name', post.author | first %}
+                Article about {% include tag-inline-list.html tags=post.tags %} by {{ author.display_name }}
+    
+            {% endcase %}
           </td>
         </tr>
-      {% endunless %}
-      <tr class="post-table-top-row">
-        <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ post.icon }}_icon.svg" /></td>
-        <td class="title-cell"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle | default: post.title }}">{{ post.title }}</a></td>
-      </tr>
-      <tr class="post-table-bottom-row">
-        <td>
-          {% case post.type %}
-            {% when 'Instagram Reel' %}
-              {{ post.type }} posted by <a href="https://instagram.com/dallasurbanists">@dallasurbanists</a> on {{ post.date | date: "%B %e" }}
-
-            {% when 'Instagram Carousel' %}
-              {{ post.type }} posted by <a href="https://instagram.com/dallasurbanists">@dallasurbanists</a> on {{ post.date | date: "%B %e" }}
-
-            {% when 'Article' %}
-              {% assign author = site.authors | where: 'name', post.author | first %}
-              Article about {% include tag-inline-list.html tags=post.tags %} by {{ author.display_name }}
-  
-          {% endcase %}
-        </td>
-      </tr>
-    {% endfor %}
-    <!--
-    {% for post in site.posts %}
-      {% assign month = post.date | date: "%B %Y" %}
-      {% unless months contains month %}
-        {% assign months = months | push: month %}
-        <tr class="month-row">
-          <td colspan="2" class="month-cell">
-            <h2 class="fancy-font">Content from {{ month }}</h2>
-          </td>
-        </tr>
-      {% endunless %}
-      {% assign author = site.authors | where: 'name', post.author | first %}
-      <tr class="post-table-top-row">
-        <td class="icon-cell" rowspan="2"><img src="/assets/icons/article_icon.svg" /></td>
-        <td class="title-cell"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle }}">{{ post.title }}</a></td>
-      </tr>
-      <tr class="post-table-bottom-row">
-        <td></td>
-      </tr>
-    {% endfor %}
-    -->
-  </table>
+      {% endfor %}
+    </table>
+  {% endif %}
 </div>
 
 <script>

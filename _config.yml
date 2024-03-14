@@ -27,6 +27,8 @@ collections:
     output: true
   links:
     output: false
+  youtube:
+    output: true
 
 media_library:
   name: uploadcare

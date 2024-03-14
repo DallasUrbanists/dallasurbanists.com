@@ -65,6 +65,13 @@ module FeedGeneratorPlugin
                     "icon" => "gallery"
                 }))
             end
+            site.collections['youtube'].docs.each do |post|
+                site.data["feed"].push(post.data.merge({
+                    "url" => post.url,
+                    "type" => "Youtube Video",
+                    "icon" => "youtube"
+                }))
+            end
         end
     end
 

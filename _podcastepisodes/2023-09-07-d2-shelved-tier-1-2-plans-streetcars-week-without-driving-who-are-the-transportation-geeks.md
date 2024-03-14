@@ -6,6 +6,7 @@ subtitle: This week on the podcast, we talk about D2 subway being postponed,
   Tier 1 and 2 bus network plans, weatherizing light rail for extreme heat,
   streetcar pros and cons, and the Week Without Driving campaign. Also, who are
   the Reddit geeks that broke the news on D2?
+category: Discussion
 author: bywayofdallas
 date: 2023-09-06T17:58:50.694Z
 spotify_code: 2XsvmGareR5Q98RtxNgNIg

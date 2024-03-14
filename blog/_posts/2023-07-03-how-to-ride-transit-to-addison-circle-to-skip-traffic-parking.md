@@ -5,6 +5,7 @@ author: hexel
 subtitle: Don’t drive to Addison Circle (or at least not the whole way). Read
   this handy guide on buses, park-and-rides, and GoLink service to Addison
   Transit Center.
+category: Explainer
 date: 2023-07-03T04:02:51.936Z
 cover_image: /assets/cover_images/addison-bus-routes.png
 tags:

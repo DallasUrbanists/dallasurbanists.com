@@ -3,6 +3,7 @@ layout: post
 title: "Five reasons to try a #WeekWithoutDriving"
 subtitle: National Week Without Driving happens October 2nd - 8th. Here are five
   benefits of challenging yourself to avoid driving for one week.
+category: Opinion
 author: hexel
 date: 2023-10-02T13:00:37.465Z
 cover_image: https://ucarecdn.com/4245c2f6-4096-445c-a6b6-f3667d0a67e9/

@@ -6,6 +6,7 @@ subtitle: After locking bicycle downtown, I ride bus to Addison for appointment.
   From coworking space, I ride express bus downtown and bike to Deep Ellum.
   Opportunities for improvement with bicycle lockers and first-mile connections.
 date: 2023-03-23T18:23:51.534Z
+category: Follow-Along
 cover_image: /assets/cover_images/express-bus-to-addison.png
 tags:
   - DART

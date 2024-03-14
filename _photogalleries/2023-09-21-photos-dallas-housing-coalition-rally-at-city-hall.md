@@ -1,8 +1,9 @@
 ---
 layout: gallery
-title: "PHOTOS: Dallas Housing Coalition Rally at City Hall"
+title: "Dallas Housing Coalition Rally at City Hall"
 subtitle: A hundred advocates rallied at City Hall for $200 million in bonds to
   tackle Dallas’ housing crisis.
+category: Photos
 author: hexel
 date: 2023-09-21T12:12:02.832Z
 cover_image: https://ucarecdn.com/ca028378-fd8c-4123-8c0b-8211970b5445/

@@ -4,6 +4,7 @@ subtitle: Jonathan Braddick talks about dockless shared scooters, DART begins
   hiring security to ride every train, and riding buses and trains on weekends
   are more popular now than before the pandemic.
 author: bywayofdallas
+category: Discussion
 episode_number: 5
 date: 2023-09-19T17:17:56.941Z
 spotify_code: 5CC5fUEtGmRCSt9U3UBuvH

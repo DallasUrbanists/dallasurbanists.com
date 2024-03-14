@@ -5,6 +5,7 @@ author: bywayofdallas
 subtitle: First volume of bicycle groups that meet regularly in Dallas. Whether
   you're looking for free and fun activities, want outdoor exercise, or like
   making friends, then there's a cycling group for you.
+category: Explainer
 date: 2023-05-03T06:04:22.944Z
 cover_image: /assets/cover_images/podcast-cover-photos.png
 spotify_code: 6j7hBUNzNqZrrUiDztI4UG

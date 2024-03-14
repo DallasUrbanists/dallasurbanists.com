@@ -7,6 +7,7 @@ author: connor
 title: Proposed Legislation Could Change How DART Spends Money in Member Cities
 subtitle: Join the conversation. Watch the DART board meeting and share your
   opinion on how proposed DART legislation could affect your community.
+category: News
 date: 2023-04-05T16:31:47.296Z
 cover_image: /assets/cover_images/9.png
 tags:

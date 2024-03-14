@@ -4,6 +4,7 @@ title: "In Support of Affordable Housing: Cypress Creek at Forest Lane"
 author: hexel
 subtitle: These are my comments to the Dallas Public Facility Corporation (PFC)
   meeting on March 28th, 2023.
+category: Opinion
 date: 2023-03-28T18:18:47.886Z
 cover_image: /assets/cover_images/10.png
 tags:

@@ -3,6 +3,7 @@ layout: post
 title: 10-Year Timeline Shows What Would Happen if We Chose To Remove or Bury
   Interstate 345
 subtitle: People forget how much life can change in a decade.
+category: Infographic
 date: 2022-07-14T05:44:01.973Z
 cover_image: /assets/cover_images/12.png
 header_blend_mode: multiply

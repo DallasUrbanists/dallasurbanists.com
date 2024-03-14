@@ -1,1 +1,12 @@
-<?xml version="1.0" ?><svg class="feather feather-link" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<path class="st0" d="M9.8,13.1c1.8,2.4,5.3,2.9,7.7,1.1c0.2-0.2,0.4-0.3,0.6-0.5l3.3-3.3c2.1-2.2,2.1-5.7-0.1-7.8
+	c-2.1-2.1-5.5-2.1-7.7,0l-1.9,1.9"/>
+<path class="st0" d="M14.2,10.9C12.4,8.5,8.9,8,6.5,9.8c-0.2,0.2-0.4,0.3-0.6,0.5l-3.3,3.3c-2.1,2.2-2.1,5.7,0.1,7.8
+	c2.1,2.1,5.5,2.1,7.7,0l1.9-1.9"/>
+</svg>

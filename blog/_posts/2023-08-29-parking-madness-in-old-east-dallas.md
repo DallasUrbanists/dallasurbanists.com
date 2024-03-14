@@ -3,6 +3,7 @@ layout: post
 title: Parking mandates are anti-growth
 subtitle: Minimum off-street parking requirements prevent growth in Old East
   Dallas, Lower Greenville, and Oak Cliff.
+category: Explainer
 author: hexel
 date: 2023-08-29T16:32:45.413Z
 cover_image: https://ucarecdn.com/30380cbf-8242-4a5c-8af6-c0f31e3080e4/

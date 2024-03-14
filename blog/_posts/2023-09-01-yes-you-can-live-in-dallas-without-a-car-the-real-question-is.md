@@ -3,6 +3,7 @@ layout: post
 title: Yes, you can live in Dallas without a car.
 subtitle: "Infrastructure and sprawl are two-thirds of the equation. The
   deciding factor is choice: what does your lifestyle require?"
+category: Opinion
 author: hexel
 date: 2023-09-01T09:12:23.140Z
 cover_image: https://ucarecdn.com/6ee829c9-cc16-4ca8-89ed-6a380f776f7f/

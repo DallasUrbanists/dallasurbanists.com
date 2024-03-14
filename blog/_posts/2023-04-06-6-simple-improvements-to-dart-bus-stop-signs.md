@@ -4,6 +4,7 @@ title: 6 Simple Improvements to DART Bus Stop Signs
 author: hexel
 subtitle: Humble bus stops have untapped potential. They should be redesigned to
   maximize usability.
+category: Opinion
 date: 2022-12-07T19:32:55.697Z
 cover_image: /assets/cover_images/8.png
 tags:

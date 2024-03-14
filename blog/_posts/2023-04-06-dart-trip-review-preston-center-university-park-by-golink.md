@@ -5,6 +5,7 @@ author: hexel
 subtitle: If GoLink works as expected, it should make travel a piece of cake.
   But I worry about rush hour reliability. My e-bike serves as back-up in case
   things don’t work out.
+category: Follow-Along
 date: 2023-03-24T18:20:57.133Z
 cover_image: /assets/cover_images/4.png
 tags:

@@ -5,6 +5,7 @@ author: hexel
 subtitle: Ridership would have skyrocketed by now if it weren't for the mountain of
   planning mistakes uncovered while volunteering for DART on one of the biggest
   transit days of the year.
+category: Explainer
 date: 2023-04-18T18:44:37.055Z
 cover_image: /assets/cover_images/tdl-blog-cover-paddy-day.png
 tags:

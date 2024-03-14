@@ -3,6 +3,7 @@ layout: post
 title: The Correct Lessons to Learn From Deadly Train Accidents
 author: hexel
 subtitle: Be careful not to learn the wrong lesson.
+category: Opinion
 date: 2022-08-06T18:39:20.192Z
 cover_image: /assets/cover_images/13.png
 tags:

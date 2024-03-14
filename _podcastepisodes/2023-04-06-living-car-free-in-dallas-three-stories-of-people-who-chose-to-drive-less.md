@@ -4,6 +4,7 @@ title: "Living Car Free in Dallas: Three Stories of People Who Chose To Drive Le
 author: bywayofdallas
 subtitle: Episode 2 features stories of three people living car-free or
   car-light in Dallas.
+category: Interview
 date: 2023-02-14T19:46:12.410Z
 cover_image: /assets/cover_images/podcast-ep2-cover.png
 spotify_code: 2y7V1eV6HabCPa7IqtyeQq

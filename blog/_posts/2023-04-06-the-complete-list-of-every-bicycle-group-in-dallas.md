@@ -4,6 +4,7 @@ title: The Complete List of Every Bicycle Group in Dallas
 author: hexel
 subtitle: Discover Dallas' regularly-meeting cycling clubs in this comprehensive
   spreadsheet.
+category: Resource
 date: 2023-04-06T20:24:13.501Z
 cover_image: /assets/cover_images/tdl-blog-cover-cycling-groups.png
 embed_bottom: https://docs.google.com/spreadsheets/d/e/2PACX-1vT43vZN3rjDfsUSooynLVz_omVwC5G8bGD1ta36TZ4dbN8wGeikpmtXtm5fb0qKI4XA_sYbPGuFXbpi/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false

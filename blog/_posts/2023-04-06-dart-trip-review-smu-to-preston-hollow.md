@@ -6,6 +6,7 @@ subtitle: To travel 6 miles by transit, the suggested trip plan takes a
   staggering 90 minutes across 3 connections. I’ll attempt an experimental
   technique to cut my travel time in half by booking GoLink twice.
 date: 2023-03-29T18:16:05.336Z
+category: Follow-Along
 cover_image: /assets/cover_images/5.png
 tags:
   - DART

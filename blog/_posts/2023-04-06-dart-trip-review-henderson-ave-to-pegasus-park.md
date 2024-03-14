@@ -6,6 +6,7 @@ subtitle: 6-mile midday bus trip from Lowest Greenville to an office park near
   the Medical District. A bicycle or scooter can cut hour-long trip in half, but
   the ideal solution from DART would be a non-stop east-west BRT line.
 date: 2023-03-21T18:26:50.807Z
+category: Follow-Along
 cover_image: /assets/cover_images/2.png
 tags:
   - DART

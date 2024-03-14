@@ -5,6 +5,7 @@ author: hexel
 subtitle: I participated in a walk audit organized by Walkable Arlington, a
   student-led grassroots organization partnered with University of Texas,
   Arlington.
+category: Event Recap
 date: 2023-03-13T18:29:15.126Z
 cover_image: /assets/cover_images/14.png
 tags:

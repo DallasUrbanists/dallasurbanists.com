@@ -51,6 +51,20 @@ module FeedGeneratorPlugin
                     "icon" => "link"
                 }))
             end
+            site.collections['podcastepisodes'].docs.each do |post|
+                site.data["feed"].push(post.data.merge({
+                    "url" => post.url,
+                    "type" => "Podcast",
+                    "icon" => "podcast"
+                }))
+            end
+            site.collections['photogalleries'].docs.each do |post|
+                site.data["feed"].push(post.data.merge({
+                    "url" => post.url,
+                    "type" => "Photos",
+                    "icon" => "gallery"
+                }))
+            end
         end
     end
 

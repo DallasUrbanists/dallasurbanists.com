@@ -3,6 +3,7 @@ layout: post
 title: Gentrification is Rain
 subtitle: Rather than distract over whether it's good or bad, understand
   gentrification as a force of nature.
+category: Opinion
 author: hexel
 date: 2023-08-27T21:48:02.723Z
 cover_image: https://ucarecdn.com/2aaf2bcb-1964-47d2-ae8c-435ffdc57280/

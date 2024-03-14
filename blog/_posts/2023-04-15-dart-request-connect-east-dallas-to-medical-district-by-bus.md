@@ -4,6 +4,7 @@ title: "DART Request: Connect East Dallas to Medical District by Bus"
 author: hexel
 subtitle: Health professionals living in East Dallas need a direct connection to
   the Medical District that doesn't involve an hour-long downtown detour.
+category: Idea
 date: 2023-04-15T23:22:07.581Z
 cover_image: /assets/cover_images/screenshot-2023-04-15-154122.png
 tags:

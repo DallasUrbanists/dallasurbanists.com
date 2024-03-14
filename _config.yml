@@ -25,6 +25,8 @@ collections:
     output: true
   instagramreels:
     output: true
+  links:
+    output: false
 
 media_library:
   name: uploadcare

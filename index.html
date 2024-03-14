@@ -15,7 +15,7 @@ identity_snippet: true
 <div class="container pt-3" style="max-width: 1024px;">
   <div class="site-introduction">
     <h1>What is Dallas Urbanists?</h1>
-    <p><i>Dallas Urbanists</i> is a website (<a href="https://dallasurbanists.com">dallasurbanists.com</a>) and a social media channel (<a href="https://www.instagram.com/dallasurbanists">@dallasurbanists on Instagram</a>) featuring advocacy and educational content about walkability, transportation, housing, and urban planning. Created by Hexel Colorado in December 2022, it aims to amplify ideas and voices for a more walkable, bike-friendly, transit-oriented, affordable, sustainable, safe, accessible, equitable, and vibrant Dallas. <a href="/about">Learn more about the who, what, when, where, and why of <i>Dallas Urbanists</i></a>.</p>
+    <p><i>Dallas Urbanists</i> is a website (<a href="https://dallasurbanists.com">dallasurbanists.com</a>) and a social media channel (<a href="https://www.instagram.com/dallasurbanists">@dallasurbanists on Instagram</a>) featuring advocacy and educational content about walkability, transportation, housing, and urban planning. Created by Hexel Colorado in December 2022, it aims to amplify ideas and voices for a more walkable, bike-friendly, transit-oriented, affordable, sustainable, safe, accessible, equitable, and vibrant Dallas. <a href="/about">Learn who, what, when, where, and why</a>.</p>
     <div style="margin-top: 2ch; max-width: 40em;">
       <div id="mc_embed_shell">
   
@@ -85,7 +85,8 @@ identity_snippet: true
                     {% else %}
                       {{ activity.start_date | date: "%A, %B %e" }}.
                     {% endif %}
-                    {{ activity.schedule }} at {{ activity.start_location }}
+                    {{ activity.schedule }} at {{ activity.start_location }}<br />
+                    There are 3 bike bus routes to this event: <a href="#">East Dallas</a>, <a href="#">West Dallas</a>, and <a href="#">Oak Cliff</a>
 
                   {% when "Petition" %}
                     <a href="{{ activity.external_url }}" title="View petition on {{ activity.external_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View petition</a> 
@@ -133,7 +134,7 @@ identity_snippet: true
         <tr class="post-table-top-row">
           <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ post.icon }}_icon.svg" /></td>
           <td class="title-cell">
-            <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle | default: post.title }}">
+            <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle | default: post.title }}" class="{% if post.type == "Link" %}external-link{% endif %}">
               {% if post.category %}
                 <b><strong class="fancy-font">{{ post.category }}:</strong>
               {% endif %}
@@ -144,6 +145,9 @@ identity_snippet: true
         <tr class="post-table-bottom-row">
           <td>
             {{ post.type }}
+            {% if post.type == "Link" %}
+              to <a href="//{{ post.url | extract_domain }}">{{ post.url | extract_domain }}</a>
+            {% endif %}
             {% if post.tags and post.tags.size > 0 %}
               about {% include tag-inline-list.html tags=post.tags %}
             {% endif %}
@@ -152,7 +156,23 @@ identity_snippet: true
                 by <a href="{{ post.external_url }}">{{ post.author }}</a>
               {% else %}
                 {% assign author = site.authors | where: 'name', post.author | first %}
-                by {{ author.display_name }}
+                {% if author %}
+                  by {{ author.display_name }}
+                {% else %}
+                  by {{ post.author }}
+                {% endif %}
+              {% endif %}
+              {% if post.featuring and post.featuring.size > 0 %}
+                featuring
+                {%- for feature in post.featuring -%}
+                  {% assign author = site.authors | where: 'name', feature | first %}
+                  {% if author %}
+                    <a href="#">{{ author.display_name }}</a>
+                  {% else %}
+                    {{ feature }}
+                  {% endif %}
+                  {%- if forloop.length > 1 -%}{% if forloop.rindex0 > 1 %}, {% elsif forloop.rindex0 == 1 %}, and {% endif %}{%- endif -%}
+                {%- endfor -%}                  
               {% endif %}
             {% endif %}
             on {{ post.date | date: "%B %e" }}

@@ -20,9 +20,11 @@ a {
         font-weight: 900;
     }
     
-    .title-cell
-    a:link {
+    .title-cell a:link {
         color: #060;
+    }
+    .title-cell a.external-link:link {
+        color: #009;
     }
     .title-cell
     a:visited {

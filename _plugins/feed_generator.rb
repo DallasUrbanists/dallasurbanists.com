@@ -44,6 +44,13 @@ module FeedGeneratorPlugin
                 site.pages << newPage
                 site.data["feed"].push(newData.merge({ "url" => newPage.url }))
             end
+            site.collections['links'].docs.each do |item|
+                site.data["feed"].push(item.data.merge({
+                    "url" => item.data["url"],
+                    "type" => "Link",
+                    "icon" => "link"
+                }))
+            end
         end
     end
 

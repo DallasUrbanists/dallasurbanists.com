@@ -1,4 +1,5 @@
 ---
+layout: bicycle_ride
 title: Dallas Critical Mass
 type: Bicycle Ride
 id: dallas-critical-mass
@@ -24,4 +25,4 @@ dates:
     - 2025-03-28 20:00:00
     - 2025-04-25 20:00:00
 ---
-Get on your bikes and ride!
+THIS PAGE IS UNDER CONSTRUCTION

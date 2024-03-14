@@ -1,0 +1,35 @@
+---
+layout: default
+meta_type: "petition"
+---
+{% assign external_url = page.external_url | remove_trailing_slash %}
+{% assign author = site.authors | where: 'name', page.author | first %}
+
+<h1 class="petition-title fancy-font">
+    <strong>Petition:</strong> {{ page.title }}
+</h1>
+
+<p class="subtitle">
+    {% if page.subtitle %}
+        {{ page.subtitle }} -
+    {% endif %}
+    Started by {{ author.display_name }} on {{ page.start_date | date: "%B %e, %Y" }}
+</p>
+
+<div class="petition-bar">
+    <a href="{{ page.external_url }}">Go sign petition on {{ page.external_url | extract_domain }} <img src="/assets/icons/petition_icon.svg" /></a>
+</div>
+
+{% if page.cover_image %}
+    <img src="{{ page.cover_image }}" alt="Petition cover photo" class="petition-cover-photo" />
+{% endif %}
+
+<article class="width-1024 petition-body blog-article">
+    {{ content }}
+</article>
+
+{% if page.tags and page.tags.size > 0 %}
+    <p class="petition-tags">This petition was about {% include tag-inline-list.html tags=page.tags %}</p>
+{% endif %}
+
+<div class="petition-spacer"></div>

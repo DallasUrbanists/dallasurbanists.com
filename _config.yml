@@ -21,7 +21,7 @@ collections:
     output: true
   podcastepisodes:
     output: true
-  instagramcarousels:
+  instagramposts:
     output: true
   instagramreels:
     output: true

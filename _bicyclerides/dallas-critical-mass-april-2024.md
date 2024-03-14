@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Dallas Critical Mass"
 start_date: 2024-04-26 20:00:00
 category: Critical Mass

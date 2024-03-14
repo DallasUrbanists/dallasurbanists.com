@@ -1,0 +1,30 @@
+---
+layout: default
+meta_type: "article"
+---
+<div class="blog-article-parent-container">
+    <article class="blog-article mb-5">
+      <div {% if page.cover_image %}
+          class="article-masthead"
+          style="background-image:linear-gradient(
+            to bottom, 
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, .75) 1.5rem,
+            rgba(0, 0, 0, .5),
+            rgba(0, 0, 0, .9),
+            rgba(0, 0, 0, 1)
+            ),
+            url('{{ page.cover_image | relative_url }}');
+          "
+        {% else %}
+          class="article-plainhead"
+        {% endif %}>
+        <div class="width-1024">
+          <h1 id="post-title">{{ page.title }}</h1>
+          <p class="subtitle">{{ page.subtitle }}</p>
+        </div>
+      </div>
+    </article>
+</div>
+
+{{ content }}

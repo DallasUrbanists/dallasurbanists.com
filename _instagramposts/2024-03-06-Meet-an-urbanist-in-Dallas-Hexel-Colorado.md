@@ -1,5 +1,6 @@
 ---
 layout: instagram_embed
+category: Intro
 title: "Meet an Urbanist in Dallas: Hexel Colorado"
 date: 2024-01-30
 author: "@DallasUrbanists"

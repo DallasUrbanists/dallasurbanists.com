@@ -57,7 +57,7 @@ identity_snippet: true
             <tr class="activity-top-row">
               <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ activity.icon }}_icon.svg" /></td>
               <td class="title-cell">
-                <b><i class="fancy-font">{{ activity.type }}:</i> {{ activity.title }}</b>
+                <a href="{{ activity.url }}"><strong class="fancy-font">{{ activity.type }}:</strong> {{ activity.title }}</a>
               </td>
             </tr>
             <tr class="activity-bottom-row">
@@ -88,7 +88,7 @@ identity_snippet: true
                     {{ activity.schedule }} at {{ activity.start_location }}
 
                   {% when "Petition" %}
-                    <a href="{{ activity.petition_url }}" title="View petition on {{ activity.petition_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View petition</a> 
+                    <a href="{{ activity.external_url }}" title="View petition on {{ activity.external_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View petition</a> 
                     started on {{ activity.start_date | date: "%B %e" }} by {{ activity.author }}
 
                   {% when "Public Comment" %}
@@ -132,22 +132,30 @@ identity_snippet: true
         {% endunless %}
         <tr class="post-table-top-row">
           <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ post.icon }}_icon.svg" /></td>
-          <td class="title-cell"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle | default: post.title }}">{{ post.title }}</a></td>
+          <td class="title-cell">
+            <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle | default: post.title }}">
+              {% if post.category %}
+                <b><strong class="fancy-font">{{ post.category }}:</strong>
+              {% endif %}
+              {{ post.title }}
+            </a>
+          </td>
         </tr>
         <tr class="post-table-bottom-row">
           <td>
-            {% case post.type %}
-              {% when 'Instagram Reel' %}
-                {{ post.type }} posted by <a href="https://instagram.com/dallasurbanists">@dallasurbanists</a> on {{ post.date | date: "%B %e" }}
-
-              {% when 'Instagram Carousel' %}
-                {{ post.type }} posted by <a href="https://instagram.com/dallasurbanists">@dallasurbanists</a> on {{ post.date | date: "%B %e" }}
-
-              {% when 'Article' %}
+            {{ post.type }}
+            {% if post.tags and post.tags.size > 0 %}
+              about {% include tag-inline-list.html tags=post.tags %}
+            {% endif %}
+            {% if post.author %}
+              {% if post.author contains '@' %}
+                by <a href="{{ post.external_url }}">{{ post.author }}</a>
+              {% else %}
                 {% assign author = site.authors | where: 'name', post.author | first %}
-                Article about {% include tag-inline-list.html tags=post.tags %} by {{ author.display_name }}
-    
-            {% endcase %}
+                by {{ author.display_name }}
+              {% endif %}
+            {% endif %}
+            on {{ post.date | date: "%B %e" }}
           </td>
         </tr>
       {% endfor %}

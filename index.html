@@ -7,6 +7,8 @@ identity_snippet: true
   {% assign listed_series = "" | split: "," %}
   {% assign nowSeconds = "now" | date: "%s" | minus: 0 %}
   {% assign weekSeconds = nowSeconds | plus: 604800 %}
+  {% assign today = "now" | date: "%B %e %Y" %}
+  {% assign tomorrow = nowSeconds | plus: 86400 | date: "%B %e %Y" %}
 {% endif %}
 
 {% if site.data.feed %}
@@ -52,7 +54,9 @@ identity_snippet: true
       </tr>
       {% for activity in activities %}
         {% assign dateSeconds = activity.end_date | date: "%s" | plus: 86400 %}
+        {% assign activityDate = activity.end_date | date: "%B %e %Y" %}
         {% if nowSeconds < dateSeconds %}
+          {% assign dateOnly = activity.end_date | date: "%B %e %Y" %}
           {% if dateSeconds < weekSeconds %}
             {% assign isThisWeek = 'true' %}
           {% else %}
@@ -60,13 +64,31 @@ identity_snippet: true
           {% endif %}
           {% unless activity.series and listed_series contains activity.series %}
             {% assign listed_series = listed_series | push: activity.series %}
-            <tr class="activity-top-row {% if isThisWeek == 'true' %}this-week{% endif %}">
-              <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ activity.icon }}_icon.svg" /></td>
+            <tr class="activity-top-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
+              <td class="icon-cell" rowspan="2">
+                <img src="/assets/icons/{{ activity.icon }}_icon.svg" class="icon" />
+                {% if activity.icon2 %}
+                  <img
+                    src="/assets/icons/{{ activity.icon2 }}_icon.svg"
+                    {% if activity.icon2 contains 'logo' %}
+                      class="logo"
+                    {% else %}
+                      class="icon"
+                    {% endif %}
+                    />
+                {% endif %}
+              </td>
               <td class="title-cell">
                 <a href="{{ activity.url }}">
-                  {% if isThisWeek == 'true' %}
-                    <strong class="fancy-font"><i>{{ activity.start_date | date: '%A' }}</i></strong>
-                  {% endif %}
+                  <strong class="fancy-font">
+                    {% if isThisWeek == 'true' %}
+                      {% if activityDate == today %}
+                        <strong class="fancy-font"><i><u>TODAY!</u></i></strong>
+                      {% else %}
+                        <strong class="fancy-font"><i><u>{{ activity.start_date | date: '%A' }}</u></i></strong>
+                      {% endif %}
+                    {% endif %}
+                  </strong>
                   {% if activity.type == "Special Day" %}
                     <strong class="fancy-font">{{ activity.category }}:</strong>
                   {% else %}
@@ -75,7 +97,7 @@ identity_snippet: true
                   {{ activity.title }}</a>
               </td>
             </tr>
-            <tr class="activity-bottom-row {% if isThisWeek == 'true' %}this-week{% endif %}">
+            <tr class="activity-bottom-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
               <td>
                 {% case activity.type %}
 

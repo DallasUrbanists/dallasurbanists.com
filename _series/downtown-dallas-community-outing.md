@@ -8,6 +8,7 @@ location: different location each week
 frequency: Every Wednesday
 schedule: 7:15 PM dinner/drinks, then one-hour walk
 icon: event
+icon2: walking_tour
 dates:
     - 2024-03-27 19:15:00
     - 2024-04-03 19:15:00

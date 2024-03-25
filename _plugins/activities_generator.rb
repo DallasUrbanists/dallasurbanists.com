@@ -22,7 +22,7 @@ module ActivitiesGeneratorPlugin
             site.collections['events'].docs.each do |activity|
                 site.data["activities"].push(activity.data.merge({
                     "type" => "Event",
-                    "icon" => "event",
+                    "icon" => defined?(activity.icon) ? activity.icon : "event",
                     "url" => activity.url
                 }))
             end

@@ -6,6 +6,7 @@ location: Online Zoom
 start_date: 2024-03-28 18:00:00
 end_date: 2024-03-28 19:00:00
 author: Hexel Colorado
+icon2: crosswalk
 ---
 Meeting Agenda:
 

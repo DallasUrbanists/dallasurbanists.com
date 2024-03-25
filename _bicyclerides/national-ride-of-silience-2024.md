@@ -6,6 +6,7 @@ author: Dallas Bicycle Coalition
 category: Awareness Day
 start_location: White Rock Lake Park
 schedule: Rollout 8:00 PM
+icon2: bicycle_with_kid
 ---
 Ride of Silence Details: https://rideofsilence.org/main.php
 

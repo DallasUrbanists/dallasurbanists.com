@@ -7,6 +7,7 @@ end_date: 2024-12-31 23:59:59
 external_url: https://www.change.org/pedestrianize_akard
 cover_image: https://ucarecdn.com/88130a48-dd61-4ef9-b532-c4cba9f50381/-/preview/1000x562/
 author: hexel
+icon2: crosswalk
 ---
 Lisa Jordan was crossing Akard Street when [a speeding car hit and killed her](https://twitter.com/hexel_co/status/1688671113906122752?t=QVhBRuqapVvhVct3tFHQ9A&s=19) in Downtown Dallas, Texas, on August 6th, 2023. Walking "correctly" — i.e., walking when and where Lisa was "supposed to" walk — did not prevent a collision with a car turning left onto Akard from Commerce Street. The vehicle continued to crash into the Chophouse Burger on the corner of Akard & Main Street.
 

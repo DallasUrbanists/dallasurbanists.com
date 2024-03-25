@@ -8,7 +8,6 @@ a {
     .icon-cell {
         padding-top: 0.5em;
         vertical-align: top;
-        width: 2.5em;
     }
     .title-cell a {
         text-wrap: balance;
@@ -509,11 +508,6 @@ a {
 }
 
 .post-table {
-    .icon-cell {
-        padding-top: 0.5em;
-        vertical-align: top;
-        width: 2.5em;
-    }
     .title-cell a {
         text-wrap: balance;
         color: black;
@@ -1011,7 +1005,7 @@ tr.this-week.activity-bottom-row {
     background-color: rgba(121, 154, 74, 0.1);
 }
 
-tr.this-week td.icon-cell {
+tr.this-week td.icon-cell img.icon {
     filter: invert(24%) sepia(77%) saturate(1095%) hue-rotate(85deg) brightness(98%) contrast(109%);
 }
 
@@ -1019,4 +1013,12 @@ tr.this-week h3 {
     font-size: 1rem;
     margin-top: 0.5em;
     font-style: italic;
+}
+
+.post-table.activities-table .icon-cell {
+    width: 4.25em;
+}
+
+.post-table .icon-cell {
+    width: 2.5em;
 }

@@ -7,6 +7,7 @@ start_location: Dallas Farmers Market
 frequency: Monthly on last Friday
 schedule: Gather 7pm Rollout 8pm
 icon: bicycle
+icon2: bicycle_with_kid
 dates:
     - 2024-01-26 20:00:00
     - 2024-02-23 20:00:00

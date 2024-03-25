@@ -8,6 +8,7 @@ location: Wax Space @ Tyler Station
 location_url: https://maps.app.goo.gl/kMcT8W7FarncdEos8
 frequency: Every 2nd & 4th Tuesday
 icon: event
+icon2: group_talk
 dates:
     - 2024-03-26 17:30:00
     - 2024-04-09 17:30:00

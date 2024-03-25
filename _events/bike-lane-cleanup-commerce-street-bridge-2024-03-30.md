@@ -7,6 +7,7 @@ location_url: https://maps.app.goo.gl/BqmjHk6MQoVP9S4U9
 start_date: 2024-03-30 10:00:00
 end_date: 2024-03-30 12:00:00
 author: Dallas Bicycle Coalition
+icon2: dbc_logo
 ---
 Join us for our first event of the year, a bike lane clean up! Unfortunately, the bike lanes Dallas does have aren’t maintained nearly as frequently as they need to be. It’s one of our asks for the annual budget and upcoming bike plan, but in the mean time, we can do the work ourselves.
 

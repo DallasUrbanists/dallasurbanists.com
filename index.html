@@ -6,6 +6,7 @@ identity_snippet: true
   {% assign activities = site.data.activities | sort: "start_date" %}
   {% assign listed_series = "" | split: "," %}
   {% assign nowSeconds = "now" | date: "%s" | minus: 0 %}
+  {% assign weekSeconds = nowSeconds | plus: 604800 %}
 {% endif %}
 
 {% if site.data.feed %}
@@ -52,63 +53,106 @@ identity_snippet: true
       {% for activity in activities %}
         {% assign dateSeconds = activity.end_date | date: "%s" | plus: 86400 %}
         {% if nowSeconds < dateSeconds %}
+          {% if dateSeconds < weekSeconds %}
+            {% assign isThisWeek = 'true' %}
+          {% else %}
+            {% assign isThisWeek = 'false' %}
+          {% endif %}
           {% unless activity.series and listed_series contains activity.series %}
             {% assign listed_series = listed_series | push: activity.series %}
-            <tr class="activity-top-row">
+            <tr class="activity-top-row {% if isThisWeek == 'true' %}this-week{% endif %}">
               <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ activity.icon }}_icon.svg" /></td>
               <td class="title-cell">
-                <a href="{{ activity.url }}"><strong class="fancy-font">{{ activity.type }}:</strong> {{ activity.title }}</a>
+                <a href="{{ activity.url }}">
+                  {% if isThisWeek == 'true' %}
+                    <strong class="fancy-font"><i>{{ activity.start_date | date: '%A' }}</i></strong>
+                  {% endif %}
+                  {% if activity.type == "Special Day" %}
+                    <strong class="fancy-font">{{ activity.category }}:</strong>
+                  {% else %}
+                    <strong class="fancy-font">{{ activity.type }}:</strong>
+                  {% endif %}
+                  {{ activity.title }}</a>
               </td>
             </tr>
-            <tr class="activity-bottom-row">
+            <tr class="activity-bottom-row {% if isThisWeek == 'true' %}this-week{% endif %}">
               <td>
                 {% case activity.type %}
 
                   {% when "Event" %}
+                    {% if activity.schedule %}
+                      {{ activity.start_date | date: "%B %e" }}, {{ activity.schedule }}
+                    {% else %}
+                      {{ activity.start_date | date: "%B %e, %l:%M %p" }}
+                    {% endif %}
                     {% if activity.frequency %}
-                      {{ activity.frequency }}, next is {{ activity.start_date | date: "%B %e %l:%M %p" }} |
-                    {% else %}
-                      {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} |
-                    {% endif %} 
-                    {% if activity.rsvp_url %}
-                      <a href="{{ activity.rsvp_url }}" title="RSVP on {{ activity.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}">RSVP</a> |
-                    {% endif %}
-                    {% if activity.location_url %}
-                      <a href="{{ activity.location_url }}">{{ activity.location }}</a>
-                    {% else %}
-                      {{ activity.location }}
-                    {% endif %}
+                        | {{ activity.frequency }}
+                      {% else %}
+                      {% endif %} 
+                      {% if activity.location_url %}
+                        at <a href="{{ activity.location_url }}">{{ activity.location }}</a>
+                      {% else %}
+                        at {{ activity.location }}
+                      {% endif %}
+                      {% if activity.author %}
+                        by {{ activity.author }}
+                      {% endif %}
+                      {% if activity.rsvp_url %}
+                        | <a href="{{ activity.rsvp_url }}" title="RSVP on {{ activity.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}">RSVP</a>
+                      {% endif %}
 
                   {% when "Bicycle Ride" %}
                     {% if activity.frequency %}
                       {{ activity.frequency }}, next is {{ activity.start_date | date: "%B %e" }}.
                     {% else %}
-                      {{ activity.start_date | date: "%A, %B %e" }}.
+                      {{ activity.start_date | date: "%B %e, %A" }}.
                     {% endif %}
                     {{ activity.schedule }} at {{ activity.start_location }}<br />
                     There are 3 bike bus routes to this event: <a href="#">East Dallas</a>, <a href="#">West Dallas</a>, and <a href="#">Oak Cliff</a>
 
                   {% when "Petition" %}
                     <a href="{{ activity.external_url }}" title="View petition on {{ activity.external_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View petition</a> 
-                    started on {{ activity.start_date | date: "%B %e" }} by {{ activity.author }}
+                    started on {{ activity.date | date: "%B %e" }} by {{ activity.author }}
 
                   {% when "Public Comment" %}
-                    {{ activity.start_date | date: "%A, %B %e %l:%M %p" }} | 
+                    {{ activity.start_date | date: "%B %e, %l:%M %p" }}
+                    {% if activity.location %}
+                      {% if activity.location_url %}
+                        at <a href="{{ activity.location_url }}">{{ activity.location }}</a>.
+                      {% else %}
+                        at {{ activity.location }}.
+                      {% endif %}
+                    {% endif %}
                     {% if activity.registration_url %}
-                      <a href="{{ activity.registration_url }}">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a>
+                      <a href="{{ activity.registration_url }}">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a>.
+                    {% elsif activity.registration_deadline %}
+                      | Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}.
                     {% else %}
-                      Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}
+                      | Signup is not required.
                     {% endif %}
 
                   {% when "Written Comment" %}
                     {% if activity.submission_url %}
-                      <a href="{{ activity.submission_url }}">Submit before {{ activity.start_date | date: "%B %e %l:%M %p" }}</a>
+                      <a href="{{ activity.submission_url }}">Submit before {{ activity.end_date | date: "%B %e %l:%M %p" }}</a>
                     {% else %}
-                      Submit before {{ activity.start_date | date: "%A, %B %e, %l:%M %p" }}
+                      Submit before {{ activity.end_date | date: "%B %e, %A, %l:%M %p" }}
+                    {% endif %}
+                    {% if activity.author %}
+                      | organized by {{ activity.author }}
+                    {% endif %}
+
+                  {% when "Special Day" %}
+                    {% if activity.start_date == activity.end_date %}
+                      {{ activity.start_date | date: "%B %e, %A" }}
+                    {% else %}
+                      {{ activity.start_date | date: "%B %e" }} to {{ activity.end_date | date: "%B %e" }}
+                    {% endif %}
+                    {% if activity.author %}
+                      organized by {{ activity.author }}
                     {% endif %}
 
                   {% else %}
-                    {{ activity.start_date | date: "%A, %B %e" }}
+                    {{ activity.start_date | date: "%B %e, %A" }}
                     
                 {% endcase %}
               </td>

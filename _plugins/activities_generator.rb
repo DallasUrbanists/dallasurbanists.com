@@ -22,7 +22,6 @@ module ActivitiesGeneratorPlugin
             site.collections['events'].docs.each do |activity|
                 site.data["activities"].push(activity.data.merge({
                     "type" => "Event",
-                    "end_date" => activity.data["start_date"],
                     "icon" => "event",
                     "url" => activity.url
                 }))
@@ -53,8 +52,14 @@ module ActivitiesGeneratorPlugin
             site.collections['writtencomments'].docs.each do |activity|
                 site.data["activities"].push(activity.data.merge({
                     "type" => "Written Comment",
-                    "end_date" => activity.data["start_date"], # written comments are never multi-day events
                     "icon" => "written_comment",
+                    "url" => activity.url
+                }))
+            end
+            site.collections['specialdays'].docs.each do |activity|
+                site.data["activities"].push(activity.data.merge({
+                    "type" => "Special Day",
+                    "icon" => "special_day",
                     "url" => activity.url
                 }))
             end

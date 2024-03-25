@@ -29,6 +29,8 @@ collections:
     output: false
   youtube:
     output: true
+  specialdays:
+    output: true
 
 media_library:
   name: uploadcare

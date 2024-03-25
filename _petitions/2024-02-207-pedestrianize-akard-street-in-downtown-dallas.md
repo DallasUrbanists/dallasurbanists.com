@@ -1,7 +1,8 @@
 ---
 layout: petition
 title: Pedestrianize Akard Street in Downtown Dallas (Elm-Main-Commerce)
-start_date: 2024-02-27 00:00:00
+date: 2024-02-27 00:00:00
+start_date: 2024-04-01
 end_date: 2024-12-31 23:59:59
 external_url: https://www.change.org/pedestrianize_akard
 cover_image: https://ucarecdn.com/88130a48-dd61-4ef9-b532-c4cba9f50381/-/preview/1000x562/

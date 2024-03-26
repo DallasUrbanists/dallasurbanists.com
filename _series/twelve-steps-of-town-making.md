@@ -10,7 +10,7 @@ frequency: Every 2nd & 4th Tuesday
 icon: event
 icon2: group_talk
 dates:
-    - 2024-03-26 17:30:00
+    - 2024-03-26 17:30:01
     - 2024-04-09 17:30:00
     - 2024-04-23 17:30:00
     - 2024-05-14 17:30:00

@@ -66,7 +66,7 @@ title: Dallas Urbanists Newsletter
                                         <h1 style="font-size: 32px;margin: 0;padding: 0;">Newsletter</h1>
                                     </td>
                                     <td style="color: #555;font-size: 12px;padding: 16px;text-align: right;font-style: italic;">
-                                        Issued on Monday, March 25th 2024 10:15 PM
+                                        Issued on {{ "now" | date: "%B %e %Y, %l:%M %p" }}
                                     </td>
                                     
                                 </tr>
@@ -118,7 +118,7 @@ title: Dallas Urbanists Newsletter
                                                     </td>
                                                     <td class="title-cell">
                                                       <a href="{{ activity.url | prepend: site.baseurl }}" style="
-                                                      text-wrap: balance;
+                                                      text-wrap: pretty;
                                                       display: block;
                                                       color: #060;
                                                       text-decoration: none;
@@ -260,7 +260,7 @@ title: Dallas Urbanists Newsletter
                                                         title="{{ post.subtitle | default: post.title }}"
                                                         class="{% if post.type == "Link" %}external-link{% endif %}"
                                                         style="
-                                                            text-wrap: balance;
+                                                            text-wrap: pretty;
                                                             display: block;
                                                             color: #060;
                                                             text-decoration: none;
@@ -324,9 +324,17 @@ title: Dallas Urbanists Newsletter
                                 <table class="footer-module" role="presentation" style="width:100%;border:0;border-collapse:collapse;border-spacing:0;">
                                     <tr>
                                         <td style="padding: 16px 6px; color: #eee;">
-                                            <a href="https://thisdallaslife.com/privacy-policy" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">Privacy Policy</a> |
-                                            <a href="#" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">Unsubscribe</a>
+                                            <a href="https://thisdallaslife.com" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">DallasUrbanists.com</a> |
+                                            <a href="https://www.instagram.com/dallasurbanists" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">Instagram</a> |
+                                            <a href="https://thisdallaslife.com/privacy-policy" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">Privacy Policy</a>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="padding: 16px 6px;color: #eee;padding-top: 0px;">
+                                        <p style="border-top: dotted 1px #eee;padding-top: 16px;font-weight: bold;">Don't remember signing up for this newsletter?</p>
+
+                                        <p>In November 2023, <i>This Dallas Life</i> was re-branded to <i>Dallas Urbanists</i>. You are receiving this email newsletter because you subscribed to receive email updates at <i>ThisDallasLife.com</i> or at <i>DallasUrbanists.com</i>. If you wish to unsubscribe from further emails, click the "unsubscribe from this list" link at the bottom of this email.</p>
+                                      </td>
                                     </tr>
                                 </table>
                             </td>

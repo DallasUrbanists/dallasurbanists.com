@@ -4,11 +4,27 @@ title: Dallas Urbanists Newsletter
 {% if site.data.activities %}
     {% assign activities = site.data.activities | sort: "start_date" %}
     {% assign listed_series = "" | split: "," %}
-    {% assign nowSeconds = "now" | date: "%s" | minus: 0 %}
+
+    {% comment %}
+      TO-DO
+
+      Currently, the Docker image has a timezone of UTC. It should be a
+      simple matter to update the Dockerfile to set the timezone to America/Chicago
+      (Dallas local time). However, I'm dumb when it comes to Docker and don't
+      know how to make the update. So, instead of changing the timezone in the
+      container, I manually shift the "current time" back 5 hours.
+
+      To someone smarter than me with Docker: please fix the container timezone,
+      then remove change `minus: 18000` to `minus: 0` in the code below. Delete
+      this comment when you're done.
+
+      - Hexel, hexelcolorado@gmail.com
+    {% endcomment %}
+    {% assign nowSeconds = "now" | date: "%s" | minus: 18000 %}
     {% assign weekSeconds = nowSeconds | plus: 604800 %}
     {% assign fortnight = nowSeconds | plus: 1209600 %}
-    {% assign today = "today" | date: "%B %e %Y" %}
-    {% assign currentMonth = "today" | date: "%B %Y" %}
+    {% assign today = nowSeconds | date: "%B %e %Y" %}
+    {% assign currentMonth = nowSeconds | date: "%B %Y" %}
     {% assign tomorrow = nowSeconds | plus: 86400 | date: "%B %e %Y" %}
 {% endif %}
 
@@ -66,7 +82,7 @@ title: Dallas Urbanists Newsletter
                                         <h1 style="font-size: 32px;margin: 0;padding: 0;">Newsletter</h1>
                                     </td>
                                     <td style="color: #555;font-size: 12px;padding: 16px;text-align: right;font-style: italic;">
-                                        Issued on {{ "now" | date: "%B %e %Y, %l:%M %p" }}
+                                        Issued on {{ nowSeconds | date: "%B %e %Y, %l:%M %p" }}
                                     </td>
                                     
                                 </tr>
@@ -327,6 +343,7 @@ title: Dallas Urbanists Newsletter
                                             <a href="https://thisdallaslife.com" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">DallasUrbanists.com</a> |
                                             <a href="https://www.instagram.com/dallasurbanists" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">Instagram</a> |
                                             <a href="https://thisdallaslife.com/privacy-policy" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">Privacy Policy</a>
+                                            <p>Newsletter issued on {{ nowSeconds | date: "%B %e %Y, %l:%M %p" }}</p>
                                         </td>
                                     </tr>
                                     <tr>

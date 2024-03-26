@@ -5,9 +5,25 @@ identity_snippet: true
 {% if site.data.activities %}
   {% assign activities = site.data.activities | sort: "start_date" %}
   {% assign listed_series = "" | split: "," %}
-  {% assign nowSeconds = "now" | date: "%s" | minus: 0 %}
+
+  {% comment %}
+    TO-DO
+
+    Currently, the Docker image has a timezone of UTC. It should be a
+    simple matter to update the Dockerfile to set the timezone to America/Chicago
+    (Dallas local time). However, I'm dumb when it comes to Docker and don't
+    know how to make the update. So, instead of changing the timezone in the
+    container, I manually shift the "current time" back 5 hours.
+
+    To someone smarter than me with Docker: please fix the container timezone,
+    then remove change `minus: 18000` to `minus: 0` in the code below. Delete
+    this comment when you're done.
+
+    - Hexel, hexelcolorado@gmail.com
+  {% endcomment %}
+  {% assign nowSeconds = "now" | date: "%s" | minus: 18000 %}
   {% assign weekSeconds = nowSeconds | plus: 604800 %}
-  {% assign today = "today" | date: "%B %e %Y" %}
+  {% assign today = nowSeconds | date: "%B %e %Y" %}
   {% assign tomorrow = nowSeconds | plus: 86400 | date: "%B %e %Y" %}
 {% endif %}
 

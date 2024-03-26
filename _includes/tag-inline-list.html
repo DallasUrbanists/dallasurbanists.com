@@ -1,6 +1,12 @@
 {% if include.tags != empty %}
     {%- for tag in include.tags -%}
-        <a href="{{ "/tagged/" | append: tag | relative_url }}" class="tag-link">{{ tag }}</a>
+        <a
+            href="{{ "/tagged/" | append: tag | relative_url }}"
+            class="tag-link"
+            {% if include.newsletter %}
+                style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;"
+            {% endif %}
+            >{{ tag }}</a>
         {%- if forloop.length > 1 -%}{% if forloop.rindex0 > 1 %}, {% elsif forloop.rindex0 == 1 %}, and {% endif %}{%- endif -%}
     {%- endfor -%}
 {% endif %}

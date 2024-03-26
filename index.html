@@ -7,7 +7,7 @@ identity_snippet: true
   {% assign listed_series = "" | split: "," %}
   {% assign nowSeconds = "now" | date: "%s" | minus: 0 %}
   {% assign weekSeconds = nowSeconds | plus: 604800 %}
-  {% assign today = "now" | date: "%B %e %Y" %}
+  {% assign today = "today" | date: "%B %e %Y" %}
   {% assign tomorrow = nowSeconds | plus: 86400 | date: "%B %e %Y" %}
 {% endif %}
 
@@ -80,15 +80,6 @@ identity_snippet: true
               </td>
               <td class="title-cell">
                 <a href="{{ activity.url }}">
-                  <strong class="fancy-font">
-                    {% if isThisWeek == 'true' %}
-                      {% if activityDate == today %}
-                        <strong class="fancy-font"><i><u>TODAY!</u></i></strong>
-                      {% else %}
-                        <strong class="fancy-font"><i><u>{{ activity.start_date | date: '%A' }}</u></i></strong>
-                      {% endif %}
-                    {% endif %}
-                  </strong>
                   {% if activity.type == "Special Day" %}
                     <strong class="fancy-font">{{ activity.category }}:</strong>
                   {% else %}
@@ -99,6 +90,13 @@ identity_snippet: true
             </tr>
             <tr class="activity-bottom-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
               <td>
+              {% if isThisWeek == 'true' %}
+                {% if activityDate == today %}
+                  <strong class="fancy-font day-this-week">TODAY!</strong>
+                {% else %}
+                  <strong class="fancy-font day-this-week">{{ activity.start_date | date: '%A' }}</strong>
+                {% endif %}
+              {% endif %}
                 {% case activity.type %}
 
                   {% when "Event" %}
@@ -129,8 +127,7 @@ identity_snippet: true
                     {% else %}
                       {{ activity.start_date | date: "%B %e, %A" }}.
                     {% endif %}
-                    {{ activity.schedule }} at {{ activity.start_location }}<br />
-                    There are 3 bike bus routes to this event: <a href="#">East Dallas</a>, <a href="#">West Dallas</a>, and <a href="#">Oak Cliff</a>
+                    {{ activity.schedule }} at {{ activity.start_location }}
 
                   {% when "Petition" %}
                     <a href="{{ activity.external_url }}" title="View petition on {{ activity.external_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View petition</a> 
@@ -182,8 +179,8 @@ identity_snippet: true
           {% endunless %}
         {% endif %}
       {% endfor %}
-    </table>
-  {% endif %}
+    {% endif %}
+  </table>
   {% if posts %}
     <table class="post-table"  style="width: 100%;">
       {% assign months = '' | split: ',' %}

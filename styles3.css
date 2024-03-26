@@ -1022,3 +1022,9 @@ tr.this-week h3 {
 .post-table .icon-cell {
     width: 2.5em;
 }
+
+strong.fancy-font.day-this-week {
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+}

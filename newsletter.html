@@ -49,317 +49,294 @@ title: Dallas Urbanists Newsletter
     <!--[if mso]> <noscript> <xml> <o:OfficeDocumentSettings> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml> </noscript> <![endif]-->
     
     <style>
-        :root { color-scheme: light dark; supported-color-schemes: light dark; }
     </style>
 </head>
-<body style="background-color: #333333;margin: 0;padding: 0;color: black;">
-    <table class="outer-table" cellpadding="0", cellspacing="0", border="0" style="width:100%;background: #333333;border-collapse:collapse;border-spacing:0;border: 0;" role="presentation">
-        <tr>
-            <td class="left-margin" style="width: 33%;"></td>
-            <td style="padding:0; text-align: center;">
-                <table class="middle-table" cellpadding="0", cellspacing="0", border="0" style="max-width:600px;width: 33%;border-collapse:collapse;border-spacing:0;text-align:left;" role="presentation">
-                    <tr>
-                        <td class="content-cell">
-                            <!-- Header -->
-                            <table class="header-table header-module" role="presentation" style="width:100%; border:0; border-collapse:collapse; border-spacing:0; background-color: #333333;">
-                                <tr>
-                                    <!-- divider -->
-                                    <td class="divider"> </td>
-                                </tr>
-                                <tr>
-                                    <!-- logo -->
-                                    <td class="logo" style="margin: 0; padding: 32px 0;">
-                                        <img style="width: 250px; margin-left: 6px;" src="assets/dallas-urbanists-wordmark-white.svg" alt="Dallas Urbanists" />
-                                    </td>
-                                </tr>
-                            </table>
+<body style="background-color: #333333;margin: 0;padding: 0;color: #333;">
+  <!-- Header -->
+  <table class="header-table header-module" role="presentation" style="width:100%; border:0; border-collapse:collapse; border-spacing:0; background-color: #333333;">
+      <tr>
+          <!-- logo -->
+          <td class="logo" style="margin: 0;padding: 1em;">
+              <img style="width: 250px; margin-left: 6px;" src="assets/dallas-urbanists-wordmark-white.svg" alt="Dallas Urbanists" />
+          </td>
+      </tr>
+  </table>
                             
-                            <!-- Body Module -->
-                            <table class="welcome-module" role="presentation" style="width:600px;border:0;border-collapse:collapse;border-spacing:0;background-color: #ffffff;border-radius: 6px;">
-                                <tr>
-                                    <!-- Welcome Text -->
-                                    <td class="welcome-text" style="padding: 16px;padding-bottom: 8px;">
-                                        <h1 style="font-size: 32px;margin: 0;padding: 0;">Newsletter</h1>
-                                    </td>
-                                    <td style="color: #555;font-size: 12px;padding: 16px;text-align: right;font-style: italic;">
-                                        Issued on {{ nowSeconds | date: "%B %e %Y, %l:%M %p" }}
-                                    </td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td style="padding: 0px 16px;" colspan="2">
-                                        <p style="text-wrap: pretty; text-wrap: pretty; margin-top: 0;">This newsletter is a summary of what's new and upcoming in Dallas. Today's edition features 10 activities and 6 recent posts on <a href="https://dallasurbanists.com" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">DallasUrbanists.com</a>.</p>
-                                        
-                                        <table class="post-table activities-table" style="width: 100%;">
-                                            {% if activities %}
-                                            <tr class="events-and-actions-row">
-                                              <td colspan="2" class="events-and-actions-cell">
-                                                <h2 class="fancy-font" style="
-                                                margin: 0;
-                                                border-bottom: dotted 1px #555;
-                                                font-weight: normal;
-                                                padding: 0;
-                                                margin-bottom: 16px;
-                                                font-size: 18px;
-                                            ">Events &amp; Actions</h2>
-                                              </td>
-                                            </tr>
-                                            {% for activity in activities %}
-                                              {% assign endSeconds = activity.end_date | date: "%s" | plus: 86400 %}
-                                              {% assign startSeconds = activity.start_date | date: "%s" | plus: 86400 %}
-                                              {% assign activityDate = activity.end_date | date: "%B %e %Y" %}
-                                              {% if nowSeconds < endSeconds and fortnight > startSeconds %}
-                                                {% assign dateOnly = activity.end_date | date: "%B %e %Y" %}
-                                                {% if endSeconds < weekSeconds %}
-                                                  {% assign isThisWeek = 'true' %}
-                                                {% else %}
-                                                  {% assign isThisWeek = 'false' %}
-                                                {% endif %}
-                                                {% unless activity.series and listed_series contains activity.series %}
-                                                  {% assign listed_series = listed_series | push: activity.series %}
-                                                  <tr class="activity-top-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
-                                                    <td class="icon-cell" rowspan="2" style="vertical-align: text-bottom; font-size: 0; width: 52px;">
-                                                      <img src="/assets/icons/{{ activity.icon }}_icon.svg" class="icon" style="margin-top: 4px;width: 22px;height: 22px;margin-right: 4px;"/>
-                                                      {% if activity.icon2 %}
-                                                        <img
-                                                            style="margin-top: 4px;width: 22px;height: 22px;margin-right: 4px;"
-                                                          src="/assets/icons/{{ activity.icon2 }}_icon.svg"
-                                                          {% if activity.icon2 contains 'logo' %}
-                                                            class="logo"
-                                                          {% else %}
-                                                            class="icon"
-                                                          {% endif %}
-                                                          />
-                                                      {% endif %}
-                                                    </td>
-                                                    <td class="title-cell">
-                                                      <a href="{{ activity.url | prepend: site.baseurl }}" style="
-                                                      text-wrap: pretty;
-                                                      display: block;
-                                                      color: #060;
-                                                      text-decoration: none;
-                                                      font-weight: bold;
-                                                      font-size: 18px;
-                                                      padding: 0;
-                                                      margin: 0;
-                                                  ">
-                                                        {% if activity.type == "Special Day" %}
-                                                          <strong class="fancy-font">{{ activity.category }}:</strong>
-                                                        {% else %}
-                                                          <strong class="fancy-font">{{ activity.type }}:</strong>
-                                                        {% endif %}
-                                                        {{ activity.title }}</a>
-                                                    </td>
-                                                  </tr>
-                                                  <tr class="activity-bottom-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
-                                                    <td style="font-size: 14px; text-wrap: balance; padding-bottom: 16px;">
-                                                    {% if isThisWeek == 'true' %}
-                                                        <strong class="fancy-font day-this-week" style="text-transform: uppercase;">THIS {{ activity.start_date | date: '%A' }},</strong>
-                                                    {% endif %}
-                                                      {% case activity.type %}
-                                      
-                                                        {% when "Event" %}
-                                                          {% if activity.schedule %}
-                                                            {{ activity.start_date | date: "%B %e" }}, {{ activity.schedule }}
-                                                          {% else %}
-                                                            {{ activity.start_date | date: "%B %e, %l:%M %p" }}
-                                                          {% endif %}
-                                                          {% if activity.frequency %}
-                                                              | {{ activity.frequency }}
-                                                            {% else %}
-                                                            {% endif %} 
-                                                            {% if activity.location_url %}
-                                                              at <a href="{{ activity.location_url }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">{{ activity.location }}</a>
-                                                            {% else %}
-                                                              at {{ activity.location }}
-                                                            {% endif %}
-                                                            {% if activity.author %}
-                                                              by {{ activity.author }}
-                                                            {% endif %}
-                                                            {% if activity.rsvp_url %}
-                                                              | <a href="{{ activity.rsvp_url }}" title="RSVP on {{ activity.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">RSVP</a>
-                                                            {% endif %}
-                                      
-                                                        {% when "Bicycle Ride" %}
-                                                          {% if activity.frequency %}
-                                                            {{ activity.frequency }}, next is {{ activity.start_date | date: "%B %e" }}.
-                                                          {% else %}
-                                                            {{ activity.start_date | date: "%B %e, %A" }}.
-                                                          {% endif %}
-                                                          {{ activity.schedule }} at {{ activity.start_location }}
-                                      
-                                                        {% when "Petition" %}
-                                                          <a href="{{ activity.external_url }}" title="View petition on {{ activity.external_url | remove:'http://' | remove:'https://' | split:'/' | first }}"style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">View petition</a> 
-                                                          started on {{ activity.date | date: "%B %e" }} by {{ activity.author }}
-                                      
-                                                        {% when "Public Comment" %}
-                                                          {{ activity.start_date | date: "%B %e, %l:%M %p" }}
-                                                          {% if activity.location %}
-                                                            {% if activity.location_url %}
-                                                              at <a href="{{ activity.location_url }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">{{ activity.location }}</a>.
-                                                            {% else %}
-                                                              at {{ activity.location }}.
-                                                            {% endif %}
-                                                          {% endif %}
-                                                          {% if activity.registration_url %}
-                                                            <a href="{{ activity.registration_url }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a>.
-                                                          {% elsif activity.registration_deadline %}
-                                                            | Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}.
-                                                          {% else %}
-                                                            | Signup is not required.
-                                                          {% endif %}
-                                      
-                                                        {% when "Written Comment" %}
-                                                          {% if activity.submission_url %}
-                                                            <a href="{{ activity.submission_url }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">Submit before {{ activity.end_date | date: "%B %e %l:%M %p" }}</a>
-                                                          {% else %}
-                                                            Submit before {{ activity.end_date | date: "%B %e, %A, %l:%M %p" }}
-                                                          {% endif %}
-                                                          {% if activity.author %}
-                                                            | organized by {{ activity.author }}
-                                                          {% endif %}
-                                      
-                                                        {% when "Special Day" %}
-                                                          {% if activity.start_date == activity.end_date %}
-                                                            {{ activity.start_date | date: "%B %e, %A" }}
-                                                          {% else %}
-                                                            {{ activity.start_date | date: "%B %e" }} to {{ activity.end_date | date: "%B %e" }}
-                                                          {% endif %}
-                                                          {% if activity.author %}
-                                                            organized by {{ activity.author }}
-                                                          {% endif %}
-                                      
-                                                        {% else %}
-                                                          {{ activity.start_date | date: "%B %e, %A" }}
-                                                          
-                                                      {% endcase %}
-                                                    </td>
-                                                  </tr>    
-                                                {% endunless %}
-                                              {% endif %}
-                                            {% endfor %}
-                                          {% endif %}
-                                        </table>
-
-                                        {% if posts %}
-                                        <table class="post-table"  style="width: 100%;">
-                                          {% assign months = '' | split: ',' %}
-                                          {% for post in posts %}
-                                            {% assign month = post.date | date: "%B %Y" %}
-                                            {% if month == currentMonth %}
-                                                {% unless months contains month %}
-                                                {% assign months = months | push: month %}
-                                                <tr class="month-row">
-                                                    <td colspan="2" class="month-cell">
-                                                    <h2 class="fancy-font" style="
-                                                    margin: 0;
-                                                    border-bottom: dotted 1px #555;
-                                                    font-weight: normal;
-                                                    padding: 0;
-                                                    margin-bottom: 16px;
-                                                    font-size: 18px;
-                                                ">Content from {{ month }}</h2>
-                                                    </td>
-                                                </tr>
-                                                {% endunless %}
-                                                <tr class="post-table-top-row">
-                                                <td class="icon-cell" rowspan="2" style="vertical-align: text-bottom; font-size: 0; width: 26px;">
-                                                    <img src="/assets/icons/{{ post.icon }}_icon.svg" style="margin-top: 4px; width: 22px; height: 22px; margin-right: 4px;" />
-                                                </td>
-                                                <td class="title-cell">
-                                                    <a
-                                                        {% if post.type == "Link" %}
-                                                            href="//{{ post.url }}"
-                                                        {% else %}
-                                                            href="{{ post.url | prepend: site.baseurl }}"
-                                                        {% endif %}
-                                                        title="{{ post.subtitle | default: post.title }}"
-                                                        class="{% if post.type == "Link" %}external-link{% endif %}"
-                                                        style="
-                                                            text-wrap: pretty;
-                                                            display: block;
-                                                            color: #060;
-                                                            text-decoration: none;
-                                                            font-weight: bold;
-                                                            font-size: 18px;
-                                                            padding: 0;
-                                                            margin: 0;
-                                                        ">
-                                                    {% if post.category %}
-                                                        <b><strong class="fancy-font">{{ post.category }}:</strong>
-                                                    {% endif %}
-                                                    {{ post.title }}
-                                                    </a>
-                                                </td>
-                                                </tr>
-                                                <tr class="post-table-bottom-row">
-                                                <td style="font-size: 14px; text-wrap: balance; padding-bottom: 16px;">
-                                                    {{ post.type }}
-                                                    {% if post.type == "Link" %}
-                                                    to <a href="//{{ post.url | extract_domain }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">{{ post.url | extract_domain }}</a>
-                                                    {% endif %}
-                                                    {% if post.tags and post.tags.size > 0 %}
-                                                    about {% include tag-inline-list.html tags=post.tags newsletter=true %}
-                                                    {% endif %}
-                                                    {% if post.author %}
-                                                    {% if post.author contains '@' %}
-                                                        by <a href="{{ post.external_url }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">{{ post.author }}</a>
-                                                    {% else %}
-                                                        {% assign author = site.authors | where: 'name', post.author | first %}
-                                                        {% if author %}
-                                                        by {{ author.display_name }}
-                                                        {% else %}
-                                                        by {{ post.author }}
-                                                        {% endif %}
-                                                    {% endif %}
-                                                    {% if post.featuring and post.featuring.size > 0 %}
-                                                        featuring
-                                                        {%- for feature in post.featuring -%}
-                                                        {% assign author = site.authors | where: 'name', feature | first %}
-                                                        {% if author %}
-                                                            {{ author.display_name }}
-                                                        {% else %}
-                                                            {{ feature }}
-                                                        {% endif %}
-                                                        {%- if forloop.length > 1 -%}{% if forloop.rindex0 > 1 %}, {% elsif forloop.rindex0 == 1 %}, and {% endif %}{%- endif -%}
-                                                        {%- endfor -%}                  
-                                                    {% endif %}
-                                                    {% endif %}
-                                                    on {{ post.date | date: "%B %e" }}
-                                                </td>
-                                                </tr>
-                                            {% endif %}
-                                          {% endfor %}
-                                        </table>
-                                      {% endif %}
-                                        </td>
-                                    </tr>
-                                </table>
-                                
-                                <!-- Footer Module -->
-                                <table class="footer-module" role="presentation" style="width:100%;border:0;border-collapse:collapse;border-spacing:0;">
-                                    <tr>
-                                        <td style="padding: 16px 6px; color: #eee;">
-                                            <a href="https://thisdallaslife.com" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">DallasUrbanists.com</a> |
-                                            <a href="https://www.instagram.com/dallasurbanists" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">Instagram</a> |
-                                            <a href="https://thisdallaslife.com/privacy-policy" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">Privacy Policy</a>
-                                            <p>Newsletter issued on {{ nowSeconds | date: "%B %e %Y, %l:%M %p" }}</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                      <td style="padding: 16px 6px;color: #eee;padding-top: 0px;">
-                                        <p style="border-top: dotted 1px #eee;padding-top: 16px;font-weight: bold;">Don't remember signing up for this newsletter?</p>
-
-                                        <p>In November 2023, <i>This Dallas Life</i> was re-branded to <i>Dallas Urbanists</i>. You are receiving this email newsletter because you subscribed to receive email updates at <i>ThisDallasLife.com</i> or at <i>DallasUrbanists.com</i>. If you wish to unsubscribe from further emails, click the "unsubscribe from this list" link at the bottom of this email.</p>
-                                      </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
+  <!-- Body Module -->
+  <table class="welcome-module" role="presentation" style="width:100%;border:0;border-collapse:collapse;border-spacing:0;background-color: #eeeeee;">
+    <tr>
+        <!-- Welcome Text -->
+        <td class="welcome-text" style="padding: 16px;padding-bottom: 8px;">
+            <h1 style="font-size: 32px;margin: 0;padding: 0;">{{ nowSeconds | date: "%B %e" }} Newsletter</h1>
+        </td>                                    
+    </tr>
+    <tr>
+      <td style="padding: 0px 16px;" colspan="2">
+          <p style="text-wrap: pretty; text-wrap: pretty; margin-top: 0;">This newsletter is a summary of what's new and upcoming in Dallas. Today's edition features 10 activities and 6 recent posts on <a href="https://dallasurbanists.com" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">DallasUrbanists.com</a>.</p>
+          
+          <table class="post-table activities-table" style="width: 100%;">
+              {% if activities %}
+              <tr class="events-and-actions-row">
+                <td colspan="2" class="events-and-actions-cell">
+                  <h2 class="fancy-font" style="
+                  margin: 0;
+                  border-bottom: dotted 1px #555;
+                  font-weight: normal;
+                  padding: 0;
+                  margin-bottom: 16px;
+                  font-size: 18px;
+              ">Events &amp; Actions</h2>
                 </td>
-                <td class="right-margin" style="width: 33%;"></td>
-            </tr>
-        </table>
-    </body>
-    </html>
+              </tr>
+              {% for activity in activities %}
+                {% assign endSeconds = activity.end_date | date: "%s" | plus: 86400 %}
+                {% assign startSeconds = activity.start_date | date: "%s" | plus: 86400 %}
+                {% assign activityDate = activity.end_date | date: "%B %e %Y" %}
+                {% if nowSeconds < endSeconds and fortnight > startSeconds %}
+                  {% assign dateOnly = activity.end_date | date: "%B %e %Y" %}
+                  {% if endSeconds < weekSeconds %}
+                    {% assign isThisWeek = 'true' %}
+                  {% else %}
+                    {% assign isThisWeek = 'false' %}
+                  {% endif %}
+                  {% unless activity.series and listed_series contains activity.series %}
+                    {% assign listed_series = listed_series | push: activity.series %}
+                    <tr class="activity-top-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
+                      <td class="icon-cell" rowspan="2" style="vertical-align: text-bottom; font-size: 0; width: 56px;">
+                        <img src="/assets/icons/{{ activity.icon }}_icon.svg" class="icon" style="margin-top: 4px;width: 22px;height: 22px;margin-right: 4px;display: inline-block;"/>
+                        {% if activity.icon2 %}
+                          <img
+                              style="margin-top: 4px;width: 22px;height: 22px;margin-right: 4px;"
+                            src="/assets/icons/{{ activity.icon2 }}_icon.svg"
+                            {% if activity.icon2 contains 'logo' %}
+                              class="logo"
+                            {% else %}
+                              class="icon"
+                            {% endif %}
+                            />
+                        {% endif %}
+                      </td>
+                      <td class="title-cell">
+                        <a href="{{ activity.url | prepend: site.baseurl }}" style="
+                        text-wrap: pretty;
+                        display: block;
+                        color: #060;
+                        text-decoration: none;
+                        font-weight: bold;
+                        font-size: 18px;
+                        padding: 0;
+                        margin: 0;
+                    ">
+                          {% if activity.type == "Special Day" %}
+                            <strong class="fancy-font">{{ activity.category }}:</strong>
+                          {% else %}
+                            <strong class="fancy-font">{{ activity.type }}:</strong>
+                          {% endif %}
+                          {{ activity.title }}</a>
+                      </td>
+                    </tr>
+                    <tr class="activity-bottom-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
+                      <td style="font-size: 14px; text-wrap: balance; padding-bottom: 16px;">
+                      {% if isThisWeek == 'true' %}
+                          <strong class="fancy-font day-this-week" style="text-transform: uppercase;">THIS {{ activity.start_date | date: '%A' }},</strong>
+                      {% endif %}
+                        {% case activity.type %}
+        
+                          {% when "Event" %}
+                            {% if activity.schedule %}
+                              {{ activity.start_date | date: "%B %e" }}, {{ activity.schedule }}
+                            {% else %}
+                              {{ activity.start_date | date: "%B %e, %l:%M %p" }}
+                            {% endif %}
+                            {% if activity.frequency %}
+                                | {{ activity.frequency }}
+                              {% else %}
+                              {% endif %} 
+                              {% if activity.location_url %}
+                                at <a href="{{ activity.location_url }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">{{ activity.location }}</a>
+                              {% else %}
+                                at {{ activity.location }}
+                              {% endif %}
+                              {% if activity.author %}
+                                by {{ activity.author }}
+                              {% endif %}
+                              {% if activity.rsvp_url %}
+                                | <a href="{{ activity.rsvp_url }}" title="RSVP on {{ activity.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">RSVP</a>
+                              {% endif %}
+        
+                          {% when "Bicycle Ride" %}
+                            {% if activity.frequency %}
+                              {{ activity.frequency }}, next is {{ activity.start_date | date: "%B %e" }}.
+                            {% else %}
+                              {{ activity.start_date | date: "%B %e, %A" }}.
+                            {% endif %}
+                            {{ activity.schedule }} at {{ activity.start_location }}
+        
+                          {% when "Petition" %}
+                            <a href="{{ activity.external_url }}" title="View petition on {{ activity.external_url | remove:'http://' | remove:'https://' | split:'/' | first }}"style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">View petition</a> 
+                            started on {{ activity.date | date: "%B %e" }} by {{ activity.author }}
+        
+                          {% when "Public Comment" %}
+                            {{ activity.start_date | date: "%B %e, %l:%M %p" }}
+                            {% if activity.location %}
+                              {% if activity.location_url %}
+                                at <a href="{{ activity.location_url }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">{{ activity.location }}</a>.
+                              {% else %}
+                                at {{ activity.location }}.
+                              {% endif %}
+                            {% endif %}
+                            {% if activity.registration_url %}
+                              <a href="{{ activity.registration_url }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a>.
+                            {% elsif activity.registration_deadline %}
+                              | Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}.
+                            {% else %}
+                              | Signup is not required.
+                            {% endif %}
+        
+                          {% when "Written Comment" %}
+                            {% if activity.submission_url %}
+                              <a href="{{ activity.submission_url }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">Submit before {{ activity.end_date | date: "%B %e %l:%M %p" }}</a>
+                            {% else %}
+                              Submit before {{ activity.end_date | date: "%B %e, %A, %l:%M %p" }}
+                            {% endif %}
+                            {% if activity.author %}
+                              | organized by {{ activity.author }}
+                            {% endif %}
+        
+                          {% when "Special Day" %}
+                            {% if activity.start_date == activity.end_date %}
+                              {{ activity.start_date | date: "%B %e, %A" }}
+                            {% else %}
+                              {{ activity.start_date | date: "%B %e" }} to {{ activity.end_date | date: "%B %e" }}
+                            {% endif %}
+                            {% if activity.author %}
+                              organized by {{ activity.author }}
+                            {% endif %}
+        
+                          {% else %}
+                            {{ activity.start_date | date: "%B %e, %A" }}
+                            
+                        {% endcase %}
+                      </td>
+                    </tr>    
+                  {% endunless %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </table>
+
+          {% if posts %}
+            <table class="post-table"  style="width: 100%;">
+            {% assign months = '' | split: ',' %}
+            {% for post in posts %}
+              {% assign month = post.date | date: "%B %Y" %}
+              {% if month == currentMonth %}
+                  {% unless months contains month %}
+                  {% assign months = months | push: month %}
+                  <tr class="month-row">
+                      <td colspan="2" class="month-cell">
+                      <h2 class="fancy-font" style="
+                      margin: 0;
+                      border-bottom: dotted 1px #555;
+                      font-weight: normal;
+                      padding: 0;
+                      margin-bottom: 16px;
+                      font-size: 18px;
+                  ">Content from {{ month }}</h2>
+                      </td>
+                  </tr>
+                  {% endunless %}
+                  <tr class="post-table-top-row">
+                  <td class="icon-cell" rowspan="2" style="vertical-align: text-bottom; font-size: 0; width: 26px;">
+                      <img src="/assets/icons/{{ post.icon }}_icon.svg" style="margin-top: 4px; width: 22px; height: 22px; margin-right: 4px;display: inline-block;" />
+                  </td>
+                  <td class="title-cell">
+                      <a
+                          {% if post.type == "Link" %}
+                              href="//{{ post.url }}"
+                          {% else %}
+                              href="{{ post.url | prepend: site.baseurl }}"
+                          {% endif %}
+                          title="{{ post.subtitle | default: post.title }}"
+                          class="{% if post.type == "Link" %}external-link{% endif %}"
+                          style="
+                              text-wrap: pretty;
+                              display: block;
+                              color: #060;
+                              text-decoration: none;
+                              font-weight: bold;
+                              font-size: 18px;
+                              padding: 0;
+                              margin: 0;
+                          ">
+                      {% if post.category %}
+                          <b><strong class="fancy-font">{{ post.category }}:</strong>
+                      {% endif %}
+                      {{ post.title }}
+                      </a>
+                  </td>
+                  </tr>
+                  <tr class="post-table-bottom-row">
+                  <td style="font-size: 14px; text-wrap: balance; padding-bottom: 16px;">
+                      {{ post.type }}
+                      {% if post.type == "Link" %}
+                      to <a href="//{{ post.url | extract_domain }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">{{ post.url | extract_domain }}</a>
+                      {% endif %}
+                      {% if post.tags and post.tags.size > 0 %}
+                      about {% include tag-inline-list.html tags=post.tags newsletter=true %}
+                      {% endif %}
+                      {% if post.author %}
+                      {% if post.author contains '@' %}
+                          by <a href="{{ post.external_url }}" style="color: #333; text-decoration: underline; text-decoration-style: dotted; text-decoration-skip-ink: auto; text-underline-offset: 2px;">{{ post.author }}</a>
+                      {% else %}
+                          {% assign author = site.authors | where: 'name', post.author | first %}
+                          {% if author %}
+                          by {{ author.display_name }}
+                          {% else %}
+                          by {{ post.author }}
+                          {% endif %}
+                      {% endif %}
+                      {% if post.featuring and post.featuring.size > 0 %}
+                          featuring
+                          {%- for feature in post.featuring -%}
+                          {% assign author = site.authors | where: 'name', feature | first %}
+                          {% if author %}
+                              {{ author.display_name }}
+                          {% else %}
+                              {{ feature }}
+                          {% endif %}
+                          {%- if forloop.length > 1 -%}{% if forloop.rindex0 > 1 %}, {% elsif forloop.rindex0 == 1 %}, and {% endif %}{%- endif -%}
+                          {%- endfor -%}                  
+                      {% endif %}
+                      {% endif %}
+                      on {{ post.date | date: "%B %e" }}
+                  </td>
+                  </tr>
+              {% endif %}
+            {% endfor %}
+            </table>
+          {% endif %}
+      </td>
+    </tr>
+  </table>
+
+  <!-- Footer Module -->
+  <table class="footer-module" role="presentation" style="width:100%;border:0;border-collapse:collapse;border-spacing:0;">
+    <tr>
+        <td style="padding: 16px 6px; color: #eee;">
+            <a href="https://thisdallaslife.com" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">DallasUrbanists.com</a> |
+            <a href="https://www.instagram.com/dallasurbanists" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">Instagram</a> |
+            <a href="https://thisdallaslife.com/privacy-policy" style="text-underline-offset: 2px;color: white;text-decoration: underline;text-decoration-skip-ink: auto;text-decoration-thickness: 1px;">Privacy Policy</a>
+            <p>Newsletter issued on {{ nowSeconds | date: "%B %e %Y, %l:%M %p" }}</p>
+        </td>
+    </tr>
+    <tr>
+      <td style="padding: 16px 6px;color: #eee;padding-top: 0px;">
+        <p style="border-top: dotted 1px #eee;padding-top: 16px;font-weight: bold;">Don't remember signing up for this newsletter?</p>
+
+        <p>In November 2023, <i>This Dallas Life</i> was re-branded to <i>Dallas Urbanists</i>. You are receiving this email newsletter because you subscribed to receive email updates at <i>ThisDallasLife.com</i> or at <i>DallasUrbanists.com</i>. If you wish to unsubscribe from further emails, click the "unsubscribe from this list" link at the bottom of this email.</p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

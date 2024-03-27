@@ -69,11 +69,11 @@ identity_snippet: true
         </td>
       </tr>
       {% for activity in activities %}
-        {% assign dateSeconds = activity.end_date | date: "%s" | plus: 86400 %}
+        {% assign endSeconds = activity.end_date | date: "%s" | plus: 10800 %}
         {% assign activityDate = activity.end_date | date: "%B %e %Y" %}
-        {% if nowSeconds < dateSeconds %}
+        {% if nowSeconds < endSeconds %}
           {% assign dateOnly = activity.end_date | date: "%B %e %Y" %}
-          {% if dateSeconds < weekSeconds %}
+          {% if endSeconds < weekSeconds %}
             {% assign isThisWeek = 'true' %}
           {% else %}
             {% assign isThisWeek = 'false' %}

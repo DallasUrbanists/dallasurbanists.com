@@ -20,7 +20,7 @@ module ActivitiesGeneratorPlugin
                 end
             end
             site.collections['events'].docs.each do |activity|
-                site.data["activities"].push(activity.data.merge({
+                site.data["activities"].push(activity.data.merge!({
                     "type" => "Event",
                     "icon" => defined?(activity.icon) ? activity.icon : "event",
                     "url" => activity.url
@@ -34,13 +34,6 @@ module ActivitiesGeneratorPlugin
                     "url" => activity.url
                 }))
             end
-            site.collections['petitions'].docs.each do |activity|
-                site.data["activities"].push(activity.data.merge({
-                    "type" => "Petition",
-                    "icon" => "petition",
-                    "url" => activity.url
-                }))
-            end
             site.collections['publiccomments'].docs.each do |activity|
                 site.data["activities"].push(activity.data.merge({
                     "type" => "Public Comment",
@@ -49,13 +42,7 @@ module ActivitiesGeneratorPlugin
                     "url" => activity.url
                 }))
             end
-            site.collections['writtencomments'].docs.each do |activity|
-                site.data["activities"].push(activity.data.merge({
-                    "type" => "Written Comment",
-                    "icon" => "written_comment",
-                    "url" => activity.url
-                }))
-            end
+
             site.collections['specialdays'].docs.each do |activity|
                 site.data["activities"].push(activity.data.merge({
                     "type" => "Special Day",

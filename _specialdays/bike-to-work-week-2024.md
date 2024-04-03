@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: event
 title: Bike to Work
 start_date: 2024-05-13
 end_date: 2024-05-19

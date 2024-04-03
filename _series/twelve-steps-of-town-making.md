@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: series
 title: Twelve Steps of Town Making
 author: Community Focused Ventures
 type: Event

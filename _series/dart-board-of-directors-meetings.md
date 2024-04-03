@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: series
 title: DART Board of Directors Meeting
 type: Event
 id: dart-board-of-directors-meeting

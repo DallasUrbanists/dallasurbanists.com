@@ -15,6 +15,9 @@ meta_type: "petition"
     {{ page.subtitle }} -
   {% endif %}
   Started by {{ author.display_name }} on {{ page.start_date | date: "%B %e, %Y" }}
+  {% if page.last_update %}
+    , last updated {{ page.last_update | date: "%B %e, %Y" }}
+  {% endif %}
 </p>
 
 <div class="petition-bar">

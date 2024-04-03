@@ -2,13 +2,27 @@
 layout: petition
 title: Pedestrianize Akard Street in Downtown Dallas (Elm-Main-Commerce)
 date: 2024-02-27 00:00:00
-start_date: 2024-04-01
+start_date: 2024-02-28
 end_date: 2024-12-31 23:59:59
+last_update: 2024-04-03
 external_url: https://www.change.org/pedestrianize_akard
 cover_image: https://ucarecdn.com/88130a48-dd61-4ef9-b532-c4cba9f50381/-/preview/1000x562/
 author: hexel
 icon2: crosswalk
 ---
+
+**UPDATE APRIL 3, 2024:**
+
+With over [1,110 signatures](https://www.change.org/p/pedestrianize-akard-street-in-downtown-dallas-elm-main-commerce) and [an interview](https://www.dallasnews.com/news/transportation/2024/03/15/is-dallas-unsafe-for-walking-fatality-prompts-call-for-pedestrian-zone-at-akard-street/) on the front-page of Dallas Morning News, we held our campaign kickoff  meeting last Thursday, March 28th. This campaign is about more than just fixing one street; our mission is to establish a blueprint for anyone to launch their own campaign in their neighborhood. This campaign is for anybody who wants to either help make the Akard Street pedestrian mall a reality and/or wants to learn the process for fixing a dangerous road and stepping up where our city won’t.
+
+I've modeled this campaign after [Strong Town's Crash Analysis Studio](https://academy.strongtowns.org/p/starting-your-own-crash-analysis-studio), a free online course teaching you how to "conduct your own studio and change the conversation about safe streets in your place." The course is easy for people without a technical background and takes around 2 hours to complete. You don't need to take the course to participate in this campaign, but I highly recommend it if you're considering launching a campaign!
+
+Want to get involved? Send an email to **hexelcolorado@gmail.com**.
+
+---
+
+**FEBRUARY 28, 2024:**
+
 Lisa Jordan was crossing Akard Street when [a speeding car hit and killed her](https://twitter.com/hexel_co/status/1688671113906122752?t=QVhBRuqapVvhVct3tFHQ9A&s=19) in Downtown Dallas, Texas, on August 6th, 2023. Walking "correctly" — i.e., walking when and where Lisa was "supposed to" walk — did not prevent a collision with a car turning left onto Akard from Commerce Street. The vehicle continued to crash into the Chophouse Burger on the corner of Akard & Main Street.
 
 Conflicts with cars are a daily threat to pedestrians' safety in Dallas.

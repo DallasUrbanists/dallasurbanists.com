@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: event
 title: Walk, Bike, and Roll to School
 start_date: 2024-05-08
 end_date: 2024-05-08

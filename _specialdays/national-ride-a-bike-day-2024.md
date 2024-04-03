@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: event
 title: Ride A Bike
 start_date: 2024-05-05
 end_date: 2024-05-05

@@ -1,10 +1,12 @@
 ---
-layout: default
+layout: series
 title: Downtown Dallas Community Outing
 author: Downtown Dallas 2048
+author_url: https://www.facebook.com/groups/downtowndallas
 type: Event
 id: downtown-dallas-community-outing
-location: different location each week
+location: Different location each week
+location_url: https://www.facebook.com/groups/downtowndallas
 frequency: Every Wednesday
 schedule: 7:15 PM dinner/drinks, then one-hour walk
 icon: event
@@ -53,4 +55,4 @@ dates:
 ---
 Walk the streets of Downtown Dallas with us after dark! It's good exercise and a great way to get to know your neighborhood. We use the Dallas 311, See Say, and Oncor apps to submit service requests on the spot.
 
-We meet for dinner/drinks at 7:15, then choose a destination and walk for one hour. The location is posted in the Facebook group and changes weekly.
+We meet for dinner/drinks at 7:15, then choose a destination and walk for one hour. The location is posted in the [Downtown Dallas 2048 Facebook group](https://www.facebook.com/groups/downtowndallas) and changes weekly.

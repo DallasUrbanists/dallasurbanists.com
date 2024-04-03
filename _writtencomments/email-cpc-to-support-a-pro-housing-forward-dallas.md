@@ -1,10 +1,12 @@
 ---
+layout: written-comment
 title: Email CPC to Support a Pro-Housing Forward Dallas
 category: Email Campaign
 date: 2024-03-25
 start_date: 2024-04-21
 end_date: 2024-04-30
 author: Dallas Neighbors for Housing
+author_url: https://www.dallasneighborsforhousing.org/
 icon2: dn4h_logo
 submission_url: https://actionnetwork.org/letters/email-city-plan-commission-to-support-a-pro-housing-forward-dallas
 ---

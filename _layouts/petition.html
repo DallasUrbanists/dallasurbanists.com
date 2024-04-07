@@ -40,7 +40,9 @@ meta_type: "article"
           {% if page.gallery and page.gallery.size > 0 %}
             <li class="nav-item" role="presentation"><button class="nav-link" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery-pane" aria-selected="false">Gallery <span class="number-pill">{{ page.gallery | size }}</span></a></li>
           {% endif %}
-          <li class="nav-item" role="presentation"><button class="nav-link" id="campaign-tab" data-bs-toggle="tab" data-bs-target="#campaign-pane" aria-selected="false">Campaign</a></li>
+          {% if page.github_project_id %}
+            <li class="nav-item" role="presentation"><button class="nav-link" id="campaign-tab" data-bs-toggle="tab" data-bs-target="#campaign-pane" aria-selected="false">Campaign</a></li>
+          {% endif %}
           <li class="nav-item" role="presentation"><button class="nav-link" id="related-tab" data-bs-toggle="tab" data-bs-target="#related-pane" aria-selected="false">Related</a></li>
         </ul>
         <div class="tab-content" id="subnavContent">
@@ -74,7 +76,12 @@ meta_type: "article"
             </div>
           {% endif %}
           <div class="tab-pane" id="campaign-pane" role="tabpanel" aria-labelledby="campaign-tab" tabindex="0">
-            campaign content
+            {% if page.github_project %}
+              <p>Project Title: {{ page.github_project.title }}</p>
+              <p>Project Description: {{ page.github_project.description }}</p>
+            {% else %}
+              <p class="developer-note"><strong>DEVELOPER NOTE:</strong> this campaign is linked to a <a href="https://github.com/orgs/DallasUrbanists/projects">project on Github</a> that would normally appear right here. However, it's not appearing because someone forgot to set the GH_ACCESS_TOKEN environment variable.</p>
+            {% endif %}
           </div>
           <div class="tab-pane" id="related-pane" role="tabpanel" aria-labelledby="related-tab" tabindex="0">
             related content

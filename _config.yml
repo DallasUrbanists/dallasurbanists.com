@@ -40,3 +40,6 @@ media_library:
     publicKey: d50f0c9e161743596858
 
 url: https://dallasurbanists.com
+
+plugins:
+  - jekyll-dotenv

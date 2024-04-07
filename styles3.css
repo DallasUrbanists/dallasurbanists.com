@@ -1108,3 +1108,17 @@ table.updates-table tr td:first-child p {
 #gallery-pane img {
     margin: 1em;
 }
+
+.developer-note {
+    background-color: #c00 !important;
+    color: white !important;
+    padding: 1em;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    border: dashed 4px white;
+}
+
+.developer-note a {
+    color: white !important;
+    text-decoration-color: white;
+}

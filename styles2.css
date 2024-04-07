@@ -150,7 +150,7 @@ img.muted {
 }
 
 .blog-article h1:not(.lined-heading) {
-    margin: 1em 0;
+    /* margin: 1em 0; */
     color: black;
     font-size: 1.25em;
 }

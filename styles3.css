@@ -285,7 +285,7 @@ input#mce-EMAIL {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    padding: 1rem;
+    /* padding: 1rem; */
     /* margin-bottom: 1em; */
 }
 
@@ -800,6 +800,7 @@ input#mce-EMAIL {
 }
 
 .width-1024 {
+    width: 100%;
     max-width: 1024px;
     margin: 0 auto;
     display: block;
@@ -908,12 +909,12 @@ h1.instagram-title strong {
 /*************/
 
 h1.petition-title {
+    padding: 1rem;
     text-wrap: balance;
     text-align: left;
-    margin: 1em auto;
+    margin: 0 auto;
     max-width: 1024px;
     font-weight: 600;
-    margin-bottom: 0.5em;
 }
 
 h1.petition-title strong {
@@ -921,11 +922,14 @@ h1.petition-title strong {
 }
 
 .petition-title + .subtitle {
+    font-size: 0.75rem;
     font-weight: normal;
     text-wrap: balance;
     text-align: left;
     max-width: 1024px;
-    margin: 0 auto 1em;
+    margin: 0 auto;
+    padding: 1rem;
+    padding-top: 0;
 }
 
 .petition-body {
@@ -933,12 +937,13 @@ h1.petition-title strong {
     margin: 0 auto;
     font-weight: normal;
     text-align: left;
+    padding: 1em;
 }
 
 .petition-cover-photo {
     max-width: 1024px;
     width: 100%;
-    margin: 1em auto;
+    margin: 0 auto;
     display: block;
     /* border-radius: 1rem; */
 }
@@ -953,6 +958,15 @@ h1.petition-title strong {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    .petition-bar {
+        font-size: 0.8rem;
+    }
+    .petition-bar a {
+        padding: 1em 0.5em;
+    }
 }
 
 .petition-bar a {
@@ -1027,4 +1041,70 @@ strong.fancy-font.day-this-week {
     font-weight: bold;
     text-decoration: underline;
     text-transform: uppercase;
+}
+
+.content-type-tag {
+    border-radius: 0.5em;
+    display: inline-block;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.number-pill {
+    font-style: italic;
+    font-size: 0.75em;
+    display: inline-block;
+    border: solid 1px #333;
+    line-height: 1.2em;
+    padding: 0 0.2em;
+    border-radius: 3px;
+    vertical-align: super;
+}
+
+.active .number-pill {
+    border-color: #EEE;
+}
+
+.nav.sub-nav button.nav-link {
+    color: #060;
+}
+
+.nav.sub-nav {position: sticky;margin-bottom: 1em;border-bottom: solid 1px #333;top: 0;background-color: #EEE;}
+
+.nav.sub-nav button.nav-link.active {
+    background-color: #333;
+    color: white;
+}
+
+.tab-pane {
+    min-height: 100svh;
+}
+
+img.inline-icon {
+    height: 1em;
+    display: inline-block;
+    width: 1em;
+}
+
+table.updates-table tr td {
+    vertical-align: top;
+    border-bottom: solid 1px #333;
+    padding-top: 1em;
+}
+
+table.updates-table tr:first-child  td {
+    padding-top: 0;
+}
+
+table.updates-table tr td:first-child {
+    font-weight: bold;
+    width: 100px;
+}
+table.updates-table tr td:first-child p {
+    margin: 0;
+    padding: 0;
+}
+
+#gallery-pane img {
+    margin: 1em;
 }

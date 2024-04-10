@@ -274,7 +274,7 @@ input#mce-EMAIL {
 }
 
 .article-masthead {
-    height: 75svh;
+    min-height: 75svh;
     background-size: cover;
     background-position: center center;
     color: white;
@@ -772,22 +772,6 @@ input#mce-EMAIL {
     padding-right: 6px;
 }
 
-.article-masthead {
-    height: 75svh;
-    background-size: cover;
-    background-position: center center;
-    color: white;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    background-color: #EEE;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    padding: 1rem;
-    /* margin-bottom: 1em; */
-}
-
 .article-masthead #post-title {
     font-size: 3rem;
     margin-bottom: 0;
@@ -1065,15 +1049,18 @@ strong.fancy-font.day-this-week {
     border-color: #EEE;
 }
 
-.nav.sub-nav button.nav-link {
+.nav.sub-nav .nav-link {
     color: #060;
+    cursor: pointer;
 }
 
 .nav.sub-nav {position: sticky;margin-bottom: 1em;border-bottom: solid 1px #333;top: 0;background-color: #EEE;}
 
-.nav.sub-nav button.nav-link.active {
+.nav.sub-nav .nav-link.active {
     background-color: #333;
     color: white;
+    border-top-right-radius: 0.25em;
+    border-top-left-radius: 0.25em;
 }
 
 .tab-pane {

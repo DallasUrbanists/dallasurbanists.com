@@ -46,6 +46,8 @@ module GithubProjectsGenerator
             {
                 "title" => responseBody["title"],
                 "description" => responseBody["shortDescription"],
+                "url" => responseBody["url"],
+                "last_sync" => DateTime.now,
                 "tasks" => responseBody["items"]["edges"].map { |edge|
                     node = edge["node"]
                     {
@@ -97,6 +99,7 @@ module GithubProjectsGenerator
                         ... on ProjectV2 {
                             title,
                             shortDescription,
+                            url,
                             items(last: 100) {
                                 edges {
                                 node {

@@ -19,6 +19,7 @@ meta_type: "article"
             rgba(0, 0, 0, 1)
             ),
             url('{{ page.cover_image | relative_url }}');
+            min-height: 25svh !important;
           "
         {% else %}
           class="article-plainhead"
@@ -30,20 +31,20 @@ meta_type: "article"
         </div>
       </div>
       <div class="width-1024 below-mast">
-        <p><a href="{{ page.external_url }}">{{ page.signature_count | thousands_separated }} signatures on petition <img src="/assets/icons/external_link_icon.svg" class="inline-icon" /></a> started by {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</p>
-        {% if last_update %}
-          <p>Last update was on {{ last_update.date | date: "%B %-d, %Y" }}</p>
-        {% endif %}
+        <p>
+          <a href="{{ page.external_url }}">{{ page.signature_count | thousands_separated }} signatures on petition <img src="/assets/icons/external_link_icon.svg" class="inline-icon" /></a> started by {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}.
+          {% if last_update %}Last update was on {{ last_update.date | date: "%B %-d, %Y" }}{% endif %}
+        </p>
         <ul class="nav sub-nav" id="subnav" role="tablist">
-          <li class="nav-item" role="presentation"><button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#details-pane" aria-selected="true">Details</a></li>
-          <li class="nav-item" role="presentation"><button class="nav-link" id="updates-tab" data-bs-toggle="tab" data-bs-target="#updates-pane" aria-selected="false">Updates <span class="number-pill">{{ updates | size }}</span></a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link active" href="#details" id="details-tab" data-bs-toggle="tab" data-bs-target="#details-pane" aria-selected="true">Details</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link" href="#updates" id="updates-tab" data-bs-toggle="tab" data-bs-target="#updates-pane" aria-selected="false">Updates <span class="number-pill">{{ updates | size }}</span></a></li>
           {% if page.gallery and page.gallery.size > 0 %}
-            <li class="nav-item" role="presentation"><button class="nav-link" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery-pane" aria-selected="false">Gallery <span class="number-pill">{{ page.gallery | size }}</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="#gallery" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery-pane" aria-selected="false">Gallery <span class="number-pill">{{ page.gallery | size }}</span></a></li>
           {% endif %}
           {% if page.github_project_id %}
-            <li class="nav-item" role="presentation"><button class="nav-link" id="campaign-tab" data-bs-toggle="tab" data-bs-target="#campaign-pane" aria-selected="false">Campaign</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="#campaign" id="campaign-tab" data-bs-toggle="tab" data-bs-target="#campaign-pane" aria-selected="false">Campaign</a></li>
           {% endif %}
-          <li class="nav-item" role="presentation"><button class="nav-link" id="related-tab" data-bs-toggle="tab" data-bs-target="#related-pane" aria-selected="false">Related</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link" href="#related" id="related-tab" data-bs-toggle="tab" data-bs-target="#related-pane" aria-selected="false">Related</a></li>
         </ul>
         <div class="tab-content" id="subnavContent">
           <div class="tab-pane show active" id="details-pane" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
@@ -77,6 +78,7 @@ meta_type: "article"
           {% endif %}
           <div class="tab-pane" id="campaign-pane" role="tabpanel" aria-labelledby="campaign-tab" tabindex="0">
             {% if page.github_project %}
+              <p><a href="{{ page.github_project.url }}">Last sync with GitHub on {{ page.github_project.last_sync | date: "%B %-d, %Y %l:%M %P" }}</a></p>
               <p>Project Title: {{ page.github_project.title }}</p>
               <p>Project Description: {{ page.github_project.description }}</p>
             {% else %}
@@ -90,6 +92,25 @@ meta_type: "article"
       </div>
     </article>
 </div>
+
+<script>
+  document.querySelectorAll("a.nav-link[data-bs-toggle=tab]").forEach(function(element) {
+    element.addEventListener("click", function(e) {
+      if(history.pushState) {
+          history.pushState(null, null, this.href);
+      } else {
+          location.hash = this.href;
+      }
+    });
+  });
+
+  const currentTabLink = document.querySelector("a.nav-link[href='" + location.hash + "']");
+
+  if (currentTabLink) {
+    new bootstrap.Tab(currentTabLink);
+    bootstrap.Tab.getInstance(currentTabLink).show();
+  }
+</script>
 
 {% if page.gallery and page.gallery.size > 0 %}
 

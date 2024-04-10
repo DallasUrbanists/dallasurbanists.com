@@ -4,19 +4,47 @@
 backend:
   name: git-gateway
   branch: main
-site_url: https://thisdallaslife.com
-logo_url: https://thisdallaslife.github.io/thisdallaslife.com/assets/compact-logo-and-wordmark-color.svg
+  repo: DallasUrbanists/dallasurbanists.com
+
+site_url: https://dallasurbanists.com
+logo_url: https://dallasurbanists.com/assets/dallas-urbanists-wordmark.svg
 publish_mode: editorial_workflow
 media_folder: "assets/cover_images"
 search: false
+
 collections:
+
+  - name: "events"
+    label: "Events"
+    label_singular: "Event"
+    folder: "_events"
+    create: true
+    {% raw %}
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Start Date", name: "start_date", widget: "datetime"}
+      - {label: "End Date", name: "end_date", widget: "datetime", required: false}
+      - label: "Location"
+        name: "location"
+        widget: "object"
+        summary: "{{ fields.name }}"
+        hint: "Leave this alone if your event is online only."
+        fields:
+          - {label: "Name of Venue/Building/Business", name: "name", widget: "string", hint: "e.g., Bryan Street Tavern", required: false}
+          - {label: "Street Address", name: "address", widget: "string", hint: "e.g., 4315 Bryan St", required: false}
+          - {label: "City", name: "city", widget: "string", default: "Dallas" }
+          - {label: "Zip", name: "zip", widget: "number", required: false, hint: "e.g., 75204"}
+      - {label: "Details", name: "body", widget: "markdown"}
+
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "blog/_posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     {% raw %}
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    {% endraw %}
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
@@ -39,73 +67,43 @@ collections:
           widget: "select", 
           required: false, 
           multiple: true, 
-
+          
           {%- capture options -%}
-            {%- for tag in site.tags -%}
-              "{{tag[0]}}",
-            {%- endfor -%}
-                        
-            {%- for tag in site.data.tags.items -%}
-              "{{tag.name}}",
-            {%- endfor -%}
+          {%- for tag in site.tags -%}
+          "{{tag[0]}}",
+          {%- endfor -%}
+          
+          {%- for tag in site.data.tags.items -%}
+          "{{tag.name}}",
+          {%- endfor -%}
           {%- endcapture -%}
           {% assign sorted_options = options | split: "," | uniq | sort | join: ", " %}
           
           options: [{{ sorted_options }}] 
-        }
+        }  
 
-  - name: 'bicyclerides'
-    label: 'Bicycle Rides'
-    folder: '_bicyclerides'
-    create: true
+  - name: "authors"
+    label: "Authors"
+    folder: "_authors/"
     {% raw %}
-      slug: "{{year}}-{{month}}-{{day}}-bicycleride-{{slug}}" # Filename template, e.g., YYYY-MM-DD-bicycleride-title.md
+    slug: "{{name}}"
     {% endraw %}
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Start Location", name: "start_location", widget: "string"}
-      - {label: "Schedule", name: "schedule", widget: "string"}
-      - {
-          label: 'Series',
-          name: 'series',
-          widget: 'relation',
-          collection: 'series',
-          display_fields: [title],
-          search_fields: [title],
-          value_field: 'id',
-          required: false
-        }
-
-  - name: 'instagramreels'
-    label: 'Instagram Reels'
-    folder: '_instagramreels'
+    output: true
     create: true
-    {% raw %}
-      slug: "{{year}}-{{month}}-{{day}}-instagramreel-{{slug}}" # Filename template, e.g., YYYY-MM-DD-instagramreel-title.md
-    {% endraw %}
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
-      - {label: "URL", name: "external_url", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {
-          label: 'Author',
-          name: 'author',
-          widget: 'relation',
-          collection: 'authors',
-          display_fields: [display_name],
-          search_fields: [display_name],
-          value_field: 'name',
-        }
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+    editor: { preview: false }
+    fields:
+      - { label: 'Short Name', name: 'name', widget: 'string' }
+      - { label: 'Display Name', name: 'display_name', widget: 'string' }
+      - { label: 'Email', name: 'email', widget: 'string' }
+      - { label: 'Twitter Handle', name: 'twitter', widget: 'string', required: false  }
+      - { label: 'Instagram Handle', name: 'instagram', widget: 'string', required: false  }
+      - { label: 'Reddit Handle', name: 'reddit', widget: 'string', required: false  }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
 
   - name: 'config'
     label: 'Config'
-    editor:
-      preview: false
+    editor: { preview: false }
     files:
       - label: 'Tag'
         name: 'tag'
@@ -116,26 +114,6 @@ collections:
             widget: 'list'
             fields:
               - { label: Name, name: name, widget: string }
-
-  - name: "authors"
-    label: "Authors"
-    folder: "_authors/"
-    {% raw %}
-    slug: "{{name}}"
-    {% endraw %}
-    output: true
-    create: true
-    editor:
-      preview: false
-    fields:
-    - { label: 'Short Name', name: 'name', widget: 'string' }
-    - { label: 'Display Name', name: 'display_name', widget: 'string' }
-    - { label: 'Email', name: 'email', widget: 'string' }
-    - { label: 'Twitter Handle', name: 'twitter', widget: 'string', required: false  }
-    - { label: 'Instagram Handle', name: 'instagram', widget: 'string', required: false  }
-    - { label: 'Reddit Handle', name: 'reddit', widget: 'string', required: false  }
-    - { label: 'Body', name: 'body', widget: 'markdown' }
-    - { label: "Photo", name: "photo", widget: "image", required: false }
 
 media_library:
   name: uploadcare

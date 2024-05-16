@@ -29,8 +29,8 @@ layout: default
     table.event-details th,
     table.event-details td
     {
-        border: solid 1px #ccc;
-        padding: 0.5em;
+        border-bottom: dotted 1px #ccc;
+        padding: 0.5em 0;
         vertical-align: top;
     }
 
@@ -95,7 +95,7 @@ layout: default
         <tr>
             <th>Location</th>
             <td>
-                {% if page.location.name %}
+                {% if page.in_person %}
                     {% assign in_person = true %}
                     {% if page.location.url %}
                         {% assign location_url = page.location.url %}
@@ -108,8 +108,12 @@ layout: default
                     {% endif %}
 
                     <p>
-                        <a href="{{ location_url }}">{{ page.location.name }}</a>
-                        {% if page.location.address %}<br />{{ page.location.address }}{% endif %}
+                        <a href="{{ location_url }}">
+                            {{ page.location.name }}{% if page.location.name and page.location.address %}, {% endif %}
+                            {% if page.location.address %}
+                                {{ page.location.address }}
+                            {% endif %}
+                        </a>
                     </p>
 
                     {% if page.location.find_guide %}
@@ -172,6 +176,13 @@ layout: default
                 {% if page.rsvp.instructions %}
                     <p><strong>Instructions:</strong> {{ page.rsvp.instructions }}</p>
                 {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Add to Calendar</th>
+            <td>
+                <a href="{{ page.google_calendar_link }}" target="_blank">Google</a> |
+                <a href="{{ page.google_calendar_link }}" target="_blank">Apple/Outlook (iCal)</a>
             </td>
         </tr>
     </table>

@@ -1,0 +1,102 @@
+---
+layout: default
+---
+{% assign nowSeconds = "now" | date: "%s" | minus: 18000 %}
+{% assign weekSeconds = nowSeconds | plus: 604800 %}
+{% assign today = nowSeconds | date: "%B %e %Y" %}
+{% assign tomorrow = nowSeconds | plus: 86400 | date: "%B %e %Y" %}
+{% assign endSeconds = page.end_date | date: "%s" | plus: 10800 %}
+{% assign activityDate = page.end_date | date: "%B %e %Y" %}
+{% assign dateOnly = page.end_date | date: "%B %e %Y" %}
+{% if endSeconds < weekSeconds %}
+    {% assign isThisWeek = 'true' %}
+{% else %}
+    {% assign isThisWeek = 'false' %}
+{% endif %}
+<style>
+    .event-page-container {
+        padding: 1em;
+    }
+    .event-page-container .icon {
+        width: 1em;
+    }
+    table.event-details {
+        margin-bottom: 1em;
+        width: 100%;
+    }
+
+    table.event-details th,
+    table.event-details td
+    {
+        border: solid 1px #ccc;
+        padding: 0.5em;
+    }
+
+    .pretty-wrap {
+        text-wrap: pretty;
+    }
+</style>
+<div class="event-page-container width-1024">
+
+    <h1>
+        <img src="/assets/icons/{{ page.icon }}_icon.svg" alt="{{ page.icon }}" class="icon" />
+        {% if page.icon2 %}
+            <img src="/assets/icons/{{ page.icon2 }}_icon.svg" alt="{{ page.icon2 }}" {% if page.icon2 contains 'logo' %} class="icon logo" {% else %} class="icon" {% endif %} />
+        {% endif %}
+        
+        <div class="pretty-wrap">{{ page.title }}</div>
+    </h1>
+
+    <table class="event-details">
+        <tr>
+            <th style="width: 10em;">Date &amp; Time</th>
+            <td>
+                {% if activity.schedule %}
+                    {{ activity.start_date | date: "%B %e" }}, {{ activity.schedule }}
+                {% else %}
+                    {{ activity.start_date | date: "%B %e, %l:%M %p" }}
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>
+                {% if page.location_url %}
+                    <a href="{{ page.location_url }}">{{ page.location }}</a>
+                {% else %}
+                    {{ page.location }}
+                {% endif %}        
+            </td>
+        </tr>
+        <tr>
+            <th>Registration</th>
+            <td>
+                {% if activity.registration_url %}
+                    <a href="{{ page.rsvp_url }}" title="RSVP on {{ page.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}">Register at {{ page.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}</a>
+                    {% if activity.registration_deadline %}
+                        before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}
+                    {% endif %}
+                {% elsif activity.registration_deadline %}
+                    Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}.
+                {% else %}
+                    Signup is not required.
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Host</th>
+            <td>
+                {% if page.author %}
+                    {% if page.author_url %}
+                        <a href="{{ page.author_url }}">{{ page.author }}</a>
+                    {% else %}
+                        {{ page.author }}
+                    {% endif %}
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+ 
+    {{ content }}
+
+</div>

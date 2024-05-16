@@ -306,9 +306,10 @@ input#mce-EMAIL {
     display: block;
 }
 
-.blog-article .article-masthead p.subtitle {
+.article-masthead p.subtitle {
     text-wrap: balance;
     color: white;
+    display: block;
 }
 
 ul.source-list {
@@ -793,6 +794,7 @@ input#mce-EMAIL {
 .blog-article .article-masthead p.subtitle {
     text-wrap: balance;
     color: white;
+    display: block;
 }
 
 ul.source-list {
@@ -830,6 +832,7 @@ ul.source-list li p:last-child {
     margin-bottom: 0;
     text-wrap: balance;
     font-style: italic;
+    display: block;
 }
 
 .instagram-container {

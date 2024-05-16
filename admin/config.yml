@@ -24,9 +24,12 @@ collections:
     {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
     editor: { preview: false }
     fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Start Date", name: "start_date", widget: "datetime"}
       - {label: "End Date", name: "end_date", widget: "datetime", required: false}
+      - {label: "Frequency", name: "frequency", widget: "string", hint: "e.g., We host a happy hour once a month.", required: false}
+      - {label: "Schedule", name: "schedule", width: "string", hint: "e.g., Gather 7:00pm Rollout 8:00pm", required: false}
       - label: "Meeting Location"
         name: "location"
         widget: "object"
@@ -36,11 +39,11 @@ collections:
         collapsed: true
         fields:
           - {label: "Name of Venue/Building/Business", name: "name", widget: "string", hint: "e.g., Bryan Street Tavern", required: false}
-          - {label: "Street Address", name: "address", widget: "string", hint: "e.g., 4315 Bryan St", required: false}
-          - {label: "City", name: "city", widget: "string", default: "Dallas", required: false }
-          - {label: "Zip", name: "zip", widget: "number", required: false, hint: "e.g., 75204"}
+          - {label: "Street Address", name: "address", widget: "string", hint: "e.g., 4315 Bryan St, Dallas", required: false}
+          - {label: "Google Maps URL / Location website", name: "url", widget: "string", hint: "If you leave this blank, a Google Maps URL will be generated automatically based on the street address.", required: false}
+          - {label: "How to find", name: "find_guide", widget: "string", hint: "Mention things like access codes, elevators, floor numbers, room numbers, getting through security, etc.", required: false}
           - {label: "Public Transit Guide", name: "transit_guide", widget: "string", hint: "List nearby bus stops, transit centers, or microtransit instructions.", required: false}
-          - {label: "Bicycle Guide", name: "cycling_guide", widget: "string", hint: "Mention nearby trails and bicycle parking instructions.", required: false}
+          - {label: "Cycling Guide", name: "cycling_guide", widget: "string", hint: "Mention nearby trails and bicycle parking instructions.", required: false}
           - {label: "Parking Guide", name: "parking_guide", widget: "string", hint: "Describe parking instructions, if necessary.", required: false}
       - label: "Virtual Meeting"
         name: "virtual"
@@ -50,8 +53,8 @@ collections:
         required: false
         collapsed: true
         fields:
-          - {label: "Virtual Meeting URL", name: "virtual_meeting_url", widget: "string", hint: "Paste your Zoom/Webex/Teams link here.", required: false}
-          - {label: "Virtual Meeting Instructions", name: "virtual_meeting_instructions", widget: "string", hint: "Mention if additional steps are required to enter virtual meeting, such as checking email for link or passcode.", required: false}
+          - {label: "Virtual Meeting URL", name: "url", widget: "string", hint: "Paste your Zoom/Webex/Teams link here.", required: false}
+          - {label: "Virtual Meeting Instructions", name: "instructions", widget: "string", hint: "Mention if additional steps are required to enter virtual meeting, such as checking email for link or passcode.", required: false}
       - label: "RSVP Instructions"
         name: "rsvp"
         widget: "object"
@@ -61,27 +64,27 @@ collections:
           - label: Is this event free?
             name: pricing
             widget: select
-            default: Yes, this event is 100% free
+            default: This event is 100% free
             options:
-              - Yes, this event is 100% free
-              - Yes, though purchasing food or drinks is encouraged
-              - No, ticket purchase is required
+              - This event is 100% free
+              - Free event, purchasing food/drinks is encouraged
+              - Ticket purchase is required
           - label: Is advance registration required?
-            name: rsvp_requirement
+            name: requirement
             widget: select
             default: No registration
             options:
               - No registration
               - RSVP encouraged
-              - Required for some; see instructions
-              - Required for all; see instructions
-          - {label: "Registration Link", name: "rsvp_url", widget: "string", required: false}
-          - {label: "Registration Instructions", name: "rsvp_instructions", widget: "text", required: false}
-          - {label: "Registration Deadline", name: "rsvp_deadline", widget: "datetime", required: false}
+              - RSVP required for some
+              - RSVP required for all
+          - {label: "Registration Link", name: "url", widget: "string", required: false}
+          - {label: "Registration Instructions", name: "instructions", widget: "text", required: false}
+          - {label: "Registration Deadline", name: "deadline", widget: "datetime", required: false}
       - {label: "Details", name: "body", widget: "markdown"}
       - label: Cover Photo
         allow_multiple: false
-        name: cover_photo
+        name: cover_image
         widget: image
 
   - name: "blog" # Used in routes, e.g., /admin/collections/blog

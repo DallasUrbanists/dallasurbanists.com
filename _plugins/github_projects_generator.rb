@@ -18,6 +18,7 @@ module GithubProjectsGenerator
         end
 
         def fetchProjectsForCollection(collection_name, site)
+=begin
             site.collections[collection_name].docs.each do |doc|
                 if (doc.data["github_project_id"])
                     project_id = doc.data["github_project_id"]
@@ -29,6 +30,7 @@ module GithubProjectsGenerator
                     doc.data["github_project"] = site.data["github_projects"][project_id]
                 end
             end
+=end
         end
 
         def fetchProjectFromGithub(project_id, site)

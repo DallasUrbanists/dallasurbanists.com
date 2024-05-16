@@ -18,6 +18,7 @@ rsvp:
   rsvp_instructions: Please register in advance to attend meeting.
   rsvp_deadline: 2024-05-16T03:06:56.311Z
   rsvp_url: https://dallasbicyclecoalition.org/
+cover_photo: https://ucarecdn.com/3764c0d2-3ec7-4a5b-90c4-cd7d8e134db5/-/crop/1920x1081/0,210/-/resize/1600x900/
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque leo eget cursus pellentesque. Nulla cursus in dui eu tristique. Ut eros ligula, dignissim nec sem a, auctor scelerisque nibh. Suspendisse tristique condimentum vestibulum. Sed ullamcorper imperdiet maximus. Maecenas tellus nulla, suscipit sed ultricies et, venenatis ac orci. Phasellus porttitor, magna sit amet placerat rutrum, felis libero eleifend neque, vitae maximus justo ipsum et diam. Aenean eget ex ac arcu pretium aliquet. In vitae velit vel nulla euismod commodo eget a purus.
 

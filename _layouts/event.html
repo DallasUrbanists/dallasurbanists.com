@@ -108,7 +108,7 @@ layout: default
                     {% endif %}
 
                     <p>
-                        <a href="{{ location_url }}">
+                        <a href="{{ location_url }}" style="">
                             {{ page.location.name }}{% if page.location.name and page.location.address %}, {% endif %}
                             {% if page.location.address %}
                                 {{ page.location.address }}
@@ -146,7 +146,7 @@ layout: default
                 {% endif %}
                 <td>
                     {% if page.virtual.url %}
-                        <p><strong>Meeting link:</strong> <a href="{{ page.virtual.url }}">{{ page.virtual.url }}</a></p>
+                        <p><strong>Meeting link:</strong> <a href="{{ page.virtual.url }}" style="word-break: break-all; text-wrap: wrap;">{{ page.virtual.url }}</a></p>
                     {% endif %}
                     {% if page.virtual.instructions %}
                         <p>{{ page.virtual.instructions }}</p>
@@ -179,9 +179,9 @@ layout: default
             </td>
         </tr>
         <tr>
-            <th>Add to Calendar</th>
+            <th>Add to</th>
             <td>
-                <a href="{{ page.google_calendar_link }}" target="_blank">Google</a> |
+                <a href="{{ page.google_calendar_link }}" target="_blank">Google Calendar</a><br />
                 <a href="{{ page.ical_url }}" target="_blank">Apple/Outlook (iCal)</a>
             </td>
         </tr>

@@ -1,5 +1,5 @@
 ---
-layout: event
+layout: old_event
 title: Akard Street Campaign Kickoff Meeting
 category: Planning Meeting
 location: Google Meet

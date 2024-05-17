@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.title and page.title != '' %}
+        {% assign meta_title = page.title | append: " | Dallas Urbanists" %}
+      {% elsif page.tag_feed and page.tag_feed != '' %}
+        {% capture meta_title %}
+          Blog posts about {{ page.tag_feed }} | Dallas Urbanists
+        {% endcapture %}
+      {% else %}
+        {% assign meta_title = "Dallas Urbanists" %}
+      {% endif %}
+      {{ meta_title }}
+    </title>
+    {% if page.description and page.description != '' %}
+      {% assign meta_description = page.description %}
+    {% elsif page.subtitle and page.subtitle != '' %}
+      {% assign meta_description = page.subtitle %}
+    {% else %}
+      {% capture meta_description %}
+        A blog about urbanism walkability, housing, public transportation, and sustainable city planning in the City of Dallas and the Greater Dallas area. Our purpose is to promote thoughtful and informed discussions about urban issues in the DFW Metroplex.
+      {% endcapture %}
+    {% endif %}
+    <meta name="description" content="{{ meta_description }}">
+
+    <!-- RSS FEED @see https://jekyllcodex.org/without-plugin/rss-feed/# -->
+    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+
+    <!-- CMS AUTHENTICATION -->
+    {% if page.identity_snippet %}
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      </script>
+    {% endif %}
+
+    <!-- FAVICON -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+      media="screen" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP ICONS -->
+    <link
+    rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+      integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+      crossorigin="anonymous" />
+
+    <!-- CUSTOM STYLES -->
+    <link
+    href="{{ "/styles2.css" | relative_url }}"
+      rel="stylesheet"
+      media="screen" />
+    <link
+    href="{{ "/styles3.css" | relative_url }}"
+      rel="stylesheet"
+      media="screen" />
+  
+    <!-- CUSTOM PRINT STYLESHEET -->
+    <link
+    href="{{ "/print.css" | relative_url }}"
+      rel="stylesheet"
+      media="print" />
+
+    {% if page.cover_image contains "http" %}
+      {% assign og_image = page.cover_image %}
+    {% elsif page.cover_image %}
+      {% assign og_image = "https://dallasurbanists.com" | append: page.cover_image %}
+    {% else %}
+      {% assign og_image = "/assets/tdl-social-share-1600x900.png" %}
+    {% endif %}
+
+    <!-- SOCIAL MEDIA META TAGS -->
+    <meta property="og:title" content="{{ meta_title }}">
+    <meta property="og:type" content="{{ page.meta_type | default: "website"}}" />
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta property="og:image" content="{{ page.cover_image }}">
+    <meta property="og:url" content="{{ page.url }}">
+    <meta name="twitter:card" content="summary_large_image">
+
+  </head>
+
+  <body style="background-image: url({{ "assets/handmadepaper.png" | relative_url }});">
+    <main class="">
+      {{ content }}
+    </main>
+  </body>
+
+</html>

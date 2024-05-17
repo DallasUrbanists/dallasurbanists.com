@@ -1,0 +1,201 @@
+---
+layout: plain
+---
+{% assign nowSeconds = "now" | date: "%s" | minus: 18000 %}
+{% assign weekSeconds = nowSeconds | plus: 604800 %}
+{% assign today = nowSeconds | date: "%B %e %Y" %}
+{% assign tomorrow = nowSeconds | plus: 86400 | date: "%B %e %Y" %}
+{% assign endSeconds = event.end_date | date: "%s" | plus: 10800 %}
+{% assign activityDate = event.end_date | date: "%B %e %Y" %}
+{% assign dateOnly = event.end_date | date: "%B %e %Y" %}
+{% if endSeconds < weekSeconds %}
+    {% assign isThisWeek = 'true' %}
+{% else %}
+    {% assign isThisWeek = 'false' %}
+{% endif %}
+<style>
+    .event-page-container {
+        padding: 1em;
+        margin-top: 2em;
+    }
+    .event-page-container .icon {
+        width: 1em;
+    }
+    table.event-details {
+        margin-bottom: 1em;
+        width: 100%;
+        max-width: 512px;
+    }
+
+    table.event-details th,
+    table.event-details td
+    {
+        border-bottom: dotted 1px #ccc;
+        padding: 0.5em;
+        padding-left: 0; 
+        vertical-align: top;
+    }
+
+    table.event-details td p:last-child {
+        margin-bottom: 0;
+    }
+
+    table.event-details tr:last-child td
+    {
+        border-bottom: none;
+    }
+
+    .pretty-wrap {
+        text-wrap: pretty;
+    }
+
+    .event-category-title {
+        margin-bottom: 0;
+        color: white;
+        background-color: rgb(0 128 0 / 75%);
+        font-size: 1rem;
+        padding: 0.5em;
+        font-weight: normal;
+    }
+    .article-masthead {
+        text-decoration: none;
+        max-width: 50%;
+        width: 512px;
+        min-height: auto;
+    }
+
+    .article-masthead #post-title {
+        font-size: 1.5rem;
+    }
+
+    .event-row {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    a {
+        color: green;
+        text-underline-offset: 2px;
+        text-decoration: underline green dotted;
+    }
+
+    @media (max-width: 1024px) and (orientation: portrait) {
+        .event-row {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .article-masthead {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        table.event-details {
+            max-width: 100%;
+        }
+    }
+
+</style>
+<h1 style="text-align: center; margin: 2em; margin-bottom: 0; text-wrap: balance;">Events for Dallas Urbanists</h1>
+<p style="text-align: center; margin: 2em; margin-top: 0; text-wrap: pretty;"><a href="/">DallasUrbanists.com</a> | <a href="https://www.instagram.com/dallasurbanists">@DallasUrbanists</a></p>
+<div class="event-page-container width-1024">
+    {% for event in site.events %}
+        {% if event.layout == 'event' %}
+        <div class="event-row">
+            {% if event.cover_image %}
+                <a href="{{ event.url }}" {% if event.cover_image %}
+                    class="article-masthead"
+                    style="
+                        background-image:linear-gradient(
+                            to top, 
+                            rgba(0, 0, 0, 1),
+                            rgba(0, 0, 0, .75) 2ch,
+                            rgba(0, 0, 0, 0)
+                        ),
+                        url('https://ucarecdn.com/3764c0d2-3ec7-4a5b-90c4-cd7d8e134db5/-/crop/1920x1081/0,210/-/resize/1600x900/');
+                        background-size: cover;
+                        background-attachment: scroll;
+                        padding: 1em;
+                        aspect-ratio: 16 / 9;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: end;
+                    "
+                    {% else %}
+                    class="article-plainhead"
+                    {% endif %}>
+                    {% if event.category %}
+                        <h2 class="event-category-title">{{ event.category }}</h2>
+                    {% endif %}
+                    <h1 id="post-title">{{ event.title }}</h1>
+                    <p class="subtitle" style="margin: 0;">
+                        {{ event.start_date | datetime_range_filter: event.end_date }}
+                    </p>
+                </a>
+            {% else %}
+                <h1>
+                    <img src="/assets/icons/{{ event.icon }}_icon.svg" alt="{{ event.icon }}" class="icon" />
+                    {% if event.icon2 %}
+                        <img src="/assets/icons/{{ event.icon2 }}_icon.svg" alt="{{ event.icon2 }}" {% if event.icon2 contains 'logo' %} class="icon logo" {% else %} class="icon" {% endif %} />
+                    {% endif %}
+                    <div class="pretty-wrap">{{ event.title }}</div>
+                </h1>
+            {% endif %}
+
+            <table class="event-details">
+                <tr>
+                    <td>
+                        {% if event.in_person %}
+                            {% assign in_person = true %}
+                            {% if event.location.url %}
+                                {% assign location_url = event.location.url %}
+                            {% elsif event.location.address %}
+                                {% assign query = event.location.address | url_encode %}
+                                {% assign location_url = "https://google.com/maps/search/" | append: query %}
+                            {% elsif event.location.name %}
+                                {% assign query = event.location.name | url_encode %}
+                                {% assign location_url = "https://google.com/maps/search/" | append: query %}
+                            {% endif %}
+
+                            <p style="text-wrap: pretty;">
+                                <a href="{{ location_url }}" style="">
+                                    {{ event.location.name }}{% if event.location.name and event.location.address %}, {% endif %}
+                                </a>
+                                {% if event.location.address %}
+                                    {{ event.location.address }}.
+                                {% endif %}
+                                
+                                {% unless event.rsvp.requirement == "No registration" %}
+
+                                    {% if event.rsvp.url %}
+                                        <a href="{{ event.rsvp.url }}">{{ event.rsvp.requirement }}</a>
+                                    {% else %}
+                                        {{ event.rsvp.requirement }}
+                                    {% endif %}
+                                    {% if event.rsvp.deadline %}
+                                        before <nobr>{{ event.rsvp.deadline | date: "%B %e, %l:%M%P" }}</nobr>
+                                    {% endif %}
+
+                                {% endunless %}
+                            </p>
+                        {% else %}
+                            {% assign in_person = false %}
+                            This event does not meet in-person.
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Add to
+                        <a href="{{ event.google_calendar_link }}" target="_blank">Google Calendar</a> /
+                        <a href="{{ event.ical_url }}" target="_blank">Apple/Outlook</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        {% endif %}
+    {% endfor %}
+
+</div>

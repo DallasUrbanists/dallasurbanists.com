@@ -22,21 +22,71 @@ collections:
     {% raw %}
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
+    editor: { preview: false }
     fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
+      - {label: "Category", name: "category", widget: "string", hint: "e.g., 'Monthly Meeting', 'Happy Hour', 'Bicycle Ride', 'CPC Hearing'"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Start Date", name: "start_date", widget: "datetime"}
       - {label: "End Date", name: "end_date", widget: "datetime", required: false}
-      - label: "Location"
+      - {label: "Frequency", name: "frequency", widget: "string", hint: "e.g., We host a happy hour once a month.", required: false}
+      - {label: "Schedule", name: "schedule", width: "string", hint: "e.g., Gather 7:00pm Rollout 8:00pm", required: false}
+      - label: "Meeting Location"
         name: "location"
         widget: "object"
         summary: "{{ fields.name }}"
         hint: "Leave this alone if your event is online only."
+        required: false
+        collapsed: true
         fields:
-          - {label: "Name of Venue/Building/Business", name: "name", widget: "string", hint: "e.g., Bryan Street Tavern", required: false}
-          - {label: "Street Address", name: "address", widget: "string", hint: "e.g., 4315 Bryan St", required: false}
-          - {label: "City", name: "city", widget: "string", default: "Dallas" }
-          - {label: "Zip", name: "zip", widget: "number", required: false, hint: "e.g., 75204"}
+          - {label: "Name of Venue/Building/Business", name: "name", widget: "string", default: '', hint: "e.g., Bryan Street Tavern", required: false}
+          - {label: "Street Address", name: "address", widget: "string", default: '', hint: "e.g., 4315 Bryan St, Dallas", required: false}
+          - {label: "Google Maps URL / Location website", name: "url", widget: "string", hint: "If you leave this blank, a Google Maps URL will be generated automatically based on the street address.", required: false}
+          - {label: "How to find", name: "find_guide", widget: "string", hint: "Mention things like access codes, elevators, floor numbers, room numbers, getting through security, etc.", required: false}
+          - {label: "Public Transit Guide", name: "transit_guide", widget: "string", hint: "List nearby bus stops, transit centers, or microtransit instructions.", required: false}
+          - {label: "Cycling Guide", name: "cycling_guide", widget: "string", hint: "Mention nearby trails and bicycle parking instructions.", required: false}
+          - {label: "Parking Guide", name: "parking_guide", widget: "string", hint: "Describe parking instructions, if necessary.", required: false}
+      - label: "Virtual Meeting"
+        name: "virtual"
+        widget: "object"
+        summary: "{{ fields.name }}"
+        hint: "Leave this alone if your event is in-person only."
+        required: false
+        collapsed: true
+        fields:
+          - {label: "Virtual Meeting URL", name: "url", widget: "string", hint: "Paste your Zoom/Webex/Teams link here.", required: false}
+          - {label: "Virtual Meeting Instructions", name: "instructions", widget: "string", hint: "Mention if additional steps are required to enter virtual meeting, such as checking email for link or passcode.", required: false}
+      - label: "Signup Instructions"
+        name: "rsvp"
+        widget: "object"
+        summary: "{{ fields.name }}"
+        collapsed: false
+        fields:
+          - label: Is this event free?
+            name: pricing
+            widget: select
+            default: This event is 100% free
+            options:
+              - Free event
+              - Free event, food/drink optional purchase
+              - Ticket purchase is required
+          - label: Is advance signup required?
+            name: requirement
+            widget: select
+            default: No signup
+            options:
+              - No signup
+              - Signup encouraged
+              - Signup required for some
+              - Signup required for all
+          - {label: "Signup Link", name: "url", widget: "string", required: false}
+          - {label: "Signup Instructions", name: "instructions", widget: "text", required: false}
+          - {label: "Signup Deadline", name: "deadline", widget: "datetime", required: false}
       - {label: "Details", name: "body", widget: "markdown"}
+      - label: Cover Photo
+        allow_multiple: false
+        name: cover_image
+        widget: image
 
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
@@ -119,3 +169,6 @@ media_library:
   name: uploadcare
   config:
     publicKey: d50f0c9e161743596858
+    imagesOnly: true
+    previewStep: true
+    crop: "1600x900"

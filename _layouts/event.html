@@ -16,6 +16,7 @@ layout: default
 <style>
     .event-page-container {
         padding: 1em;
+        padding-top: 0;
     }
     .event-page-container .icon {
         width: 1em;
@@ -28,75 +29,176 @@ layout: default
     table.event-details th,
     table.event-details td
     {
-        border: solid 1px #ccc;
-        padding: 0.5em;
+        border-bottom: dotted 1px #ccc;
+        padding: 0.5em 0;
+        vertical-align: top;
+    }
+
+    table.event-details td p:last-child {
+        margin-bottom: 0;
     }
 
     .pretty-wrap {
         text-wrap: pretty;
     }
+
+    .event-category-title {
+        margin-bottom: 0;
+        color: white;
+        background-color: rgb(0 128 0 / 75%);
+        font-size: 1rem;
+        padding: 0.5em;
+        font-weight: normal;
+    }
 </style>
 <div class="event-page-container width-1024">
 
-    <h1>
-        <img src="/assets/icons/{{ page.icon }}_icon.svg" alt="{{ page.icon }}" class="icon" />
-        {% if page.icon2 %}
-            <img src="/assets/icons/{{ page.icon2 }}_icon.svg" alt="{{ page.icon2 }}" {% if page.icon2 contains 'logo' %} class="icon logo" {% else %} class="icon" {% endif %} />
-        {% endif %}
-        
-        <div class="pretty-wrap">{{ page.title }}</div>
-    </h1>
+    {% if page.cover_image %}
+        <div {% if page.cover_image %}
+            class="article-masthead"
+            style="
+                background-image:linear-gradient(
+                    to top, 
+                    rgba(0, 0, 0, 1),
+                    rgba(0, 0, 0, .75) 2ch,
+                    rgba(0, 0, 0, 0)
+                ),
+                url('https://ucarecdn.com/3764c0d2-3ec7-4a5b-90c4-cd7d8e134db5/-/crop/1920x1081/0,210/-/resize/1600x900/');
+                background-size: cover;
+                background-attachment: scroll;
+                padding: 1em;
+                aspect-ratio: 16 / 9;
+                min-height: 25svh !important;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: end;
+            "
+            {% else %}
+            class="article-plainhead"
+            {% endif %}>
+            {% if page.category %}
+                <h2 class="event-category-title">{{ page.category }}</h2>
+            {% endif %}
+            <h1 id="post-title">{{ page.title }}</h1>
+            <p class="subtitle" style="margin: 0;">
+                {{ page.start_date | datetime_range_filter: page.end_date }}
+            </p>
+        </div>
+    {% else %}
+        <h1>
+            <img src="/assets/icons/{{ page.icon }}_icon.svg" alt="{{ page.icon }}" class="icon" />
+            {% if page.icon2 %}
+                <img src="/assets/icons/{{ page.icon2 }}_icon.svg" alt="{{ page.icon2 }}" {% if page.icon2 contains 'logo' %} class="icon logo" {% else %} class="icon" {% endif %} />
+            {% endif %}
+            <div class="pretty-wrap">{{ page.title }}</div>
+        </h1>
+    {% endif %}
 
     <table class="event-details">
-        <tr>
-            <th style="width: 10em;">Date &amp; Time</th>
-            <td>
-                {% if activity.schedule %}
-                    {{ activity.start_date | date: "%B %e" }}, {{ activity.schedule }}
-                {% else %}
-                    {{ activity.start_date | date: "%B %e, %l:%M %p" }}
-                {% endif %}
-            </td>
-        </tr>
+        {% if page.schedule or page.frequency %}
+            <tr>
+                <th style="width: 10em;">Schedule</th>
+                <td>
+                    {% if page.frequency %}<p>{{ page.frequency }}</p>{% endif %}
+                    {% if page.schedule %}<p>{{ page.schedule }}</p>{% endif %}
+                </td>
+            </tr>
+        {% endif %}
         <tr>
             <th>Location</th>
             <td>
-                {% if page.location_url %}
-                    <a href="{{ page.location_url }}">{{ page.location }}</a>
+                {% if page.in_person %}
+                    {% assign in_person = true %}
+                    {% if page.location.url %}
+                        {% assign location_url = page.location.url %}
+                    {% elsif page.location.address %}
+                        {% assign query = page.location.address | url_encode %}
+                        {% assign location_url = "https://google.com/maps/search/" | append: query %}
+                    {% elsif page.location.name %}
+                        {% assign query = page.location.name | url_encode %}
+                        {% assign location_url = "https://google.com/maps/search/" | append: query %}
+                    {% endif %}
+
+                    <p>
+                        <a href="{{ location_url }}" style="">
+                            {{ page.location.name }}{% if page.location.name and page.location.address %}, {% endif %}
+                            {% if page.location.address %}
+                                {{ page.location.address }}
+                            {% endif %}
+                        </a>
+                    </p>
+
+                    {% if page.location.find_guide %}
+                        <p><strong>How to find:</strong> {{ page.location.find_guide }}</p>
+                    {% endif %}
+
+                    {% if page.location.transit_guide %}
+                        <p><strong>Public Transit:</strong> {{ page.location.transit_guide }}</p>
+                    {% endif %}
+
+                    {% if page.location.cycling_guide %}
+                        <p><strong>Cycling:</strong> {{ page.location.cycling_guide }}</p>
+                    {% endif %}
+
+                    {% if page.location.parking_guide %}
+                        <p><strong>Parking:</strong> {{ page.location.parking_guide }}</p>
+                    {% endif %}
                 {% else %}
-                    {{ page.location }}
-                {% endif %}        
+                    {% assign in_person = false %}
+                    This event does not meet in-person.
+                {% endif %}
             </td>
         </tr>
-        <tr>
-            <th>Registration</th>
-            <td>
-                {% if activity.registration_url %}
-                    <a href="{{ page.rsvp_url }}" title="RSVP on {{ page.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}">Register at {{ page.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}</a>
-                    {% if activity.registration_deadline %}
-                        before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}
-                    {% endif %}
-                {% elsif activity.registration_deadline %}
-                    Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}.
+        {% if page.virtual.url or page.virtual.instructions %}
+            <tr>
+                {% if in_person %}
+                    <th>Hybrid</th>
                 {% else %}
-                    Signup is not required.
+                    <th>Virtual</th>
+                {% endif %}
+                <td>
+                    {% if page.virtual.url %}
+                        <p><strong>Meeting link:</strong> <a href="{{ page.virtual.url }}" style="word-break: break-all; text-wrap: wrap;">{{ page.virtual.url }}</a></p>
+                    {% endif %}
+                    {% if page.virtual.instructions %}
+                        <p>{{ page.virtual.instructions }}</p>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endif %}
+        <tr>
+            <th>Signup</th>
+            <td>
+                <p>{{ page.rsvp.pricing }}</p>
+                {% if page.rsvp.requirement == "No registration" %}
+                    <p>There is no signup for this event.</p>
+                {% else %}
+                    <p>
+                        {% if page.rsvp.url %}
+                            <a href="{{ page.rsvp.url }}">{{ page.rsvp.requirement }}</a>
+                        {% else %}
+                            {{ page.rsvp.requirement }}
+                        {% endif %}
+                        {% if page.rsvp.deadline %}
+                            before {{ page.rsvp.deadline | date: "%B %e, %A %l:%M%P" }}
+                        {% endif %}
+                    </p>
+                {% endif %}
+
+                {% if page.rsvp.instructions %}
+                    <p><strong>Instructions:</strong> {{ page.rsvp.instructions }}</p>
                 {% endif %}
             </td>
         </tr>
         <tr>
-            <th>Host</th>
+            <th>Add to</th>
             <td>
-                {% if page.author %}
-                    {% if page.author_url %}
-                        <a href="{{ page.author_url }}">{{ page.author }}</a>
-                    {% else %}
-                        {{ page.author }}
-                    {% endif %}
-                {% endif %}
+                <a href="{{ page.google_calendar_link }}" target="_blank">Google Calendar</a><br />
+                <a href="{{ page.ical_url }}" target="_blank">Apple/Outlook (iCal)</a>
             </td>
         </tr>
     </table>
- 
+
     {{ content }}
 
 </div>

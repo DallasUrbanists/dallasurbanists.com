@@ -55,7 +55,7 @@ collections:
         fields:
           - {label: "Virtual Meeting URL", name: "url", widget: "string", hint: "Paste your Zoom/Webex/Teams link here.", required: false}
           - {label: "Virtual Meeting Instructions", name: "instructions", widget: "string", hint: "Mention if additional steps are required to enter virtual meeting, such as checking email for link or passcode.", required: false}
-      - label: "RSVP Instructions"
+      - label: "Signup Instructions"
         name: "rsvp"
         widget: "object"
         summary: "{{ fields.name }}"
@@ -66,21 +66,21 @@ collections:
             widget: select
             default: This event is 100% free
             options:
-              - This event is 100% free
-              - Free event, purchasing food/drinks is encouraged
+              - Free event
+              - Free event, food/drink optional purchase
               - Ticket purchase is required
-          - label: Is advance registration required?
+          - label: Is advance signup required?
             name: requirement
             widget: select
-            default: No registration
+            default: No signup
             options:
-              - No registration
-              - RSVP encouraged
-              - RSVP required for some
-              - RSVP required for all
-          - {label: "Registration Link", name: "url", widget: "string", required: false}
-          - {label: "Registration Instructions", name: "instructions", widget: "text", required: false}
-          - {label: "Registration Deadline", name: "deadline", widget: "datetime", required: false}
+              - No signup
+              - Signup encouraged
+              - Signup required for some
+              - Signup required for all
+          - {label: "Signup Link", name: "url", widget: "string", required: false}
+          - {label: "Signup Instructions", name: "instructions", widget: "text", required: false}
+          - {label: "Signup Deadline", name: "deadline", widget: "datetime", required: false}
       - {label: "Details", name: "body", widget: "markdown"}
       - label: Cover Photo
         allow_multiple: false

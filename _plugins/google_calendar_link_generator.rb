@@ -21,8 +21,17 @@ module GoogleCalendarLinkGeneratorPlugin
                         CGI.escape(event_title)
                     ),
                     'in_person' => isInPerson(event),
-                    'online_only' => isOnlineOnly(event)
+                    'online_only' => isOnlineOnly(event),
+                    'start_iso_8601' => start_datetime_formatted,
+                    'end_iso_8601' => end_datetime_formatted,
+                    'created_iso_8601' => event.date.strftime("%Y%m%dT%H%M%S"),
+                    'invite_details' => event_details.gsub("\n","\\n").gsub("\r","\\r"),
+                    'invite_location' => event_location
                 })
+
+                iCalPage = ICalPage.new(site, event.data)
+                site.pages << iCalPage
+                event.data.merge!({ "ical_url" => iCalPage.url })
             end
         end
 
@@ -79,26 +88,26 @@ module GoogleCalendarLinkGeneratorPlugin
                 if event.data['schedule']
                     addition << event.data['schedule'] << ". "
                 end
-                combined_details << addition << "\n\n"
+                combined_details << addition << "\r\n\r\n"
             end
 
             if isInPerson(event)
                 in_person = true
 
                 if event.data['location']['find_guide']
-                    combined_details << "<b>HOW TO FIND:</b> " << event.data['location']['find_guide'] << "\n\n"
+                    combined_details << "<b>HOW TO FIND:</b> " << event.data['location']['find_guide'] << "\r\n\r\n"
                 end
 
                 if event.data['location']['transit_guide']
-                    combined_details << "<b>PUBLIC TRANSIT:</b> " << event.data['location']['transit_guide'] << "\n\n"
+                    combined_details << "<b>PUBLIC TRANSIT:</b> " << event.data['location']['transit_guide'] << "\r\n\r\n"
                 end
 
                 if event.data['location']['cycling_guide']
-                    combined_details << "<b>CYCLING:</b> " << event.data['location']['cycling_guide'] << "\n\n"
+                    combined_details << "<b>CYCLING:</b> " << event.data['location']['cycling_guide'] << "\r\n\r\n"
                 end
 
                 if event.data['location']['parking_guide']
-                    combined_details << "<b>PARKING:</b> " << event.data['location']['parking_guide'] << "\n\n"
+                    combined_details << "<b>PARKING:</b> " << event.data['location']['parking_guide'] << "\r\n\r\n"
                 end
             else
                 in_person = false
@@ -112,7 +121,7 @@ module GoogleCalendarLinkGeneratorPlugin
                 if event.data['virtual']['url']
                     addition << event.data['virtual']['url'] << " "
                 end
-                combined_details << addition << "\n\n"
+                combined_details << addition << "\r\n\r\n"
             end
 
             if event.data['rsvp']
@@ -128,17 +137,43 @@ module GoogleCalendarLinkGeneratorPlugin
                     end
                     combined_details << ". " << event.data['rsvp']['pricing'] << ". "
                     if event.data['rsvp']['url']
-                        combined_details << "\nRegister at " << event.data['rsvp']['url']
+                        combined_details << "\r\nRegister at " << event.data['rsvp']['url']
                     end
-                    combined_details << "\n\n"
+                    combined_details << "\r\n\r\n"
                 end
             end
 
             if combined_details != ''
-                combined_details << "<hr>\n"
+                combined_details << "<hr>\r\n"
             end
 
             combined_details << event.content
         end
+    end
+
+    class ICalPage < Jekyll::Page
+        def initialize(site, event)
+          @site = site             # the current site instance.
+          @base = site.source      # path to the source directory.
+          @dir  = "ical"           # the directory the page will reside in.
+    
+          slug = event["date"].strftime('%Y-%m-%d') + '-' + event["title"].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+
+          @basename = slug          # filename without the extension.
+          @ext      = '.ics'        # the extension.
+          @name     = '#(slug).ics' # basically @basename + @ext.
+          
+          @data = event.merge({ "layout" => "ical" });
+        end
+
+        # Placeholders that are used in constructing page URL.
+        def url_placeholders
+        {
+          :path       => @dir,
+          :category   => @dir,
+          :basename   => basename,
+          :output_ext => output_ext,
+        }
+      end
     end
 end

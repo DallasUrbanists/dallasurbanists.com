@@ -13,11 +13,11 @@ location:
   find_guide: Meet us inside in the room with the couches across from the bar 
 virtual:
   url: https://us02web.zoom.us/j/8983371382?pwd=U0hIM29oUHJRNk5LM2V4Mlg5N3BSUT09
-  instructions: Must register to get meeting link in email
+  instructions: Must signup to get meeting link in email
 rsvp:
-  pricing: This event is 100% free
-  requirement: RSVP encouraged
-  instructions: You must register online before Sunday cutoff in order to speak virtually in meeting.  
+  pricing: Free event, food/drink optional purchase
+  requirement: Signup encouraged
+  instructions: You must signup online before Sunday cutoff in order to speak virtually in meeting.  
   deadline: 2024-05-16T03:06:56.311Z
   url: https://dallasbicyclecoalition.org/
 cover_image: https://ucarecdn.com/3764c0d2-3ec7-4a5b-90c4-cd7d8e134db5/-/crop/1920x1081/0,210/-/resize/1600x900/

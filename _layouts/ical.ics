@@ -1,0 +1,34 @@
+---
+# this frontmatter section tells Jekyll to process this file, allowing us to use variables like site.tags
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Dallas Urbanists//Calendar//EN
+BEGIN:VEVENT
+UID:{{ page.created_iso_8601 }}@dallasurbanists.com
+DTSTAMP:{{ page.created_iso_8601 }}
+ORGANIZER;CN=Dallas Urbanists:MAILTO:calendar@dallasurbanists.com
+DTSTART;TZID=America/Chicago:{{ page.start_iso_8601 }}
+DTEND;TZID=America/Chicago:{{ page.end_iso_8601 }}
+SUMMARY:{{ page.title }}
+DESCRIPTION:{{ page.invite_details }}
+LOCATION:{{ page.invite_location }}
+END:VEVENT
+END:VCALENDAR
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:STANDARD
+DTSTART:20231105T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20240310T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+END:DAYLIGHT
+END:VTIMEZONE

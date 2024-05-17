@@ -155,7 +155,7 @@ layout: default
             </tr>
         {% endif %}
         <tr>
-            <th>RSVP</th>
+            <th>Signup</th>
             <td>
                 <p>{{ page.rsvp.pricing }}</p>
                 {% if page.rsvp.requirement == "No registration" %}
@@ -182,7 +182,7 @@ layout: default
             <th>Add to Calendar</th>
             <td>
                 <a href="{{ page.google_calendar_link }}" target="_blank">Google</a> |
-                <a href="{{ page.google_calendar_link }}" target="_blank">Apple/Outlook (iCal)</a>
+                <a href="{{ page.ical_url }}" target="_blank">Apple/Outlook (iCal)</a>
             </td>
         </tr>
     </table>

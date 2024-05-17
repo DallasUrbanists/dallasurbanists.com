@@ -1,0 +1,291 @@
+---
+# this frontmatter section tells Jekyll to process this file
+---
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Social Media Tool</title>
+
+    <!-- CUSTOM STYLES -->
+    <link href="styles3.css" rel="stylesheet" media="screen" />
+    <link href="styles2.css" rel="stylesheet" media="screen" />
+  
+    <!-- CUSTOM PRINT STYLESHEET -->
+    <link
+    href="print.css"
+      rel="stylesheet"
+      media="print" />
+
+      <style>
+        .slide-canvas {
+            border:1px solid grey;
+            scale: 0.5;
+            transform-origin: top left;
+            display: inline-block;
+        }
+        #media-table {
+            width: 1080px;
+        }
+        #media-table td {
+            vertical-align: top;
+            width: 540px;
+            white-space: nowrap;
+            max-width: 540px;
+        }
+        #media-table td:first-child {
+            
+        }
+        #media-table input {
+            width: 100%;
+        }
+      </style>
+
+  </head>
+
+  <body>
+
+    <img crossorigin="anonymous" src="https://ucarecdn.com/0ed88991-9c60-4e27-b800-5c00b246579f/-/preview/1080x1080/" id="mapBg" width="1080" height="1080" style="display: none;" />
+
+    <div id="qrcode" style="display: none; width: 1080px;"></div>    
+
+    <table id="media-table">
+        {% for event in site.events %}
+            <tr>
+                <td>
+                    <canvas id="canvas{{ forloop.index }}" width="1080" height="1350" class="slide-canvas"></canvas>
+                </td>
+                <td>
+                    <img crossorigin="anonymous"src="{{ event.cover_image }}" id="pic1" width="1080" style="display: none; width: 1080px;" />
+
+                    <form id="s{{ forloop.index }}" data-slide="canvas{{ forloop.index }}">
+                        <input type="hidden" name="event_url" id="{{ forloop.index }}_event_url" value="{{ event.url }}" />
+                        <p>
+                            <label for="{{ forloop.index }}_weblink">Web Link</label><br />
+                            <input type="text" name="weblink" id="{{ forloop.index }}_weblink" value="link in bio and at dallasurbanists.com/events" onkeyup="updateSlide('s{{ forloop.index }}')" />
+                        </p>
+                        <p>
+                            <label for="{{ forloop.index }}_category">Category</label><br />
+                            <input type="text" name="category" id="{{ forloop.index }}_category" value="{{ event.category }}" onkeyup="updateSlide('s{{ forloop.index }}')" />
+                        </p>
+                        <p>
+                            <label for="{{ forloop.index }}_title">Title</label><br />
+                            <input type="text" name="title" id="{{ forloop.index }}_title" value="{{ event.title }}"  onkeyup="updateSlide('s{{ forloop.index }}')" />
+                        </p>
+                        <p>
+                            <label for="{{ forloop.index }}_title_size">Title Size</label><br />
+                            <input type="range" min="28" max="144" name="title_size" id="{{ forloop.index }}_title_size" value="72" onchange="updateSlide('s{{ forloop.index }}')" /><br />
+                            <a href="javascript:document.getElementById('{{ forloop.index }}_title_size').value=72;updateSlide('s{{ forloop.index }}');">Reset size</a>
+                        </p>
+                        <p>
+                            <label for="{{ forloop.index }}_datetime">Date & Time</label><br />
+                            <input type="text" name="datetime" id="{{ forloop.index }}_datetime" value="{{ event.start_date | datetime_range_filter: event.end_date }}"  onkeyup="updateSlide('s{{ forloop.index }}')" />
+                        </p>
+                        <p>
+                            <label for="{{ forloop.index }}_location_name">Location Name</label><br />
+                            <input type="text" name="location_name" id="{{ forloop.index }}_location_name" value="{{ event.location.name }}"  onkeyup="updateSlide('s{{ forloop.index }}')" />
+                        </p>
+                        <p>
+                            <label for="{{ forloop.index }}_location_address">Location Address</label><br />
+                            <input type="text" name="location_address" id="{{ forloop.index }}_location_address" value="{{ event.location.address }}"  onkeyup="updateSlide('s{{ forloop.index }}')" />
+                        </p>
+                        <p><input type="button" id="{{ forloop.index }}_update_btn" value="Update" onclick="updateSlide('s{{ forloop.index }}')" /></p>
+                        <p><a download="instagram_slide_{{ forloop.index }}_1080x1350.png" href="#" id="s{{ forloop.index }}_download_btn">Download image</a></p>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <script src="plugins/qrcode.min.js"></script>
+    <script>
+        const padding = 36;
+        const fancyFont = `'Playfair Display', serif`;
+        const normalFont = `'Noto Sans', sans-serif`;
+        const boldWeight = 700;
+        const normalWeight = 500;
+        const titleSize = 72;
+        const normalSize = 28;
+        const lineHeightRatio = 1.25;
+        const topMargin = 135;
+
+        {% for event in site.events %}
+            updateSlide('s{{ forloop.index }}');
+        {% endfor %}
+
+        function updateSlide(formId) {
+            const form = document.getElementById(formId);
+            const canvas = document.getElementById(form.getAttribute('data-slide'));
+            const downloadBtn = document.getElementById(formId + '_download_btn');
+
+            drawInstagramEventSquare(canvas, {
+                corner_text: form.elements['weblink'].value ?? '',
+                top_line: form.elements['category'].value ?? '[CATEGORY]',
+                title: form.elements['title'].value ?? '[TITLE GOES HERE]',
+                title_size: form.elements['title_size'].value ?? titleSize,
+                datetime: form.elements['datetime'].value ?? '[DATETIME]',
+                location_name: form.elements['location_name'].value ?? '[LOCATION NAME]',
+                location_address: form.elements['location_address'].value ?? '[LOCATION ADDRESS]',
+                event_url: form.elements['event_url'].value
+            });
+
+            downloadBtn.setAttribute('href', canvas.toDataURL('image/png')); 
+        }
+
+
+        function drawInstagramEventSquare(canvas, options) {
+            setBackground(canvas);
+
+            const ctx = canvas.getContext('2d');
+
+            let position = topMargin;
+            let titleSizeDiff = titleSize*lineHeightRatio - options.title_size*lineHeightRatio;
+
+            position = write(options.top_line, canvas, normalSize, normalFont, boldWeight, position, 'green', true);
+            position = write(options.title, canvas, options.title_size, fancyFont, boldWeight, position-(titleSizeDiff));
+            
+            position = write(options.datetime, canvas, normalSize, normalFont, normalWeight, position);
+            position = write(options.location_name, canvas, normalSize, normalFont, normalWeight, position);
+            position = write(options.location_address, canvas, normalSize, normalFont, normalWeight, position);
+
+            addImage(canvas, 'pic1', 0, 1350-607);
+            
+            new QRCode(document.getElementById("qrcode"), {
+                text: options.event_url,
+                width: 128,
+                height: 128,
+                colorDark : "#555555",
+                colorLight : "#ffffff",
+            });
+            const qrcodeImg = document.getElementById('qrcode').getElementsByTagName('canvas')[0];
+            ctx.drawImage(qrcodeImg, canvas.width-qrcodeImg.width-(padding/2), padding/2, 128, 128);            
+
+            const gradientHeight = normalSize*10;
+            const gradient = ctx.createLinearGradient(0, canvas.height, 0, canvas.height-gradientHeight);
+            gradient.addColorStop(0, 'rgba(0, 0, 0, 0.75)');
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, canvas.height-gradientHeight, canvas.width, gradientHeight );
+
+
+            write(options.corner_text, canvas, normalSize, normalFont, normalWeight, canvas.height-normalSize-padding, '#EEE', false, true);
+        }
+
+        function setBackground(canvas) {
+            const mapBg = document.getElementById('mapBg');
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(mapBg, 0, 0);
+        }
+
+        function addImage(canvas, imageId, x, y) {
+            const ctx = canvas.getContext('2d');
+            const image = document.getElementById(imageId);
+            image.width = 1080;
+            ctx.drawImage(image, 0, 0, 1600, 900, x, y, 1080, 607);
+        }
+
+        async function loading(formId) {
+            const form = document.getElementById(formId);
+            const canvas = document.getElementById(form.getAttribute('data-slide'));
+            const ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = 'grey';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            write('Loading...', canvas, normalSize, normalFont, normalWeight, padding);
+
+            setTimeout(() => updateSlide(formId), 4000);
+        }
+
+        function write(text, canvas, fontSize, fontFamily, fontWeight, positionY, fontColor='black', drawRectangle=false, tightPadding=false) {
+            const ctx = canvas.getContext('2d');
+            const maxWidth = 1080 - padding * 2;
+            const lineHeight = fontSize * lineHeightRatio;
+            const offsetX = tightPadding ? padding/2 : padding;
+
+            ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+            let wrappedText = wrapText(ctx, text, offsetX, positionY, maxWidth, lineHeight);
+            wrappedText.forEach((item) => {
+                let textOffset = 0;
+                ctx.fillStyle = fontColor;
+                ctx.lineWidth = 5;
+                ctx.lineJoin = 'round';
+                if (drawRectangle) {
+                    ctx.beginPath();
+                    ctx.lineWidth = "6";
+                    ctx.fillStyle = fontColor;
+                    ctx.rect(offsetX, positionY, item[3].width+fontSize, lineHeight*1.5);
+                    ctx.fill();
+                    ctx.fillStyle = 'white';
+                    textOffset = lineHeight;
+                }
+                ctx.fillText(item[0], offsetX+textOffset*0.5, padding+item[2]);
+            });
+
+            let marginBottom = drawRectangle ? (lineHeight*2) : 0;
+
+            return positionY + (lineHeight * wrappedText.length) + marginBottom;
+        }
+
+        // @description: wrapText wraps HTML canvas text onto a canvas of fixed width
+        // @param ctx - the context for the canvas we want to wrap text on
+        // @param text - the text we want to wrap.
+        // @param x - the X starting point of the text on the canvas.
+        // @param y - the Y starting point of the text on the canvas.
+        // @param maxWidth - the width at which we want line breaks to begin - i.e. the maximum width of the canvas.
+        // @param lineHeight - the height of each line, so we can space them below each other.
+        // @returns an array of [ lineText, x, y ] for all lines
+        function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+            // First, start by splitting all of our text into words, but splitting it into an array split by spaces
+            let words = text.split(' ');
+            let line = ''; // This will store the text of the current line
+            let testLine = ''; // This will store the text when we add a word, to test if it's too long
+            let lineArray = []; // This is an array of lines, which the function will return
+
+            // Lets iterate over each word
+            for(var n = 0; n < words.length; n++) {
+                // Create a test line, and measure it..
+                testLine += `${words[n]} `;
+                let metrics = ctx.measureText(testLine);
+                let testWidth = metrics.width;
+                // If the width of this test line is more than the max width
+                if (testWidth > maxWidth && n > 0) {
+                    // Then the line is finished, push the current line into "lineArray"
+                    lineArray.push([line, x, y, metrics]);
+                    // Increase the line height, so a new line is started
+                    y += lineHeight;
+                    // Update line and test line to use this word as the first word on the next line
+                    line = `${words[n]} `;
+                    testLine = `${words[n]} `;
+                }
+                else {
+                    // If the test line is still less than the max width, then add the word to the current line
+                    line += `${words[n]} `;
+                }
+                // If we never reach the full max width, then there is only one line.. so push it into the lineArray so we return something
+                if(n === words.length - 1) {
+                    lineArray.push([line, x, y, metrics]);
+                }
+            }
+
+            // Prettify the lines by ensuring there isn't a lone word on the last line
+            const lastLine = lineArray.length - 1;
+            const secondLast = lastLine - 1;
+            const lastWords = lineArray[lastLine][0].trim().split(' ');
+            if (lineArray.length > 1 && lastWords.length === 1) {
+                // Add the second to last word to the last line
+                lineArray[lastLine][0] = words.slice(-2).join(' ');
+                // Remove the second to last word from the second to last line
+                lineArray[secondLast][0] = lineArray[secondLast][0].replace(words.slice(-2)[0], '');
+            }
+
+            // Return the line array
+            return lineArray;
+        }
+    </script>
+
+  </body>
+
+</html>

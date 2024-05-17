@@ -21,6 +21,7 @@ module GoogleCalendarLinkGeneratorPlugin
                         CGI.escape(event_title)
                     ),
                     'in_person' => isInPerson(event),
+                    'in_person_location' => inPersonLocationOf(event),
                     'online_only' => isOnlineOnly(event),
                     'start_iso_8601' => start_datetime_formatted,
                     'end_iso_8601' => end_datetime_formatted,

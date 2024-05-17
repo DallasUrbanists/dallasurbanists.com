@@ -25,6 +25,7 @@ collections:
     editor: { preview: false }
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
+      - {label: "Category", name: "category", widget: "string", hint: "e.g., 'Monthly Meeting', 'Happy Hour', 'Bicycle Ride', 'CPC Hearing'"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Start Date", name: "start_date", widget: "datetime"}
       - {label: "End Date", name: "end_date", widget: "datetime", required: false}

@@ -1,5 +1,5 @@
 ---
-layout: event
+layout: old_event
 title: Bike Lane Cleanup, Commerce Street Bridge
 category: Volunteer Event
 location: Trinity Overlook Park

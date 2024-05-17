@@ -1,0 +1,283 @@
+---
+# this frontmatter section tells Jekyll to process this file
+---
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Practice</title>
+
+    <!-- CUSTOM STYLES -->
+    <link href="styles3.css" rel="stylesheet" media="screen" />
+    <link href="styles2.css" rel="stylesheet" media="screen" />
+  
+    <!-- CUSTOM PRINT STYLESHEET -->
+    <link
+    href="print.css"
+      rel="stylesheet"
+      media="print" />
+
+      <style>
+        #canvasSlide1 {
+            scale: 0.5;
+            transform-origin: top left;
+            display: inline-block;
+        }
+        #media-table {
+            width: 1080px;
+        }
+        #media-table td {
+            vertical-align: top;
+            width: 540px;
+            white-space: nowrap;
+            max-width: 540px;
+        }
+        #media-table td:first-child {
+            
+        }
+        #media-table input {
+            width: 100%;
+        }
+      </style>
+
+  </head>
+
+  <body>
+
+    <img crossorigin="anonymous" src="https://ucarecdn.com/0ed88991-9c60-4e27-b800-5c00b246579f/-/preview/1080x1080/" id="mapBg" width="1080" height="1080" style="display: none;" />
+    <img crossorigin="anonymous"src="https://ucarecdn.com/3764c0d2-3ec7-4a5b-90c4-cd7d8e134db5/-/crop/1920x1081/0,210/-/resize/1600x900/" id="pic1" width="1080" style="display: none; width: 1080px;" />
+
+    <div id="qrcode" style="display: none; width: 1080px;"></div>    
+
+    <table id="media-table">
+        <tr>
+            <td>
+                <canvas id="canvasSlide1" width="1080" height="1350" style="border:1px solid grey"></canvas>
+            </td>
+            <td>
+                <form id="s1" data-slide="canvasSlide1">
+                    <p>
+                        <label for="s1_weblink">Web Link</label><br />
+                        <input type="text" name="weblink" id="s1_weblink" value="link in bio and at dallasurbanists.com/events" onkeyup="updateSlide('s1')" />
+                    </p>
+                    <p>
+                        <label for="s1_category">Category</label><br />
+                        <input type="text" name="category" id="s1_category" value="Book Signing & Discussion" onkeyup="updateSlide('s1')" />
+                    </p>
+                    <p>
+                        <label for="s1_title">Title</label><br />
+                        <input type="text" name="title" id="s1_title" value="City Limits: Infrastructure, Inequality, and the Future of America's Highways by Megan Kimble"  onkeyup="updateSlide('s1')" />
+                    </p>
+                    <p>
+                        <label for="s1_title_size">Title Size</label><br />
+                        <input type="range" min="28" max="144" name="title_size" id="s1_title_size" value="72" onchange="updateSlide('s1')" /><br />
+                        <a href="javascript:document.getElementById('s1_title_size').value=72;updateSlide('s1');">Reset size</a>
+                    </p>
+                    <p>
+                        <label for="s1_datetime">Date & Time</label><br />
+                        <input type="text" name="datetime" id="s1_datetime" value="April 19, Wednesday, 6:00pm to 7:30pm"  onkeyup="updateSlide('s1')" />
+                    </p>
+                    <p>
+                        <label for="s1_location_name">Location Name</label><br />
+                        <input type="text" name="location_name" id="s1_location_name" value="Interabang Books"  onkeyup="updateSlide('s1')" />
+                    </p>
+                    <p>
+                        <label for="s1_location_address">Location Address</label><br />
+                        <input type="text" name="location_address" id="s1_location_address" value="5600 W Lovers Ln #142, Dallas"  onkeyup="updateSlide('s1')" />
+                    </p>
+                    <p><input type="button" id="s1_update_btn" value="Update" onclick="updateSlide('s1')" /></p>
+                    <p><a download="instagram_slide_s1_1080x1350.png" href="#" id="s1_download_btn">Download image</a></p>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <script src="plugins/qrcode.min.js"></script>
+    <script>
+        new QRCode(document.getElementById("qrcode"), {
+            text: "http://jindo.dev.naver.com/collie",
+            width: 128,
+            height: 128,
+            colorDark : "#555555",
+            colorLight : "#ffffff",
+        });
+
+        const padding = 36;
+        const fancyFont = `'Playfair Display', serif`;
+        const normalFont = `'Noto Sans', sans-serif`;
+        const boldWeight = 700;
+        const normalWeight = 500;
+        const titleSize = 72;
+        const normalSize = 28;
+        const lineHeightRatio = 1.25;
+        const topMargin = 135;
+
+        updateSlide('s1');
+
+        function updateSlide(formId) {
+            const form = document.getElementById(formId);
+            const canvas = document.getElementById(form.getAttribute('data-slide'));
+            const downloadBtn = document.getElementById('s1_download_btn');
+
+            drawInstagramEventSquare(canvas, {
+                corner_text: form.elements['weblink'].value ?? '',
+                top_line: form.elements['category'].value ?? '[CATEGORY]',
+                title: form.elements['title'].value ?? '[TITLE GOES HERE]',
+                title_size: form.elements['title_size'].value ?? titleSize,
+                datetime: form.elements['datetime'].value ?? '[DATETIME]',
+                location_name: form.elements['location_name'].value ?? '[LOCATION NAME]',
+                location_address: form.elements['location_address'].value ?? '[LOCATION ADDRESS]',
+            });
+
+            downloadBtn.setAttribute('href', canvas.toDataURL('image/png')); 
+        }
+
+
+        function drawInstagramEventSquare(canvas, options) {
+            setBackground(canvas);
+
+            const ctx = canvas.getContext('2d');
+
+            let position = topMargin;
+            let titleSizeDiff = titleSize*lineHeightRatio - options.title_size*lineHeightRatio;
+
+            position = write(options.top_line, canvas, normalSize, normalFont, boldWeight, position+(titleSizeDiff), 'green', true);
+            position = write(options.title, canvas, options.title_size, fancyFont, boldWeight, position-(titleSizeDiff));
+            
+            position = write(options.datetime, canvas, normalSize, normalFont, normalWeight, position);
+            position = write(options.location_name, canvas, normalSize, normalFont, normalWeight, position);
+            position = write(options.location_address, canvas, normalSize, normalFont, normalWeight, position);
+
+            addImage(canvas, 'pic1', 0, 1350-607);
+            const qrcodeImg = document.getElementById('qrcode').getElementsByTagName('canvas')[0];
+            ctx.drawImage(qrcodeImg, canvas.width-qrcodeImg.width-(padding/2), padding/2, 128, 128);            
+
+            const gradientHeight = normalSize*10;
+            const gradient = ctx.createLinearGradient(0, canvas.height, 0, canvas.height-gradientHeight);
+            gradient.addColorStop(0, 'rgba(0, 0, 0, 0.75)');
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, canvas.height-gradientHeight, canvas.width, gradientHeight );
+
+
+            write(options.corner_text, canvas, normalSize, normalFont, normalWeight, canvas.height-normalSize-padding, '#EEE', false, true);
+        }
+
+        function setBackground(canvas) {
+            const mapBg = document.getElementById('mapBg');
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(mapBg, 0, 0);
+        }
+
+        function addImage(canvas, imageId, x, y) {
+            const ctx = canvas.getContext('2d');
+            const image = document.getElementById(imageId);
+            image.width = 1080;
+            ctx.drawImage(image, 0, 0, 1600, 900, x, y, 1080, 607);
+        }
+
+        async function loading(formId) {
+            const form = document.getElementById(formId);
+            const canvas = document.getElementById(form.getAttribute('data-slide'));
+            const ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = 'grey';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            write('Loading...', canvas, normalSize, normalFont, normalWeight, padding);
+
+            setTimeout(() => updateSlide(formId), 4000);
+        }
+
+        function write(text, canvas, fontSize, fontFamily, fontWeight, positionY, fontColor='black', drawRectangle=false, tightPadding=false) {
+            const ctx = canvas.getContext('2d');
+            const maxWidth = 1080 - padding * 2;
+            const lineHeight = fontSize * lineHeightRatio;
+            const offsetX = tightPadding ? padding/2 : padding;
+
+            ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+            let wrappedText = wrapText(ctx, text, offsetX, positionY, maxWidth, lineHeight);
+            wrappedText.forEach((item) => {
+                let textOffset = 0;
+                ctx.fillStyle = fontColor;
+                ctx.lineWidth = 5;
+                ctx.lineJoin = 'round';
+                if (drawRectangle) {
+                    ctx.beginPath();
+                    ctx.lineWidth = "6";
+                    ctx.fillStyle = fontColor;
+                    ctx.rect(offsetX, positionY, item[3].width+fontSize, lineHeight*1.5);
+                    ctx.fill();
+                    ctx.fillStyle = 'white';
+                    textOffset = lineHeight;
+                }
+                ctx.fillText(item[0], offsetX+textOffset*0.5, padding+item[2]);
+            });
+
+            let marginBottom = drawRectangle ? (lineHeight*2) : 0;
+
+            return positionY + (lineHeight * wrappedText.length) + marginBottom;
+        }
+
+        // @description: wrapText wraps HTML canvas text onto a canvas of fixed width
+        // @param ctx - the context for the canvas we want to wrap text on
+        // @param text - the text we want to wrap.
+        // @param x - the X starting point of the text on the canvas.
+        // @param y - the Y starting point of the text on the canvas.
+        // @param maxWidth - the width at which we want line breaks to begin - i.e. the maximum width of the canvas.
+        // @param lineHeight - the height of each line, so we can space them below each other.
+        // @returns an array of [ lineText, x, y ] for all lines
+        function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+            // First, start by splitting all of our text into words, but splitting it into an array split by spaces
+            let words = text.split(' ');
+            let line = ''; // This will store the text of the current line
+            let testLine = ''; // This will store the text when we add a word, to test if it's too long
+            let lineArray = []; // This is an array of lines, which the function will return
+
+            // Lets iterate over each word
+            for(var n = 0; n < words.length; n++) {
+                // Create a test line, and measure it..
+                testLine += `${words[n]} `;
+                let metrics = ctx.measureText(testLine);
+                let testWidth = metrics.width;
+                // If the width of this test line is more than the max width
+                if (testWidth > maxWidth && n > 0) {
+                    // Then the line is finished, push the current line into "lineArray"
+                    lineArray.push([line, x, y, metrics]);
+                    // Increase the line height, so a new line is started
+                    y += lineHeight;
+                    // Update line and test line to use this word as the first word on the next line
+                    line = `${words[n]} `;
+                    testLine = `${words[n]} `;
+                }
+                else {
+                    // If the test line is still less than the max width, then add the word to the current line
+                    line += `${words[n]} `;
+                }
+                // If we never reach the full max width, then there is only one line.. so push it into the lineArray so we return something
+                if(n === words.length - 1) {
+                    lineArray.push([line, x, y, metrics]);
+                }
+            }
+
+            // Prettify the lines by ensuring there isn't a lone word on the last line
+            const lastLine = lineArray.length - 1;
+            const secondLast = lastLine - 1;
+            const lastWords = lineArray[lastLine][0].trim().split(' ');
+            if (lineArray.length > 1 && lastWords.length === 1) {
+                // Add the second to last word to the last line
+                lineArray[lastLine][0] = words.slice(-2).join(' ');
+                // Remove the second to last word from the second to last line
+                lineArray[secondLast][0] = lineArray[secondLast][0].replace(words.slice(-2)[0], '');
+            }
+
+            // Return the line array
+            return lineArray;
+        }
+    </script>
+
+  </body>
+
+</html>

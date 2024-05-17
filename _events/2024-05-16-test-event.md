@@ -1,5 +1,6 @@
 ---
 layout: event
+category: Book Signing & Discussion
 title: Test event
 start_date: 2024-05-16T19:00:18.127Z
 end_date: 2024-05-16T21:00:18.162Z

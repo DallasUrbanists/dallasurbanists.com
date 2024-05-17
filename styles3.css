@@ -502,8 +502,6 @@ h1.petition-title strong {
     margin: 0 0.25em;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
 a {
     text-decoration-skip-ink: auto;
 }

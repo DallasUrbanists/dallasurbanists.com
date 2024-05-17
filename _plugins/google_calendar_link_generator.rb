@@ -13,7 +13,7 @@ module GoogleCalendarLinkGeneratorPlugin
 
                 event.data.merge!({
                     'google_calendar_link' => sprintf(
-                        'https://calendar.google.com/calendar/r/eventedit?action=TEMPLATE&dates=%s%%2F%s&stz=America/Chicago&etz=America/Chicago&details=%s&location=%s&text=%s',
+                        'https://calendar.google.com/calendar/render?action=TEMPLATE&dates=%s%%2F%s&stz=America/Chicago&etz=America/Chicago&details=%s&location=%s&text=%s',
                         start_datetime_formatted,
                         CGI.escape(end_datetime_formatted),
                         CGI.escape(event_details),

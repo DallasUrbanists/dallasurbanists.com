@@ -270,7 +270,14 @@
       if (search_routes.length > 0) {
         setHTML('nearby_bus_routes', search_routes.reduce((accumulator, route) => {
           highlighted_routes.addData(route);
-          return accumulator + `<tr><td><b>${parseInt(route.properties.route_short_name, 10)} ${route.properties.route_long_name}</b></td><td style="width: 2.5em;">👟${minutesToWalk(route.nearest_stop.distance)}</td><td style="width: 2.5em;">🚴${minutesBike(route.nearest_stop.distance)}</td></tr>`;
+          let routeName = route.properties.route_long_name.replace('DART LIGHT RAIL - ', '');
+          let routeNumber = parseInt(route.properties.route_short_name, 10);
+          if (Number.isInteger(routeNumber)) {
+            routeNumber = `🚍${routeNumber}`;
+          } else {
+            routeNumber = `🚉`;
+          }
+          return accumulator + `<tr><td><b>${routeNumber} ${routeName}</b></td><td style="width: 2.5em;">👟${minutesToWalk(route.nearest_stop.distance)}</td><td style="width: 2.5em;">🚴${minutesBike(route.nearest_stop.distance)}</td></tr>`;
         }, ''));
       } else {
         setHTML('nearby_bus_routes', '<li>None nearby</li>');
@@ -285,11 +292,11 @@
       return match;
     });
 
-    const connections = primary_zones.reduce((acc, current) => acc.concat(current.properties.Connections), []).filter((value, index, array) => array.indexOf(value) === index);
+    const connections = primary_zones.reduce((acc, current) => acc.concat(current.properties.Connections), []);
       
     const secondary_zones = DART_GoLink_Zones.features.filter((feature) => connections.includes(feature.properties.Name));
 
-    return primary_zones.concat(secondary_zones);
+    return primary_zones.concat(secondary_zones).filter((value, index, array) => array.indexOf(value) === index);
   }
 
   // Draw map tiles

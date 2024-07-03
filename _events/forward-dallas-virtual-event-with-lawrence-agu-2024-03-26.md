@@ -1,5 +1,5 @@
 ---
-layout: event
+layout: old_event
 title: Forward Dallas Housing Impacts, with Lawrence Agu
 category: Webinar
 location: Online Zoom

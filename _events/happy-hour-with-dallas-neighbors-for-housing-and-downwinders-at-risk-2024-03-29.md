@@ -1,5 +1,5 @@
 ---
-layout: event
+layout: old_event
 title: Happy Hour w/ Dallas Neighbors for Housing & Downwinders at Risk 
 category: Webinar
 location: Bryan Street Tavern

@@ -306,9 +306,10 @@ input#mce-EMAIL {
     display: block;
 }
 
-.blog-article .article-masthead p.subtitle {
+.article-masthead p.subtitle {
     text-wrap: balance;
     color: white;
+    display: block;
 }
 
 ul.source-list {
@@ -500,8 +501,6 @@ h1.petition-title strong {
     width: 1em;
     margin: 0 0.25em;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 a {
     text-decoration-skip-ink: auto;
@@ -793,6 +792,7 @@ input#mce-EMAIL {
 .blog-article .article-masthead p.subtitle {
     text-wrap: balance;
     color: white;
+    display: block;
 }
 
 ul.source-list {
@@ -830,6 +830,7 @@ ul.source-list li p:last-child {
     margin-bottom: 0;
     text-wrap: balance;
     font-style: italic;
+    display: block;
 }
 
 .instagram-container {

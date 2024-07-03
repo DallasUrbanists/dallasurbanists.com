@@ -73,6 +73,7 @@ layout: plain
         display: flex;
         flex-direction: row;
         gap: 1rem;
+        margin-bottom: 1rem;
     }
 
     a {
@@ -114,7 +115,7 @@ layout: plain
                             rgba(0, 0, 0, .75) 2ch,
                             rgba(0, 0, 0, 0)
                         ),
-                        url('https://ucarecdn.com/3764c0d2-3ec7-4a5b-90c4-cd7d8e134db5/-/crop/1920x1081/0,210/-/resize/1600x900/');
+                        url('{{ event.cover_image }}');
                         background-size: cover;
                         background-attachment: scroll;
                         padding: 1em;

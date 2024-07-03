@@ -25,6 +25,7 @@
             scale: 0.5;
             transform-origin: top left;
             display: inline-block;
+            margin-bottom: -607px;
         }
         #media-table {
             width: 1080px;
@@ -52,19 +53,29 @@
     <div id="qrcode" style="display: none; width: 1080px;"></div>    
 
     <table id="media-table">
-        {% for event in site.events %}
+        {% assign events = site.events | reverse %}
+        {% for event in events %}{% unless event.layout != 'event' %}
             <tr>
                 <td>
-                    <canvas id="canvas{{ forloop.index }}" width="1080" height="1350" class="slide-canvas"></canvas>
+                    <canvas id="canvas{{ forloop.index }}" width="1080" height="1350" class="slide-canvas" data-cover-image="cover{{ forloop.index }}"></canvas>
                 </td>
                 <td>
-                    <img crossorigin="anonymous"src="{{ event.cover_image }}" id="pic1" width="1080" style="display: none; width: 1080px;" />
+                    <img crossorigin="anonymous" src="{{ event.cover_image }}" id="cover{{ forloop.index }}" style="display: none;" />
+
+                    Cover Image: "{{ event.cover_image }}"
 
                     <form id="s{{ forloop.index }}" data-slide="canvas{{ forloop.index }}">
-                        <input type="hidden" name="event_url" id="{{ forloop.index }}_event_url" value="{{ event.url }}" />
                         <p>
-                            <label for="{{ forloop.index }}_weblink">Web Link</label><br />
+                            <label for="{{ forloop.index }}_weblink">Footer text</label><br />
                             <input type="text" name="weblink" id="{{ forloop.index }}_weblink" value="link in bio and at dallasurbanists.com/events" onkeyup="updateSlide('s{{ forloop.index }}')" />
+                        </p>
+                        <p>
+                            <label for="{{ forloop.index }}_event_url">Event URL</label><br />
+                            <input type="text" name="event_url" id="{{ forloop.index }}_event_url" value="{{ event.url }}" onkeyup="updateSlide('s{{ forloop.index }}')" />
+                        </p>
+                        <p>
+                            <label for="{{ forloop.index }}_image">Event Photo</label><br />
+                            <input type="text" name="image" id="{{ forloop.index }}_photo_url" value="{{ event.cover_image }}" onkeyup="updateSlide('s{{ forloop.index }}')" />
                         </p>
                         <p>
                             <label for="{{ forloop.index }}_category">Category</label><br />
@@ -96,7 +107,7 @@
                     </form>
                 </td>
             </tr>
-        {% endfor %}
+        {% endunless %}{% endfor %}
     </table>
 
     <script src="plugins/qrcode.min.js"></script>
@@ -119,6 +130,9 @@
             const form = document.getElementById(formId);
             const canvas = document.getElementById(form.getAttribute('data-slide'));
             const downloadBtn = document.getElementById(formId + '_download_btn');
+            const coverImg = document.getElementById(canvas.getAttribute('data-cover-image'));
+
+            coverImg.src = form.elements['image'].value;
 
             drawInstagramEventSquare(canvas, {
                 corner_text: form.elements['weblink'].value ?? '',
@@ -136,29 +150,33 @@
 
 
         function drawInstagramEventSquare(canvas, options) {
-            setBackground(canvas);
-
             const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            setBackground(canvas);
 
             let position = topMargin;
             let titleSizeDiff = titleSize*lineHeightRatio - options.title_size*lineHeightRatio;
 
             position = write(options.top_line, canvas, normalSize, normalFont, boldWeight, position, 'green', true);
-            position = write(options.title, canvas, options.title_size, fancyFont, boldWeight, position-(titleSizeDiff));
+            position = write(options.title, canvas, options.title_size, fancyFont, boldWeight, position - titleSizeDiff);
             
-            position = write(options.datetime, canvas, normalSize, normalFont, normalWeight, position);
+            position = write(options.datetime, canvas, normalSize, normalFont, normalWeight, position + titleSizeDiff - titleSize + normalSize*2);
             position = write(options.location_name, canvas, normalSize, normalFont, normalWeight, position);
             position = write(options.location_address, canvas, normalSize, normalFont, normalWeight, position);
 
-            addImage(canvas, 'pic1', 0, 1350-607);
-            
-            new QRCode(document.getElementById("qrcode"), {
-                text: options.event_url,
+            addImage(canvas, canvas.getAttribute('data-cover-image'), 0, 1350-607);
+
+
+            document.getElementById("qrcode").innerHTML = "";
+            const qrCode = new QRCode(document.getElementById("qrcode"), {
                 width: 128,
                 height: 128,
                 colorDark : "#555555",
                 colorLight : "#ffffff",
             });
+            qrCode.clear();
+            qrCode.makeCode(options.event_url);
             const qrcodeImg = document.getElementById('qrcode').getElementsByTagName('canvas')[0];
             ctx.drawImage(qrcodeImg, canvas.width-qrcodeImg.width-(padding/2), padding/2, 128, 128);            
 
@@ -183,7 +201,7 @@
             const ctx = canvas.getContext('2d');
             const image = document.getElementById(imageId);
             image.width = 1080;
-            ctx.drawImage(image, 0, 0, 1600, 900, x, y, 1080, 607);
+            ctx.drawImage(image, x, y, 1080, 607);
         }
 
         async function loading(formId) {

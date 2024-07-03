@@ -2,8 +2,8 @@
 layout: event
 category: Happy Hour Social
 title: Dallas Bicycle Coalition + Bike DFW Happy Hour at Four Corners Brewery
-start_date: 2024-05-17T22:30:45.693Z
-end_date: 2024-05-18T00:00:00.000Z
+start_date: 2024-05-17T22:30:45.693
+end_date: 2024-05-18T00:00:00.000
 frequency: ""
 schedule: ""
 location:
@@ -18,7 +18,7 @@ virtual:
 rsvp:
   pricing: Free event, food/drink optional purchase
   requirement: Signup encouraged
-  deadline: 2024-05-12T17:00:45.736Z
+  deadline: 2024-05-12T17:00:45.736
   url: https://actionnetwork.org/groups/dallas-bicycle-coalition
   instructions: You must sign up online before the Sunday cutoff in order to speak
     virtually during the CPC meeting. No signup required if you are speaking

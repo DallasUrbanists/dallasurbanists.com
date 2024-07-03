@@ -1,0 +1,352 @@
+<html>
+<head>
+  <title>Urban Explorer (BETA)</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Leaflet JS CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
+
+  <!-- Leaflet Geosearch CSS CDN https://smeijer.github.io/leaflet-geosearch/#installation -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css"/>
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+
+  <!-- Make sure you put this AFTER leaflet.js, when using with leaflet https://smeijer.github.io/leaflet-geosearch/#installation -->
+  <script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
+
+  <!-- DART GeoJSON -->
+  <script src="./geojson/DART-GoLink-Zones.js"></script>
+  <script src="./geojson/DART-Routes.js"></script>
+  <script src="./geojson/DART-Stops.js"></script>
+
+  <!-- custom styles -->
+  <style>
+    html, body { margin: 0; font-size: 16px;}
+    .layout-container { width: 100%; max-width: 1024px; min-height: 20svh; margin: 0 auto; padding: 1em; box-sizing: border-box;}
+    #map { width: 100%; height: 80svh; box-sizing: border-box;}
+    #results-table { width: 100%; display: none; }
+    #results-table td { border: solid 1px black; padding: 0.5em; vertical-align: middle;}
+    #results-table ul { margin: 0; padding-left: 1em; }
+    #results-table table { width: 100%; }
+    #results-table table th { text-align: left; }
+    #compare-form { display: none; }
+    input { padding: 0.5em; }
+  </style>
+</head>
+<body>
+  <div class="layout-container">
+    <form id="search-form">
+      <input type="text" id="search" value="Addison Transit Center" />
+      <input type="submit" value="Search" />
+    </form>
+    <form id="compare-form">
+      <input type="text" id="compare" value="" />
+      <input type="submit" value="Compare" />
+    </form>
+    <p id="user-message">Type a location to begin search</p>
+    <div id="results-table">
+      <div id="golink-results">
+        <h2>GoLink Zones</h2>
+        <ul id="matching_golink_zones"></ul>
+      </div>
+      <div id="route-results">
+        <h2>Nearby Routes</h2>
+        <table id="nearby_bus_routes"></table>  
+      </div>
+    </div>
+  </div>
+  <div id="map"></div>
+  <script>
+  const search_provider = new GeoSearch.OpenStreetMapProvider();
+  
+  const MILE = 1609.34; // meters
+
+  const cache = {};
+
+  DART_Routes.features.forEach((route, index) => {
+    const route_onestop_id = route.properties.onestop_id;
+
+    DART_Routes.features[index].properties.route_stops = DART_Stops[route_onestop_id];
+
+    /*
+    if (localStorage.getItem(route_onestop_id)) {
+      const stored_route_stops = JSON.parse(localStorage.getItem(route_onestop_id));
+      cache[route_onestop_id] = stored_route_stops;
+    } else {
+      const api_key = "dF1G4psR0dzJCuBE8fb49IYk6siHFUh9";
+      const api_url = `https://transit.land/api/v2/rest/stops.geojson?api_key=${api_key}&served_by_onestop_ids=${route_onestop_id}&limit=100`;
+      fetch(api_url).then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      }).then((response) => {
+        // To minimize storage use, only store minimal details about each stop
+        const route_stops = response.features.map((feature) => {
+          return {
+            "type": "Feature",
+            "geometry": feature.geometry,
+            "properties": {
+              "onestop_id": feature.properties.onestop_id,
+              "stop_id": feature.properties.stop_id,
+              "stop_name": feature.properties.stop_name,
+              "stop_desc": feature.properties.stop_desc
+            }
+          };
+        });
+
+        localStorage.setItem(route_onestop_id, JSON.stringify(route_stops));
+
+        DART_Routes.features[index].properties.route_stops = route_stops;
+
+        cache[route_onestop_id] = route_stops;
+      }); 
+    }
+    */
+  });
+
+  // Configure map in Leaflet JS
+  const dallas_coordinates = [32.78066947984641, -96.79928449246167];
+  const zoom_level = 14;
+  const map = L.map('map').setView(dallas_coordinates, zoom_level);
+  const highlighted_zones = L.geoJSON().addTo(map);
+  const highlighted_routes = L.geoJSON().addTo(map);
+  const main_marker = L.marker(dallas_coordinates).addTo(map);
+  const secondary_marker = L.marker(dallas_coordinates);
+  
+  let search_coords = dallas_coordinates;
+  let search_golink_zones = [];
+  let search_routes = [];
+  let compare_coords = dallas_coordinates;
+  let compare_golink_zones = [];
+  let compare_routes = [];
+
+  document.getElementById('compare-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const compare = document.getElementById('compare').value;
+    const against = document.getElementById('search').value;
+
+    highlighted_zones.clearLayers();
+    highlighted_routes.clearLayers();
+
+    setUserMessage("Comparing...");
+
+    search_provider.search({ query: compare }).then(result => {
+      if (result.length === 0) {
+        setUserMessage("No address found for comparison.");
+        return;
+      }
+
+      compare_point = result[0];
+      compare_coords = L.latLng([compare_point.y, compare_point.x]);
+
+      setUserMessage(`Showing comparison results:`);
+
+      secondary_marker.setLatLng(compare_coords).addTo(map);
+
+      map.panTo(compare_coords, { animate: true, duration: 0.5 });
+
+      // highlight matching GoLink zones
+
+      compare_golink_zones = searchGoLinkZonesAtPoint(compare_point);
+
+      if (search_golink_zones.length > 0 && compare_golink_zones.length > 0) {
+        const compare_golink_zone_names = compare_golink_zones.map((zone) => zone.properties.Name);
+        
+        setHTML('matching_golink_zones', search_golink_zones.reduce((acc, searched_zone) => {
+          if (compare_golink_zone_names.includes(searched_zone.properties.Name)) {
+            highlighted_zones.addData(searched_zone);
+            return acc + `<li>${searched_zone.properties.Name}</li>`;
+          }
+
+          return acc;
+        }, ''));
+      } else {
+        setHTML('matching_golink_zones', '<li>No GoLink connection</li>');
+      }
+
+      compare_routes = [...search_routes];
+      compare_routes = compare_routes.filter((feature, index) => {
+        const stops = feature.properties.route_stops.filter((route_stop, index) => {
+          const stop_coords = L.latLng(route_stop.geometry.coordinates[1], route_stop.geometry.coordinates[0]);
+          const distance_in_meters = stop_coords.distanceTo(compare_coords);
+          
+          feature.properties.route_stops[index].distance = distance_in_meters;
+
+          return distance_in_meters <= MILE;
+        });
+
+        if (stops.length > 0) {
+          compare_routes[index].nearby_stops = stops;
+          compare_routes[index].nearest_stop = stops.reduce((prev, current) => (current.distance < prev.distance) ? current : prev);
+
+          return true;
+        }
+
+        return false;
+      });
+
+      if (compare_routes.length > 0) {
+        setHTML('nearby_bus_routes', compare_routes.reduce((accumulator, route) => {
+          highlighted_routes.addData(route);
+          return accumulator + `<tr><td><b>${parseInt(route.properties.route_short_name, 10)} ${route.properties.route_long_name}</b></td><td style="width: 2.5em;">👟${minutesToWalk(route.nearest_stop.distance)}</td><td style="width: 2.5em;">🚴${minutesBike(route.nearest_stop.distance)}</td></tr>`;
+        }, ''));
+      } else {
+        setHTML('nearby_bus_routes', '<li>No connecting routes</li>');
+      }
+    });
+  });
+
+  document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    document.getElementById('results-table').style.display = "block";
+    document.getElementById('compare-form').style.display = "block";
+
+    const address = document.getElementById('search').value;
+    
+    highlighted_zones.clearLayers();
+    highlighted_routes.clearLayers();
+    
+    setUserMessage("Searching...");
+
+    search_provider.search({ query: address }).then(result => {
+      if (result.length === 0) {
+        setUserMessage("No address found.");
+        return;
+      }
+
+      const point = result[0];
+      search_coords = L.latLng([point.y, point.x]);
+
+      setUserMessage(`Showing search results:`);
+
+      main_marker.setLatLng(search_coords);
+      secondary_marker.setLatLng(search_coords).addTo(map);
+
+      map.panTo(search_coords, { animate: true, duration: 0.5 });
+
+      // highlight matching GoLink zones
+
+      search_golink_zones = searchGoLinkZonesAtPoint(point);
+
+      setHTML('matching_golink_zones', '<li>None</li>');
+
+      if (search_golink_zones.length > 0) {
+        setHTML('matching_golink_zones', search_golink_zones.reduce((acc, zone) => {
+          highlighted_zones.addData(zone);
+          return acc + `<li>${zone.properties.Name}</li>`;
+        }, ''));
+      }
+
+      // highlight bus routes that stop within one mile
+
+      search_routes = DART_Routes.features.filter((feature, index) => {
+        const stops = feature.properties.route_stops.filter((route_stop, index) => {
+          const stop_coords = L.latLng(route_stop.geometry.coordinates[1], route_stop.geometry.coordinates[0]);
+          const distance_in_meters = stop_coords.distanceTo(search_coords);
+          
+          feature.properties.route_stops[index].distance = distance_in_meters;
+
+          return distance_in_meters <= MILE;
+        });
+
+        if (stops.length > 0) {
+          DART_Routes.features[index].nearby_stops = stops;
+          DART_Routes.features[index].nearest_stop = stops.reduce((prev, current) => (current.distance < prev.distance) ? current : prev);
+
+          return true;
+        }
+
+        return false;
+      });
+
+      setHTML('nearby_bus_routes', '<li>None nearby</li>');
+
+      if (search_routes.length > 0) {
+        setHTML('nearby_bus_routes', search_routes.reduce((accumulator, route) => {
+          highlighted_routes.addData(route);
+          return accumulator + `<tr><td><b>${parseInt(route.properties.route_short_name, 10)} ${route.properties.route_long_name}</b></td><td style="width: 2.5em;">👟${minutesToWalk(route.nearest_stop.distance)}</td><td style="width: 2.5em;">🚴${minutesBike(route.nearest_stop.distance)}</td></tr>`;
+        }, ''));
+      } else {
+        setHTML('nearby_bus_routes', '<li>None nearby</li>');
+      }
+    });
+  });
+
+  function searchGoLinkZonesAtPoint(point) {
+    const primary_zones = DART_GoLink_Zones.features.filter((feature) => {
+      const polygon = feature.geometry.coordinates[0];
+      const match = isPointInsidePolygon(point, polygon);
+      return match;
+    });
+
+    const connections = primary_zones.reduce((acc, current) => acc.concat(current.properties.Connections), []).filter((value, index, array) => array.indexOf(value) === index);
+      
+    const secondary_zones = DART_GoLink_Zones.features.filter((feature) => connections.includes(feature.properties.Name));
+
+    return primary_zones.concat(secondary_zones);
+  }
+
+  // Draw map tiles
+  const map_tiles_url = "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}";
+  L.tileLayer(map_tiles_url, { maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+
+  // Draw all GoLink zones on the map 
+  //L.geoJSON(DART_GoLink_Zones).addTo(map);
+
+  // Draw Route 237 on the map
+  //L.geoJSON(DART_Route_237).addTo(map);
+
+  function setUserMessage(message) {
+    //document.getElementById('user-message').innerHTML = message;
+  }
+
+  function setHTML(elementId, message) {
+    document.getElementById(elementId).innerHTML = message;
+  }
+
+  function metersToMiles(meters) {
+    const miles = parseFloat(meters) * 0.00062137;
+    return miles.toPrecision(2);
+  }
+
+  function minutesToWalk(meters) {
+    const miles = metersToMiles(meters);
+    const avgMinutesPerMile = 20;
+    const estimatedMinutes = avgMinutesPerMile * miles;
+
+    return Math.round(estimatedMinutes);
+  }
+
+  function minutesBike(meters) {
+    const miles = metersToMiles(meters);
+    const avgMinutesPerMile = 6;
+    const estimatedMinutes = avgMinutesPerMile * miles;
+
+    return Math.round(estimatedMinutes);
+  }
+
+  function isPointInsidePolygon(point, poly) {
+    var polyPoints = poly;
+    var x = point.x, y = point.y;
+
+    var inside = false;
+    for (var i = 0, j = polyPoints.length - 1; i < polyPoints.length; j = i++) {
+      var xi = polyPoints[i][0], yi = polyPoints[i][1];
+      var xj = polyPoints[j][0], yj = polyPoints[j][1];
+
+      var intersect = ((yi > y) != (yj > y))
+          && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+      if (intersect) inside = !inside;
+    }
+
+    return inside;
+  };
+  </script>
+</body>
+</html>

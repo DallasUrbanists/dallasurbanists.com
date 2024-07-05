@@ -1,0 +1,265 @@
+<html>
+<head>
+  <title>Place Search</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- custom styles -->
+  <style>
+    html, body { margin: 0; font-size: 16px; background-color: #000; color: white;}
+    .layout-container { width: 100%; max-width: 1024px; min-height: 20svh; margin: 0 auto; padding: 1em; box-sizing: border-box;}
+    #map { width: 100%; height: 80svh; box-sizing: border-box;}
+    .results-table { width: 100%; }
+    .results-table td { border: solid 1px black; padding: 0.5em; vertical-align: middle;}
+    .results-table ul { margin: 0; padding-left: 1em; }
+    .results-table table { width: 100%; }
+    .results-table table th { text-align: left; }
+    .compare-form { display: none; }
+    input { padding: 0.5em; }
+    #output { border: solid 1px #000; }
+    .route_option { width: 25%; float: left;}
+  </style>
+
+    <script src="./geojson/DART-Routes.js"></script>
+    <script src="./geojson/DART-Stops.js"></script>
+
+    <!-- Turf JS CDN https://turfjs.org/docs/getting-started -->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+
+</head>
+<body>
+    <div class="layout-container">
+        <h1><a name="search">Place Search</a></h1>
+        <p><a href="#search">search </a> | <a href="#stops">stops</a> | <a href="#places">places</a> | <a href="#output">output</a></p>
+        <form id="route-form">
+            <p>Step 1: pick the routes to search.</p>
+            <div id="route-selection"></div>
+            <p style="clear: both;">Step 3: begin search.</p>
+            <p><input type="submit" value="search" id="search-btn" /></p>
+        </form>
+
+        <p><a href="#search">search </a> | <a href="#stops">stops</a> | <a href="#places">places</a> | <a href="#output">output</a></p>
+
+        <button id="copy-output-btn">copy output</button>
+
+    </div>
+    <script>
+        async function main() {
+            (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+            key: "AIzaSyC7xDbizvxJvWNG2bkl3zmM9YbuoGUOPTo", v: "weekly" });
+
+            const {Place, SearchNearbyRankPreference} = await google.maps.importLibrary("places");
+
+            const MILE = 1609.34; // meters
+            const restaurantTypes = [
+                'american_restaurant',
+                'bakery',
+                'bar',
+                'barbecue_restaurant',
+                'brazilian_restaurant',
+                'breakfast_restaurant',
+                'brunch_restaurant',
+                'cafe',
+                'chinese_restaurant',
+                'coffee_shop',
+                'fast_food_restaurant',
+                'french_restaurant',
+                'greek_restaurant',
+                'hamburger_restaurant',
+                'ice_cream_shop',
+                'indian_restaurant',
+                'indonesian_restaurant',
+                'italian_restaurant',
+                'japanese_restaurant',
+                'korean_restaurant',
+                'lebanese_restaurant',
+                'meal_delivery',
+                'meal_takeaway',
+                'mediterranean_restaurant',
+                'mexican_restaurant',
+                'middle_eastern_restaurant',
+                'pizza_restaurant',
+                'ramen_restaurant',
+                'restaurant',
+                'sandwich_shop',
+                'seafood_restaurant',
+                'spanish_restaurant',
+                'steak_house',
+                'sushi_restaurant',
+                'thai_restaurant',
+                'turkish_restaurant',
+                'vegan_restaurant',
+                'vegetarian_restaurant',
+                'vietnamese_restaurant',
+                ];
+
+            const copyBtn = document.getElementById('copy-output-btn');
+            const routeForm = document.getElementById('route-form');
+            const routeChoices = document.getElementById('route-selection');
+            const minSeconds = 0.5;
+            const maxSeconds = 1;
+
+            const response = await fetch('./places.json');
+            const data = await response.json();
+
+            let stopsCovered = findCoveredStops(data);
+            let selectedRoutes = [];
+            let routeStops = [];
+            let nextRouteIndex = 0;
+            let nextStopIndex = 0;
+            let abort = false;
+
+            console.log(stopsCovered.length);
+
+            routeForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                selectedRoutes = [];
+
+                document.querySelectorAll('#route-selection input').forEach((choice) => {
+                    if (choice.checked) {
+                        selectedRoutes.push(choice.value);
+                    }
+                });
+
+                nextRouteIndex = 0;
+                nextStopIndex = 0;
+                
+                routeStops = DART_Stops[selectedRoutes[nextRouteIndex]];
+
+                console.log(selectedRoutes.length);
+
+                console.log('BEGIN SEARCH');
+
+                searchNextStop();
+            });
+
+            async function searchNextStop() {
+                const randomSeconds = Math.random() * maxSeconds;
+                const nextStop = routeStops[nextStopIndex];
+                const stopId = nextStop.properties.onestop_id;
+                
+                let waitTime = 0;
+
+                if (!stopsCovered.includes(stopId)) {
+                    const stopCoords = nextStop.geometry.coordinates; 
+                    const stopCenter = new google.maps.LatLng(stopCoords[1], stopCoords[0]);
+                    const { places } = await Place.searchNearby({
+                        // required parameters
+                        fields: ["displayName", "location"],
+                        locationRestriction: {
+                            center: stopCenter,
+                            radius: MILE / 2,
+                        },
+                        // optional parameters
+                        rankPreference: SearchNearbyRankPreference.DISTANCE,
+                        includedPrimaryTypes: restaurantTypes,
+                        maxResultCount: 20,
+                        language: "en-US",
+                        region: "us"
+                    });
+
+                    places.forEach(({Eg}) => {
+                        const placeFeature = {
+                            "type": "Feature",
+                            "properties": {},
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [Eg.location.lng, Eg.location.lat]
+                            }
+                        };
+
+                        const stopDistance = turf.distance(nextStop, placeFeature, { units: "miles" }).toFixed(2);
+
+                        if (!data[Eg.id]) {
+                            data[Eg.id] = {
+                                id: Eg.id,
+                                name: Eg.displayName,
+                                location: Eg.location,
+                                nearbyStops: {}
+                            };
+                        }
+
+                        data[Eg.id].nearbyStops[stopId] = stopDistance;
+                    });
+                    
+                    waitTime = (minSeconds + randomSeconds) * 1000;
+                }
+
+                nextStopIndex = nextStopIndex + 1;
+
+                if (nextStopIndex < routeStops.length && !abort) {
+                } else {
+                    console.log('FINISHED ALL STOPS FOR CURRENT ROUTE');
+
+                    nextStopIndex = 0;
+                    nextRouteIndex = nextRouteIndex + 1;
+                    stopsCovered = findCoveredStops(data);
+
+                    if (nextRouteIndex < selectedRoutes.length && !abort) {
+                        console.log('BEGINNING SEARCH ON NEXT ROUTE');
+                    } else {
+                        console.log('ALL DONE! NO MORE SELECTED ROUTES TO SEARCH!');
+                        console.log(stopsCovered.length);
+                        return;
+                    }
+                }
+
+                if (waitTime > 0) {
+                    setTimeout(searchNextStop, waitTime);
+                } else {
+                    searchNextStop();
+                }
+            }
+
+            function getRouteById(id) {
+                for (const route of DART_Routes.features) {
+                    if (route.properties.onestop_id == id) {
+                        return route;
+                    }
+                }
+
+                return false;
+            }
+
+            function findPlaceById(id) {
+                return data[id];
+            }
+
+            DART_Routes.features.forEach((route) => {
+                let routeId = route.properties.onestop_id;
+                let routeName = route.properties.route_long_name.replace('DART LIGHT RAIL - ', '');
+                let routeNumber = parseInt(route.properties.route_short_name, 10);
+                
+                routeNumber = Number.isInteger(routeNumber) ? `🚍${routeNumber}` : routeNumber = `🚉`;
+                
+                routeChoices.innerHTML = routeChoices.innerHTML + `<div class='route_option'><input type='checkbox' name='selected_routes' id='${routeId}' value='${routeId}' /><label for='${routeId}'>${routeNumber} ${routeName}</label></div>`
+            });
+            
+            copyBtn.addEventListener('click', function() {
+                // Copy the text inside the text field
+                navigator.clipboard.writeText(JSON.stringify(data));
+
+                // Alert the copied text
+                alert("Copied the text: ");
+            });
+
+            function findCoveredStops(data) {
+                const coveredStops = [];
+
+                for (const placeId in data) {
+                    for (const stopId in data[placeId].nearbyStops) {
+                        if (!coveredStops.includes(stopId)) {
+                            coveredStops.push(stopId);
+                        }
+                    }
+                }
+
+                return coveredStops;
+            }
+        };
+
+        main();
+    </script>
+</body>
+</html>

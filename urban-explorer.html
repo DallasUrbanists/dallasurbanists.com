@@ -17,6 +17,14 @@
   <!-- Make sure you put this AFTER leaflet.js, when using with leaflet https://smeijer.github.io/leaflet-geosearch/#installation -->
   <script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
 
+  <!-- Turf JS CDN https://turfjs.org/docs/getting-started -->
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+
+  <!-- Leaflet JS CDN https://github.com/Leaflet/Leaflet.markercluster -->
+  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"/>
+
   <!-- DART GeoJSON -->
   <script src="./geojson/DART-GoLink-Zones.js"></script>
   <script src="./geojson/DART-Routes.js"></script>
@@ -24,7 +32,7 @@
 
   <!-- custom styles -->
   <style>
-    html, body { margin: 0; font-size: 16px;}
+    html, body { margin: 0; font-size: 16px; background-color: black; color: white;}
     .layout-container { width: 100%; max-width: 1024px; min-height: 20svh; margin: 0 auto; padding: 1em; box-sizing: border-box;}
     #map { width: 100%; height: 80svh; box-sizing: border-box;}
     #results-table { width: 100%; display: none; }
@@ -34,6 +42,14 @@
     #results-table table th { text-align: left; }
     #compare-form { display: none; }
     input { padding: 0.5em; }
+
+    #nearby_bus_routes .map-icon {
+      width: 1.5em;
+      height: 1.5em;
+      display: inline-block;
+      vertical-align: bottom;
+      padding-right: 0.25em;
+    }
   </style>
 </head>
 <body>
@@ -60,300 +76,452 @@
   </div>
   <div id="map"></div>
   <script>
-  const search_provider = new GeoSearch.OpenStreetMapProvider();
-  
-  const MILE = 1609.34; // meters
+    async function main() {
+    const search_provider = new GeoSearch.OpenStreetMapProvider();
+    
+    const MILE = 1609.34; // meters
 
-  const cache = {};
+    const cache = {};
 
-  DART_Routes.features.forEach((route, index) => {
-    const route_onestop_id = route.properties.onestop_id;
+    DART_Routes.features.forEach((route, index) => {
+      const route_onestop_id = route.properties.onestop_id;
 
-    DART_Routes.features[index].properties.route_stops = DART_Stops[route_onestop_id];
+      DART_Routes.features[index].properties.route_stops = DART_Stops[route_onestop_id];
+    });
 
-    /*
-    if (localStorage.getItem(route_onestop_id)) {
-      const stored_route_stops = JSON.parse(localStorage.getItem(route_onestop_id));
-      cache[route_onestop_id] = stored_route_stops;
-    } else {
-      const api_key = "dF1G4psR0dzJCuBE8fb49IYk6siHFUh9";
-      const api_url = `https://transit.land/api/v2/rest/stops.geojson?api_key=${api_key}&served_by_onestop_ids=${route_onestop_id}&limit=100`;
-      fetch(api_url).then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
+    // Define icons
+    const MapIcon = L.Icon.extend({
+      option: {
+        shadowUrl: './assets/icons/map_icon_shadow.png',
+        iconSize: [40, 40],
+        shadowSize: [40, 40],
+        iconAnchor: [20, 20],
+        shadowAnchor: [20, 20]
+      }
+    });
+    const restaurantIcon = new MapIcon({iconUrl: './assets/icons/restaurant_map_icon.png'});
+
+    // Configure map in Leaflet JS
+    const dallas_coordinates = [32.78066947984641, -96.79928449246167];
+    const zoom_level = 14;
+    const map = L.map('map', { maxZoom: 16 }).setView(dallas_coordinates, zoom_level);
+    const highlighted_zones = L.geoJSON().addTo(map);
+    const highlighted_routes = L.geoJSON().addTo(map);
+    const main_marker = L.marker(dallas_coordinates).addTo(map);
+    const secondary_marker = L.marker(dallas_coordinates);
+    const main_circle = turf.circle(dallas_coordinates, 0.75, { units: 'miles' });
+    const test_circle = turf.circle([32.83683226401854, -96.77273385521288], 0.75, { units: 'miles' });
+    const response = await fetch('./places.json');
+    const places = await response.json();
+    const restaurantMarkers = L.markerClusterGroup({
+      maxClusterRadius: 60
+    });
+
+    for (const placeId in places) {
+      const place = places[placeId];
+
+      restaurantMarkers.addLayer(
+        L
+          .marker([place.location.lat, place.location.lng], {icon: restaurantIcon})
+          .bindTooltip(place.name, {sticky: true})
+          //.bindPopup(place.name, {offset: [20, 20]})
+      );
+    }
+
+    map.addLayer(restaurantMarkers);
+    
+    // console.log(turf.booleanIntersects(main_circle, turf.circle([32.83683226401854, -96.77273385521288], 0.75, { units: 'miles' })));
+    // console.log(turf.booleanIntersects(main_circle, turf.circle([32.78240217804722, -96.7917576802763], 0.75, { units: 'miles' })));
+
+    let search_coords = dallas_coordinates;
+    let search_golink_zones = [];
+    let search_routes = [];
+    let compare_coords = dallas_coordinates;
+    let compare_golink_zones = [];
+    let compare_routes = [];
+
+    document.getElementById('compare-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const compare = document.getElementById('compare').value;
+      const against = document.getElementById('search').value;
+
+      highlighted_zones.clearLayers();
+      highlighted_routes.clearLayers();
+
+      setUserMessage("Comparing...");
+
+      search_provider.search({ query: compare }).then(result => {
+        if (result.length === 0) {
+          setUserMessage("No address found for comparison.");
+          return;
         }
-        return response.json();
-      }).then((response) => {
-        // To minimize storage use, only store minimal details about each stop
-        const route_stops = response.features.map((feature) => {
-          return {
-            "type": "Feature",
-            "geometry": feature.geometry,
-            "properties": {
-              "onestop_id": feature.properties.onestop_id,
-              "stop_id": feature.properties.stop_id,
-              "stop_name": feature.properties.stop_name,
-              "stop_desc": feature.properties.stop_desc
+
+        compare_point = result[0];
+        compare_coords = L.latLng([compare_point.y, compare_point.x]);
+
+        setUserMessage(`Showing comparison results:`);
+
+        secondary_marker.setLatLng(compare_coords).addTo(map);
+
+        map.panTo(compare_coords, { animate: true, duration: 0.5 });
+
+        // highlight matching GoLink zones
+
+        compare_golink_zones = searchGoLinkZonesAtPoint(compare_point);
+
+        if (search_golink_zones.length > 0 && compare_golink_zones.length > 0) {
+          const compare_golink_zone_names = compare_golink_zones.map((zone) => zone.properties.Name);
+          
+          setHTML('matching_golink_zones', search_golink_zones.reduce((acc, searched_zone) => {
+            if (compare_golink_zone_names.includes(searched_zone.properties.Name)) {
+              highlighted_zones.addData(searched_zone);
+              return acc + `<li>${searched_zone.properties.Name}</li>`;
             }
-          };
-        });
 
-        localStorage.setItem(route_onestop_id, JSON.stringify(route_stops));
-
-        DART_Routes.features[index].properties.route_stops = route_stops;
-
-        cache[route_onestop_id] = route_stops;
-      }); 
-    }
-    */
-  });
-
-  // Configure map in Leaflet JS
-  const dallas_coordinates = [32.78066947984641, -96.79928449246167];
-  const zoom_level = 14;
-  const map = L.map('map').setView(dallas_coordinates, zoom_level);
-  const highlighted_zones = L.geoJSON().addTo(map);
-  const highlighted_routes = L.geoJSON().addTo(map);
-  const main_marker = L.marker(dallas_coordinates).addTo(map);
-  const secondary_marker = L.marker(dallas_coordinates);
-  
-  let search_coords = dallas_coordinates;
-  let search_golink_zones = [];
-  let search_routes = [];
-  let compare_coords = dallas_coordinates;
-  let compare_golink_zones = [];
-  let compare_routes = [];
-
-  document.getElementById('compare-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const compare = document.getElementById('compare').value;
-    const against = document.getElementById('search').value;
-
-    highlighted_zones.clearLayers();
-    highlighted_routes.clearLayers();
-
-    setUserMessage("Comparing...");
-
-    search_provider.search({ query: compare }).then(result => {
-      if (result.length === 0) {
-        setUserMessage("No address found for comparison.");
-        return;
-      }
-
-      compare_point = result[0];
-      compare_coords = L.latLng([compare_point.y, compare_point.x]);
-
-      setUserMessage(`Showing comparison results:`);
-
-      secondary_marker.setLatLng(compare_coords).addTo(map);
-
-      map.panTo(compare_coords, { animate: true, duration: 0.5 });
-
-      // highlight matching GoLink zones
-
-      compare_golink_zones = searchGoLinkZonesAtPoint(compare_point);
-
-      if (search_golink_zones.length > 0 && compare_golink_zones.length > 0) {
-        const compare_golink_zone_names = compare_golink_zones.map((zone) => zone.properties.Name);
-        
-        setHTML('matching_golink_zones', search_golink_zones.reduce((acc, searched_zone) => {
-          if (compare_golink_zone_names.includes(searched_zone.properties.Name)) {
-            highlighted_zones.addData(searched_zone);
-            return acc + `<li>${searched_zone.properties.Name}</li>`;
-          }
-
-          return acc;
-        }, ''));
-      } else {
-        setHTML('matching_golink_zones', '<li>No GoLink connection</li>');
-      }
-
-      compare_routes = [...search_routes];
-      compare_routes = compare_routes.filter((feature, index) => {
-        const stops = feature.properties.route_stops.filter((route_stop, index) => {
-          const stop_coords = L.latLng(route_stop.geometry.coordinates[1], route_stop.geometry.coordinates[0]);
-          const distance_in_meters = stop_coords.distanceTo(compare_coords);
-          
-          feature.properties.route_stops[index].distance = distance_in_meters;
-
-          return distance_in_meters <= MILE;
-        });
-
-        if (stops.length > 0) {
-          compare_routes[index].nearby_stops = stops;
-          compare_routes[index].nearest_stop = stops.reduce((prev, current) => (current.distance < prev.distance) ? current : prev);
-
-          return true;
+            return acc;
+          }, ''));
+        } else {
+          setHTML('matching_golink_zones', '<li>No GoLink connection</li>');
         }
 
-        return false;
-      });
+        compare_routes = [...search_routes];
+        compare_routes = compare_routes.filter((feature, index) => {
+          const stops = feature.properties.route_stops.filter((route_stop, index) => {
+            const stop_coords = L.latLng(route_stop.geometry.coordinates[1], route_stop.geometry.coordinates[0]);
+            const distance_in_meters = stop_coords.distanceTo(compare_coords);
+            
+            feature.properties.route_stops[index].distance = distance_in_meters;
 
-      if (compare_routes.length > 0) {
-        setHTML('nearby_bus_routes', compare_routes.reduce((accumulator, route) => {
-          highlighted_routes.addData(route);
-          return accumulator + `<tr><td><b>${parseInt(route.properties.route_short_name, 10)} ${route.properties.route_long_name}</b></td><td style="width: 2.5em;">👟${minutesToWalk(route.nearest_stop.distance)}</td><td style="width: 2.5em;">🚴${minutesBike(route.nearest_stop.distance)}</td></tr>`;
-        }, ''));
-      } else {
-        setHTML('nearby_bus_routes', '<li>No connecting routes</li>');
-      }
-    });
-  });
+            return distance_in_meters <= MILE;
+          });
 
-  document.getElementById('search-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+          if (stops.length > 0) {
+            compare_routes[index].nearby_stops = stops;
+            compare_routes[index].nearest_stop = stops.reduce((prev, current) => (current.distance < prev.distance) ? current : prev);
 
-    document.getElementById('results-table').style.display = "block";
-    document.getElementById('compare-form').style.display = "block";
+            return true;
+          }
 
-    const address = document.getElementById('search').value;
-    
-    highlighted_zones.clearLayers();
-    highlighted_routes.clearLayers();
-    
-    setUserMessage("Searching...");
-
-    search_provider.search({ query: address }).then(result => {
-      if (result.length === 0) {
-        setUserMessage("No address found.");
-        return;
-      }
-
-      const point = result[0];
-      search_coords = L.latLng([point.y, point.x]);
-
-      setUserMessage(`Showing search results:`);
-
-      main_marker.setLatLng(search_coords);
-      secondary_marker.setLatLng(search_coords).addTo(map);
-
-      map.panTo(search_coords, { animate: true, duration: 0.5 });
-
-      // highlight matching GoLink zones
-
-      search_golink_zones = searchGoLinkZonesAtPoint(point);
-
-      setHTML('matching_golink_zones', '<li>None</li>');
-
-      if (search_golink_zones.length > 0) {
-        setHTML('matching_golink_zones', search_golink_zones.reduce((acc, zone) => {
-          highlighted_zones.addData(zone);
-          return acc + `<li>${zone.properties.Name}</li>`;
-        }, ''));
-      }
-
-      // highlight bus routes that stop within one mile
-
-      search_routes = DART_Routes.features.filter((feature, index) => {
-        const stops = feature.properties.route_stops.filter((route_stop, index) => {
-          const stop_coords = L.latLng(route_stop.geometry.coordinates[1], route_stop.geometry.coordinates[0]);
-          const distance_in_meters = stop_coords.distanceTo(search_coords);
-          
-          feature.properties.route_stops[index].distance = distance_in_meters;
-
-          return distance_in_meters <= MILE;
+          return false;
         });
 
-        if (stops.length > 0) {
-          DART_Routes.features[index].nearby_stops = stops;
-          DART_Routes.features[index].nearest_stop = stops.reduce((prev, current) => (current.distance < prev.distance) ? current : prev);
+        if (compare_routes.length > 0) {
+          setHTML('nearby_bus_routes', compare_routes.reduce((accumulator, route) => {
+            highlighted_routes.addData(route);
 
-          return true;
+            const placesOnThisRoute = [];
+
+            route.properties.route_stops.forEach((route_stop) => {
+              findPlacesNearStop(route_stop.properties.onestop_id).forEach((place) => {
+                if (!placesOnThisRoute.includes(place)) {
+                  placesOnThisRoute.push(place);
+                }
+                if (!nearby_places.includes(place)) {
+                  nearby_places.push(place);
+                }
+              })
+            });
+
+            return accumulator + `<tr>`
+              + `<td><b>${routeNumber} ${routeName}</b></td>`
+              + `<td style="width: 3.5em;"><img src="./assets/icons/restaurant_map_icon.png" class="map-icon" />${placesOnThisRoute.length}</td>`
+              + `<td style="width: 2.5em;">👟${minutesToWalk(route.nearest_stop.distance)}</td>`
+              + `<td style="width: 2.5em;">🚴${minutesBike(route.nearest_stop.distance)}</td>`
+              + `</tr>`;
+          }, ''));
+        } else {
+          setHTML('nearby_bus_routes', '<li>No connecting routes</li>');
         }
-
-        return false;
       });
-
-      setHTML('nearby_bus_routes', '<li>None nearby</li>');
-
-      if (search_routes.length > 0) {
-        setHTML('nearby_bus_routes', search_routes.reduce((accumulator, route) => {
-          highlighted_routes.addData(route);
-          let routeName = route.properties.route_long_name.replace('DART LIGHT RAIL - ', '');
-          let routeNumber = parseInt(route.properties.route_short_name, 10);
-          if (Number.isInteger(routeNumber)) {
-            routeNumber = `🚍${routeNumber}`;
-          } else {
-            routeNumber = `🚉`;
-          }
-          return accumulator + `<tr><td><b>${routeNumber} ${routeName}</b></td><td style="width: 2.5em;">👟${minutesToWalk(route.nearest_stop.distance)}</td><td style="width: 2.5em;">🚴${minutesBike(route.nearest_stop.distance)}</td></tr>`;
-        }, ''));
-      } else {
-        setHTML('nearby_bus_routes', '<li>None nearby</li>');
-      }
-    });
-  });
-
-  function searchGoLinkZonesAtPoint(point) {
-    const primary_zones = DART_GoLink_Zones.features.filter((feature) => {
-      const polygon = feature.geometry.coordinates[0];
-      const match = isPointInsidePolygon(point, polygon);
-      return match;
     });
 
-    const connections = primary_zones.reduce((acc, current) => acc.concat(current.properties.Connections), []);
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      document.getElementById('results-table').style.display = "block";
+      document.getElementById('compare-form').style.display = "block";
+
+      const address = document.getElementById('search').value;
       
-    const secondary_zones = DART_GoLink_Zones.features.filter((feature) => connections.includes(feature.properties.Name));
+      highlighted_zones.clearLayers();
+      highlighted_routes.clearLayers();
+      restaurantMarkers.clearLayers();
+      
+      setUserMessage("Searching...");
 
-    return primary_zones.concat(secondary_zones).filter((value, index, array) => array.indexOf(value) === index);
-  }
+      search_provider.search({ query: address }).then(result => {
+        if (result.length === 0) {
+          setUserMessage("No address found.");
+          return;
+        }
 
-  // Draw map tiles
-  const map_tiles_url = "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}";
-  L.tileLayer(map_tiles_url, { maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+        const point = result[0];
+        search_coords = L.latLng([point.y, point.x]);
 
-  // Draw all GoLink zones on the map 
-  //L.geoJSON(DART_GoLink_Zones).addTo(map);
+        setUserMessage(`Showing search results:`);
 
-  // Draw Route 237 on the map
-  //L.geoJSON(DART_Route_237).addTo(map);
+        main_marker.setLatLng(search_coords);
+        secondary_marker.setLatLng(search_coords).addTo(map);
 
-  function setUserMessage(message) {
-    //document.getElementById('user-message').innerHTML = message;
-  }
+        map.panTo(search_coords, { animate: true, duration: 0.5 });
 
-  function setHTML(elementId, message) {
-    document.getElementById(elementId).innerHTML = message;
-  }
+        // highlight matching GoLink zones
 
-  function metersToMiles(meters) {
-    const miles = parseFloat(meters) * 0.00062137;
-    return miles.toPrecision(2);
-  }
+        search_golink_zones = searchGoLinkZonesAtPoint(point);
 
-  function minutesToWalk(meters) {
-    const miles = metersToMiles(meters);
-    const avgMinutesPerMile = 20;
-    const estimatedMinutes = avgMinutesPerMile * miles;
+        setHTML('matching_golink_zones', '<li>None</li>');
 
-    return Math.round(estimatedMinutes);
-  }
+        if (search_golink_zones.length > 0) {
+          setHTML('matching_golink_zones', search_golink_zones.reduce((acc, zone) => {
+            highlighted_zones.addData(zone);
+            return acc + `<li>${zone.properties.Name}</li>`;
+          }, ''));
+        }
 
-  function minutesBike(meters) {
-    const miles = metersToMiles(meters);
-    const avgMinutesPerMile = 6;
-    const estimatedMinutes = avgMinutesPerMile * miles;
+        const nearby_places = [];
 
-    return Math.round(estimatedMinutes);
-  }
+        // highlight bus routes that stop within one mile
 
-  function isPointInsidePolygon(point, poly) {
-    var polyPoints = poly;
-    var x = point.x, y = point.y;
+        search_routes = DART_Routes.features.filter((feature, index) => {
+          const stops = feature.properties.route_stops.filter((route_stop, index) => {
+            const stop_coords = L.latLng(route_stop.geometry.coordinates[1], route_stop.geometry.coordinates[0]);
+            const distance_in_meters = stop_coords.distanceTo(search_coords);
+            
+            if (distance_in_meters <= MILE) {
+              feature.properties.route_stops[index].distance = distance_in_meters;
 
-    var inside = false;
-    for (var i = 0, j = polyPoints.length - 1; i < polyPoints.length; j = i++) {
-      var xi = polyPoints[i][0], yi = polyPoints[i][1];
-      var xj = polyPoints[j][0], yj = polyPoints[j][1];
+              return true;
+            }
 
-      var intersect = ((yi > y) != (yj > y))
-          && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-      if (intersect) inside = !inside;
+            return false;
+          });
+
+          if (stops.length > 0) {
+            DART_Routes.features[index].nearby_stops = stops;
+            DART_Routes.features[index].nearest_stop = stops.reduce((prev, current) => (current.distance < prev.distance) ? current : prev);
+
+            return true;
+          }
+
+          return false;
+        });
+
+        setHTML('nearby_bus_routes', '<li>None nearby</li>');
+
+        if (search_routes.length > 0) {
+          setHTML('nearby_bus_routes', search_routes.reduce((accumulator, route) => {
+            highlighted_routes.addData(route);
+
+            const placesOnThisRoute = [];
+
+            route.properties.route_stops.forEach((route_stop) => {
+              findPlacesNearStop(route_stop.properties.onestop_id).forEach((place) => {
+                if (!placesOnThisRoute.includes(place)) {
+                  placesOnThisRoute.push(place);
+                }
+                if (!nearby_places.includes(place)) {
+                  nearby_places.push(place);
+                }
+              })
+            });
+
+            let routeName = route.properties.route_long_name.replace('DART LIGHT RAIL - ', '');
+            let routeNumber = parseInt(route.properties.route_short_name, 10);
+            routeNumber = (Number.isInteger(routeNumber)) ? `🚍${routeNumber}` : `🚉`;
+
+            return accumulator + `<tr>`
+              + `<td><b>${routeNumber} ${routeName}</b></td>`
+              + `<td style="width: 3.5em;"><img src="./assets/icons/restaurant_map_icon.png" class="map-icon" />${placesOnThisRoute.length}</td>`
+              + `<td style="width: 2.5em;">👟${minutesToWalk(route.nearest_stop.distance)}</td>`
+              + `<td style="width: 2.5em;">🚴${minutesBike(route.nearest_stop.distance)}</td>`
+              + `</tr>`;
+          }, ''));
+        } else {
+          setHTML('nearby_bus_routes', '<li>None nearby</li>');
+        }
+
+        nearby_places.forEach((nearbyPlace) => restaurantMarkers.addLayer(
+          L.marker([nearbyPlace.location.lat, nearbyPlace.location.lng], {icon: restaurantIcon})
+            .bindTooltip(nearbyPlace.name, {sticky: true})
+            //.bindPopup(nearbyPlace.name, {offset: [20, 20]})
+        ));
+
+      });
+    });
+
+    function searchGoLinkZonesAtPoint(point) {
+      const point_circle = turf.circle([point.x, point.y], 0.5, { units: 'miles' });
+          
+      let zones = DART_GoLink_Zones.features.filter((zone) => turf.booleanIntersects(point_circle, zone));
+      let connections = zones.reduce((acc, primary_zone) => acc.concat(primary_zone.properties.Connections), []);
+      
+      console.log(zones.map((zone) => zone.properties.Name));
+
+      DART_GoLink_Zones.features.forEach((zone) => {
+        const zone_name = zone.properties.Name;
+        const is_connection = connections.includes(zone_name);
+        const is_not_yet_included = !zones.map((included_zone) => included_zone.properties.Name).includes(zone_name);
+
+        if (is_connection && is_not_yet_included) {
+          zones.push(zone);
+        }
+      });
+
+      console.log(zones.map((zone) => zone.properties.Name));
+
+      return zones;
     }
 
-    return inside;
-  };
+    function findPlacesNearStop(onestop_id) {
+      const results = [];
+
+      for (const placeId in places) {
+        const place = places[placeId];
+        if (place.nearbyStops[onestop_id]) {
+          results.push(place);
+        }
+      }
+
+      return results;
+    }
+
+    // Draw map tiles
+    const map_tiles_url = "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}";
+    L.tileLayer(map_tiles_url, { maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+
+    // Draw all GoLink zones on the map 
+    //L.geoJSON(DART_GoLink_Zones).addTo(map);
+
+    // Draw Route 237 on the map
+    //L.geoJSON(DART_Route_237).addTo(map);
+
+    function setUserMessage(message) {
+      //document.getElementById('user-message').innerHTML = message;
+    }
+
+    function setHTML(elementId, message) {
+      document.getElementById(elementId).innerHTML = message;
+    }
+
+    function metersToMiles(meters) {
+      const miles = parseFloat(meters) * 0.00062137;
+      return miles.toPrecision(2);
+    }
+
+    function minutesToWalk(meters) {
+      const miles = metersToMiles(meters);
+      const avgMinutesPerMile = 20;
+      const estimatedMinutes = avgMinutesPerMile * miles;
+
+      return Math.round(estimatedMinutes);
+    }
+
+    function minutesBike(meters) {
+      const miles = metersToMiles(meters);
+      const avgMinutesPerMile = 6;
+      const estimatedMinutes = avgMinutesPerMile * miles;
+
+      return Math.round(estimatedMinutes);
+    }
+
+    function isPointInsidePolygon(point, poly) {
+      var polyPoints = poly;
+      var x = point.x, y = point.y;
+
+      var inside = false;
+      for (var i = 0, j = polyPoints.length - 1; i < polyPoints.length; j = i++) {
+        var xi = polyPoints[i][0], yi = polyPoints[i][1];
+        var xj = polyPoints[j][0], yj = polyPoints[j][1];
+
+        var intersect = ((yi > y) != (yj > y))
+            && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+        if (intersect) inside = !inside;
+      }
+
+      return inside;
+    };
+  }
+
+  main();
   </script>
+
+  <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: "AIzaSyC7xDbizvxJvWNG2bkl3zmM9YbuoGUOPTo",
+      v: "weekly",
+    });
+
+    const restaurants = [
+      'american_restaurant',
+      'bakery',
+      'bar',
+      'barbecue_restaurant',
+      'brazilian_restaurant',
+      'breakfast_restaurant',
+      'brunch_restaurant',
+      'cafe',
+      'chinese_restaurant',
+      'coffee_shop',
+      'fast_food_restaurant',
+      'french_restaurant',
+      'greek_restaurant',
+      'hamburger_restaurant',
+      'ice_cream_shop',
+      'indian_restaurant',
+      'indonesian_restaurant',
+      'italian_restaurant',
+      'japanese_restaurant',
+      'korean_restaurant',
+      'lebanese_restaurant',
+      'meal_delivery',
+      'meal_takeaway',
+      'mediterranean_restaurant',
+      'mexican_restaurant',
+      'middle_eastern_restaurant',
+      'pizza_restaurant',
+      'ramen_restaurant',
+      'restaurant',
+      'sandwich_shop',
+      'seafood_restaurant',
+      'spanish_restaurant',
+      'steak_house',
+      'sushi_restaurant',
+      'thai_restaurant',
+      'turkish_restaurant',
+      'vegan_restaurant',
+      'vegetarian_restaurant',
+      'vietnamese_restaurant',
+    ]
+    
+    async function searchNearby() {
+      const {Place} = await google.maps.importLibrary("places");
+      const {SearchNearbyRankPreference} = await google.maps.importLibrary("places")
+
+      // Restrict within the map viewport.
+      let google_center = new google.maps.LatLng(32.78066947984641, -96.79928449246167);
+
+      const google_request = {
+        // required parameters
+        fields: ["displayName", "location", "businessStatus"],
+        locationRestriction: {
+          center: google_center,
+          radius: MILE / 2,
+        },
+        // optional parameters
+        rankPreference: SearchNearbyRankPreference.DISTANCE,
+        includedPrimaryTypes: restaurants,
+        maxResultCount: 20,
+        language: "en-US",
+        region: "us"
+      };
+
+      const { places } = await Place.searchNearby(google_request);
+
+      console.log(places);
+      console.log(places.map((place) => place.Eg.businessStatus));
+    }
+
+</script>
 </body>
 </html>

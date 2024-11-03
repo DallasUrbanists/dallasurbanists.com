@@ -1,0 +1,409 @@
+---
+layout: default
+identity_snippet: true
+---
+{% if site.data.activities %}
+  {% assign activities = site.data.activities | sort: "start_date" %}
+  {% assign listed_series = "" | split: "," %}
+
+  {% comment %}
+    TO-DO
+
+    Currently, the Docker image has a timezone of UTC. It should be a
+    simple matter to update the Dockerfile to set the timezone to America/Chicago
+    (Dallas local time). However, I'm dumb when it comes to Docker and don't
+    know how to make the update. So, instead of changing the timezone in the
+    container, I manually shift the "current time" back 5 hours.
+
+    To someone smarter than me with Docker: please fix the container timezone,
+    then remove change `minus: 18000` to `minus: 0` in the code below. Delete
+    this comment when you're done.
+
+    - Hexel, hexelcolorado@gmail.com
+  {% endcomment %}
+  {% assign nowSeconds = "now" | date: "%s" | minus: 18000 %}
+  {% assign weekSeconds = nowSeconds | plus: 604800 %}
+  {% assign today = nowSeconds | date: "%B %e %Y" %}
+  {% assign tomorrow = nowSeconds | plus: 86400 | date: "%B %e %Y" %}
+{% endif %}
+
+{% if site.data.feed %}
+  {% assign posts = site.data.feed | sort: "date" | reverse %}
+{% endif %}
+
+<div class="container pt-3" style="max-width: 1024px;">
+  <div class="site-introduction">
+    <h1>What is Dallas Urbanists?</h1>
+    <p><i>Dallas Urbanists</i> is a website (<a href="https://dallasurbanists.com">dallasurbanists.com</a>) and a social media channel (<a href="https://www.instagram.com/dallasurbanists">@dallasurbanists on Instagram</a>) featuring advocacy and educational content about walkability, transportation, housing, and urban planning. Created by Hexel Colorado in December 2022, it aims to amplify ideas and voices for a more walkable, bike-friendly, transit-oriented, affordable, sustainable, safe, accessible, equitable, and vibrant Dallas. <a href="/about">Learn who, what, when, where, and why</a>.</p>
+    <div style="margin-top: 2ch; max-width: 40em;">
+      <div id="mc_embed_shell">
+  
+        <div id="mc_embed_signup">
+            <form action="https://gmail.us18.list-manage.com/subscribe/post?u=e3bf323ec9d6022065a4e6278&amp;id=2ae66d736b&amp;f_id=004b1ae7f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+                <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group">
+                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" placeholder="Email address"><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                      <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                    </div>
+                <div id="mce-responses" class="clear foot">
+                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                <input type="text" name="b_e3bf323ec9d6022065a4e6278_2ae66d736b" tabindex="-1" value="">
+            </div>
+          </div>
+        </form>
+        </div>
+        </div>
+      <p class="small">Subscribe to receive email alerts when we publish new content, events, and actions. This website's <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> is to never spam, sell, share, or disclose your email to any third-parties - not even to friends! This website does not use any cookies, web beacons, or tracking software.</p>
+    </div>
+    <a href="#" id="hide-link">Hide intro</a>
+  </div>
+
+  {% if site.data.campaigns_feed %}
+    <table class="post-table activities-table" style="width: 100%;">
+      <tr class="events-and-actions-row">
+        <td colspan="2" class="events-and-actions-cell">
+          <h2 class="fancy-font">Campaigns & Petitions</h2>
+        </td>
+      </tr>
+      {% for activity in site.data.campaigns_feed %}
+        {% assign endSeconds = activity.end_date | date: "%s" | plus: 10800 %}
+        {% assign activityDate = activity.end_date | date: "%B %e %Y" %}
+        <tr class="activity-top-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
+          <td class="icon-cell" rowspan="2">
+            <img src="/assets/icons/{{ activity.icon }}_icon.svg" class="icon" />
+            {% if activity.icon2 %}
+              <img
+                src="/assets/icons/{{ activity.icon2 }}_icon.svg"
+                {% if activity.icon2 contains 'logo' %}
+                  class="logo"
+                {% else %}
+                  class="icon"
+                {% endif %}
+                />
+            {% endif %}
+          </td>
+          <td class="title-cell">
+            <a href="{{ activity.url }}">
+              {% if activity.type == "Special Day" %}
+                <strong class="fancy-font">{{ activity.category }}:</strong>
+              {% else %}
+                <strong class="fancy-font">{{ activity.type }}:</strong>
+              {% endif %}
+              {{ activity.title }}</a>
+          </td>
+        </tr>
+        <tr class="activity-bottom-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
+          <td>
+          {% if isThisWeek == 'true' %}
+            {% if activityDate == today %}
+              <strong class="fancy-font day-this-week">TODAY!</strong>
+            {% else %}
+              <strong class="fancy-font day-this-week">{{ activity.start_date | date: '%A' }}</strong>
+            {% endif %}
+          {% endif %}
+            {% case activity.type %}
+
+              {% when "Event" %}
+                {% if activity.schedule %}
+                  {{ activity.start_date | date: "%B %e" }}, {{ activity.schedule }}
+                {% else %}
+                  {{ activity.start_date | date: "%B %e, %l:%M %p" }}
+                {% endif %}
+                {% if activity.frequency %}
+                    | {{ activity.frequency }}
+                  {% else %}
+                  {% endif %} 
+                  {% if activity.location_url %}
+                    at <a href="{{ activity.location_url }}">{{ activity.location }}</a>
+                  {% else %}
+                    at {{ activity.location }}
+                  {% endif %}
+                  {% if activity.author %}
+                    by {{ activity.author }}
+                  {% endif %}
+                  {% if activity.rsvp_url %}
+                    | <a href="{{ activity.rsvp_url }}" title="RSVP on {{ activity.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}">RSVP</a>
+                  {% endif %}
+
+              {% when "Bicycle Ride" %}
+                {% if activity.frequency %}
+                  {{ activity.frequency }}, next is {{ activity.start_date | date: "%B %e" }}.
+                {% else %}
+                  {{ activity.start_date | date: "%B %e, %A" }}.
+                {% endif %}
+                {{ activity.schedule }} at {{ activity.start_location }}
+
+              {% when "Petition" %}
+                <a href="{{ activity.external_url }}" title="View petition on {{ activity.external_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View petition</a> 
+                started on {{ activity.date | date: "%B %e" }} by {{ activity.author }}
+
+              {% when "Public Comment" %}
+                {{ activity.start_date | date: "%B %e, %l:%M %p" }}
+                {% if activity.location %}
+                  {% if activity.location_url %}
+                    at <a href="{{ activity.location_url }}">{{ activity.location }}</a>.
+                  {% else %}
+                    at {{ activity.location }}.
+                  {% endif %}
+                {% endif %}
+                {% if activity.registration_url %}
+                  <a href="{{ activity.registration_url }}">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a>.
+                {% elsif activity.registration_deadline %}
+                  | Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}.
+                {% else %}
+                  | Signup is not required.
+                {% endif %}
+
+              {% when "Written Comment" %}
+                {% if activity.submission_url %}
+                  <a href="{{ activity.submission_url }}">Submit before {{ activity.end_date | date: "%B %e %l:%M %p" }}</a>
+                {% else %}
+                  Submit before {{ activity.end_date | date: "%B %e, %A, %l:%M %p" }}
+                {% endif %}
+                {% if activity.author %}
+                  | organized by {{ activity.author }}
+                {% endif %}
+
+              {% when "Special Day" %}
+                {% if activity.start_date == activity.end_date %}
+                  {{ activity.start_date | date: "%B %e, %A" }}
+                {% else %}
+                  {{ activity.start_date | date: "%B %e" }} to {{ activity.end_date | date: "%B %e" }}
+                {% endif %}
+                {% if activity.author %}
+                  organized by {{ activity.author }}
+                {% endif %}
+
+              {% else %}
+                {{ activity.start_date | date: "%B %e, %A" }}
+                
+            {% endcase %}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+
+  <table class="post-table activities-table" style="width: 100%;">
+    {% if activities %}
+      <tr class="events-and-actions-row">
+        <td colspan="2" class="events-and-actions-cell">
+          <h2 class="fancy-font" style="margin-top: 2rem;">Upcoming Events</h2>
+        </td>
+      </tr>
+      {% for activity in activities %}
+        {% assign endSeconds = activity.end_date | date: "%s" | plus: 10800 %}
+        {% assign activityDate = activity.end_date | date: "%B %e %Y" %}
+        {% if nowSeconds < endSeconds %}
+          {% assign dateOnly = activity.end_date | date: "%B %e %Y" %}
+          {% if endSeconds < weekSeconds %}
+            {% assign isThisWeek = 'true' %}
+          {% else %}
+            {% assign isThisWeek = 'false' %}
+          {% endif %}
+          {% unless activity.series and listed_series contains activity.series %}
+            {% assign listed_series = listed_series | push: activity.series %}
+            <tr class="activity-top-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
+              <td class="icon-cell" rowspan="2">
+                <img src="/assets/icons/{{ activity.icon }}_icon.svg" class="icon" />
+                {% if activity.icon2 %}
+                  <img
+                    src="/assets/icons/{{ activity.icon2 }}_icon.svg"
+                    {% if activity.icon2 contains 'logo' %}
+                      class="logo"
+                    {% else %}
+                      class="icon"
+                    {% endif %}
+                    />
+                {% endif %}
+              </td>
+              <td class="title-cell">
+                <a href="{{ activity.url }}">
+                  {% if activity.type == "Special Day" %}
+                    <strong class="fancy-font">{{ activity.category }}:</strong>
+                  {% else %}
+                    <strong class="fancy-font">{{ activity.type }}:</strong>
+                  {% endif %}
+                  {{ activity.title }}</a>
+              </td>
+            </tr>
+            <tr class="activity-bottom-row {% if isThisWeek == 'true' %}this-week{% endif %} {% if activityDate == today %}today{% endif %}">
+              <td>
+              {% if isThisWeek == 'true' %}
+                {% if activityDate == today %}
+                  <strong class="fancy-font day-this-week">TODAY!</strong>
+                {% else %}
+                  <strong class="fancy-font day-this-week">{{ activity.start_date | date: '%A' }}</strong>
+                {% endif %}
+              {% endif %}
+                {% case activity.type %}
+
+                  {% when "Event" %}
+                    {% if activity.schedule %}
+                      {{ activity.start_date | date: "%B %e" }}, {{ activity.schedule }}
+                    {% else %}
+                      {{ activity.start_date | date: "%B %e, %l:%M %p" }}
+                    {% endif %}
+                    {% if activity.frequency %}
+                        | {{ activity.frequency }}
+                      {% else %}
+                      {% endif %} 
+                      {% if activity.location_url %}
+                        at <a href="{{ activity.location_url }}">{{ activity.location }}</a>
+                      {% else %}
+                        at {{ activity.location }}
+                      {% endif %}
+                      {% if activity.author %}
+                        by {{ activity.author }}
+                      {% endif %}
+                      {% if activity.rsvp_url %}
+                        | <a href="{{ activity.rsvp_url }}" title="RSVP on {{ activity.rsvp_url | remove:'http://' | remove:'https://' | split:'/' | first }}">RSVP</a>
+                      {% endif %}
+
+                  {% when "Bicycle Ride" %}
+                    {% if activity.frequency %}
+                      {{ activity.frequency }}, next is {{ activity.start_date | date: "%B %e" }}.
+                    {% else %}
+                      {{ activity.start_date | date: "%B %e, %A" }}.
+                    {% endif %}
+                    {{ activity.schedule }} at {{ activity.start_location }}
+
+                  {% when "Petition" %}
+                    <a href="{{ activity.external_url }}" title="View petition on {{ activity.external_url | remove:'http://' | remove:'https://' | split:'/' | first }}">View petition</a> 
+                    started on {{ activity.date | date: "%B %e" }} by {{ activity.author }}
+
+                  {% when "Public Comment" %}
+                    {{ activity.start_date | date: "%B %e, %l:%M %p" }}
+                    {% if activity.location %}
+                      {% if activity.location_url %}
+                        at <a href="{{ activity.location_url }}">{{ activity.location }}</a>.
+                      {% else %}
+                        at {{ activity.location }}.
+                      {% endif %}
+                    {% endif %}
+                    {% if activity.registration_url %}
+                      <a href="{{ activity.registration_url }}">Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}</a>.
+                    {% elsif activity.registration_deadline %}
+                      | Register before {{ activity.registration_deadline | date: "%B %e %l:%M %p" }}.
+                    {% else %}
+                      | Signup is not required.
+                    {% endif %}
+
+                  {% when "Written Comment" %}
+                    {% if activity.submission_url %}
+                      <a href="{{ activity.submission_url }}">Submit before {{ activity.end_date | date: "%B %e %l:%M %p" }}</a>
+                    {% else %}
+                      Submit before {{ activity.end_date | date: "%B %e, %A, %l:%M %p" }}
+                    {% endif %}
+                    {% if activity.author %}
+                      | organized by {{ activity.author }}
+                    {% endif %}
+
+                  {% when "Special Day" %}
+                    {% if activity.start_date == activity.end_date %}
+                      {{ activity.start_date | date: "%B %e, %A" }}
+                    {% else %}
+                      {{ activity.start_date | date: "%B %e" }} to {{ activity.end_date | date: "%B %e" }}
+                    {% endif %}
+                    {% if activity.author %}
+                      organized by {{ activity.author }}
+                    {% endif %}
+
+                  {% else %}
+                    {{ activity.start_date | date: "%B %e, %A" }}
+                    
+                {% endcase %}
+              </td>
+            </tr>    
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </table>
+  
+  {% if posts %}
+    <table class="post-table"  style="width: 100%;">
+      {% assign months = '' | split: ',' %}
+      {% for post in posts %}
+        {% assign month = post.date | date: "%B %Y" %}
+        {% unless months contains month %}
+          {% assign months = months | push: month %}
+          <tr class="month-row">
+            <td colspan="2" class="month-cell">
+              <h2 class="fancy-font">Content from {{ month }}</h2>
+            </td>
+          </tr>
+        {% endunless %}
+        <tr class="post-table-top-row">
+          <td class="icon-cell" rowspan="2"><img src="/assets/icons/{{ post.icon }}_icon.svg" /></td>
+          <td class="title-cell">
+            <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.subtitle | default: post.title }}" class="{% if post.type == "Link" %}external-link{% endif %}">
+              {% if post.category %}
+                <b><strong class="fancy-font">{{ post.category }}:</strong>
+              {% endif %}
+              {{ post.title }}
+            </a>
+          </td>
+        </tr>
+        <tr class="post-table-bottom-row">
+          <td>
+            {{ post.type }}
+            {% if post.type == "Link" %}
+              to <a href="//{{ post.url | extract_domain }}">{{ post.url | extract_domain }}</a>
+            {% endif %}
+            {% if post.tags and post.tags.size > 0 %}
+              about {% include tag-inline-list.html tags=post.tags %}
+            {% endif %}
+            {% if post.author %}
+              {% if post.author contains '@' %}
+                by <a href="{{ post.external_url }}">{{ post.author }}</a>
+              {% else %}
+                {% assign author = site.authors | where: 'name', post.author | first %}
+                {% if author %}
+                  by {{ author.display_name }}
+                {% else %}
+                  by {{ post.author }}
+                {% endif %}
+              {% endif %}
+              {% if post.featuring and post.featuring.size > 0 %}
+                featuring
+                {%- for feature in post.featuring -%}
+                  {% assign author = site.authors | where: 'name', feature | first %}
+                  {% if author %}
+                    <a href="#">{{ author.display_name }}</a>
+                  {% else %}
+                    {{ feature }}
+                  {% endif %}
+                  {%- if forloop.length > 1 -%}{% if forloop.rindex0 > 1 %}, {% elsif forloop.rindex0 == 1 %}, and {% endif %}{%- endif -%}
+                {%- endfor -%}                  
+              {% endif %}
+            {% endif %}
+            on {{ post.date | date: "%B %e" }}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+</div>
+
+<script>
+  (function() {
+    const hideIntroLink = document.querySelector('.site-introduction #hide-link');
+    const siteIntro = document.querySelector('.site-introduction');
+
+    if (localStorage.getItem("hide-intro") === "true") {
+      siteIntro.hidden = true;
+    } else {
+      siteIntro.hidden = false;
+    }
+
+    hideIntroLink.addEventListener('click', function(e) {
+      siteIntro.hidden = true;
+      localStorage.setItem("hide-intro", "true");
+    });
+  })();
+</script>

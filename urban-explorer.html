@@ -105,7 +105,7 @@
     const dallas_coordinates = [32.78066947984641, -96.79928449246167];
     const zoom_level = 14;
     const map = L.map('map', { maxZoom: 16 }).setView(dallas_coordinates, zoom_level);
-    const highlighted_zones = L.geoJSON().addTo(map);
+    const highlighted_zones = L.geoJSON(null, {stroke: false}).addTo(map);
     const highlighted_routes = L.geoJSON().addTo(map);
     const main_marker = L.marker(dallas_coordinates).addTo(map);
     const secondary_marker = L.marker(dallas_coordinates);
@@ -387,7 +387,7 @@
     }
 
     // Draw map tiles
-    const map_tiles_url = "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}";
+    const map_tiles_url = "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Basemap_v2/MapServer/tile/{z}/{y}/{x}";
     L.tileLayer(map_tiles_url, { maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
 
     // Draw all GoLink zones on the map 

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dallas Urbanists, Strong Towns Local Conversation</title>
+
+    <!-- CSS RESET -->
+    <link rel="stylesheet" href="./reset.css" />
+
+    <!-- WEB FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- TOP NAVIGATION -->
+    <link rel="stylesheet" href="./nav.css" />
+
+    <!-- COLUMN LAYOUT -->
+    <link rel="stylesheet" href="./columns.css" />
+
+    <!-- GRID LAYOUT -->
+    <link rel="stylesheet" href="./grid.css" />
+
+    <style>
+        :root {
+            --offwhite: #EEE;
+            --strongtowns-navy: #0C2340;
+            --strongtowns-sky: #A7C6ED;
+            --strongtowns-gold: #FFB549;
+            --dark-blue: #334d66;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            background-color: var(--offwhite);
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 16px;
+            letter-spacing: 0em;
+            line-height: 1.8em;
+            text-transform: none;
+            color: black;
+        }
+
+        a {
+            text-decoration-skip-ink: all;
+            text-underline-offset: 6px;
+            text-decoration-thickness: 3px;
+            color: var(--strongtowns-navy);
+        }
+
+        p {
+            text-wrap: pretty;
+        }
+
+        .body-wrapper {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .body-wrapper.padded {
+            padding: 1rem;
+        }
+
+        .masthead {
+            background-image: url('./assets/branding/cover masthead.svg');
+            background-color: var(--dark-blue);
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: contain;
+            padding-bottom: clamp(0px, 15%, 250px);
+            width: 100%;
+
+            .lockup {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            img {
+                border: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        
+        .no-space {
+            font-size: 0;
+            line-height: 0;
+        }
+
+        main {
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+
+
+        .button-paragraph {
+            margin-top: 2rem;
+        }
+        .button-link {
+            display: inline-block;
+            line-height: 3rem;
+            border-radius: 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0 2rem;
+            transition: all 0.1s;
+        }
+        .button-link:hover { cursor: pointer; filter: brightness(80%); }
+        .button-link.sky { background-color: var(--strongtowns-sky); color: var(--strongtowns-navy); }
+        .button-link.gold { background-color: var(--strongtowns-gold); color: var(--strongtowns-navy); }
+        .button-link.navy { background-color: var(--strongtowns-navy); color: white; }
+        .button-link.navy:hover { filter: brightness(140%); }
+
+        .bg-sky { background-color: var(--strongtowns-sky); }
+        .bg-navy { background-color: var(--strongtowns-navy); color: white; }
+        .bg-gold { background-color: var(--strongtowns-gold); color: var(--strongtowns-navy); }
+
+        .viewport {
+            min-height: calc(100svh - 4rem);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom left;
+            background-attachment: fixed;
+        }
+
+        .call-to-action {
+            padding: 2rem 0;
+            text-align: center;
+        }
+        input[type=text] {
+            padding: 1rem;
+            font-size: 1rem;
+            color: black;
+            font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+            border-radius: 1.5rem; 
+            width: 24em;
+            max-width: 100%;
+            border: solid 1px var(--strongtowns-navy);
+        }
+
+        .padded-section {
+            padding: 2rem 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .photo-logo-combo {
+            position: relative;
+            display: block;
+
+            .logo {
+                position: absolute;
+                left: 0.5rem;
+                bottom: 0.5rem;
+                width: 20%;
+            }
+            .logo.offset-y {
+                bottom: 0rem;
+            }
+        }
+
+        .photo-logo-combo::before {
+            content: ' ';
+            background-color: white;
+            width: calc(20% + 1rem);
+            height: calc(20% + 2rem);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0.9;
+        }
+
+        .inspiring-quote-section {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            background-color: var(--dark-blue);
+            color: white;
+
+            figure {
+                background-image: url("./assets/branding/cover masthead.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: bottom center;
+                padding: clamp(1rem, 4vw, 4rem);
+                text-align: right;
+
+                blockquote p {
+                    text-wrap: pretty;
+                    font-size: clamp(1.5em, 3vw, 2.5rem);
+                    line-height: 1.5em;
+                }
+
+                .author {
+                    line-height: 1.25em;
+                    text-wrap: pretty;
+                    font-size: clamp(1rem, 2vw, 2rem);
+                    margin-top: 1em;
+                    font-weight: 200;
+                }
+            }
+
+            img {
+                width: 50%;
+                max-height: 500px;
+                aspect-ratio: 4 / 5;
+                object-fit: cover;
+                filter: sepia(10%) saturate(300%) hue-rotate(150deg) brightness(100%) contrast(93%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .inspiring-quote-section {
+                flex-direction: column;
+
+                figure {
+                    text-align: center;
+                    padding: 4rem 3rem;
+                }
+
+                img {
+                    aspect-ratio: 5 / 4;
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .tri-column-calendar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 1rem;
+            .column {
+                border: solid 1px black;
+
+                h1, h2, h3, h4, h5, h6 {
+                    text-align: center;
+                }
+            }
+            .event-row {
+                margin: 1rem 0;
+                p {
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1.5em;
+                }
+            }
+        }
+
+        section .subtitle {
+            text-wrap: balance;
+        }
+
+        .subtle-link {
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
+    </style>
+</head>
+<body>
+    <input class="menu-checkbox" type="checkbox" id="menu-checkbox"/>
+    <nav class="top-nav collapsed open">
+        <div class="body-wrapper" style="padding-left: 0;">
+            <img src="./assets/branding/brand logo gold.svg" alt="Dallas Urbanists logo" class="logo" />
+            <!-- Hamburger icon -->
+            <div class="menu-toggle">
+                <label class="hamb" for="menu-checkbox"></label>
+            </div>
+            <a href="#">About</a>
+            <a href="#">Calendar</a>
+            <a href="#">Organizations</a>
+            <a href="#">Articles</a>
+            <a href="#">Resources</a>
+            <a href="#">Join</a>
+        </div>
+    </nav>
+    <main>
+        <section class="bg-navy" style="
+            background-image: url(./assets/branding/brand\ masthead\ 2.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom left;
+            background-attachment: fixed;
+        ">
+            <div class="row two-columns viewport">
+                <div class="column">
+                    <img src="./assets/branding/brand wordmark white.svg" alt="Dallas Urbanists Strong Towns Local Conversation" style="width: 100%; margin: 0 0 1.5rem;">
+                    <p>We are people who care about making Dallas a more walkable, bike-friendly, transit-oriented, affordable, and vibrant place to live.</p>
+                    
+                    <p>As a Strong Towns Local Conversation (STLC), we are part of the Strong Towns movement to replace America’s postwar pattern of development, the "Suburban Experiment," with a pattern of development that is financially strong and resilient. We advocate for neighborhoods of all sizes in Dallas to be safe, livable and inviting.</p>
+
+                    <p class="button-paragraph"><a href="#" class="button-link gold">Become a member</a></p>
+                </div>
+                <img class="column" src="./assets/home collage 1.png" alt="Collage 1" class="hero-image" />
+            </div>                
+        </section>
+        <section class="bg-offwhite">
+            <div class="row two-columns">
+                <div class="column">
+                    <h1>History of Dallas Urbanists STLC</h1>
+
+                    <p>Dallas Urbanists began as a blog in December 2021 by Hexel Colorado, documenting his advocacy with groups like Dallas Neighbors for Housing and Dallas Bicycle Coalition.  Hexel’s Instagram videos offered tips on using DART, living car-free, and covered key urban planning issues.</p>
+
+                    <p>Since then, Dallas Urbanists has become a dynamic community presence, featured by KERA Radio, Dallas Morning News, WFAA TV, and other media outlets. We have gained over 15,600 Instagram followers, collected thousands of signatures for transit and pedestrian safety, and partnered with local groups to support affordable housing and bike infrastructure.</p>
+
+                    <p>In October 2024, Dallas Urbanists took its first steps toward becoming a Strong Towns Local Conversation (STLC).</p>
+
+                    <p class="button-paragraph"><a href="#" class="button-link sky">Read about our journey</a></p>
+                </div>
+                <div class="column">
+                    <img src="./assets/home collage 2.png" alt="Collage 2" class="hero-image" />                
+                </div>
+            </div>
+        </section>
+        <section class="call-to-action bg-gold">
+            <div class="body-wrapper padded">
+                <h1>Sign up for emails</h1>
+                <form>
+                    <input type="text" name="email" placeholder="Your email address..." />
+                    <input type="submit" value="Subscribe" class="button-link navy" />
+                </form>
+            </div>
+        </section>
+        <section class="bg-sky padded-section">
+            <div class="body-wrapper padded">
+                <h1 class="text-center">Neighbors in Advocacy</h1>
+                <p class="text-center subtitle">Although Dallas Urbanists STLC hosts some events and initiatives, we primarily partner with other local groups to support their projects and campaigns. Here is a list of the groups and organizations Dallas Urbanists frequently collaborates with.</p>
+                <div class="grid-box">
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/dn4h_group_photo.jpg" alt="Members of Dallas Neighbors for Housing at City Hall" class="photo" />
+                            <img src="./assets/dn4h-logo.jpg" alt="DN4H Logo" class="logo" />    
+                        </div>
+                        <h2><a href="#">Dallas Neighbors for Housing</a></h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#" class="">Learn more</a></p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/dbc_group_photo.jpg" alt="Board of Dallas Bicycle Coalition" class="photo" />
+                            <img src="./assets/dbc-logo.png" alt="DBC Logo" class="logo" />    
+                        </div>
+                        <h2><a href="#">Dallas Bicycle Coalition</a></h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#" class="">Learn more</a></p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/data-farmers-branch-cleanup.jpg" alt="Trash pickup event at Farmers Branch Station by Dallas Area Transit Alliance / DATA" class="photo" />
+                            <img src="./assets/data-logo.png" alt="DATA Logo" class="logo" />    
+                        </div>
+                        <h2><a href="#">Dallas Area Transit Alliance (DATA)</a></h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#" class="">Learn more</a></p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/dhc-city-hall-crowdshot.jpg" alt="Dallas Housing Coalition at City Hall" class="photo" />
+                            <img src="./assets/dhc-logo.svg" alt="DHC Logo" class="logo" />    
+                        </div>
+                        <h2><a href="#">Dallas Housing Coalition</a></h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#" class="">Learn more</a></p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/urbanistas-group-photo.jpg" alt="DFW Urbanistas" class="photo" />
+                            <img src="./assets/urbanistas-logo.svg" alt="DFW Urbanistas Logo" class="logo" />    
+                        </div>
+                        <h2><a href="#">DFW Urbanistas</a></h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#" class="">Learn more</a></p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/betterblock-action-shot.jpg" alt="Better Block" class="photo" />
+                            <img src="./assets/bb-logo.svg" alt="DN4H Logo" class="logo" />    
+                        </div>
+                        <h2><a href="#">Better Block</a></h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#" class="">Learn more</a></p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/utd-883-bus.jpg" alt="UTD 883 Bus at the University of Texas Dallas campus" class="photo" />
+                            <img src="./assets/cfbt-logo.svg" alt="DN4H Logo" class="logo offset-y" />    
+                        </div>
+                        <h2><a href="#">Comets for Better Transit</a></h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#" class="">Learn more</a></p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/gdpc-stock-photo.jpg" alt="Greater Dallas Planning Council" class="photo" />
+                            <img src="./assets/gdpc-logo.svg" alt="GDPC Logo" class="logo" />    
+                        </div>
+                        <h2><a href="#">Greater Dallas Planning Council (GDPC)</a></h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#" class="">Learn more</a></p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/free-dart-for-students-wd-2.jpg" alt="Sunrise Movement Dallas advocating for Free DART for Students" class="photo" />
+                            <img src="./assets/sunrisemvmt-logo.svg" alt="DN4H Logo" class="logo" />    
+                        </div>
+                        <h2><a href="#">Sunrise Movement Dallas</a></h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#" class="">Learn more</a></p>
+                    </div>
+                </div>
+                <p class="button-paragraph text-center"><a href="#" class="button-link navy">See full list of organizations</a></p>
+            </div>
+        </section>
+        <section class="inspiring-quote-section">
+            <figure>
+                <blockquote>
+                    <p>Cities have the capability of providing something for everybody, only because, and only when, they are created by everybody.</p>
+                </blockquote>
+                <figcaption class="author">
+                    Jane Jacobs,
+                    <cite>The Death and Life of Great American Cities</cite>
+                </figcaption>    
+            </figure>
+            <img src="./assets/jane-jacobs-photo-by-frank-lennon-toronto-star.jpg" alt="Portrait of Jane Jacobs" />
+        </section>
+        <section class="padded-section">
+            <div class="body-wrapper padded">
+                <h1 class="text-center">Upcoming Events for Urbanists</h1>
+                <p class="text-center subtitle">Alongside Dallas Urbanists STLC events, this calendar includes curated meetings and activities hosted by other local organizations and groups.</p>
+                <div class="tri-column-calendar">
+                    <div class="column">
+                        <h2>This Week 10/29 - 11/5</h2>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h2>Upcoming in November</h2>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h2>This Year</h2>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                        <div class="event-row">
+                            <p>Sunday 1:00 PM</p>
+                            <p><a href="#" class="event-title">Event Title</a></p>
+                            <p class="event-location"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="button-paragraph text-center"><a href="#" class="button-link gold">See full calendar</a></p>
+            </div>
+        </section>
+        <section class="padded-section bg-sky">
+            <div class="body-wrapper padded">
+                <h1 class="text-center">Urbanism Articles</h1>
+                <p class="text-center subtitle">Featured here are original pieces by Dallas Urbanists STLC members, along with noteworthy articles from other local organizations and news outlets.</p>
+
+                <div class="grid-box">
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/jane-jacobs-photo-by-frank-lennon-toronto-star.jpg" alt="Members of Dallas Neighbors for Housing at City Hall" class="photo" />
+                            <img src="./assets/branding/brand logo navy.svg" alt="Dallas Urbanists STLC logo" class="logo" />    
+                        </div>
+                        <h2><a href="#">Title of the Article Goes Here</a></h2>
+                        <p>By <a href="#" class="subtle-link">Hexel Colorado</a> with <a href="#" class="subtle-link">Dallas Urbanists STLC</a> on October 29</p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/jane-jacobs-photo-by-frank-lennon-toronto-star.jpg" alt="Members of Dallas Neighbors for Housing at City Hall" class="photo" />
+                        </div>
+                        <h2><a href="#">Title of the Article Goes Here</a></h2>
+                        <p>By <a href="#" class="subtle-link">Hexel Colorado</a> with <a href="#" class="subtle-link">Dallas Urbanists STLC</a> on October 29</p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/jane-jacobs-photo-by-frank-lennon-toronto-star.jpg" alt="Members of Dallas Neighbors for Housing at City Hall" class="photo" />
+                        </div>
+                        <h2><a href="#">Title of the Article Goes Here</a></h2>
+                        <p>By <a href="#" class="subtle-link">Hexel Colorado</a> with <a href="#" class="subtle-link">Dallas Urbanists STLC</a> on October 29</p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="./assets/jane-jacobs-photo-by-frank-lennon-toronto-star.jpg" alt="Members of Dallas Neighbors for Housing at City Hall" class="photo" />
+                        </div>
+                        <h2><a href="#">Title of the Article Goes Here</a></h2>
+                        <p>By <a href="#" class="subtle-link">Hexel Colorado</a> with <a href="#" class="subtle-link">Dallas Urbanists STLC</a> on October 29</p>
+                    </div>
+                </div>
+                <p class="button-paragraph text-center"><a href="#" class="button-link navy">See older articles</a></p>
+            </div>
+        </section>
+        <section class="padded-section bg-gold">
+            <div class="body-wrapper padded">
+                <h1 class="text-center">Site Map</h1>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

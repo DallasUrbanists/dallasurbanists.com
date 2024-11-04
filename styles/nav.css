@@ -1,0 +1,110 @@
+.top-nav {
+    background-color: var(--strongtowns-navy);
+    position: sticky;
+    top: 0;
+    color: white;
+    padding: 0.5rem;
+    margin: 0 0;
+    text-align: right;
+    height: 4.5rem;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+    z-index: 99;
+
+    .logo {
+        height: 4rem;
+        color: black;
+        float: left;
+    }
+    .logo.centered {
+        float: none;
+        margin: 0 auto;
+    }
+
+    a.nav-link {
+        text-decoration: none;
+        display: inline-block;
+        line-height: 4rem;
+        margin: 0 1rem;
+        font-weight: bold;
+        color: white;
+    }
+    a.nav-link:hover {
+        color: var(--strongtowns-gold);
+        text-decoration: underline;
+    }
+    a.nav-link:active {
+        color: var(--strongtowns-gold);
+    }
+
+    .notice {
+        font-style: italic;
+        line-height: 4rem;
+        font-size: 2rem;
+    }
+}
+
+.menu-checkbox {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .top-nav.collapsed {
+        a.nav-link {
+            clear: right;
+            display: none;
+            margin: 0;
+            padding: 0 2rem;
+            text-align: center;
+            border-left: solid 5px white;
+            border-right: solid 5px white;
+        }
+        a.nav-link:last-child {
+            border-bottom: solid 5px white;
+        }
+    }
+
+    .menu-toggle {
+        text-align: right;
+        height: 4rem;
+    }
+
+    /* Menu Icon */
+    .hamb {
+        padding-right: 1rem;
+        cursor: pointer;
+        display: inline-block;
+        filter: brightness(0) invert(1);
+        line-height: 3rem;
+        background-image: url("../assets/icons/menu.svg");
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: 2rem 2rem;
+
+        img {
+            height: 1rem;
+            vertical-align: middle;
+        }
+    }
+    .hamb::before {
+        content: "Menu";
+        margin-right: 2rem;
+    }
+
+    .menu-checkbox:checked ~ .top-nav {
+        a.nav-link {
+            display: block;
+            background: var(--strongtowns-navy);
+            box-shadow: 10px 10px black;
+        }
+
+        .menu-toggle {
+            .hamb {
+                background-image: url("../assets/icons/close.svg");
+            }
+            .hamb::before {
+                content: "Close menu";
+                margin-right: 1rem;
+            }
+        }
+    }
+}

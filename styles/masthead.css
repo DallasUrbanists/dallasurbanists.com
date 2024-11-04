@@ -1,0 +1,11 @@
+.masthead {
+    background-image: url('../assets/branding/brand\ masthead\ 2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom left;
+    background-attachment: fixed;
+}
+
+.masthead.subtle {
+    background-blend-mode: multiply;
+}

@@ -1,0 +1,27 @@
+.photo-logo-combo {
+    position: relative;
+    display: block;
+
+    .logo {
+        position: absolute;
+        left: 0.5rem;
+        bottom: 0.5rem;
+        width: 20%;
+        z-index: 1;
+    }
+    .logo.offset-y {
+        bottom: 0rem;
+    }
+}
+
+.photo-logo-combo .logo + .logo-bg {
+    content: ' ';
+    background-color: white;
+    border-top-right-radius: 1rem;
+    width: calc(20% + 1rem);
+    height: calc(20% + 2rem);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.9;
+}

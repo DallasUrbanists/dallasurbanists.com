@@ -1,0 +1,55 @@
+.group {
+    padding-top: clamp(2rem, 50svh, 100%);
+
+    .group-header {
+        backdrop-filter: blur(12px) brightness(75%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        
+        > div {
+            padding-right: 1rem;
+        }
+
+        .logo {
+            margin: 1rem;
+            height: clamp(100px, 25svw, 200px);
+            width: fit-content;
+        }
+    }
+}
+
+.sidebar {
+    width: clamp(200px, 25svw, 100%);
+    border: solid 1px black;
+    padding: 1rem;
+    padding-bottom: 0;
+    border-radius: 1rem;
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .group {
+        .group-header {
+            padding: 1rem;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .logo {
+                width: auto;
+                max-width: 100%;
+                height: fit-content;
+                margin-left: 0;
+            }
+        }    
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

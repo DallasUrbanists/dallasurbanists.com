@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- DEFINE PAGE TITLE -->
+    {% if page.title and page.title != '' %}
+        {% assign meta_title = page.title | append: " | Dallas Urbanists STLC" %}
+    {% elsif page.tag_feed and page.tag_feed != '' %}
+        {% capture meta_title %}
+        Blog posts about {{ page.tag_feed }} | Dallas Urbanists STLC
+        {% endcapture %}
+    {% else %}
+        {% assign meta_title = "Dallas Urbanists STLC: a Strong Towns Local Conversation" %}
+    {% endif %}
+    <title>{{ meta_title }}</title>
+
+    <!-- DEFINE PAGE DESCRIPTION -->
+    {% if page.description and page.description != '' %}
+      {% assign meta_description = page.description %}
+    {% elsif page.subtitle and page.subtitle != '' %}
+      {% assign meta_description = page.subtitle %}
+    {% else %}
+      {% capture meta_description %}
+      We advocate for neighborhoods of all sizes in Dallas to be a safe, walkable, bike-friendly, transit-oriented, affordable, and vibrant place to live.
+      {% endcapture %}
+    {% endif %}
+    <meta name="description" content="{{ meta_description }}">
+
+    <!-- FAVICONS -->
+    <link rel="icon" href="{{ "/favicon.ico" | relative_url }}" sizes="32x32">
+    <link rel="icon" href="{{ "/assets/favicons/favicon.svg" | relative_url }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ "/assets/favicons/apple-touch-icon.png" | relative_url }}">
+    <link rel="manifest" href="{{ "/assets/favicons/site.webmanifest" | relative_url }}">
+
+    <!-- WEB FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="{{ "/styles/global.css" | relative_url }}" />
+</head>
+<body>
+  {% include stlc-nav.html %}
+  <main>
+    {{ content }}
+  </main>
+</body>
+</html>

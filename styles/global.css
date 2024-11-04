@@ -1,0 +1,141 @@
+@import url('reset.css');
+@import url('nav.css');
+@import url('columns.css');
+@import url('grid.css');
+@import url('masthead.css');
+@import url('inspiring-quote-section.css');
+@import url('photo-logo-combo.css');
+@import url('tri-column-calendar.css');
+@import url('group.css');
+
+:root {
+    --offwhite: #EEE;
+    --strongtowns-navy: #0C2340;
+    --strongtowns-sky: #A7C6ED;
+    --strongtowns-gold: #FFB549;
+    --dark-blue: #334d66;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: var(--offwhite);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0em;
+    line-height: 1.8em;
+    text-transform: none;
+    color: black;
+}
+
+a {
+    text-decoration-skip-ink: all;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+    color: var(--strongtowns-navy);
+}
+
+p {
+    text-wrap: pretty;
+}
+
+.body-wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.body-wrapper.padded {
+    padding: 1rem;
+}
+
+.no-space {
+    font-size: 0;
+    line-height: 0;
+}
+
+main {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
+    }
+}
+
+.button-paragraph {
+    margin-top: 2rem;
+}
+.button-link {
+    display: inline-block;
+    line-height: 3rem;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 2rem;
+    transition: all 0.1s;
+}
+.button-link:hover { cursor: pointer; filter: brightness(80%); }
+.button-link.sky { background-color: var(--strongtowns-sky); color: var(--strongtowns-navy); }
+.button-link.gold { background-color: var(--strongtowns-gold); color: var(--strongtowns-navy); }
+.button-link.navy { background-color: var(--strongtowns-navy); color: white; }
+.button-link.navy:hover { filter: brightness(140%); }
+
+.bg-sky { background-color: var(--strongtowns-sky); }
+.bg-navy { background-color: var(--strongtowns-navy); color: white; }
+.bg-gold { background-color: var(--strongtowns-gold); color: var(--strongtowns-navy); }
+
+.viewport {
+    min-height: calc(100svh - 4rem);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom left;
+    background-attachment: fixed;
+}
+
+.call-to-action {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+input[type=text] {
+    padding: 1rem;
+    font-size: 1rem;
+    color: black;
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+    border-radius: 1.5rem; 
+    width: 24em;
+    max-width: 100%;
+    border: solid 1px var(--strongtowns-navy);
+}
+
+.padded-section {
+    padding: 2rem 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+section .subtitle {
+    text-wrap: balance;
+}
+
+.subtle-link {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.external-hyperlink {
+    word-break: break-all;
+}

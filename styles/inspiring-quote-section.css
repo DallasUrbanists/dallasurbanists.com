@@ -1,0 +1,55 @@
+.inspiring-quote-section {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: var(--dark-blue);
+    color: white;
+
+    figure {
+        background-image: url("../assets/branding/cover\ masthead.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom center;
+        padding: clamp(1rem, 4vw, 4rem);
+        text-align: right;
+
+        blockquote p {
+            text-wrap: pretty;
+            font-size: clamp(1.5em, 3vw, 2.5rem);
+            line-height: 1.5em;
+        }
+
+        .author {
+            line-height: 1.25em;
+            text-wrap: pretty;
+            font-size: clamp(1rem, 2vw, 2rem);
+            margin-top: 1em;
+            font-weight: 200;
+        }
+    }
+
+    img {
+        width: 50%;
+        max-height: 500px;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        filter: sepia(10%) saturate(300%) hue-rotate(150deg) brightness(100%) contrast(93%);
+    }
+}
+
+@media (max-width: 768px) {
+    .inspiring-quote-section {
+        flex-direction: column;
+
+        figure {
+            text-align: center;
+            padding: 4rem 3rem;
+        }
+
+        img {
+            aspect-ratio: 5 / 4;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}

@@ -34,6 +34,21 @@ collections:
   updates:
     output: false
 
+  # Collections added as part of STLC update
+  groups:
+    layout: stlc-default
+    output: true
+    order:
+      - dallas-neighbors-for-housing.md
+      - dallas-bicycle-coalition.md
+      - data-dallas-area-transit-alliance.md
+      - dallas-housing-coalition.md
+      - dfw-urbanistas.md
+      - better-block.md
+      - comets-for-better-transit.md
+      - gdpc-greater-dallas-planning-council.md
+      - sunrise-movement-dallas.md
+
 media_library:
   name: uploadcare
   config:

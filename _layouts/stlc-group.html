@@ -1,0 +1,31 @@
+---
+layout: stlc-default
+---
+<article>
+    <section class="masthead subtle group" style="
+        color: {{ page.masthead_text_color | default: "white" }};
+        background-color: {{ page.masthead_bg_color | default: "var(--strongtowns-navy)" }};
+        background-blend-mode: {{ page.masthead_bg_blend_mode | default: "multiply" }};
+        background-image: url({{ page.cover_photo | relative_url }});
+        background-position: {{ page.masthead_bg_position | default: "center center" }};
+    ">
+        <div class="body-wrapper group-header">
+            <img src="{{ page.logo | relative_url }}" alt="{{ page.cover_alt }}" class="logo" />
+            <div>
+                <h1>{{ page.name }}</h1>
+                <p>{{ page.summary }}</p>
+            </div>
+        </div>
+    </section>
+    <section class="body-wrapper padded">
+        <div class="sidebar">
+            <p><strong>Focus issues:</strong> Housing</p>
+            <p><strong>Founded on:</strong> January 2022</p>
+            <p><strong>Website:</strong> <a href="https://www.dallasneighborsforhousing.org/" class="external-hyperlink">dallasneighborsforhousing.org</a></p>
+            <p><strong>Meeting schedule:</strong> We have a happy hour social once a month and an organizer Zoom meeting on the first Wednesday of each month.</p>
+            <p><strong>Next event:</strong> November 15, 1:00 PM Event Title Goes Here</p>
+            <p><strong>How to join:</strong> Instructions for how to join go here.</p>
+        </div>
+        {{ content }}
+    </section>
+</article>

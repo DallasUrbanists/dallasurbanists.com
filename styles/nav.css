@@ -47,6 +47,22 @@
     display: none;
 }
 
+.jump-nav {
+    background-color: var(--strongtowns-gold);
+    color: black;
+    margin: 0;
+    text-align: left;
+    position: sticky;
+
+    a {
+        font-size: 1rem;
+        display: inline-block;
+        padding: 1rem;
+        line-height: 1rem;
+        clear: left;
+    }
+}
+
 @media (max-width: 768px) {
     .top-nav.collapsed {
         a.nav-link {

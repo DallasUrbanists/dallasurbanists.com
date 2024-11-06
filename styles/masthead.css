@@ -9,3 +9,34 @@
 .masthead.subtle {
     background-blend-mode: multiply;
 }
+
+.group.masthead .group-header {
+    width: 100%;
+    height: 60svh;
+
+    h1 {
+        max-width: 1024px;
+        text-shadow: black 1px 1px 12px;
+        backdrop-filter: grayscale(0.75);
+        font-size: clamp(1rem, 10svw, 6rem);
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .group.masthead .group-header {
+        aspect-ratio: 5/4;
+        height: auto;
+
+        h1 {
+            backdrop-filter: grayscale(0.85);
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .group.masthead .group-header {
+        aspect-ratio: 2/1;
+        height: auto;
+    }
+}

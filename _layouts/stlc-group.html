@@ -4,28 +4,90 @@ layout: stlc-default
 <article>
     <section class="masthead subtle group" style="
         color: {{ page.masthead_text_color | default: "white" }};
-        background-color: {{ page.masthead_bg_color | default: "var(--strongtowns-navy)" }};
-        background-blend-mode: {{ page.masthead_bg_blend_mode | default: "multiply" }};
         background-image: url({{ page.cover_photo | relative_url }});
         background-position: {{ page.masthead_bg_position | default: "center center" }};
     ">
-        <div class="body-wrapper group-header">
-            <img src="{{ page.logo | relative_url }}" alt="{{ page.cover_alt }}" class="logo" />
-            <div>
+        <div class="group-header">
+            <div class="body-wrapper padded">
                 <h1>{{ page.name }}</h1>
                 <p>{{ page.summary }}</p>
             </div>
         </div>
     </section>
+    <nav class="jump-nav">
+        <div class="body-wrapper">
+            <p class="inline-nav">
+                <a href="#basic">Basic Info</a>
+                <a href="#events">Upcoming Events</a>
+                <a href="#articles">Articles from {{ page.name }}</a>
+            </p>
+        </div>
+    </nav>
     <section class="body-wrapper padded">
         <div class="sidebar">
-            <p><strong>Focus issues:</strong> Housing</p>
+            <p><img src="{{ page.logo | relative_url }}" alt="Logo of {{ page.name }}" class="logo" /></p>
+            <p><strong>Focus issues:</strong> Housing, Zoning</p>
+            <p><strong>Focus area:</strong> City of Dallas</p>
             <p><strong>Founded on:</strong> January 2022</p>
-            <p><strong>Website:</strong> <a href="https://www.dallasneighborsforhousing.org/" class="external-hyperlink">dallasneighborsforhousing.org</a></p>
-            <p><strong>Meeting schedule:</strong> We have a happy hour social once a month and an organizer Zoom meeting on the first Wednesday of each month.</p>
             <p><strong>Next event:</strong> November 15, 1:00 PM Event Title Goes Here</p>
-            <p><strong>How to join:</strong> Instructions for how to join go here.</p>
+            <p><strong>Website:</strong> <a href="https://www.dallasneighborsforhousing.org/" class="external-hyperlink">dallasneighborsforhousing.org</a></p>
+            <p><strong>Links:</strong></p>
+            <ul>
+                <li><a href="#">Become a member</a></li>
+                <li><a href="#">Subscribe to emails</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Threads</a></li>
+                <li><a href="#">X/Twitter</a></li>
+            </ul>
         </div>
+
+        <a name="basic"></a>
+
         {{ content }}
+        
+        <a name="events"></a>
+        <h2>Upcoming Events</h2>
+
+        <p>
+            November 3 Sunday 1:00 PM<br />
+            <a href="#" class="event-title">Event Title</a>
+        </p>
+        <p>
+            November 3 Sunday 1:00 PM<br />
+            <a href="#" class="event-title">Event Title</a>
+        </p>
+        <p>
+            November 3 Sunday 1:00 PM<br />
+            <a href="#" class="event-title">Event Title</a>
+        </p>
+    </section>
+    <section class="bg-sky" style="margin-top: 2rem;">
+        <div class="body-wrapper padded">
+            <a name="articles"></a>
+            <h1>Articles from {{ page.name }}</h1>
+
+            <div class="grid-box">
+                {% for post in site.posts limit: 9 %}
+                    {% assign author = site.authors | where: 'name', post.author | first %}
+                    {% if author %}
+                        {% assign author_name = author.display_name %}
+                    {% else %}
+                        {% assign author_name = author %}
+                    {% endif %}
+
+                    <div class="grid-cell">
+                        <div class="photo-logo-combo">
+                            <img src="{{ post.cover_image | relative_url }}" alt="Members of Dallas Neighbors for Housing at City Hall" class="photo" />
+                            <!-- <img src="./assets/branding/brand logo navy.svg" alt="Dallas Urbanists STLC logo" class="logo" /> -->
+                        </div>
+                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                        <p>
+                            By {{ author_name }}
+                            on {{ post.date | date: "%B %e, %Y" }}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </section>
 </article>

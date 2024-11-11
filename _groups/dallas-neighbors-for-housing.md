@@ -1,6 +1,8 @@
 ---
 layout: stlc-group
-name: Dallas Neighbors for Housing
+name: dallas-neighbors-for-housing
+display_name: Dallas Neighbors for Housing
+alias: Neighbors for Housing
 summary: "This is DN4H. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 logo: /assets/dn4h-logo.jpg
 cover_photo: /assets/dn4h_group_photo.jpg

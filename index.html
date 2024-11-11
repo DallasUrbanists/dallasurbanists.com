@@ -52,10 +52,10 @@ identity_snippet: true
                     <div class="grid-cell">
                         <div class="photo-logo-combo">
                             <img src="{{ group.cover_photo | relative_url }}" alt="{{ group.cover_alt }}" class="photo" />
-                            <img src="{{ group.logo | relative_url }}" alt="Logo of {{ group.name }}" class="logo {% if group.logo_tight %}offset-y{% endif %}" />
+                            <img src="{{ group.logo | relative_url }}" alt="Logo of {{ group.display_name }}" class="logo {% if group.logo_tight %}offset-y{% endif %}" />
                             <div class="logo-bg"></div>
                         </div>
-                        <h2><a href="{{ group.url }}">{{ group.name }}</a></h2>
+                        <h2><a href="{{ group.url }}">{{ group.display_name }}</a></h2>
                         <p>{{ group.summary }} <a href="{{ group.url }}">Learn more</a></p>
                     </div>
                 {% endif %}

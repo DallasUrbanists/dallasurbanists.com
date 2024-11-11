@@ -9,7 +9,7 @@ layout: stlc-default
     ">
         <div class="group-header">
             <div class="body-wrapper padded">
-                <h1>{{ page.name }}</h1>
+                <h1>{{ page.display_name }}</h1>
                 <p>{{ page.summary }}</p>
             </div>
         </div>
@@ -21,15 +21,20 @@ layout: stlc-default
 
                 <h2>Upcoming Events</h2>
 
-                {% for event in site.events %}
-                    <p>
-                        {{ event.start_date | date: "%B %e" }}<br />
-                        <a href="#" class="event-title">{{ event.title }}</a>
-                    </p>                
-                {% endfor %}
+                {% assign group_events = site.events | where_exp: "event", "event.host == page.name" %}
+                {% if group_events.size > 0 %}
+                    {% for event in group_events %}
+                        <p>
+                            {{ event.start_date | date: "%B %e" }}<br />
+                            <a href="#" class="event-title">{{ event.title }}</a>
+                        </p>                
+                    {% endfor %}
+                {% else %}
+                    <p>There are no upcoming events at this time.</p>
+                {% endif %}
             </div>
         <div class="column">
-            <p><img src="{{ page.logo | relative_url }}" alt="Logo of {{ page.name }}" class="logo" /></p>
+            <p><img src="{{ page.logo | relative_url }}" alt="Logo of {{ page.display_name }}" class="logo" /></p>
             {% if page.focus_issues %}
                 <p><strong>Focus issues:</strong> {{ page.focus_issues }}</p>
             {% endif %}
@@ -54,7 +59,7 @@ layout: stlc-default
     </section>
     <section class="bg-sky" style="margin-top: 2rem;">
         <div class="body-wrapper padded">
-            <h1>Articles from {{ page.name }}</h1>
+            <h1>Articles from {{ page.display_name }}</h1>
 
             <div class="grid-box">
                 {% for post in site.posts limit: 9 %}

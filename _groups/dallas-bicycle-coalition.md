@@ -1,6 +1,8 @@
 ---
 layout: stlc-group
-name: Dallas Bicycle Coalition
+name: dallas-bicycle-coalition
+display_name: Dallas Bicycle Coalition
+alias: Bicycle Coalition
 summary: "This is DBC. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 logo: /assets/dbc-logo.png
 cover_photo: /assets/dbc_group_photo.jpg

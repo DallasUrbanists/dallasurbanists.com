@@ -12,9 +12,6 @@
     <link rel="apple-touch-icon" href="./assets/favicons/apple-touch-icon.png">
     <link rel="manifest" href="./assets/favicons/site.webmanifest">
 
-    <!-- CSS RESET -->
-    <link rel="stylesheet" href="./reset.css" />
-
     <!-- WEB FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +19,20 @@
 
     <!-- STYLES -->
     <link rel="stylesheet" href="./styles/global.css" />
+
+    <!-- CMS AUTHENTICATION -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+        if (!user) {
+            window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+            });
+        }
+        });
+    }
+    </script>
 
     <style>
         :root {

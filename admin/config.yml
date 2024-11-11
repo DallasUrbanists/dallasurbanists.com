@@ -19,6 +19,7 @@ collections:
     label_singular: "Event"
     folder: "_events"
     create: true
+    editor: { preview: false }
     {% raw %}
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
@@ -26,6 +27,17 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Start Date", name: "start_date", widget: "datetime"}
       - {label: "End Date", name: "end_date", widget: "datetime", required: false}
+      - {
+          label: 'Host',
+          name: 'host',
+          widget: 'relation',
+          collection: 'authors',
+          display_fields: [display_name],
+          search_fields: [display_name],
+          value_field: 'name',
+        }
+      - {label: "Webpage", name: "webpage", widget: "string", required: false}
+      - {label: "Featured?", name: "is_featured", widget: "boolean", required: false}
       - label: "Location"
         name: "location"
         widget: "object"
@@ -49,7 +61,7 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
       - {
           label: 'Author',
           name: 'author',

@@ -41,6 +41,22 @@
 
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="{{ "/styles/global.css" | relative_url }}" />
+
+    <!-- CMS AUTHENTICATION -->
+    {% if page.identity_snippet %}
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      </script>
+    {% endif %}
 </head>
 <body>
   {% include stlc-nav.html %}

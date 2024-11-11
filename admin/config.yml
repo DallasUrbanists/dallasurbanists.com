@@ -31,7 +31,7 @@ collections:
           label: 'Host',
           name: 'host',
           widget: 'relation',
-          collection: 'authors',
+          collection: 'groups',
           display_fields: [display_name],
           search_fields: [display_name],
           value_field: 'name',
@@ -96,6 +96,7 @@ collections:
 
   - name: "authors"
     label: "Authors"
+    label_singular: "Author"
     folder: "_authors/"
     {% raw %}
     slug: "{{name}}"
@@ -112,6 +113,39 @@ collections:
       - { label: 'Reddit Handle', name: 'reddit', widget: 'string', required: false  }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  - name: "groups"
+    label: "Groups"
+    label_singular: "Group"
+    folder: "_groups/"
+    {% raw %}
+    slug: "{{name}}"
+    {% endraw %}
+    output: true
+    create: true
+    editor: { preview: false }
+    fields:
+      - { label: 'Slug', name: 'name', widget: 'string', hint: 'This is used as a unique URL-safe identifier. May only contain lowercase letters, numbers, and dashes (-). For example: "dallas-neighbors-for-housing"' }
+      - { label: 'Name', name: 'display_name', widget: 'string', hint: 'This is the name displayed in the majority of cases. If abbreviation is commonly used, this should start with the full name and end with the abbreviation in parenthesis. For example, "Dallas Area Rapid Tranist (DART)"'}
+      - { label: 'Alias', name: 'alias', widget: 'string', hint: 'This is the shorthand name. Put just the abbreviation if commonly used (for example, "DART").', required: false }
+      - { label: 'Summary', name: 'summary', widget: 'text', required: false, pattern: ['^.{0,500}$', 'Maximum 500 characters.'], hint: 'This is what people see when they are browsing groups in a catalog, so it should be written like an elevator pitch that quickly explains why someone should join and what differentiates the group from others.'}
+      - { label: 'Logo', name: 'logo', widget: 'image' }
+      - { label: 'Cover Photo', name: 'cover_photo', widget: 'image' }
+      - { label: 'Featured?', name: 'is_featured', widget: 'boolean' }
+      - { label: 'Focus Issues', name: 'focus_issues', widget: 'string', required: false }
+      - { label: 'Focus Area', name: 'focus_area', widget: 'string', required: false }
+      - { label: 'Founded On', name: 'founded_on', widget: 'string', required: false }
+      - { label: 'Website', name: 'website', widget: 'string' }
+      - label: 'Links'
+        label_singular: 'Link'
+        summary: '{{ fields.label }}'
+        name: 'links'
+        widget: 'list'
+        allow_add: true
+        fields:
+          - { label: 'Label', name: 'label', widget: 'string' }
+          - { label: 'URL', name: 'url', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 
   - name: 'config'
     label: 'Config'

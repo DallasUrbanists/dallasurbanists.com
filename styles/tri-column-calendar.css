@@ -1,0 +1,21 @@
+.tri-column-calendar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    .column {
+        border: solid 1px black;
+        margin-bottom: 1rem;
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left;
+        }
+    }
+    .event-row {
+        margin: 1rem 0;
+        p {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5em;
+        }
+    }
+}

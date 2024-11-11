@@ -14,56 +14,46 @@ layout: stlc-default
             </div>
         </div>
     </section>
-    <nav class="jump-nav">
-        <div class="body-wrapper">
-            <p class="inline-nav">
-                <a href="#basic">Basic Info</a>
-                <a href="#events">Upcoming Events</a>
-                <a href="#articles">Articles from {{ page.name }}</a>
-            </p>
-        </div>
-    </nav>
-    <section class="body-wrapper padded">
-        <div class="sidebar">
+    <section class="bg-offwhite">
+        <div class="row two-columns">
+            <div class="column">
+                {{ content }}
+
+                <h2>Upcoming Events</h2>
+
+                {% for event in site.events %}
+                    <p>
+                        {{ event.start_date | date: "%B %e" }}<br />
+                        <a href="#" class="event-title">{{ event.title }}</a>
+                    </p>                
+                {% endfor %}
+            </div>
+        <div class="column">
             <p><img src="{{ page.logo | relative_url }}" alt="Logo of {{ page.name }}" class="logo" /></p>
-            <p><strong>Focus issues:</strong> Housing, Zoning</p>
-            <p><strong>Focus area:</strong> City of Dallas</p>
-            <p><strong>Founded on:</strong> January 2022</p>
-            <p><strong>Next event:</strong> November 15, 1:00 PM Event Title Goes Here</p>
-            <p><strong>Website:</strong> <a href="https://www.dallasneighborsforhousing.org/" class="external-hyperlink">dallasneighborsforhousing.org</a></p>
-            <p><strong>Links:</strong></p>
-            <ul>
-                <li><a href="#">Become a member</a></li>
-                <li><a href="#">Subscribe to emails</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Threads</a></li>
-                <li><a href="#">X/Twitter</a></li>
-            </ul>
+            {% if page.focus_issues %}
+                <p><strong>Focus issues:</strong> {{ page.focus_issues }}</p>
+            {% endif %}
+            {% if page.focus_area %}
+                <p><strong>Focus area:</strong> {{ page.focus_area }}</p>
+            {% endif %}
+            {% if page.founded_on %}
+                <p><strong>Founded on:</strong> {{ page.founded_on }}</p>
+            {% endif %}
+            {% if page.website %}
+                <p><strong>Website:</strong> <a href="{{ page.website | absolute_url }}" class="external-hyperlink">{{ page.website | extract_domain }}</a></p>
+            {% endif %}
+            {% if page.links %}
+                <p><strong>Links:</strong></p>
+                <ul>
+                    {% for link in page.links %}
+                        <li><a href="{{ link[1] }}">{{ link[0] }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
-
-        <a name="basic"></a>
-
-        {{ content }}
-        
-        <a name="events"></a>
-        <h2>Upcoming Events</h2>
-
-        <p>
-            November 3 Sunday 1:00 PM<br />
-            <a href="#" class="event-title">Event Title</a>
-        </p>
-        <p>
-            November 3 Sunday 1:00 PM<br />
-            <a href="#" class="event-title">Event Title</a>
-        </p>
-        <p>
-            November 3 Sunday 1:00 PM<br />
-            <a href="#" class="event-title">Event Title</a>
-        </p>
     </section>
     <section class="bg-sky" style="margin-top: 2rem;">
         <div class="body-wrapper padded">
-            <a name="articles"></a>
             <h1>Articles from {{ page.name }}</h1>
 
             <div class="grid-box">

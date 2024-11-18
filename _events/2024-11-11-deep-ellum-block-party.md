@@ -1,8 +1,9 @@
 ---
-title: Deep Ellum Block Party
+title: Deep Ellum Block Party (Dallas Bicycle Coalition + ..)
 start_date: 2024-11-23T19:00:00.000Z
 end_date: 2024-11-24T02:00:56.705Z
 host: dallas-bicycle-coalition
+is_featured: true
 location:
   city: Dallas
   name: Deep Ellum

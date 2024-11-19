@@ -13,7 +13,7 @@ Make sure Docker is running. Then, in VS Code, install the [Dev Containers](http
 
 Clone this repo by running
 ```
-git clone https://github.com/ThisDallasLife/thisdallaslife.com
+git clone https://github.com/DallasUrbanists/dallasurbanists.com
 ```
 and then open it in VS Code. 
 
@@ -21,10 +21,10 @@ Now that you have all the pieces, you'll bring it all together by opening the pr
 
  - Open the command palette (<kbd>Ctrl+Shift+P</kbd>) and start typing `Reopen in Container...`. 
  - Choose the command that matches that text (it may be prefixed with `Dev Containers` or `Remote-Containers`). 
-    - VS Code will reopen and start creating a Docker container based on the configuration specified in [`.devcontainer/devcontainer.json`](https://github.com/ThisDallasLife/thisdallaslife.com/blob/main/.devcontainer/devcontainer.json). It may take a while, but once it finishes, you'll have everything needed to start developing!
+    - VS Code will reopen and start creating a Docker container based on the configuration specified in [`.devcontainer/devcontainer.json`](https://github.com/DallasUrbanists/dallasurbanists.com/blob/main/.devcontainer/devcontainer.json). It may take a while, but once it finishes, you'll have everything needed to start developing!
 
 ## Making changes and viewing locally
-You can start a local web server for the website by pressing <kbd>Ctrl+Shift+B</kbd>, which runs the build task defined in [.vscode/tasks.json](https://github.com/ThisDallasLife/thisdallaslife.com/blob/main/.vscode/tasks.json). 
+You can start a local web server for the website by pressing <kbd>Ctrl+Shift+B</kbd>, which runs the build task defined in [.vscode/tasks.json](https://github.com/DallasUrbanists/dallasurbanists.com/blob/main/.vscode/tasks.json). 
 
 In your browser, go to https://localhost:4000 to see the site. When you make a change to source code, the site will automatically refresh.
 

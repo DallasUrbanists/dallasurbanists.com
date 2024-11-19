@@ -1,5 +1,5 @@
 ---
-title: Inaugural Summit
+title: Inaugural Dallas Housing Summit
 start_date: 2024-11-21T16:30:08.963Z
 end_date: 2024-11-22T01:00:00.000Z
 host: dallas-housing-coalition

@@ -1,7 +1,7 @@
 ---
 title: Environment & Natural Resources Task Force Breakfast Meeting
 start_date: 2024-11-26T12:30:43.839Z
-end_date: 2024-11-25T14:00:00.000Z
+end_date: 2024-11-26T14:00:00.000Z
 host: gdpc-greater-dallas-planning-council
 webpage: https://www.gdpc.org/events
 is_featured: true

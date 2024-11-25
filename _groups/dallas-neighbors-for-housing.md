@@ -1,16 +1,16 @@
 ---
+focus_issues: Housing, Zoning
+masthead_bg_blend_mode: luminosity
+cover_alt: Members of Dallas Neighbors for Housing at City Hall
 name: dallas-neighbors-for-housing
 display_name: Dallas Neighbors for Housing
 alias: Neighbors for Housing
 summary: Our mission is to help build a welcoming city where everyone has an
   affordable home that is close to jobs, transit, parks, and food.
 logo: https://ucarecdn.com/2dec9a82-625f-4504-b9e2-337ec5b10cc2/
-focus_issues: Housing, Zoning
-masthead_bg_blend_mode: luminosity
-cover_alt: Members of Dallas Neighbors for Housing at City Hall
+cover_photo: https://ucarecdn.com/d2174a33-5b28-48a8-b405-7fac98d32e59/
 is_featured: true
 layout: stlc-group
-cover_photo: https://ucarecdn.com/d2174a33-5b28-48a8-b405-7fac98d32e59/
 masthead_bg_color: "#000b5b"
 focus_area: City of Dallas
 masthead_bg_position: bottom center
@@ -32,4 +32,4 @@ Dallas Neighbors for Housing is a grassroots organization that advocates for mo
 
 Whether you're a long-time Dallas resident or a newcomer, we believe that you deserve a city that offers safe, affordable housing for all. Through coordinated activism, we will fight for better housing policies, more density, and urban planning that improves public transportation and places amenities and necessities closer to where we live.
 
-Our group is powered by everyday Dallas residents- renters, homeowners, small business owners, employees,  college students,  families,  citizens, immigrants, commuters, bus riders, cyclists, and pedestrians.  [Click here to join the movement](https://www.dallasneighborsforhousing.org/join) and read more about [our leadership ](https://www.dallasneighborsforhousing.org/leads)here.
+Our group is powered by everyday Dallas residents- renters, homeowners, small business owners, employees,  college students, families, citizens, immigrants, commuters, bus riders, cyclists, and pedestrians.  [Click here to join the movement](https://www.dallasneighborsforhousing.org/join) and read more about [our leadership ](https://www.dallasneighborsforhousing.org/leads)here.

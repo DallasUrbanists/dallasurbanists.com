@@ -15,7 +15,9 @@ logo: /assets/data-logo.png
 cover_photo: /assets/data-farmers-branch-cleanup.jpg
 featured: true
 alias: DATA
-focus_area: Dallas
+focus_area: DART Member Cities (Dallas, Addison, Carrollton, Cockrell Hill,
+  Farmers Branch, Garland, Glenn Heights, Highland Park, Irving, Plano,
+  Richardson, Rowlett, and University Park)
 founded_on: June 2024
 website: https://ridewithdata.org
 links:

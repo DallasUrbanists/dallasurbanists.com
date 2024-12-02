@@ -1,5 +1,5 @@
 ---
-cover_alt: Dallas Housing Coalition at City Hall
+name: dallas-housing-coalition
 display_name: Dallas Housing Coalition
 summary: The Dallas Housing Coalition (DHC) is a grassroots organization of over
   245 groups advocating for attainable housing in Dallas. DHC represents diverse
@@ -9,12 +9,15 @@ summary: The Dallas Housing Coalition (DHC) is a grassroots organization of over
   access to safe, quality housing. Our vision is a Dallas where all can thrive
   in a stable, affordable home.
 is_featured: true
+focus_issues: "Affordable and accessible housing, public education and policy "
+cover_alt: Dallas Housing Coalition at City Hall
 layout: stlc-group
-name: dallas-housing-coalition
 logo: /assets/dhc-logo.svg
 cover_photo: /assets/dhc-city-hall-crowdshot.jpg
 featured: true
 alias: Housing Coalition
+focus_area: Dallas
+founded_on: Sept 2023
 website: https://www.dallashousingcoalition.com/
 links:
   - label: LinkedIn

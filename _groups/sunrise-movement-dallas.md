@@ -1,5 +1,5 @@
 ---
-cover_alt: Sunrise Movement Dallas
+name: sunrise-movement-dallas
 display_name: Sunrise Movement Dallas
 summary: Sunrise Movement Dallas is a youth-led organization advocating for
   climate action, social justice, and a Green New Deal. Focused on policies that
@@ -9,12 +9,16 @@ summary: Sunrise Movement Dallas is a youth-led organization advocating for
   policies. The organization is part of a national movement driving
   transformation for a more sustainable and equitable society.
 is_featured: true
+focus_issues: Combating climate change, clean energy, social justice, youth
+  mobilization, community land trusts
+cover_alt: Sunrise Movement Dallas
 layout: stlc-group
-name: sunrise-movement-dallas
 logo: /assets/sunrisemvmt-logo.svg
 cover_photo: /assets/free-dart-for-students-wd-2.jpg
 featured: true
 alias: Sunrise Dallas
+focus_area: "Dallas "
+founded_on: "2019"
 website: https://www.sunrisemovementdallas.org/
 links:
   - label: Calendar

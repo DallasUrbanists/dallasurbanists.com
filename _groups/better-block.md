@@ -1,5 +1,5 @@
 ---
-cover_alt: Better Block
+name: better-block
 display_name: Better Block
 summary: Build a Better Block transforms underutilized public spaces into
   vibrant, people-centered areas through a 120-day design process. They lead 10
@@ -9,11 +9,15 @@ summary: Build a Better Block transforms underutilized public spaces into
   Environmental, Social, and Governance initiatives, enhancing community
   well-being through sustainable urban design.
 is_featured: true
+focus_issues: "Urban revitalization, community collaboration, sustainability,
+  social infrastructure "
+cover_alt: Better Block
 layout: stlc-group
-name: better-block
 logo: /assets/bb-logo.svg
 cover_photo: /assets/betterblock-action-shot.jpg
 featured: true
+focus_area: "Dallas, global "
+founded_on: ""
 website: https://www.betterblock.org/
 links:
   - label: Newsletter sign up

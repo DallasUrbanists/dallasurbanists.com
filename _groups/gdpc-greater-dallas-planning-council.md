@@ -1,5 +1,5 @@
 ---
-cover_alt: Greater Dallas Planning Council
+name: gdpc-greater-dallas-planning-council
 display_name: Greater Dallas Planning Council (GDPC)
 summary: Founded in 1946, the Greater Dallas Planning Council (GDPC) is the
   oldest civic organization in Dallas focusing on regional growth. Comprised of
@@ -9,12 +9,16 @@ summary: Founded in 1946, the Greater Dallas Planning Council (GDPC) is the
   monthly meetings to promote collaboration and policy recommendations for the
   region's long-term prosperity.
 is_featured: true
+focus_issues: Sustainable growth, urban design and development, transportation
+  and infrastructure, energy and water resources
+cover_alt: Greater Dallas Planning Council
 layout: stlc-group
-name: gdpc-greater-dallas-planning-council
 logo: /assets/gdpc-logo.svg
 cover_photo: /assets/gdpc-stock-photo.jpg
 featured: true
 alias: GDPC
+focus_area: Dallas
+founded_on: "1946"
 website: https://www.gdpc.org/
 links:
   - label: Member join link

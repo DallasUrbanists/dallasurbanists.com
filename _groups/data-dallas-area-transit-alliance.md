@@ -1,6 +1,5 @@
 ---
-cover_alt: Trash pickup event at Farmers Branch Station by Dallas Area Transit
-  Alliance / DATA
+name: data-dallas-area-transit-alliance
 display_name: Dallas Area Transit Alliance (DATA)
 summary: The Dallas Area Transit Alliance (DATA) advocates for better public
   transit in Greater Dallas, representing all 13 DART member cities. DATA was
@@ -8,12 +7,16 @@ summary: The Dallas Area Transit Alliance (DATA) advocates for better public
   to protect transit, influence officials, and propose practical transit
   solutions.
 is_featured: true
+focus_issues: "Advocacy for public transit, policy influence, sustainable transit solutions "
+cover_alt: Trash pickup event at Farmers Branch Station by Dallas Area Transit
+  Alliance / DATA
 layout: stlc-group
-name: data-dallas-area-transit-alliance
 logo: /assets/data-logo.png
 cover_photo: /assets/data-farmers-branch-cleanup.jpg
 featured: true
 alias: DATA
+focus_area: Dallas
+founded_on: June 2024
 website: https://ridewithdata.org
 links:
   - label: Facebook

@@ -1,5 +1,5 @@
 ---
-cover_alt: Board of Dallas Bicycle Coalition
+name: dallas-bicycle-coalition
 display_name: Dallas Bicycle Coalition
 summary: The Dallas Bicycle Coalition unites cycling advocates in Dallas to
   promote safer streets, better bike and pedestrian infrastructure, and a
@@ -9,12 +9,15 @@ summary: The Dallas Bicycle Coalition unites cycling advocates in Dallas to
   popular, and accessible, supported by a connected bike infrastructure and
   vibrant communities.
 is_featured: true
+focus_issues: "Cycling Advocacy, safer streets, community building, sustainable
+  transportation, infrastructure development "
+cover_alt: Board of Dallas Bicycle Coalition
 layout: stlc-group
-name: dallas-bicycle-coalition
 logo: /assets/dbc-logo.png
 cover_photo: /assets/dbc_group_photo.jpg
 featured: true
 alias: Bicycle Coalition
+focus_area: "Dallas "
 website: https://dallasbicyclecoalition.org/
 links:
   - label: Instagram

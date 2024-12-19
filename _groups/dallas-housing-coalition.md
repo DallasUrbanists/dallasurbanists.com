@@ -15,7 +15,7 @@ logo: /assets/dhc-logo.svg
 cover_photo: /assets/dhc-city-hall-crowdshot.jpg
 featured: true
 alias: Housing Coalition
-focus_area: City of Dallas
+focus_area: Dallas Region
 founded_on: June 2023
 website: https://www.dallashousingcoalition.com/
 links:

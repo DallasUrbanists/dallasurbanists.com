@@ -1,23 +1,22 @@
 ---
 name: dallas-housing-coalition
 display_name: Dallas Housing Coalition
-summary: The Dallas Housing Coalition (DHC) is a grassroots organization of over
-  245 groups advocating for attainable housing in Dallas. DHC represents diverse
-  populations, including seniors, veterans, and low-income families. With a
-  focus on equity, accessibility, and sustainability, DHC works to address the
-  city’s housing shortage, promote policy solutions, and ensure everyone has
-  access to safe, quality housing. Our vision is a Dallas where all can thrive
-  in a stable, affordable home.
+summary: The Dallas Housing Coalition is grassroots, member-powered nonprofit
+  with over 270 diverse individual and organizational members. Our mission is to
+  advocate for the creation and preservation of attainable housing in the city
+  of Dallas for all. There is no cost or commitment in becoming a member
+  currently other than agreeing to support the Coalition's mission and adopted
+  public policy priorities and procedures found under Our Values & Priorities.
 is_featured: true
-focus_issues: "Affordable and accessible housing, public education and policy "
+focus_issues: "Housing policy "
 cover_alt: Dallas Housing Coalition at City Hall
 layout: stlc-group
 logo: /assets/dhc-logo.svg
 cover_photo: /assets/dhc-city-hall-crowdshot.jpg
 featured: true
 alias: Housing Coalition
-focus_area: Dallas
-founded_on: Sept 2023
+focus_area: City of Dallas
+founded_on: June 2023
 website: https://www.dallashousingcoalition.com/
 links:
   - label: LinkedIn
@@ -34,6 +33,8 @@ links:
     url: https://www.dallashousingcoalition.com/meetings-events
   - label: Newsletter sign up
     url: https://www.dallashousingcoalition.com/newsletters
+  - label: Linktree
+    url: linktr.ee/dallashousingcoalition
 ---
 The Dallas Housing Coalition (DHC) is a grassroots, volunteer-powered organization uniting over 245 non- and for-profit groups and individuals to advocate for attainable housing in Dallas. Established in 2022 and officially launched in June 2023, DHC earned its 501(c)(3) status in September 2023. Its coalition includes housing developers, policy experts, and advocates dedicated to serving diverse populations, including seniors, veterans, families, persons with disabilities, and individuals experiencing homelessness.
 

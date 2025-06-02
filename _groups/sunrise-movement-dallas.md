@@ -25,10 +25,10 @@ links:
     url: https://www.sunrisemovementdallas.org/calendar
   - label: Member join link
     url: https://secure.everyaction.com/zAVGvcptcEuVQxQoL_O-sg2
-  - label: X
-    url: https://x.com/sunrisemvmtdtx
   - label: Instagram
     url: https://www.instagram.com/sunrisemovementdallas
+  - label: X/Twitter
+    url: https://x.com/sunrisemvmtdtx
   - label: Facebook
     url: https://www.facebook.com/SunriseMovementDallas
 ---

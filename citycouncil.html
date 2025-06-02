@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find your City Council representative</title>
+    <link href="./styles/citycouncil.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <p>Search your address to find your representative on City Council.</p>
+        <form action="" id="street-address-form">
+            <input type="text" name="street-address" class="form-control" placeholder="Search address...">
+            <button type="submit">Search</button>
+        </form>
+        <div id="search-results">
+            <p class="subtle"><i>Search results for <span class="street-address"></span>:</i></p>
+            <img class="rep-photo" alt="City Councilmember" />
+            <h2>Your representative is <span class="rep-name"></span></h2>
+            <p style="margin-top: 0;">
+                <span class="district"></span><br />
+                Email: <span class="rep-email"></span><br />
+                Phone: <span class="rep-phone"></span>
+            </p>
+            <!--
+            <table style="clear: both;" class="standard">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Office</th>
+                        <th>District</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="selectable">
+                        <td class="checkbox"><input type="checkbox" /></td>
+                        <td>Council Member</td>
+                        <td>District 14</td>
+                        <td>Paul Ridley</td>
+                        <td>paul.ridley@dallascityhall.com</td>
+                        <td>214-555-5555</td>
+                    </tr>
+                    <tr class="selectable">
+                        <td class="checkbox"><input type="checkbox" /></td>
+                        <td>CPC / City Plan & Zoning Commission</td>
+                        <td>District 14</td>
+                        <td>Paul Ridley</td>
+                        <td>paul.ridley@dallascityhall.com</td>
+                        <td>214-555-5555</td>
+                    </tr>
+                </tbody>
+            </table>
+            -->
+        </div>
+
+        <h2>Dallas City Council</h2>
+
+        <table style="clear: both;" class="standard" id="city-council-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>District</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+    <script src="./plugins/citycouncil/CityCouncil.js"></script>
+    <script src="./plugins/citycouncil/CityGIS.js"></script>
+    <script src="./plugins/citycouncil/index.js"></script>
+</body>
+</html>

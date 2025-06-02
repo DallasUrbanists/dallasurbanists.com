@@ -24,12 +24,12 @@ links:
     url: https://betterblock.us14.list-manage.com/subscribe?u=3299306ca63d3a8d8a0553a1f&id=5a75402a28
   - label: Facebook
     url: https://www.facebook.com/BetterBlock/
-  - label: X
-    url: https://x.com/i/flow/login?redirect_after_login=%2FTheBetterBlock
   - label: Instagram
     url: https://www.instagram.com/betterblock/
   - label: YouTube
     url: https://www.youtube.com/channel/UC-SJVvBZhAY91KnMVgz0TVA/videos
+  - label: X/Twitter
+    url: https://x.com/i/flow/login?redirect_after_login=%2FTheBetterBlock
 ---
 Build a Better Block is a community-driven urban design organization that specializes in transforming underutilized or overlooked public spaces into vibrant, people-centered areas. Through a 120-day collaboration and design process, they help communities revitalize entire blocks by prioritizing social infrastructure and public engagement. With a focus on placemaking, Build a Better Block leads 10 major projects annually, with spots available for 2025.
 

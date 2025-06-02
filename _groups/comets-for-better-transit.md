@@ -19,7 +19,7 @@ cover_alt: Comets for Better Transit
 logo_tight: true
 layout: stlc-group
 cover_photo: /assets/utd-883-bus.jpg
-featured: true
+featured: false
 focus_area: University of Texas Dallas, Richardson, around DART
 founded_on: December 2021
 website: https://cometsfor.org/

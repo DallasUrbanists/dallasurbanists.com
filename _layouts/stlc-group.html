@@ -18,20 +18,6 @@ layout: stlc-default
         <div class="row two-columns">
             <div class="column">
                 {{ content }}
-
-                <h2>Upcoming Events</h2>
-
-                {% assign group_events = site.events | where_exp: "event", "event.host == page.name" %}
-                {% if group_events.size > 0 %}
-                    {% for event in group_events %}
-                        <p>
-                            {{ event.start_date | date: "%B %e" }}<br />
-                            <a href="#" class="event-title">{{ event.title }}</a>
-                        </p>                
-                    {% endfor %}
-                {% else %}
-                    <p>There are no upcoming events at this time.</p>
-                {% endif %}
             </div>
         <div class="column">
             <p><img src="{{ page.logo | relative_url }}" alt="Logo of {{ page.display_name }}" class="logo" /></p>
@@ -55,34 +41,6 @@ layout: stlc-default
                     {% endfor %}
                 </ul>
             {% endif %}
-        </div>
-    </section>
-    <section class="bg-sky" style="margin-top: 2rem;">
-        <div class="body-wrapper padded">
-            <h1>Articles from {{ page.display_name }}</h1>
-
-            <div class="grid-box">
-                {% for post in site.posts limit: 9 %}
-                    {% assign author = site.authors | where: 'name', post.author | first %}
-                    {% if author %}
-                        {% assign author_name = author.display_name %}
-                    {% else %}
-                        {% assign author_name = author %}
-                    {% endif %}
-
-                    <div class="grid-cell">
-                        <div class="photo-logo-combo">
-                            <img src="{{ post.cover_image | relative_url }}" alt="Members of Dallas Neighbors for Housing at City Hall" class="photo" />
-                            <!-- <img src="./assets/branding/brand logo navy.svg" alt="Dallas Urbanists STLC logo" class="logo" /> -->
-                        </div>
-                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                        <p>
-                            By {{ author_name }}
-                            on {{ post.date | date: "%B %e, %Y" }}
-                        </p>
-                    </div>
-                {% endfor %}
-            </div>
         </div>
     </section>
 </article>

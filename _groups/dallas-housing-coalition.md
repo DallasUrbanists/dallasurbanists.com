@@ -25,8 +25,6 @@ links:
     url: https://www.facebook.com/dallashousingcoalition
   - label: Instagram
     url: https://www.instagram.com/dallashousingcoalition/
-  - label: X
-    url: https://x.com/i/flow/login?redirect_after_login=%2Fdallashousingco
   - label: TikTok
     url: https://www.tiktok.com/@dallashousingcoalition
   - label: Calendar
@@ -35,6 +33,8 @@ links:
     url: https://www.dallashousingcoalition.com/newsletters
   - label: Linktree
     url: linktr.ee/dallashousingcoalition
+  - label: X/Twitter
+    url: https://x.com/i/flow/login?redirect_after_login=%2Fdallashousingco
 ---
 The Dallas Housing Coalition (DHC) is a grassroots, volunteer-powered organization uniting over 245 non- and for-profit groups and individuals to advocate for attainable housing in Dallas. Established in 2022 and officially launched in June 2023, DHC earned its 501(c)(3) status in September 2023. Its coalition includes housing developers, policy experts, and advocates dedicated to serving diverse populations, including seniors, veterans, families, persons with disabilities, and individuals experiencing homelessness.
 

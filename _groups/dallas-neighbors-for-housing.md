@@ -7,7 +7,7 @@ summary: "This is DN4H. Lorem Ipsum is simply dummy text of the printing and typ
 logo: https://ucarecdn.com/2dec9a82-625f-4504-b9e2-337ec5b10cc2/
 cover_photo: https://ucarecdn.com/d2174a33-5b28-48a8-b405-7fac98d32e59/
 cover_alt: Members of Dallas Neighbors for Housing at City Hall
-is_featured: true
+featured: true
 masthead_bg_color: "#000b5b"
 masthead_bg_blend_mode: luminosity
 masthead_bg_position: bottom center

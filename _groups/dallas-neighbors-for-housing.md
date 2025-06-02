@@ -14,6 +14,7 @@ masthead_bg_position: bottom center
 focus_issues: Housing, Zoning
 focus_area: City of Dallas
 founded_on: January 2022
+rank: 1
 website: https://www.dallasneighborsforhousing.org/
 links:
     - ["Become a member", https://www.dallasneighborsforhousing.org/join]

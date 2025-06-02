@@ -2,198 +2,111 @@
 layout: stlc-default
 identity_snippet: true
 ---
-<section class="masthead bg-navy">
-    <div class="row two-columns viewport">
+<style>
+    .substack-feed-widget .sm\:px-4 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+</style>
+<section class="masthead bg-navy" style="padding-bottom: 1rem;">
+    <div class="row two-columns" style="align-items: start;">
+        <img class="column" src="./assets/branding/brand wordmark gold.svg" alt="Collage 1" class="hero-image" />
         <div class="column">
-            <img src="./assets/branding/brand wordmark white.svg" alt="Dallas Urbanists Strong Towns Local Conversation" style="width: 100%; margin: 0 0 1.5rem;">
-            <p>We are people who care about making Dallas a more walkable, bike-friendly, transit-oriented, affordable, and vibrant place to live.</p>
-            
-            <p>As a Strong Towns Local Conversation (STLC), we are part of the Strong Towns movement to replace America’s postwar pattern of development, the "Suburban Experiment," with a pattern of development that is financially strong and resilient. We advocate for neighborhoods of all sizes in Dallas to be safe, livable and inviting.</p>
-
-            <p class="button-paragraph"><a href="#" class="button-link gold">Become a member</a></p>
+            <p style="font-size: 1.5rem;line-height: 1.5em;">Our mission is to foster <em>informed and empathetic
+                    conversations</em> about walkability, transportation, and housing in Dallas neighborhoods. Through
+                stories and conversations, <em>inspire locals to take action</em> toward meaningful improvement for the
+                city.</p>
+            <p class="button-paragraph"><a href="/join" class="button-link gold">Become a member</a></p>
         </div>
-        <img class="column" src="./assets/home collage 1.png" alt="Collage 1" class="hero-image" />
-    </div>                
+    </div>
 </section>
-<section class="bg-offwhite">
+<section class="bg-white padded-section">
+    <div class="body-wrapper padded">
+        <h1>Recent Blog Posts</h1>
+        <div id="substack-feed-embed"></div>
+        <p class="button-paragraph"><a href="https://dallasurbanists.substack.com" class="button-link sky">Go to our
+                Substack blog</a></p>
+    </div>
+    <script>
+        window.SubstackFeedWidget = {
+            substackUrl: "dallasurbanists.substack.com",
+            posts: 3,
+            layout: "center",
+            colors: {
+                primary: "#0c2340",
+                secondary: "#333",
+                background: "transparent",
+            }
+        };
+    </script>
+    <script src="https://substackapi.com/embeds/feed.js" async></script>
+</section>
+<section class="bg-sand">
     <div class="row two-columns">
         <div class="column">
-            <h1>History of Dallas Urbanists STLC</h1>
+            <h1>What is Dallas Urbanists?</h1>
 
-            <p>Dallas Urbanists began as a blog in December 2021 by Hexel Colorado, documenting his advocacy with groups like Dallas Neighbors for Housing and Dallas Bicycle Coalition.  Hexel’s Instagram videos offered tips on using DART, living car-free, and covered key urban planning issues.</p>
+            <p>Dallas Urbanists STLC is a group based in Dallas, Texas and composed of people who care about making our
+                city a better place to live, work, and play for everybody. Our group aligns with the New Urbanism
+                movement, and we are an instance of what Strong Towns calls a "Local Conversation", whose purpose is to
+                connect nearby, like-minded advocates to put Strong Towns ideas into action where we live.</p>
 
-            <p>Since then, Dallas Urbanists has become a dynamic community presence, featured by KERA Radio, Dallas Morning News, WFAA TV, and other media outlets. We have gained over 15,600 Instagram followers, collected thousands of signatures for transit and pedestrian safety, and partnered with local groups to support affordable housing and bike infrastructure.</p>
-
-            <p>In October 2024, Dallas Urbanists took its first steps toward becoming a Strong Towns Local Conversation (STLC).</p>
-
-            <p class="button-paragraph"><a href="#" class="button-link sky">Read about our journey</a></p>
+            <p class="button-paragraph"><a href="/about" class="button-link sky">Learn more about us</a></p>
         </div>
         <div class="column">
-            <img src="./assets/home collage 2.png" alt="Collage 2" class="hero-image" />                
+            <img src="./assets/home collage 2.png" alt="Collage 2" class="hero-image" />
         </div>
     </div>
 </section>
-<section class="call-to-action bg-gold">
-    <div class="body-wrapper padded">
-        <h1>Sign up for emails</h1>
-        <form>
-            <input type="text" name="email" placeholder="Your email address..." />
-            <input type="submit" value="Subscribe" class="button-link navy" />
-        </form>
+<section class="call-to-action bg-sky">
+    <div class="row two-columns" style="align-items: baseline;">
+        <div class="column">
+            <h1>Be a Subscriber</h1>
+            <p style="text-align: center;">Get plugged in to everything going on by subscribing to our emails via Substack or following @dallasurbanists on social
+                media.</p>
+            <iframe src="https://dallasurbanists.substack.com/embed" width="100%" height="320"
+                style="border:1px solid #EEE; background:white;border-radius: 0.5rem;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); width: 100%;"
+                frameborder="0" scrolling="no"></iframe>
+            <a title="Instagram @dallasurbanists" href="https://instagram.com/dallasurbanists" class="icon-link fa-brands navy fa-instagram"></a>
+            <a title="Youtube Dallas Urbanists STLC" href="https://www.youtube.com/channel/UCdGGeaIMqyVgr2cssV-uMTg" class="icon-link fa-brands navy fa-youtube"></a>
+            <a title="BlueSky @DallasUrbanists.org" href="https://bsky.app/profile/dallasurbanists.org" class="icon-link fa-brands navy fa-bluesky"></a>
+            <a title="Subreddit r/dallasurbanists" href="https://www.reddit.com/r/dallasurbanists/" class="icon-link fa-brands navy fa-reddit"></a>
+            <a title="Facebook @DallasUrbanists" href="https://www.facebook.com/dallasurbanists/" class="icon-link fa-brands navy fa-facebook"></a>
+            <a title="Threads @DallasUrbanists" href="https://www.threads.net/@dallasurbanists" class="icon-link fa-brands navy fa-threads"></a>
+        </div>
+        <div class="column">
+            <h1>Become a Member</h1>
+            <p style="text-align: center;">Ready to get involved? Join our Strong Towns Local Converation to receive action alerts and volunteer
+                opportunities.</p>
+            <p style="text-align: center;" class="button-paragraph"><a href="/join" class="button-link navy">Become a member</a></p>
+
+            <h1 style="margin-top: 1em;">Attend an Event</h1>
+            <p style="text-align: center;">"Lowly, unpurposeful and random as they may appear, sidewalk contacts are the small change from which a city's wealth of public life may grow." &mdash; Jane Jacobs</p>
+            <p style="text-align: center;" class="button-paragraph">
+                <a href="https://www.meetup.com/dallas-urbanists-stlc/?eventOrigin=event_home_page" class="button-link navy">STLC events</a>
+                <a href="/calendar" class="button-link navy">Community Calendar</a>
+            </p>
+        </div>
     </div>
 </section>
-<section class="bg-sky padded-section">
+<section class="bg-offwhite padded-section">
     <div class="body-wrapper padded">
         <h1 class="text-center">Neighbors in Advocacy</h1>
-        <p class="text-center subtitle">Although Dallas Urbanists STLC hosts some events and initiatives, we often partner with other local groups in support of their projects and campaigns. Here is a list of the groups and organizations Dallas Urbanists frequently collaborates with.</p>
+        <p class="text-center subtitle">Here are other local groups we often support and collaborate with.</p>
         <div class="grid-box">
             {% for group in site.groups %}
-                {% if group.featured %}
-                    <div class="grid-cell">
-                        <div class="photo-logo-combo">
-                            <img src="{{ group.cover_photo | relative_url }}" alt="{{ group.cover_alt }}" class="photo" />
-                            <img src="{{ group.logo | relative_url }}" alt="Logo of {{ group.display_name }}" class="logo {% if group.logo_tight %}offset-y{% endif %}" />
-                            <div class="logo-bg"></div>
-                        </div>
-                        <h2><a href="{{ group.url }}">{{ group.display_name }}</a></h2>
-                        <p>{{ group.summary }} <a href="{{ group.url }}">Learn more</a></p>
-                    </div>
-                {% endif %}
+            {% if group.featured %}
+            <div class="grid-cell">
+                <a class="photo-logo-combo" href="{{ group.url }}">
+                    <img src="{{ group.cover_photo | relative_url }}" alt="{{ group.cover_alt }}" class="photo" />
+                    <img src="{{ group.logo | relative_url }}" alt="Logo of {{ group.display_name }}"
+                        class="logo {% if group.logo_tight %}offset-y{% endif %}" />
+                    <div class="logo-bg"></div>
+                </a>
+                <h2 class="text-center"><a href="{{ group.url }}">{{ group.display_name }}</a></h2>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
-        <p class="button-paragraph text-center"><a href="#" class="button-link navy">See full list of organizations</a></p>
-    </div>
-</section>
-<section class="inspiring-quote-section">
-    <figure>
-        <blockquote>
-            <p>Cities have the capability of providing something for everybody, only because, and only when, they are created by everybody.</p>
-        </blockquote>
-        <figcaption class="author">
-            Jane Jacobs,
-            <cite>The Death and Life of Great American Cities</cite>
-        </figcaption>    
-    </figure>
-    <img src="./assets/jane-jacobs-photo-by-frank-lennon-toronto-star.jpg" alt="Portrait of Jane Jacobs" />
-</section>
-<section class="padded-section">
-    <div class="body-wrapper padded">
-        <h1 class="text-center">Upcoming Events for Urbanists</h1>
-        <p class="text-center subtitle">Alongside Dallas Urbanists STLC events, this calendar includes curated meetings and activities hosted by other local organizations and groups.</p>
-        <div class="tri-column-calendar">
-            <div class="column">
-                <h2>This Week</h2>
-                <p>What's happening for the next 7 days.</p>
-                <div class="event-row">
-                    <p>November 3 Sunday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                </div>
-                <div class="event-row">
-                    <p>November 4 Monday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                </div>
-                <div class="event-row">
-                    <p>November 5 Tuesday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                </div>
-                <div class="event-row">
-                    <p>November 6 Wednesday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                </div>
-                <div class="event-row">
-                    <p>November 7 Thursday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                </div>
-                <div class="event-row">
-                    <p>November 8 Friday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                </div>
-            </div>
-            <div class="column">
-                <h2>This Month</h2>
-                <p>What's happening in the next 30 days.</p>
-                <div class="event-row">
-                    <p>Sunday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                    <p class="event-location"></p>
-                </div>
-                <div class="event-row">
-                    <p>Sunday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                    <p class="event-location"></p>
-                </div>
-                <div class="event-row">
-                    <p>Sunday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                    <p class="event-location"></p>
-                </div>
-                <div class="event-row">
-                    <p>Sunday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                    <p class="event-location"></p>
-                </div>
-            </div>
-            <div class="column" style="grid-column-start: span 2;">
-                <h2>Featured Upcoming Events</h2>
-                <p>Mark your calendar for these major events happening later in the year.</p>
-                <div class="event-row">
-                    <p>Sunday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                    <p class="event-location"></p>
-                </div>
-                <div class="event-row">
-                    <p>Sunday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                    <p class="event-location"></p>
-                </div>
-                <div class="event-row">
-                    <p>Sunday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                    <p class="event-location"></p>
-                </div>
-                <div class="event-row">
-                    <p>Sunday 1:00 PM</p>
-                    <p><a href="#" class="event-title">Event Title</a></p>
-                    <p class="event-location"></p>
-                </div>
-            </div>
-        </div>
-
-        <p class="button-paragraph text-center"><a href="#" class="button-link gold">See full calendar</a></p>
-    </div>
-</section>
-<section class="padded-section bg-sky">
-    <div class="body-wrapper padded">
-        <h1 class="text-center">Urbanism Articles</h1>
-        <p class="text-center subtitle">Featured here are original pieces by Dallas Urbanists STLC members, along with noteworthy articles from other local organizations and news outlets.</p>
-
-        <div class="grid-box">
-            {% for post in site.posts limit: 9 %}
-                {% assign author = site.authors | where: 'name', post.author | first %}
-                {% if author %}
-                    {% assign author_name = author.display_name %}
-                {% else %}
-                    {% assign author_name = author %}
-                {% endif %}
-
-                <div class="grid-cell">
-                    <div class="photo-logo-combo">
-                        <img src="{{ post.cover_image | relative_url }}" alt="Members of Dallas Neighbors for Housing at City Hall" class="photo" />
-                        <!-- <img src="./assets/branding/brand logo navy.svg" alt="Dallas Urbanists STLC logo" class="logo" /> -->
-                    </div>
-                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                    <p>
-                        By {{ author_name }}
-                        on {{ post.date | date: "%B %e, %Y" }}
-                    </p>
-                </div>
-            {% endfor %}
-        </div>
-        <p class="button-paragraph text-center"><a href="#" class="button-link navy">See older articles</a></p>
-    </div>
-</section>
-<section class="padded-section bg-gold">
-    <div class="body-wrapper padded">
-        <h1 class="text-center">Site Map</h1>
     </div>
 </section>

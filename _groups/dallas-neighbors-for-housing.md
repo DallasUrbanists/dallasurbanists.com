@@ -9,12 +9,13 @@ summary: Our mission is to help build a welcoming city where everyone has an
   affordable home that is close to jobs, transit, parks, and food.
 logo: https://ucarecdn.com/2dec9a82-625f-4504-b9e2-337ec5b10cc2/
 cover_photo: https://ucarecdn.com/d2174a33-5b28-48a8-b405-7fac98d32e59/
-is_featured: true
-layout: stlc-group
+cover_alt: Members of Dallas Neighbors for Housing at City Hall
+featured: true
 masthead_bg_color: "#000b5b"
 focus_area: City of Dallas
 masthead_bg_position: bottom center
 founded_on: January 2022
+rank: 1
 website: https://www.dallasneighborsforhousing.org/
 links:
   - url: https://www.dallasneighborsforhousing.org/join

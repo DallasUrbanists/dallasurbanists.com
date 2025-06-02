@@ -84,7 +84,7 @@ main {
 .button-link {
     display: inline-block;
     line-height: 3rem;
-    border-radius: 1.5rem;
+    border-radius: 0.5rem;
     text-decoration: none;
     font-weight: bold;
     padding: 0 2rem;
@@ -99,6 +99,8 @@ main {
 .bg-sky { background-color: var(--strongtowns-sky); }
 .bg-navy { background-color: var(--strongtowns-navy); color: white; }
 .bg-gold { background-color: var(--strongtowns-gold); color: var(--strongtowns-navy); }
+.bg-sand { background-color: #F5F3EE; }
+.bg-white { background-color: white; }
 
 .viewport {
     min-height: calc(100svh - 4rem);
@@ -118,7 +120,7 @@ input[type=text] {
     font-size: 1rem;
     color: black;
     font-family: "Titillium Web", Arial, Helvetica, sans-serif;
-    border-radius: 1.5rem; 
+    border-radius: 0.5rem; 
     width: 24em;
     max-width: 100%;
     border: solid 1px var(--strongtowns-navy);
@@ -148,3 +150,31 @@ section .subtitle {
 .external-hyperlink {
     word-break: break-all;
 }
+
+.masthead p em {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  display: inline;
+  padding: 0 0.25em;
+  word-break: break-word;
+}
+
+
+.icon-link {
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 0.5rem;
+  transition: all 0.1s;
+  line-height: 2rem;
+}
+.icon-link:hover {
+  cursor: pointer;
+  filter: brightness(80%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0.2em;
+}
+.icon-link.sky { color: var(--strongtowns-sky); }
+.icon-link.gold { color: var(--strongtowns-gold); }
+.icon-link.navy { color: var(--strongtowns-navy); }
+.icon-link.navy:hover { filter: brightness(140%); }

@@ -24,6 +24,5 @@ website: https://www.instagram.com/urbanistasdfw/
 links:
   - label: Instagram
     url: https://www.instagram.com/urbanistasdfw/
-masthead_text_color: white
 ---
 DFW Urbanistas is a collective of women dedicated to advocating for equitable and accessible public transit for all. They host community gatherings every 3rd Thursday at Pegasus Brewery, providing a platform for networking, discussion, and action on transit-related issues. Their work emphasizes inclusivity, urban planning, and collaborative solutions to improve transportation systems.

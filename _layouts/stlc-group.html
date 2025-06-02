@@ -37,7 +37,7 @@ layout: stlc-default
                 <p><strong>Links:</strong></p>
                 <ul>
                     {% for link in page.links %}
-                        <li><a href="{{ link[1] }}">{{ link[0] }}</a></li>
+                        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
                     {% endfor %}
                 </ul>
             {% endif %}

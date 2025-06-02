@@ -1,351 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dallas Urbanists STLC: a Strong Towns Local Conversation</title>
-    <meta name="description" content="We advocate for neighborhoods of all sizes in Dallas to be a safe, walkable, bike-friendly, transit-oriented, affordable, and vibrant place to live.">
-
-    <!-- FAVICONS -->
-    <link rel="icon" href="./favicon.ico" sizes="32x32">
-    <link rel="icon" href="./assets/favicons/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="./assets/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="./assets/favicons/site.webmanifest">
-
-    <!-- WEB FONT-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-
-    <!-- STYLES -->
-    <link rel="stylesheet" href="./styles/global.css" />
-
-    <!-- CMS AUTHENTICATION -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-    if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-        if (!user) {
-            window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-            });
-        }
-        });
+---
+layout: stlc-default
+identity_snippet: true
+---
+<style>
+    .substack-feed-widget .sm\:px-4 {
+        padding-left: 0;
+        padding-right: 0;
     }
-    </script>
-
-    <style>
-        :root {
-            --offwhite: #EEE;
-            --strongtowns-navy: #0C2340;
-            --strongtowns-sky: #A7C6ED;
-            --strongtowns-gold: #FFB549;
-            --dark-blue: #334d66;
-        }
-        * {
-            box-sizing: border-box;
-        }
-        html, body {
-            background-color: var(--offwhite);
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: "Titillium Web", Arial, Helvetica, sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 16px;
-            letter-spacing: 0em;
-            line-height: 1.8em;
-            text-transform: none;
-            color: black;
-        }
-
-        a {
-            text-underline-offset: 2px;
-            text-decoration-thickness: 1px;
-        }
-
-        p {
-            text-wrap: pretty;
-        }
-
-        .body-wrapper {
-            max-width: 1024px;
-            margin: 0 auto;
-        }
-
-        .body-wrapper.padded {
-            padding: 1rem;
-        }
-
-        .masthead {
-            background-image: url('./assets/branding/cover masthead.svg');
-            background-color: var(--dark-blue);
-            background-repeat: no-repeat;
-            background-position: left center;
-            background-size: contain;
-            padding-bottom: clamp(0px, 15%, 250px);
-            width: 100%;
-
-            .lockup {
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-            img {
-                border: none;
-                margin: 0;
-                padding: 0;
-            }
-        }
-        
-        .no-space {
-            font-size: 0;
-            line-height: 0;
-        }
-
-        main {
-            h1 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-
-            p {
-                margin-bottom: 1rem;
-            }
-        }
-
-
-        .button-paragraph {
-            margin-top: 2rem;
-        }
-        .button-link {
-            display: inline-block;
-            line-height: 3rem;
-            border-radius: 1.5rem;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0 2rem;
-            transition: all 0.1s;
-        }
-        .button-link:hover { cursor: pointer; filter: brightness(80%); }
-        .button-link.sky { background-color: var(--strongtowns-sky); color: var(--strongtowns-navy); }
-        .button-link.gold { background-color: var(--strongtowns-gold); color: var(--strongtowns-navy); }
-        .button-link.navy { background-color: var(--strongtowns-navy); color: white; }
-        .button-link.navy:hover { filter: brightness(140%); }
-
-        .bg-sky { background-color: var(--strongtowns-sky); }
-        .bg-navy { background-color: var(--strongtowns-navy); color: white; }
-        .bg-gold { background-color: var(--strongtowns-gold); color: var(--strongtowns-navy); }
-
-        .viewport {
-            min-height: calc(100svh - 4.5rem);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: bottom left;
-            background-attachment: fixed;
-        }
-
-        .call-to-action {
-            padding: 2rem 0;
-            text-align: center;
-        }
-        input[type=text] {
-            padding: 1rem;
-            font-size: 1rem;
-            color: black;
-            font-family: "Titillium Web", Arial, Helvetica, sans-serif;
-            border-radius: 1.5rem; 
-            width: 24em;
-            max-width: 100%;
-            border: solid 1px var(--strongtowns-navy);
-        }
-
-        .padded-section {
-            padding: 2rem 0;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .photo-logo-combo {
-            position: relative;
-            display: block;
-
-            .logo {
-                position: absolute;
-                left: 0.5rem;
-                bottom: 0.5rem;
-                width: 20%;
-            }
-            .logo.offset-y {
-                bottom: 0rem;
-            }
-        }
-
-        .photo-logo-combo::before {
-            content: ' ';
-            background-color: white;
-            width: calc(20% + 1rem);
-            height: calc(20% + 2rem);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            opacity: 0.9;
-        }
-
-        .inspiring-quote-section {
-            display: flex;
-            flex-direction: row;
-            flex-grow: 1;
-            background-color: var(--dark-blue);
-            color: white;
-
-            figure {
-                background-image: url("./assets/branding/cover masthead.svg");
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: bottom center;
-                padding: clamp(1rem, 4vw, 4rem);
-                text-align: right;
-
-                blockquote p {
-                    text-wrap: pretty;
-                    font-size: clamp(1.5em, 3vw, 2.5rem);
-                    line-height: 1.5em;
-                }
-
-                .author {
-                    line-height: 1.25em;
-                    text-wrap: pretty;
-                    font-size: clamp(1rem, 2vw, 2rem);
-                    margin-top: 1em;
-                    font-weight: 200;
-                }
-            }
-
-            img {
-                width: 50%;
-                max-height: 500px;
-                aspect-ratio: 4 / 5;
-                object-fit: cover;
-                filter: sepia(10%) saturate(300%) hue-rotate(150deg) brightness(100%) contrast(93%);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .inspiring-quote-section {
-                flex-direction: column;
-
-                figure {
-                    text-align: center;
-                    padding: 4rem 3rem;
-                }
-
-                img {
-                    aspect-ratio: 5 / 4;
-                    width: 100%;
-                    max-width: 100%;
-                }
-            }
-        }
-
-        .tri-column-calendar {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-column-gap: 1rem;
-            .column {
-                border: solid 1px black;
-
-                h1, h2, h3, h4, h5, h6 {
-                    text-align: center;
-                }
-            }
-            .event-row {
-                margin: 1rem 0;
-                p {
-                    margin: 0;
-                    padding: 0;
-                    line-height: 1.5em;
-                }
-            }
-        }
-
-        section .subtitle {
-            text-wrap: balance;
-        }
-
-        .subtle-link {
-            text-decoration-thickness: 1px;
-            text-underline-offset: 4px;
-        }
-
-        .notice-box {
-            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-            border-radius: 1em;
-            background-color: var(--offwhite);
-            color: black;
-            padding: 2rem;
-        }
-
-        .notice-box .icon {
-            aspect-ratio: 1 / 1;
-            max-width: 100px;
-            margin-bottom: 1em;
-        }
-
-        .logo-bar .logo {
-            width: clamp(2rem, 100%, 10rem);
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .row {
-                padding-bottom: 20vh;
-
-                .column {
-                    padding: 0 1rem;
-                }
-            }
-        }
-    </style>
-</head>
-<body class="bg-navy" style="
-    background-image: url(./assets/masthead\ 3.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom left;
-    background-attachment: fixed;
-">
-    <div class="logo-bar">
-        <img src="./assets/branding/brand logo gold.svg" alt="Dallas Urbanists logo" class="logo centered" />
+</style>
+<section class="masthead bg-navy" style="padding-bottom: 1rem;">
+    <div class="row two-columns" style="align-items: start;">
+        <img class="column" src="./assets/branding/brand wordmark gold.svg" alt="Collage 1" class="hero-image" />
+        <div class="column">
+            <p style="font-size: 1.5rem;line-height: 1.5em;">Our mission is to foster <em>informed and empathetic
+                    conversations</em> about walkability, transportation, and housing in Dallas neighborhoods. Through
+                stories and conversations, <em>inspire locals to take action</em> toward meaningful improvement for the
+                city.</p>
+            <p class="button-paragraph"><a href="/join" class="button-link gold">Become a member</a></p>
+        </div>
     </div>
-    <main>
-        <section>
-            <div class="row two-columns" style="align-items: self-start;">
-                <div class="column">
-                    <img src="./assets/branding/brand wordmark white.svg" alt="Dallas Urbanists Strong Towns Local Conversation" style="width: 100%; margin: 0 0 1.5rem;">
-                    <p>We are people who care about making Dallas a more walkable, bike-friendly, transit-oriented, affordable, and vibrant place to live.</p>
-                    
-                    <p>As a <a href="https://www.strongtowns.org/local">Strong Towns Local Conversation</a> (STLC), we are part of the <a href="https://strongtowns.org/">Strong Towns</a> movement to replace America’s postwar pattern of development, the "Suburban Experiment," with a pattern of development that is financially strong and resilient. We advocate for neighborhoods of all sizes in Dallas to be safe, livable and inviting.</p>
-                </div>
-                <div class="column">
-                    <div class="notice-box">
-                        <img src="./assets/under-construction-icon.svg" class="icon" alt="Website under construction" />
-                        <p>We're redeveloping our website! Here’s how to stay connected with us during this process.</p>
-                        <ul>
-                            <li>Email us at <a href="mailto:info@dallasurbanists.com">info@dallasurbanists.com</a></li>
-                            <li>Follow us on <a href="https://instagram.com/dallasurbanists">Instagram</a>, our primary social media platform</li>
-                            <li>Follow us on <a href="https://www.facebook.com/dallasurbanists/">Facebook</a>, <a href="https://www.threads.net/@dallasurbanists">Threads</a>, or <a href="https://x.com/dallasurbanists">X/Twitter</a></li>
-                            <li>Subscribe to our <a href="https://www.youtube.com/channel/UCdGGeaIMqyVgr2cssV-uMTg">YouTube channel</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>                
-        </section>
-    </main>
-</body>
-</html>
+</section>
+<section class="bg-white padded-section">
+    <div class="body-wrapper padded">
+        <h1>Recent Blog Posts</h1>
+        <div id="substack-feed-embed"></div>
+        <p class="button-paragraph"><a href="https://dallasurbanists.substack.com" class="button-link sky">Go to our
+                Substack blog</a></p>
+    </div>
+    <script>
+        window.SubstackFeedWidget = {
+            substackUrl: "dallasurbanists.substack.com",
+            posts: 3,
+            layout: "center",
+            colors: {
+                primary: "#0c2340",
+                secondary: "#333",
+                background: "transparent",
+            }
+        };
+    </script>
+    <script src="https://substackapi.com/embeds/feed.js" async></script>
+</section>
+<section class="bg-sand">
+    <div class="row two-columns">
+        <div class="column">
+            <h1>What is Dallas Urbanists?</h1>
+
+            <p>Dallas Urbanists STLC is a group based in Dallas, Texas and composed of people who care about making our
+                city a better place to live, work, and play for everybody. Our group aligns with the New Urbanism
+                movement, and we are an instance of what Strong Towns calls a "Local Conversation", whose purpose is to
+                connect nearby, like-minded advocates to put Strong Towns ideas into action where we live.</p>
+
+            <p class="button-paragraph"><a href="/about" class="button-link sky">Learn more about us</a></p>
+        </div>
+        <div class="column">
+            <img src="./assets/home collage 2.png" alt="Collage 2" class="hero-image" />
+        </div>
+    </div>
+</section>
+<section class="call-to-action bg-sky">
+    <div class="row two-columns" style="align-items: baseline;">
+        <div class="column">
+            <h1>Be a Subscriber</h1>
+            <p style="text-align: center;">Get plugged in to everything going on by subscribing to our emails via Substack or following @dallasurbanists on social
+                media.</p>
+            <iframe src="https://dallasurbanists.substack.com/embed" width="100%" height="320"
+                style="border:1px solid #EEE; background:white;border-radius: 0.5rem;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); width: 100%;"
+                frameborder="0" scrolling="no"></iframe>
+            <a title="Instagram @dallasurbanists" href="https://instagram.com/dallasurbanists" class="icon-link fa-brands navy fa-instagram"></a>
+            <a title="Youtube Dallas Urbanists STLC" href="https://www.youtube.com/channel/UCdGGeaIMqyVgr2cssV-uMTg" class="icon-link fa-brands navy fa-youtube"></a>
+            <a title="BlueSky @DallasUrbanists.org" href="https://bsky.app/profile/dallasurbanists.org" class="icon-link fa-brands navy fa-bluesky"></a>
+            <a title="Subreddit r/dallasurbanists" href="https://www.reddit.com/r/dallasurbanists/" class="icon-link fa-brands navy fa-reddit"></a>
+            <a title="Facebook @DallasUrbanists" href="https://www.facebook.com/dallasurbanists/" class="icon-link fa-brands navy fa-facebook"></a>
+            <a title="Threads @DallasUrbanists" href="https://www.threads.net/@dallasurbanists" class="icon-link fa-brands navy fa-threads"></a>
+        </div>
+        <div class="column">
+            <h1>Become a Member</h1>
+            <p style="text-align: center;">Ready to get involved? Join our Strong Towns Local Converation to receive action alerts and volunteer
+                opportunities.</p>
+            <p style="text-align: center;" class="button-paragraph"><a href="/join" class="button-link navy">Become a member</a></p>
+
+            <h1 style="margin-top: 1em;">Attend an Event</h1>
+            <p style="text-align: center;">"Lowly, unpurposeful and random as they may appear, sidewalk contacts are the small change from which a city's wealth of public life may grow." &mdash; Jane Jacobs</p>
+            <p style="text-align: center;" class="button-paragraph">
+                <a href="https://www.meetup.com/dallas-urbanists-stlc/?eventOrigin=event_home_page" class="button-link navy">STLC events</a>
+                <a href="/calendar" class="button-link navy">Community Calendar</a>
+            </p>
+        </div>
+    </div>
+</section>
+<section class="bg-offwhite padded-section">
+    <div class="body-wrapper padded">
+        <h1 class="text-center">Neighbors in Advocacy</h1>
+        <p class="text-center subtitle">Here are other local groups we often support and collaborate with.</p>
+        <div class="grid-box">
+            {% for group in site.groups %}
+            {% if group.featured %}
+            <div class="grid-cell">
+                <a class="photo-logo-combo" href="{{ group.url }}">
+                    <img src="{{ group.cover_photo | relative_url }}" alt="{{ group.cover_alt }}" class="photo" />
+                    <img src="{{ group.logo | relative_url }}" alt="Logo of {{ group.display_name }}"
+                        class="logo {% if group.logo_tight %}offset-y{% endif %}" />
+                    <div class="logo-bg"></div>
+                </a>
+                <h2 class="text-center"><a href="{{ group.url }}">{{ group.display_name }}</a></h2>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

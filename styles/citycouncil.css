@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+html {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    padding: 1em;
+    background-color: #eee;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif', serif;
+    font-size: 2em;
+    text-wrap: balance;
+    font-weight: 500;
+    margin: 1rem;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+table.standard {
+    width: 100%;
+    border-collapse: collapse;
+    
+    td, th {
+        padding: 0.25em;
+    }
+    tr:nth-child(even) {
+        background-color: rgba(0,0,0,0.1);
+    }
+    tr.selectable:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 0, 0.5);
+
+        td, th {
+            background-color: transparent;
+        }
+    }
+    td.checkbox {
+        border: none;
+    }
+    th {
+        text-align: left;
+    }
+}
+
+main {
+    max-width: 1024px;
+    width: 100%;
+    margin: 1em auto;
+}
+
+#street-address-form {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+}
+
+#street-address-form > input,
+#street-address-form > button {
+    padding: 1em;
+    display: block;
+    border: none;
+}
+
+#street-address-form > input {
+    flex-grow: 1;
+}
+
+#street-address-form > button[type="submit"] {
+    width: 10em;
+    cursor: pointer;
+}
+
+#search-results {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: none;
+    border: solid 1px black;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    h2 {
+        text-align: left;
+        margin-bottom: 0rem;
+    }
+
+    .subtle {
+        color: rgba(0,0,0,0.8);
+        font-size: 0.8rem;
+        font-style: italic;
+        margin: 0;
+    }
+
+    #results-table {
+        box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+        background-color: white;
+        width: 100%;
+    }
+
+    .rep-photo {
+        float: left;
+        max-width: 50%;
+        object-fit: cover;
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+        width: 120px;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+}

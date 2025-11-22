@@ -1,15 +1,391 @@
 ---
 layout: stlc-default
 ---
-<section class="bg-navy" style="display: flex; flex-direction: column; width: 100%; height: calc(100vh - 4.5rem);">
+<style>
+    .event-item {
+        flex-direction: row;
+        display: flex;
+        position: relative;
+        text-overflow: ellipsis;
+        background-color: var(--strongtowns-sand);
+        margin-bottom: 1rem;
+        height: fit-content;
+        width: 100%;
+        overflow: hidden;
+        transition: all 0.2s ease;
+        max-height: 175px;
+    }
+
+    .event-item .event-column:first-child {
+        display: block;
+        width: 25vw;
+        flex-shrink: 0;
+        flex-grow: 0;
+        min-width: 400px;
+    }
+
+    .event-item .event-column {
+        flex-grow: 1;
+        padding: 1rem;
+
+        p,
+        a {
+            word-break: break-word;
+        }
+    }
+
+
+    .event-item.expanded {
+        max-height: none;
+        border: solid 1px #eee;
+    }
+
+    .event-item:hover {
+        border-color: black;
+        cursor: pointer;
+    }
+
+    .event-item:after {
+        content: " ";
+        /* Needed to render the pseudo */
+        background-image: linear-gradient(to bottom, transparent 0%, white 80%);
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 2rem;
+    }
+
+    .event-item h2 {
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+
+    .event-date {
+        font-size: 1rem;
+        margin-bottom: 0rem;
+        line-height: 1rem;
+    }
+
+    .event-item p {
+        color: #555;
+        line-height: 1.25em;
+    }
+
+    .event-item .event-column p {
+        font-weight: normal;
+    }
+
+    .event-item .event-column b,
+    .event-item .event-column strong {
+        font-weight: 600;
+        color: #555;
+    }
+
+    .horizontal-tabnav a {
+        display: inline-block;
+        padding: 1rem;
+        text-decoration: none;
+        font-weight: bold;
+        border-bottom: none;
+        color: white;
+    }
+
+    .horizontal-tabnav a:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .horizontal-tabnav a.active,
+    .horizontal-tabnav a.active:hover {
+        color: black;
+        background-color: white;
+        cursor: default;
+    }
+
+    #event-feed h1 {
+        margin-top: 3rem;
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: lighter;
+        color: #888;
+        padding: 1rem;
+        padding-bottom: 0;
+    }
+
+    #event-feed h1:first-of-type {
+        margin-top: 1rem;
+    }
+
+    .event-item .event-column:last-child p {
+        opacity: 0.9;
+    }
+    .event-item.expanded .event-column:last-child p {
+        opacity: 1;
+    }
+
+
+    @media (max-width: 700px) {
+        .event-item {
+            flex-direction: column;
+        }
+        .event-item .event-column:last-child {
+            padding-top: 0;
+        }
+
+        .event-item .event-column:first-child {
+            width: 100%;
+            min-width: auto;
+            padding-bottom: 0;
+        }
+    }
+</style>
+<section class="bg-navy">
     <div class="body-wrapper padded" style="width: 100%;">
         <h1 style="margin-bottom: 0.5rem;">Community Calendar</h1>
-        <p style="margin-bottom: 0; color: #AAA; line-height: 1.5rem;">This calendar curates events from local residents,
+        <p style="margin-bottom: 0; color: #AAA; line-height: 1.5rem;">This calendar curates events from local
+            residents,
             businesses, nonprofits, and government agencies. Find social gatherings, civic meetings, and volunteer
             opportunities here. Suggestions are welcome at <a
                 href="mailto:contact@dallasurbanists.org">contact@dallasurbanists.org</a>.</p>
     </div>
-    <iframe
-        src="https://teamup.com/ksmwn2f7yyqnumzf3r?view=a&tz=Calendar%20default&showHeader=0&showLogo=0&showSearch=0&showProfileAndInfo=0&disableSidepanel=1&showTitle=0&showViewSelector=1&showMenu=1&showViewHeader=0&showAgendaDetails=1&listGroupBy=month&showDateControls=1&showDateRange=0"
-        style="width: 100%; height: 600px; flex-grow: 1;" loading="lazy" frameborder="0"></iframe>
 </section>
+<section class="bg-navy">
+    <div class="body-wrapper">
+        <div class="horizontal-tabnav">
+            <a href="#" id="upcoming-link">Upcoming Events</a>
+            <a href="#" id="past-link">Past Events</a>
+        </div>
+    </div>
+</section>
+<section class="bg-white" style="padding-top: 1rem;">
+    <div class="body-wrapper">
+        <div id="event-feed"></div>
+    </div>
+</section>
+
+<script>
+    // Teamup API details
+    const teamupAPIToken = 'fa68b6f0d704a55141e7ba70b0497ddec7852b815ce24df37d8c19482f308f01';
+    const teamupAPIBaseURL = 'https://api.teamup.com/ksmwn2f7yyqnumzf3r/';
+
+    // The HTML element where events will be displayed
+    const eventFeed = document.getElementById('event-feed');
+
+    // Cache keys based on current date and time to avoid hitting API more than once per minute
+    const upcomingCacheKey = 'upcoming' + cacheKey();
+    const pastCacheKey = 'past' + cacheKey();
+    function cacheKey() {
+        const d = new Date();
+        const Y = d.getFullYear();
+        const M = String(d.getMonth() + 1).padStart(2, '0');
+        const D = String(d.getDate()).padStart(2, '0');
+        const h = String(d.getHours()).padStart(2, '0');
+        const m = String(d.getMinutes()).padStart(2, '0');
+        return `${Y}${M}${D}${h}${m}`;
+    }
+
+    // Determine mode from URL parameter
+    let mode = 'upcoming';
+    const setMode = (newMode) => mode = newMode;
+    const urlParams = new URLSearchParams(window.location.search || '');
+    if ((urlParams.get('mode') || '').toLowerCase() === 'past') {
+        mode = 'past';
+    }
+
+    document.getElementById('upcoming-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        setMode('upcoming');
+        const u = new URL(window.location.href);
+        u.searchParams.set('mode', 'upcoming');
+        history.replaceState(null, '', u.toString());
+        findEvents();
+    });
+    document.getElementById('past-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        setMode('past');
+        const u = new URL(window.location.href);
+        u.searchParams.set('mode', 'past');
+        history.replaceState(null, '', u.toString());
+        findEvents();
+    });
+
+    let foundEvents = [];
+
+    function findEvents() {
+        let storedEvents = localStorage.getItem(mode === 'upcoming' ? upcomingCacheKey : pastCacheKey);
+        if (storedEvents) {
+            console.log(`Using cached ${mode} events (${mode === 'upcoming' ? upcomingCacheKey : pastCacheKey})`);
+            foundEvents = JSON.parse(storedEvents);
+            populateEvents();
+        } else {
+            console.log(`Using fresh ${mode} events`);
+            fetchEvents(mode).then((results) => {
+                const useKey = mode === 'upcoming' ? upcomingCacheKey : pastCacheKey;
+                foundEvents = results;
+                // Clear out old cache entries
+                Object.keys(localStorage).forEach(key => {
+                    if (typeof key === 'string' && key.startsWith(mode)) {
+                        localStorage.removeItem(key);
+                    }
+                });
+                localStorage.setItem(useKey, JSON.stringify(foundEvents));
+                populateEvents();
+            });
+        }
+    }
+
+    findEvents();
+
+    function toggleNavLinks() {
+        document.querySelectorAll('.horizontal-tabnav a').forEach((link) => link.classList.remove('active'));
+        const activate = (id) => document.getElementById(id).classList.add('active');
+        switch (mode) {
+            case 'upcoming':
+                activate('upcoming-link');
+                break;
+            case 'past':
+                activate('past-link');
+                break;
+        }
+    }
+
+    function populateEvents() {
+        eventFeed.innerHTML = '';
+        if (mode === 'upcoming') {
+            document.getElementById('upcoming-link').classList.add('active');
+            document.getElementById('past-link').classList.remove('active');
+            foundEvents.sort((a, b) => new Date(a.start_dt) - new Date(b.start_dt));
+        } else {
+            document.getElementById('upcoming-link').classList.add('active');
+            document.getElementById('past-link').classList.remove('active');
+            foundEvents.sort((a, b) => new Date(b.start_dt) - new Date(a.start_dt));
+        }
+
+        toggleNavLinks();
+
+        let printedTodayHeader = false;
+        let printedThisWeekHeader = false;
+        const printedMonths = [];
+
+        const isToday = (date) => {
+            const today = new Date();
+            return date.getDate() === today.getDate() &&
+                date.getMonth() === today.getMonth() &&
+                date.getFullYear() === today.getFullYear();
+        };
+        const isThisWeek = (date) => {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const weekFromToday = new Date(today);
+            weekFromToday.setDate(weekFromToday.getDate() + 6);
+            return date >= tomorrow && date <= weekFromToday;
+        };
+
+        foundEvents.forEach(event => {
+            // Wraps around entire event item
+            const eventDiv = document.createElement('div');
+            eventDiv.className = 'event-item';
+
+            // Three column layout
+            const column1 = document.createElement('div');
+            const column2 = document.createElement('div');
+            const column3 = document.createElement('div');
+            column1.className = 'event-column';
+            column2.className = 'event-column';
+            column3.className = 'event-column';
+
+            // Contents of first column
+            const titleH2 = document.createElement('h2');
+            const dateDiv = document.createElement('div');
+            const startDate = new Date(event.start_dt);
+            column1.appendChild(dateDiv);
+            column1.appendChild(titleH2);
+            titleH2.textContent = event.title;
+            dateDiv.className = 'event-date';
+            dateDiv.textContent = startDate.toLocaleDateString("en-US", {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            });
+
+            // Contents of second column
+            const descriptionP = document.createElement('p');
+            column2.appendChild(descriptionP);
+            descriptionP.innerHTML = event.notes || '';
+
+            // Display appropriate header
+            if (mode === 'upcoming') {
+                if (isToday(startDate) && !printedTodayHeader) {
+                    const todayHeader = document.createElement('h1');
+                    todayHeader.textContent = 'Today';
+                    eventFeed.appendChild(todayHeader);
+                    printedTodayHeader = true;
+                } else if (isThisWeek(startDate) && !printedThisWeekHeader) {
+                    const thisWeekHeader = document.createElement('h1');
+                    thisWeekHeader.textContent = 'This Week';
+                    eventFeed.appendChild(thisWeekHeader);
+                    printedThisWeekHeader = true;
+                } else if (!isToday(startDate) && !isThisWeek(startDate)) {
+                    const monthYear = startDate.toLocaleDateString("en-US", { year: 'numeric', month: 'long' });
+                    if (!printedMonths.includes(monthYear)) {
+                        const monthHeader = document.createElement('h1');
+                        monthHeader.textContent = monthYear;
+                        eventFeed.appendChild(monthHeader);
+                        printedMonths.push(monthYear);
+                    }
+                }
+            }
+
+            // Put everything together
+            eventDiv.appendChild(column1);
+            eventDiv.appendChild(column2);
+            eventFeed.appendChild(eventDiv);
+        });
+
+        document.querySelectorAll('.event-item').forEach((item) => item.addEventListener('click', (e) => {
+            e.currentTarget.classList.toggle('expanded');
+        }));
+    }
+
+    async function fetchEvents(mode) {
+        let startDate = new Date();
+        let endDate = new Date(startDate);
+        let sortFunction;
+        const format = (date) => date.toISOString().split('T')[0];
+        if (mode === 'upcoming') {
+            endDate.setMonth(endDate.getMonth() + 6);
+            sortFunction = (a, b) => new Date(a.start_dt) - new Date(b.start_dt);
+        } else {
+            startDate.setMonth(startDate.getMonth() - 6);
+            endDate.setDate(endDate.getDate() - 1);
+            sortFunction = (a, b) => new Date(b.start_dt) - new Date(a.start_dt);
+        }
+        const params = new URLSearchParams({ 'startDate': format(startDate), 'endDate': format(endDate) });
+        try {
+            const response = await fetch(
+                `${teamupAPIBaseURL}events?${params}`,
+                {
+                    method: "GET", headers: { "Teamup-Token": teamupAPIToken }
+                });
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+            const result = await response.json();
+            const found = result.events;
+            found.sort(sortFunction);
+
+            // limit to the first 100 items
+            return found.slice(0, 100);
+        } catch (error) {
+            console.error(error.message);
+        }
+        return [];
+    }
+</script>

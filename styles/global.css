@@ -13,6 +13,7 @@
     --strongtowns-navy: #0C2340;
     --strongtowns-sky: #A7C6ED;
     --strongtowns-gold: #FFB549;
+    --strongtowns-sand: #F5F3EE;
     --dark-blue: #334d66;
 }
 
@@ -99,7 +100,7 @@ main {
 .bg-sky { background-color: var(--strongtowns-sky); }
 .bg-navy { background-color: var(--strongtowns-navy); color: white; }
 .bg-gold { background-color: var(--strongtowns-gold); color: var(--strongtowns-navy); }
-.bg-sand { background-color: #F5F3EE; }
+.bg-sand { background-color: var(--strongtowns-sand); }
 .bg-white { background-color: white; }
 
 .viewport {

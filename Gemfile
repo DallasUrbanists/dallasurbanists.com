@@ -1,5 +1,3 @@
-require_relative "jekyll_logger_fix"
-
 source "https://rubygems.org"
 
 # Use the latest 4.4.x release which contains several Ruby 3.x compatibility fixes

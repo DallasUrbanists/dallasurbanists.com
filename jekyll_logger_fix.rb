@@ -10,7 +10,8 @@ begin
       alias_method :__patched_level, :level
 
       def level
-        (@level_override ||= {})[Fiber.current] || @level
+        fiber = ::Fiber.current
+        (@level_override ||= {})[fiber] || @level
       end
     end
   end

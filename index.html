@@ -23,22 +23,14 @@ identity_snippet: true
 <section class="bg-white padded-section">
     <div class="body-wrapper padded">
         <h1>Recent Blog Posts</h1>
-        <div id="substack-feed-embed"></div>
+        <!-- Feed embed code -->
+        <div data-supascribe-embed-id="387407396482" data-supascribe-feed></div>
+        <!-- Supascribe Script -->
+        <script src="https://js.supascribe.com/v1/loader/m7H3ytx5vPUNOrkeOgyClhs2zhL2.js" async></script>
+
         <p class="button-paragraph"><a href="https://dallasurbanists.substack.com" class="button-link sky">Go to our
                 Substack blog</a></p>
     </div>
-    <script>
-        window.SubstackFeedWidget = {
-            substackUrl: "dallasurbanists.substack.com",
-            posts: 3,
-            layout: "center",
-            colors: {
-                primary: "#0c2340",
-                secondary: "#333",
-                background: "transparent",
-            }
-        };
-    </script>
     <script src="https://substackapi.com/embeds/feed.js" async></script>
 </section>
 <section class="bg-sand">

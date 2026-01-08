@@ -7,47 +7,99 @@ layout: stlc-default
         display: flex;
         position: relative;
         text-overflow: ellipsis;
-        background-color: var(--strongtowns-sand);
-        margin-bottom: 1rem;
+        /* background-color: var(--strongtowns-sand); */
+        margin-bottom: 5px;
         height: fit-content;
         width: 100%;
         overflow: hidden;
         transition: all 0.2s ease;
         max-height: 175px;
-    }
 
-    .event-item .event-column:first-child {
-        display: block;
-        width: 25vw;
-        flex-shrink: 0;
-        flex-grow: 0;
-        min-width: 400px;
-    }
+        .event-column {
+            flex-grow: 1;
+            flex-shrink: 1;
+            padding: 1rem;
 
-    .event-item .event-column {
-        flex-grow: 1;
-        padding: 1rem;
+            p,
+            a {
+                word-break: break-word;
+            }
 
-        p,
-        a {
-            word-break: break-word;
+            h2 {
+                font-size: 1rem;
+                margin-bottom: 0;
+            }
+
+        }
+
+        .date-column {
+            flex-grow: 0;
+        }
+
+        .details-column {
+            flex-grow: 1;
+            width: calc(100% - 7rem);
+            background-color: var(--strongtowns-sand);
+
+            .event-notes,
+            .event-notes-preview {
+                line-height: 1.25em;
+                height: 1em;
+            }
+
+            .event-notes-preview {
+                opacity: 0.6;
+            }
+
+            .event-notes-preview:hover {
+                opacity: 1;
+            }
+
+            .event-notes-preview {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                display: inline;
+            }
+
+            .event-notes {
+                display: none;
+            }
+        }
+
+        .event-location {
+            line-height: 1em;
         }
     }
+
 
 
     .event-item.expanded {
         max-height: none;
         border: solid 1px #eee;
+
+        .event-column.details-column {
+            .event-notes {
+                display: block;
+                height: auto;
+                white-space: normal;
+            }
+
+            .event-notes-preview {
+                display: none;
+            }
+        }
     }
 
     .event-item:hover {
+        transition: all 0.1s ease;
+        filter: saturate(5);
         border-color: black;
         cursor: pointer;
     }
 
-    .event-item:after {
+    /* .event-item:after {
         content: " ";
-        /* Needed to render the pseudo */
         background-image: linear-gradient(to bottom, transparent 0%, white 80%);
         position: absolute;
         display: block;
@@ -55,23 +107,7 @@ layout: stlc-default
         right: 0;
         width: 100%;
         height: 2rem;
-    }
-
-    .event-item h2 {
-        margin-bottom: 0;
-        font-size: 2rem;
-    }
-
-    .event-date {
-        font-size: 1rem;
-        margin-bottom: 0rem;
-        line-height: 1rem;
-    }
-
-    .event-item p {
-        color: #555;
-        line-height: 1.25em;
-    }
+    } */
 
     .event-item .event-column p {
         font-weight: normal;
@@ -105,8 +141,7 @@ layout: stlc-default
     }
 
     #event-feed h1 {
-        margin-top: 3rem;
-        font-size: 3rem;
+        font-size: 2rem;
         text-transform: uppercase;
         font-weight: lighter;
         color: #888;
@@ -114,22 +149,58 @@ layout: stlc-default
         padding-bottom: 0;
     }
 
-    #event-feed h1:first-of-type {
-        margin-top: 1rem;
-    }
-
     .event-item .event-column:last-child p {
         opacity: 0.9;
     }
+
     .event-item.expanded .event-column:last-child p {
         opacity: 1;
     }
 
+    .event-date {
+        font-size: 1rem;
+        margin-bottom: 0rem;
+        line-height: 1rem;
+        font-family: monospace;
+        text-align: right;
+        width: 7em;
 
-    @media (max-width: 700px) {
+        .weekday,
+        .time,
+        .time.end {
+            display: block;
+        }
+
+        .date {
+            font-weight: bold;
+        }
+    }
+
+
+    .event-item.duplicate-date {
+        margin-top: -5px;
+
+        .event-date .date,
+        .event-date .weekday {
+            display: none;
+        }
+    }
+
+    @media (max-width: 360px) {
         .event-item {
             flex-direction: column;
+            background-color: var(--strongtowns-sand);
+            margin-bottom: 1rem;
+
+            .details-column {
+                width: 100%;
+            }
+
+            .event-column.details-column {
+                padding-top: 0;
+            }
         }
+
         .event-item .event-column:last-child {
             padding-top: 0;
         }
@@ -138,6 +209,31 @@ layout: stlc-default
             width: 100%;
             min-width: auto;
             padding-bottom: 0;
+        }
+
+        .event-date {
+            width: 100%;
+            text-align: left;
+
+            .weekday,
+            .time,
+            .time.end {
+                display: inline-block;
+                margin-left: 1ch;
+            }
+
+            .date {
+                font-weight: normal;
+            }
+        }
+
+        .event-item.duplicate-date {
+            margin-top: 0;
+
+            .event-date .date,
+            .event-date .weekday {
+                display: inline-block;
+            }
         }
     }
 </style>
@@ -284,7 +380,10 @@ layout: stlc-default
             return date >= tomorrow && date <= weekFromToday;
         };
 
+        let prior = null;
         foundEvents.forEach(event => {
+            const startDate = new Date(event.start_dt);
+
             // Wraps around entire event item
             const eventDiv = document.createElement('div');
             eventDiv.className = 'event-item';
@@ -293,31 +392,50 @@ layout: stlc-default
             const column1 = document.createElement('div');
             const column2 = document.createElement('div');
             const column3 = document.createElement('div');
-            column1.className = 'event-column';
-            column2.className = 'event-column';
+            column1.className = 'event-column date-column';
+            column2.className = 'event-column details-column';
             column3.className = 'event-column';
 
             // Contents of first column
-            const titleH2 = document.createElement('h2');
             const dateDiv = document.createElement('div');
-            const startDate = new Date(event.start_dt);
-            column1.appendChild(dateDiv);
-            column1.appendChild(titleH2);
-            titleH2.textContent = event.title;
+            const dateTransform = transformDate(event);
+            const priorTransform = prior ? transformDate(prior) : null;
             dateDiv.className = 'event-date';
-            dateDiv.textContent = startDate.toLocaleDateString("en-US", {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true
-            });
+            dateDiv.innerHTML = dateTransform.string;
+            column1.appendChild(dateDiv);
+            if (dateTransform.datePortion === priorTransform?.datePortion) {
+                eventDiv.classList.add('duplicate-date');
+            }
 
             // Contents of second column
+            const titleH2 = document.createElement('h2');
+            const whoSpan = document.createElement('span');
+            const locationDiv = document.createElement('div');
+            const notesDiv = document.createElement('div');
+            const previewDiv = document.createElement('div');
+            locationDiv.className = 'event-location';
+            notesDiv.className = 'event-notes';
+            previewDiv.className = 'event-notes-preview';
+            column2.appendChild(titleH2);
+            titleH2.textContent = event.title;
+            if (event.who && event.who.trim() !== '') {
+                whoSpan.innerHTML = ` — ${transformWho(event.who)}`;
+                titleH2.appendChild(whoSpan);
+            }
+            if (event.location && event.location.trim() !== '') {
+                locationDiv.textContent = transformLocation(event.location);
+                column2.appendChild(locationDiv);
+            }
+            if (event.notes && event.notes.trim() !== '') {
+                notesDiv.innerHTML = transformNotes(event.notes);
+                previewDiv.innerHTML = compressedNotes(event.notes);
+                column2.appendChild(notesDiv);
+                column2.appendChild(previewDiv);
+            }
+
+            // Contents of third column
             const descriptionP = document.createElement('p');
-            column2.appendChild(descriptionP);
+            //column3.appendChild(descriptionP);
             descriptionP.innerHTML = event.notes || '';
 
             // Display appropriate header
@@ -347,11 +465,123 @@ layout: stlc-default
             eventDiv.appendChild(column1);
             eventDiv.appendChild(column2);
             eventFeed.appendChild(eventDiv);
+
+            prior = event;
         });
 
         document.querySelectorAll('.event-item').forEach((item) => item.addEventListener('click', (e) => {
             e.currentTarget.classList.toggle('expanded');
         }));
+    }
+
+    function transformWho(original) {
+        switch (original.toLowerCase()) {
+            case 'data':
+                return 'Dallas Area Transit Alliance';
+            default:
+                return original;
+        }
+    }
+    function transformLocation(original) {
+        const parts = original
+            .trim()
+            .split(',')
+            .map(part => {
+                part = part.trim();
+                if (part.startsWith('TX ')) {
+                    part = part.replace('TX ', '');
+                }
+                return part;
+            })
+            .filter(part => part.length > 0) // remove empty parts
+            .filter((part, index, arr) => arr.indexOf(part) === index) // remove duplicates
+            .filter(part => {
+                const upper = part.toUpperCase().trim();
+                if (upper === 'TX') return false;
+                if (upper === 'USA') return false;
+                return true;
+            });
+        if (parts.length > 1) {
+            return parts[0] + ', ' + parts.slice(1).join(' ');
+        }
+        return parts[0];
+    }
+    function transformNotes(original) {
+        let transformed = original;
+        // Convert line breaks to <br> tags
+        // transformed = transformed.replace(/\n/g, '<br>');
+        return transformed;
+    }
+    function compressedNotes(original) {
+        let transformed = original;
+        // Remove line breaks
+        transformed = transformed.replaceAll(/\n/g, ' ');
+        transformed = transformed.replaceAll('<br>', ' ');
+        transformed = transformed.replaceAll('<br />', ' ');
+        transformed = transformed.replaceAll('<p>', ' ');
+        transformed = transformed.replaceAll('<P>', ' ');
+        transformed = transformed.replaceAll('</p>', ' ');
+        transformed = transformed.replaceAll('</P>', ' ');
+        return transformed;
+    }
+    function transformDate(event) {
+        const startDate = new Date(event.start_dt);
+        const endDate = new Date(event.end_dt);
+        const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const weekday = weekdays[startDate.getDay()];
+        //const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const month = months[startDate.getMonth()];
+        const day = startDate.getDate();
+        const hour24 = startDate.getHours();
+        const hour = hour24 > 12 ? hour24 - 12 : (hour24 === 0 ? 12 : hour24);
+        const minute = String(startDate.getMinutes()).padStart(2, '0');
+        const ampm = hour24 >= 12 ? 'PM' : 'AM';
+
+        let datePortion = `<span class='date'>${month} ${day}</span>`;
+        let weekPortion = `<span class='weekday'>${weekday}</span>`;
+        let timePortion = `<span class='time'>${hour}:${minute} ${ampm}</span>`;
+        let duration = 0;
+        let isMultiDay = false;
+
+        if (event.end_dt && event.end_dt !== event.start_dt) {
+            const endMonth = months[endDate.getMonth()];
+            const endDay = endDate.getDate();
+            if (`${endMonth} ${endDay}` !== `${month} ${day}`) {
+                isMultiDay = true;
+                weekPortion = `<span class='weekday'>${weekday} - ${weekdays[endDate.getDay()]}</span>`;
+                timePortion = `<span class='time'>Starts ${hour}:${minute} ${ampm}</span>`;
+            } else {
+                duration = (endDate - startDate) / (1000 * 60); // duration in minutes
+                if (duration > 60) {
+                    // Show end time if over an hour
+                    const endHour24 = endDate.getHours();
+                    const endHour = endHour24 > 12 ? endHour24 - 12 : (endHour24 === 0 ? 12 : endHour24);
+                    const endMinute = String(endDate.getMinutes()).padStart(2, '0');
+                    const endAmpm = endHour24 >= 12 ? 'PM' : 'AM';
+
+                    //const startTimeString = `${hour}:${minute}`;
+                    const endTimeString = `${endHour}:${endMinute} ${endAmpm}`;
+
+                    timePortion = timePortion + `<span class='time end'> to ${endTimeString}</span>`;
+                    // timePortion = timePortion + ` <span class='time'>to ${endHour}:${endMinute} ${endAmpm}</span>`;
+                } else if (duration < 60 && duration >= 15) {
+                    // Show duration in minutes
+                    timePortion = timePortion + `<span class='time end'>${duration} minutes</span>`;
+                } else if (duration === 60) {
+                    // Show "1 hour"
+                    timePortion = timePortion + `<span class='time end'>1 hour</span>`;
+                }
+            }
+        }
+        if (event.all_day === true) {
+            timePortion = `<span class='time'>ALL DAY</span>`;
+        }
+
+        return {
+            datePortion,
+            string: datePortion + weekPortion + timePortion,
+        };
     }
 
     async function fetchEvents(mode) {

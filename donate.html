@@ -1,0 +1,54 @@
+---
+layout: stlc-default
+---
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+<section class="bg-sky" style="min-height: 600px;">
+    <div class="row two-columns" style="align-items: start;">
+        <div class="column" style="position: relative; z-index: 1;">
+            <h1>Donate to Dallas Urbanists</h1>
+            <p style="font-size: 1.2rem; line-height: 1.4em;">Please support our movement for a more walkable, bikeable, affordable, sustainable, and liveable Dallas. Donate at least $20/month to sponsor a virtual brick on our donor wall.</p>
+            <p style="font-size: 1.2rem; line-height: 1.4em;">Download our <a href="https://drive.google.com/file/d/1nR604WrkoLP9oyFhZZjXXbh2nn45wLDx/view?usp=sharing"><b>PDF Fundraising Presentation</b></a> to learn more about how your funding supports our work.</p>
+            <p class="button-paragraph"><a href="https://givebutter.com/dallasurbanists" class="button-link navy">Make a donation</a></p>
+        </div>
+        <div class="column">
+            <givebutter-widget id="gRDA8j" style="position: relative; z-index: 1;"></givebutter-widget>
+        </div>
+    </div>
+</section>
+<script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=Z4UC4NpZnAR4Pu7i&p=other"></script>
+<section id="brick-wall" style="
+   background-color: #A7C6ED;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: -400px;
+"></section>
+<script src="bricks.js"></script>
+<script>
+    const donors = [
+        ["Jason &\nMaria Grant"],
+        ["Anonymous"],
+        ["Anonymous"],
+        ["Anonymous"],
+        ["Chris Wyatt"],
+        ["Chris Wyatt"],
+        ["Stephen Tordella"],
+        ["Keun Lee"],
+        ["Adam Lamont"],
+        ["Dallas Neighbors\nfor Housing"],
+        ["Kathleen Scott"],
+        ["Warren Pena"],
+        ["There are Traffic\nEngineers who support\nDallas Urbanists", 9],
+        ["Ken Duble"],
+        ["For a\nBetter Dallas", 12],
+        ["\"Cities have the capability\nof providing something\nfor everybody...", 8.5, 'chained'],
+        ["...only because, and only\nwhen, they are created by\neverybody.\" - Jane Jacobs", 8.5],
+        ["Dallas Housing\nCoalition"],
+        ["Community\nFocused Ventures\n- Peter J. Cioe", 11],
+    ];
+    BrickRoad('brick-wall', donors, true, true, 'horizontal');
+</script>

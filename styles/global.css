@@ -179,3 +179,7 @@ section .subtitle {
 .icon-link.gold { color: var(--strongtowns-gold); }
 .icon-link.navy { color: var(--strongtowns-navy); }
 .icon-link.navy:hover { filter: brightness(140%); }
+
+html:has(.donate_page) {
+    background-color: #373737;
+}

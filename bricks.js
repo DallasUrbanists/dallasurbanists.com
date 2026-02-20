@@ -71,7 +71,7 @@ const svgBrick = `<?xml version="1.0" encoding="UTF-8"?>
 const brickWidth = 100;
 const brickHeight = brickWidth * (2 / 5); // 5:2 ratio
 const brickSpacing = 2;
-const brickFontSize = 12;
+const brickFontSize = 16;
 const maxBricks = 600;
 
 function BrickImage(color=null, opacity=1) {
@@ -158,7 +158,7 @@ function BrickRoad(
     // Define a brick for each donor
     const bricks = donors.map((donor, index) => ({
         name: donor[0],
-        size: donor[1] || 12,
+        size: donor[1] || brickFontSize,
         isChained: donor[2]?.toUpperCase() === 'CHAINED',
         img: BrickImage(),
         textColor: '#333',

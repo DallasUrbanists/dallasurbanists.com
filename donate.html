@@ -5,19 +5,282 @@ body_class: donate_page
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-<section class="bg-sky">
-    <div class="row two-columns" style="align-items: start;">
-        <div class="column">
-            <h1>Donate to Dallas Urbanists</h1>
-            <givebutter-widget id="gRDA8j"></givebutter-widget>
+
+<section class="bg-navy padded-section">
+    <div class="body-wrapper padded">
+        <h1 class="text-left">Pave the way to a more walkable Dallas</h1>
+        <p class="text-left" style="color: var(--strongtowns-sky)">Our nonprofit needs <strong>$5,400/month</strong> to
+            be financially stable. To unify our monthly, annual, and one-time donations, we're
+            offering virtual bricks! You can donate a brick for <strong>$20 monthly</strong>, <strong>$200
+                annually</strong>,
+            or <strong>$250 one-time</strong>. Our goal is to have <strong>270 bricks donated by May
+                31st</strong>.</p>
+        <div id="brick-progressbar-widget" style="">
+            <div class="topper" style="
+            width: 100%;
+            aspect-ratio: 62 / 5;
+            background-image: url(./assets/brickcity-progressbar-topper.png);
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            background-size: contain;
+            "></div>
+            <div class="track" style="
+                width: 100%;
+                display: block;
+                height: 80px;
+                box-sizing: border-box;
+                background-color: rgb(51 51 51);
+                border-radius: 5px;
+                border: solid 5px #333333;
+                position: relative;
+            "></div>
+            <div class="text-bar" id="prog-text" style="line-height: 1em; color: var(--strongtowns-sky);">
+                <div class="left" style="float: left;">
+                    <b style="color: #ffa662;"><span id="bricks-tally">_</span> bricks donated</b> as of <span
+                        id="tally-timestamp">_</span><br />
+                    <span style="color: hsl(30 40% 40% / 1);">+<span id="pledge-tally">_</span> bricks pledged</span>
+                </div>
+                <div class="right" style="text-align: right;">
+                    <b style="color: #ffa662;">Goal: 270 bricks</b> by May 31, 2026<br />
+                    We're currently at <span id="goal-percentage">_</span> of our goal!</b>
+                </div>
+            </div>
+            <div class="text-bar" id="prog-loading" style="line-height: 1em; color: var(--strongtowns-sky);">
+                Counting bricks, please wait...
+            </div>
         </div>
-        <div class="column" style="position: relative; z-index: 1;">
-            <p style="font-size: 1.2rem; line-height: 1.4em;">Please support our movement for a more walkable, bikeable, affordable, sustainable, and liveable Dallas. Donate at least $20/month to sponsor a virtual brick on our donor road; scroll down to see our progress!</p>
-            <p style="font-size: 1.2rem; line-height: 1.4em;">Download our <a href="https://drive.google.com/file/d/1nR604WrkoLP9oyFhZZjXXbh2nn45wLDx/view?usp=sharing"><b>PDF Fundraising Presentation</b></a> to learn more about how your funding supports our work.</p>
-            <p class="button-paragraph"><a href="https://givebutter.com/dallasurbanists" class="button-link navy">Make a donation</a></p>
+        <p class="button-paragraph">
+            <a href="#donate-widget" class="button-link gold">Make a donation</a>
+            <a href="#brick-road" class="button-link navy">View virtual brick road</a>
+        </p>
+    </div>
+</section>
+<section class="bg-sand padded-section" style="background: linear-gradient(180deg, var(--strongtowns-sand), var(--strongtowns-sky))">
+    <div class="body-wrapper padded">
+        <h1 class="">Where your money goes</h1>
+        <p class="subtitle">Here is how your tax-deductible* donation fuels the growth of our movement in Dallas.</p>
+        <style>
+            .vertical-timeline {
+
+                .stage {
+                    padding-left: 40px;
+                    border-left: solid 10px var(--strongtowns-navy);
+                    margin-bottom: 0;
+                    margin-left: 16px;
+                    overflow: visible;
+                    position: relative;
+                    border-bottom: solid 1px transparent;
+                    line-height: 1.3em;
+
+                    .feature-photo {
+                        width: 100%;
+                        float: right;
+                        max-width: 350px;
+                        margin: 24px;
+                        margin-top: 0px;
+                        border-top-right-radius: 40px;
+                        border-bottom-left-radius: 40px;
+                    }
+
+                    .budget-line {
+                        text-transform: uppercase;
+                        font-size: 0.8em;
+                        opacity: 0.6;
+                        font-weight: bold;
+                    }
+
+                    ul.budget-list {
+                        list-style-type: "\2610   ";
+                    }
+
+                    .marker {
+                        border: solid 5px var(--strongtowns-navy);
+                        font-size: 12px;
+                        background-color: var(--strongtowns-navy);
+                        color: var(--strongtowns-sand);
+                        margin-left: -78px;
+                        z-index: 1;
+                        position: relative;
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 50%;
+                        text-align: center;
+                        float: left;
+                        line-height: 1em;
+                        padding-top: 9px;
+
+                        span {
+                            font-weight: bold;
+                            font-size: 26px;
+                            line-height: 1em;
+                        }
+                    }
+
+                    h2 {
+                        padding-top: 16px;
+                        margin-bottom: 0;
+                        color: var(--strongtowns-navy);
+                    }
+
+                }
+
+                .stage:last-of-type {
+                    border-left-color: transparent;
+                }
+
+                .stage.you-are-here {
+                    border-left: solid 10px var(--strongtowns-gold);
+
+                    .marker {
+                        border-color: var(--strongtowns-gold);
+                        background-color: var(--strongtowns-gold);
+                        color: var(--strongtowns-navy);
+                    }
+                }
+
+                .stage.you-are-here::after {
+                    border-radius: 3px;
+                    position: absolute;
+                    content: 'WE ARE HERE';
+                    display: inline-block;
+                    background-color: #e20e0e;
+                    padding: 2px;
+                    color: white;
+                    font-weight: bold;
+                    width: 50px;
+                    font-size: 12px;
+                    text-align: center;
+                    line-height: 1em;
+                    left: -30px;
+                    top: 90px;
+                }
+            }
+
+            @media (max-width: 660px) {
+                .vertical-timeline .stage .feature-photo {
+                    float: none;
+                    margin: 0;
+                    margin-bottom: 12px;
+                }
+            }
+        </style>
+        <div class="vertical-timeline">
+            <div class="stage you-are-here">
+                <div class='marker'>Stage<br /><span>1</span></div>
+                <h2>Stable Foundation</h2>
+                <p class="budget-line">Target Budget: $5,400 per month / $32,700 cash on hand</p>
+                <img src="./assets/urbanists-mixer-chelsea-portrait.jpg" class="feature-photo" />
+
+                <p>Our vision is to organize a <i>hyperlocal conversation</i> &mdash; monthly gathering of neighbors to
+                    explore ways to improve walkability where they live &mdash; in every single neighborhood in Dallas.
+                    This ambitious vision requires a core team focused every day on finding and coordinating volunteers
+                    and leaders across the city. At this stage, every dollar goes toward:</p>
+
+                <ul class="budget-list">
+                    <li><strong>First full-time staffer</strong> to manage daily operations; facilitate new
+                        hyplerlocal conversations; coordinate volunteers; and handle communications between the
+                        nonprofit, volunteers, members, and partner orgs.</li>
+                    <li><strong>Insurance coverage</strong> for our board of directors, staff, volunteers, and members
+                        participating in
+                        activities organized by Dallas Urbanists, including hyperlocal conversations.</li>
+                    <li><strong>Operational expenses</strong> including printing, event supplies, software licenses, and
+                        legal fees.</li>
+                </ul>
+            </div>
+            <div class="stage">
+                <div class='marker'>Stage<br /><span>2</span></div>
+                <h2>Cultural Influence</h2>
+                <p class="budget-line">Target Budget: $11,600 per month / $70,000 cash on hand</p>
+                <img src="./assets/film-day-group-photo.jpg" class="feature-photo" />
+                <p>To accelerate our growth and expand our reach,
+                    we aim to increase daily production of educational
+                    content, which will complement and aid our hyperlocal conversations, and collaborate more frequently
+                    with
+                    local partners. Your donations will support:</p>
+
+                <ul class="budget-list">
+                    <li><strong>Second full-time staffer</strong> to produce daily, original educational content and
+                        coordinate creative inputs from volunteers.</li>
+                    <li><strong>"Urbanists HQ"</strong>: Leasing office space for creative work, volunteer workshops,
+                        and community meetings, ideally located near public colleges for internship opportunities. This
+                        shared space would be downtown or nearby.</li>
+                </ul>
+            </div>
+            <div class="stage">
+                <div class='marker'>Stage<br /><span>3</span></div>
+                <h2>Permanent Institution</h2>
+                <p class="budget-line">Target Budget: $22,500 per month / $153,000 cash on hand</p>
+                <img src="./assets/urbanists-hq-ai-gemini-generated.png" class="feature-photo" />
+                <p>Our vision is for Dallas Urbanists to become
+                    a household name and the go-to resource for practical guidance on all matters related to local
+                    urbanism. We also want to be a role model for sustainable advocacy by showing the same care for our
+                    staff’s well-being that we show for our city.</p>
+                <ul class="budget-list">
+                    <li><b>Full-time employees</b>: Like most nonprofits with a tight budget, we initially rely
+                        on independent contractors for our staffing needs. We plan to provide
+                        employee benefits and fair compensation as we grow. This approach nurtures the bond between our
+                        team and the larger community, retains institutional knowledge, and supports staff at any stage
+                        of life, whether they're paying down student loans, buying a home, or raising a family.</li>
+                    <li><b>Expanding capacity at Urbanists HQ</b>: Our goal is to create a resource center for the
+                        whole urbanism community. Early on, the capacity at our space will be limited by budget, size,
+                        and equipment. As we grow, we aim to host more activities, including podcasts, video
+                        shoots, livestreams, and fundraisers, in a suitably sized and equipped space.</li>
+                </ul>
+
+            </div>
+            <div class="stage">
+                <div class="marker">Stage<br /><span>4</span></div>
+                <h2>Agent of Change</h2>
+                <p class="budget-line">Target Budget: TBD</p>
+                <img src="./assets/akard pedestrian mall concept art.jpg" class="feature-photo"
+                    style="max-width: 400px;" />
+                <p>When we formed our nonprofit, most advocacy groups only had capacity to react to change, rather than
+                    be proactive. Our vision is instead of waiting for DART to propose
+                    service changes, neighborhoods are proactively planning and
+                    requesting new and improved routes; instead of waiting on the city to propose painted bike lanes,
+                    residents are demanding protected ones; instead of mobilizing against proposed skyscrapers, locals
+                    push community-led plans for incremental density.</p>
+
+                <p>Our board has yet to develop a budget for this growth phase. When we do,
+                    some items we may consider include:</p>
+
+                <ul>
+                    <li><b>Major campaigns and initiatives:</b> early on, Dallas Urbanists creates value through
+                        hyperlocal
+                        conversations and educational content. Each HLC group drives initiatives like walk audits,
+                        road diets, Crash Analysis Studios, community area plans, rezoning requests, and intersection
+                        redesigns. As we grow, we aspire to lead city-wide initiatives.</li>
+                    <li><b>Scholarship programs</b></li>
+                    <li><b>Paid internships</b></li>
+                    <li><b>Leadership training programs</b></li>
+                    <li><b>Documentaries & video series</b></li>
+                    <li><b>Kickstarting local conversations</b> in other North Texas cities outside Dallas.</li>
+                    <li><b>Stock cost-efficient, ethically-sourced merchandise</b></li>
+                </ul>
+
+
+            </div>
         </div>
     </div>
 </section>
+<section class="bg-sky">
+    <div class="row two-columns" style="align-items: start;">
+        <div class="column">
+            <a name="donate-widget"></a>
+            <givebutter-widget id="gRDA8j"></givebutter-widget>
+        </div>
+        <div class="column" style="position: relative; z-index: 1; line-height: 1.4em;position: relative;z-index: 1;">
+            <p>Dallas Urbanists is a nonprofit registered in Texas, officially established on December 1, 2025. Our federal EIN is 41-2861715, and checks can be made out to "Dallas Urbanists." Our official mailing address is:</p>
+            <p style="margin-left: 1rem;">5473 Blair Rd<br />
+                Ste 100 #901491<br />
+                Dallas, TX, 75231 USA</p>
+            <p>*Dallas Urbanists applied for 501(c)(3) status in February 2026 and is awaiting IRS approval. Once approved (expected in Q3-Q4 2026), all donations made since our formation in December 2025 will be retroactively tax-deductible. We will notify all donors via email as soon as we receive our confirmation letter from the IRS.</p>
+            <p>For all inquiries, please email <a
+                    href="mailto:contact@dallasurbanists.org">contact@dallasurbanists.org</a>.</p>
+        </div>
+    </div>
+</section>
+<a name="brick-road"></a>
 <section id="brick-wall" style="
     background-color: #A7C6ED;
     margin: 0;
@@ -26,37 +289,201 @@ body_class: donate_page
     width: 100%;
     height: 500px;
 "></section>
-<script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=Z4UC4NpZnAR4Pu7i&p=other"></script>
 <script src="bricks.js"></script>
 <script>
-    const donors =[
-        ["Jason &\nMaria"],
-        ["Lil Cacti", 18],
-        ["D. Woofus", 18],
-        ["Anonymous", 14],
-        ["Chris Wyatt"],
-        ["SAXMAN", 18],
-        ["Stephen\nTordella"],
-        ["Keun Lee", 18],
-        ["Adam\nLamont"],
-        ["Dallas Neighbors\nfor Housing", 13],
-        ["Kathleen\nScott"],
-        ["Warren\nPena", 18],
-        ["There are Traffic\nEngineers who support\nDallas Urbanists", 10],
-        ["Ken Duble", 18],
-        ["For a better \nDallas", 16],
-        ["\"Cities have the capability\nof providing something\nfor everybody...", 8.5, 'chained'],
-        ["...only because, and only\nwhen, they are created by\neverybody.\" - Jane Jacobs", 8.5],
-        ["Dallas Housing\nCoalition", 14],
-        ["Community\nFocused Ventures\n- Peter J. Cioe", 11],
-        ["HONK!", 18],
-        ["Connor\nHulla", 18],
-        ["DATA", 18],
-        ["@john_mallon\n_photography", 15],
-        ["Keun Lee", 18],
-        ["Chris Weeks", 17],
-        ["Nate Hemby\nReal Estate", 17],
-    ];
-    BrickRoad('brick-wall', donors, true, true, 'horizontal', 225, 0.85);
+    let donors = getStored('donors', []);
+    let donorBricks = getStored('donorBricks', []);
+    let pledgedBricks = parseInt(localStorage.getItem('pledgedBricks') ?? 0);
+    const brickGoal = 270;
+    const progText = document.querySelector('#prog-text');
+    const progLoading = document.querySelector('#prog-loading');
+    let progbarTimer;
 
+    function getStored(key, fallback) {
+        const data = localStorage.getItem(key);
+        if (data) {
+            try {
+                const json = JSON.parse(data);
+                if (json) {
+                    return json;
+                }
+            } catch (e) {
+                return fallback;
+            }
+        }
+        return fallback;
+    }
+    function store(key, value) {
+        const data = JSON.stringify(value);
+        localStorage.setItem(key, data);
+        return data;
+    }
+
+    function toggleProgText() {
+        if (donors.length === 0 || donorBricks.length === 0) {
+            progText.style.display = 'none';
+            progLoading.style.display = 'block';
+        } else {
+            progText.style.display = 'block';
+            progLoading.style.display = 'none';
+        }
+    }
+
+    function redraw() {
+        if (donorBricks.length > 0) {
+            BrickProgressBar(brickGoal, 5);
+            document.querySelector('#brick-wall').innerHTML = '';
+            BrickRoad('brick-wall', donorBricks.map(b => [b.label, b.size]), true, true, 'horizontal', 225, 0.85);
+        }
+        toggleProgText();
+    }
+    redraw();
+
+    function BrickProgressBar(totalBricks, bricksPerColumn) {
+        clearTimeout(progbarTimer);
+        const track = document.querySelector('#brick-progressbar-widget .track');
+        const tally = document.querySelector('#bricks-tally');
+        const pledgeTally = document.querySelector('#pledge-tally');
+        const asOf = document.querySelector('#tally-timestamp');
+        const goalPct = document.querySelector("#goal-percentage");
+        const bricksPerRow = totalBricks / bricksPerColumn;
+        const brickWidth = track.clientWidth / (bricksPerRow + 0.5);
+        const brickHeight = track.clientHeight / bricksPerColumn;
+        const spacer = brickWidth * 0.5;
+
+        track.innerHTML = '';
+        tally.innerHTML = donorBricks.length;
+        asOf.innerHTML = formatCurrentDateTime();
+        pledgeTally.innerHTML = pledgedBricks;
+        goalPct.innerHTML = Math.round((donorBricks.length / brickGoal) * 100) + '%';
+
+        const createBrick = () => {
+            const div = document.createElement('div');
+            div.style.width = brickWidth + 'px';
+            div.style.height = brickHeight + 'px';
+            div.style.position = 'absolute';
+            div.style.backgroundColor = 'rgb(196 114 67)';
+            div.style.border = 'solid 1px #333333';
+            return div;
+        };
+
+        let currentRow = 0;
+        let currentCol = 0;
+        function drawBrick(i) {
+                let pause = 50;
+            const brick = createBrick();
+            brick.style.top = `${currentRow * brickHeight}px`;
+            brick.style.left = `${brickWidth * currentCol}px`;
+            if (currentRow % 2 > 0) {
+                if (currentCol === 0) {
+                    brick.style.left = `0px`;
+                    brick.style.width = `${brickWidth + spacer}px`;
+                } else {
+                    brick.style.left = `${spacer + brickWidth * currentCol}px`;
+                }
+            } else if (currentCol >= bricksPerRow - 1) {
+                brick.style.width = `${brickWidth + spacer}px`;
+            }
+            if (i >= donorBricks.length) {
+                if (i < donorBricks.length + pledgedBricks) {
+                    brick.style.backgroundColor = "rgb(112 65 28)";
+                    brick.style.opacity = 0.5;
+                } else {
+                    brick.style.opacity = 0.15;
+                }
+                pause = 15;
+            }
+            track.appendChild(brick);
+            currentRow += 1;
+            if (currentRow >= bricksPerColumn) {
+                currentCol += 1;
+                currentRow = 0;
+            }
+            if (i < totalBricks - 1) {
+                drawBrick(i + 1);
+                //progbarTimer = setTimeout(() => drawBrick(i + 1), 15);
+            }
+        }
+        drawBrick(0);
+    }
+
+    function parseBrickText(input = '') {
+        if (!input) {
+            return { label: '', size: 16 };
+        }
+        // Step 1: Create a regex pattern to match a number in square brackets at the end of the string
+        const regex = /\s*\[(\d+\.?\d*)\]$/;
+        // Step 2: Use the regex to find the match
+        const match = input.match(regex);
+        // Step 3: Get the size from the match or set it to 16
+        const size = match ? parseInt(match[1], 10) : 16;
+        // Step 4: Remove the square brackets and the number from the input string for the label
+        const label = match ? input.replace(regex, '').trim() : input;
+        // Step 5: Unescape any special characters in the label
+        const unescapedLabel = label.replace(/\\n/g, '\n').replace(/&\\/g, '&');
+        // Step 6: Return the result
+        return { label: unescapedLabel, size: size };
+    }
+
+    async function updateCount() {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbwYEhXV-5_wELzEZTRFNQyLTXqxzyLw9svJVlhVAWxrj2Kx8LNj_V1v9ZU9OsCw3yGhHA/exec");
+        const data = await res.json();
+
+        const newDonors = data.results.donors;
+        const newDonorBricks = data.results.bricks.map(parseBrickText);
+
+        const ndString = store('donors', newDonors);
+        const ndbString = store('donorBricks', newDonorBricks);
+
+        if (
+            JSON.stringify(donors) !== ndString ||
+            JSON.stringify(donorBricks) !== ndbString
+        ) {
+            donors = newDonors;
+            donorBricks = newDonorBricks;
+            pledgedBricks = donors.reduce((prev, current) => {
+                if (current.frequency.toString().includes('pledged')) {
+                    return prev + current.bricks;
+                } else {
+                    return prev;
+                }
+            }, 0);
+            localStorage.setItem('pledgedBricks', pledgedBricks);
+            redraw();
+        }
+    }
+    // Update count every 15 seconds
+    const updateCountInterval = setInterval(updateCount, 5000);
+
+
+    function formatCurrentDateTime() {
+        const now = new Date();
+
+        // Array of month names
+        const months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        // Get the month, date, hours and minutes
+        const month = months[now.getMonth()];
+        const date = now.getDate();
+        let hours = now.getHours();
+        const minutes = now.getMinutes();
+
+        // Determine AM/PM and adjust hours for 12-hour format
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12; // Convert to 12-hour format
+        hours = hours ? hours : 12; // Hours '0' should be '12'
+
+        // Zero-pad minutes
+        const minutesString = minutes < 10 ? '0' + minutes : minutes;
+
+        // Construct the formatted date string
+        return `${month} ${date}, ${hours}:${minutesString} ${ampm}`;
+    }
+
+    updateCount();
+    window.addEventListener('resize', () => BrickProgressBar(brickGoal, 5));
 </script>
+<script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=Z4UC4NpZnAR4Pu7i&p=other"></script>

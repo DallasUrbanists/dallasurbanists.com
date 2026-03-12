@@ -8,12 +8,12 @@ body_class: donate_page
 
 <section class="bg-navy padded-section">
     <div class="body-wrapper padded">
-        <h1 class="text-left">Pave the way to a more walkable Dallas</h1>
-        <p class="text-left" style="color: var(--strongtowns-sky)">Our nonprofit needs <strong>$5,400/month</strong> to
+        <h1 class="text-left">Pave the way to a walkable Dallas</h1>
+        <p class="text-left" style="color: var(--strongtowns-sky)">Our nonprofit needs $5,400/month to
             be financially stable. To unify our monthly, annual, and one-time donations, we're
             offering virtual bricks! You can donate a brick for <strong>$20 monthly</strong>, <strong>$200
                 annually</strong>,
-            or <strong>$250 one-time</strong>. Our goal is to have <strong>270 bricks donated by May
+            or <strong>$250 one-time</strong>. Our current goal is to have <strong>300 bricks donated by May
                 31st</strong>.</p>
         <div id="brick-progressbar-widget" style="">
             <div class="topper" style="
@@ -37,11 +37,14 @@ body_class: donate_page
             <div class="text-bar" id="prog-text" style="line-height: 1em; color: var(--strongtowns-sky);">
                 <div class="left" style="float: left;">
                     <b style="color: #ffa662;"><span id="bricks-tally">_</span> bricks donated</b> as of <span
-                        id="tally-timestamp">_</span><br />
-                    <span style="color: hsl(30 40% 40% / 1);">+<span id="pledge-tally">_</span> bricks pledged</span>
+                        id="tally-timestamp">_</span>
+                    <span style="color: hsl(30 40% 40% / 1);" id="pledge-text"> and <span id="pledge-tally">_</span> bricks
+                        pledged</span><br />
+                    Equivalent of <span id="brick-cash-equivalent">_</span> per month <img class="info-bubble"
+                        src="./assets/icons/info_icon.svg" id="cashEquivTip" />
                 </div>
                 <div class="right" style="text-align: right;">
-                    <b style="color: #ffa662;">Goal: 270 bricks</b> by May 31, 2026<br />
+                    <b style="color: #ffa662;">Goal: 300 bricks</b> by May 31, 2026<br />
                     We're currently at <span id="goal-percentage">_</span> of our goal!</b>
                 </div>
             </div>
@@ -49,13 +52,14 @@ body_class: donate_page
                 Counting bricks, please wait...
             </div>
         </div>
-        <p class="button-paragraph">
+        <p class="button-paragraph text-center" style="font-size: 1.5em;">
             <a href="#donate-widget" class="button-link gold">Make a donation</a>
             <a href="#brick-road" class="button-link navy">View virtual brick road</a>
         </p>
     </div>
 </section>
-<section class="bg-sand padded-section" style="background: linear-gradient(180deg, var(--strongtowns-sand), var(--strongtowns-sky))">
+<section class="bg-sand padded-section"
+    style="background: linear-gradient(180deg, var(--strongtowns-sand), var(--strongtowns-sky))">
     <div class="body-wrapper padded">
         <h1 class="">Where your money goes</h1>
         <p class="subtitle">Here is how your tax-deductible* donation fuels the growth of our movement in Dallas.</p>
@@ -63,8 +67,8 @@ body_class: donate_page
             .vertical-timeline {
 
                 .stage {
-                    padding-left: 40px;
-                    border-left: solid 10px var(--strongtowns-navy);
+                    padding-left: 35px;
+                    border-left: solid 20px var(--strongtowns-navy);
                     margin-bottom: 0;
                     margin-left: 16px;
                     overflow: visible;
@@ -94,6 +98,7 @@ body_class: donate_page
                     }
 
                     .marker {
+                        margin-top: -5px;
                         border: solid 5px var(--strongtowns-navy);
                         font-size: 12px;
                         background-color: var(--strongtowns-navy);
@@ -129,7 +134,7 @@ body_class: donate_page
                 }
 
                 .stage.you-are-here {
-                    border-left: solid 10px var(--strongtowns-gold);
+                    border-left: solid 20px var(--strongtowns-gold);
 
                     .marker {
                         border-color: var(--strongtowns-gold);
@@ -151,7 +156,7 @@ body_class: donate_page
                     font-size: 12px;
                     text-align: center;
                     line-height: 1em;
-                    left: -30px;
+                    left: -25px;
                     top: 90px;
                 }
             }
@@ -163,12 +168,19 @@ body_class: donate_page
                     margin-bottom: 12px;
                 }
             }
+
+            .info-bubble {
+                vertical-align: top;
+                filter: invert(1);
+                height: 1.75ch;
+                display: inline-block;
+            }
         </style>
         <div class="vertical-timeline">
             <div class="stage you-are-here">
                 <div class='marker'>Stage<br /><span>1</span></div>
                 <h2>Stable Foundation</h2>
-                <p class="budget-line">Target Budget: $5,400 per month / $32,700 cash on hand</p>
+                <p class="budget-line">Target Budget: $5,400 per month / $32,700 in reserve</p>
                 <img src="./assets/urbanists-mixer-chelsea-portrait.jpg" class="feature-photo" />
 
                 <p>Our vision is to organize a <i>hyperlocal conversation</i> &mdash; monthly gathering of neighbors to
@@ -190,7 +202,7 @@ body_class: donate_page
             <div class="stage">
                 <div class='marker'>Stage<br /><span>2</span></div>
                 <h2>Cultural Influence</h2>
-                <p class="budget-line">Target Budget: $11,600 per month / $70,000 cash on hand</p>
+                <p class="budget-line">Target Budget: $11,600 per month / $70,000 in reserve</p>
                 <img src="./assets/film-day-group-photo.jpg" class="feature-photo" />
                 <p>To accelerate our growth and expand our reach,
                     we aim to increase daily production of educational
@@ -209,7 +221,7 @@ body_class: donate_page
             <div class="stage">
                 <div class='marker'>Stage<br /><span>3</span></div>
                 <h2>Permanent Institution</h2>
-                <p class="budget-line">Target Budget: $22,500 per month / $153,000 cash on hand</p>
+                <p class="budget-line">Target Budget: $22,500 per month / $153,000 in reserve</p>
                 <img src="./assets/urbanists-hq-ai-gemini-generated.png" class="feature-photo" />
                 <p>Our vision is for Dallas Urbanists to become
                     a household name and the go-to resource for practical guidance on all matters related to local
@@ -270,11 +282,16 @@ body_class: donate_page
             <givebutter-widget id="gRDA8j"></givebutter-widget>
         </div>
         <div class="column" style="position: relative; z-index: 1; line-height: 1.4em;position: relative;z-index: 1;">
-            <p>Dallas Urbanists is a nonprofit registered in Texas, officially established on December 1, 2025. Our federal EIN is 41-2861715, and checks can be made out to "Dallas Urbanists." Our official mailing address is:</p>
+            <p>Dallas Urbanists is a nonprofit registered in Texas, officially established on December 1, 2025. Our
+                federal EIN is 41-2861715, and checks can be made out to "Dallas Urbanists." Our official mailing
+                address is:</p>
             <p style="margin-left: 1rem;">5473 Blair Rd<br />
                 Ste 100 #901491<br />
                 Dallas, TX, 75231 USA</p>
-            <p>*Dallas Urbanists applied for 501(c)(3) status in February 2026 and is awaiting IRS approval. Once approved (expected in Q3-Q4 2026), all donations made since our formation in December 2025 will be retroactively tax-deductible. We will notify all donors via email as soon as we receive our confirmation letter from the IRS.</p>
+            <p>*Dallas Urbanists applied for 501(c)(3) status in February 2026 and is awaiting IRS approval. Once
+                approved (expected in Q3-Q4 2026), all donations made since our formation in December 2025 will be
+                retroactively tax-deductible. We will notify all donors via email as soon as we receive our confirmation
+                letter from the IRS.</p>
             <p>For all inquiries, please email <a
                     href="mailto:contact@dallasurbanists.org">contact@dallasurbanists.org</a>.</p>
         </div>
@@ -290,13 +307,28 @@ body_class: donate_page
     height: 500px;
 "></section>
 <script src="bricks.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
 <script>
     let donors = getStored('donors', []);
     let donorBricks = getStored('donorBricks', []);
+    let totals = getStored('totals', {
+        once: 0,
+        monthly: 0,
+        quarterly: 0,
+        yearly: 0,
+        pledgedonce: 0,
+        pledgedmonthly: 0,
+        pledgedquarterly: 0,
+        pledgedyearly: 0,
+    });
     let pledgedBricks = parseInt(localStorage.getItem('pledgedBricks') ?? 0);
-    const brickGoal = 270;
+    const brickGoal = 300;
     const progText = document.querySelector('#prog-text');
     const progLoading = document.querySelector('#prog-loading');
+    const pledgeText = document.querySelector('#pledge-text');
+    const cashEquiv = document.querySelector('#brick-cash-equivalent');
+    const cashEquivTip = tippy('#cashEquivTip', { allowHTML: true });
     let progbarTimer;
 
     function getStored(key, fallback) {
@@ -331,7 +363,7 @@ body_class: donate_page
 
     function redraw() {
         if (donorBricks.length > 0) {
-            BrickProgressBar(brickGoal, 5);
+            BrickProgressBar(brickGoal, 6);
             document.querySelector('#brick-wall').innerHTML = '';
             BrickRoad('brick-wall', donorBricks.map(b => [b.label, b.size]), true, true, 'horizontal', 225, 0.85);
         }
@@ -354,8 +386,64 @@ body_class: donate_page
         track.innerHTML = '';
         tally.innerHTML = donorBricks.length;
         asOf.innerHTML = formatCurrentDateTime();
-        pledgeTally.innerHTML = pledgedBricks;
+        if (pledgedBricks > 0) {
+            pledgeTally.innerHTML = pledgedBricks;
+            pledgeText.style.display = 'inline-block';
+        } else {
+            pledgeText.style.display = 'none';
+        }
         goalPct.innerHTML = Math.round((donorBricks.length / brickGoal) * 100) + '%';
+        cashEquiv.innerHTML = '$' + new Intl.NumberFormat().format(donorBricks.length * 20);
+
+        console.log(totals);
+
+        const donationBreakdown = [];
+        const pledgeBreakdown = [];
+        const printIfNotZero = (key, str, isPledge = false) => {
+            const total = parseFloat(totals[key]);
+            if (total > 0) {
+                if (isPledge) {
+                    pledgeBreakdown.push(str.replace('$$', '$' + new Intl.NumberFormat().format(total)));
+                } else {
+                    donationBreakdown.push(str.replace('$$', '$' + new Intl.NumberFormat().format(total)));
+                }
+            }
+        };
+        printIfNotZero('once', '$$ in one-time donations');
+        printIfNotZero('monthly', '$$ monthly');
+        printIfNotZero('quarterly', '$$ quarterly');
+        printIfNotZero('yearly', '$$ yearly');
+        printIfNotZero('pledgedonce', '$$ one-time', true);
+        printIfNotZero('pledgedmonthly', '$$ per month', true);
+        printIfNotZero('pledgedquarterly', '$$ per quarter', true);
+        printIfNotZero('pledgedyearly', '$$ per year', true);
+
+        let breakdownText = '<p>We have received '
+        if (donationBreakdown.length === 1) {
+            breakdownText += donationBreakdown[0] + '.</p>';
+        } else if (donationBreakdown.length === 2) {
+            breakdownText += donationBreakdown[0] + ' and ' + donationBreakdown[1] + '.</p>';
+        } else {
+            breakdownText += 
+                donationBreakdown.slice(0, -1).join(', ')
+                + ', and ' + donationBreakdown.slice(-1)[0] + '.</p>';
+        }
+        if (pledgeBreakdown.length > 0) {
+            breakdownText += '<p>In unrealized pledges, we expect to receive ';
+            if (pledgeBreakdown.length === 1) {
+                breakdownText += pledgeBreakdown[0] + '.</p>';
+            } else if (pledgeBreakdown.length === 2) {
+                breakdownText += pledgeBreakdown[0] + ' and ' + pledgeBreakdown[1] + '.</p>';
+            } else {
+                breakdownText += 
+                    pledgeBreakdown.slice(0, -1).join(', ')
+                    + ', and ' + pledgeBreakdown.slice(-1)[0] + '.</p>';
+            }
+        }
+
+        console.log(donationBreakdown, pledgeBreakdown);
+
+        cashEquivTip[0].setContent(breakdownText);
 
         const createBrick = () => {
             const div = document.createElement('div');
@@ -370,7 +458,7 @@ body_class: donate_page
         let currentRow = 0;
         let currentCol = 0;
         function drawBrick(i) {
-                let pause = 50;
+            let pause = 50;
             const brick = createBrick();
             brick.style.top = `${currentRow * brickHeight}px`;
             brick.style.left = `${brickWidth * currentCol}px`;
@@ -389,7 +477,7 @@ body_class: donate_page
                     brick.style.backgroundColor = "rgb(112 65 28)";
                     brick.style.opacity = 0.65;
                 } else {
-                    brick.style.opacity = 0.15;
+                    brick.style.opacity = 0.05;
                 }
                 pause = 15;
             }
@@ -426,7 +514,7 @@ body_class: donate_page
     }
 
     async function updateCount() {
-        const res = await fetch("https://script.google.com/macros/s/AKfycbwYEhXV-5_wELzEZTRFNQyLTXqxzyLw9svJVlhVAWxrj2Kx8LNj_V1v9ZU9OsCw3yGhHA/exec");
+        const res = await fetch("https://script.google.com/macros/s/AKfycbzhosYvUxGX2XV9MVSPdrpxO8LoQEZxyB8nF-Q_MvNeH0EFrzENWRaOy4cf2ixRUVYb/exec");
         const data = await res.json();
 
         const newDonors = data.results.donors;
@@ -434,6 +522,8 @@ body_class: donate_page
 
         const ndString = store('donors', newDonors);
         const ndbString = store('donorBricks', newDonorBricks);
+        totals = data.results.total;
+        store('totals', totals);
 
         if (
             JSON.stringify(donors) !== ndString ||

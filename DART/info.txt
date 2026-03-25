@@ -1,0 +1,36 @@
+GTFS Version: V678-210-211-20260313
+Data Range: 20260313 - 20260524
+URL: https://www.dart.org/transitdata/archive/V678-210-211-20260313.ZIP
+
+Event: Updated Rail Signup: St Patricks Day Parade (March 14)
+
+BUS Signup: 210 - FEB2026_BUS
+RAIL Signup: 211 - FEB2026_RAIL
+
+Info file created: 2026-03-10T16:13:39
+
+
+New versions are published for upcoming special and weather events.
+Latest version: https://www.dart.org/transitdata/latest/google_transit.zip
+Recent version: https://www.dart.org/transitdata/recent/google_transit.zip
+Latest and archived versions: https://www.dart.org/about/about-dart/fixed-route-schedule
+
+
+FACILITIES.TXT - Identify facilities
+Field Name	Type		Required	Description
+facility_id	ID		Required	Identifies a facility	
+facility_code	Text		Optional	Public short text that identifies the facility
+facility_name	Text		Optional	Name of the facility
+facility_desc	Text		Optional	Description of the facility
+facility_lat	Latitude	Conditionally Required	Latitude of the facility
+facility_lon	Longitude	Conditionally Required	Longitude of the facility
+facility_type	Enum		Optional	Type of the facility
+facility_url	URL		Optional	URL of a web page about the facility
+
+facility_type:
+0	Bus Stop
+1	Transit Center
+2	Transfer Location
+3	Park and Ride
+4	Light Rail Station
+5	Commuter Rail Station

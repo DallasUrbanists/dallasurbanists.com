@@ -45,6 +45,22 @@
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="{{ "/styles/global.css" | relative_url }}" />
 
+    <!-- LEAFLETJS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""/>
+
+     <!-- LEAFLETJS JAVASCRIPT -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""></script>
+
+    <!-- LEAFLETJS PLUGIN: OMNIVORE -->
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+
+    <!-- LODASH  LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.23/lodash.min.js"></script>
+
     <!-- CMS AUTHENTICATION -->
     {% if page.identity_snippet %}
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Guides</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
+    <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.2.0/web.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.23/lodash.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        // Define local constants
+        const dallasLngLat = [-96.79874321994009, 32.78097337916814];
+
+        // Configure access to Mapbox GL
+        const ACCESS_TOKEN = 'pk.eyJ1IjoiaGV4ZWwtZHVzdCIsImEiOiJjbW1yeWdubXMxZ29vMnJwc3FteDBjZmdkIn0.ex6YdOYvfD1s4kh93TSUxg';
+        mapboxgl.accessToken = ACCESS_TOKEN;
+
+        const myLineString = {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "coordinates": [
+                    [
+                        -96.84452751637488,
+                        32.82129962782268
+                    ],
+                    [
+                        -96.72821634824119,
+                        32.821299267406275
+                    ],
+                    [
+                        -96.72458369188824,
+                        32.754913793189175
+                    ],
+                    [
+                        -96.84510672812452,
+                        32.755962741586174
+                    ]
+                ],
+                "type": "LineString"
+            }
+        };
+
+        // Define Mapbox GL element
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/standard', // Use the standard style for the map
+            projection: 'globe', // display the map as a globe
+            zoom: 13, // initial zoom level, 0 is the world view, higher values zoom in
+            center: dallasLngLat, // center the map on this longitude and latitude
+            lightPreset: 'night',
+        });
+
+
+        // On page load, add stuff to map
+        window.addEventListener('load', () => {
+            // Define search box component
+            const searchBox = new MapboxSearchBox(); // creates a new SearchBox instance
+            searchBox.accessToken = ACCESS_TOKEN; // provides your accessToken to Searchbox for requests
+            searchBox.options = {
+                proximity: dallasLngLat, // Search results biased towards downtown dallas
+            };
+            searchBox.placeholder = 'Search for places in Dallas';
+            searchBox.marker = false; // Adds a marker to the map after clicking a search result
+            searchBox.mapboxgl = mapboxgl; // connects
+            searchBox.componentOptions = { allowReverse: true, flipCoordinates: true };
+
+            map.addControl(searchBox); // Adds searchBox to the Mapbox GL JS control area (top right)
+        });
+
+        // Function to hide labels except street names
+        map.on('style.load', () => {
+            map.setConfigProperty('basemap', 'showPointOfInterestLabels', false);
+            map.setConfigProperty('basemap', 'showPlaceLabels', false);
+            map.setConfigProperty('basemap', 'showTransitLabels', false);
+            map.setConfigProperty('basemap', 'lightPreset', 'day');
+
+            map.addSource('transit_routes', {
+                type: 'geojson',
+                data: turf.lineToPolygon(myLineString, { autoComplete: false })
+            });
+
+            map.addLayer({
+                id: 'transit_routes_casing',
+                type: 'line',
+                source: 'transit_routes',
+                slot: 'middle',
+                layout: {
+                    'line-cap': 'round',
+                    'line-join': 'round'
+                },
+                paint: {
+                    'line-emissive-strength': 1,
+                    'line-color': '#ffffff',
+                    'line-width': 8,
+                    'line-opacity': 1,
+                }
+            });
+
+            map.addLayer({
+                id: 'transit_routes',
+                type: 'line',
+                source: 'transit_routes',
+                slot: 'middle',
+                layout: {
+                    'line-cap': 'round',
+                    'line-join': 'round'
+                },
+                paint: {
+                    'line-emissive-strength': 1,
+                    'line-color': '#ff0000',
+                    'line-width': 4,
+                    'line-opacity': 1,
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

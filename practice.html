@@ -1,0 +1,98 @@
+<html>
+<body>
+    <canvas id="my-canvas" style="
+        width: 100%;
+        height: 100svh;
+        position: absolute;
+        top: 0;
+        left: 0;
+    "></canvas>
+    <script>
+        const canvas = document.getElementById('my-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let scale = 1;
+        let translateX = 0;
+        let translateY = 0;
+        let mouseX = 0;
+        let mouseY = 0;
+
+        function draw() {
+            canvas.width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+            canvas.height = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+
+            // Begin with a clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // set scale and translation
+            ctx.translate(translateX, translateY);
+            ctx.scale(scale, scale);
+
+            // Draw a circle at origin
+            ctx.fillStyle = '#ff0000';
+            ctx.arc(0, 0, 1, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            // Draw a rectangle on the canvas
+            ctx.fillStyle = '#0000ff';
+            ctx.fillRect(100, 100, 50, 50);
+
+
+        }
+
+        function rescale(newScale) {
+            const before = { x: mouseX * scale, y: mouseY * scale };
+            const after = { x: mouseX * newScale, y: mouseY * newScale };
+            const delta = { x: after.x - before.x, y: after.y - before.y };
+            translateX -= delta.x;
+            translateY -= delta.y;
+            scale = newScale;
+            draw();
+        }
+
+        function upScale() {
+            rescale(scale + 0.1);
+        }
+
+        function downScale() {
+            rescale(scale - 0.1);
+        }
+
+        function upMove() {
+            translateY -= 10;
+            draw();
+        }
+        function downMove() {
+            translateY += 10;
+            draw();
+        }
+        function leftMove() {
+            translateX -= 10;
+            draw();
+        }
+        function rightMove() {
+            translateX += 10;
+            draw();
+        }
+
+        document.addEventListener("keydown", event => {
+            switch (event.key) {
+                case "W": upMove(); break;
+                case "A": leftMove(); break;
+                case "S": downMove(); break;
+                case "D": rightMove(); break;
+                case "Q": upScale(); break;
+                case "E": downScale(); break;
+            }
+            draw();
+        });
+
+        document.addEventListener("mousemove", event => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+
+
+        draw();
+    </script>
+</body>

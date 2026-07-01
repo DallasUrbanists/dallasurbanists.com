@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Helper</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+
+            th,
+            td {
+                border: 1px solid #ccc;
+                padding: 8px;
+                text-align: left;
+                vertical-align: top;
+                input[type="text"], textarea {
+                    width: 100%;
+                }
+            }
+
+            th {
+                background-color: ;
+            }
+
+            button {
+                width: 100%;
+                padding: 1rem;
+                margin: 0.5rem 0;
+            }
+
+        }
+
+        .tabs {
+            --offwhite: #AAA;
+            --strongtowns-navy: #0C2340;
+            --strongtowns-sky: #A7C6ED;
+            --strongtowns-gold: #FFB549;
+            --strongtowns-sand: #F5F3EE;
+            --dark-blue: #334d66;
+
+            width: 100%;
+            float: none;
+            list-style: none;
+            position: relative;
+            margin: 0;
+            li {
+                float: left;
+                display: block;
+            }
+            input[type="radio"] {
+                position: absolute;
+                top: 0;
+                left: -9999px;
+            }
+            label {
+                display: block;
+                padding: 1rem 2rem;
+                background: transparent;
+                color: white;
+                cursor: pointer;
+                position: relative;
+                top: 4px;
+            }
+            .tab-content {
+                z-index: 2;
+                display: none;
+                overflow: hidden;
+                width: 100%;
+                padding: 1rem;
+                position: absolute;
+                left: 0;
+                background: var(--offwhite);
+            }
+            [id^="tab"]:checked + label { 
+                top: 0;
+                background: var(--offwhite); 
+                color: #333;
+                font-weight: bold;
+            }
+            [id^="tab"]:checked ~ [id^="tab-content"] {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="tabs" role="tablist">
+        <li>
+            <input type="radio" name="tabs" id="tab1" checked />
+            <label for="tab1" role="tab" aria-selected="true" aria-controls="panel1" tabindex="0">Input</label>
+            <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="input"
+                aria-hidden="false">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title / Hosted by</th>
+                            <th>Details</th>
+                            <th style="width: 50%;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+                <p>
+                    <button id="addEvent">Add Event</button>
+                    <button id="sortEvents">Sort Events</button>
+                    <button id="getJSON">Get JSON</button>
+                </p>
+
+            </div>
+        </li>
+
+        <li>
+            <input type="radio" name="tabs" id="tab2" />
+            <label for="tab2" role="tab" aria-selected="false" aria-controls="panel2" tabindex="0">Output</label>
+            <div id="tab-content2" class="tab-content" role="tabpanel" aria-labelledby="output"
+                aria-hidden="true">
+                <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                    sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+                    est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
+                    modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+                    veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
+                    commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                    molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla?</p>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        const tableBody = document.querySelector('tbody');
+        const describers = new WeakMap();
+
+        document.getElementById('addEvent').addEventListener('click', addEvent);
+        document.getElementById('getJSON').addEventListener('click', getJSON);
+
+        function addEvent() {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>
+                    <input name="title" type="text" placeholder="Title">
+                    <input name="hosted_by" type="text" placeholder="Hosted by">
+                    <button class="removeEvent">Remove</button>
+                    <button class="cloneEvent">Clone</button>
+                </td>
+                <td>
+                    <input name="date" type="date" placeholder="Date">
+                    <input name="time" type="text" placeholder="Time">
+                    <input name="location_name" type="text" placeholder="Name of Location">
+                    <input name="address" type="text" placeholder="Address">
+                    <input name="link_text" type="text" placeholder="Link Text">
+                    <input name="link_url" type="text" placeholder="Link URL">
+                </td>
+                <td><textarea name="description" placeholder="Description"></textarea></td>
+            `;
+            tableBody.appendChild(row);
+
+            const describer = new SimpleMDE({
+                element: row.querySelector('textarea'),
+
+            });
+            describers.set(row, describer);
+
+            row.querySelector('.removeEvent').addEventListener('click', () => {
+                tableBody.removeChild(row);
+            });
+        }
+
+        function getJSON() {
+            const jsonOutput = convertToJSON();
+            document.getElementById('tab-content2').innerText = jsonOutput;
+        }
+
+        function convertToJSON() {
+            const events = [];
+            tableBody.querySelectorAll('tr').forEach(row => {
+                const event = {
+                    title: row.querySelector('input[name="title"]').value,
+                    hosted_by: row.querySelector('input[name="hosted_by"]').value,
+                    date: row.querySelector('input[name="date"]').value,
+                    time: row.querySelector('input[name="time"]').value,
+                    location_name: row.querySelector('input[name="location_name"]').value,
+                    address: row.querySelector('input[name="address"]').value,
+                    link_text: row.querySelector('input[name="link_text"]').value,
+                    link_url: row.querySelector('input[name="link_url"]').value,
+                    description: describers.get(row).value()
+                };
+                events.push(event);
+            });
+            return JSON.stringify(events, null, 2);
+        }
+    </script>
+</body>
+
+</html>

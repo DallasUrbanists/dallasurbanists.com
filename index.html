@@ -3,10 +3,55 @@ layout: stlc-default
 identity_snippet: true
 ---
 <style>
+    .substack-feed-embed {
+        .substack-card {
+            text-decoration: none;
+            h3.substack-title {
+                font-weight: 600;
+                text-wrap: pretty;
+            }
+        }
+
+        .substack-card:first-child {
+            .substack-post {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 1em;
+                background-color: var(--strongtowns-sand);
+
+                .substack-title {
+                    font-size: 2em;
+                }
+                .substack-thumbnail {
+                    width: 33%;
+                }
+
+                >div {
+                    padding: 1em;
+                    text-decoration: none;
+                    .substack-date {
+                        margin-bottom: 0;
+                    }
+                    .substack-desc {
+                        line-height: 1.5em;
+                    }
+                }
+            }
+        }
+
+        .substack-card:not(:first-child) {
+            .substack-thumbnail,
+            >div .substack-desc {
+                display: none;
+            }
+        }
+    }
+
     .substack-feed-widget .sm\:px-4 {
         padding-left: 0;
         padding-right: 0;
     }
+
     .front.masthead::before {
         filter: brightness(0.8) saturate(0.8) contrast(0.9);
         z-index: 0;
@@ -24,6 +69,7 @@ identity_snippet: true
         background-repeat: no-repeat;
         bottom: 0;
     }
+
     .front.masthead {
         display: flex;
         position: relative;
@@ -33,12 +79,15 @@ identity_snippet: true
         justify-content: center;
         flex-direction: column;
         padding-top: 1rem;
-        
+
         #flair-text {
             position: relative;
             text-align: center;
-            -webkit-user-select: none; /* Safari */
-            user-select: none; /* Non-prefixed version, 
+            -webkit-user-select: none;
+            /* Safari */
+            user-select: none;
+
+            /* Non-prefixed version, 
                                     currently supported by all other modern browsers */
             h1 {
                 display: inline-block;
@@ -46,13 +95,16 @@ identity_snippet: true
                 font-size: clamp(1.5rem, 4vw, 3rem);
                 text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
             }
+
             h2 {
                 overflow: hidden;
                 height: 1.7em;
             }
+
             h2:hover {
                 cursor: pointer;
             }
+
             h2 span {
                 top: 1.75em;
                 transition: top 0.5s ease-in-out;
@@ -72,12 +124,11 @@ identity_snippet: true
 
 
             }
+
             .button-paragraph .button-link {
                 margin: 0.5em;
             }
-    }
-
-    
+        }
 </style>
 <section class="masthead front">
     <div id="flair-text">
@@ -157,16 +208,19 @@ identity_snippet: true
 </section>
 <section class="bg-white padded-section">
     <div class="body-wrapper padded">
-        <h1>Recent Blog Posts</h1>
-        <!-- Feed embed code -->
-        <div data-supascribe-embed-id="387407396482" data-supascribe-feed></div>
-        <!-- Supascribe Script -->
-        <script src="https://js.supascribe.com/v1/loader/m7H3ytx5vPUNOrkeOgyClhs2zhL2.js" async></script>
+        <header>
+            <h1>Recent Newsletters & Articles</h1>
+            <p class="subtitle">We publish our articles and weekly newsletters on <a
+                    href="https://dallasurbanists.substack.com/">Substack.com</a>, where you can subscribe for updates
+                via email.</p>
+        </header>
+        <div id="newsletter-embed"></div>
+        <div class="substack-feed-embed" data-substack-url="dallasurbanists.substack.com" data-posts="5"
+            data-show-images="true"></div>
+        <script src="{{ " /plugins/embed-substack-rss.js" | relative_path }}"></script>
 
-        <p class="button-paragraph"><a href="https://dallasurbanists.substack.com" class="button-link sky">Go to our
-                Substack blog</a></p>
+        <p class="button-paragraph"><a href="https://dallasurbanists.substack.com/archive" class="button-link sky">Read more on Substack <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon" /></a></p>
     </div>
-    <script src="https://substackapi.com/embeds/feed.js" async></script>
 </section>
 <section class="bg-sand">
     <div class="row two-columns">
@@ -189,28 +243,39 @@ identity_snippet: true
     <div class="row two-columns" style="align-items: baseline;">
         <div class="column">
             <h1>Be a Subscriber</h1>
-            <p style="text-align: center;">Get plugged in to everything going on by subscribing to our emails via Substack or following @dallasurbanists on social
+            <p style="text-align: center;">Get plugged in to everything going on by subscribing to our emails via
+                Substack or following @dallasurbanists on social
                 media.</p>
-            <iframe src="https://dallasurbanists.substack.com/embed" width="100%" height="320"
+            {% comment %} <iframe src="https://dallasurbanists.substack.com/embed" width="100%" height="320"
                 style="border:1px solid #EEE; background:white;border-radius: 0.5rem;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); width: 100%;"
-                frameborder="0" scrolling="no"></iframe>
-            <a title="Instagram @dallasurbanists" href="https://instagram.com/dallasurbanists" class="icon-link fa-brands navy fa-instagram"></a>
-            <a title="Youtube Dallas Urbanists STLC" href="https://www.youtube.com/channel/UCdGGeaIMqyVgr2cssV-uMTg" class="icon-link fa-brands navy fa-youtube"></a>
-            <a title="BlueSky @DallasUrbanists.org" href="https://bsky.app/profile/dallasurbanists.org" class="icon-link fa-brands navy fa-bluesky"></a>
-            <a title="Subreddit r/dallasurbanists" href="https://www.reddit.com/r/dallasurbanists/" class="icon-link fa-brands navy fa-reddit"></a>
-            <a title="Facebook @DallasUrbanists" href="https://www.facebook.com/dallasurbanists/" class="icon-link fa-brands navy fa-facebook"></a>
-            <a title="Threads @DallasUrbanists" href="https://www.threads.net/@dallasurbanists" class="icon-link fa-brands navy fa-threads"></a>
+                frameborder="0" scrolling="no"></iframe> {% endcomment %}
+            <a title="Instagram @dallasurbanists" href="https://instagram.com/dallasurbanists"
+                class="icon-link fa-brands navy fa-instagram"></a>
+            <a title="Youtube Dallas Urbanists STLC" href="https://www.youtube.com/channel/UCdGGeaIMqyVgr2cssV-uMTg"
+                class="icon-link fa-brands navy fa-youtube"></a>
+            <a title="BlueSky @DallasUrbanists.org" href="https://bsky.app/profile/dallasurbanists.org"
+                class="icon-link fa-brands navy fa-bluesky"></a>
+            <a title="Subreddit r/dallasurbanists" href="https://www.reddit.com/r/dallasurbanists/"
+                class="icon-link fa-brands navy fa-reddit"></a>
+            <a title="Facebook @DallasUrbanists" href="https://www.facebook.com/dallasurbanists/"
+                class="icon-link fa-brands navy fa-facebook"></a>
+            <a title="Threads @DallasUrbanists" href="https://www.threads.net/@dallasurbanists"
+                class="icon-link fa-brands navy fa-threads"></a>
         </div>
         <div class="column">
             <h1>Become a Member</h1>
-            <p style="text-align: center;">Ready to get involved? Join our Strong Towns Local Converation to receive action alerts and volunteer
+            <p style="text-align: center;">Ready to get involved? Join our Strong Towns Local Converation to receive
+                action alerts and volunteer
                 opportunities.</p>
-            <p style="text-align: center;" class="button-paragraph"><a href="/join" class="button-link navy">Become a member</a></p>
+            <p style="text-align: center;" class="button-paragraph"><a href="/join" class="button-link navy">Become a
+                    member</a></p>
 
             <h1 style="margin-top: 1em;">Attend an Event</h1>
-            <p style="text-align: center;">"Lowly, unpurposeful and random as they may appear, sidewalk contacts are the small change from which a city's wealth of public life may grow." &mdash; Jane Jacobs</p>
+            <p style="text-align: center;">"Lowly, unpurposeful and random as they may appear, sidewalk contacts are the
+                small change from which a city's wealth of public life may grow." &mdash; Jane Jacobs</p>
             <p style="text-align: center;" class="button-paragraph">
-                <a href="https://www.meetup.com/dallas-urbanists-stlc/?eventOrigin=event_home_page" class="button-link navy">STLC events</a>
+                <a href="https://www.meetup.com/dallas-urbanists-stlc/?eventOrigin=event_home_page"
+                    class="button-link navy">STLC events</a>
                 <a href="/calendar" class="button-link navy">Community Calendar</a>
             </p>
         </div>
@@ -236,4 +301,4 @@ identity_snippet: true
             {% endfor %}
         </div>
     </div>
-</section>    
+</section>

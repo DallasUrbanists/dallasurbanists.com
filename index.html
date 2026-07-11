@@ -10,25 +10,20 @@ identity_snippet: true
                 font-weight: 600;
                 text-wrap: pretty;
             }
-        }
 
-        .substack-card:first-child {
             .substack-post {
                 display: flex;
                 flex-direction: row;
+                align-items: flex-start;
                 margin-bottom: 1em;
-                background-color: var(--strongtowns-sand);
 
-                .substack-title {
-                    font-size: 2em;
-                }
                 .substack-thumbnail {
-                    width: 33%;
+                    height: fit-content;
                 }
 
                 >div {
-                    padding: 1em;
                     text-decoration: none;
+                    padding-left: 1em;
                     .substack-date {
                         margin-bottom: 0;
                     }
@@ -37,19 +32,124 @@ identity_snippet: true
                     }
                 }
             }
+            .substack-post:hover {
+                background-color: var(--strongtowns-sky) !important;
+            }
+
+        }
+
+        .substack-card:first-child {
+            .substack-post {
+                background-color: var(--strongtowns-sand);
+                align-items: center;
+                >div {
+                    padding: 1em;
+                }
+            }
+            .substack-title {
+                font-size: 2em;
+            }
+            .substack-thumbnail {
+                width: 33%;
+            }
         }
 
         .substack-card:not(:first-child) {
-            .substack-thumbnail,
+            .substack-thumbnail {
+                width: 10%;
+            }
             >div .substack-desc {
                 display: none;
             }
         }
     }
 
-    .substack-feed-widget .sm\:px-4 {
-        padding-left: 0;
-        padding-right: 0;
+.meetup-feed-embed {
+    .meetup-card {
+        text-decoration: none;
+        h3.meetup-title {
+            font-weight: 600;
+            text-wrap: pretty;
+        }
+    }
+
+    .text-muted {
+        opacity: 0.75;
+        font-size: smaller;
+    }
+
+    .meetup-card:first-child {
+        .meetup-post {
+            margin-bottom: 1em;
+            background-color: var(--strongtowns-sand);
+            .meetup-thumbnail {
+                width: 33%;
+            }
+            >div {
+                padding: 1em;
+                .meetup-date {
+                    font-size: 1.5em;
+                }
+                .meetup-desc {
+                    line-height: 1.5em;
+                }
+            }
+        }
+
+        .meetup-title {
+            font-size: 2em;
+        }
+
+    }
+
+    .meetup-card {
+        .meetup-post {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 1em;
+
+            .meetup-thumbnail {
+                width: 10%;
+            }
+
+            >div {
+                padding-left: 1em;
+                text-decoration: none;
+                .meetup-date {
+                    margin-bottom: 0;
+                }
+                .meetup-desc {
+                    display: none;
+                }
+            }
+        }
+        .meetup-post:hover {
+            background-color: var(--strongtowns-sky) !important;
+        }
+    }
+}
+
+    @media (max-width: 768px) {
+        .substack-feed-embed .substack-card:first-child .substack-post,
+        .meetup-feed-embed .meetup-card:first-child .meetup-post {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .substack-feed-embed .substack-card:first-child .substack-post .substack-thumbnail,
+        .meetup-feed-embed .meetup-card:first-child .meetup-post .meetup-thumbnail {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    header {
+        h1 {
+            margin-bottom: 0.25em;
+        }
+        .subtitle {
+            text-wrap: pretty;
+        }
     }
 
     .front.masthead::before {
@@ -129,6 +229,7 @@ identity_snippet: true
                 margin: 0.5em;
             }
         }
+
 </style>
 <section class="masthead front">
     <div id="flair-text">
@@ -214,74 +315,76 @@ identity_snippet: true
                     href="https://dallasurbanists.substack.com/">Substack.com</a>, where you can subscribe for updates
                 via email.</p>
         </header>
-        <div id="newsletter-embed"></div>
-        <div class="substack-feed-embed" data-substack-url="dallasurbanists.substack.com" data-posts="5"
+        <div class="substack-feed-embed" data-substack-url="dallasurbanists.substack.com" data-posts="4"
             data-show-images="true"></div>
         <script src="{{ " /plugins/embed-substack-rss.js" | relative_path }}"></script>
 
         <p class="button-paragraph"><a href="https://dallasurbanists.substack.com/archive" class="button-link sky">Read more on Substack <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon" /></a></p>
     </div>
 </section>
-<section class="bg-sand">
+
+<section class="bg-sand padded-section">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>Hyperlocal Conversations</h1>
+            <p class="subtitle">A <i>hyperlocal conversation</i> is a neighborhood-specific monthly gathering where neighbors explore ways to improve walkability where they live. Our vision is to have a hyperlocal conversation in every neighborhood in Dallas.</p>
+        </header>
+        <div class="meetup-feed-embed"
+            data-meetup-url="www.meetup.com/dallasurbanists"
+            data-filter="hyperlocal conversation"
+            data-skip-duplicates="true"
+            data-posts="15"
+            data-show-images="true"></div>
+        <p class="button-paragraph"><a href="/hyperlocal" class="button-link sky">Learn more and get involved with a conversation near you!</a></p>
+    </div>
+</section>
+
+<section class="bg-white padded-section">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>Bimonthly Urbanists Mixer</h1>
+            <p class="subtitle">Every two months, neighbors and advocates from across the city gather downtown to fellowship, exchange ideas, and get caught up on what's happening in Dallas. Our regular meeting place is in <i>The Underground at Frankie's Downtown</i>.</p>
+        </header>
+        <div class="meetup-feed-embed"
+            data-meetup-url="www.meetup.com/dallasurbanists"
+            data-filter="bimonthly mixer"
+            data-skip-duplicates="true"
+            data-posts="1"
+            data-show-images="true"></div>
+        <p class="button-paragraph"><a href="/mixer" class="button-link sky">Learn more and get ready for our next mixer!</a></p>
+    </div>
+</section>
+
+<section class="bg-sand padded-section">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>Community Calendar</h1>
+            <p class="subtitle">In addition to hosting our own events, we created and maintain a calendar of curated events from local residents, businesses, nonprofits, and government agencies. Find social gatherings, civic meetings, and volunteer opportunities here. Suggestions are welcome at <a href="mailto:contact@dallasurbanists.org">contact@dallasurbanists.org</a>.</p>
+        </header>
+        <p class="button-paragraph"><a href="/calendar" class="button-link sky">View the full calendar</a></p>
+    </div>
+</section>
+
+
+<section class="bg-sky">
     <div class="row two-columns">
         <div class="column">
             <h1>What is Dallas Urbanists?</h1>
 
-            <p>Dallas Urbanists STLC is a group based in Dallas, Texas and composed of people who care about making our
-                city a better place to live, work, and play for everybody. Our group aligns with the New Urbanism
+            <p>We are a nonprofit created for and by people who care about making our
+                city a better place to live, work, and play for everybody. We align with the New Urbanism
                 movement, and we are an instance of what Strong Towns calls a "Local Conversation", whose purpose is to
                 connect nearby, like-minded advocates to put Strong Towns ideas into action where we live.</p>
 
-            <p class="button-paragraph"><a href="/about" class="button-link sky">Learn more about us</a></p>
+            <p class="button-paragraph"><a href="/about" class="button-link navy">Learn more about us</a></p>
         </div>
         <div class="column">
             <img src="./assets/home collage 2.png" alt="Collage 2" class="hero-image" />
         </div>
     </div>
 </section>
-<section class="call-to-action bg-sky">
-    <div class="row two-columns" style="align-items: baseline;">
-        <div class="column">
-            <h1>Be a Subscriber</h1>
-            <p style="text-align: center;">Get plugged in to everything going on by subscribing to our emails via
-                Substack or following @dallasurbanists on social
-                media.</p>
-            {% comment %} <iframe src="https://dallasurbanists.substack.com/embed" width="100%" height="320"
-                style="border:1px solid #EEE; background:white;border-radius: 0.5rem;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); width: 100%;"
-                frameborder="0" scrolling="no"></iframe> {% endcomment %}
-            <a title="Instagram @dallasurbanists" href="https://instagram.com/dallasurbanists"
-                class="icon-link fa-brands navy fa-instagram"></a>
-            <a title="Youtube Dallas Urbanists STLC" href="https://www.youtube.com/channel/UCdGGeaIMqyVgr2cssV-uMTg"
-                class="icon-link fa-brands navy fa-youtube"></a>
-            <a title="BlueSky @DallasUrbanists.org" href="https://bsky.app/profile/dallasurbanists.org"
-                class="icon-link fa-brands navy fa-bluesky"></a>
-            <a title="Subreddit r/dallasurbanists" href="https://www.reddit.com/r/dallasurbanists/"
-                class="icon-link fa-brands navy fa-reddit"></a>
-            <a title="Facebook @DallasUrbanists" href="https://www.facebook.com/dallasurbanists/"
-                class="icon-link fa-brands navy fa-facebook"></a>
-            <a title="Threads @DallasUrbanists" href="https://www.threads.net/@dallasurbanists"
-                class="icon-link fa-brands navy fa-threads"></a>
-        </div>
-        <div class="column">
-            <h1>Become a Member</h1>
-            <p style="text-align: center;">Ready to get involved? Join our Strong Towns Local Converation to receive
-                action alerts and volunteer
-                opportunities.</p>
-            <p style="text-align: center;" class="button-paragraph"><a href="/join" class="button-link navy">Become a
-                    member</a></p>
 
-            <h1 style="margin-top: 1em;">Attend an Event</h1>
-            <p style="text-align: center;">"Lowly, unpurposeful and random as they may appear, sidewalk contacts are the
-                small change from which a city's wealth of public life may grow." &mdash; Jane Jacobs</p>
-            <p style="text-align: center;" class="button-paragraph">
-                <a href="https://www.meetup.com/dallas-urbanists-stlc/?eventOrigin=event_home_page"
-                    class="button-link navy">STLC events</a>
-                <a href="/calendar" class="button-link navy">Community Calendar</a>
-            </p>
-        </div>
-    </div>
-</section>
-<section class="bg-offwhite padded-section">
+{% comment %} <section class="bg-offwhite padded-section">
     <div class="body-wrapper padded">
         <h1 class="text-center">Neighbors in Advocacy</h1>
         <p class="text-center subtitle">Here are other local groups we often support and collaborate with.</p>
@@ -301,4 +404,7 @@ identity_snippet: true
             {% endfor %}
         </div>
     </div>
-</section>
+</section> {% endcomment %}
+
+<script src="{{ " /plugins/fetch-teamup-ical.js" | relative_path }}"></script>
+<script src="{{ " /plugins/embed-meetup-rss.js" | relative_path }}"></script>

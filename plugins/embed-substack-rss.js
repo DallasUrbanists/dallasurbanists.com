@@ -23,7 +23,7 @@
   const fmtDate = (iso) => {
     try {
       // Use reader’s locale; tweak if you want a fixed one
-      return new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(iso));
+      return new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'short', day: 'numeric' } ).format(new Date(iso));
     } catch {
       return '';
     }
@@ -110,7 +110,10 @@
     }
 
     const feedBase = normalizeUrl(cfg.substackUrl);
-    const rssUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(`${feedBase}/feed`)}`;
+    const encodedFeedUrl = encodeURIComponent(`${feedBase}/feed`);
+    const rssUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodedFeedUrl}`;
+
+    console.log(encodedFeedUrl, rssUrl);
 
     // Minimal skeleton while loading (optional)
     container.innerHTML = '<div class="substack-skeleton">Loading…</div>';
@@ -129,8 +132,6 @@
         container.innerHTML = '<p class="substack-empty">No posts available.</p>';
         return;
       }
-
-      console.log(posts);
 
       // Clear and render
       container.innerHTML = '';

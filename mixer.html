@@ -1,0 +1,70 @@
+---
+layout: stlc-default
+---
+<style>
+    .masthead {
+        margin-bottom: -4.5rem;
+        align-items: center;
+        display: flex;
+        background-color: transparent;
+        background-attachment: scroll;
+        position: relative;
+        top: -4.5rem;
+        aspect-ratio: 2 / 1;
+        text-align: center;
+        color: white;
+        background-image: none;
+        background-size: cover;
+
+        .body-wrapper {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 5rem);
+            display: inline-block;
+        }
+
+        p {
+            line-height: 1.4em;
+            max-width: 768px;
+            font-size: clamp(1rem, 2vw, 2.5rem);
+            text-wrap: balance;
+        }
+    }
+
+    .masthead::before {
+        filter: brightness(0.4) blur(0.5px) saturate(0.5);
+        z-index: 0;
+        content: ' ';
+        background-image: url('./assets/mixer may 2026.jpg');
+        background-position-y: top;
+        background-position-x: center;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .top-nav {
+        background-color: transparent;
+        backdrop-filter: blur(3px);
+    }
+</style>
+<section class="masthead">
+    <div class="body-wrapper">
+        <h1>Bimonthly Urbanists Mixer</h1>
+        <p>Every two months, neighbors and advocates from across the city gather downtown to fellowship, exchange ideas, and get caught up on what's happening in Dallas. We regularly meet at <i>The Underground at Frankie's Downtown</i>.</p>
+    </div>
+</section>
+
+<section class="bg-sand" style="align-items: start;">
+    <div class="body-wrapper padded" id="faq">
+        <h1 style="margin-top: 1em;">[THIS PAGE IS UNDER CONSTRUCTION]</h1>
+    </div>
+</section>

@@ -11,6 +11,18 @@
     ...globalDefaults
   };
 
+  // Cache keys based on current date and time to avoid hitting API more than once per minute
+  function cacheKey() {
+      const d = new Date();
+      const Y = d.getFullYear();
+      const M = String(d.getMonth() + 1).padStart(2, '0');
+      const D = String(d.getDate()).padStart(2, '0');
+      const h = String(d.getHours()).padStart(2, '0');
+      const nearestTenMinutes = Math.floor(d.getMinutes() / 10) * 10; // Round down to nearest 10 minutes
+      const m = String(nearestTenMinutes).padStart(2, '0');
+      return `meetup_${Y}${M}${D}${h}${m}`;
+  }
+
   const containers = document.querySelectorAll('.meetup-feed-embed, #meetup-feed-embed');
   if (!containers.length) return;
 
@@ -114,22 +126,34 @@
     const encodedFeedUrl = encodeURIComponent(`${feedBase}/events/rss`);
     const rssUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodedFeedUrl}`;
 
-    console.log(encodedFeedUrl, rssUrl);
-
     // Minimal skeleton while loading (optional)
     container.innerHTML = '<div class="meetup-skeleton">Loading…</div>';
 
     document.addEventListener('fetchedEvents', async () => {
+      console.log('event detected');
       try {
-        const res = await fetchWithTimeout(rssUrl, 12000);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
+        let items;
 
-        if (data.status !== 'ok' || !Array.isArray(data.items)) {
-          throw new Error(data.message || 'Failed to parse feed');
+        // Determine if we have a cached version of the events
+        const cachedEvents = localStorage.getItem(cacheKey());
+
+        if (cachedEvents) {
+          console.log('Using cached meetup events');
+          items = JSON.parse(cachedEvents);
+        } else {
+          console.log('Fetching fresh meetup events');
+          const res = await fetchWithTimeout(rssUrl, 12000);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+
+          if (data.status !== 'ok' || !Array.isArray(data.items)) {
+            throw new Error(data.message || 'Failed to parse feed');
+          }
+          items = data.items;
+          localStorage.setItem(cacheKey(), JSON.stringify(items));
         }
 
-        const posts = data.items
+        const posts = items
           .map(item => {
             const meetupEventId = item.guid.split('/').filter(g => g !== '').pop(); // Extract the event ID from the guid
             const matchingEvent = foundEvents.find(event =>

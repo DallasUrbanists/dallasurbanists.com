@@ -171,9 +171,7 @@ identity_snippet: true
     <div class="body-wrapper padded">
         <header>
             <h1>Recent Newsletters & Articles</h1>
-            <p class="subtitle">We publish our articles and weekly newsletters on <a
-                    href="https://dallasurbanists.substack.com/">Substack.com</a>, where you can subscribe for updates
-                via email.</p>
+            <p class="subtitle">Subscribe to our blog on <a href="https://dallasurbanists.substack.com/">Substack.com</a> to receive updates via email.</p>
         </header>
         <div class="card-feed"
             data-rss-url="dallasurbanists.substack.com/feed"
@@ -188,11 +186,14 @@ identity_snippet: true
     <div class="body-wrapper padded">
         <header>
             <h1>Hyperlocal Conversations</h1>
-            <p class="subtitle">A <i>hyperlocal conversation</i> is a neighborhood-specific monthly gathering where neighbors explore ways to improve walkability where they live. Our vision is to have a hyperlocal conversation in every neighborhood in Dallas.</p>
+            <p class="subtitle">A <i>hyperlocal conversation</i> is a neighborhood-specific monthly gathering where neighbors explore ways to improve walkability where we live.</p>
         </header>
         <div class="card-feed"
             data-rss-url="www.meetup.com/dallasurbanists/events/rss"
-            data-posts="4"
+            data-filter-title="hyperlocal conversation"
+            data-show-duplicates="false"
+            data-remove-title="Hyperlocal Conversation"
+            data-posts="10"
             data-date-format="event"
             data-show-dates="true"
             data-date-prop="start_dt"
@@ -205,14 +206,17 @@ identity_snippet: true
     <div class="body-wrapper padded">
         <header>
             <h1>Bimonthly Urbanists Mixer</h1>
-            <p class="subtitle">Every two months, neighbors and advocates from across the city gather downtown to fellowship, exchange ideas, and get caught up on what's happening in Dallas. Our regular meeting place is in <i>The Underground at Frankie's Downtown</i>.</p>
+            <p class="subtitle">Fellowship, exchange ideas, and get caught up with neighbors, advocates, and leaders from across the city.</p>
         </header>
-        <div class="meetup-feed-embed"
-            data-meetup-url="www.meetup.com/dallasurbanists"
-            data-filter="bimonthly mixer"
-            data-skip-duplicates="true"
-            data-posts="1"
-            data-show-images="true"></div>
+        <div class="card-feed"
+            data-rss-url="www.meetup.com/dallasurbanists/events/rss"
+            data-filter-title="mixer"
+            data-remove-title="Dallas Urbanists"
+            data-posts="3"
+            data-date-format="event"
+            data-show-dates="true"
+            data-date-prop="start_dt"
+            data-sync-with-calendar="true"></div>
         <p class="button-paragraph"><a href="/mixer" class="button-link sky">Learn more and get ready for our next mixer!</a></p>
     </div>
 </section>
@@ -221,7 +225,7 @@ identity_snippet: true
     <div class="body-wrapper padded">
         <header>
             <h1>Community Calendar</h1>
-            <p class="subtitle">In addition to hosting our own events, we created and maintain a calendar of curated events from local residents, businesses, nonprofits, and government agencies. Find social gatherings, civic meetings, and volunteer opportunities here. Suggestions are welcome at <a href="mailto:contact@dallasurbanists.org">contact@dallasurbanists.org</a>.</p>
+            <p class="subtitle">These are curated social gatherings, public meetings, and volunteer opportunities hosted by other local organizations in the housing, urban planning, public transit, and cycling community.</p>
         </header>
         <p class="button-paragraph"><a href="/calendar" class="button-link sky">View the full calendar</a></p>
     </div>

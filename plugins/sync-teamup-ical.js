@@ -36,7 +36,6 @@ async function SyncWithTeamupCalendar(mode = 'upcoming') {
             const result = await response.json();
             const found = result.events;
             found.sort(sortFunction);
-            console.log(found);
             // limit to the first 100 items
             return found.slice(0, 100);
         } catch (error) {

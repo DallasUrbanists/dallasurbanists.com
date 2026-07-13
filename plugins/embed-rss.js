@@ -7,6 +7,9 @@
 (function () {
   const defaults = {
     rssUrl: '',
+    filterTitle: null,
+    removeTitle: null,
+    showDuplicates: true,
     posts: 3,
     showThumbnails: true,
     showDates: false,
@@ -75,32 +78,16 @@
   const chooseThumbnailByTitle = title => {
     const t = title.trim().toLowerCase();
     const has = parts => {
-      for (part of parts) {
-        if (!t.includes(part)) return false;
-      }
+      for (part of parts) if (!t.includes(part)) return false;
       return true;
     };
-    if (has(['urbanists', 'bimonthly', 'mixer'])) {
-      return 'mixer may 2026.jpg';
-    }
-    if (has(['downtown', 'hyperlocal conversation'])) {
-      return 'hyperlocals/downtown hlc.jpg';
-    }
-    if (has(['cedars', 'hyperlocal conversation'])) {
-      return 'hyperlocals/cedars hlc.jpg';
-    }
-    if (has(['uptown', 'oak lawn', 'hyperlocal conversation'])) {
-      return 'hyperlocals/uptown oak lawn hlc.jpg';
-    }
-    if (has(['midtown', 'hyperlocal conversation'])) {
-      return 'hyperlocals/midtown hlc.jpg';
-    }
-    if (has(['far north dallas', 'hyperlocal conversation'])) {
-      return 'hyperlocals/fnd hlc.jpg';
-    }
-    if (has(['hyperlocal conversation'])) {
-      return 'hyperlocals/downtown hlc.jpg';
-    }
+    if (has(['urbanists', 'bimonthly', 'mixer'])) return 'mixer may 2026.jpg';
+    if (has(['downtown', 'hyperlocal conversation'])) return 'hyperlocals/downtown hlc.jpg';
+    if (has(['cedars', 'hyperlocal conversation'])) return 'hyperlocals/cedars hlc.jpg';
+    if (has(['uptown', 'oak lawn', 'hyperlocal conversation'])) return 'hyperlocals/uptown oak lawn hlc.jpg';
+    if (has(['midtown', 'hyperlocal conversation'])) return 'hyperlocals/midtown hlc.jpg';
+    if (has(['far north dallas', 'hyperlocal conversation'])) return 'hyperlocals/fnd hlc.jpg';
+    if (has(['hyperlocal conversation'])) return 'hyperlocals/downtown hlc.jpg';
     return 'generic event cover.jpg';
   };
 
@@ -119,8 +106,6 @@
     card.target = '_blank';
     card.rel = 'noopener';
     card.href = post.link;
-    
-    console.log(post);
 
     // Render thumbnail, if enabled
     if (opts.showThumbnails) {
@@ -130,19 +115,16 @@
 
       // Use thumbnail property as image source, if provided
       if ('thumbnail' in post && typeof post.thumbnail === 'string' && post.thumbnail.trim() !== '') {
-        console.log('using thumbnail property');
         thumbnail.style.backgroundImage = `url(${post.thumbnail})`;
       }
       // Otherwise, try to extract image from post content
       else {
         const imgUrl = extractFirstImg(post.content);
         if (imgUrl) {
-          console.log('using img in content');
           thumbnail.style.backgroundImage = `url(${imgUrl})`;
         } else {
           const fallback = chooseThumbnailByTitle(post.title);
           thumbnail.style.backgroundImage = `url('/assets/${fallback}')`;
-          console.log('using fallback: ' + thumbnail.style.backgroundImage);
         }
       }
     }
@@ -153,7 +135,10 @@
 
     const titleText = decodeHTMLEntities(post.title) || 'Untitled';
     const titleParts = titleText.split(':');
-    const titleHTML = titleParts.length > 1 ? `<b>${titleParts[0]}:</b> ${titleParts.slice(1).join(':')}` : titleText;
+    let titleHTML = titleParts.length > 1 ? `<b>${titleParts[0]}:</b> ${titleParts.slice(1).join(':')}` : titleText;
+    if (opts.removeTitle !== null && typeof opts.removeTitle === 'string') {
+      titleHTML = titleHTML.replace(opts.removeTitle, '');
+    }
 
     const title = document.createElement(opts.titleElement);
     title.className = 'title';
@@ -203,6 +188,9 @@
   containers.forEach(async (container) => {
     const cfg = {
       rssUrl: container.getAttribute('data-rss-url') || defaults.rssUrl,
+      filterTitle: container.getAttribute('data-filter-title') || defaults.filterTitle,
+      removeTitle: container.getAttribute('data-remove-title') || defaults.removeTitle,
+      showDuplicates: (container.getAttribute('data-show-duplicates') || `${defaults.showDuplicates}`) !== 'false',
       posts: parseInt(container.getAttribute('data-posts'), 10) || defaults.posts,
       showThumbnails: (container.getAttribute('data-show-thumbnails') || `${defaults.showThumbnails}`) !== 'false',
       showDates: (container.getAttribute('data-show-dates') || `${defaults.showDates}`) !== 'false',
@@ -238,10 +226,8 @@
         let data;
         const cachedData = fetchCachedData(feedBase);
         if (isCacheReady(cachedData)) {
-          console.log('Reuse cached data');
           data = cachedData;
         } else {
-          console.log('Fetch fresh from ' + feedBase);
           const res = await fetchWithTimeout(rssUrl, 12000);
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
           data = await res.json();
@@ -251,8 +237,8 @@
           updateCachedData(feedBase, data);
         }
 
+        const uniqueTitles = [];
         const posts = data.items
-          .slice(0, Math.max(1, cfg.posts))
           .map(item => {
             if (cfg.syncWithCalendar && window.syncedEvents) {
               const meetupEventId = item.guid.split('/').filter(g => g !== '').pop(); // Extract the event ID from the guid
@@ -263,7 +249,28 @@
               return matchingEvent ? { ...item, ...matchingEvent} : null;
             }
             return item;
-          });
+          })
+          .filter(item => {
+            const filterByTitle = cfg.filterTitle !== null && typeof cfg.filterTitle === 'string';
+            if (filterByTitle) {
+              const titleHasFilter = item.title.trim().toLowerCase().includes(cfg.filterTitle);
+              if (titleHasFilter) {
+                if (!cfg.showDuplicates) {
+                  if (uniqueTitles.includes(item.title)) {
+                    return false;
+                  } else {
+                    uniqueTitles.push(item.title);
+                    return true;
+                  }
+                }
+                return true;
+              } else {
+                return false;
+              }
+            }
+            return true;
+          })
+          .slice(0, Math.max(1, cfg.posts));
 
         if (!posts.length) {
           container.innerHTML = '<p class="feed-empty">No posts available.</p>';
@@ -284,12 +291,7 @@
     draw();
 
     if (cfg.syncWithCalendar) {
-      console.log('sync mode enabled, attach event listener');
-      window.addEventListener('TeamupSynced', e => {
-        console.log('Redraw after receiving teamup data');
-        draw();
-        //const syncedEvents = e.detail.syncedEvents;
-      });
+      window.addEventListener('TeamupSynced', e => { draw(); });
     }
   });
 })();
@@ -315,9 +317,7 @@ function fetchCachedData(feedBase) {
 
 function isCacheReady(cachedData) {
   const cacheMinutesTTL = 5; // minutes cached data still valid
-
   if (cachedData === null) return false;
-  
   if ('storeDate' in cachedData) {
     const storeDate = new Date(cachedData.storeDate);
     const now = new Date();
@@ -325,11 +325,8 @@ function isCacheReady(cachedData) {
     const diffInMs = now - storeDate; 
     // 2. Divide by 1000 (seconds) and 60 (minutes)
     const diffInMins = diffInMs  / (1000 * 60); 
-
-    console.log(diffInMins);
     return diffInMins < cacheMinutesTTL;
   }
-
   return false;
 }
 

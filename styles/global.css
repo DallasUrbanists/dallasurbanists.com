@@ -84,12 +84,14 @@ main {
     margin-top: 2rem;
 }
 .button-link {
+    text-wrap: balance;
+    text-align: center;
     display: inline-block;
-    line-height: 3rem;
+    line-height: 1.5em;
     border-radius: 0.5rem;
     text-decoration: none;
     font-weight: bold;
-    padding: 0 2rem;
+    padding: 0.5em 2rem;
     transition: all 0.1s;
 }
 .button-link:hover { cursor: pointer; filter: brightness(80%); }

@@ -119,7 +119,7 @@
     card.target = '_blank';
     card.rel = 'noopener';
     card.href = post.link;
-
+    
     console.log(post);
 
     // Render thumbnail, if enabled
@@ -159,6 +159,7 @@
     title.className = 'title';
     title.innerHTML = titleHTML;
     body.appendChild(title);
+    card.title = titleText;
 
     card.classList.add('title_only');
     if (showSubtitle) {

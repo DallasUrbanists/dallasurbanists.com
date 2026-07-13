@@ -3,146 +3,6 @@ layout: stlc-default
 identity_snippet: true
 ---
 <style>
-    .substack-feed-embed {
-        .substack-card {
-            text-decoration: none;
-            h3.substack-title {
-                font-weight: 600;
-                text-wrap: pretty;
-            }
-
-            .substack-post {
-                display: flex;
-                flex-direction: row;
-                align-items: flex-start;
-                margin-bottom: 1em;
-
-                .substack-thumbnail {
-                    height: fit-content;
-                }
-
-                >div {
-                    text-decoration: none;
-                    padding-left: 1em;
-                    .substack-date {
-                        margin-bottom: 0;
-                    }
-                    .substack-desc {
-                        line-height: 1.5em;
-                    }
-                }
-            }
-            .substack-post:hover {
-                background-color: var(--strongtowns-sky) !important;
-            }
-
-        }
-
-        .substack-card:first-child {
-            .substack-post {
-                background-color: var(--strongtowns-sand);
-                align-items: center;
-                >div {
-                    padding: 1em;
-                }
-            }
-            .substack-title {
-                font-size: 2em;
-            }
-            .substack-thumbnail {
-                width: 33%;
-            }
-        }
-
-        .substack-card:not(:first-child) {
-            .substack-thumbnail {
-                width: 10%;
-            }
-            >div .substack-desc {
-                display: none;
-            }
-        }
-    }
-
-.meetup-feed-embed {
-    .meetup-card {
-        text-decoration: none;
-        h3.meetup-title {
-            font-weight: 600;
-            text-wrap: pretty;
-        }
-    }
-
-    .text-muted {
-        opacity: 0.75;
-        font-size: smaller;
-    }
-
-    .meetup-card:first-child {
-        .meetup-post {
-            margin-bottom: 1em;
-            background-color: var(--strongtowns-sand);
-            .meetup-thumbnail {
-                width: 33%;
-            }
-            >div {
-                padding: 1em;
-                .meetup-date {
-                    font-size: 1.5em;
-                }
-                .meetup-desc {
-                    line-height: 1.5em;
-                }
-            }
-        }
-
-        .meetup-title {
-            font-size: 2em;
-        }
-
-    }
-
-    .meetup-card {
-        .meetup-post {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-bottom: 1em;
-
-            .meetup-thumbnail {
-                width: 10%;
-            }
-
-            >div {
-                padding-left: 1em;
-                text-decoration: none;
-                .meetup-date {
-                    margin-bottom: 0;
-                }
-                .meetup-desc {
-                    display: none;
-                }
-            }
-        }
-        .meetup-post:hover {
-            background-color: var(--strongtowns-sky) !important;
-        }
-    }
-}
-
-    @media (max-width: 768px) {
-        .substack-feed-embed .substack-card:first-child .substack-post,
-        .meetup-feed-embed .meetup-card:first-child .meetup-post {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .substack-feed-embed .substack-card:first-child .substack-post .substack-thumbnail,
-        .meetup-feed-embed .meetup-card:first-child .meetup-post .meetup-thumbnail {
-            width: 100%;
-            height: auto;
-        }
-    }
-
     header {
         h1 {
             margin-bottom: 0.25em;
@@ -315,9 +175,10 @@ identity_snippet: true
                     href="https://dallasurbanists.substack.com/">Substack.com</a>, where you can subscribe for updates
                 via email.</p>
         </header>
-        <div class="substack-feed-embed" data-substack-url="dallasurbanists.substack.com" data-posts="4"
-            data-show-images="true"></div>
-        <script src="{{ " /plugins/embed-substack-rss.js" | relative_path }}"></script>
+        <div class="card-feed"
+            data-rss-url="dallasurbanists.substack.com/feed"
+            data-posts="4"
+            data-date-format="published"></div>
 
         <p class="button-paragraph"><a href="https://dallasurbanists.substack.com/archive" class="button-link sky">Read more on Substack <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon" /></a></p>
     </div>
@@ -329,12 +190,13 @@ identity_snippet: true
             <h1>Hyperlocal Conversations</h1>
             <p class="subtitle">A <i>hyperlocal conversation</i> is a neighborhood-specific monthly gathering where neighbors explore ways to improve walkability where they live. Our vision is to have a hyperlocal conversation in every neighborhood in Dallas.</p>
         </header>
-        <div class="meetup-feed-embed"
-            data-meetup-url="www.meetup.com/dallasurbanists"
-            data-filter="hyperlocal conversation"
-            data-skip-duplicates="true"
-            data-posts="15"
-            data-show-images="true"></div>
+        <div class="card-feed"
+            data-rss-url="www.meetup.com/dallasurbanists/events/rss"
+            data-posts="4"
+            data-date-format="event"
+            data-show-dates="true"
+            data-date-prop="start_dt"
+            data-sync-with-calendar="true"></div>
         <p class="button-paragraph"><a href="/hyperlocal" class="button-link sky">Learn more and get involved with a conversation near you!</a></p>
     </div>
 </section>
@@ -406,5 +268,6 @@ identity_snippet: true
     </div>
 </section> {% endcomment %}
 
-<script src="{{ " /plugins/fetch-teamup-ical.js" | relative_path }}"></script>
-<script src="{{ " /plugins/embed-meetup-rss.js" | relative_path }}"></script>
+<script src="{{ " /plugins/sync-teamup-ical.js" | relative_path }}"></script>
+<script src="{{ " /plugins/embed-rss.js" | relative_path }}"></script>
+<script> SyncWithTeamupCalendar(); </script>

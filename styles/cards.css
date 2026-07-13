@@ -18,13 +18,14 @@
         }
         .body {
             padding-left: 1rem;
-            .title {
+            .title, .subtitle {
                 /* Truncate with ellipsis after __ lines of text */
                 display: -webkit-box;
-                -webkit-line-clamp: 3;
+                -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;  
                 overflow: hidden;
-
+            }
+            .title {
                 font-size: 1.1rem;
                 font-weight: 600;
                 text-wrap: pretty;
@@ -36,12 +37,6 @@
             .subtitle {
                 line-height: 1.5em;
                 margin-bottom: 0;
-
-                /* Truncate with ellipsis after __ lines of text */
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;  
-                overflow: hidden;
             }
         }
     }
@@ -61,6 +56,9 @@
                 font-size: clamp(1.1rem, 3vw, 2rem);
                 margin-bottom: 0.25em;
             }
+            .title, .subtitle {
+                -webkit-line-clamp: 3;
+            }
         }
     }
     /* Clickable cards */
@@ -77,6 +75,13 @@
         opacity: 0.9;
     }
 }
+/* Background color of large card varies based on parent section color */
+section.bg-sand .card-feed {
+    .card.large { background-color: white; }
+    .card.large:hover { background-color: var(--strongtowns-sky); }
+}
+
+
 /* Mobile style */
 @media (max-width: 768px) {
     .card-feed .card.large {

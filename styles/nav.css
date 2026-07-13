@@ -13,11 +13,16 @@
       user-select: none; /* Non-prefixed version, 
                             currently supported by all other modern browsers */
 
+    a:has(.logo) {
+        max-width: 25%;
+    }
+    
     .logo {
         margin: 0.25rem 0;
         height: 3rem;
         color: black;
         float: left;
+        max-width: 100%;
     }
 
     .logo.centered {
@@ -168,7 +173,8 @@
                 position: static;
             }
             .sub-toggle:checked~ul.sub-menu {
-                padding-left: 2.5em;
+                font-size: clamp(0.75rem, 4vw, 1rem);
+                padding-left: 2em;
                 display: block;
             }
         }
@@ -211,13 +217,13 @@
 
     .menu-checkbox:checked~.top-nav.collapsed {
         ul.menu-bar {
-            margin: 0 -1em;
+            margin: 0 -1em 0 0;
             padding: 0;
             text-align: left;
-            width: calc(100% + 2em);
+            width: calc(100%);
             display: block;
             background: var(--strongtowns-navy);
-            box-shadow: 5px 5px 5px black;
+            box-shadow: 0 0 5px black;
 
             > li {
                 display: block;

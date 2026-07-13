@@ -1,0 +1,77 @@
+.front.masthead::before {
+    filter: brightness(0.8) saturate(0.8) contrast(0.9);
+    z-index: 0;
+    position: absolute;
+    content: ' ';
+    display: block;
+    background-image: url(/assets/main%20street%20garden%20park%20wide%20shot.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    /* aspect-ratio: 16/9; */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    bottom: 0;
+}
+
+.front.masthead {
+    display: flex;
+    position: relative;
+    aspect-ratio: 16/9;
+    color: white;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 1rem;
+
+    #flair-text {
+        position: relative;
+        text-align: center;
+        -webkit-user-select: none;
+        /* Safari */
+        user-select: none;
+
+        /* Non-prefixed version, 
+                                currently supported by all other modern browsers */
+        h1 {
+            display: inline-block;
+            backdrop-filter: blur(0.5px);
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        h2 {
+            overflow: hidden;
+            height: 1.7em;
+        }
+
+        h2:hover {
+            cursor: pointer;
+        }
+
+        h2 span {
+            top: 1.75em;
+            transition: top 0.5s ease-in-out;
+            margin: 0 auto 0.25em;
+            width: fit-content;
+            display: block;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            padding: 0 1em;
+            font-style: italic;
+            font-weight: lighter;
+            background-color: var(--strongtowns-sky);
+            color: var(--strongtowns-navy);
+            line-height: 1.5em;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+
+
+        }
+
+        .button-paragraph .button-link {
+            margin: 0.5em;
+        }
+    }

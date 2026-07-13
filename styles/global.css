@@ -3,6 +3,7 @@
 @import url('columns.css');
 @import url('grid.css');
 @import url('masthead.css');
+@import url('masthead-new.css');
 @import url('inspiring-quote-section.css');
 @import url('photo-logo-combo.css');
 @import url('tri-column-calendar.css');
@@ -185,4 +186,13 @@ section .subtitle {
 
 html:has(.donate_page) {
     background-color: #373737;
+}
+
+header {
+    h1 {
+        margin-bottom: 0.25em;
+    }
+    .subtitle {
+        text-wrap: pretty;
+    }
 }

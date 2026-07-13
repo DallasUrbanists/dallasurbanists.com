@@ -43,7 +43,7 @@
   const containers = document.querySelectorAll('[data-rss-url]');
   if (!containers.length) return;
 
-  const fmtDate = (iso, style='published') => {
+  const formatDate = (iso, style='published') => {
     try {
       let fmtOptions;
       switch (style) {
@@ -72,6 +72,38 @@
   };
   const truncate = (str, max = 150) => (str && str.length > max ? `${str.slice(0, max)}…` : (str || ''));
 
+  const chooseThumbnailByTitle = title => {
+    const t = title.trim().toLowerCase();
+    const has = parts => {
+      for (part of parts) {
+        if (!t.includes(part)) return false;
+      }
+      return true;
+    };
+    if (has(['urbanists', 'bimonthly', 'mixer'])) {
+      return 'mixer may 2026.jpg';
+    }
+    if (has(['downtown', 'hyperlocal conversation'])) {
+      return 'hyperlocals/downtown hlc.jpg';
+    }
+    if (has(['cedars', 'hyperlocal conversation'])) {
+      return 'hyperlocals/cedars hlc.jpg';
+    }
+    if (has(['uptown', 'oak lawn', 'hyperlocal conversation'])) {
+      return 'hyperlocals/uptown oak lawn hlc.jpg';
+    }
+    if (has(['midtown', 'hyperlocal conversation'])) {
+      return 'hyperlocals/midtown hlc.jpg';
+    }
+    if (has(['far north dallas', 'hyperlocal conversation'])) {
+      return 'hyperlocals/fnd hlc.jpg';
+    }
+    if (has(['hyperlocal conversation'])) {
+      return 'hyperlocals/downtown hlc.jpg';
+    }
+    return 'generic event cover.jpg';
+  };
+
   const buildCard = (post, opts, index=0) => {
     // Make card large if applicable
     const isLarge = index < opts.largePosts;
@@ -97,16 +129,20 @@
       card.appendChild(thumbnail);
 
       // Use thumbnail property as image source, if provided
-      if ('thumbnail' in post && typeof post.thumbnail === 'string' && post.thumbnail !== '') {
+      if ('thumbnail' in post && typeof post.thumbnail === 'string' && post.thumbnail.trim() !== '') {
+        console.log('using thumbnail property');
         thumbnail.style.backgroundImage = `url(${post.thumbnail})`;
-        // console.log(`Try to use post.thumbnail: ${post.thumbnail}`);
       }
       // Otherwise, try to extract image from post content
       else {
         const imgUrl = extractFirstImg(post.content);
-        // console.log(`Try to use url from extracted image: ${imgUrl}`);
         if (imgUrl) {
+          console.log('using img in content');
           thumbnail.style.backgroundImage = `url(${imgUrl})`;
+        } else {
+          const fallback = chooseThumbnailByTitle(post.title);
+          thumbnail.style.backgroundImage = `url('/assets/${fallback}')`;
+          console.log('using fallback: ' + thumbnail.style.backgroundImage);
         }
       }
     }
@@ -130,7 +166,7 @@
       let descriptionContent = '';
       const subtitle = document.createElement('p');
       subtitle.className = 'subtitle';
-      const date = opts.dateProp in post ? fmtDate(post[opts.dateProp], opts.dateFormat) : null;
+      const date = opts.dateProp in post ? formatDate(post[opts.dateProp], opts.dateFormat) : null;
       const author = (opts.authorProp in post && typeof post[opts.authorProp] === 'string' && post[opts.authorProp].trim() !== '') ? post[opts.authorProp] : null;
       if (showDate && date && showAuthor && author) {
         subtitleContent = `${date} by ${author}`;

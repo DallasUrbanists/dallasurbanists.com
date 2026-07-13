@@ -21,15 +21,41 @@
     dateProp: 'pubDate', // default for Substack articles
     authorProp: 'author', // default for Substack articles
     descriptionProp: 'description', // default for Substack articles
+    dateFormat: 'published', // 'published' = July 6, 2026  'event' = Sunday, July 12 
   };
+
+  const publishedDateFormat = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+  const eventDateFormat = {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    hour: "numeric",
+    hourCycle: "h12",
+    minute: "numeric",
+    hour12: true,
+  }
 
   const containers = document.querySelectorAll('[data-rss-url]');
   if (!containers.length) return;
 
-  const fmtDate = (iso) => {
+  const fmtDate = (iso, style='published') => {
     try {
+      let fmtOptions;
+      switch (style) {
+        case 'event':
+          fmtOptions = eventDateFormat;
+          break
+        case 'published':
+        default:
+          fmtOptions = publishedDateFormat;
+          break;
+      }
       // Use reader’s locale; tweak if you want a fixed one
-      return new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'short', day: 'numeric' } ).format(new Date(iso));
+      return new Intl.DateTimeFormat(undefined, fmtOptions ).format(new Date(iso));
     } catch {
       return '';
     }
@@ -72,12 +98,12 @@
       // Use thumbnail property as image source, if provided
       if ('thumbnail' in post && typeof post.thumbnail === 'string' && post.thumbnail !== '') {
         thumbnail.style.backgroundImage = `url(${post.thumbnail})`;
-        console.log(`Try to use post.thumbnail: ${post.thumbnail}`);
+        // console.log(`Try to use post.thumbnail: ${post.thumbnail}`);
       }
       // Otherwise, try to extract image from post content
       else {
         const imgUrl = extractFirstImg(post.content);
-        console.log(`Try to use url from extracted image: ${imgUrl}`);
+        // console.log(`Try to use url from extracted image: ${imgUrl}`);
         if (imgUrl) {
           thumbnail.style.backgroundImage = `url(${imgUrl})`;
         }
@@ -103,12 +129,12 @@
       let descriptionContent = '';
       const subtitle = document.createElement('p');
       subtitle.className = 'subtitle';
-      const date = opts.dateProp in post ? fmtDate(post[opts.dateProp]) : null;
+      const date = opts.dateProp in post ? fmtDate(post[opts.dateProp], opts.dateFormat) : null;
       const author = (opts.authorProp in post && typeof post[opts.authorProp] === 'string' && post[opts.authorProp].trim() !== '') ? post[opts.authorProp] : null;
       if (showDate && date && showAuthor && author) {
-        subtitleContent = `${fmtDate(date)} by ${author}`;
+        subtitleContent = `${date} by ${author}`;
       } else if (showDate && date) {
-        subtitleContent = fmtDate(date);
+        subtitleContent = date;
       } else if (showAuthor && author) {
         subtitleContent = author;
       }
@@ -117,18 +143,14 @@
       }
       if (subtitleContent !== '' && descriptionContent !== '') {
         subtitleContent += '—'+descriptionContent;
-      } else {
+      } else if (descriptionContent !== '') {
         subtitleContent = descriptionContent;
       }
       if (subtitleContent !== '') {
         subtitle.innerHTML = subtitleContent;
         body.appendChild(subtitle);
         card.classList.remove('title_only');
-      } else {
-        console.log('showSubtitle === false');
       }
-    } else {
-      console.log('showSubtitle === false');
     }
 
     return card;
@@ -157,6 +179,7 @@
       dateProp: container.getAttribute('data-date-prop') || defaults.dateProp,
       authorProp: container.getAttribute('data-author-prop') || defaults.authorProp,
       descriptionProp: container.getAttribute('data-description-prop') || defaults.descriptionProp,
+      dateFormat: container.getAttribute('data-date-format') || defaults.dateFormat,
     };
 
     if (!cfg.rssUrl) {
@@ -172,12 +195,20 @@
     container.innerHTML = '<div class="feed-skeleton">Loading…</div>';
 
     try {
-      const res = await fetchWithTimeout(rssUrl, 12000);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-
-      if (data.status !== 'ok' || !Array.isArray(data.items)) {
-        throw new Error(data.message || 'Failed to parse feed');
+      let data;
+      const cachedData = fetchCachedData(feedBase);
+      if (isCacheReady(cachedData)) {
+        console.log('Reuse cached data');
+        data = cachedData;
+      } else {
+        console.log('Fetch fresh from ' + feedBase);
+        const res = await fetchWithTimeout(rssUrl, 12000);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        data = await res.json();
+        if (data.status !== 'ok' || !Array.isArray(data.items)) {
+          throw new Error(data.message || 'Failed to parse feed');
+        }
+        updateCachedData(feedBase, data);
       }
 
       const posts = data.items.slice(0, Math.max(1, cfg.posts));
@@ -202,4 +233,42 @@ function decodeHTMLEntities(text) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(text, "text/html");
   return doc.documentElement.textContent;
+}
+
+function fetchCachedData(feedBase) {
+  // Try to find feed data stored in cache
+  const cached = localStorage.getItem('cached_rss_'+feedBase);
+  if (cached) {
+    try {
+      return JSON.parse(cached);
+    } catch(e) {
+      return null;
+    }
+  }
+  return null;
+}
+
+function isCacheReady(cachedData) {
+  const cacheMinutesTTL = 5; // minutes cached data still valid
+
+  if (cachedData === null) return false;
+  
+  if ('storeDate' in cachedData) {
+    const storeDate = new Date(cachedData.storeDate);
+    const now = new Date();
+    // 1. Subtracting dates gives the difference in milliseconds
+    const diffInMs = now - storeDate; 
+    // 2. Divide by 1000 (seconds) and 60 (minutes)
+    const diffInMins = diffInMs  / (1000 * 60); 
+
+    console.log(diffInMins);
+    return diffInMins < cacheMinutesTTL;
+  }
+
+  return false;
+}
+
+function updateCachedData(feedBase, data) {
+  data.storeDate = new Date();
+  localStorage.setItem('cached_rss_'+feedBase, JSON.stringify(data));
 }

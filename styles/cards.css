@@ -1,85 +1,92 @@
-.meetup-feed-embed {
-    .meetup-card {
+/* Instance of Card Feed widget */
+.card-feed {
+    /* Standard card style */
+    .card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 0 1rem;
+        min-height: 3rem;
+        .thumbnail {
+            width: 15%;
+            min-width: 100px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            flex-shrink: 0;
+            align-self: stretch;
+        }
+        .body {
+            padding-left: 1rem;
+            .title {
+                /* Truncate with ellipsis after __ lines of text */
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;  
+                overflow: hidden;
+
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-wrap: pretty;
+                
+                b {
+                    font-weight: bold;
+                }
+            }
+            .subtitle {
+                line-height: 1.5em;
+                margin-bottom: 0;
+
+                /* Truncate with ellipsis after __ lines of text */
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;  
+                overflow: hidden;
+            }
+        }
+    }
+    /* Title-only card */
+    .card.title_only .body .title:has(b) {
+        font-weight: normal;
+    }
+    /* Large card style */
+    .card.large {
+        background-color: var(--strongtowns-sand);
+        .thumbnail {
+            width: 25%;
+        }
+        .body {
+            padding: 1rem;
+            .title {
+                font-size: clamp(1.1rem, 3vw, 2rem);
+                margin-bottom: 0.25em;
+            }
+        }
+    }
+    /* Clickable cards */
+    a.card[href] {
         text-decoration: none;
-
-        h3.meetup-title {
-            font-weight: 600;
-            text-wrap: pretty;
-        }
     }
-
-    .text-muted {
-        opacity: 0.75;
-        font-size: smaller;
+    /* Hover/focus style for clickable cards */
+    a.card[href]:hover,
+    a.card[href]:focus {
+        background-color: var(--strongtowns-sky);
     }
-
-    .meetup-card:first-child {
-        .meetup-post {
-            margin-bottom: 1em;
-            background-color: var(--strongtowns-sand);
-
-            .meetup-thumbnail {
-                width: 33%;
-            }
-
-            >div {
-                padding: 1em;
-
-                .meetup-date {
-                    font-size: 1.5em;
-                }
-
-                .meetup-desc {
-                    line-height: 1.5em;
-                }
-            }
-        }
-
-        .meetup-title {
-            font-size: 2em;
-        }
-
-    }
-
-    .meetup-card {
-        .meetup-post {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-bottom: 1em;
-
-            .meetup-thumbnail {
-                width: 10%;
-            }
-
-            >div {
-                padding-left: 1em;
-                text-decoration: none;
-
-                .meetup-date {
-                    margin-bottom: 0;
-                }
-
-                .meetup-desc {
-                    display: none;
-                }
-            }
-        }
-
-        .meetup-post:hover {
-            background-color: var(--strongtowns-sky) !important;
-        }
+    /* Click style for clickable cards */
+    a.card[href]:active {
+        opacity: 0.9;
     }
 }
-
+/* Mobile style */
 @media (max-width: 768px) {
-    .meetup-feed-embed .meetup-card:first-child .meetup-post {
+    .card-feed .card.large {
         flex-direction: column;
-        align-items: flex-start;
+        .thumbnail {
+            aspect-ratio: 3 / 1;
+            width: 100%;
+        }
     }
-
-    .meetup-feed-embed .meetup-card:first-child .meetup-post .meetup-thumbnail {
-        width: 100%;
-        height: auto;
+    .card-feed .card .thumbnail {
+        min-width: 50px;
     }
 }

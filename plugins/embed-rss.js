@@ -22,6 +22,7 @@
     authorProp: 'author', // default for Substack articles
     descriptionProp: 'description', // default for Substack articles
     dateFormat: 'published', // 'published' = July 6, 2026  'event' = Sunday, July 12 
+    syncWithCalendar: false,
   };
 
   const publishedDateFormat = {
@@ -180,6 +181,7 @@
       authorProp: container.getAttribute('data-author-prop') || defaults.authorProp,
       descriptionProp: container.getAttribute('data-description-prop') || defaults.descriptionProp,
       dateFormat: container.getAttribute('data-date-format') || defaults.dateFormat,
+      syncWithCalendar: (container.getAttribute('data-sync-with-calendar') || `${defaults.syncWithCalendar}`) !== 'false',
     };
 
     if (!cfg.rssUrl) {
@@ -188,43 +190,69 @@
     }
 
     const feedBase = normalizeUrl(cfg.rssUrl);
-    const encodedFeedUrl = encodeURIComponent(`${feedBase}/feed`);
+    const encodedFeedUrl = encodeURIComponent(`${feedBase}`);
     const rssUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodedFeedUrl}`;
 
     // Minimal skeleton while loading (optional)
     container.innerHTML = '<div class="feed-skeleton">Loading…</div>';
 
-    try {
-      let data;
-      const cachedData = fetchCachedData(feedBase);
-      if (isCacheReady(cachedData)) {
-        console.log('Reuse cached data');
-        data = cachedData;
-      } else {
-        console.log('Fetch fresh from ' + feedBase);
-        const res = await fetchWithTimeout(rssUrl, 12000);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        data = await res.json();
-        if (data.status !== 'ok' || !Array.isArray(data.items)) {
-          throw new Error(data.message || 'Failed to parse feed');
+    const draw = async () => {
+      try {
+        let data;
+        const cachedData = fetchCachedData(feedBase);
+        if (isCacheReady(cachedData)) {
+          console.log('Reuse cached data');
+          data = cachedData;
+        } else {
+          console.log('Fetch fresh from ' + feedBase);
+          const res = await fetchWithTimeout(rssUrl, 12000);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          data = await res.json();
+          if (data.status !== 'ok' || !Array.isArray(data.items)) {
+            throw new Error(data.message || 'Failed to parse feed');
+          }
+          updateCachedData(feedBase, data);
         }
-        updateCachedData(feedBase, data);
-      }
 
-      const posts = data.items.slice(0, Math.max(1, cfg.posts));
-      if (!posts.length) {
-        container.innerHTML = '<p class="feed-empty">No posts available.</p>';
-        return;
-      }
+        const posts = data.items
+          .slice(0, Math.max(1, cfg.posts))
+          .map(item => {
+            if (cfg.syncWithCalendar && window.syncedEvents) {
+              const meetupEventId = item.guid.split('/').filter(g => g !== '').pop(); // Extract the event ID from the guid
+              const matchingEvent = window.syncedEvents.find(event =>
+                event.remote_id &&
+                event.remote_id.includes(`event_${meetupEventId}@meetup.com`)
+              );
+              return matchingEvent ? { ...item, ...matchingEvent} : null;
+            }
+            return item;
+          });
 
-      // Clear and render
-      container.innerHTML = '';
-      posts.forEach((post, index) => {
-        container.appendChild(buildCard(post, cfg, index));
+        if (!posts.length) {
+          container.innerHTML = '<p class="feed-empty">No posts available.</p>';
+          return;
+        }
+
+        // Clear and render
+        container.innerHTML = '';
+        posts.forEach((post, index) => {
+          container.appendChild(buildCard(post, cfg, index));
+        });
+      } catch (err) {
+        console.error('RSS feed error:', err);
+        container.innerHTML = '<p class="feed-error">Could not load posts. Please try again later.</p>';
+      }
+    };
+
+    draw();
+
+    if (cfg.syncWithCalendar) {
+      console.log('sync mode enabled, attach event listener');
+      window.addEventListener('TeamupSynced', e => {
+        console.log('Redraw after receiving teamup data');
+        draw();
+        //const syncedEvents = e.detail.syncedEvents;
       });
-    } catch (err) {
-      console.error('RSS feed error:', err);
-      container.innerHTML = '<p class="feed-error">Could not load posts. Please try again later.</p>';
     }
   });
 })();

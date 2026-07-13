@@ -280,8 +280,12 @@
         // Clear and render
         container.innerHTML = '';
         posts.forEach((post, index) => {
+          if (index === 0) {
+            container.setAttribute('earliestDate', post[cfg.dateProp])
+          }
           container.appendChild(buildCard(post, cfg, index));
         });
+        window.dispatchEvent(new CustomEvent('FeedDrawn'));
       } catch (err) {
         console.error('RSS feed error:', err);
         container.innerHTML = '<p class="feed-error">Could not load posts. Please try again later.</p>';

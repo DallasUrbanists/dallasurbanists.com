@@ -182,13 +182,14 @@ identity_snippet: true
     </div>
 </section>
 
-<section class="bg-sand padded-section">
+<section class="bg-sand padded-section" id="hlc-section">
     <div class="body-wrapper padded">
         <header>
             <h1>Hyperlocal Conversations</h1>
             <p class="subtitle">A <i>hyperlocal conversation</i> is a neighborhood-specific monthly gathering where neighbors explore ways to improve walkability where we live.</p>
         </header>
-        <div class="card-feed"
+        <div id="hlc-feed"
+            class="card-feed"
             data-rss-url="www.meetup.com/dallasurbanists/events/rss"
             data-filter-title="hyperlocal conversation"
             data-show-duplicates="false"
@@ -202,13 +203,14 @@ identity_snippet: true
     </div>
 </section>
 
-<section class="bg-white padded-section">
+<section class="bg-white padded-section" id="mixer-section">
     <div class="body-wrapper padded">
         <header>
             <h1>Bimonthly Urbanists Mixer</h1>
             <p class="subtitle">Fellowship, exchange ideas, and get caught up with neighbors, advocates, and leaders from across the city.</p>
         </header>
-        <div class="card-feed"
+        <div id="mixer-feed"
+            class="card-feed"
             data-rss-url="www.meetup.com/dallasurbanists/events/rss"
             data-filter-title="mixer"
             data-remove-title="Dallas Urbanists"
@@ -274,4 +276,35 @@ identity_snippet: true
 
 <script src="{{ " /plugins/sync-teamup-ical.js" | relative_path }}"></script>
 <script src="{{ " /plugins/embed-rss.js" | relative_path }}"></script>
-<script> SyncWithTeamupCalendar(); </script>
+<script>
+    SyncWithTeamupCalendar();
+    window.addEventListener('FeedDrawn', () => {
+        const main = document.querySelector('main');
+        const hlcSection = document.querySelector('#hlc-section');
+        const hlcEarliestDate = document.querySelector('#hlc-feed').getAttribute('earliestDate');
+        const mixerSection = document.querySelector('#mixer-section');
+        const mixerEarliestDate = document.querySelector('#mixer-feed').getAttribute('earliestDate');
+
+        console.log(main,
+hlcSection,
+hlcEarliestDate,
+mixerSection,
+mixerEarliestDate)
+
+        if (hlcEarliestDate && mixerEarliestDate) {
+            if (hlcEarliestDate < mixerEarliestDate) {
+                main.moveBefore(hlcSection, mixerSection);
+                hlcSection.classList.add('bg-sand');
+                hlcSection.classList.remove('bg-white');
+                mixerSection.classList.remove('bg-sand');
+                mixerSection.classList.add('bg-white');
+            } else if (mixerEarliestDate < hlcEarliestDate) {
+                main.moveBefore(mixerSection, hlcSection);
+                hlcSection.classList.remove('bg-sand');
+                hlcSection.classList.add('bg-white');
+                mixerSection.classList.add('bg-sand');
+                mixerSection.classList.remove('bg-white');
+            }
+        }
+    });
+</script>

@@ -46,7 +46,7 @@
     }
     /* Large card style */
     .card.large {
-        background-color: var(--strongtowns-sand);
+        /* background-color: var(--strongtowns-sand); */
         .thumbnail {
             width: 25%;
         }
@@ -76,10 +76,10 @@
     }
 }
 /* Background color of large card varies based on parent section color */
-section.bg-sand .card-feed {
+/* section.bg-sand .card-feed {
     .card.large { background-color: white; }
     .card.large:hover { background-color: var(--strongtowns-sky); }
-}
+} */
 
 
 /* Mobile style */

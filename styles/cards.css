@@ -18,13 +18,6 @@
         }
         .body {
             padding-left: 1rem;
-            .title, .subtitle {
-                /* Truncate with ellipsis after __ lines of text */
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;  
-                overflow: hidden;
-            }
             .title {
                 font-size: 1.1rem;
                 font-weight: 600;
@@ -37,6 +30,7 @@
             .subtitle {
                 line-height: 1.5em;
                 margin-bottom: 0;
+                text-wrap: pretty;
             }
         }
     }
@@ -58,6 +52,8 @@
             }
             .title, .subtitle {
                 -webkit-line-clamp: 3;
+                /* Standard property for compatibility */
+                line-clamp: 3;
             }
         }
     }
@@ -81,6 +77,15 @@
     .card.large:hover { background-color: var(--strongtowns-sky); }
 } */
 
+.card-feed:not(.expanded) {
+    .title, .subtitle {
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+}
 
 /* Mobile style */
 @media (max-width: 768px) {

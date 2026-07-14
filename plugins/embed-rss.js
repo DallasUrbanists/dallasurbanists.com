@@ -7,6 +7,7 @@
 (function () {
   const defaults = {
     rssUrl: '',
+    subtitlePrefix: '',
     filterTitle: null,
     removeTitle: null,
     showDuplicates: true,
@@ -170,7 +171,7 @@
         subtitleContent = descriptionContent;
       }
       if (subtitleContent !== '') {
-        subtitle.innerHTML = subtitleContent;
+        subtitle.innerHTML = opts.subtitlePrefix + subtitleContent;
         body.appendChild(subtitle);
         card.classList.remove('title_only');
       }
@@ -189,6 +190,7 @@
     const cfg = {
       rssUrl: container.getAttribute('data-rss-url') || defaults.rssUrl,
       filterTitle: container.getAttribute('data-filter-title') || defaults.filterTitle,
+      subtitlePrefix: container.getAttribute('data-subtitle-prefix') || defaults.subtitlePrefix,
       removeTitle: container.getAttribute('data-remove-title') || defaults.removeTitle,
       showDuplicates: (container.getAttribute('data-show-duplicates') || `${defaults.showDuplicates}`) !== 'false',
       posts: parseInt(container.getAttribute('data-posts'), 10) || defaults.posts,
@@ -200,7 +202,9 @@
       largeShowThumbnails: (container.getAttribute('data-large-show-thumbnails') || `${defaults.largeShowThumbnails}`) !== 'false',
       largeShowDates: (container.getAttribute('data-large-show-dates') || `${defaults.largeShowDates}`) !== 'false',
       largeShowAuthors: (container.getAttribute('data-large-show-authors') || `${defaults.largeShowAuthors}`) !== 'false',
-      largeShowDescriptions: (container.getAttribute('data-large-show-descriptions') || `${defaults.largeShowDescriptions}`) !== 'false',
+      largeShowDescriptions: (
+        container.getAttribute('data-large-show-descriptions') || `${defaults.largeShowDescriptions}`
+      ) !== 'false',
       titleElement: container.getAttribute('data-title-element') || defaults.titleElement,
       dateProp: container.getAttribute('data-date-prop') || defaults.dateProp,
       authorProp: container.getAttribute('data-author-prop') || defaults.authorProp,

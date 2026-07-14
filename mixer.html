@@ -1,12 +1,48 @@
 ---
 layout: stlc-default
 ---
+<style>
+    #mixer-feed .subtitle {
+        text-decoration: underline;
+    }
 
-<section class="bg-offwhite">
+    .accordion {
+        margin-top: 1em;
+        details {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+
+            > div,
+            > p {
+                margin: 0;
+                padding: 0 16px 16px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 2px;
+            }
+        }
+
+        details[open] summary {
+            /* margin-bottom: 2px; */
+        }
+
+        summary {
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 0.5em;
+            line-height: 1.25em;
+        }
+    }
+</style>
+<section class="bg-white padded-section">
     <div class="body-wrapper padded">
         <header>
-            <h1>Hyperlocal Conversations</h1>
-            <p>Neighborhood-specific monthly gatherings where neighbors explore ways to improve walkability where they live.</p>
+            <h1>Bimonthly Urbanists Mixer</h1>
+            <p class="subtitle">Come fellowship and exchange ideas with fellow neighbors, advocates, and leaders from across the city We meet downtown every two months—January, March, May, July, September, and November—at <a href="https://maps.app.goo.gl/TXzmgZnnLc7QcUzs7" target="parent" class="inline-link external">The Underground at Frankie's Downtown</a> on 1303 Main Street in Downtown Dallas.</p>
         </header>
 
         <div id="mixer-feed"
@@ -14,20 +50,355 @@ layout: stlc-default
             data-rss-url="www.meetup.com/dallasurbanists/events/rss"
             data-filter-title="mixer"
             data-remove-title="Dallas Urbanists"
-            data-posts="3"
+            data-posts="6"
             data-date-format="event"
-            data-show-dates="true"
+            data-show-dates="true" 
             data-date-prop="start_dt"
-            data-sync-with-calendar="true"></div>
+            data-show-descriptions="false"
+            data-large-show-descriptions="false"
+            data-subtitle-prefix="RSVP for the next one on "
+            data-sync-with-calendar="true">
+        </div>
     </div>
 </section>
 
-<section class="bg-sand" style="align-items: start;">
-    <div class="body-wrapper padded" id="faq">
-        <h1 style="margin-top: 1em;">[THIS PAGE IS UNDER CONSTRUCTION]</h1>
+<section class="bg-sand padded-section">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>What's next in the mix?</h1>
+            <p class="subtitle">Every mixer features guest speakers giving brief slide presentations on projects, campaigns, and opportunities relevant to Dallas-area urbanists. To present at an upcoming mixer, email <a href="mailto: contact@dallasurbanists.org">contact@dallasurbanists.org</a>. Here's the lineup for our mixer on Sunday, July 26:</p>
+        </header>
+        <div class="card-feed expanded">
+            <div class="card">
+                <div class="thumbnail" style="background-image:url('{{ "/assets/generic event cover.jpg" | relative_url }}')"></div>
+                <div class="body">
+                    <h3 class="title">Dallas Zoning Reform</h3>
+                    <p class="subtitle">Michael Wade from the City Department of Planning &amp; Development will talk about the first draft of a brand new zoning code, which we expect to be released to the public by the end of July or early August.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="thumbnail" style="background-image:url('{{ "/assets/generic event cover.jpg" | relative_url }}')"></div>
+                <div class="body">
+                    <h3 class="title">Dallas Housing Coalition</h3>
+                    <p class="subtitle">Bryan Tony will talk about the coalition's Zoning 101 events and block parties planned throughout the city in the coming months.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="thumbnail" style="background-image:url('{{ "/assets/generic event cover.jpg" | relative_url }}')"></div>
+                <div class="body">
+                    <h3 class="title">12 Steps of Town Making</h3>
+                    <p class="subtitle">Peter Cioe with Community Focused Ventures will talk about a training program for practical placemaking and incremental development.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="thumbnail" style="background-image:url('{{ "/assets/generic event cover.jpg" | relative_url }}')"></div>
+                <div class="body">
+                    <h3 class="title">Better Intersections w/ Better Block</h3>
+                    <p class="subtitle">Meredith Jones with Better Block will talk about three projects to redesign dangerous intersections in Districts 1, 3, and 9.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="thumbnail" style="background-image:url('{{ "/assets/generic event cover.jpg" | relative_url }}')"></div>
+                <div class="body">
+                    <h3 class="title">Budget Town Halls</h3>
+                    <p class="subtitle">Peter Young with DSA North Texas will talk about a series of budget town halls hosted in multiple districts.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="thumbnail" style="background-image:url('{{ "/assets/generic event cover.jpg" | relative_url }}')"></div>
+                <div class="body">
+                    <h3 class="title">Week Without Driving</h3>
+                    <p class="subtitle">Trinity Ek with Dallas Bicycle Coalition will talk about the fourth annual Week Without Driving campaign starting in September.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="thumbnail" style="background-image:url('{{ "/assets/generic event cover.jpg" | relative_url }}')"></div>
+                <div class="body">
+                    <h3 class="title">Transit News w/ DATA</h3>
+                    <p class="subtitle">Members of Dallas Area Transit Alliance will brief us on what's going on with DART, including updates on the new CEO and planned attempts to get more money for transit from state legislature.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="thumbnail" style="background-image:url('{{ "/assets/generic event cover.jpg" | relative_url }}')"></div>
+                <div class="body">
+                    <h3 class="title">Hyperlocal Conversations</h3>
+                    <p class="subtitle">Hexel Colorado with Dallas Urbanists will update us on the hyperlocal conversations happening monthly throughout the city, including two new conversations starting soon in Rebird and Preston Hollow.</p>
+                </div>
+            </div>
+        </div>
+        <p class="button-paragraph">
+            <a href="#" class="button-link navy external">Don't forget to RSVP!</a>
+            <a href="#" class="button-link sky external">View mixer slides</a>
+        </p>
     </div>
 </section>
 
+<section class="bg-white padded-section">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>Help us with our next mixer!</h1>
+            <p class="subtitle">Putting on this event every two months takes a lot of effort, but it’s worth it every time! Along with our monthly Hyperlocal Conversations, these urbanist mixers are a big part of how we grow, connect, and educate our community. Here's how you can support our next mixer:</p>
+        </header>
+
+        <ul>
+            <li><b><a href="https://www.meetup.com/dallasurbanists/events/315201367/">Please RSVP</a></b> to let us know you're coming!</li>
+            <li><b>Bring friends!</b> The more the merrier.</li>
+            <li><b>Email your network.</b> Copy-paste this link into your message: <span class="inline-snippet" data-copy-value="https://dallasurbanists.org/mixer">https://dallasurbanists.org/mixer<button class="copy">copy</button></span></li>
+            <li>
+                <b>Share on social media.</b> Find shareable posts from @dallasurbanists on
+                <ul>
+                    <li><a href="https://instagram.com/dallasurbanists" class="inline-link external" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/dallasurbanists/" class="inline-link external" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/dallas-urbanists-stlc" class="inline-link external" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://bsky.app/profile/dallasurbanists.org" class="inline-link external" target="_blank">Bluesky</a></li>
+                    <li><a href="https://www.reddit.com/r/dallasurbanists/" class="inline-link external" target="_blank">Reddit</a></li>
+                </ul>
+            </li>
+            <li><b><a href="/volunteer">Volunteer!</a></b> See our volunteer page for opportunities before, during, and after the event.</li>
+            <li><b><a href="/donate">Donate!</a></b> Your generous donations make all our events possible.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="bg-sky padded-section">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>Frequently Asked Questions</h1>
+            <p class="subtitle">For questions not listed below, please email <a href="mailto: contact@dallasurbanists.org">contact@dallasurbanists.org</a>.</p>
+        </header>
+
+        <div class="accordion">
+            <details>
+                <summary>📅 When is the mixer?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>🤔 Who are invited? What if I'm very new to the area, or to urbanism in general?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>⌚ What time does it start and end? How long is the program?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>📍 Where is the mixer?</summary>
+
+                <p>
+                aspernatur repudiandae maiores et consequuntur! Iste, porro odit.
+                Cupiditate dicta totam maiores similique! Eaque odio, quo illum
+                eveniet neque quibusdam non optio enim minus ipsam laborum. Quae
+                obcaecati dolore animi, nulla atque culpa adipisci incidunt ex ipsam
+                nisi molestias labore at possimus libero deserunt alias. Doloremque
+                ratione ipsam magni iure sit quam.
+                </p>
+            </details>
+
+            <details>
+                <summary>🚍 How do I get there? Instructions for walking, cycling, public transit, scooters, rideshare, and parking.</summary>
+
+                <p><b>Walking: </b>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+                
+                <p><b>DART: </b>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+
+                <p><b>Cycling: </b>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+
+                <p><b>Park & Ride: </b>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+
+                <p><b>Lime/Bird Scooters: </b>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+
+                <p><b>Rideshare: </b>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+
+                <p><b>Parking: </b>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>♿ I use a wheelchair, walker, or have difficulty ascending stairs. How do I get in and out?</summary>
+
+                <p><b>Elevator access: </b>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>Is the event free?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>Do I need to RSVP? What if I'm not sure I can make it?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>What should I bring to the mixer?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>After I arrive, how do I sign in?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>What food options are there?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>Can I see the presentations online afterward? Would you email me a copy of the slides?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>Can I be a guest speaker, or briefly plug something, at an upcoming mixer?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>Can I table for my organization at an upcoming mixer?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>I can't make it to the next mixer. Are there ways I can help without physically being there?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+            <details>
+                <summary>Wow, I feel energized and inspired by what I saw and who I met at the mixer! What's next from here?</summary>
+
+                <p>Our usual start time is 5:00 PM, though always check the official time at the top of the page. You're welcome to arrive earlier to order, eat and drink while we set up if you'd like. People typically start arriving, checking in, and mingling for the first 30 minutes. We typically start our program at 5:30 PM and get through all featured presentations in 45 to 60 minutes. After end of program, people typically continue socializing at Frankie's until about 8:00 PM.</p>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+<section class="bg-navy padded-section">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>Slides & Recordings of Past Mixers</h1>
+            <p class="subtitle">Find available notes, slides, and recordings for past mixers in the table below.</p>
+        </header>
+        <table class="tabular">
+            <thead>
+                <tr>
+                    <th>Event Date</th>
+                    <th>Slide Deck</th>
+                    <th>Recording (if available)</th>
+                    <th>Notes (if available)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>July 2026</td>
+                    <td>[link to slides]</td>
+                    <td>[link to live recording]</td>
+                    <td>[link to notes document / article]</td>
+                </tr>
+                <tr>
+                    <td>May 2026</td>
+                    <td>[link to slides]</td>
+                    <td>[link to live recording]</td>
+                    <td>[link to notes document / article]</td>
+                </tr>
+                <tr>
+                    <td>March 2026</td>
+                    <td>[link to slides]</td>
+                    <td>[link to live recording]</td>
+                    <td>[link to notes document / article]</td>
+                </tr>
+                <tr>
+                    <td>January 2026</td>
+                    <td>[link to slides]</td>
+                    <td>[link to live recording]</td>
+                    <td>[link to notes document / article]</td>
+                </tr>
+                <tr>
+                    <td>November 2025</td>
+                    <td>[link to slides]</td>
+                    <td>[link to live recording]</td>
+                    <td>[link to notes document / article]</td>
+                </tr>
+                <tr>
+                    <td>September 2025</td>
+                    <td>[link to slides]</td>
+                    <td>[link to live recording]</td>
+                    <td>[link to notes document / article]</td>
+                </tr>
+                <tr>
+                    <td>July 2025</td>
+                    <td>[link to slides]</td>
+                    <td>[link to live recording]</td>
+                    <td>[link to notes document / article]</td>
+                </tr>
+                <tr>
+                    <td>May 2025</td>
+                    <td>[link to slides]</td>
+                    <td>[link to live recording]</td>
+                    <td>[link to notes document / article]</td>
+                </tr>
+                <tr>
+                    <td>March 2025</td>
+                    <td>[link to slides]</td>
+                    <td>[link to live recording]</td>
+                    <td>[link to notes document / article]</td>
+                </tr>
+                <tr>
+                    <td>January 2025</td>
+                    <td>[link to slides]</td>
+                    <td>[link to live recording]</td>
+                    <td>[link to notes document / article]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<section class="bg-navy padded-section">
+    <header class="body-wrapper padded">
+        <h1>Photo Gallery</h1>
+        <p class="subtitle">Photos from past mixers, courtesy of our members and friends.</p>
+    </header>
+    <div id="gallery"></div>
+</section>
+
+<script>
+</script>
 <script src="{{ " /plugins/sync-teamup-ical.js" | relative_path }}"></script>
 <script src="{{ " /plugins/embed-rss.js" | relative_path }}"></script>
-<script> SyncWithTeamupCalendar(); </script>
+<script src="{{ " /plugins/fslightbox.js" | relative_path }}"></script>
+<script src="{{ " /plugins/imagekit-gallery.js" | relative_path }}"></script>
+<script>
+SyncWithTeamupCalendar();
+PhotoGallery("Bimonthly Mixer", document.getElementById('gallery'));
+const snippets = document.querySelectorAll('.inline-snippet[data-copy-value]');
+snippets.forEach(snippet => {
+    const value = snippet.getAttribute('data-copy-value');
+    const btn = snippet.querySelector('.copy');
+    btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(value).then(
+        () => {
+            window.alert(`Copied to clipboard: ${value}`);
+        },
+        () => {
+            window.alert(`An error occurred while attempting to copy. Please try again.`);
+        },
+    );
+    });
+});
+</script>

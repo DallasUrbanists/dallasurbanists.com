@@ -1,0 +1,126 @@
+---
+layout: stlc-default
+---
+<style>
+    .map-wrapper {
+        position: relative;
+
+        #map {
+            background-color: #555;
+            z-index: 0;
+            width: 100%;
+            height: 50svh;
+
+            .leaflet-pane.leaflet-tile-pane {
+                opacity: 0.75;
+            }
+        }
+
+
+        #hud {
+            z-index: 1;
+            bottom: -20px;
+            position: absolute;
+            z-index: 2;
+            top: -20px;
+            left: 20px;
+            width: calc(50% - 20px);
+            background-color: var(--offwhite);
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+        }
+
+        #hud {
+            .list-item {
+                padding-left: 1rem;
+                padding-right: 4rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                line-height: 1.2em;
+                font-size: 1rem;
+                border-top: solid 1px #ccc;
+
+                h3 {
+                    color: var(--strongtowns-navy);
+                    font-size: 1.25rem;
+                }
+
+                .subtitle {
+                    font-weight: 600;
+                    text-wrap: auto;
+
+                    .date {
+                        white-space: nowrap;
+                    }
+
+                    .location {
+                        white-space: nowrap;
+                    }
+                }
+
+                p {
+                    font-size: 0.8em;
+                    margin-bottom: 0;
+                }
+            }
+
+            .list-item:hover {
+                background-color: #fff0d4;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #faq {
+        line-height: 1.4em;
+
+        h2 {
+            font-size: 1.1rem;
+            margin-top: 1.1em;
+            margin-bottom: 0em;
+            font-weight: 600;
+            text-wrap: pretty;
+        }
+
+        p {
+            padding-left: 2em;
+            color: #555;
+        }
+    }
+</style>
+
+<section class="bg-offwhite">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>Hyperlocal Conversations</h1>
+            <p>Neighborhood-specific monthly gatherings where neighbors explore ways to improve walkability where they live.</p>
+        </header>
+
+        <div id="hlc-feed"
+            class="card-feed"
+            data-rss-url="www.meetup.com/dallasurbanists/events/rss"
+            data-filter-title="hyperlocal conversation"
+            data-show-duplicates="true"
+            data-remove-title="Hyperlocal Conversation"
+            data-posts="20"
+            data-date-format="event"
+            data-show-dates="true"
+            data-date-prop="start_dt"
+            data-sync-with-calendar="true"></div>
+    </div>
+</section>
+
+<section class="bg-sand" style="align-items: start;">
+    <div class="body-wrapper padded" id="faq">
+        <h1 style="margin-top: 1em;">Frequently Asked Questions</h1>
+
+        <h2>What is a hyperlocal conversation?</h2>
+        <p>A <i>hyperlocal conversation</i> is a neighborhood-specific monthly gathering where neighbors explore ways to improve walkability where they live. Our vision is to have a hyperlocal conversation in every neighborhood in Dallas.</p>
+
+        <h2>[FAQ UNDER CONSTRUCTION]</h2>
+    </div>
+</section>
+
+<script src="{{ " /plugins/sync-teamup-ical.js" | relative_path }}"></script>
+<script src="{{ " /plugins/embed-rss.js" | relative_path }}"></script>
+<script> SyncWithTeamupCalendar(); </script>

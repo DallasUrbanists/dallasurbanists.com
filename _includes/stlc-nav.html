@@ -1,17 +1,66 @@
 <input class="menu-checkbox" type="checkbox" id="menu-checkbox"/>
 <nav class="top-nav collapsed open">
     <div class="body-wrapper" style="padding-left: 0;">
-        <a href="/"><img src="{{ "/assets/branding/brand logo gold.svg" | relative_url }}" alt="Dallas Urbanists logo" class="logo" /></a>
+        <a href="/"><img src="{{ "/assets/branding/brand short wordmark gold.svg" | relative_url }}" alt="Dallas Urbanists logo" class="logo" /></a>
         <!-- Hamburger icon -->
         <div class="menu-toggle">
             <label class="hamb" for="menu-checkbox"></label>
         </div>
-        <a href="/about" class="nav-link">About</a>
+        <ul class="menu-bar">
+            <li class="parent-menu">
+                <label for="sub-toggle-1">Get Involved <span class="drop-icon">▾</span></label>
+                <input type="radio" name="sub-menu" class="sub-toggle" id="sub-toggle-1"/>
+                <ul class="sub-menu">
+                    <li><a href="/hyperlocal" class="nav-link">Hyperlocal Conversations</a> <i class="text-muted">multiple every month</i></li>
+                    <li><a href="/mixer" class="nav-link">Bimonthly Urbanists Mixer</a> <i class="text-muted">every two months</i></li>
+                    <li><a href="/national-gathering" class="nav-link">Strong Towns National Gathering</a> <i class="text-muted">annual conference</i></li>
+                    <li><a href="/calendar" class="nav-link">Community Calendar</a></li>
+                    <li><a href="/join" class="nav-link">Become a Member</a></li>
+                    <li><a href="/volunteer" class="nav-link">Volunteer Opportunities</a></li>
+                </ul>
+            </li>
+            <li class="parent-menu">
+                <label for="sub-toggle-2">Learn <span class="drop-icon">▾</span></label>
+                <input type="radio" name="sub-menu" class="sub-toggle" id="sub-toggle-2"/>
+                <ul class="sub-menu">
+                    <li><a href="/about" class="nav-link">About Us</a></li>
+                    <li><a href="https://dallasurbanists.substack.com/" class="nav-link">Our Blog <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon white" /></a> <i class="text-muted">on Substack</i></li>
+                    <li class="subheading">RECOMMENDATIONS</li>
+                    <li><a href="/organizations" class="nav-link">Other Organizations</a></li>
+                    <li><a href="/books" class="nav-link">Books & Articles</a></li>
+                    <li><a href="/movies" class="nav-link">Movies & Videos</a></li>
+                    <li><a href="/blogs" class="nav-link">Blogs & Podcasts</a></li>
+                    <li><a href="/tools" class="nav-link">Tools & Resources</a></li>
+                    <li><a href="/training" class="nav-link">Training Programs</a></li>
+                </ul>
+            </li>
+            <li class="parent-menu right-aligned">
+                <label for="sub-toggle-4">Contact <span class="drop-icon">▾</span></label>
+                <input type="radio" name="sub-menu" class="sub-toggle" id="sub-toggle-4"/>
+                <ul class="sub-menu">
+                    <li><a href="mailto:contact@dallasurbanists.org" class="nav-link">Email <img src="{{ "/assets/icons/envelope_icon.svg" | relative_url }}" class="inline-icon white" /></a> <i class="text-muted">contact@dallasurbanists.org</i></li>
+                    <li><a href="https://dallasurbanists.substack.com/" class="nav-link">Substack <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon white" /></a> <i class="text-muted">email newsletter</i></li>
+                    <li><a href="https://www.meetup.com/dallasurbanists/" class="nav-link">Meetup <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon white" /></a> <i class="text-muted">RSVP for events</i></li>
+                    <li><a href="https://instagram.com/dallasurbanists" class="nav-link">Instagram <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon white" /></a> <i class="text-muted">most popular</i></li>
+                    <li><a href="/discord" class="nav-link">Discord</a> <i class="text-muted">members only</i></li>
+                    <li><a href="/kit" class="nav-link">Press & Media Kit</a></li>
+
+                    <li class="subheading">OTHER SOCIAL MEDIA</li>
+                    <li><a href="https://www.youtube.com/channel/UCdGGeaIMqyVgr2cssV-uMTg" class="nav-link">YouTube <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon white" /></a></li>
+                    <li><a href="https://www.reddit.com/r/dallasurbanists/" class="nav-link">Reddit <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon white" /></a></li>
+                    <li><a href="https://bsky.app/profile/dallasurbanists.org" class="nav-link">BlueSky <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon white" /></a></li>
+                    <li><a href="https://www.facebook.com/dallasurbanists/" class="nav-link">Facebook <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon white" /></a></li>
+                    <li><a href="https://www.linkedin.com/company/dallas-urbanists-stlc" class="nav-link">LinkedIn <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon white" /></a></li>
+                </ul>
+            </li>
+            <li><a href="/donate" class="nav-link">Donate</a></li>
+        </ul>
+        <!-- <a href="/about" class="nav-link">About</a>
         <a href="https://dallasurbanists.substack.com/" class="nav-link">Blog</a>
         <a href="/calendar" class="nav-link">Calendar</a>
         <a href="/organizations" class="nav-link">Organizations</a>
         <a href="/join" class="nav-link">Member</a>
         <a href="/contact" class="nav-link">Contact</a>
-        <a href="/donate" class="nav-link">DONATE</a>
+        <a href="/donate" class="nav-link">DONATE</a> -->
     </div>
 </nav>

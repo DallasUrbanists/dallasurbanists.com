@@ -80,6 +80,7 @@
     href="{{ "/styles3.css" | relative_url }}"
       rel="stylesheet"
       media="screen" />
+    <link rel="stylesheet" media="screen" href="{{ "/styles/global.css" | relative_url }}" />
   
     <!-- CUSTOM PRINT STYLESHEET -->
     <link
@@ -106,7 +107,7 @@
   </head>
 
   <body style="background-image: url({{ "assets/handmadepaper.png" | relative_url }});">
-    {% include nav.html %}
+    {% include stlc-nav.html %}
 
     <main class="">
       {{ content }}

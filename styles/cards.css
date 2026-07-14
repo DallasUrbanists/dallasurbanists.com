@@ -1,0 +1,102 @@
+/* Instance of Card Feed widget */
+.card-feed {
+    /* Standard card style */
+    .card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 0 1rem;
+        min-height: 3rem;
+        .thumbnail {
+            width: 15%;
+            min-width: 100px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            flex-shrink: 0;
+            align-self: stretch;
+        }
+        .body {
+            padding-left: 1rem;
+            .title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-wrap: pretty;
+                
+                b {
+                    font-weight: bold;
+                }
+            }
+            .subtitle {
+                line-height: 1.5em;
+                margin-bottom: 0;
+                text-wrap: pretty;
+            }
+        }
+    }
+    /* Title-only card */
+    .card.title_only .body .title:has(b) {
+        font-weight: normal;
+    }
+    /* Large card style */
+    .card.large {
+        /* background-color: var(--strongtowns-sand); */
+        .thumbnail {
+            width: 25%;
+        }
+        .body {
+            padding: 1rem;
+            .title {
+                font-size: clamp(1.1rem, 3vw, 2rem);
+                margin-bottom: 0.25em;
+            }
+            .title, .subtitle {
+                -webkit-line-clamp: 3;
+                /* Standard property for compatibility */
+                line-clamp: 3;
+            }
+        }
+    }
+    /* Clickable cards */
+    a.card[href] {
+        text-decoration: none;
+    }
+    /* Hover/focus style for clickable cards */
+    a.card[href]:hover,
+    a.card[href]:focus {
+        background-color: var(--strongtowns-sky);
+    }
+    /* Click style for clickable cards */
+    a.card[href]:active {
+        opacity: 0.9;
+    }
+}
+/* Background color of large card varies based on parent section color */
+/* section.bg-sand .card-feed {
+    .card.large { background-color: white; }
+    .card.large:hover { background-color: var(--strongtowns-sky); }
+} */
+
+.card-feed:not(.expanded) {
+    .title, .subtitle {
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+}
+
+/* Mobile style */
+@media (max-width: 768px) {
+    .card-feed .card.large {
+        flex-direction: column;
+        .thumbnail {
+            aspect-ratio: 3 / 1;
+            width: 100%;
+        }
+    }
+    .card-feed .card .thumbnail {
+        min-width: 50px;
+    }
+}

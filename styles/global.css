@@ -3,10 +3,13 @@
 @import url('columns.css');
 @import url('grid.css');
 @import url('masthead.css');
+@import url('masthead-new.css');
 @import url('inspiring-quote-section.css');
 @import url('photo-logo-combo.css');
 @import url('tri-column-calendar.css');
 @import url('group.css');
+@import url('cards.css');
+@import url('gallery.css');
 
 :root {
     --offwhite: #EEE;
@@ -83,12 +86,14 @@ main {
     margin-top: 2rem;
 }
 .button-link {
+    text-wrap: balance;
+    text-align: center;
     display: inline-block;
-    line-height: 3rem;
+    line-height: 1.5em;
     border-radius: 0.5rem;
     text-decoration: none;
     font-weight: bold;
-    padding: 0 2rem;
+    padding: 0.5em 2rem;
     transition: all 0.1s;
 }
 .button-link:hover { cursor: pointer; filter: brightness(80%); }
@@ -97,11 +102,16 @@ main {
 .button-link.navy { background-color: var(--strongtowns-navy); color: white; }
 .button-link.navy:hover { filter: brightness(140%); }
 
+.button-paragraph .button-link {
+    margin: 0.25em;
+}
+
 .bg-sky { background-color: var(--strongtowns-sky); }
 .bg-navy { background-color: var(--strongtowns-navy); color: white; }
 .bg-gold { background-color: var(--strongtowns-gold); color: var(--strongtowns-navy); }
 .bg-sand { background-color: var(--strongtowns-sand); }
 .bg-white { background-color: white; }
+.bg-dark { background-color: #111; color: white; }
 
 .viewport {
     min-height: calc(100svh - 4rem);
@@ -182,4 +192,114 @@ section .subtitle {
 
 html:has(.donate_page) {
     background-color: #373737;
+}
+
+header {
+    h1 {
+        margin-bottom: 0.25em;
+    }
+    .subtitle {
+        text-wrap: pretty;
+    }
+}
+
+body:has(section.bg-dark:last-of-type) {
+    background-color: #111;
+    main {
+        background-color: white;
+    }
+}
+
+.inline-snippet {
+    border-radius: 5px;
+    line-height: 1.6em;
+    white-space: nowrap;
+    width: max-content;
+    display: inline-block;
+    border: solid 1px var(--strongtowns-navy);
+    padding-left: 0.5em;
+    position: relative;
+    height: 1.6em;
+    background-color: var(--strongtowns-sand);
+    overflow: hidden;
+    vertical-align: middle;
+    .copy {
+        cursor: pointer;
+        margin: 0;
+        display: inline-block;
+        background-color: var(--strongtowns-navy);
+        border: none;
+        width: 50px;
+        color: white;
+        height: calc(1.6em - 1px);
+        margin-left: 0.5em;
+    }
+    .copy:hover,
+    .copy:focus {
+        filter: brightness(1.5);
+    }
+    .copy:active {
+        filter: invert(1);
+    }
+}
+
+
+
+    .inline-link.external::after,
+    .button-link.external::after {
+        margin-top: -2px;
+        margin-left: 0.25em;
+        vertical-align: middle;
+        content: ' ';
+        display: inline-block;
+        background-image: url("/assets/icons/external_link_icon.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 0.9em;
+        height: 0.9em;
+    }
+    .navy.button-link.external::after {
+        filter: invert(1);
+    }
+
+table.tabular {
+    width: 100%;
+    thead {
+        th {
+            text-align: left;
+        }
+    }
+    tbody {
+        tr {
+            color: black;
+            td {
+                background-color: var(--offwhite);
+                padding: 3px 6px;
+            }
+            td:first-child {
+                background-color: var(--strongtowns-sky);
+                font-weight: bold;
+            }
+        }
+        tr:first-child {
+            td:first-child {
+                border-top-left-radius: 5px;
+                overflow: hidden;
+            }
+            td:last-child {
+                border-top-right-radius: 5px;
+                overflow: hidden;
+            }
+        }
+        tr:last-child {
+            td:first-child {
+                border-bottom-left-radius: 5px;
+                overflow: hidden;
+            }
+            td:last-child {
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+            }
+        }
+    }
 }

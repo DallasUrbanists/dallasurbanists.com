@@ -2,90 +2,168 @@
 layout: stlc-default
 identity_snippet: true
 ---
-<style>
-    .substack-feed-widget .sm\:px-4 {
-        padding-left: 0;
-        padding-right: 0;
-    }
-</style>
-<section class="masthead bg-navy" style="padding-bottom: 1rem;">
-    <div class="row two-columns" style="align-items: start;">
-        <img class="column" src="./assets/branding/brand wordmark gold.svg" alt="Collage 1" class="hero-image" />
-        <div class="column">
-            <p style="font-size: 1.5rem;line-height: 1.5em;">Our mission is to foster <em>informed and empathetic
-                    conversations</em> about walkability, transportation, and housing in Dallas neighborhoods. Through
-                stories and conversations, <em>inspire locals to take action</em> toward meaningful improvement for the
-                city.</p>
-            <p class="button-paragraph">
-                <a href="/join" class="button-link gold">Become a member</a>
-                &nbsp;
-                <a href="/donate" class="button-link bg-white">Donate</a>
-            </p>
-        </div>
+<section class="masthead front">
+    <div id="flair-text">
+        <h1>Let's make Dallas more walkable with</h1>
+        <h2>
+            <span>safe and vibrant streets</span>
+            <span>missing middle housing</span>
+            <span>mixed income housing</span>
+            <span>home based businesses</span>
+            <span>zoning reform</span>
+            <span>parking reform</span>
+            <span>bicycle lanes</span>
+            <span>traffic calming</span>
+            <span>road diets</span>
+            <span>incremental development</span>
+            <span>mixed-use development</span>
+            <span>street trees</span>
+            <span>higher frequency buses</span>
+            <span>high frequency trains</span>
+            <span>reliable public transit</span>
+            <span>transit-supportive density</span>
+            <span>business-supportive density</span>
+            <span>Vision Zero</span>
+            <span>neighborhood-led planning</span>
+            <span>pre-approved designs</span>
+            <span>adaptive reuse</span>
+            <span>form-based zoning</span>
+            <span>ADUs by right</span>
+        </h2>
+        <script>
+            const spanner = document.querySelector("#flair-text h2");
+            const spans = spanner.querySelectorAll("span");
+            const totalSpans = spans.length;
+            const interval = 3000; // Change every 3 seconds
+            const transitionDuration = 500; // Transition duration in milliseconds
+            let currentIndex = 0;
+            let clock;
+
+            function showNextSpan() {
+                const spanHeight = spans[0].offsetHeight;
+                const spanMargin = parseFloat(getComputedStyle(spans[0]).marginBottom) || 0;
+                const distancePerSpan = spanHeight + spanMargin;
+                spanner.style.height = `${spanHeight}px`;
+                spans.forEach((span, index) => {
+                    span.style.top = `-${currentIndex * distancePerSpan}px`;
+                });
+            };
+
+            function increment() {
+                currentIndex = (currentIndex + 1) % totalSpans;
+            }
+
+            function startClock() {
+                clock = setInterval(() => {
+                    increment();
+                    showNextSpan();
+                }, interval);
+            }
+
+            spanner.addEventListener('mouseenter', () => clearInterval(clock));
+            spanner.addEventListener('mouseleave', startClock);
+            spanner.addEventListener('click', () => {
+                increment();
+                showNextSpan();
+            });
+            window.addEventListener('resize', showNextSpan);
+
+            showNextSpan();
+            startClock();
+        </script>
+        <p class="button-paragraph">
+            <a href="/about" class="button-link bg-white">Learn more</a>
+            <a href="/calendar" class="button-link bg-white">Get involved</a>
+            <a href="/donate" class="button-link bg-gold">Donate</a>
+        </p>
     </div>
 </section>
 <section class="bg-white padded-section">
     <div class="body-wrapper padded">
-        <h1>Recent Blog Posts</h1>
-        <!-- Feed embed code -->
-        <div data-supascribe-embed-id="387407396482" data-supascribe-feed></div>
-        <!-- Supascribe Script -->
-        <script src="https://js.supascribe.com/v1/loader/m7H3ytx5vPUNOrkeOgyClhs2zhL2.js" async></script>
+        <header>
+            <h1>Recent Newsletters & Articles</h1>
+            <p class="subtitle">Subscribe to our blog on <a href="https://dallasurbanists.substack.com/">Substack.com</a> to receive updates via email.</p>
+        </header>
+        <div class="card-feed"
+            data-rss-url="dallasurbanists.substack.com/feed"
+            data-posts="4"
+            data-date-format="published"></div>
 
-        <p class="button-paragraph"><a href="https://dallasurbanists.substack.com" class="button-link sky">Go to our
-                Substack blog</a></p>
+        <p class="button-paragraph"><a href="https://dallasurbanists.substack.com/archive" class="button-link sky">Read more on Substack <img src="{{ "/assets/icons/external_link_icon.svg" | relative_url }}" class="inline-icon" /></a></p>
     </div>
-    <script src="https://substackapi.com/embeds/feed.js" async></script>
 </section>
-<section class="bg-sand">
+
+<section class="bg-sand padded-section" id="hlc-section">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>Hyperlocal Conversations</h1>
+            <p class="subtitle">A <i>hyperlocal conversation</i> is a neighborhood-specific monthly gathering where neighbors explore ways to improve walkability where we live.</p>
+        </header>
+        <div id="hlc-feed"
+            class="card-feed"
+            data-rss-url="www.meetup.com/dallasurbanists/events/rss"
+            data-filter-title="hyperlocal conversation"
+            data-show-duplicates="false"
+            data-remove-title="Hyperlocal Conversation"
+            data-posts="10"
+            data-date-format="event"
+            data-show-dates="true"
+            data-date-prop="start_dt"
+            data-sync-with-calendar="true"></div>
+        <p class="button-paragraph"><a href="/hyperlocal" class="button-link sky">Learn more and get involved with a conversation near you!</a></p>
+    </div>
+</section>
+
+<section class="bg-white padded-section" id="mixer-section">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>Bimonthly Urbanists Mixer</h1>
+            <p class="subtitle">Fellowship, exchange ideas, and get caught up with neighbors, advocates, and leaders from across the city.</p>
+        </header>
+        <div id="mixer-feed"
+            class="card-feed"
+            data-rss-url="www.meetup.com/dallasurbanists/events/rss"
+            data-filter-title="mixer"
+            data-remove-title="Dallas Urbanists"
+            data-posts="3"
+            data-date-format="event"
+            data-show-dates="true"
+            data-date-prop="start_dt"
+            data-sync-with-calendar="true"></div>
+        <p class="button-paragraph"><a href="/mixer" class="button-link sky">Learn more and get ready for our next mixer!</a></p>
+    </div>
+</section>
+
+<section class="bg-sand padded-section">
+    <div class="body-wrapper padded">
+        <header>
+            <h1>Community Calendar</h1>
+            <p class="subtitle">These are curated social gatherings, public meetings, and volunteer opportunities hosted by other local organizations in the housing, urban planning, public transit, and cycling community.</p>
+        </header>
+        <p class="button-paragraph"><a href="/calendar" class="button-link sky">View the full calendar</a></p>
+    </div>
+</section>
+
+
+<section class="bg-sky">
     <div class="row two-columns">
         <div class="column">
             <h1>What is Dallas Urbanists?</h1>
 
-            <p>Dallas Urbanists STLC is a group based in Dallas, Texas and composed of people who care about making our
-                city a better place to live, work, and play for everybody. Our group aligns with the New Urbanism
+            <p>We are a nonprofit created for and by people who care about making our
+                city a better place to live, work, and play for everybody. We align with the New Urbanism
                 movement, and we are an instance of what Strong Towns calls a "Local Conversation", whose purpose is to
                 connect nearby, like-minded advocates to put Strong Towns ideas into action where we live.</p>
 
-            <p class="button-paragraph"><a href="/about" class="button-link sky">Learn more about us</a></p>
+            <p class="button-paragraph"><a href="/about" class="button-link navy">Learn more about us</a></p>
         </div>
         <div class="column">
             <img src="./assets/home collage 2.png" alt="Collage 2" class="hero-image" />
         </div>
     </div>
 </section>
-<section class="call-to-action bg-sky">
-    <div class="row two-columns" style="align-items: baseline;">
-        <div class="column">
-            <h1>Be a Subscriber</h1>
-            <p style="text-align: center;">Get plugged in to everything going on by subscribing to our emails via Substack or following @dallasurbanists on social
-                media.</p>
-            <iframe src="https://dallasurbanists.substack.com/embed" width="100%" height="320"
-                style="border:1px solid #EEE; background:white;border-radius: 0.5rem;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); width: 100%;"
-                frameborder="0" scrolling="no"></iframe>
-            <a title="Instagram @dallasurbanists" href="https://instagram.com/dallasurbanists" class="icon-link fa-brands navy fa-instagram"></a>
-            <a title="Youtube Dallas Urbanists STLC" href="https://www.youtube.com/channel/UCdGGeaIMqyVgr2cssV-uMTg" class="icon-link fa-brands navy fa-youtube"></a>
-            <a title="BlueSky @DallasUrbanists.org" href="https://bsky.app/profile/dallasurbanists.org" class="icon-link fa-brands navy fa-bluesky"></a>
-            <a title="Subreddit r/dallasurbanists" href="https://www.reddit.com/r/dallasurbanists/" class="icon-link fa-brands navy fa-reddit"></a>
-            <a title="Facebook @DallasUrbanists" href="https://www.facebook.com/dallasurbanists/" class="icon-link fa-brands navy fa-facebook"></a>
-            <a title="Threads @DallasUrbanists" href="https://www.threads.net/@dallasurbanists" class="icon-link fa-brands navy fa-threads"></a>
-        </div>
-        <div class="column">
-            <h1>Become a Member</h1>
-            <p style="text-align: center;">Ready to get involved? Join our Strong Towns Local Converation to receive action alerts and volunteer
-                opportunities.</p>
-            <p style="text-align: center;" class="button-paragraph"><a href="/join" class="button-link navy">Become a member</a></p>
 
-            <h1 style="margin-top: 1em;">Attend an Event</h1>
-            <p style="text-align: center;">"Lowly, unpurposeful and random as they may appear, sidewalk contacts are the small change from which a city's wealth of public life may grow." &mdash; Jane Jacobs</p>
-            <p style="text-align: center;" class="button-paragraph">
-                <a href="https://www.meetup.com/dallas-urbanists-stlc/?eventOrigin=event_home_page" class="button-link navy">STLC events</a>
-                <a href="/calendar" class="button-link navy">Community Calendar</a>
-            </p>
-        </div>
-    </div>
-</section>
-<section class="bg-offwhite padded-section">
+{% comment %} <section class="bg-offwhite padded-section">
     <div class="body-wrapper padded">
         <h1 class="text-center">Neighbors in Advocacy</h1>
         <p class="text-center subtitle">Here are other local groups we often support and collaborate with.</p>
@@ -105,4 +183,39 @@ identity_snippet: true
             {% endfor %}
         </div>
     </div>
-</section>
+</section> {% endcomment %}
+
+<script src="{{ " /plugins/sync-teamup-ical.js" | relative_path }}"></script>
+<script src="{{ " /plugins/embed-rss.js" | relative_path }}"></script>
+<script>
+    SyncWithTeamupCalendar();
+    window.addEventListener('FeedDrawn', () => {
+        const main = document.querySelector('main');
+        const hlcSection = document.querySelector('#hlc-section');
+        const hlcEarliestDate = document.querySelector('#hlc-feed').getAttribute('earliestDate');
+        const mixerSection = document.querySelector('#mixer-section');
+        const mixerEarliestDate = document.querySelector('#mixer-feed').getAttribute('earliestDate');
+
+        console.log(main,
+hlcSection,
+hlcEarliestDate,
+mixerSection,
+mixerEarliestDate)
+
+        if (hlcEarliestDate && mixerEarliestDate) {
+            if (hlcEarliestDate < mixerEarliestDate) {
+                main.moveBefore(hlcSection, mixerSection);
+                hlcSection.classList.add('bg-sand');
+                hlcSection.classList.remove('bg-white');
+                mixerSection.classList.remove('bg-sand');
+                mixerSection.classList.add('bg-white');
+            } else if (mixerEarliestDate < hlcEarliestDate) {
+                main.moveBefore(mixerSection, hlcSection);
+                hlcSection.classList.remove('bg-sand');
+                hlcSection.classList.add('bg-white');
+                mixerSection.classList.add('bg-sand');
+                mixerSection.classList.remove('bg-white');
+            }
+        }
+    });
+</script>

@@ -49,6 +49,12 @@ collections:
       - gdpc-greater-dallas-planning-council.md
       - sunrise-movement-dallas.md
 
+  # Collections added for mixer and hyperlocal pages
+  features:
+  mixers:
+  hyperlocals:
+    output: true
+
 media_library:
   name: uploadcare
   config:

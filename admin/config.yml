@@ -19,13 +19,15 @@ collections:
     label_singular: "Mixer"
     folder: "_mixers"
     create: true
-    summary: "{{ date | date('YYYY MMMM D, dddd') }}"
+    summary: "{{date | date('YYYY MMMM D, dddd')}}"
+    identifier_field: date
     editor: { preview: false }
     {% raw %}
     slug: "{{year}}-{{month}}-{{day}}-urbanists-mixer"
     {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
     fields:
       - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Cover Image", name: "cover", widget: "image", required: false}
       - label: "Location"
         name: "location"
         widget: "object"

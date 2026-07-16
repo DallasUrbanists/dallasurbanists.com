@@ -60,7 +60,7 @@ layout: stlc-default
                         target="_blank"
                         title="RSVP for {{ mixer_month }} Urbanists Mixer {% if mixer.tentative %}[TENTATIVE DATE]{% endif %} on Meetup.com"
                     >
-                        <div class="thumbnail" style="background-image:url('/assets/mixer may 2026.jpg')"></div>
+                        <div class="thumbnail" style="background-image:url('{{ mixer.cover | default: '/assets/mixer may 2026.jpg' }}')"></div>
                         <div class="body">
                             <h3 class="title">
                                 {{ mixer_month }} Urbanists Mixer

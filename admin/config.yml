@@ -20,7 +20,6 @@ collections:
     folder: "_mixers"
     create: true
     summary: "{{ date | date('YYYY MMMM D, dddd') }}"
-    identifier_field: date
     editor: { preview: false }
     {% raw %}
     slug: "{{year}}-{{month}}-{{day}}-urbanists-mixer"
@@ -38,10 +37,10 @@ collections:
           - {label: "Neighborhood", name: "neighborhood", widget: "string", default: "Downtown Dallas", required: true}
           - {label: "City", name: "city", widget: "string", default: "Dallas", required: true}
       - {label: "Meetup URL", name: "rsvp_url", widget: "string"}
-      - {label: "Slides URL", name: "slides_url", widget: "string"}
-      - {label: "Livestream URL", name: "live_url", widget: "string"}
-      - {label: "Recording URL", name: "recording_url", widget: "string"}
-      - {label: "Notes URL", name: "notes_url", widget: "string"}
+      - {label: "Slides URL", name: "slides_url", widget: "string", required: false}
+      - {label: "Livestream URL", name: "live_url", widget: "string", required: false}
+      - {label: "Recording URL", name: "recording_url", widget: "string", required: false}
+      - {label: "Notes URL", name: "notes_url", widget: "string", required: false}
       - label: 'Features'
         label_singular: 'Feature'
         summary: '{{ fields.title }}'

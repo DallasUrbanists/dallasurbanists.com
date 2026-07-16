@@ -14,6 +14,50 @@ search: false
 
 collections:
 
+  - name: "mixers"
+    label: "Mixers"
+    label_singular: "Mixer"
+    folder: "_mixers"
+    create: true
+    editor: { preview: false }
+    {% raw %}
+    slug: "{{year}}-{{month}}-{{day}}-urbanists-mixer"
+    {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
+    fields:
+      - {label: "Date", name: "date", widget: "datetime"}
+      - label: "Location"
+        name: "location"
+        widget: "object"
+        summary: "{{ fields.name }}"
+        fields:
+          - {label: "Venue/Building/Business", name: "name", widget: "string", default: "Frankie's Downtown", required: true}
+          - {label: "Room", name: "room", widget: "string", default: "The Underground", required: true}
+          - {label: "Address", name: "address", widget: "string", default: "1303 Main St", required: true}
+          - {label: "Neighborhood", name: "neighborhood", widget: "string", default: "Downtown Dallas", required: true}
+          - {label: "City", name: "city", widget: "string", default: "Dallas", required: true}
+      - {label: "Meetup URL", name: "rsvp_url", widget: "string"}
+      - {label: "Slides URL", name: "slides_url", widget: "string"}
+      - {label: "Livestream URL", name: "live_url", widget: "string"}
+      - {label: "Recording URL", name: "recording_url", widget: "string"}
+      - {label: "Notes URL", name: "notes_url", widget: "string"}
+
+  - name: "features"
+    label: "Features"
+    label_singular: "Feature"
+    folder: "_features"
+    create: true
+    editor: { preview: false }
+    {% raw %}
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
+    fields:
+      - {label: "Date", name: "date", widget: "date"}
+      - {label: "Category", name: "category", widget: "select", options: ["mixer", "hyperlocal"]}
+      - {label: "Speaker Name", name: "speaker_name", widget: "string"}
+      - {label: "Speaker Org", name: "speaker_org", widget: "string"}
+      - {label: "Order #", name: "order", widget: "number"}
+      - {label: "Details", name: "body", widget: "text"}
+
   - name: "events"
     label: "Events"
     label_singular: "Event"

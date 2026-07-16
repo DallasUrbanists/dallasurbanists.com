@@ -45,20 +45,42 @@ layout: stlc-default
             <p class="subtitle">Come fellowship and exchange ideas with fellow neighbors, advocates, and leaders from across the city We meet downtown every two months—January, March, May, July, September, and November—at <a href="https://maps.app.goo.gl/TXzmgZnnLc7QcUzs7" target="parent" class="inline-link external">The Underground at Frankie's Downtown</a> on 1303 Main Street in Downtown Dallas.</p>
         </header>
 
-        <div id="mixer-feed"
-            class="card-feed"
-            data-rss-url="www.meetup.com/dallasurbanists/events/rss"
-            data-filter-title="mixer"
-            data-remove-title="Dallas Urbanists"
-            data-posts="6"
-            data-date-format="event"
-            data-show-dates="true" 
-            data-date-prop="start_dt"
-            data-show-descriptions="false"
-            data-large-show-descriptions="false"
-            data-subtitle-prefix="RSVP for the next one on "
-            data-sync-with-calendar="true">
+        <div id="mixer-feed" class="card-feed">
+            {% assign now_sec = 'now' | date: '%s' | plus: 86400 %}
+            {% assign mixers_upcoming = site.mixers | sort: "date"  %}
+            {% assign shown_next = false %}
+            {% assign next_mixer = null %}
+            {% for mixer in mixers_upcoming %}
+                {% assign mixer_sec = mixer.date | date: '%s' | plus: 0 %}
+                {% assign mixer_month = mixer.date | date: '%B' %}
+                {% if mixer_sec > now_sec %}
+                    <a
+                        class="card {% unless shown_next %}large{% endunless %}"
+                        href="{{ mixer.rsvp_url }}"
+                        target="_blank"
+                        title="RSVP for {{ mixer_month }} Urbanists Mixer {% if mixer.tentative %}[TENTATIVE DATE]{% endif %} on Meetup.com"
+                    >
+                        <div class="thumbnail" style="background-image:url('/assets/mixer may 2026.jpg')"></div>
+                        <div class="body">
+                            <h3 class="title">
+                                {{ mixer_month }} Urbanists Mixer
+                                {% if mixer.tentative %}[TENTATIVE DATE]{% endif %}
+                            </h3>
+                            <p class="subtitle inline-link external">{{ mixer.date | date: "%A, %B %e at %l:%M %p" }} @ {{ mixer.location.name }}</p>
+                        </div>
+                    </a>
+                    {% unless shown_next %}
+                        {% assign next_mixer = mixer %}
+                        {% assign shown_next = true %}
+                    {% endunless  %}
+                {% endif %}
+            {% endfor %}
         </div>
+        {% if next_mixer.live_url %}
+            <p class="button-paragraph">
+                <a href="{{ next_mixer.live_url }}" target="_blank" class="button-link gold external">Watch livestream on YouTube!</a>
+            </p>
+        {% endif %}
     </div>
 </section>
 
@@ -69,66 +91,27 @@ layout: stlc-default
             <p class="subtitle">Every mixer features guest speakers giving brief slide presentations on projects, campaigns, and opportunities relevant to Dallas-area urbanists. To present at an upcoming mixer, email <a href="mailto: contact@dallasurbanists.org">contact@dallasurbanists.org</a>. Here's the lineup for our mixer on Sunday, July 26:</p>
         </header>
         <div class="card-feed expanded">
-            <div class="card">
-                <div class="thumbnail" style="background-image:url(https://ik.imagekit.io/dallasurbanists/Speaker%20Covers/_DSC6167.jpg)"></div>
-                <div class="body">
-                    <h3 class="title">Dallas Zoning Reform</h3>
-                    <p class="subtitle">Michael Wade from the City Department of Planning &amp; Development will talk about the first draft of a brand new zoning code, which we expect to be released to the public by the end of July or early August.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="thumbnail" style="background-image:url(https://ik.imagekit.io/dallasurbanists/Speaker%20Covers/May18HERO.jpg)"></div>
-                <div class="body">
-                    <h3 class="title">Dallas Housing Coalition</h3>
-                    <p class="subtitle">Bryan Tony will talk about the coalition's Zoning 101 events and block parties planned throughout the city in the coming months.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="thumbnail" style="background-image:url(https://ik.imagekit.io/dallasurbanists/Speaker%20Covers/Screen+Shot+2024-09-09+at+6.01.46+PM.png)"></div>
-                <div class="body">
-                    <h3 class="title">12 Steps of Town Making</h3>
-                    <p class="subtitle">Peter Cioe with Community Focused Ventures will talk about a training program for practical placemaking and incremental development.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="thumbnail" style="background-image:url(https://ik.imagekit.io/dallasurbanists/Speaker%20Covers/c59818c3-17e9-4407-b347-acf1b186a25f_1426x402.jpg?updatedAt=1784000972845)"></div>
-                <div class="body">
-                    <h3 class="title">Better Intersections w/ Better Block</h3>
-                    <p class="subtitle">Imani Chet and Azael Alvarez will talk about their activation and study of Main Street, plus three projects to redesign dangerous intersections in Districts 1, 3, and 9.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="thumbnail" style="background-image:url(https://ik.imagekit.io/dallasurbanists/Speaker%20Covers/742858939_18602811193032235_7759786307804282476_n.jpg)"></div>
-                <div class="body">
-                    <h3 class="title">Budget Town Halls</h3>
-                    <p class="subtitle">Peter Young with DSA North Texas will talk about a series of budget town halls hosted in multiple districts.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="thumbnail" style="background-image:url(https://ik.imagekit.io/dallasurbanists/Speaker%20Covers/20260626_201940.jpg)"></div>
-                <div class="body">
-                    <h3 class="title">Week Without Driving</h3>
-                    <p class="subtitle">Trinity Ek with Dallas Bicycle Coalition will talk about the fourth annual Week Without Driving campaign starting in September.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="thumbnail" style="background-image:url(https://ik.imagekit.io/dallasurbanists/Speaker%20Covers/dart_darttrain_train_rail_adobestock.webp)"></div>
-                <div class="body">
-                    <h3 class="title">Transit News w/ DATA</h3>
-                    <p class="subtitle">Members of Dallas Area Transit Alliance will brief us on what's going on with DART, including updates on the new CEO and planned attempts to get more money for transit from state legislature.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="thumbnail" style="background-image:url('{{ "/assets/hyperlocals/downtown hlc.jpg" | relative_url }}')"></div>
-                <div class="body">
-                    <h3 class="title">Hyperlocal Conversations</h3>
-                    <p class="subtitle">Hexel Colorado with Dallas Urbanists will update us on the hyperlocal conversations happening monthly throughout the city, including two new conversations starting soon in Rebird and Preston Hollow.</p>
-                </div>
-            </div>
+            {% assign features = site.features | sort: "order" %}
+            {% for feature in features %}
+                {% assign target_date = '2026-07-26' %}
+                {% assign feature_date = feature.date | date: '%Y-%m-%d' %}
+                {% if feature_date == target_date and feature.category == 'mixer' %}
+                    <div class="card">
+                        <div class="thumbnail" style="background-image:url('{{ feature.cover }}')"></div>
+                        <div class="body">
+                            <h3 class="title">{{ feature.title }}</h3>
+                            <p class="subtitle">{{ feature.content | strip_html }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
         <p class="button-paragraph">
             <a href="#" class="button-link navy external">Don't forget to RSVP!</a>
-            {% comment %} <a href="#" class="button-link sky external">View mixer slides</a> {% endcomment %}
+            {{ next_mixer }}
+            {% if next_mixer.slides_url %}
+                <a href="next_mixer.slides_url" target="_blank" class="button-link sky external">View slides for next mixer</a>
+            {% endif %}
         </p>
     </div>
 </section>
@@ -314,66 +297,24 @@ layout: stlc-default
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>July 2026</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>May 2026</td>
-                    <td><a href="https://docs.google.com/presentation/d/1Z-NbXTFmiQk4wjIbKLom2lgLq0xlCYKBPPRvPUVTiXs/edit?usp=sharing" class="inline-link external">Slides</a></td>
-                    <td><a href="https://www.youtube.com/live/F2zojlvzWk4?si=OcoqtDBIi3LubWFT" class="inline-link external">YouTube</a></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>March 2026</td>
-                    <td><a href="https://docs.google.com/presentation/d/1h17iAgUpQXq3aEkHU2OqFUCbPilR9GP9yn6aLcWNbW0/edit?usp=sharing" class="inline-link external">Slides</a></td>
-                    <td><a href="https://www.youtube.com/live/-TK5HLbvDNw?si=71YN1gGLdRrmzObd" class="inline-link external">YouTube</a></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>February 2026</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>November 2025</td>
-                    <td><a href="https://docs.google.com/presentation/d/1H3rEJOXn3jIe_s5u4rMlytlQVx4ft_AbIFuijsVrYsA/edit?usp=sharing" class="inline-link external">Slides</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>September 2025</td>
-                    <td><a href="https://docs.google.com/presentation/d/16IPV5AuR9l77sj_-bQPKEV-Y4KLAGGe9IQuGbZgxHvA/edit?usp=sharing" class="inline-link external">Slides</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>July 2025</td>
-                    <td><a href="https://docs.google.com/presentation/d/1GIQqDrJCbZv7u6ywkFGWg3vfjex4vs9nFms3vOj4snU/edit?usp=sharing" class="inline-link external">Slides</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>May 2025</td>
-                    <td><a href="https://docs.google.com/presentation/d/1PKKu41lu2F2w0TcZRpXRLFw_bQif7RQPaIDiwQLqzXQ/edit?usp=sharing" class="inline-link external">Slides</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>March 2025</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>January 2025</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                {% assign mixers_reverse = site.mixers | sort: "date" |  reverse %}
+                {% for mixer in mixers_reverse %}
+                    {% assign mixer_sec = mixer.date | date: '%s' | plus: 0 %}
+                    {% if mixer_sec < now_sec %}
+                        <tr>
+                            <td>{{ mixer.date | date: '%Y %B %e' }}</td>
+                            <td>
+                                {% if mixer.slides_url %}<a href="{{ mixer.slides_url }}" class="inline-link external" target="_blank">Slides</a>{% endif %}
+                            </td>
+                            <td>
+                                {% if mixer.recording_url %}<a href="{{ mixer.recording_url }}" class="inline-link external" target="_blank">Recording</a>{% endif %}
+                            </td>
+                            <td>
+                                {% if mixer.notes_url %}<a href="{{ mixer.notes_url }}" class="inline-link external" target="_blank">Notes</a>{% endif %}
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
             </tbody>
         </table>
     </div>

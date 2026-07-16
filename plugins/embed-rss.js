@@ -255,6 +255,9 @@
             return item;
           })
           .filter(item => {
+            if (!item) {
+              return false;
+            }
             const filterByTitle = cfg.filterTitle !== null && typeof cfg.filterTitle === 'string';
             if (filterByTitle) {
               const titleHasFilter = item.title.trim().toLowerCase().includes(cfg.filterTitle);

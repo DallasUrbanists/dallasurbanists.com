@@ -91,26 +91,20 @@ layout: stlc-default
             <p class="subtitle">Every mixer features guest speakers giving brief slide presentations on projects, campaigns, and opportunities relevant to Dallas-area urbanists. To present at an upcoming mixer, email <a href="mailto: contact@dallasurbanists.org">contact@dallasurbanists.org</a>. Here's the lineup for our mixer on Sunday, July 26:</p>
         </header>
         <div class="card-feed expanded">
-            {% assign features = site.features | sort: "order" %}
-            {% for feature in features %}
-                {% assign target_date = '2026-07-26' %}
-                {% assign feature_date = feature.date | date: '%Y-%m-%d' %}
-                {% if feature_date == target_date and feature.category == 'mixer' %}
-                    <div class="card">
-                        <div class="thumbnail" style="background-image:url('{{ feature.cover }}')"></div>
-                        <div class="body">
-                            <h3 class="title">{{ feature.title }}</h3>
-                            <p class="subtitle">{{ feature.content | strip_html }}</p>
-                        </div>
+            {% for feature in next_mixer.features %}
+                <div class="card">
+                    <div class="thumbnail" style="background-image:url('{{ feature.cover }}')"></div>
+                    <div class="body">
+                        <h3 class="title">{{ feature.title }}</h3>
+                        <p class="subtitle">{{ feature.summary }}</p>
                     </div>
-                {% endif %}
+                </div>
             {% endfor %}
         </div>
         <p class="button-paragraph">
             <a href="#" class="button-link navy external">Don't forget to RSVP!</a>
-            {{ next_mixer }}
             {% if next_mixer.slides_url %}
-                <a href="next_mixer.slides_url" target="_blank" class="button-link sky external">View slides for next mixer</a>
+                <a href="{{ next_mixer.slides_url }}" target="_blank" class="button-link sky external">View slides for next mixer</a>
             {% endif %}
         </p>
     </div>

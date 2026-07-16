@@ -19,6 +19,8 @@ collections:
     label_singular: "Mixer"
     folder: "_mixers"
     create: true
+    summary: '{{ fields.date | date: '%Y %B %e' }}'
+    identifier_field: date
     editor: { preview: false }
     {% raw %}
     slug: "{{year}}-{{month}}-{{day}}-urbanists-mixer"
@@ -40,23 +42,18 @@ collections:
       - {label: "Livestream URL", name: "live_url", widget: "string"}
       - {label: "Recording URL", name: "recording_url", widget: "string"}
       - {label: "Notes URL", name: "notes_url", widget: "string"}
-
-  - name: "features"
-    label: "Features"
-    label_singular: "Feature"
-    folder: "_features"
-    create: true
-    editor: { preview: false }
-    {% raw %}
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
-    fields:
-      - {label: "Date", name: "date", widget: "date"}
-      - {label: "Category", name: "category", widget: "select", options: ["mixer", "hyperlocal"]}
-      - {label: "Speaker Name", name: "speaker_name", widget: "string"}
-      - {label: "Speaker Org", name: "speaker_org", widget: "string"}
-      - {label: "Order #", name: "order", widget: "number"}
-      - {label: "Details", name: "body", widget: "text"}
+      - label: 'Features'
+        label_singular: 'Feature'
+        summary: '{{ fields.title }}'
+        name: 'features'
+        widget: 'list'
+        allow_add: true
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Speaker Name", name: "speaker_name", widget: "string"}
+          - {label: "Speaker Org", name: "speaker_org", widget: "string"}
+          - {label: "Details", name: "body", widget: "text"}
+          - {label: "Cover Image", name: "cover", widget: "image"}
 
   - name: "events"
     label: "Events"

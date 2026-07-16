@@ -50,7 +50,6 @@ collections:
       - sunrise-movement-dallas.md
 
   # Collections added for mixer and hyperlocal pages
-  features:
   mixers:
   hyperlocals:
     output: true

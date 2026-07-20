@@ -57,19 +57,19 @@ export default function (eleventyConfig) {
   });
 
   // Reproduce some Jekyll Liquid filters, sometimes loosely
-  eleventyConfig.addFilter('group_by', groupBy)
-  eleventyConfig.addFilter('sort_by', sortBy)
-  eleventyConfig.addFilter('where', where)
-  eleventyConfig.addFilter('absolute_url', absolute_url)
-  eleventyConfig.addFilter('relative_path', relative_path)
-  eleventyConfig.addFilter('relative_url', relative_path)
+  eleventyConfig.addFilter('group_by', groupBy);
+  eleventyConfig.addFilter('sort_by', sortBy);
+  eleventyConfig.addFilter('where', where);
+  eleventyConfig.addFilter('absolute_url', absolute_url);
+  eleventyConfig.addFilter('relative_path', relative_path);
+  eleventyConfig.addFilter('relative_url', relative_path);
 
   function absolute_url(value) {
     return "https://dallasurbansits.org/" + value;
   }
 
   function relative_path(value) {
-    return "." + value;
+    return value;
   }
 
   function where(array, key, value) {
@@ -113,6 +113,8 @@ export default function (eleventyConfig) {
   // Liquid Include Syntax
   // https://24ways.org/2018/turn-jekyll-up-to-eleventy/
   eleventyConfig.setLiquidOptions({
+    jsTruthy: true,
+    strictFilters: false,
     dynamicPartials: false,
     root: [
       '_includes',

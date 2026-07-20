@@ -56,17 +56,17 @@ layout: stlc-default
                 {% if mixer_sec > now_sec %}
                     <a
                         class="card {% unless shown_next %}large{% endunless %}"
-                        href="{{ mixer.rsvp_url }}"
+                        href="{{ mixer.data.rsvp_url }}"
                         target="_blank"
-                        title="RSVP for {{ mixer_month }} Urbanists Mixer {% if mixer.tentative %}[TENTATIVE DATE]{% endif %} on Meetup.com"
+                        title="RSVP for {{ mixer_month }} Urbanists Mixer {% if mixer.data.tentative %}[TENTATIVE DATE]{% endif %} on Meetup.com"
                     >
-                        <div class="thumbnail" style="background-image:url('{{ mixer.cover | default: '/assets/mixer may 2026.jpg' }}')"></div>
+                        <div class="thumbnail" style="background-image:url('{{ mixer.data.cover | default: '/assets/mixer may 2026.jpg' }}')"></div>
                         <div class="body">
                             <h3 class="title">
                                 {{ mixer_month }} Urbanists Mixer
-                                {% if mixer.tentative %}[TENTATIVE DATE]{% endif %}
+                                {% if mixer.data.tentative %}[TENTATIVE DATE]{% endif %}
                             </h3>
-                            <p class="subtitle inline-link external">{{ mixer.date | date: "%A, %B %e at %l:%M %p" }} @ {{ mixer.location.name }}</p>
+                            <p class="subtitle inline-link external">{{ mixer.date | date: "%A, %B %e at %l:%M %p" }} @ {{ mixer.data.location.name }}</p>
                         </div>
                     </a>
                     {% unless shown_next %}
@@ -76,9 +76,9 @@ layout: stlc-default
                 {% endif %}
             {% endfor %}
         </div>
-        {% if next_mixer.live_url %}
+        {% if next_mixer.data.live_url %}
             <p class="button-paragraph">
-                <a href="{{ next_mixer.live_url }}" target="_blank" class="button-link gold external">Watch livestream on YouTube!</a>
+                <a href="{{ next_mixer.data.live_url }}" target="_blank" class="button-link gold external">Watch livestream on YouTube!</a>
             </p>
         {% endif %}
     </div>
@@ -91,20 +91,24 @@ layout: stlc-default
             <p class="subtitle">Every mixer features guest speakers giving brief slide presentations on projects, campaigns, and opportunities relevant to Dallas-area urbanists. To present at an upcoming mixer, email <a href="mailto: contact@dallasurbanists.org">contact@dallasurbanists.org</a>. Here's the lineup for our mixer on Sunday, July 26:</p>
         </header>
         <div class="card-feed expanded">
-            {% for feature in next_mixer.features %}
-                <div class="card">
-                    <div class="thumbnail" style="background-image:url('{{ feature.cover }}')"></div>
-                    <div class="body">
-                        <h3 class="title">{{ feature.title }}</h3>
-                        <p class="subtitle">{{ feature.summary }}</p>
+            {% if next_mixer %}
+                {% for feature in next_mixer.data.features %}
+                    <div class="card">
+                        <div class="thumbnail" style="background-image:url('{{ feature.cover }}')"></div>
+                        <div class="body">
+                            <h3 class="title">{{ feature.title }}</h3>
+                            <p class="subtitle">{{ feature.summary }}</p>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+                NO NEXT MIXER
+            {% endif %}
         </div>
         <p class="button-paragraph">
             <a href="#" class="button-link navy external">Don't forget to RSVP!</a>
-            {% if next_mixer.slides_url %}
-                <a href="{{ next_mixer.slides_url }}" target="_blank" class="button-link sky external">View slides for next mixer</a>
+            {% if next_mixer.data.slides_url %}
+                <a href="{{ next_mixer.data.slides_url }}" target="_blank" class="button-link sky external">View slides for next mixer</a>
             {% endif %}
         </p>
     </div>
@@ -298,13 +302,13 @@ layout: stlc-default
                         <tr>
                             <td>{{ mixer.date | date: '%Y %B %e' }}</td>
                             <td>
-                                {% if mixer.slides_url %}<a href="{{ mixer.slides_url }}" class="inline-link external" target="_blank">Slides</a>{% endif %}
+                                {% if mixer.data.slides_url %}<a href="{{ mixer.data.slides_url }}" class="inline-link external" target="_blank">Slides</a>{% endif %}
                             </td>
                             <td>
-                                {% if mixer.recording_url %}<a href="{{ mixer.recording_url }}" class="inline-link external" target="_blank">Recording</a>{% endif %}
+                                {% if mixer.data.recording_url %}<a href="{{ mixer.data.recording_url }}" class="inline-link external" target="_blank">Recording</a>{% endif %}
                             </td>
                             <td>
-                                {% if mixer.notes_url %}<a href="{{ mixer.notes_url }}" class="inline-link external" target="_blank">Notes</a>{% endif %}
+                                {% if mixer.data.notes_url %}<a href="{{ mixer.data.notes_url }}" class="inline-link external" target="_blank">Notes</a>{% endif %}
                             </td>
                         </tr>
                     {% endif %}
@@ -325,10 +329,10 @@ layout: stlc-default
 
 <script>
 </script>
-<script src="{{ " /plugins/sync-teamup-ical.js" | relative_path }}"></script>
-<script src="{{ " /plugins/embed-rss.js" | relative_path }}"></script>
-<script src="{{ " /plugins/fslightbox.js" | relative_path }}"></script>
-<script src="{{ " /plugins/imagekit-gallery.js" | relative_path }}"></script>
+<script src="/plugins/sync-teamup-ical.js"></script>
+<script src="/plugins/embed-rss.js"></script>
+<script src="/plugins/fslightbox.js"></script>
+<script src="/plugins/imagekit-gallery.js"></script>
 <script>
 SyncWithTeamupCalendar();
 PhotoGallery("Bimonthly Mixer", document.getElementById('gallery'));

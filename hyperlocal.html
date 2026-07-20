@@ -99,9 +99,9 @@ layout: stlc-default
         <div id="hlc-feed"
             class="card-feed"
             data-rss-url="www.meetup.com/dallasurbanists/events/rss"
-            data-filter-title="hyperlocal conversation"
+            data-filter-title="conversation"
             data-show-duplicates="true"
-            data-remove-title="Hyperlocal Conversation"
+            data-remove-title="Hyperlocal Conversation|Conversation"
             data-posts="20"
             data-date-format="event"
             data-show-dates="true"
@@ -121,6 +121,7 @@ layout: stlc-default
     </div>
 </section>
 
+<script src="{{ " /plugins/marked.umd.js" | relative_path }}"></script>
 <script src="{{ " /plugins/sync-teamup-ical.js" | relative_path }}"></script>
 <script src="{{ " /plugins/embed-rss.js" | relative_path }}"></script>
 <script> SyncWithTeamupCalendar(); </script>

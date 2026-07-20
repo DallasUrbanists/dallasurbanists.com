@@ -85,7 +85,7 @@
     if (has(['urbanists', 'bimonthly', 'mixer'])) return 'mixer may 2026.jpg';
     if (has(['downtown', 'hyperlocal conversation'])) return 'hyperlocals/downtown hlc.jpg';
     if (has(['cedars', 'hyperlocal conversation'])) return 'hyperlocals/cedars hlc.jpg';
-    if (has(['uptown', 'oak lawn', 'hyperlocal conversation'])) return 'hyperlocals/uptown oak lawn hlc.jpg';
+    if (has(['uptown', 'oak lawn', 'conversation'])) return 'hyperlocals/uptown oak lawn hlc.jpg';
     if (has(['midtown', 'hyperlocal conversation'])) return 'hyperlocals/midtown hlc.jpg';
     if (has(['far north dallas', 'hyperlocal conversation'])) return 'hyperlocals/fnd hlc.jpg';
     if (has(['hyperlocal conversation'])) return 'hyperlocals/downtown hlc.jpg';
@@ -138,7 +138,13 @@
     const titleParts = titleText.split(':');
     let titleHTML = titleParts.length > 1 ? `<b>${titleParts[0]}:</b> ${titleParts.slice(1).join(':')}` : titleText;
     if (opts.removeTitle !== null && typeof opts.removeTitle === 'string') {
-      titleHTML = titleHTML.replace(opts.removeTitle, '');
+      if (opts.removeTitle.includes('|')) {
+        opts.removeTitle.split('|').forEach(remove => {
+          titleHTML = titleHTML.replace(remove, '').replace(' :', ':');
+        });
+      } else {
+        titleHTML = titleHTML.replace(opts.removeTitle, '').replace(' :', ':');
+      }
     }
 
     const title = document.createElement(opts.titleElement);
@@ -163,7 +169,7 @@
         subtitleContent = author;
       }
       if (showDescription && opts.descriptionProp in post && typeof post[opts.descriptionProp] === 'string') {
-        descriptionContent = truncate(decodeHTMLEntities(post[opts.descriptionProp]), 160);
+        descriptionContent = decodeHTMLEntities(marked.parse(post[opts.descriptionProp]), 160);
       }
       if (subtitleContent !== '' && descriptionContent !== '') {
         subtitleContent += '—'+descriptionContent;
@@ -250,7 +256,7 @@
                 event.remote_id &&
                 event.remote_id.includes(`event_${meetupEventId}@meetup.com`)
               );
-              return matchingEvent ? { ...item, ...matchingEvent} : null;
+              return matchingEvent ? { ...matchingEvent, ...item} : null;
             }
             return item;
           })

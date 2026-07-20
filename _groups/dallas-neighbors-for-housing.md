@@ -2,7 +2,6 @@
 layout: stlc-group
 focus_issues: Housing, Zoning
 masthead_bg_blend_mode: luminosity
-cover_alt: Members of Dallas Neighbors for Housing at City Hall
 name: dallas-neighbors-for-housing
 display_name: Dallas Neighbors for Housing
 alias: Neighbors for Housing

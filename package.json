@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "main": ".eleventy.js",
+  "type": "module",
+  "scripts": {
+    "start": "npm install & npx @11ty/eleventy --serve"
+  },
+  "name": "dallasurbanists.com",
+  "description": "Official website for Dallas Urbanists",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DallasUrbanists/dallasurbanists.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DallasUrbanists/dallasurbanists.com/issues"
+  },
+  "homepage": "https://github.com/DallasUrbanists/dallasurbanists.com#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "del": "^8.0.1"
+  }
+}

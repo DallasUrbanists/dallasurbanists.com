@@ -47,7 +47,7 @@ layout: stlc-default
 
         <div id="mixer-feed" class="card-feed">
             {% assign now_sec = 'now' | date: '%s' | plus: 86400 %}
-            {% assign mixers_upcoming = site.mixers | sort: "date"  %}
+            {% assign mixers_upcoming = collections.mixers | sort: "date"  %}
             {% assign shown_next = false %}
             {% assign next_mixer = null %}
             {% for mixer in mixers_upcoming %}
@@ -291,7 +291,7 @@ layout: stlc-default
                 </tr>
             </thead>
             <tbody>
-                {% assign mixers_reverse = site.mixers | sort: "date" |  reverse %}
+                {% assign mixers_reverse = collections.mixers | sort: "date" |  reverse %}
                 {% for mixer in mixers_reverse %}
                     {% assign mixer_sec = mixer.date | date: '%s' | plus: 0 %}
                     {% if mixer_sec < now_sec %}

@@ -2,7 +2,6 @@
 layout: default
 meta_type: "article"
 ---
-{% assign author = site.authors | where: 'name', page.author | first %}
 
 <div class="blog-article-parent-container">
     <article class="blog-article mb-5">
@@ -27,7 +26,7 @@ meta_type: "article"
         </div>
       </div>
       <div class="width-1024 below-mast">
-        <p>By {{ author.display_name }} on {{ page.date | date: "%B %-d, %Y" }}</p>  
+        <p>{{ page.date | date: "%B %-d, %Y" }}</p>  
         {{ content }}
       </div>
     </article>

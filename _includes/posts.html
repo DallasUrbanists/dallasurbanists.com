@@ -1,5 +1,5 @@
 {% if include.tag or include.category %}
-  {% for post in site.posts %}
+  {% for post in collections.posts %}
     {% if include.tag and post.tags contains include.tag %}
       {% include post-card.html %}
     {% elsif include.category and post.categories contains include.category %}
@@ -7,7 +7,7 @@
     {% endif %}
   {% endfor %}
 {% else %}
-  {% for post in site.posts %}
+  {% for post in collections.posts %}
     {% unless include.exclude == post %}
       {% include post-card.html %}
     {% endunless %}

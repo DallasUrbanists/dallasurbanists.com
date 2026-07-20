@@ -17,7 +17,7 @@ num_of_cards: 1
     <div class="container mx-auto my-5">
       {% assign shown_latest_episode = false %}
 
-      {% for post in site.posts %}
+      {% for post in collections.posts %}
         {% unless post.tags contains "Podcast" %}
           {% continue %}
         {% endunless %}
@@ -25,7 +25,7 @@ num_of_cards: 1
           <div class="row overflow-hidden flex-column-reverse flex-md-row-reverse mb-2 h-md-250 position-relative blog-listing py-4 py-md-2">
             <div class="col col-12 col-lg-8">
               <h3 class="mb-2 fs-5">
-                <a href="{{ post.url | prepend: site.baseurl }}" class="link-dark link-underline-opacity-0 stretched-link">{{ post.title }}</a>
+                <a href="{{ post.url | prepend: collections.baseurl }}" class="link-dark link-underline-opacity-0 stretched-link">{{ post.title }}</a>
               </h3>
               <p class="card-text mb-2 text-body-secondary fs-6 ">
                 <em>{{ post.date | date: "%B %-d, %Y" }}</em>

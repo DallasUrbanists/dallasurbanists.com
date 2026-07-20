@@ -1,5 +1,5 @@
 ---
-date: 2026-09-19 17:00
+date: 2026-09-19 17:00:00
 location:
     name: Frankie's Downtown
     room: The Underground

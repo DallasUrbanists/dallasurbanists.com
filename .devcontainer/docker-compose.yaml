@@ -1,9 +1,11 @@
 version: '3'
 services:
-  site:
+  eleventy:
     build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
+      context: .
     volumes:
-      - ..:/srv/jekyll
-    command: sleep infinity
+      - .:/src
+    command: npm start
+    container_name: "eleventy"
+    ports:
+      - 127.0.0.1:8080:8080

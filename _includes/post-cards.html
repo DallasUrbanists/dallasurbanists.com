@@ -1,6 +1,6 @@
 {% assign shown_posts = 0 %}
 
-{% for post in site.posts %}
+{% for post in collections.posts %}
   
   {% if include.limit %}
     {% if shown_posts == include.limit %}

@@ -6,7 +6,7 @@ layout: stlc-default
         <h1 class="text-center">Neighbors in Advocacy</h1>
         <p class="text-center subtitle">Here are other local groups and organizations we often support and collaborate with.</p>
         <div class="grid-box">
-            {% for group in site.groups %}
+            {% for group in collections.groups %}
             {% if group.featured %}
             <div class="grid-cell">
                 <a class="photo-logo-combo" href="{{ group.url }}">

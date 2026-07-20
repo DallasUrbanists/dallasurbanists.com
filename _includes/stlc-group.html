@@ -31,7 +31,7 @@ layout: stlc-default
                 <p><strong>Founded on:</strong> {{ page.founded_on }}</p>
             {% endif %}
             {% if page.website %}
-                <p><strong>Website:</strong> <a href="{{ page.website | absolute_url }}" class="external-hyperlink">{{ page.website | extract_domain }}</a></p>
+                <p><strong>Website:</strong> <a href="{{ page.website | absolute_url }}" class="external-hyperlink">{{ page.website }}</a></p>
             {% endif %}
             {% if page.links %}
                 <p><strong>Links:</strong></p>

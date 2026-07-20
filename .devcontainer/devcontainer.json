@@ -1,8 +1,8 @@
 {
-    "name": "thisdallaslife",
+    "name": "dallasurbanists",
     "dockerComposeFile": "docker-compose.yaml",
     "service": "site",
-	"workspaceFolder": "/srv/jekyll",
+	"workspaceFolder": "/srv/eleventy",
     "postAttachCommand": [],
     "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",

@@ -158,21 +158,21 @@ layout: stlc-default
         }
     }
 
-    #monthly-schedule-section:has(#toggle-past-months:checked)  .month.past {
+    #monthly-schedule-section:has(#toggle-past-months:checked) .month.past {
         display: block;
-    }
-
-    /* Mobile style */
-    @media (max-width: 768px) {
-        .monthly-schedule {
-            grid-template-columns: 1fr;
-        }
     }
 
     /* tablet style */
     @media (max-width: 1024px) {
         .monthly-schedule {
             grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    /* Mobile style */
+    @media (max-width: 768px) {
+        .monthly-schedule {
+            grid-template-columns: 1fr;
         }
     }
 </style>
@@ -196,7 +196,14 @@ layout: stlc-default
                     style="background-image: url(&quot;/assets/{{ next_session.cover_img | default: hlc.data.cover_img }}&quot;);">
                 </div>
                 <div class="body">
-                    <h3 class="title"><b>{{ hlc.data.neighborhood }}:</b> {{ next_session.topic }}</h3>
+                    {% assign session_topic = next_session.topic | default: "TBD" %}
+                    <h3 class="title">
+                        {% if session_topic == "TBD" %}
+                        <b>{{ hlc.data.neighborhood }}</b>
+                        {% else %}
+                        <b>{{ hlc.data.neighborhood }}:</b> {{ next_session.topic }}
+                        {% endif %}
+                    </h3>
                     <p class="subtitle">Next meeting {{ next_session.date | date: "%A, %B %e at %l:%M %p" }}</p>
                 </div>
             </a>

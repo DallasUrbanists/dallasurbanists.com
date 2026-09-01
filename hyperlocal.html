@@ -93,20 +93,25 @@ layout: stlc-default
     <div class="body-wrapper padded">
         <header>
             <h1>Hyperlocal Conversations</h1>
-            <p>Neighborhood-specific monthly gatherings where neighbors explore ways to improve walkability where they live.</p>
+            <p>Neighborhood-specific monthly gatherings where neighbors explore ways to improve walkability where they
+                live.</p>
         </header>
 
-        <div id="hlc-feed"
-            class="card-feed"
-            data-rss-url="www.meetup.com/dallasurbanists/events/rss"
-            data-filter-title="conversation"
-            data-show-duplicates="true"
-            data-remove-title="Hyperlocal Conversation|Conversation"
-            data-posts="20"
-            data-date-format="event"
-            data-show-dates="true"
-            data-date-prop="start_dt"
-            data-sync-with-calendar="true"></div>
+        <div id="hlc-feed" class="card-feed">
+            {% assign hyperlocals = collections.hyperlocals | sort_by_upcoming_session %}
+            {% for hlc in hyperlocals %}
+            {% assign sessions = hlc.data.sessions | upcoming_only | sort: "date" %}
+            {% assign next_session = sessions | first %}
+            <a class="{% if forloop.index == 1 %}large{% endif %} card" target="_blank" rel="noopener"
+                href="{{ hlc.url }}" title="{{ hlc.name }}">
+                <div class="thumbnail" style="background-image: url(&quot;/assets/{{ next_session.cover_img | default: hlc.data.cover_img }}&quot;);"></div>
+                <div class="body">
+                    <h3 class="title"><b>{{ hlc.data.neighborhood }}:</b> {{ next_session.topic }}</h3>
+                    <p class="subtitle">Next meeting {{ next_session.date | date: "%A, %B %e at %l:%M %p" }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
     </div>
 </section>
 
@@ -115,7 +120,9 @@ layout: stlc-default
         <h1 style="margin-top: 1em;">Frequently Asked Questions</h1>
 
         <h2>What is a hyperlocal conversation?</h2>
-        <p>A <i>hyperlocal conversation</i> is a neighborhood-specific monthly gathering where neighbors explore ways to improve walkability where they live. Our vision is to have a hyperlocal conversation in every neighborhood in Dallas.</p>
+        <p>A <i>hyperlocal conversation</i> is a neighborhood-specific monthly gathering where neighbors explore ways to
+            improve walkability where they live. Our vision is to have a hyperlocal conversation in every neighborhood
+            in Dallas.</p>
 
         <h2>[FAQ UNDER CONSTRUCTION]</h2>
     </div>

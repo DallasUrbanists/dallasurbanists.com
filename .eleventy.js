@@ -57,12 +57,41 @@ export default function (eleventyConfig) {
   });
 
   // Reproduce some Jekyll Liquid filters, sometimes loosely
+  eleventyConfig.addFilter('next_upcoming', next_upcoming);
+
+  function next_upcoming(events) {
+    const now = new Date();
+    const upcoming = events.filter(session => new Date(session.date) > now);
+    return upcoming.length > 0 ? upcoming[0] : null;
+  }
+
+  eleventyConfig.addFilter('upcoming_only', upcoming_only);
+
+  function upcoming_only(events) {
+    const now = new Date();
+    return events.filter(session => new Date(session.date) > now);
+  }
+
+  eleventyConfig.addFilter('sort_by_upcoming_session', sort_by_upcoming_session);
+
+  function sort_by_upcoming_session(hyperlocals) {
+    const now = new Date();
+    return hyperlocals.slice(0).sort((a, b) => {
+      const aNext = next_upcoming(a.data.sessions);
+      const bNext = next_upcoming(b.data.sessions);
+      if (!aNext) return 1;
+      if (!bNext) return -1;
+      return new Date(aNext.date) - new Date(bNext.date);
+    });
+  }
+
   eleventyConfig.addFilter('group_by', groupBy);
   eleventyConfig.addFilter('sort_by', sortBy);
   eleventyConfig.addFilter('where', where);
   eleventyConfig.addFilter('absolute_url', absolute_url);
   eleventyConfig.addFilter('relative_path', relative_path);
   eleventyConfig.addFilter('relative_url', relative_path);
+
 
   function absolute_url(value) {
     return "https://dallasurbansits.org/" + value;

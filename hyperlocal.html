@@ -87,9 +87,97 @@ layout: stlc-default
             color: #555;
         }
     }
+
+    .monthly-schedule {
+        --dark-color: var(--strongtowns-navy);
+        --light-color: var(--offwhite);
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2rem;
+        margin-top: 2rem;
+
+        .month {
+            h2 {
+                font-weight: normal;
+                text-transform: uppercase;
+                margin-bottom: 0;
+                background-color: var(--dark-color);
+                color: var(--light-color);
+                display: inline-block;
+                padding: 0.25em 0.5em;
+                font-size: 1.25rem;
+                sup {
+                    font-size: 0.75em;
+                }
+            }
+            table {
+                table-layout: fixed;
+                width: 100%;
+                background-color: var(--offwhite);
+                border: solid 1px var(--dark-color);
+                border-collapse: collapse;
+                tr:nth-child(even) {
+                    background-color: white;
+                }
+                td {
+                    text-align: left;
+                    line-height: 1em;
+                    text-wrap: pretty;
+                    padding: 4px;
+                }
+                td.date {
+                    text-align: right;
+                    white-space: nowrap;
+                    width: 3ch;
+                    padding-right: 3px;
+                    font-weight: bold;
+                    background-color: var(--dark-color);
+                    color: var(--light-color);
+                }
+                td.neighborhood {
+                    font-weight: 600;
+                    width: 9ch;
+                }
+                td.topic {
+                    white-space: nowrap;       /* 1. Forces the text to stay on a single line */
+                    overflow: hidden;          /* 2. Hides the text that leaks out of the container */
+                    text-overflow: ellipsis;   /* 3. Adds the actual '...' visual indicator */
+                    font-style: italic;
+                }
+                td.topic.TBD {
+                    opacity: 0.25;
+                }
+                tr {
+                    vertical-align: top;
+                }
+            }            
+        }
+        .month.past {
+            display: none;
+        }
+    }
+
+    #monthly-schedule-section:has(#toggle-past-months:checked)  .month.past {
+        display: block;
+    }
+
+    /* Mobile style */
+    @media (max-width: 768px) {
+        .monthly-schedule {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* tablet style */
+    @media (max-width: 1024px) {
+        .monthly-schedule {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
 </style>
 
-<section class="bg-offwhite">
+<section class="bg-navy">
     <div class="body-wrapper padded">
         <header>
             <h1>Hyperlocal Conversations</h1>
@@ -104,7 +192,9 @@ layout: stlc-default
             {% assign next_session = sessions | first %}
             <a class="{% if forloop.index == 1 %}large{% endif %} card" target="_blank" rel="noopener"
                 href="{{ hlc.url }}" title="{{ hlc.name }}">
-                <div class="thumbnail" style="background-image: url(&quot;/assets/{{ next_session.cover_img | default: hlc.data.cover_img }}&quot;);"></div>
+                <div class="thumbnail"
+                    style="background-image: url(&quot;/assets/{{ next_session.cover_img | default: hlc.data.cover_img }}&quot;);">
+                </div>
                 <div class="body">
                     <h3 class="title"><b>{{ hlc.data.neighborhood }}:</b> {{ next_session.topic }}</h3>
                     <p class="subtitle">Next meeting {{ next_session.date | date: "%A, %B %e at %l:%M %p" }}</p>
@@ -115,7 +205,38 @@ layout: stlc-default
     </div>
 </section>
 
-<section class="bg-sand" style="align-items: start;">
+<section class="bg-lightgrey" style="align-items: start;" id="monthly-schedule-section">
+    <div class="body-wrapper extra-padded extra-wide">
+        <header>
+            <h1>Monthly Conversation Schedule</h1>
+            <p>Each hyperlocal conversation meets once per month to discuss a topic catered to their respective neighborhood. We try to plan discussion topics and guest speakers for each neighborhood months in advance, but the topic for conversations marked <i>TBD</i> are yet to be decided.</p>
+            <p class="unselectable"><input type="checkbox" id="toggle-past-months" /> <label for="toggle-past-months">Show past months</label></p>
+        </header>
+        <div class="monthly-schedule">
+            {% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" |
+            split: "," %}
+            {% assign current_month_index = 'now' | date: "%-m" | minus: 1 %}
+            {% for month in months %}
+            <div class="month {% if forloop.index0 < current_month_index %}past{% endif %}">
+                <h2>{{ month }} <sup>2026</sup></h2>
+                <table>
+                    {% for hlc in hyperlocals %}
+                    {% assign sessions = hlc.data.sessions | upcoming_only | sort: "date" %}
+                    {% assign next_session = sessions | first %}
+                    <tr>
+                        <td class="date">{{ next_session.date | date: "%e" }}</td>
+                        <td class="neighborhood">{{ hlc.data.shorthand | default: hlc.data.neighborhood }}</td>
+                        <td class="topic {% if next_session.topic == 'TBD' %}TBD{% endif %}">{{ next_session.shorthand | default: next_session.topic }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="bg-sky" style="align-items: start;">
     <div class="body-wrapper padded" id="faq">
         <h1 style="margin-top: 1em;">Frequently Asked Questions</h1>
 

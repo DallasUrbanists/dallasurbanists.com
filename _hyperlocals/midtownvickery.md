@@ -2,6 +2,7 @@
 id: midtownvickery
 name: Midtown/Vickery Hyperlocal Conversation
 neighborhood: Midtown/Vickery Meadow
+shorthand: Midtown
 cover_img: hyperlocals/midtown hlc.jpg
 usual_location:
     name: Midtown Dallas Inc

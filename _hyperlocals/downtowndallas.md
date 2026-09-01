@@ -11,6 +11,7 @@ usual_location:
 sessions:
     - date: 2026-09-21 18:30:00 CDT
       topic: Nine Principles For Successful Storefronts
+      shorthand: 9 Principles For Successful Storefronts
       guest_speaker: Monte Anderson
     - date: 2026-10-11 12:00:00 CDT
       topic: History of The Cedars Neighborhood

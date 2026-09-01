@@ -2,6 +2,7 @@
 id: uptownoaklawn
 name: Uptown/Oak Lawn Hyperlocal Conversation
 neighborhood: Uptown/Oak Lawn
+shorthand: Uptown
 cover_img: hyperlocals/uptown oak lawn hlc.jpg
 usual_location:
     name: Whole Foods Market, Uptown

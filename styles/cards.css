@@ -100,3 +100,18 @@
         min-width: 50px;
     }
 }
+
+.bg-navy .card-feed {
+    .card {
+        color: lightgrey;
+        .title b {
+            color: white;
+        }
+    }
+    a.card:hover {
+        color: contrast-color(var(--strongtowns-sky));
+        .title b {
+            color: black;
+        }
+    }
+}

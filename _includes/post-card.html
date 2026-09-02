@@ -1,7 +1,7 @@
 <div class="row overflow-hidden flex-column-reverse flex-md-row-reverse mb-2 h-md-250 position-relative blog-listing py-4 py-md-2">
   <div class="col">
-    <a href="{{ post.url | prepend: site.baseurl }}"
+    <a href="{{ post.url }}"
       class="link-dark link-underline-opacity-0"
-      title="{{ post.subtitle }}">{{ post.title }}</a>
+      title="{{ post.data.subtitle }}">{{ post.data.title }}</a>
   </div>
 </div>

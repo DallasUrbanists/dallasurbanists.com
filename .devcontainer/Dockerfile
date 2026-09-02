@@ -1,8 +1,6 @@
-FROM python:3.10
+FROM node:alpine
+RUN npm install -g @11ty/eleventy
 
-RUN apt-get update
-RUN apt-get install -y ruby-full && gem install bundler
+WORKDIR /.
 
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
-RUN bundle install
+CMD ["eleventy"]

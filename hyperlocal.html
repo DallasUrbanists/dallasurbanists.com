@@ -1,6 +1,13 @@
 ---
 layout: stlc-default
 ---
+{% assign years = "2026,2027" | split: "," %}
+{% assign current_year = 'now' | date: "%Y" %}
+{% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" |
+split: "," %}
+{% assign current_month_index = 'now' | date: "%-m" | minus: 1 %}
+{% assign hyperlocals = collections.hyperlocals | sort_by_upcoming_session %}
+{% assign sessions = collections.all_hyperlocal_sessions %}
 <style>
     .map-wrapper {
         position: relative;
@@ -107,25 +114,30 @@ layout: stlc-default
                 display: inline-block;
                 padding: 0.25em 0.5em;
                 font-size: 1.25rem;
+
                 sup {
                     font-size: 0.75em;
                 }
             }
+
             table {
                 table-layout: fixed;
                 width: 100%;
                 background-color: var(--offwhite);
                 border: solid 1px var(--dark-color);
                 border-collapse: collapse;
-                tr:nth-child(even) {
+
+                tr:nth-child(odd) {
                     background-color: white;
                 }
+
                 td {
                     text-align: left;
                     line-height: 1em;
                     text-wrap: pretty;
                     padding: 4px;
                 }
+
                 td.date {
                     text-align: right;
                     white-space: nowrap;
@@ -135,26 +147,42 @@ layout: stlc-default
                     background-color: var(--dark-color);
                     color: var(--light-color);
                 }
+
                 td.neighborhood {
                     font-weight: 600;
                     width: 9ch;
                 }
+
                 td.topic {
-                    white-space: nowrap;       /* 1. Forces the text to stay on a single line */
-                    overflow: hidden;          /* 2. Hides the text that leaks out of the container */
-                    text-overflow: ellipsis;   /* 3. Adds the actual '...' visual indicator */
+                    white-space: nowrap;
+                    /* 1. Forces the text to stay on a single line */
+                    overflow: hidden;
+                    /* 2. Hides the text that leaks out of the container */
+                    text-overflow: ellipsis;
+                    /* 3. Adds the actual '...' visual indicator */
                     font-style: italic;
                 }
+
                 td.topic.TBD {
                     opacity: 0.25;
                 }
+
                 tr {
                     vertical-align: top;
                 }
-            }            
+            }
         }
+
         .month.past {
-            display: none;
+            table {
+                border-color: white;
+            }
+
+            h2,
+            td.date {
+                background-color: white;
+                color: var(--dark-color);
+            }
         }
     }
 
@@ -175,23 +203,64 @@ layout: stlc-default
             grid-template-columns: 1fr;
         }
     }
+
+    .radio-toggleset {
+        --active-bg-color: var(--strongtowns-navy);
+        border: solid 1px var(--active-bg-color);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        gap: 2px;
+
+        .toggle {
+            display: block;
+            background-color: white;
+            flex-grow: 1;
+            text-align: center;
+            cursor: pointer;
+            padding: 0.5em;
+            font-size: 1.5rem;
+        }
+
+        .toggle:hover {
+            filter: brightness(0.9);
+        }
+
+        .toggle:has(input:checked) {
+            background-color: var(--active-bg-color);
+            color: white;
+            box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    {% for year in years %}
+        #monthly-schedule-{{ year }} {
+            display: none;
+        }
+        #monthly-schedule-section:has(#toggle-{{ year }}:checked) #monthly-schedule-{{ year }} {
+            display: grid;
+        }
+    {% endfor %}
 </style>
 
 <section class="bg-navy">
     <div class="body-wrapper padded">
         <header>
             <h1>Hyperlocal Conversations</h1>
-            <p>Neighborhood-specific monthly gatherings where neighbors explore ways to improve walkability where they
+            <p>Neighborhood-specific monthly gatherings where neighbors explore ways to improve walkability where we
                 live.</p>
         </header>
 
         <div id="hlc-feed" class="card-feed">
-            {% assign hyperlocals = collections.hyperlocals | sort_by_upcoming_session %}
             {% for hlc in hyperlocals %}
             {% assign sessions = hlc.data.sessions | upcoming_only | sort: "date" %}
             {% assign next_session = sessions | first %}
-            <a class="{% if forloop.index == 1 %}large{% endif %} card" target="_blank" rel="noopener"
-                href="{{ hlc.url }}" title="{{ hlc.name }}">
+            <a class="{% if forloop.index == 1 %}large{% endif %} card" rel="noopener" href="{{ hlc.url }}"
+                title="{{ hlc.name }}">
                 <div class="thumbnail"
                     style="background-image: url(&quot;/assets/{{ next_session.cover_img | default: hlc.data.cover_img }}&quot;);">
                 </div>
@@ -216,33 +285,60 @@ layout: stlc-default
     <div class="body-wrapper extra-padded extra-wide">
         <header>
             <h1>Monthly Conversation Schedule</h1>
-            <p>Each hyperlocal conversation meets once per month to discuss a topic catered to their respective neighborhood. We try to plan discussion topics and guest speakers for each neighborhood months in advance, but the topic for conversations marked <i>TBD</i> are yet to be decided.</p>
-            <p class="unselectable"><input type="checkbox" id="toggle-past-months" /> <label for="toggle-past-months">Show past months</label></p>
+            <p>Each hyperlocal conversation meets once per month to discuss a topic catered to their respective
+                neighborhood. We try to plan discussion topics and guest speakers for each neighborhood months in
+                advance; topics marked <i>TBD</i> are yet to be decided.</p>
+            <fieldset class="radio-toggleset">
+                {% for year in years %}
+                <label for="toggle-{{ year }}" class="toggle">
+                    <input type="radio" id="toggle-{{ year }}" name="scheduleyear" value="{{ year }}" {% if year == current_year %}checked{% endif %} />
+                    <span>{{ year }}</span>
+                </label>
+                {% endfor %}
+            </fieldset>
         </header>
-        <div class="monthly-schedule">
-            {% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" |
-            split: "," %}
-            {% assign current_month_index = 'now' | date: "%-m" | minus: 1 %}
-            {% for month in months %}
-            <div class="month {% if forloop.index0 < current_month_index %}past{% endif %}">
-                <h2>{{ month }} <sup>2026</sup></h2>
-                <table>
-                    {% for hlc in hyperlocals %}
-                    {% assign sessions = hlc.data.sessions | upcoming_only | sort: "date" %}
-                    {% assign next_session = sessions | first %}
-                    <tr>
-                        <td class="date">{{ next_session.date | date: "%e" }}</td>
-                        <td class="neighborhood">{{ hlc.data.shorthand | default: hlc.data.neighborhood }}</td>
-                        <td class="topic {% if next_session.topic == 'TBD' %}TBD{% endif %}">{{ next_session.shorthand | default: next_session.topic }}</td>
-                    </tr>
-                    {% endfor %}
-                </table>
+        {% for year in years %}
+            {% assign year_sessions = collections.all_hyperlocal_sessions | in_year: year %}
+            <div class="monthly-schedule" id="monthly-schedule-{{ year }}">
+                {% for month in months %}
+                {% if year < current_year %}
+                    {% assign past_month = true %}
+                {% elsif year > current_year %}
+                    {% assign past_month = false %}
+                {% else %}
+                    {% assign past_month = forloop.index0 < current_month_index %}
+                {% endif %}
+                {% assign month_sessions = year_sessions | in_month: forloop.index0 %}
+                <div class="month {% if past_month %}past{% endif %}">
+                    <h2>{{ month }} <sup>{{ year }}</sup></h2>
+                    <table>
+                    {% if month_sessions.size > 0 %}
+                        {% for session in month_sessions %}
+                            <tr>
+                                <td class="date">{{ session.date | date: "%e" }}</td>
+                                <td class="neighborhood">{{ session.hyperlocal.shorthand | default: session.hyperlocal.neighborhood }}</td>
+                                <td class="topic {% if session.topic == 'TBD' %}TBD{% endif %}">{{ session.shorthand |
+                                    default: session.topic }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr><td>
+                        {% if past_month %}
+                            <i>No conversations this month.</i>
+                        {% else %}
+                            <i>Conversations not yet scheduled.</i>
+                        {% endif %}
+                        </td></tr>
+                    {% endif %}
+                    </table>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
     </div>
 </section>
 
+{% comment %}
 <section class="bg-sky" style="align-items: start;">
     <div class="body-wrapper padded" id="faq">
         <h1 style="margin-top: 1em;">Frequently Asked Questions</h1>
@@ -255,6 +351,7 @@ layout: stlc-default
         <h2>[FAQ UNDER CONSTRUCTION]</h2>
     </div>
 </section>
+{% endcomment %}
 
 <script src="{{ " /plugins/marked.umd.js" | relative_path }}"></script>
 <script src="{{ " /plugins/sync-teamup-ical.js" | relative_path }}"></script>

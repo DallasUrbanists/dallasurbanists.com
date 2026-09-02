@@ -35,6 +35,22 @@ export default function (eleventyConfig) {
     collection.getFilteredByGlob('./_mixers/*.md')
   )
 
+  // Create a collection that combines all hyperlocal sessions into a single array
+  eleventyConfig.addCollection('all_hyperlocal_sessions', collection => {
+    const hyperlocals = collection.getFilteredByGlob('./_hyperlocals/*.md');
+    let allSessions = [];
+    hyperlocals.forEach(hlc => {
+      const sessions = hlc.data.sessions || [];
+      sessions.forEach(session => {
+        allSessions.push({
+          ...session,
+          hyperlocal: hlc.data
+        });
+      });
+    });
+    return allSessions.sort((a, b) => new Date(a.date) - new Date(b.date));
+  });
+
   // Drafts
   // https://www.11ty.dev/docs/config-preprocessors/#example-drafts
   // do not use `_drafts`, only `_posts` with `draft: true` or `published: false`
@@ -83,6 +99,18 @@ export default function (eleventyConfig) {
       if (!bNext) return -1;
       return new Date(aNext.date) - new Date(bNext.date);
     });
+  }
+
+  eleventyConfig.addFilter('in_year', in_year);
+
+  function in_year(events, year) {
+    return events.filter(session => parseInt(new Date(session.date).getFullYear()) === parseInt(year));
+  }
+
+  eleventyConfig.addFilter('in_month', in_month);
+
+  function in_month(events, month) {
+    return events.filter(session => parseInt(new Date(session.date).getMonth()) === parseInt(month));
   }
 
   eleventyConfig.addFilter('group_by', groupBy);

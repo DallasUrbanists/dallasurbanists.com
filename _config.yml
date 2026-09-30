@@ -1,39 +1,4 @@
 collections:
-  authors:
-  events:
-    icon: event
-    output: true
-  bicyclerides:
-    output: true
-    icon: bicycle
-  petitions:
-    output: true
-    icon: petition
-  publiccomments:
-    output: true
-    icon: speech
-  writtencomments:
-    output: true
-    icon: written_comment
-  series:
-    output: true
-  photogalleries:
-    output: true
-  podcastepisodes:
-    output: true
-  instagramposts:
-    output: true
-  instagramreels:
-    output: true
-  links:
-    output: false
-  youtube:
-    output: true
-  specialdays:
-    output: true
-  updates:
-    output: false
-
   # Collections added as part of STLC update
   groups:
     layout: stlc-default

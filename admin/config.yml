@@ -6,8 +6,8 @@ backend:
   branch: main
   repo: DallasUrbanists/dallasurbanists.com
 
-site_url: https://dallasurbanists.com
-logo_url: https://dallasurbanists.com/assets/dallas-urbanists-wordmark.svg
+site_url: https://dallasurbanists.org
+logo_url: https://dallasurbanists.org/assets/dallas-urbanists-wordmark.svg
 publish_mode: editorial_workflow
 media_folder: "assets/cover_images"
 search: false
@@ -19,12 +19,14 @@ collections:
     label_singular: "Mixer"
     folder: "_mixers"
     create: true
+    {% raw %}
     summary: "{{date | date('YYYY MMMM D, dddd')}}"
+    {% endraw %}
     identifier_field: date
     editor: { preview: false }
     {% raw %}
     slug: "{{year}}-{{month}}-{{day}}-urbanists-mixer"
-    {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
+    {% endraw %}
     fields:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover", widget: "image", required: false}
@@ -55,106 +57,6 @@ collections:
           - {label: "Speaker Org", name: "speaker_org", widget: "string"}
           - {label: "Summary", name: "summary", widget: "text"}
           - {label: "Cover Image", name: "cover", widget: "image"}
-
-  - name: "events"
-    label: "Events"
-    label_singular: "Event"
-    folder: "_events"
-    create: true
-    editor: { preview: false }
-    {% raw %}
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Start Date", name: "start_date", widget: "datetime"}
-      - {label: "End Date", name: "end_date", widget: "datetime", required: false}
-      - {
-          label: 'Host',
-          name: 'host',
-          widget: 'relation',
-          collection: 'groups',
-          display_fields: [display_name],
-          search_fields: [display_name],
-          value_field: 'name',
-        }
-      - {label: "Webpage", name: "webpage", widget: "string", required: false}
-      - {label: "Featured?", name: "is_featured", widget: "boolean", required: false}
-      - label: "Location"
-        name: "location"
-        widget: "object"
-        summary: "{{ fields.name }}"
-        hint: "Leave this alone if your event is online only."
-        fields:
-          - {label: "Name of Venue/Building/Business", name: "name", widget: "string", hint: "e.g., Bryan Street Tavern", required: false}
-          - {label: "Street Address", name: "address", widget: "string", hint: "e.g., 4315 Bryan St", required: false}
-          - {label: "City", name: "city", widget: "string", default: "Dallas" }
-          - {label: "Zip", name: "zip", widget: "number", required: false, hint: "e.g., 75204"}
-      - {label: "Details", name: "body", widget: "markdown"}
-
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "blog/_posts" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    {% raw %}
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    {% endraw %} # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
-      - {
-          label: 'Author',
-          name: 'author',
-          widget: 'relation',
-          collection: 'authors',
-          display_fields: [display_name],
-          search_fields: [display_name],
-          value_field: 'name',
-        }
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
-      - {
-          label: "Tags", 
-          name: "tags", 
-          widget: "select", 
-          required: false, 
-          multiple: true, 
-          
-          {%- capture options -%}
-          {%- for tag in site.tags -%}
-          "{{tag[0]}}",
-          {%- endfor -%}
-          
-          {%- for tag in site.data.tags.items -%}
-          "{{tag.name}}",
-          {%- endfor -%}
-          {%- endcapture -%}
-          {% assign sorted_options = options | split: "," | uniq | sort | join: ", " %}
-          
-          options: [{{ sorted_options }}] 
-        }  
-
-  - name: "authors"
-    label: "Authors"
-    label_singular: "Author"
-    folder: "_authors/"
-    {% raw %}
-    slug: "{{name}}"
-    {% endraw %}
-    output: true
-    create: true
-    editor: { preview: false }
-    fields:
-      - { label: 'Short Name', name: 'name', widget: 'string' }
-      - { label: 'Display Name', name: 'display_name', widget: 'string' }
-      - { label: 'Email', name: 'email', widget: 'string' }
-      - { label: 'Twitter Handle', name: 'twitter', widget: 'string', required: false  }
-      - { label: 'Instagram Handle', name: 'instagram', widget: 'string', required: false  }
-      - { label: 'Reddit Handle', name: 'reddit', widget: 'string', required: false  }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: "Photo", name: "photo", widget: "image", required: false }
 
   - name: "groups"
     label: "Groups"
@@ -188,20 +90,6 @@ collections:
           - { label: 'Label', name: 'label', widget: 'string' }
           - { label: 'URL', name: 'url', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-
-  - name: 'config'
-    label: 'Config'
-    editor: { preview: false }
-    files:
-      - label: 'Tag'
-        name: 'tag'
-        file: '_data/tags.yml'
-        fields:
-          - label: 'Tags'
-            name: 'items'
-            widget: 'list'
-            fields:
-              - { label: Name, name: name, widget: string }
 
 media_library:
   name: uploadcare

@@ -1,0 +1,46 @@
+---
+layout: stlc-default
+---
+<article>
+    <section class="masthead subtle group" style="
+        color: {{ masthead_text_color | default: "white" }};
+        background-image: url({{ cover_photo | relative_url }});
+        background-position: {{ masthead_bg_position | default: "center center" }};
+    ">
+        <div class="group-header">
+            <div class="body-wrapper padded">
+                <h1>{{ display_name }}</h1>
+                <p>{{ summary }}</p>
+            </div>
+        </div>
+    </section>
+    <section class="bg-offwhite">
+        <div class="row two-columns" style="align-items: flex-start;">
+            <div class="column">
+                {{ content }}
+            </div>
+        <div class="column">
+            <p><img src="{{ logo | relative_url }}" alt="Logo of {{ display_name }}" class="logo" /></p>
+            {% if focus_issues %}
+                <p><strong>Focus issues:</strong> {{ focus_issues }}</p>
+            {% endif %}
+            {% if focus_area %}
+                <p><strong>Focus area:</strong> {{ focus_area }}</p>
+            {% endif %}
+            {% if founded_on %}
+                <p><strong>Founded on:</strong> {{ founded_on }}</p>
+            {% endif %}
+            {% if website %}
+                <p><strong>Website:</strong> <a href="{{ website | absolute_url }}" class="external-hyperlink">{{ website }}</a></p>
+            {% endif %}
+            {% if links %}
+                <p><strong>Links:</strong></p>
+                <ul>
+                    {% for link in links %}
+                        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </section>
+</article>

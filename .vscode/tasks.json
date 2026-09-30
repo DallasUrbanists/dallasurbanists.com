@@ -22,6 +22,17 @@
                 "showReuseMessage": true,
                 "clear": false
             }
+        },
+        {
+            "type": "npm",
+            "script": "start",
+            "problemMatcher": [],
+            "label": "npm: start",
+            "detail": "npm install & npx @11ty/eleventy --serve",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

@@ -57,9 +57,18 @@ p {
     margin: 0 auto;
 }
 
+.body-wrapper.extra-wide {
+    max-width: 1440px;
+}
+
 .body-wrapper.padded {
     padding: 1rem;
 }
+
+.body-wrapper.extra-padded {
+    padding: 2rem 1rem 3rem;
+}
+
 
 .no-space {
     font-size: 0;
@@ -112,6 +121,7 @@ main {
 .bg-sand { background-color: var(--strongtowns-sand); }
 .bg-white { background-color: white; }
 .bg-dark { background-color: #111; color: white; }
+.bg-lightgrey { background-color: var(--strongtowns-lightgrey); }
 
 .viewport {
     min-height: calc(100svh - 4rem);
@@ -302,4 +312,9 @@ table.tabular {
             }
         }
     }
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    user-select: none;         /* Standard syntax for Chrome, Firefox, and Edge */
 }

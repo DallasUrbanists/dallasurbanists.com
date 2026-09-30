@@ -6,16 +6,16 @@ layout: stlc-default
         <h1 class="text-center">Neighbors in Advocacy</h1>
         <p class="text-center subtitle">Here are other local groups and organizations we often support and collaborate with.</p>
         <div class="grid-box">
-            {% for group in site.groups %}
-            {% if group.featured %}
+            {% for group in collections.groups %}
+            {% if group.data.featured %}
             <div class="grid-cell">
                 <a class="photo-logo-combo" href="{{ group.url }}">
-                    <img src="{{ group.cover_photo | relative_url }}" alt="{{ group.cover_alt }}" class="photo" />
-                    <img src="{{ group.logo | relative_url }}" alt="Logo of {{ group.display_name }}"
-                        class="logo {% if group.logo_tight %}offset-y{% endif %}" />
+                    <img src="{{ group.data.cover_photo | relative_url }}" alt="{{ group.data.cover_alt }}" class="photo" />
+                    <img src="{{ group.data.logo | relative_url }}" alt="Logo of {{ group.data.display_name }}"
+                        class="logo {% if group.data.logo_tight %}offset-y{% endif %}" />
                     <div class="logo-bg"></div>
                 </a>
-                <h2 class="text-center"><a href="{{ group.url }}">{{ group.display_name }}</a></h2>
+                <h2 class="text-center"><a href="{{ group.data.url }}">{{ group.data.display_name }}</a></h2>
             </div>
             {% endif %}
             {% endfor %}

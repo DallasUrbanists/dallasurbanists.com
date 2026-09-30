@@ -5,7 +5,7 @@ author: hexel
 subtitle: Win! Taking transit between Lower Greenville and Downtown Garland is
   either as fast or faster than by car.
 category: Follow-Along
-date: 2023-03-30 08:00
+date: 2023-03-30 08:00:00
 cover_image: /assets/cover_images/6.png
 tags:
   - DART
